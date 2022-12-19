@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ICE 1: OR Gates &#8212; ECE 281</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ICE 3: Top Level Design" href="ICE3.html" />
+    <link rel="prev" title="FAQ" href="../faq.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ECE 281</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Info
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercise
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ICE 1: OR Gates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ICE3.html">
+   ICE 3: Top Level Design
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/usafa-ece/ece281-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2FICE/ICE1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ICE/ICE1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   OVERVIEW
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lab-objectives">
+     Lab Objectives:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agenda">
+     Agenda:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supplies">
+     Supplies:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   1. Purpose.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-the-required-circuit">
+   2. Build the required circuit.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#breadboards">
+     Breadboards
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-supply">
+     Power Supply
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switches-and-resistors">
+     Switches and Resistors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chip">
+     7432 Chip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#led">
+     LED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exit-criteria">
+   Exit Criteria
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>ICE 1: OR Gates</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   OVERVIEW
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lab-objectives">
+     Lab Objectives:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agenda">
+     Agenda:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supplies">
+     Supplies:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   1. Purpose.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-the-required-circuit">
+   2. Build the required circuit.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#breadboards">
+     Breadboards
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-supply">
+     Power Supply
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switches-and-resistors">
+     Switches and Resistors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chip">
+     7432 Chip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#led">
+     LED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exit-criteria">
+   Exit Criteria
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-1-or-gates">
+<h1>ICE 1: OR Gates<a class="headerlink" href="#ice-1-or-gates" title="Permalink to this headline">#</a></h1>
+<section id="overview">
+<h2>OVERVIEW<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>Due: Lesson 6</p>
+<section id="lab-objectives">
+<h3>Lab Objectives:<a class="headerlink" href="#lab-objectives" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Implement and test a simple logic design in hardware.</p></li>
+<li><p>Gain experience using hardware.</p></li>
+</ol>
+</section>
+<section id="agenda">
+<h3>Agenda:<a class="headerlink" href="#agenda" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Build the required circuit.</p></li>
+<li><p>Test your circuit.</p></li>
+<li><p>Demonstrate the circuit’s operation to an instructor.</p></li>
+</ol>
+</section>
+<section id="supplies">
+<h3>Supplies:<a class="headerlink" href="#supplies" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>5x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors.</p></li>
+<li><p>1x red LED.</p></li>
+<li><p>1x SN7432 2-Input OR gate logic chip.</p></li>
+<li><p>1x breadboard power supply.</p></li>
+<li><p>1x breadboard.</p></li>
+<li><p>1x 4-dip switch, 2x 2-dip switch, or 4x 1-dip switch.</p></li>
+<li><p>Jumper wires.</p></li>
+</ol>
+</section>
+<section id="collaboration">
+<h3>Collaboration:<a class="headerlink" href="#collaboration" title="Permalink to this headline">#</a></h3>
+<p>For this lab, <strong>work in teams of two</strong>. You may seek help from any ECE 281 instructor or authorized online resource, but may not utilize any student other than your partner. Documentation is required (you do not need to document work with your partner). We expect all code or design work to be your own.</p>
+</section>
+</section>
+<section id="purpose">
+<h2>1. Purpose.<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
+<p>In this course you have learned how to design basic combinational logic circuits. In this ICE you will implement a basic logic design using transistor-transistor logic (TTL) chips. This will help you prepare for Lab 1. You will implement the simple logic equation:</p>
+<div class="math notranslate nohighlight">
+\[
+Y = A + B + C + D
+\]</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">+</span></code> represents OR. If any input, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, or <span class="math notranslate nohighlight">\(D\)</span>, is high (logic one), then the output, <span class="math notranslate nohighlight">\(Y\)</span>, is high (logic one). If all four inputs are low (logic zero), then the output is low (logic zero). You will use a SN7432 TTL chip to build this logic equation, which includes four, 2-Input OR Gates. You can find the data sheet for the chip (sn74ls32.pdf) on the Team under Data Sheets. Figure 1 provides the chip layout.</p>
+<p><img alt="Figure 1: SN7432 TTL Layout" src="../_images/ice01_image2.jpg" /></p>
+<p><em>Figure 1: SN7432 TTL Layout</em></p>
+<p>The SN7432 chip only contains 2-Input OR gates, but the logic equation
+requires a 4-Input OR gate. Boolean algebra can be used to find an
+arrangement of 2-Input OR gates that will work. The simple logic
+equation can now be represented as:
+$<span class="math notranslate nohighlight">\(
+Y = (A + B) + (C + D)
+\)</span>$</p>
+<p><img alt="Figure 2: 4-Input OR Implementation" src="../_images/ice01_image3.jpg" /></p>
+<p><em>Figure 2: 4-Input OR Implementation</em></p>
+<p>The 4-Input OR equation is now implemented using three, 2-Input OR  gates.</p>
+</section>
+<section id="build-the-required-circuit">
+<h2>2. Build the required circuit.<a class="headerlink" href="#build-the-required-circuit" title="Permalink to this headline">#</a></h2>
+<section id="breadboards">
+<h3>Breadboards<a class="headerlink" href="#breadboards" title="Permalink to this headline">#</a></h3>
+<p>A breadboard is a prototyping device that allows you to easily connect
+different portions of a circuit together. Figure 3 depicts how the
+breadboard used in this ICE is connected. Each row (on either side of
+the center line) is a single node. This means two devices can be
+connected together by inserting them in the same row. Additionally,
+each of the columns on the outside of are connected the entire length
+of the board. These columns are ideal for supplying power and ground
+to your circuits.</p>
+<p><img alt="Figure 3: Breadboard connections" src="../_images/ice01_image4.jpg" /></p>
+<p><em>Figure 3: Breadboard connections</em></p>
+</section>
+<section id="power-supply">
+<h3>Power Supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">#</a></h3>
+<p>You will use a USB power supply to power your circuit. Attach the
+power supply to the top of the breadboard so the red vertical lines
+align with the 5V and 3.3V pins and the blue lines align with the
+ground pin according to Figure 4. Insert the USB cable into your
+computer. Press the white button to turn on the power supply.</p>
+<p><img alt="Figure 4: Power supply placement" src="../_images/ice01_image5.jpg" /></p>
+<p><em>Figure 4: Power supply placement</em></p>
+<p>You will use a digital multi-meter (DMM) to test the power supply.
+Turn the multimeter to the DC voltage setting and place the black lead
+into the ground rail and the red lead into the 5V rail according to
+Figure 5.</p>
+<p><img alt="Figure 5: Testing power supply" src="../_images/ice01_image6.jpg" /></p>
+<p><em>Figure 5: Testing power supply</em></p>
+<p>The meter should read about 5V. Once you have successfully tested,
+turn off your power supply by depressing the white button.</p>
+</section>
+<section id="switches-and-resistors">
+<h3>Switches and Resistors<a class="headerlink" href="#switches-and-resistors" title="Permalink to this headline">#</a></h3>
+<p>Next you are going to configure your input switches. This portion of
+the circuit will allow us to provide a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> to the circuit (0 V
+or low) when the switch is not active and a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> to the circuit
+(5 V or high) when the switch is active. The switches and resistors
+are going to be in a pull down configuration or active high. This
+means when the switch is <strong>open</strong> there is a direct connection between
+the circuit and ground through a resistor which pulls the value to <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+This provides a logic <code class="docutils literal notranslate"><span class="pre">0</span></code>. However, when the switch is <strong>closed</strong>, the
+circuit is now connected to the power supply (5 V). This provides a
+logic <code class="docutils literal notranslate"><span class="pre">1</span></code>. We will use 4x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors and 4-switch component.</p>
+<p><img alt="Figure 6: Pull-down resistor configuration" src="../_images/ice01_image7.jpg" /></p>
+<p><em>Figure 6: Pull-down resistor configuration</em></p>
+<p>Figure 7 shows how to connect the 4-dip switch (via 2 x double switch
+or 4 x single switch) and 4 resistors on the breadboard.</p>
+<p><img alt="Figure 7: 2x 2-Dip switch and resistor configuration" src="../_images/ice01_image8.jpg" /></p>
+<p><em>Figure 7: 2x 2-Dip switch and resistor configuration (Left) and 4x 1-DIP configuration (Right)</em></p>
+<p>Now you will test the circuit. Connect the black lead of your DMM to
+ground and connect the red lead to one of the switches on the
+“switched” side of the switch (right side for the blue switch, middle
+for the black switch). Select the 20V DC voltage option on your meter
+and turn on your USB power supply. The meter should read about 5 V.
+When active, the switch acts just like a wire, therefore, we should
+see the same value from the voltage source. The meter should read 0V
+when the switch is not active. Repeat this testing for each of the
+four switched values (A-D). When complete, turn off the power supply.</p>
+</section>
+<section id="chip">
+<h3>7432 Chip<a class="headerlink" href="#chip" title="Permalink to this headline">#</a></h3>
+<p>You will now add the 7432 chip, which provides 4 logic OR gates.</p>
+<p>You will place the chip along the center spacing to ensure each lead of
+the chip is on its own node (and not connected). Note the indentation
+on the switch, this is the OP. You will wire the pin to 5 V and the
+pin to ground (the negative 1-1 on the power supply). Each of the
+switch outputs will be wired to one of the gate inputs and the outputs
+of the two gates will be connected to the inputs of a third gate. The
+switch outputs are located between the resistor and the switch.</p>
+<ul class="simple">
+<li><p>Connect the switch 1 output (top-most switch) to pin 1 on the chip</p></li>
+<li><p>Connect the switch 2 output to pin 2 on the chip.</p></li>
+<li><p>Connect the switch 3 output to pin 4 of the chip.</p></li>
+<li><p>Connect the switch 4 output (bottom-most switch) to pin 5 of the chip.</p></li>
+</ul>
+<p>Next you need to connect the outputs of the first two OR gates to the third OR gate. Pin 3 needs to be connected to pin 10 and pin 6 needs to be connected to pin 9. Figure 8 demonstrates how the switch outputs should be connected. The blue bar is ground (the negative on the USB) and the red bar is <span class="math notranslate nohighlight">\(V_{cc}\)</span> (5V).</p>
+<p><img alt="Figure 8: SN7432 Wiring" src="../_images/ice01_image9.jpg" /></p>
+<p><em>Figure 8: SN7432 Wiring using 2x 2-Dip switch configuration (Left) or 4x 1- DIP configuration (Right)</em></p>
+<p>You can test to ensure everything is working by connecting the black
+lead of the DMM to ground and the red lead to the output of pin of the
+final OR gate (Pin 8). Turn on the power and test your circuit.
+According to our equation, if any of the switches are active, the
+output of the chip should be high (logic 111 or 5V). Notice that the
+meter is reading closer to 4.5 V and not 5 V. Luckily, according to
+the data sheet seen in Figure 9, anything above 2 V is considered high
+or logic <code class="docutils literal notranslate"><span class="pre">1</span></code>. This means that 4.5 V would register as a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> and
+anything less than 0.8 V would register as a logic <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><img alt="" src="../_images/ice01_image10.jpg" />{width=”6.165972222222222in”
+height=”0.729083552055993in”}</p>
+<p>Figure 9: SN7432 High and low voltage ratings</p>
+</section>
+<section id="led">
+<h3>LED<a class="headerlink" href="#led" title="Permalink to this headline">#</a></h3>
+<p>The final step is to wire the LED. This LED will indicate if the
+circuit output is a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> (LED is on) or logic <code class="docutils literal notranslate"><span class="pre">0</span></code> (LED is off).
+To keep from destroying the LED due to a potential current spike, you
+will wire the LED in series with a <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistor. This resistor MUST
+BE IN SERIES WITH THE LED!! LEDs are directional components. The
+longer of the LED’s two leads should be on the positive side <code class="docutils literal notranslate"><span class="pre">+5</span> <span class="pre">V</span></code>)
+of the circuit (the side receiving the voltage or Pin 8 on the chip).
+The other indicator of the LEDs polarity is at edge on the LED which
+should be placed towards ground. Wire up the LED according to Figure
+10.</p>
+<p><img alt="Figure 10: Test LED configuration" src="../_images/ice01_image11.jpg" /></p>
+<p><em>Figure 10: Test LED configuration</em></p>
+<p>For your final test, simply turn on the power and test your switches.
+If any of the switches are turned <strong>on</strong> the LED will light up. If all
+of the switches are <strong>off</strong>, the LED should remain off.</p>
+<p>Congratulations! You have successfully completed In Class Exercise
+(ICE) 1. This will be directly applicable to your circuit building in
+lab 1! Demonstrate your operational circuit to your instructor.</p>
+</section>
+</section>
+<section id="exit-criteria">
+<h2>Exit Criteria<a class="headerlink" href="#exit-criteria" title="Permalink to this headline">#</a></h2>
+<p>The instructor will check the circuit accurately implements a 4-input
+OR gate function:</p>
+<ul class="simple">
+<li><p>When all switches are <strong>off</strong>, the output is <code class="docutils literal notranslate"><span class="pre">0</span></code>, LED is off.</p></li>
+<li><p>When any switch (A-D) is turned <strong>on</strong>, the output is <code class="docutils literal notranslate"><span class="pre">1</span></code>, LED will
+light.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ICE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../faq.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">FAQ</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ICE3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ICE 3: Top Level Design</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DFEC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
