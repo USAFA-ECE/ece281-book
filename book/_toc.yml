@@ -7,8 +7,7 @@ parts:
   - caption: Course Info
     chapters:
       - file: faq
-  - caption: Readings
+  - caption: In Class Exercise
     chapters:
-      - file: markdown
-      - file: notebooks
-      - file: markdown-notebooks
+      - file: ICE/ICE1
+      - file: ICE/ICE3
