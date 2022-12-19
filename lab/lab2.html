@@ -1,0 +1,1047 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lab 2 - Seven Segment Display Decoder &#8212; ECE 281</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lab 2 Prelab - Seven Segment Display Decoder" href="lab2Prelab.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ECE 281</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Info
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ICE/ICE1.html">
+   ICE 1: OR Gates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ICE/ICE3.html">
+   ICE 3: Top Level Design
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab2Prelab.html">
+   Lab 2 Prelab - Seven Segment Display Decoder
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 2 - Seven Segment Display Decoder
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/usafa-ece/ece281-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Flab/lab2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/lab/lab2.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lab 2 - Seven Segment Display Decoder
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implement-ssd-component-in-vhdl">
+     Implement SSD component in VHDL
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vhdl-templates">
+       VHDL templates
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-ssd-entity">
+       Create SSD Entity
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-ssd-architecture">
+       Create SSD Architecture
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#implement-your-prelab-equations-using-behavioral-modelling">
+         Implement your prelab equations using behavioral modelling
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-the-vhdl-template">
+     EDIT THE VHDL TEMPLATE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v-lab-2-deliverables">
+   V. LAB 2 DELIVERABLES
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-100">
+     <strong>
+      Total
+     </strong>
+     <strong>
+      100
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pts-hardware-demo-by-1700-on-t17">
+     <strong>
+      (30 PTS) HARDWARE DEMO (BY 1700 ON T17)
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pts-report-submitted-via-gradescope-by-1700-on-t17-10-pts-report-quality-template-provided">
+       (30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unacceptable-0-2-lab-is-incomplete-sections-are-completely-missing-or-have-little-to-no-discussion-figures-tables-and-pictures-are-present-but-have-little-to-no-discussion-the-student-did-not-communicate-their-thought-process-and-it-is-not-clear-how-they-developed-their-solution-schematics-and-other-aspects-of-the-design-were-not-updated-at-all-to-reflect-errors-or-changes-from-the-preliminary-design">
+     <strong>
+      Unacceptable
+     </strong>
+     0-2          Lab is incomplete. Sections are completely missing or
+have little to no discussion. Figures, tables, and
+pictures are present but have little to no discussion.
+The student did not communicate their thought process and
+it is not clear how they developed their solution.
+Schematics and other aspects of the design were not
+updated at all to reflect errors or changes from the
+preliminary design.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pts-files-submitted-via-git-by-1700-on-t17">
+       (20 PTS) FILES (SUBMITTED VIA GIT BY 1700 ON T17)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pts-git-usage">
+     <strong>
+      (5 PTS) GIT USAGE
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab 2 - Seven Segment Display Decoder</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lab 2 - Seven Segment Display Decoder
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implement-ssd-component-in-vhdl">
+     Implement SSD component in VHDL
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vhdl-templates">
+       VHDL templates
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-ssd-entity">
+       Create SSD Entity
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-ssd-architecture">
+       Create SSD Architecture
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#implement-your-prelab-equations-using-behavioral-modelling">
+         Implement your prelab equations using behavioral modelling
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-the-vhdl-template">
+     EDIT THE VHDL TEMPLATE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v-lab-2-deliverables">
+   V. LAB 2 DELIVERABLES
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-100">
+     <strong>
+      Total
+     </strong>
+     <strong>
+      100
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pts-hardware-demo-by-1700-on-t17">
+     <strong>
+      (30 PTS) HARDWARE DEMO (BY 1700 ON T17)
+     </strong>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pts-report-submitted-via-gradescope-by-1700-on-t17-10-pts-report-quality-template-provided">
+       (30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unacceptable-0-2-lab-is-incomplete-sections-are-completely-missing-or-have-little-to-no-discussion-figures-tables-and-pictures-are-present-but-have-little-to-no-discussion-the-student-did-not-communicate-their-thought-process-and-it-is-not-clear-how-they-developed-their-solution-schematics-and-other-aspects-of-the-design-were-not-updated-at-all-to-reflect-errors-or-changes-from-the-preliminary-design">
+     <strong>
+      Unacceptable
+     </strong>
+     0-2          Lab is incomplete. Sections are completely missing or
+have little to no discussion. Figures, tables, and
+pictures are present but have little to no discussion.
+The student did not communicate their thought process and
+it is not clear how they developed their solution.
+Schematics and other aspects of the design were not
+updated at all to reflect errors or changes from the
+preliminary design.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pts-files-submitted-via-git-by-1700-on-t17">
+       (20 PTS) FILES (SUBMITTED VIA GIT BY 1700 ON T17)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pts-git-usage">
+     <strong>
+      (5 PTS) GIT USAGE
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-2-seven-segment-display-decoder">
+<h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this headline">#</a></h1>
+<p>Implement the seven-segment decoder in VHDL.</p>
+<p>Now that you have Boolean equations established for each of your seven
+segment outputs, it is time to implement them in hardware with VHDL!
+Once you have written your seven-segment decoder (SSD) VHDL module, you
+will test it with a simulation test bench. The test bench allows you to
+simulate your design to see what outputs would be given inputs you
+define. This way, you can see if your design does what you expect before
+attempting to program your board. Then you will use your verified SSD
+component in a top level Basys3 component where you wire your decoder to
+a seven-segment display (7SD) and switches, along with connecting a
+button to the 7SD to enable it. Finally, you will test your implemented
+design in hardware.</p>
+<section id="implement-ssd-component-in-vhdl">
+<h2>Implement SSD component in VHDL<a class="headerlink" href="#implement-ssd-component-in-vhdl" title="Permalink to this headline">#</a></h2>
+<section id="vhdl-templates">
+<h3>VHDL templates<a class="headerlink" href="#vhdl-templates" title="Permalink to this headline">#</a></h3>
+<p>You should have all templates loaded from Lab1 in your repository,
+but you can find the VHDL template files from the General Teams
+Channel under “Handouts and Resources”.</p>
+<ol class="simple">
+<li><p>Save a copy of ECE_template.vhd as a file named <strong>sevenSegDecoder.vhd</strong> into your Lab2 <strong>code</strong> folder.</p></li>
+<li><p>Save a copy of ECE_template_tb.vhd as a file named <strong>sevenSegDecoder_tb.vhd</strong> into your Lab2 <strong>code</strong> folder.</p></li>
+<li><p>Add your sources to Vivado. Remember to leave “Copy sources into project” <strong>unchecked</strong></p></li>
+</ol>
+<p>Edit the file headers as needed.</p>
+<ol class="simple">
+<li><p>Find and replace all instances of “ECE_template” with <code class="docutils literal notranslate"><span class="pre">sevenSegDecoder</span></code></p></li>
+<li><p>Within Vivado, open one of your VHDL files and then type <code class="docutils literal notranslate"><span class="pre">CTRL+SHIFT+R</span></code> or click on Edit→Replace in Files</p></li>
+<li><p>Fill in the find and replace text boxes as required. Make sure to check all of the sources you want to change:</p></li>
+</ol>
+<p><img alt="Find ECE_template and replace with sevenSegDecoder" src="../_images/lab2_image4.jpg" /></p>
+<p>In the message area (bottom of Vivado screen) click “Replace All”</p>
+<p><img alt="Replace All" src="../_images/lab2_image6.jpg" /></p>
+</section>
+<section id="create-ssd-entity">
+<h3>Create SSD Entity<a class="headerlink" href="#create-ssd-entity" title="Permalink to this headline">#</a></h3>
+<p><strong>Create your interface (ports) for your sevenSegDecoder according to
+Figure 3 below</strong>. Figure 3 shows the sevenSegDecoder module entity
+interface in blue and the architecture in purple. Notice that the figure
+indicates that the input, <code class="docutils literal notranslate"><span class="pre">i_D</span></code>, is a bus of 4 wires, and the output, <code class="docutils literal notranslate"><span class="pre">o_S</span></code>,
+is a bus of 7 wires. This can be created in VHDL by using a
+<strong>std_logic_vector</strong> signal type. For instance, <code class="docutils literal notranslate"><span class="pre">i_D</span></code> could be created in
+the <strong>port</strong> statement with the following:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">i_D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Remember, the <code class="docutils literal notranslate"><span class="pre">i_</span></code> follows the naming convention provided in the header
+that indicates the signal is an input. The statement above <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">downto</span> <span class="pre">0</span></code>
+indicates that BIT3 is the MSB and BIT0 is the LSB. You could easily
+reverse this by swapping the locations of the two numbers.</p>
+<p>To access each wire from the bus you created simply refer to the bit
+number in parentheses. For instance, <code class="docutils literal notranslate"><span class="pre">i_D(3)</span></code> refers to the MSB of the
+input, D.</p>
+<p><img alt="Figure 3: sevenSegDecoder entity and architecture" src="../_images/lab2_image9.jpg" />
+<em>Figure 3: sevenSegDecoder entity and architecture</em></p>
+</section>
+<section id="create-ssd-architecture">
+<h3>Create SSD Architecture<a class="headerlink" href="#create-ssd-architecture" title="Permalink to this headline">#</a></h3>
+<p>After you have created your component interface, you need to describe
+the architecture. Figure 3 on the previous page shows that the output of
+the combinational logic produces a signal for each 7SD segment (<code class="docutils literal notranslate"><span class="pre">c_Sa</span></code> …
+<code class="docutils literal notranslate"><span class="pre">c_Sg</span></code>). These combinational signals (denoted by the <code class="docutils literal notranslate"><span class="pre">c_</span></code> at the
+beginning) are wired to each bit of the output segment bus (<code class="docutils literal notranslate"><span class="pre">o_S</span></code>). The
+bit numbers are labeled in the diagram. For instance, <code class="docutils literal notranslate"><span class="pre">BIT0</span></code> of <code class="docutils literal notranslate"><span class="pre">o_S</span></code> is
+wired to <code class="docutils literal notranslate"><span class="pre">c_Sa</span></code>.</p>
+<ul class="simple">
+<li><p>For clarity, declare intermediate combinatorial signals (e.g., <code class="docutils literal notranslate"><span class="pre">c_Sa</span></code>) that break out output <code class="docutils literal notranslate"><span class="pre">S</span></code> and set them to a default value of <code class="docutils literal notranslate"><span class="pre">1</span></code> (off). This should be done <em>before</em> <strong>begin</strong>.</p></li>
+<li><p>There are no PORT MAPS or PROCESSES needed for this module, so you can delete those sections.</p></li>
+<li><p>In the CONCURRENT STATEMENTS section, map the output <code class="docutils literal notranslate"><span class="pre">S</span></code> to the signals you created above per Figure 3. For instance:</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">o_S</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">c_Sa</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="implement-your-prelab-equations-using-behavioral-modelling">
+<h4>Implement your prelab equations using behavioral modelling<a class="headerlink" href="#implement-your-prelab-equations-using-behavioral-modelling" title="Permalink to this headline">#</a></h4>
+<p>There are two basic philosophies for modelling digital architectures:
+<strong>structural</strong> and <strong>behavioral</strong>. A structural model means that you are
+describing <em>how</em> the module would be composed as a hierarchy of simpler
+modules. A behavioral model means that you are describing <em>what</em> the
+logic does in terms of inputs and outputs. <strong>We will be using behavioral
+modelling in this lab.</strong></p>
+<p>For instance, given the truth table below of inputs D3 down to D0 and
+output Sa, you could derive the simplified Boolean expression:</p>
+<div class="math notranslate nohighlight">
+\[
+Sa = (D3')(D2')(D1')(D0) + (D3)(D2')(D1)(D0) + (D2)(D1')(D0') + (D3)(D2)(D1')
+\]</div>
+<p><em>Table 2: Seven-Segment Decoder Truth Table with output Sa</em>
+<img alt="Table 2: Seven-Segment Decoder Truth Table with output Sa" src="../_images/lab2_image14.jpg" /></p>
+<p>This could then be implemented <em>behaviorally</em> with the following VHDL
+code:</p>
+<p><img alt="" src="../_images/lab2_image15.jpg" />{width=”5.322916666666667in”
+height=”0.8020833333333334in”}</p>
+<p>Notice that the logic for the intermediate signal c_Sa is described in
+terms of AND, NOT, and OR gates. Also notice that the statement spans
+multiple lines and is ended by a semicolon. It is helpful to break
+statements like this into multiple lines so that they are easier to
+read. Each implicant from the simplified Boolean expression has its own
+line and is surrounded by parentheses (use SPACE to make it more
+readable).</p>
+<p>There are many ways to describe a behavioral model, however. Contrast
+the above behavioral model with the following one:</p>
+<p><img alt="" src="../_images/lab2_image16.jpg" />{width=”3.6770833333333335in”
+height=”1.0520833333333333in”}</p>
+<p>The behavioral model describes the logic just like the truth table. In
+this case, it essentially creates a lookup table (LUT) where the ‘1’s
+are identified, and everything else is ‘0’. Note, how using a
+<strong>std_logic_vector</strong> for i_D allows us to compare the input to a 4-bit
+hex value(denoted by the ‘x’) instead of comparing all of the individual
+bits. This is one of the advantages of using that signal type.</p>
+<p>Now that you have an understanding of how to implement behavioral models
+in VHDL, implement all seven of your outputs.</p>
+<ul class="simple">
+<li><p>Use behavioral modelling with AND, NOT, and OR gates for at least
+two of them, and use behavioral modelling with a LUT for at least
+two of them.</p></li>
+<li><p>Which model method do you think is easier to use for implementing
+your outputs?</p></li>
+<li><p>Implement the remaining outputs with your preferred choice.</p></li>
+</ul>
+<p>2. CREATE SSD TESTBENCH AND SIMULATE</p>
+</section>
+</section>
+</section>
+<section id="edit-the-vhdl-template">
+<h2>EDIT THE VHDL TEMPLATE<a class="headerlink" href="#edit-the-vhdl-template" title="Permalink to this headline">#</a></h2>
+<p>a.  You can find the VHDL template files from the General Teams Channel
+under “Handouts and Resources”..</p>
+<p>b.  If not already done, save a copy of ECE_template_tb.vhd as a file
+named <strong>sevenSegDecoder_tb.vhd</strong> into your Lab2 <strong>code</strong> folder. c.
+Edit the header as needed.
+d.  If not already done, find and replace all instances of
+“ECE_template” with “sevenSegDecoder”.</p>
+<p>e.  Copy in the port information for your sevenSegDecoder componente</p>
+<p>f.  Declare a bus (std_logic_vector) or series of signals for the switch
+inputs.</p>
+<p>g.  Declare a signal vector to connect to the segment outputs (e.g.,
+w_seg) from your component</p>
+<p>h.  Port map your component instance to the wires you creates for the
+switches and the 7SD segments</p>
+<blockquote>
+<div><p>• The keyword <strong>OPEN</strong> can be used if you prefer to not wire a port to
+something (e.g., you will read or manipulate the ports directly in
+your simulation)</p>
+</div></blockquote>
+<p>i.  Create your test plan process. Remember, you can use hex values with
+busses: <img alt="" src="../_images/lab2_image17.jpg" />{width=”1.0479166666666666in”
+height=”0.188082895888014in”} j. Fix any syntax errors, and run the
+simulation.</p>
+<p>k.  Inputs and outputs should already be grouped, but ensure the radix
+is set to hex. Make sure the signals are in the proper order so the
+hex values make sense. This makes verification easier. If you used a
+vector, they should be.</p>
+<p>l.  Make sure the simulation results match your Prelab truth table, and
+then <strong>include a waveform screenshot in your report</strong>. You may need
+to reverse the order to make your sim match (right click-&gt; Reverse
+Bit Order).</p>
+<p>3. CREATE TOP LEVEL VHDL FILE</p>
+<p>The top level VHDL file is what connects your component to the Basys3
+development board. Figure 5 below shows the top level schematic for this
+lab. As can be seen in the figure, you need to connect your SSD
+component to four physical switches (sw) and the seven cathodes (seg) of
+a seven-segment display (7SD). You also need to wire a push button
+(btnC) up so that it can be used to activate the 7SD by sending a <strong>low
+signal</strong> to the anode. You can see in Figure 4 that the anode determines
+which of the displays are on, while the cathodes allow you to turn on
+each individual segment.</p>
+<p><img alt="" src="../_images/lab2_image18.jpg" />{width=”4.039027777777778in”
+height=”2.626388888888889in”}</p>
+<blockquote>
+<div><p><strong>Figure 4 – seven segment display</strong></p>
+</div></blockquote>
+<p>Since the button itself is active-high, an inverter is required. The
+other 7SDs (display 3, 2, and 1) are disabled by connecting them to
+power. Use the provided top_basys3.vhd file for a jumpstart in
+implementing your top-level design. The entity is provided for you, but
+you must complete the architecture. Note, the entity interface has been
+designed so that the port names match exactly what the constraints file
+(Basys3_Master.xdc) is already using. You simply need to uncomment the
+lines in Basys3_Master.xdc that you need to use.</p>
+<p><img alt="" src="../_images/lab2_image19.png" />{width=”7.490277777777778in”
+height=”4.4430555555555555in”}</p>
+<blockquote>
+<div><p><strong>Figure 5 – Top Level Schematic</strong></p>
+</div></blockquote>
+<p>The comments in the VHDL file provide a guide on what you need to do.
+Additionally, the code that connects the push buttons to the enable
+signals on the seven-segment displays has been done for you. Note, that
+when connecting an input to a wire, the input must be on the right side.
+For example, in the below statement, btnC is the input and w_7SD_EN_n is
+the wire connecting the button to the 7SD active-low enable pin:</p>
+<p><img alt="" src="../_images/lab2_image21.jpg" />{width=”1.99625in”
+height=”0.17708333333333334in”}</p>
+<p>In code above, “&lt;=” is an assignment statement and connects the button
+to a wire. On the other hand “=&gt;” is used for case statements, array
+assignments, and component port mapping as seen below. That statement
+only connects the button to a wire. To connect the other end of the wire
+to the enable (anode) pin, you have to have a second statement:</p>
+<p><img alt="" src="../_images/lab2_image22.jpg" />{width=”4.423611111111111in”
+height=”0.1986111111111111in”}</p>
+<p>Note, in the above statement, the signal an is an <em>output</em>, so it must
+be on the left side. The right side is using the () aggregate operator
+to concatenate bus signals. The keyword “others” always refers to any
+bus signals that are not otherwise explicitly listed. Another way to
+describe the above connections is as follows:</p>
+<p><img alt="" src="../_images/lab2_image23.jpg" />{width=”1.9275in”
+height=”0.7638888888888888in”}</p>
+<p>4. IMPLEMENT THE DESIGN IN HARDWARE</p>
+<blockquote>
+<div><p>a. Take a look at the RTL schematic (In RTL Analysis in the Flow
+Navigator on the left side of the window).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Is this what you expect? Did vivado implement the circuit like you
+thought it would?</p></li>
+<li><p>Double click on the sevenSegDecoder component. Did vivado implement
+the circuit like you thought it would? b. Generate the bitstream
+(.bit) file and download it to your FPGA.</p></li>
+<li><p>Do not forget to commit the .bit file to your Git repo.</p></li>
+<li><p>The default location of the file should be:
+Lab2\Lab2.runs\impl_1\top_basys3.bit c. Verify that your design
+functions correctly.</p></li>
+<li><p>You have to hold the center push button down for a 7SD to show your
+output.</p></li>
+<li><p>The correct hex digit is shown based on the switch positions for all
+input possibilities.</p></li>
+</ul>
+<blockquote>
+<div><p>d. Demo the working final product to your instructor.</p>
+</div></blockquote>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="v-lab-2-deliverables">
+<h1>V. LAB 2 DELIVERABLES<a class="headerlink" href="#v-lab-2-deliverables" title="Permalink to this headline">#</a></h1>
+<p>Table 3 below shows how the points will be distributed for this
+assignment. Details for how each item will be scored follows. <strong>Table 3:
+Point distribution for Lab 2</strong></p>
+<hr class="docutils" />
+<p><strong>Item</strong>                                                <strong>Out of</strong></p>
+<hr class="docutils" />
+<p>Prelab                                                  15</p>
+<p>Hardware demo                                           30</p>
+<p>Report                                                  30</p>
+<p>Files                                                   20</p>
+<p>Git usage                                               5</p>
+<section id="total-100">
+<h2><strong>Total</strong>                                               <strong>100</strong><a class="headerlink" href="#total-100" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="pts-hardware-demo-by-1700-on-t17">
+<h2><strong>(30 PTS) HARDWARE DEMO (BY 1700 ON T17)</strong><a class="headerlink" href="#pts-hardware-demo-by-1700-on-t17" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>You have to hold the center push button down for a 7SD to show your
+output. (10 pts) • The correct hex digit is shown based on the
+switch positions for all input possibilities. (20 pts)</p></li>
+<li><p>Demo can be performed live with an instructor (preferred) OR
+submitted via Teams. o If via Teams, refer to your instructor for
+instructions.</p></li>
+</ul>
+<section id="pts-report-submitted-via-gradescope-by-1700-on-t17-10-pts-report-quality-template-provided">
+<h3>(30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED)<a class="headerlink" href="#pts-report-submitted-via-gradescope-by-1700-on-t17-10-pts-report-quality-template-provided" title="Permalink to this headline">#</a></h3>
+<hr class="docutils" />
+<p><strong>Rating</strong>         <strong>Points</strong>   <strong>Quality</strong></p>
+<hr class="docutils" />
+<p><strong>Excellent</strong>      9-10         Report is well laid out and follows provided template.
+All schematics are digitally generated or NEATLY hand
+drawn. All figures, tables, and pictures are referenced
+and discussed in the report. The flow of the lab should
+communicate the student understands what the lab was
+accomplishing and should describe their process from
+beginning to end. All schematics and other designs are
+updated to reflect the final product.</p>
+<p><strong>Good</strong>           6-8          Report follows the structure dictated below. Most
+schematics are digitally generated or NEATLY hand drawn.
+Most figures and tables are referenced and discussed in
+the report. The flow of the lab indicates the student
+understands what the lab was accomplishing and loosely
+describes their process from beginning to end. Most
+schematics and other designs are updated to reflect the
+final product.</p>
+<p><strong>Acceptable</strong>     3-5          All the major sections dictated below are present but
+there is little flow to the document. The different
+sections are dropped in with little discussion. Figures,
+tables, and pictures are present, but have little
+discussion. It is hard to tell what thought process the
+students used when developing their solution. Schematics
+and other designs are present, but may not have been
+updated to reflect the final design or may be of poor
+quality.</p>
+</section>
+</section>
+<section id="unacceptable-0-2-lab-is-incomplete-sections-are-completely-missing-or-have-little-to-no-discussion-figures-tables-and-pictures-are-present-but-have-little-to-no-discussion-the-student-did-not-communicate-their-thought-process-and-it-is-not-clear-how-they-developed-their-solution-schematics-and-other-aspects-of-the-design-were-not-updated-at-all-to-reflect-errors-or-changes-from-the-preliminary-design">
+<h2><strong>Unacceptable</strong>   0-2          Lab is incomplete. Sections are completely missing or
+have little to no discussion. Figures, tables, and
+pictures are present but have little to no discussion.
+The student did not communicate their thought process and
+it is not clear how they developed their solution.
+Schematics and other aspects of the design were not
+updated at all to reflect errors or changes from the
+preliminary design.<a class="headerlink" href="#unacceptable-0-2-lab-is-incomplete-sections-are-completely-missing-or-have-little-to-no-discussion-figures-tables-and-pictures-are-present-but-have-little-to-no-discussion-the-student-did-not-communicate-their-thought-process-and-it-is-not-clear-how-they-developed-their-solution-schematics-and-other-aspects-of-the-design-were-not-updated-at-all-to-reflect-errors-or-changes-from-the-preliminary-design" title="Permalink to this headline">#</a></h2>
+<p>Report file includes the following content (template will be provided):</p>
+<ul class="simple">
+<li><p><strong>Title</strong> <strong>and Author</strong></p></li>
+<li><p><strong>[Documentation statement]{.underline}</strong> Be specific here. You are
+allowed to help each other but you must not copy code or write code
+for other students. You do not need to document work with your
+partner.</p></li>
+<li><p><strong>Purpose</strong> of the exercise</p></li>
+<li><p><strong>Prelab (majority of grade in prelab)</strong> or preliminary design work
+o Include anything that helped you develop your software (algorithms
+or flow charts) o <strong>Schematics</strong> (created or used,)</p></li>
+<li><p><strong>Design/Testing/Debugging methodology.</strong> Use this section to detail
+how you designed your final solution and what steps you took to test
+it at it was being built. Include anything important for the reader
+to understand about your final design. At a minimum you need to
+explain anything that is different from you preliminary design and
+why you had to change it. Describe problems you encountered while
+working on this exercise and how you fixed them. Some people make
+numbered lists to keep track of their issues. This section should
+always be open and being edited while you are working on a lab or
+Homework.</p>
+<ul>
+<li><p>Be sure to document any issues (and solutions) you run into
+while doing this lab. Remembering past mistakes may help you in
+the future!</p></li>
+</ul>
+</li>
+<li><p><strong>Results:</strong> o <strong>Simulation Results.</strong> Present and discuss your
+simulation results. Does your lab do what it is supposed to?</p>
+<ul>
+<li><p><strong>Final Results/Demonstration.</strong> Discuss your final results
+here. Do they make sense? If not given in person, your demo
+should be here. Answer any remaining lab questions here if not
+answered throughout report.</p></li>
+</ul>
+</li>
+<li><p><strong>Observations and Conclusions</strong> What did you learn in this lab? Did
+anything cool catch your eye?</p></li>
+<li><p><strong>Reflection</strong> o <strong>Number of hours spent on Lab2:</strong> ________
+o What portion of the lab was the most difficult for you? How did
+you overcome it? o What lessons, previous assignments, or activities
+did you find helpful is completing this lab?</p>
+<ul>
+<li><p>What suggestions do you have for improving Lab2 in future years?
+Be specific. Ex: “The instructions were confusing” does not
+help. What parts of the instructions were confusing</p></li>
+</ul>
+</li>
+</ul>
+<p>(20 PTS) SIMULATION RESULTS WAVEFORM</p>
+<blockquote>
+<div><p>• Clearly shows that that all possible inputs and outputs match the
+correct Prelab truth table. (16 pts) • Signals are named and grouped
+per instructions. (4pts)</p>
+</div></blockquote>
+<section id="pts-files-submitted-via-git-by-1700-on-t17">
+<h3>(20 PTS) FILES (SUBMITTED VIA GIT BY 1700 ON T17)<a class="headerlink" href="#pts-files-submitted-via-git-by-1700-on-t17" title="Permalink to this headline">#</a></h3>
+<p>+———–+—–+—————————————————-+
+| *         | &gt; * | <strong>Quality</strong>                                        |
+| <em>Rating</em>* | <em>Po |                                                    |
+|           | int |                                                    |
+|           | s</em>* |                                                    |
++===========+=====+====================================================+
+| <strong>Ex      | &gt;   | All required files are included in the “Code”      |
+| cellent</strong> |  17 | folder of the repository. Each file includes an    |
+|           | -20 | updated header with accurate filename, author,     |
+|           |     | creation date, description, and documentation.     |
+|           |     | Each entity has a name that matches the file name. |
+|           |     | Entity inputs and outputs match provided/designed  |
+|           |     | schematics. Variables have descriptive names that  |
+|           |     | meet the naming                                    |
+|           |     |                                                    |
+|           |     | conventions. Code is commented throughout          |
+|           |     | providing concise descriptions of what is          |
+|           |     | occurring (not every line needs to be commented,   |
+|           |     | but generally blocks of code should be). There are |
+|           |     | no extraneous comments or code.                    |
+|           |     | Spacing/indentation is clear and organized.        |
++———–+—–+—————————————————-+
+| <strong>Good</strong>  | &gt;   | All required “.vhd” files are included in the      |
+|           |  13 | “Code” folder of the repository. Each file         |
+|           | -16 | includes an updated header with author. Each       |
+|           |     | entity has a name, inputs, and outputs that match  |
+|           |     | provided/designed schematics. Variables meet the   |
+|           |     | naming conventions. There are no extraneous        |
+|           |     | comments or code.                                  |
++———–+—–+—————————————————-+
+| <strong>Acc     | &gt; 9 | All required files are included in the repository. |
+| eptable</strong> | -12 | Each entity has a name that matches the            |
+|           |     | provided/designed schematics. Variables meet the   |
+|           |     | naming conventions.                                |
++———–+—–+—————————————————-+
+| <strong>Unacc   | &gt;   | Files were not included. Header was not updated.   |
+| eptable</strong> | 0-8 | Extraneous comments exist. Variables do not meet   |
+|           |     | naming conventions. No helpful comments.           |
++———–+—–+—————————————————-+</p>
+<ul class="simple">
+<li><p>sevenSegDecoder.vhd, sevenSegDecoder_tb.vhd, and top_basys3.vhd
+included in <strong>code</strong> folder o Fill out headers as appropriate o
+Remove extraneous code and comments</p></li>
+<li><p>Basys3_Master.xdc file included in <strong>code</strong> folder</p></li>
+<li><p>Bitstream (.bit) file used for hardware demo in repo (likely at
+Lab2\Lab2.runs\impl_1\top_basys3.bit)</p></li>
+</ul>
+</section>
+</section>
+<section id="pts-git-usage">
+<h2><strong>(5 PTS) GIT USAGE</strong><a class="headerlink" href="#pts-git-usage" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Commit messages begin with “Lab2 - ” to easily distinguish between
+course projects (2.5 pts)</p></li>
+<li><p>Repo file structure makes sense and is easy to navigate (2.5 pts)</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="lab2Prelab.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab 2 Prelab - Seven Segment Display Decoder</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DFEC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
