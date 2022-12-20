@@ -11,7 +11,11 @@ parts:
     chapters:
       - file: ICE/ICE1
       - file: ICE/ICE3
+      - file: ICE/ICE2
   - caption: Labs
     chapters:
       - file: lab/lab2Prelab
       - file: lab/lab2
+  - caption: Appendix
+    chapters:
+      - file: appendix/vivado-project.md
