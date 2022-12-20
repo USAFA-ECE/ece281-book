@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lab 2 Prelab - Seven Segment Display Decoder" href="../lab/lab2Prelab.html" />
+    <link rel="next" title="ICE 2: Half-Adder" href="ICE2.html" />
     <link rel="prev" title="ICE 1: OR Gates" href="ICE1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -144,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    ICE 3: Top Level Design
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ICE2.html">
+   ICE 2: Half-Adder
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -159,6 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../lab/lab2.html">
    Lab 2 - Seven Segment Display Decoder
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/vivado-project.html">
+   Manually Setup a Vivado Project
   </a>
  </li>
 </ul>
@@ -783,7 +800,7 @@ the same two outputs. This has been given to you. Note that we went
 ahead and used a logic vector of size three for the input switches, and
 a logic vector of size two for the output LEDs. We could have given each
 input and output its own name if desired.</p>
-<p><img alt="Entity for top_basys3 implementing a full adder" src="../_images/ice3_image4.jpg" /></p>
+<p><img alt="Entity for top_basys3 implementing a full adder" src="ICE/img/ice3_image4.jpg" /></p>
 <p><em>Figure 2– Entity for top_basys3 implementing a full-adder</em></p>
 </section>
 <section id="modify-the-half-adder-architecture">
@@ -851,14 +868,14 @@ will bring in components and wire them together. If you aren’t sure what
 signals you may need to create, the general rule is to create a signal
 for any wire not connected directly to an input or an output. See Figure
 3 above for some ideas on what to create.</p>
-<p><img alt="Component and signal declarations" src="../_images/ice3_image6.jpg" /></p>
+<p><img alt="Component and signal declarations" src="ICE/img/ice3_image6.jpg" /></p>
 <p><em>Figure 4 – Component and signal declarations</em></p>
 <p>You will then need to create two instantiations of the half adder wire
 them up, and add the rest of the logic you need to fully implement the
 design in Figure 3. Notice that we have TWO instantiations of halfAdder
 and we have given them unique names (<code class="docutils literal notranslate"><span class="pre">halfadder1_inst</span></code> and
 <code class="docutils literal notranslate"><span class="pre">halfAdder2_inst</span></code>).</p>
-<p><img alt="Half adder instantiations" src="../_images/ice3_image7.jpg" /></p>
+<p><img alt="Half adder instantiations" src="ICE/img/ice3_image7.jpg" /></p>
 <p><em>Figure 5 – Half adder instantiations</em></p>
 </section>
 </section>
@@ -882,7 +899,7 @@ Figure 6 below includes an example for the first line. Note that we were
 able to simulate all three bits of the input with a single command.
 Create all additional test cases you will need. How many test cases will
 you need?</p>
-<p><img alt="Example test case" src="../_images/ice3_image8.jpg" /></p>
+<p><img alt="Example test case" src="ICE/img/ice3_image8.jpg" /></p>
 <p><em>Figure 6 – Example test case</em></p>
 </section>
 <section id="check-syntax-and-simulate-your-project">
@@ -903,7 +920,7 @@ physical pin locations on your BASYS 3 board. For example, <code class="docutils
 connected to pin <code class="docutils literal notranslate"><span class="pre">V17</span></code>. Find (use CTRL+f) <code class="docutils literal notranslate"><span class="pre">V17</span></code> in the constraints
 file. You should see it first on line 12 as shown below.</p></li>
 </ol>
-<p><img alt="Constrain file pin V17" src="../_images/ice3_image9.jpg" /></p>
+<p><img alt="Constrain file pin V17" src="ICE/img/ice3_image9.jpg" /></p>
 <ol class="simple">
 <li><p>Unlike our pervious exercise, you will not need to replace the
 highlighted portions. We made our entity inputs and outputs reflect
@@ -967,10 +984,10 @@ led{0}, and led{1}.</p></li>
             <p class="prev-next-title">ICE 1: OR Gates</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../lab/lab2Prelab.html" title="next page">
+    <a class='right-next' id="next-link" href="ICE2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 2 Prelab - Seven Segment Display Decoder</p>
+        <p class="prev-next-title">ICE 2: Half-Adder</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

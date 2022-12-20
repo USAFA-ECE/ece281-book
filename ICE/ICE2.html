@@ -1,0 +1,1460 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ICE 2: Half-Adder &#8212; ECE 281</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 2 Prelab - Seven Segment Display Decoder" href="../lab/lab2Prelab.html" />
+    <link rel="prev" title="ICE 3: Top Level Design" href="ICE3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ECE 281</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Info
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercise
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ICE1.html">
+   ICE 1: OR Gates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ICE3.html">
+   ICE 3: Top Level Design
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ICE 2: Half-Adder
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab/lab2Prelab.html">
+   Lab 2 Prelab - Seven Segment Display Decoder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab/lab2.html">
+   Lab 2 - Seven Segment Display Decoder
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/vivado-project.html">
+   Manually Setup a Vivado Project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/usafa-ece/ece281-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2FICE/ICE2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/ICE/ICE2.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#end-state">
+     End state
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vhdl">
+     VHDL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#half-adder">
+     Half-adder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#design-flow">
+     Design flow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-vivado-project">
+   Setup Vivado Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-project-with-git">
+     Clone project with Git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-project-with-vivado">
+     Build the project with Vivado
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-project-in-vivado">
+     View project in Vivado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-your-half-adder-implementation">
+   Edit your half-adder implementation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#understand-file">
+     Understand file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-header">
+       File header
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#included-libraries">
+       Included libraries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modify-half-adder-entity">
+     Modify half-adder entity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modify-the-half-adder-architecture">
+     Modify the half-adder architecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-design">
+   Test design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-your-half-adder-testbench">
+     Edit your half-adder testbench
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-syntax">
+     Check syntax
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-project">
+   Test project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulate-project">
+     Simulate project
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remember-wave-configuration">
+       Remember wave configuration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rtl-and-technology-schematics">
+     RTL and Technology Schematics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#view-rtl-schematic">
+       View RTL Schematic
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#technology-schematic">
+       Technology Schematic
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implement-design">
+   Implement design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-the-constraints-file">
+     Edit the constraints file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implement-and-generate-bitstream">
+     Implement and generate bitstream
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-onto-fpga-and-test">
+   Download onto FPGA and test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up">
+   Wrapping up
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>ICE 2: Half-Adder</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#end-state">
+     End state
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vhdl">
+     VHDL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#half-adder">
+     Half-adder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#design-flow">
+     Design flow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-vivado-project">
+   Setup Vivado Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-project-with-git">
+     Clone project with Git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-project-with-vivado">
+     Build the project with Vivado
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-project-in-vivado">
+     View project in Vivado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-your-half-adder-implementation">
+   Edit your half-adder implementation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#understand-file">
+     Understand file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-header">
+       File header
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#included-libraries">
+       Included libraries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modify-half-adder-entity">
+     Modify half-adder entity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modify-the-half-adder-architecture">
+     Modify the half-adder architecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-design">
+   Test design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-your-half-adder-testbench">
+     Edit your half-adder testbench
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-syntax">
+     Check syntax
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-project">
+   Test project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulate-project">
+     Simulate project
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remember-wave-configuration">
+       Remember wave configuration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rtl-and-technology-schematics">
+     RTL and Technology Schematics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#view-rtl-schematic">
+       View RTL Schematic
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#technology-schematic">
+       Technology Schematic
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implement-design">
+   Implement design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-the-constraints-file">
+     Edit the constraints file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implement-and-generate-bitstream">
+     Implement and generate bitstream
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-onto-fpga-and-test">
+   Download onto FPGA and test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up">
+   Wrapping up
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-2-half-adder">
+<h1>ICE 2: Half-Adder<a class="headerlink" href="#ice-2-half-adder" title="Permalink to this headline">#</a></h1>
+<p>Half-Adder in VHDL <strong>Due Lesson 8</strong></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>So far in this course you have been learning how to design basic
+combinational logic circuits. However, most logic hardware prototyping
+is done using a hardware description language such as VHDL. VHDL allows
+you to boil the essence of a hardware schematic down to a few lines of
+code. In this in-class exercise you will be implementing a half-adder
+logic design in VHDL.</p>
+<section id="objectives">
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h3>
+<p>The objectives of this in-class exercise are for you to:</p>
+<ul class="simple">
+<li><p>Implement and test a simple logic design (half-adder) using VDHL</p></li>
+<li><p>Gain more experience using tools (Git, Xilinx Vivado)</p></li>
+</ul>
+</section>
+<section id="end-state">
+<h3>End state<a class="headerlink" href="#end-state" title="Permalink to this headline">#</a></h3>
+<p>You will provide a live demo to your instructor or provide proof of
+functionality to receive credit (Due Lesson 8). You must also turn in
+the files you used through Git. Your instructor will be able to view
+your ICE2 folder through Git. The folder will contain at least the
+following:</p>
+<ol class="simple">
+<li><p>VHDL files used (half-adder implementation and testbench) in a
+<strong>code</strong> folder</p></li>
+<li><p>Constraints (.xdc) file in a <strong>code</strong> folder</p></li>
+<li><p>.bit file used to program board</p></li>
+</ol>
+</section>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<section id="vhdl">
+<h3>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">#</a></h3>
+<p>VHDL, which stands for Very High Speed Integrated Circuits (VHSIC)
+Hardware Description Language, is a language that allows you to
+<strong>describe hardware</strong>. It was developed in 1981 by the DoD and remains
+one of the two most common HDLs (the other being Verilog).</p>
+<p>It is important to note that <strong>VHDL is not a programming language</strong>.
+Again, you use it to describe hardware. Thus, it is important to become
+familiar with common constructs, or idioms, that allow you to build the
+desired hardware.</p>
+<p>Finally, since you are describing hardware, you should be aware that
+<strong>most statements can be considered concurrent rather than happening sequentially</strong>.
+The exception to this is some statements within a
+process. More details on VHDL will be provided later in this in-class
+exercise and throughout the course.</p>
+</section>
+<section id="half-adder">
+<h3>Half-adder<a class="headerlink" href="#half-adder" title="Permalink to this headline">#</a></h3>
+<p>A half-adder takes two single-bit inputs and outputs their sum. You can
+read more about half-adders in Section 10.1 of your textbook. Figure 1 shows the schematic symbol. The logic equations and truth table for a half-adder are shown below.</p>
+<p><span class="math notranslate nohighlight">\(S\)</span> stands for “sum”, <span class="math notranslate nohighlight">\(C_{out}\)</span> stands for “Carry out”. The “circled plus sign” represents XOR.</p>
+<p><img alt="Half-adder schematic" src="../_images/ice2_halfadder.png" /></p>
+<p><em>Figure 1: Half-adder schematic symbol</em></p>
+<div class="math notranslate nohighlight">
+\[
+S = A \oplus B
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C_{out} = AB
+\]</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(A\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(B\)</span></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(C_{out}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(S\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="design-flow">
+<h3>Design flow<a class="headerlink" href="#design-flow" title="Permalink to this headline">#</a></h3>
+<p>Hardware development is an exercise in moving between layers of <a class="reference external" href="https://www.pcmag.com/encyclopedia/term/level-of-abstraction">abstraction</a>. This means that we will start with a high level of abstraction - i.e. the problem statement of add two bits - and work toward a lower level of abstraction; in this case, how the circuit is actually implemented in hardware.</p>
+<p>Vivado will help us describe, simulate, test, and implement the design.
+The input to Vivado is VHDL. Ultimately, we will use Vivado to emulate the circuit on an FPGA (Field Programmable Gate Array).
+An FPGA can be programmed to be many circuits.</p>
+<p><em>Design flow in Vivado</em></p>
+<ol class="simple">
+<li><p>Setup project</p></li>
+<li><p>Create design</p></li>
+<li><p>Test design</p></li>
+<li><p>Implement design</p></li>
+<li><p>Download onto FPGA</p></li>
+</ol>
+</section>
+</section>
+<section id="setup-vivado-project">
+<h2>Setup Vivado Project<a class="headerlink" href="#setup-vivado-project" title="Permalink to this headline">#</a></h2>
+<p>You can create a Viavado project from scratch. This involves telling the suite about three types of files:</p>
+<ul class="simple">
+<li><p>Design sources (<code class="docutils literal notranslate"><span class="pre">.vhd</span></code>)</p></li>
+<li><p>Constraints (<code class="docutils literal notranslate"><span class="pre">.xdc</span></code>)</p></li>
+<li><p>Simulation Sources (<code class="docutils literal notranslate"><span class="pre">.vhd</span></code>)</p></li>
+</ul>
+<p>You can also add files to an existing project. For instructions on how to do this, see <a class="reference internal" href="../appendix/vivado-project.html"><span class="doc std std-doc">Manually Setup a Vivado Project</span></a></p>
+<p>But <strong>good news</strong> 🥳🎉 we will be using Git to clone an already created project.
+We will then tell Viavdo to setup the project for us using a <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> file.</p>
+<section id="clone-project-with-git">
+<h3>Clone project with Git<a class="headerlink" href="#clone-project-with-git" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="build-the-project-with-vivado">
+<h3>Build the project with Vivado<a class="headerlink" href="#build-the-project-with-vivado" title="Permalink to this headline">#</a></h3>
+<p>Open up the cloned folder in a PowerShell terminal.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">ls</span></code> to view the files. You should see a file called <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code>.
+You should also see a file called <code class="docutils literal notranslate"><span class="pre">build.bat</span></code>.</p>
+<p>Because we are cyber security conscious, we <em>always</em> read <code class="docutils literal notranslate"><span class="pre">.bat</span></code> files before running them.</p>
+<p>Make PowerShell print out the contents:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">type </span><span class="n">build</span><span class="p">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+<p>What does it look like the one-liner is doing?</p>
+<p>If it looks good to you, go ahead and execute the file:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">build</span><span class="p">.</span><span class="n">bat</span>
+</pre></div>
+</div>
+<p>Now run <code class="docutils literal notranslate"><span class="pre">ls</span></code> again and you should see a bunch of newly created files. Vivado build them for us!</p>
+<p>You can open the project in Vivado by opening the <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file.
+If you are having trouble locating the file, you can open the explorer to the directory your terminal is already in.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># you need the . to make it open in this dir</span>
+<span class="n">explorer</span><span class="p">.</span><span class="n">exe</span> <span class="p">.</span>
+</pre></div>
+</div>
+</section>
+<section id="view-project-in-vivado">
+<h3>View project in Vivado<a class="headerlink" href="#view-project-in-vivado" title="Permalink to this headline">#</a></h3>
+<p>Now that our project is open in Vivado, let’s explore it.</p>
+<p>We said earlier that we have</p>
+<ul class="simple">
+<li><p>Design sources (<code class="docutils literal notranslate"><span class="pre">.vhd</span></code>)</p></li>
+<li><p>Constraints (<code class="docutils literal notranslate"><span class="pre">.xdc</span></code>)</p></li>
+<li><p>Simulation Sources (<code class="docutils literal notranslate"><span class="pre">.vhd</span></code>)</p></li>
+</ul>
+<p>These were all in the <code class="docutils literal notranslate"><span class="pre">src/</span></code> folder of our cloned repo, but the <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> told Vivado which was which.
+You can now see them assigned appropriately under “Sources”</p>
+<p><img alt="source files in Vivado" src="../_images/ice2_vivado_sources.png" />
+<em>Vivado sources</em></p>
+<p><strong>Design sources</strong> describe the architecture and behavior of our hardware.</p>
+<p><strong>Constraints</strong> map the signals and ports we define to actual pins on our Basys board</p>
+<p><strong>Simulation sources</strong> include test bench files that are used to test our design before we put it on hardware.</p>
+</section>
+</section>
+<section id="edit-your-half-adder-implementation">
+<h2>Edit your half-adder implementation<a class="headerlink" href="#edit-your-half-adder-implementation" title="Permalink to this headline">#</a></h2>
+<p>In Vivado open <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code>.</p>
+<section id="understand-file">
+<h3>Understand file<a class="headerlink" href="#understand-file" title="Permalink to this headline">#</a></h3>
+<section id="file-header">
+<h4>File header<a class="headerlink" href="#file-header" title="Permalink to this headline">#</a></h4>
+<p>The first thing you will notice is that the file contains a block of
+header comments. <strong>Comments</strong> in VHDL are preceded by <code class="docutils literal notranslate"><span class="pre">--</span></code> for
+single-line comments, and are colored green or gray by some text editors
+(not all editors will do syntax coloring).</p>
+<p>Filename, author(s), etc. need to be filled out correctly. Edit as
+applicable.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| FILENAME      : halfAdder.vhd</span><span class="w"></span>
+<span class="c1">--| AUTHOR(S)     : Capt Warner</span><span class="w"></span>
+<span class="c1">--| CREATED       : 01/17/2017</span><span class="w"></span>
+<span class="c1">--| DESCRIPTION   : This file implements a one bit half adder.</span><span class="w"></span>
+<span class="c1">--|</span><span class="w"></span>
+<span class="c1">--| DOCUMENTATION : None</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The next section of the header shows <strong>required files</strong>.
+This file has no specific dependencies.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| REQUIRED FILES :</span><span class="w"></span>
+<span class="c1">--|</span><span class="w"></span>
+<span class="c1">--|    Libraries : ieee</span><span class="w"></span>
+<span class="c1">--|    Packages  : std_logic_1164, numeric_std, unisim</span><span class="w"></span>
+<span class="c1">--|    Files     : NONE</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The final section of the header shows naming conventions to use
+throughout this course. The purpose of the naming conventions is
+primarily to make debugging easier and to make it obvious what your
+signals are used for. For simple designs this is not as important, but
+it becomes critical when you develop more complex designs. Thus, we
+develop good habits now.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| NAMING CONVENTIONS :</span><span class="w"></span>
+<span class="c1">--|</span><span class="w"></span>
+<span class="c1">--|    xb_&lt;port name&gt;           = off-chip bidirectional port ( _pads file )</span><span class="w"></span>
+<span class="c1">--|    xi_&lt;port name&gt;           = off-chip input port         ( _pads file )</span><span class="w"></span>
+<span class="c1">--|    xo_&lt;port name&gt;           = off-chip output port        ( _pads file )</span><span class="w"></span>
+<span class="c1">--|    b_&lt;port name&gt;            = on-chip bidirectional port</span><span class="w"></span>
+<span class="c1">--|    i_&lt;port name&gt;            = on-chip input port</span><span class="w"></span>
+<span class="c1">--|    o_&lt;port name&gt;            = on-chip output port</span><span class="w"></span>
+<span class="c1">--|    c_&lt;signal name&gt;          = combinatorial signal</span><span class="w"></span>
+<span class="c1">--|    f_&lt;signal name&gt;          = synchronous signal</span><span class="w"></span>
+<span class="c1">--|    ff_&lt;signal name&gt;         = pipeline stage (ff_, fff_, etc.)</span><span class="w"></span>
+<span class="c1">--|    &lt;signal name&gt;_n          = active low signal</span><span class="w"></span>
+<span class="c1">--|    w_&lt;signal name&gt;          = top level wiring signal</span><span class="w"></span>
+<span class="c1">--|    g_&lt;generic name&gt;         = generic</span><span class="w"></span>
+<span class="c1">--|    k_&lt;constant name&gt;        = constant</span><span class="w"></span>
+<span class="c1">--|    v_&lt;variable name&gt;        = variable</span><span class="w"></span>
+<span class="c1">--|    sm_&lt;state machine type&gt;  = state machine type definition</span><span class="w"></span>
+<span class="c1">--|    s_&lt;signal name&gt;          = state name</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="included-libraries">
+<h4>Included libraries<a class="headerlink" href="#included-libraries" title="Permalink to this headline">#</a></h4>
+<p>The next section shows a few libraries that we are adding for use. These
+statements are very similar to importing modules or includes in other
+languages.</p>
+<p>The ieee std_logic library will be our 🍞 and 🧈</p>
+<blockquote>
+<div><p>Delete the unisim library since we are not using them currently.</p>
+</div></blockquote>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">library</span><span class="w"> </span><span class="nn">ieee</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">library</span><span class="w"> </span><span class="nn">unisim</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">UNISIM.Vcomponents.</span><span class="k">ALL</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="modify-half-adder-entity">
+<h3>Modify half-adder entity<a class="headerlink" href="#modify-half-adder-entity" title="Permalink to this headline">#</a></h3>
+<p>Remember the schematic of the half-adder we are trying to create:</p>
+<p><img alt="Half-adder schematic" src="../_images/ice2_halfadder.png" /></p>
+<p>This conceptual device has no way for us to interact with it! However, if we go one level of abstraction lower, we can say:</p>
+<ul class="simple">
+<li><p>We will map switches to inputs</p></li>
+<li><p>We will map LEDs to outputs</p></li>
+</ul>
+<p>Now we can redraw our schematic as a block diagram:</p>
+<p><img alt="" src="../_images/ice2_image13.jpg" /></p>
+<p>In VHDL this is called an <strong>entity</strong>.</p>
+<p>An <strong>entity</strong> in VHDL is a declaration of a hardware module’s input and
+outputs. In other words, it describes the interface of a “black box”.</p>
+<p>The code comes with a partially completed entity description.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- entity name should match filename  </span><span class="w"></span>
+<span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span><span class="w"> </span>
+<span class="w">  </span><span class="k">port</span><span class="p">(</span><span class="w"></span>
+<span class="w">	</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span><span class="w"></span>
+<span class="w">	</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span>
+<span class="w">	</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span><span class="w"></span>
+<span class="w">							 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- TODO:  Carry port</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span><span class="w"></span>
+<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note, the port names are preceded by an <code class="docutils literal notranslate"><span class="pre">i_</span></code> for input and an <code class="docutils literal notranslate"><span class="pre">o_</span></code> for
+output per the naming convention in our file header.</p>
+<p>The inputs and output ports are signals described by the pattern</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">portName</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">mode</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">signalType</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Std_logic</strong> and <strong>std_logic_vector</strong> are the two most common types you
+will use. They produce logical signals of <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>, where the vector
+is more like a bus (multiple digital signals in parallel).</p>
+<blockquote>
+<div><p>Add an output for the Carry named <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code>, as directed by the TODO</p>
+</div></blockquote>
+</section>
+<section id="modify-the-half-adder-architecture">
+<h3>Modify the half-adder architecture<a class="headerlink" href="#modify-the-half-adder-architecture" title="Permalink to this headline">#</a></h3>
+<p>The architecture is the guts of an entity. It is the internal logic that
+makes it <em>do</em> something.</p>
+<p>Recall our logic equations for the half-adder are</p>
+<div class="math notranslate nohighlight">
+\[
+S = A \oplus B
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C_{out} = AB
+\]</div>
+<p>We can directly represent this in architecture with an AND and XOR gate.</p>
+<p><img alt="half-adder architecture" src="../_images/ice2_image15.jpg" /></p>
+<p>Again, we have gone to a lower level of abstraction. We are looking <em>inside</em> the black box entity that we described above.</p>
+<p>Our architecture is partially realized in the given VHDL code below:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span><span class="w"> </span>
+<span class="w">	</span><span class="c1">-- this is where you would include components declarations and signals if you needed them</span><span class="w"></span>
+<span class="w">	  </span>
+<span class="k">begin</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- this is where you would map ports for any component instantiations if you needed to</span><span class="w"></span>
+
+<span class="w">	</span><span class="c1">-- *concurrent* signal assignments</span><span class="w"></span>
+<span class="w">	</span><span class="n">o_S</span><span class="w">    </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_A</span><span class="w"> </span><span class="k">xor</span><span class="w"> </span><span class="n">i_B</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- TODO:  Carry signal assignment</span><span class="w"></span>
+<span class="w">	</span>
+<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note, the architecture is “of halfAdder” since that is the name of the
+component the architecture is for. Since this is a simple design, the
+architecture’s <em>behavior</em> can be described with only two lines of code.
+The first assignment statement is provided.</p>
+<blockquote>
+<div><p>Add the second statement required to implement <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code>.</p>
+</div></blockquote>
+<p>Participation activity 7.2.5 in your
+zyBook may be helpful if you are stuck.</p>
+<blockquote>
+<div><p>Save the file.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="test-design">
+<h2>Test design<a class="headerlink" href="#test-design" title="Permalink to this headline">#</a></h2>
+<p>At this point your testbench VHDL file <code class="docutils literal notranslate"><span class="pre">halfAdder_tb.vhd</span></code> should already
+be added. If not, go back and add it per the directions in <a class="reference internal" href="../appendix/vivado-project.html"><span class="doc std std-doc">Manually Setup a Vivado Project</span></a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Generally, your testbench files will have the same name as the component you are testing with them but with a <code class="docutils literal notranslate"><span class="pre">_tb</span></code> at the end.</p>
+</div>
+<section id="edit-your-half-adder-testbench">
+<h3>Edit your half-adder testbench<a class="headerlink" href="#edit-your-half-adder-testbench" title="Permalink to this headline">#</a></h3>
+<p>Open your testbench file in a text editor. Note the header has
+<code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> as a REQUIRED FILE.</p>
+<p>The entity in this file is the testbench itself, which is empty as shown
+below.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>It is empty because it does not need any external interfaces. Instead,
+we want to observe the signals generated by the hardware components
+<em>inside</em> the testbench. We get to peek inside the black box!</p>
+<p>These hardware unit under test (UUT) inputs will
+then be stimulated by the testbench internal architecture, which
+realizes our test signals. To do this, first we must declare what
+hardware components will be inside of our test bench:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">test_bench</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="w"> </span><span class="k">is</span><span class="w"> </span>
+<span class="w">	</span>
+<span class="w">  </span><span class="c1">-- declare the component of your top-level design unit under test (UUT)</span><span class="w"></span>
+<span class="w">  </span><span class="k">component</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="w">	</span><span class="k">port</span><span class="p">(</span><span class="w"></span>
+<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span><span class="w"></span>
+<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span>
+<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span><span class="w"></span>
+<span class="w">								 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- TODO:  Carry port</span><span class="w"></span>
+<span class="w">	</span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead	</span><span class="w"></span>
+<span class="w">  </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This syntax is almost <em>identical</em> to what you saw in the implementation
+file. The only difference is now the halfAdder is called a <em>component</em>
+instead of an <em>entity</em>. Thus, you can copy in the port information from
+your implementation file to the corresponding component in your
+testbench.</p>
+<p>Now that your halfAdder hardware is inside your testbench entity, we are
+going to declare some additional signals that correspond to the switches
+and LEDs per our previous block diagram:</p>
+<p><img alt="half-adder architecture" src="../_images/ice2_image13.jpg" /></p>
+<p>You can think of these signals as <em>wires</em> that we place inside our
+testbench box. This is partially realized in the given testbench snippet
+shown below.</p>
+<p>Since these are top level wires, we would normally
+prepend the names with <code class="docutils literal notranslate"><span class="pre">w_</span></code> instead of <code class="docutils literal notranslate"><span class="pre">i_</span></code> or <code class="docutils literal notranslate"><span class="pre">o_</span></code>, but we will
+stick with the current names for this exercise. The code also sets
+an initial value of ‘0’.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">-- declare signals needed to stimulate the UUT inputs</span><span class="w"></span>
+<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">i_sw1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">-- TODO:  sw0 signal</span><span class="w"></span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c1">-- also need signals for the outputs of the UUT</span><span class="w"></span>
+<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">o_led1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">-- TODO:  led0 signal</span><span class="w"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Declare the two missing signals.</p>
+</div></blockquote>
+<p>So, now we have a testbench box with a half-adder component and four
+wires in it. <em>Nothing is connected yet</em>. To actually “wire up the
+hardware”, we need to map the ports. This is partially realized in the
+code snippet below.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">begin</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- PORT MAPS ----------------------------------------</span><span class="w"></span>
+
+<span class="w">	</span><span class="c1">-- map ports for any component instances (port mapping is like wiring hardware)</span><span class="w"></span>
+<span class="w">	</span><span class="n">halfAdder_inst</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span><span class="w"> </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw1</span><span class="p">,</span><span class="w"> </span><span class="c1">-- notice comma (not a semicolon)</span><span class="w"></span>
+<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw0</span><span class="p">,</span><span class="w"></span>
+<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o_led0</span><span class="w"> </span><span class="c1">-- no comma on LAST one</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- TODO:  map Cout </span><span class="w"></span>
+<span class="w">	</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Wire up the <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code> signal to <code class="docutils literal notranslate"><span class="pre">o_led1</span></code>.</p>
+</div></blockquote>
+<p>Now all that is left is to assign values to the test input wires (<code class="docutils literal notranslate"><span class="pre">i_sw0</span></code>
+and <code class="docutils literal notranslate"><span class="pre">i_sw1</span></code>) inside the <strong>test plan process</strong>:</p>
+<p>The <strong>test plan process</strong> is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Test Plan Process --------------------------------</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- Implement the test plan here.  Body of process is continuously from time = 0  </span><span class="w"></span>
+<span class="w">	</span><span class="n">test_process</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span><span class="w"> </span>
+<span class="w">	</span><span class="k">begin</span><span class="w"></span>
+<span class="w">	</span>
+<span class="w">		</span><span class="n">i_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">i_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- TODO:  rest of test plan</span><span class="w"></span>
+<span class="w">		</span>
+<span class="w">		</span><span class="k">wait</span><span class="p">;</span><span class="w"> </span><span class="c1">-- wait forever</span><span class="w"></span>
+<span class="w">	</span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span><span class="w">	</span>
+<span class="w">	</span><span class="c1">-----------------------------------------------------	</span><span class="w"></span>
+</pre></div>
+</div>
+<p>How many test cases do we need?</p>
+<blockquote>
+<div><p>Implement the rest of the test plan</p>
+</div></blockquote>
+<blockquote>
+<div><p>Save the file.</p>
+</div></blockquote>
+</section>
+<section id="check-syntax">
+<h3>Check syntax<a class="headerlink" href="#check-syntax" title="Permalink to this headline">#</a></h3>
+<p>While you edit your code in Vivado, it checks the syntax. If
+everything is good you should see a green box in the upper right-hand
+corner of your editor window. If you hover your mouse over the green box
+you will see that there are 0 errors. Otherwise, red marks along the
+right-hand margin indicate locations of syntax errors.</p>
+<p><img alt="vivado syntax check" src="../_images/ice2_image22.jpg" /></p>
+</section>
+</section>
+<section id="test-project">
+<h2>Test project<a class="headerlink" href="#test-project" title="Permalink to this headline">#</a></h2>
+<p>Testing our project involves simulation and viewing schematics.</p>
+<section id="simulate-project">
+<h3>Simulate project<a class="headerlink" href="#simulate-project" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>In the Flow Navigator (the left panel), <strong>right</strong> click on “Run
+Simulation” and select “Simulation Settings”</p></li>
+<li><p>Click on the <strong>Simulation</strong> tab and change the runtime to <strong>50 ns</strong>
+or an otherwise appropriate length based on
+your test plan process. Click OK.</p></li>
+</ol>
+<p><img alt="simulation runtime" src="../_images/ice2_image23.jpg" /></p>
+<ol>
+<li><p><strong>Left</strong> click on <strong>Run Simulation</strong> and then click on <strong>Run
+Behavioral Simulation</strong></p>
+<p>a.  You can ignore/cancel any firewall access popups</p>
+</li>
+<li><p>If for some reason a waveform window did not pop up, check the
+Messages and Log tabs near the bottom of your window. Look for error
+messages.</p></li>
+<li><p>Once the waveform window is in view, click on the Zoom Fit icon
+or adjust the zoom window as needed to see the time periods of interest
+<img alt="zoom fit" src="../_images/ice2_image24.jpg" /></p>
+<p>a.  Verify that the waveforms show your design is working correctly        (inputs and outputs should match truth table)</p>
+</li>
+<li><p>Try changing the outputs to different colors by right clicking on
+the signals and selecting <strong>Signal Color</strong>.</p></li>
+<li><p>Rename signals to show what they correspond to (e.g., A) and define
+virtual busses for your inputs and outputs as shown in the figure
+below. To define a virtual bus, simply highlight multiple signals
+and right click. Then, select “<strong>Virtual Bus</strong>” and name it as
+desired.</p></li>
+</ol>
+<p><img alt="virtual bus" src="../_images/ice2_image25.jpg" /></p>
+<p>Note, the wave editor also allows you to view data in different formats.
+Right click on a number in the “Value” column and select <strong>Radix</strong>.</p>
+<section id="remember-wave-configuration">
+<h4>Remember wave configuration<a class="headerlink" href="#remember-wave-configuration" title="Permalink to this headline">#</a></h4>
+<!---
+TODO: Tell where to save .wcfg so git can use it
+--->
+<p>Since you put in all of that work to have a nice wave form, you can
+optionally save your wave configuration file (File –&gt; Save Wave
+Configuration or simply click on the Save icon in the editor).
+Saving it to the main project folder is fine. Click OK to add it to your project.
+Now future runs of your simulation will use the same settings!</p>
+</section>
+</section>
+<section id="rtl-and-technology-schematics">
+<h3>RTL and Technology Schematics<a class="headerlink" href="#rtl-and-technology-schematics" title="Permalink to this headline">#</a></h3>
+<section id="view-rtl-schematic">
+<h4>View RTL Schematic<a class="headerlink" href="#view-rtl-schematic" title="Permalink to this headline">#</a></h4>
+<p>A Register Transfer Level (RTL) schematic is a gate-level schematic that
+shows you how your VHDL code is initially being interpreted. It is
+important to verify that the circuit matches what you expect. Note, this
+schematic is not optimized for your hardware chip.</p>
+<p>In the Flow Navigator (right panel), click on the RTL Analysis
+<strong>Schematic</strong>. Click OK to continue.</p>
+<p><img alt="rtl analysis" src="../_images/ice2_image26.jpg" /></p>
+</section>
+<section id="technology-schematic">
+<h4>Technology Schematic<a class="headerlink" href="#technology-schematic" title="Permalink to this headline">#</a></h4>
+<p>Now that you have verified that your design is functionally correct, it
+is time to verify that the synthesized hardware is correct by viewing
+the technology schematic. This schematic, unlike the RTL one, is
+optimized for your specific hardware platform (i.e., it shows your
+design in terms of FPGA logic elements).</p>
+<p>Click on “<strong>Run Synthesis</strong>” in the Flow Navigator – this is going to
+take some time (a few minutes) – while the synthesis is running, a
+green arrow will appear to the left of Run Synthesis (and a message at
+the upper right) and the options will be disabled.</p>
+<p>After the process completes, click on <strong>Schematic</strong> to view the
+optimized schematic for your FPGA chip as shown in the picture provided
+on the next page.</p>
+<p><img alt="synthesis" src="../_images/ice2_image27.jpg" /></p>
+<p>Notice that each port is connected to a buffer and that some of your
+logic (i.e., the XOR) is realized using a lookup table (LUT). If you
+click on any of the two LUTs you should see, you also can view their
+associated truth table by clicking on the “Truth Table” tab at the
+bottom of the “Cell Properties” sub-window.</p>
+<p>Notice an equation is also given for the output.</p>
+<p><img alt="" src="../_images/ice2_image28.jpg" /></p>
+<p>Do the truth tables for the LUTs make sense for your design?</p>
+<p>If all of your testing succeeded…</p>
+<blockquote>
+<div><p>stage and commit your files with git</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="implement-design">
+<h2>Implement design<a class="headerlink" href="#implement-design" title="Permalink to this headline">#</a></h2>
+<section id="edit-the-constraints-file">
+<h3>Edit the constraints file<a class="headerlink" href="#edit-the-constraints-file" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Click on the Project Manager in the Flow Navigator</p></li>
+<li><p>Double click on the Basys3_Master.xdc file in the Sources sub-window
+to open it.</p></li>
+<li><p>Get your BASYS 3 board out and look at the text surrounding the
+switches and LEDs. Note, the labels underneath the switches are the
+physical pin locations on your BASYS 3 board. For example, <code class="docutils literal notranslate"><span class="pre">SW0</span></code> is
+connected to pin <code class="docutils literal notranslate"><span class="pre">V17</span></code>. Find (use CTRL+f) <code class="docutils literal notranslate"><span class="pre">V17</span></code> in the constraints
+file. You should see it first on line 12 as shown below.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]					</span>
+	<span class="c1">#set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Replace the <code class="docutils literal notranslate"><span class="pre">sw[0]</span></code> with the name of the node (signal) that should connect to the switch.
+In this case, we want to connect <code class="docutils literal notranslate"><span class="pre">i_B</span></code> from our halfAdder entity to this
+switch. In the future we will utilize the <code class="docutils literal notranslate"><span class="pre">sw[0]</span></code> naming convention
+so changing the xdc file may not be required.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node names correspond to the signal names you defined
+for your half-adder interface in halfAdder.vhd and NOT the
+signal names in your testbench.</p>
+</div>
+<ol class="simple">
+<li><p>Uncomment the two lines by removing the ‘#’ signs. The final result
+should look similar to below:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Switches</span>
+<span class="n">set_property</span> <span class="n">PACKAGE_PIN</span> <span class="n">V17</span> <span class="p">[</span><span class="n">get_ports</span> <span class="p">{</span><span class="n">i_B</span><span class="p">}]</span>					
+	<span class="n">set_property</span> <span class="n">IOSTANDARD</span> <span class="n">LVCMOS33</span> <span class="p">[</span><span class="n">get_ports</span> <span class="p">{</span><span class="n">i_B</span><span class="p">}]</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Repeat steps 3-5 to connect <code class="docutils literal notranslate"><span class="pre">sw[1]</span></code> to <code class="docutils literal notranslate"><span class="pre">i_A</span></code></p></li>
+<li><p>Repeat steps 3-5 to connect <code class="docutils literal notranslate"><span class="pre">led[0]</span></code> to <code class="docutils literal notranslate"><span class="pre">o_S</span></code></p></li>
+<li><p>Repeat steps 3-5 to connect <code class="docutils literal notranslate"><span class="pre">led[1]</span></code> to <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code></p></li>
+<li><p>Save the constraints file (CTRL+s)</p></li>
+</ol>
+</section>
+<section id="implement-and-generate-bitstream">
+<h3>Implement and generate bitstream<a class="headerlink" href="#implement-and-generate-bitstream" title="Permalink to this headline">#</a></h3>
+<p>In the Flow Navigator, click on <strong>Generate Bitstream</strong></p>
+<ul class="simple">
+<li><p>Click <strong>YES</strong> to run Synthesis and Implementation as required and then <strong>OK</strong> to start the job</p></li>
+<li><p>The upper right-hand of the Vivado window will show a quick view of the status</p></li>
+</ul>
+<p><img alt="running synth_design" src="../_images/ice2_image31.jpg" /></p>
+<p>You should get a window reporting successful Bitstream Generation.</p>
+</section>
+</section>
+<section id="download-onto-fpga-and-test">
+<h2>Download onto FPGA and test<a class="headerlink" href="#download-onto-fpga-and-test" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Plug in your BASYS 3 board and turn it on.</p></li>
+<li><p>Open the Hardware Manager (bottom of Flow Navigator)</p></li>
+<li><p>Click on the <strong>Open target</strong> link and then click on <strong>Auto Connect</strong></p></li>
+</ol>
+<p><img alt="hardware manager" src="../_images/ice2_image32.jpg" /></p>
+<ol class="simple">
+<li><p>Click on <strong>Program device</strong></p></li>
+</ol>
+<p><img alt="program device" src="../_images/ice2_image33.jpg" /></p>
+<ol class="simple">
+<li><p>By default the Bitstream (<code class="docutils literal notranslate"><span class="pre">.bit</span></code>) file that you last created will be selected for programming. Click <strong>Program</strong></p></li>
+<li><p>After a successful program, test your design by flipping switches and verifying that the LED outputs are correct.</p></li>
+<li><p>If your hardware works correctly, demo it to an instructor.</p></li>
+</ol>
+<p>Alternatively, you may document your functionality by taking a short
+video or a series of pictures. Include the documentation in your
+README (a link is fine for a video).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your FPG will not maintain its programming after it loses power.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Instead of opening your project for programming in the future,
+you can directly open the Hardware Manager from the main Vivado
+menu. Simply select the correct <code class="docutils literal notranslate"><span class="pre">.bit</span></code> file.</p>
+</div>
+<blockquote>
+<div><p>Add a Documentation statement to your README. The documentation <em>must</em> take the following form. Emphasis on the <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Documentation</span></code> because we use a regex to check that it exists.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Documentation</span>
+
+your statement here
+</pre></div>
+</div>
+</div></blockquote>
+<p>Then</p>
+<blockquote>
+<div><p>Commit your README changes along with your <code class="docutils literal notranslate"><span class="pre">.bit</span></code> file.</p>
+</div></blockquote>
+</section>
+<section id="wrapping-up">
+<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Double check that you have everything <strong>committed</strong> to your git repo.</p></li>
+<li><p>Then <strong>push</strong> your changes to your repo.</p></li>
+<li><p>Make sure all your work appears on GitHub as you expect</p></li>
+</ol>
+<p>Congratulations, you have completed In Class Exercise 2!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ICE"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ICE3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">ICE 3: Top Level Design</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../lab/lab2Prelab.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 2 Prelab - Seven Segment Display Decoder</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By DFEC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
