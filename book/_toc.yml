@@ -10,8 +10,8 @@ parts:
   - caption: In Class Exercise
     chapters:
       - file: ICE/ICE1
-      - file: ICE/ICE3
       - file: ICE/ICE2
+      - file: ICE/ICE3
   - caption: Labs
     chapters:
       - file: lab/lab2Prelab
