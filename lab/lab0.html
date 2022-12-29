@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Manually Setup a Vivado Project &#8212; ECE 281</title>
+    <title>Lab 0: Install Vivado &#8212; ECE 281</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Lab 2 - Seven Segment Display Decoder" href="../lab/lab2.html" />
+    <link rel="next" title="Lab 2 Prelab - Seven Segment Display Decoder" href="lab2Prelab.html" />
+    <link rel="prev" title="ICE 3: Top Level Design" href="../ICE/ICE3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -157,19 +158,19 @@ const thebe_selector_output = ".output, .cell_output"
   Labs
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab0.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lab 0: Install Vivado
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab2Prelab.html">
+  <a class="reference internal" href="lab2Prelab.html">
    Lab 2 Prelab - Seven Segment Display Decoder
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lab/lab2.html">
+  <a class="reference internal" href="lab2.html">
    Lab 2 - Seven Segment Display Decoder
   </a>
  </li>
@@ -179,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
   Appendix
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/vivado-project.html">
    Manually Setup a Vivado Project
   </a>
  </li>
@@ -275,7 +276,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Fappendix/vivado-project.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Flab/lab0.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -303,7 +304,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/appendix/vivado-project.md"
+        <a href="../_sources/lab/lab0.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -363,13 +364,40 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-code-and-images-directories-and-add-files-to-them">
-   2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM
+  <a class="reference internal nav-link" href="#install-vivado">
+   Install Vivado
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-design">
-   3. CREATE DESIGN
+  <a class="reference internal nav-link" href="#setup-a-vivado-project">
+   Setup a Vivado project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-a-repository-with-git">
+     Clone a repository with git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-vivado-project">
+     Build the Vivado project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-vivado-project">
+     Test Vivado project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-fpga">
+     Program FPGA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-setup">
+   GitHub setup
   </a>
  </li>
 </ul>
@@ -381,7 +409,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Manually Setup a Vivado Project</h1>
+                <h1>Lab 0: Install Vivado</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -392,13 +420,40 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-code-and-images-directories-and-add-files-to-them">
-   2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM
+  <a class="reference internal nav-link" href="#install-vivado">
+   Install Vivado
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-design">
-   3. CREATE DESIGN
+  <a class="reference internal nav-link" href="#setup-a-vivado-project">
+   Setup a Vivado project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-a-repository-with-git">
+     Clone a repository with git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-vivado-project">
+     Build the Vivado project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-vivado-project">
+     Test Vivado project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-fpga">
+     Program FPGA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-setup">
+   GitHub setup
   </a>
  </li>
 </ul>
@@ -411,136 +466,68 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="manually-setup-a-vivado-project">
-<h1>Manually Setup a Vivado Project<a class="headerlink" href="#manually-setup-a-vivado-project" title="Permalink to this headline">#</a></h1>
-<p>At this point you should NOT have a ICE2 directory in your git
-repository. Instead, Vivado will create that directory for you when you
-create a project.</p>
-<ul class="simple">
-<li><p>If you have not already installed the board files (should have been
-done as part of Lab0), <strong>make sure Vivado is closed</strong>, and then copy
-the <strong>basys3</strong> directory from: o [Teams]{.underline}</p></li>
-<li><p>[Provided Install Directory]{.underline} to your Vivado installation
-at:</p></li>
-<li><p>C:\Xilinx\Vivado\2018.2\data\boards\board_files</p></li>
-<li><p>Launch Vivado (yes, sometimes it takes a minute) o Click
-FileProject, New o First Window</p>
-<ul>
-<li><p>Click “Next” o Second Window</p></li>
-<li><p><strong>Project Name:</strong> ICE_2</p></li>
-<li><p><strong>Location:</strong> Click the “…” and navigate to your git
-repository</p></li>
-<li><p>Leave “Create project subdirectory” checked</p></li>
-<li><p>Click “Next”</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="appendix/img/ice3_image1.jpg" />{width=”4.895138888888889in”
-height=”2.3193635170603675in”}</p>
-<ul class="simple">
-<li><p>Third Window (Project Type)  Select “RTL Project”</p>
-<ul>
-<li><p>Ensure “Do not specify sources at this time” is checked  Click
-“Next”</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="appendix/img/ice3_image2.jpg" />{width=”5.929340551181102in”
-height=”1.645138888888889in”}</p>
-<ul class="simple">
-<li><p>Fourth Window (Default Part)</p>
-<ul>
-<li><p>Click on <strong>Boards</strong></p></li>
-<li><p>Select <strong>Basys3</strong> from the “Name” drop down menu <strong>or</strong> search
-for Basys3 <img alt="" src="appendix/img/ice3_image3.png" />{width=”6.503333333333333in”
-height=”3.45in”}</p></li>
-<li><p>Click “Finish”</p></li>
-</ul>
-</li>
-</ul>
-<section id="create-code-and-images-directories-and-add-files-to-them">
-<h2>2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM<a class="headerlink" href="#create-code-and-images-directories-and-add-files-to-them" title="Permalink to this headline">#</a></h2>
-<p>Navigate to your ICE2 folder, in your git repository, in Windows
-Explorer (file manager) and download/extract the following files from
-Teams (Class Materials/ICEs/ICE02):</p>
-<ul class="simple">
-<li><p>A <strong>code</strong> directory with the following given files</p>
-<ul>
-<li><p><strong>halfAdder.vhd</strong> and <strong>halfAdder_tb.vhd</strong></p></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<div><p> In future labs, you might copy in the ECE_template.vhd and
-ECE_template_tb.vhd files instead (and then rename them)</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Constraints file (Basys3_Master.xdc)</p></li>
-</ul>
-<p><strong>Add/stage and commit your changes</strong></p>
-<ul class="simple">
-<li><p>Prepend all commit statements for ICE2 with “ICE2 – “. For
-instance, your first commit might be: o “<strong>ICE2 – created initial
-project files and README</strong>”</p></li>
-</ul>
-<p><strong>If you did not copy the provided .gitignore file to your git repo
-folder ([not]{.underline} the ICE2 folder), please do so now.</strong> This
-will force Git to ignore all files and directories other than the ones
-we specify. Alternatively, when you add files, only add the files you
-wish to commit. This is important as Vivado will create a LOT of files
-that we do not want in your repo. Alternatively, only commit files you
-specifically want. If you ever find that git won’t let you add a file,
-check to see if the .gitignore will allow it to pass.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-0-install-vivado">
+<h1>Lab 0: Install Vivado<a class="headerlink" href="#lab-0-install-vivado" title="Permalink to this headline">#</a></h1>
+<p>That’s right, it takes an entire lab to make sure Vivado is setup!</p>
+<p>This lab will have you:</p>
+<ol class="simple">
+<li><p>Install Vivado</p></li>
+<li><p>Setup a Vivado project</p></li>
+<li><p>Test our ability to squirt a bitstream to our FPGA</p></li>
+<li><p>Ensure GitHub classroom is setup</p></li>
+</ol>
+<section id="install-vivado">
+<h2>Install Vivado<a class="headerlink" href="#install-vivado" title="Permalink to this headline">#</a></h2>
+<p>Follow the instructions in <code class="docutils literal notranslate"><span class="pre">Vivado</span> <span class="pre">Installation</span> <span class="pre">Instructions.pdf</span></code> under the Teams Files tab.</p>
 </section>
-<section id="create-design">
-<h2>3. CREATE DESIGN<a class="headerlink" href="#create-design" title="Permalink to this headline">#</a></h2>
-<p>ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS)</p>
-<p>On the leftmost pane (<em>Flow Navigator</em>) of Vivado, click on <strong>Add
-Sources</strong></p>
+<section id="setup-a-vivado-project">
+<h2>Setup a Vivado project<a class="headerlink" href="#setup-a-vivado-project" title="Permalink to this headline">#</a></h2>
+<section id="clone-a-repository-with-git">
+<h3>Clone a repository with git<a class="headerlink" href="#clone-a-repository-with-git" title="Permalink to this headline">#</a></h3>
+<p>Clone <a class="reference external" href="https://github.com/USAFA-ECE/helloLed">GitHub USAFA-ECE helloLed</a></p>
+</section>
+<section id="build-the-vivado-project">
+<h3>Build the Vivado project<a class="headerlink" href="#build-the-vivado-project" title="Permalink to this headline">#</a></h3>
+<p>We will dive into what’s going on here later in ICE 2 <a class="reference internal" href="../ICE/ICE2.html#setup-vivado-project"><span class="std std-ref">Setup Vivado Project</span></a>.
+But for now,</p>
+<ol class="simple">
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> file</p></li>
+<li><p>Double click the generated <code class="docutils literal notranslate"><span class="pre">helloLed.xpr</span></code> to open it in Vivado</p></li>
+</ol>
+</section>
+<section id="test-vivado-project">
+<h3>Test Vivado project<a class="headerlink" href="#test-vivado-project" title="Permalink to this headline">#</a></h3>
+<p>In the Flow Navigator pane on the left hand side:</p>
+<ol class="simple">
+<li><p>Under SIMULATION, click “Run Simulation” then <strong>Run Behavioral Simulation</strong>.</p></li>
+<li><p>Verify that a waveform shows up.</p></li>
+<li><p>Under PROGRAM AND DEBUG, click <strong>Generate Bitstream</strong>.</p></li>
+<li><p>Click “Yes” when asked if it is OK to launch implementation. Then click “OK”</p></li>
+<li><p>Wait for the popup telling you Bitstream Generation Complete. This may take some time, see the spinning green circle in the very top right corner of the window. Click “OK”.</p></li>
+</ol>
+</section>
+<section id="program-fpga">
+<h3>Program FPGA<a class="headerlink" href="#program-fpga" title="Permalink to this headline">#</a></h3>
+<p>We will go into more detail with <a class="reference internal" href="../ICE/ICE2.html#download-onto-fpga"><span class="std std-ref">Download onto FPGA and test</span></a>.
+For now just:</p>
+<ol class="simple">
+<li><p>Plug in your FPGA</p></li>
+<li><p>See the pretty lights. This is the built-in demo program.</p></li>
+<li><p>Under PROGRAM AND DEBUG</p></li>
+<li><p>Click Open Hardware Manager</p></li>
+<li><p>Click <strong>Open Target</strong> then <strong>Auto Connect</strong></p></li>
+<li><p>Click on <strong>Program device</strong></p></li>
+<li><p>By default the Bitstream (<code class="docutils literal notranslate"><span class="pre">.bit</span></code>) file that you last created will be selected for programming. Click <strong>Program</strong></p></li>
+</ol>
+<p>Test that the program worked by flipping the rightmost switch (<code class="docutils literal notranslate"><span class="pre">SW0</span></code>) on and off. The LED directly above it should match. None of the other switches should do anything.</p>
 <blockquote>
-<div><p><img alt="" src="appendix/img/ice3_image4.jpg" />{width=”1.7743055555555556in”
-height=”2.2951213910761155in”}</p>
+<div><p>Demo this to your instructor.</p>
 </div></blockquote>
-<p><strong>Add Sources window</strong></p>
-<ul class="simple">
-<li><p>Select the “Add or create <strong>design sources</strong>” radio button and click
-Next. o Click on “<strong>Add Files”</strong> button</p></li>
-<li><p>Navigate to your ICE2/code folder, select halfAdder.vhd, and click
-OK</p></li>
-<li><p><strong>Ensure Copy sources into project</strong> is <strong>[Unchecked]{.underline}</strong>
-(we want to edit the file in the <strong>code</strong> folder) and click
-<strong>Finish</strong></p></li>
-</ul>
-<blockquote>
-<div><p><img alt="" src="appendix/img/ice3_image5.jpg" />{width=”6.442361111111111in”
-height=”4.3887171916010494in”}</p>
-</div></blockquote>
-<p>The VHDL module should now be listed in your Sources sub-window. The
-<strong>bolded</strong> name is based on the entity name,</p>
-<p><img alt="" src="appendix/img/ice3_image6.jpg" />{width=”5.4375in” height=”2.0in”}</p>
-<p>Add another source, but this time select “Add or create <strong>simulation</strong>
-sources” in the initial window o Add <strong>halfAdder_tb.vhd</strong> (“tb” stands
-for test bench)</p>
-<blockquote>
-<div><p>Again, make sure “Copy sources into project” is <strong>unchecked</strong></p>
-</div></blockquote>
-<p>The test bench file should now be added into your Simulation Sources
-(scroll down and/ or re-size the sub-window to see the Simulation
-Sources):</p>
-<blockquote>
-<div><p><img alt="" src="appendix/img/ice3_image7.jpg" />{width=”3.5541666666666667in”
-height=”2.287938538932633in”}</p>
-</div></blockquote>
-<p>If for some reason, it is not the top Simulation Source as shown above,
-right-click on it and select “Set as Top”.</p>
-<p>Add the final source, but this time select “Add or create
-<strong>constraints</strong>” in the initial window o Add <strong>Basys3_Master.xdc</strong></p>
-<ul class="simple">
-<li><p>Make sure “Copy constraints files into project” is <strong>unchecked</strong></p></li>
-</ul>
-<p>The constraints file should now be added into your Constraints:</p>
-<p><img alt="" src="appendix/img/ice3_image8.jpg" />{width=”3.527083333333333in”
-height=”2.799134951881015in”}</p>
+</section>
+</section>
+<section id="github-setup">
+<h2>GitHub setup<a class="headerlink" href="#github-setup" title="Permalink to this headline">#</a></h2>
+<p>If you have not already completed <a class="reference internal" href="../ICE/ICE0.html"><span class="doc std std-doc">BCE 0: Get started with Git</span></a>, do so now.</p>
 </section>
 </section>
 
@@ -557,7 +544,7 @@ height=”2.799134951881015in”}</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./appendix"
+            path: "./lab"
         },
         predefinedOutput: true
     }
@@ -571,12 +558,19 @@ height=”2.799134951881015in”}</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../lab/lab2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../ICE/ICE3.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 2 - Seven Segment Display Decoder</p>
+            <p class="prev-next-title">ICE 3: Top Level Design</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="lab2Prelab.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 2 Prelab - Seven Segment Display Decoder</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
