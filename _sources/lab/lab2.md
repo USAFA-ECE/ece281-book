@@ -142,7 +142,7 @@ in VHDL, implement all seven of your outputs.
 
 2\. CREATE SSD TESTBENCH AND SIMULATE
 
-## EDIT THE VHDL TEMPLATE 
+## EDIT THE VHDL TEMPLATE
 
 a.  You can find the VHDL template files from the General Teams Channel
     under "Handouts and Resources"..
@@ -271,7 +271,7 @@ height="0.7638888888888888in"}
 
 > d\. Demo the working final product to your instructor.
 
-# V. LAB 2 DELIVERABLES 
+# V. LAB 2 DELIVERABLES
 
 Table 3 below shows how the points will be distributed for this
 assignment. Details for how each item will be scored follows. **Table 3:
@@ -293,7 +293,7 @@ Point distribution for Lab 2**
   **Total**                                               **100**
   -----------------------------------------------------------------------
 
-## **(30 PTS) HARDWARE DEMO (BY 1700 ON T17)** 
+## **(30 PTS) HARDWARE DEMO (BY 1700 ON T17)**
 
 -   You have to hold the center push button down for a 7SD to show your
     output. (10 pts) • The correct hex digit is shown based on the
@@ -303,7 +303,7 @@ Point distribution for Lab 2**
     submitted via Teams. o If via Teams, refer to your instructor for
     instructions.
 
-### (30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED) 
+### (30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED)
 
   -----------------------------------------------------------------------------------------
   **Rating**         **Points**   **Quality**
@@ -402,7 +402,7 @@ Report file includes the following content (template will be provided):
 > correct Prelab truth table. (16 pts) • Signals are named and grouped
 > per instructions. (4pts)
 
-### (20 PTS) FILES (SUBMITTED VIA GIT BY 1700 ON T17) 
+### (20 PTS) FILES (SUBMITTED VIA GIT BY 1700 ON T17)
 
 +-----------+-----+----------------------------------------------------+
 | *         | > * | **Quality**                                        |
@@ -453,7 +453,7 @@ Report file includes the following content (template will be provided):
 -   Bitstream (.bit) file used for hardware demo in repo (likely at
     Lab2\\Lab2.runs\\impl_1\\top_basys3.bit)
 
-## **(5 PTS) GIT USAGE** 
+## **(5 PTS) GIT USAGE**
 
 -   Commit messages begin with "Lab2 - " to easily distinguish between
     course projects (2.5 pts)
