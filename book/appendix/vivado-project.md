@@ -48,7 +48,7 @@ height="1.645138888888889in"}
 
     -   Click "Finish"
 
-## 2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM 
+## 2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM
 
 Navigate to your ICE2 folder, in your git repository, in Windows
 Explorer (file manager) and download/extract the following files from
@@ -78,7 +78,7 @@ that we do not want in your repo. Alternatively, only commit files you
 specifically want. If you ever find that git won't let you add a file,
 check to see if the .gitignore will allow it to pass.
 
-## 3. CREATE DESIGN 
+## 3. CREATE DESIGN
 
 ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS)
 

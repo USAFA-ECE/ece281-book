@@ -1,6 +1,6 @@
 # ICE 1: OR Gates
 
-## OVERVIEW 
+## OVERVIEW
 
 Due: Lesson 6
 
@@ -195,7 +195,7 @@ Congratulations! You have successfully completed In Class Exercise
 (ICE) 1. This will be directly applicable to your circuit building in
 lab 1! Demonstrate your operational circuit to your instructor.
 
-## Exit Criteria 
+## Exit Criteria
 
 The instructor will check the circuit accurately implements a 4-input
 OR gate function:

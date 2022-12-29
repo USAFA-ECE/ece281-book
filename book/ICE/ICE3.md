@@ -1,6 +1,6 @@
 # ICE 3: Top Level Design
 
-## OVERVIEW 
+## OVERVIEW
 
 So far in this course you have implemented individual components on your
 FPGA. However, one of the benefits of VHDL is that we can pull multiple
@@ -10,7 +10,7 @@ connect all of the different components you will be using before finally
 connecting them to the IO of the board. You will need to use the concept
 of a top_level design in Lab 2 so this is directly applicable.
 
-## OBJECTIVES 
+## OBJECTIVES
 
 The objectives of this in-class exercise are for you to:
 
@@ -18,7 +18,7 @@ The objectives of this in-class exercise are for you to:
 
 -   Gain more experience using tools (Git, Markdown, Xilinx Vivado)
 
-## DESIRED END STATE 
+## DESIRED END STATE
 
 You will be able to provide a live demo to your instructor. You are not
 required to turn in ICE3 however, you will need to demonstrate
@@ -30,7 +30,7 @@ repository:
 2.  Constraints (`.xdc`) file in a `code` folder
 3.  `.bit` file used to program board
 
-## FULL-ADDER AND DESIGN FLOW 
+## FULL-ADDER AND DESIGN FLOW
 
 A half-adder takes two single-bit inputs and outputs their sum. A truth
 table, schematic symbol, and logic equations for a half-adder are shown
@@ -60,7 +60,7 @@ $$
 | 1        | 1   | 1   |   | 1         | 1   |
 
 
-## 1. CREATE A VIVADO PROJECT 
+## 1. CREATE A VIVADO PROJECT
 
 At this point you should NOT have an ICE3 directory in your git
 repository. Instead, Vivado will create that directory for you when you
@@ -68,7 +68,7 @@ create a project. Create a new project titled ICE3. The process to do
 this was covered in ICE2. Refer back to ICE2 instructions if you need
 help
 
-## 2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM 
+## 2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM
 
 ### Import provided files
 
@@ -89,27 +89,27 @@ use yours if desired)
 ICE3 -- import provided project files
 ```
 
-## 3. CREATE DESIGN 
+## 3. CREATE DESIGN
 
-### ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS) 
+### ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS)
 
 Add all of the provided files to your project. Instructions were given
 in ICE2 to do this. The \_tb files will be simulation sources, the .xdc
 file will be a constraint, and the remaining two files will be design
 sources.
 
-### EDIT YOUR TOP_BASYS3 
+### EDIT YOUR TOP_BASYS3
 
 Open up your `top_basys3.vhd` file in a text editor.
 
-#### FILE HEADER 
+#### FILE HEADER
 
 Modify the file header to reflect your work. Do not leave the
 documentation statement blank. You may refer all documentation
 statements to top_basys3 header. (ex: your top_basys3_tb file header
 will say "See top_basys3.vhd" for documentation.
 
-#### INSPECT THE TOP_BASYS3 ENTITY 
+#### INSPECT THE TOP_BASYS3 ENTITY
 
 Unlike the half-adder, the full-adder has three inputs though it shares
 the same two outputs. This has been given to you. Note that we went
@@ -121,7 +121,7 @@ input and output its own name if desired.
 
 *Figure 2-- Entity for top_basys3 implementing a full-adder*
 
-#### MODIFY THE HALF-ADDER ARCHITECTURE 
+#### MODIFY THE HALF-ADDER ARCHITECTURE
 
 You need to modify the architecture of your top_basys3 file to reflect
 the full adder shown below in Figure 3.
@@ -186,12 +186,12 @@ and we have given them unique names (`halfadder1_inst` and
 
 *Figure 5 -- Half adder instantiations*
 
-## 4. TEST DESIGN 
+## 4. TEST DESIGN
 
 At this point your testbench VHDL file (`top_basys3_tb.vhd`) should
 already be added. If not, go back and add it.
 
-### EDIT YOUR TESTBENCH 
+### EDIT YOUR TESTBENCH
 
 Open your testbench file in a text editor. Note the header has
 top_basys3.vhd as a REQUIRED FILE. This exercise will not walk you
@@ -215,9 +215,9 @@ you need?
 
 ### CHECK SYNTAX AND SIMULATE YOUR PROJECT
 
-## 5. IMPLEMENT DESIGN 
+## 5. IMPLEMENT DESIGN
 
-### EDIT THE CONSTRAINTS FILE 
+### EDIT THE CONSTRAINTS FILE
 
 1.  Click on the Project Manager in the Flow Navigator
 2.  Double click on the `Basys3_Master.xdc` file in the Sources sub-window
@@ -242,7 +242,7 @@ you need?
 
 IF you are unsure how to proceed, revisit ICE2
 
-## 7. WRAPPING UP... 
+## 7. WRAPPING UP...
 
 - Double check that you have everything **committed** to your git repo.
 - Then [push](https://www.atlassian.com/git/tutorials/syncing/git-push) them to your repo.

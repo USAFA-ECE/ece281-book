@@ -33,7 +33,7 @@ following:
 
 ## Background
 
-### VHDL 
+### VHDL
 
 VHDL, which stands for Very High Speed Integrated Circuits (VHSIC)
 Hardware Description Language, is a language that allows you to
@@ -146,7 +146,7 @@ explorer.exe .
 
 Now that our project is open in Vivado, let's explore it.
 
-We said earlier that we have 
+We said earlier that we have
 
 - Design sources (`.vhd`)
 - Constraints (`.xdc`)
@@ -270,11 +270,11 @@ outputs. In other words, it describes the interface of a "black box".
 The code comes with a partially completed entity description.
 
 ```vhdl
--- entity name should match filename  
-entity halfAdder is 
+-- entity name should match filename
+entity halfAdder is
   port(
 	i_A     : in  std_logic; -- 1-bit input port
-	i_B     : in  std_logic; 
+	i_B     : in  std_logic;
 	o_S     : out std_logic  -- 1-bit output port
 							 -- (NOTE: NO semicolon on LAST port only!)
 	-- TODO:  Carry port
@@ -321,16 +321,16 @@ Again, we have gone to a lower level of abstraction. We are looking *inside* the
 Our architecture is partially realized in the given VHDL code below:
 
 ```vhdl
-architecture halfAdder_arch of halfAdder is 
+architecture halfAdder_arch of halfAdder is
 	-- this is where you would include components declarations and signals if you needed them
-	  
+
 begin
 	-- this is where you would map ports for any component instantiations if you needed to
 
 	-- *concurrent* signal assignments
 	o_S    <= i_A xor i_B;
 	-- TODO:  Carry signal assignment
-	
+
 end halfAdder_arch;
 ```
 
@@ -378,17 +378,17 @@ realizes our test signals. To do this, first we must declare what
 hardware components will be inside of our test bench:
 
 ```vhdl
-architecture test_bench of halfAdder_tb is 
-	
+architecture test_bench of halfAdder_tb is
+
   -- declare the component of your top-level design unit under test (UUT)
   component halfAdder is
 	port(
 		i_A     : in  std_logic; -- 1-bit input port
-		i_B     : in  std_logic; 
+		i_B     : in  std_logic;
 		o_S     : out std_logic  -- 1-bit output port
 								 -- (NOTE: NO semicolon on LAST port only!)
 		-- TODO:  Carry port
-	); -- the semicolon is here instead	
+	); -- the semicolon is here instead
   end component;
 ```
 
@@ -406,7 +406,7 @@ and LEDs per our previous block diagram:
 
 You can think of these signals as *wires* that we place inside our
 testbench box. This is partially realized in the given testbench snippet
-shown below. 
+shown below.
 
 Since these are top level wires, we would normally
 prepend the names with `w_` instead of `i_` or `o_`, but we will
@@ -417,7 +417,7 @@ an initial value of '0'.
   -- declare signals needed to stimulate the UUT inputs
   signal i_sw1 : std_logic := '0';
   -- TODO:  sw0 signal
-  
+
   -- also need signals for the outputs of the UUT
   signal o_led1 : std_logic := '0';
   -- TODO:  led0 signal
@@ -438,7 +438,7 @@ begin
 		i_A     => i_sw1, -- notice comma (not a semicolon)
 		i_B     => i_sw0,
 		o_S     => o_led0 -- no comma on LAST one
-		-- TODO:  map Cout 
+		-- TODO:  map Cout
 	);
 ```
 
@@ -451,16 +451,16 @@ The **test plan process** is a sequential plan that will drive inputs to the val
 
 ```vhdl
 -- Test Plan Process --------------------------------
-	-- Implement the test plan here.  Body of process is continuously from time = 0  
-	test_process : process 
+	-- Implement the test plan here.  Body of process is continuously from time = 0
+	test_process : process
 	begin
-	
+
 		i_sw1 <= '0'; i_sw0 <= '0'; wait for 10 ns;
 		-- TODO:  rest of test plan
-		
+
 		wait; -- wait forever
-	end process;	
-	-----------------------------------------------------	
+	end process;
+	-----------------------------------------------------
 ```
 
 How many test cases do we need?
@@ -598,7 +598,7 @@ If all of your testing succeeded...
     file. You should see it first on line 12 as shown below.
 
 ```
-#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]					
+#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
 ```
 
@@ -618,7 +618,7 @@ signal names in your testbench.
 
 ```
 ## Switches
-set_property PACKAGE_PIN V17 [get_ports {i_B}]					
+set_property PACKAGE_PIN V17 [get_ports {i_B}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {i_B}]
 ```
 
