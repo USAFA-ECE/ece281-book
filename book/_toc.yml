@@ -9,6 +9,7 @@ parts:
       - file: faq
   - caption: In Class Exercise
     chapters:
+      - file: ICE/ICE0
       - file: ICE/ICE1
       - file: ICE/ICE2
       - file: ICE/ICE3
