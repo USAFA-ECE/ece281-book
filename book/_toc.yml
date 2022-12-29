@@ -15,6 +15,7 @@ parts:
       - file: ICE/ICE3
   - caption: Labs
     chapters:
+      - file: lab/lab0
       - file: lab/lab2Prelab
       - file: lab/lab2
   - caption: Appendix

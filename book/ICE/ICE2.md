@@ -93,6 +93,7 @@ An FPGA can be programmed to be many circuits.
 4. Implement design
 5. Download onto FPGA
 
+(setup-vivado-project)=
 ## Setup Vivado Project
 
 You can create a Viavado project from scratch. This involves telling the suite about three types of files:
@@ -638,6 +639,7 @@ In the Flow Navigator, click on **Generate Bitstream**
 
 You should get a window reporting successful Bitstream Generation.
 
+(download-onto-fpga)=
 ## Download onto FPGA and test
 
 1.  Plug in your BASYS 3 board and turn it on.
