@@ -1,11 +1,18 @@
-# Welcome to your Jupyter Book
-
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
+# ECE 281: Digital Design and Computer Architecture
 
 ```{tableofcontents}
 ```
+
+## Course Goals
+
+The goal of this course is for all cadets enrolled in the course to develop the ability to understand and design combinational and sequential circuits and construct, test, and debug these circuits using schematic diagrams and hardware description languages.  Cadets shall demonstrate an understanding of basic computer architecture and how a computer executes simple programs. 
+
+## Course Objectives
+
+Cadets shall be able to: 
+
+- Demonstrate ability to design, analyze, and implement combinational and sequential circuits using schematic diagrams. 
+- Demonstrate ability to design, analyze, and implement combinational and sequential circuits using a hardware description language. 
+- Use contemporary software tools to debug a digital system design and verify that a digital system meets defined requirements. 
+- Demonstrate the ability to understand and analyze a microarchitecture (datapath and control unit) to implement a simple computer architecture. 
+- Demonstrate the ability to properly record and report laboratory work. 

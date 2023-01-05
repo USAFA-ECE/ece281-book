@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+                    ECE 281: Digital Design and Computer Architecture
                 </a>
             </li>
         </ul>
@@ -932,21 +932,21 @@ single-line comments, and are colored green or gray by some text editors
 (not all editors will do syntax coloring).</p>
 <p>Filename, author(s), etc. need to be filled out correctly. Edit as
 applicable.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| FILENAME      : halfAdder.vhd</span><span class="w"></span>
-<span class="c1">--| AUTHOR(S)     : Capt Warner</span><span class="w"></span>
-<span class="c1">--| CREATED       : 01/17/2017</span><span class="w"></span>
-<span class="c1">--| DESCRIPTION   : This file implements a one bit half adder.</span><span class="w"></span>
-<span class="c1">--|</span><span class="w"></span>
-<span class="c1">--| DOCUMENTATION : None</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| FILENAME      : halfAdder.vhd</span>
+<span class="c1">--| AUTHOR(S)     : Capt Warner</span>
+<span class="c1">--| CREATED       : 01/17/2017</span>
+<span class="c1">--| DESCRIPTION   : This file implements a one bit half adder.</span>
+<span class="c1">--|</span>
+<span class="c1">--| DOCUMENTATION : None</span>
 </pre></div>
 </div>
 <p>The next section of the header shows <strong>required files</strong>.
 This file has no specific dependencies.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| REQUIRED FILES :</span><span class="w"></span>
-<span class="c1">--|</span><span class="w"></span>
-<span class="c1">--|    Libraries : ieee</span><span class="w"></span>
-<span class="c1">--|    Packages  : std_logic_1164, numeric_std, unisim</span><span class="w"></span>
-<span class="c1">--|    Files     : NONE</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| REQUIRED FILES :</span>
+<span class="c1">--|</span>
+<span class="c1">--|    Libraries : ieee</span>
+<span class="c1">--|    Packages  : std_logic_1164, numeric_std, unisim</span>
+<span class="c1">--|    Files     : NONE</span>
 </pre></div>
 </div>
 <p>The final section of the header shows naming conventions to use
@@ -955,24 +955,24 @@ primarily to make debugging easier and to make it obvious what your
 signals are used for. For simple designs this is not as important, but
 it becomes critical when you develop more complex designs. Thus, we
 develop good habits now.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| NAMING CONVENTIONS :</span><span class="w"></span>
-<span class="c1">--|</span><span class="w"></span>
-<span class="c1">--|    xb_&lt;port name&gt;           = off-chip bidirectional port ( _pads file )</span><span class="w"></span>
-<span class="c1">--|    xi_&lt;port name&gt;           = off-chip input port         ( _pads file )</span><span class="w"></span>
-<span class="c1">--|    xo_&lt;port name&gt;           = off-chip output port        ( _pads file )</span><span class="w"></span>
-<span class="c1">--|    b_&lt;port name&gt;            = on-chip bidirectional port</span><span class="w"></span>
-<span class="c1">--|    i_&lt;port name&gt;            = on-chip input port</span><span class="w"></span>
-<span class="c1">--|    o_&lt;port name&gt;            = on-chip output port</span><span class="w"></span>
-<span class="c1">--|    c_&lt;signal name&gt;          = combinatorial signal</span><span class="w"></span>
-<span class="c1">--|    f_&lt;signal name&gt;          = synchronous signal</span><span class="w"></span>
-<span class="c1">--|    ff_&lt;signal name&gt;         = pipeline stage (ff_, fff_, etc.)</span><span class="w"></span>
-<span class="c1">--|    &lt;signal name&gt;_n          = active low signal</span><span class="w"></span>
-<span class="c1">--|    w_&lt;signal name&gt;          = top level wiring signal</span><span class="w"></span>
-<span class="c1">--|    g_&lt;generic name&gt;         = generic</span><span class="w"></span>
-<span class="c1">--|    k_&lt;constant name&gt;        = constant</span><span class="w"></span>
-<span class="c1">--|    v_&lt;variable name&gt;        = variable</span><span class="w"></span>
-<span class="c1">--|    sm_&lt;state machine type&gt;  = state machine type definition</span><span class="w"></span>
-<span class="c1">--|    s_&lt;signal name&gt;          = state name</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| NAMING CONVENTIONS :</span>
+<span class="c1">--|</span>
+<span class="c1">--|    xb_&lt;port name&gt;           = off-chip bidirectional port ( _pads file )</span>
+<span class="c1">--|    xi_&lt;port name&gt;           = off-chip input port         ( _pads file )</span>
+<span class="c1">--|    xo_&lt;port name&gt;           = off-chip output port        ( _pads file )</span>
+<span class="c1">--|    b_&lt;port name&gt;            = on-chip bidirectional port</span>
+<span class="c1">--|    i_&lt;port name&gt;            = on-chip input port</span>
+<span class="c1">--|    o_&lt;port name&gt;            = on-chip output port</span>
+<span class="c1">--|    c_&lt;signal name&gt;          = combinatorial signal</span>
+<span class="c1">--|    f_&lt;signal name&gt;          = synchronous signal</span>
+<span class="c1">--|    ff_&lt;signal name&gt;         = pipeline stage (ff_, fff_, etc.)</span>
+<span class="c1">--|    &lt;signal name&gt;_n          = active low signal</span>
+<span class="c1">--|    w_&lt;signal name&gt;          = top level wiring signal</span>
+<span class="c1">--|    g_&lt;generic name&gt;         = generic</span>
+<span class="c1">--|    k_&lt;constant name&gt;        = constant</span>
+<span class="c1">--|    v_&lt;variable name&gt;        = variable</span>
+<span class="c1">--|    sm_&lt;state machine type&gt;  = state machine type definition</span>
+<span class="c1">--|    s_&lt;signal name&gt;          = state name</span>
 </pre></div>
 </div>
 </section>
@@ -985,12 +985,12 @@ languages.</p>
 <blockquote>
 <div><p>Delete the unisim library since we are not using them currently.</p>
 </div></blockquote>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">library</span><span class="w"> </span><span class="nn">ieee</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">library</span><span class="w"> </span><span class="nn">ieee</span><span class="p">;</span>
+<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
+<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
 
-<span class="k">library</span><span class="w"> </span><span class="nn">unisim</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">UNISIM.Vcomponents.</span><span class="k">ALL</span><span class="p">;</span><span class="w"></span>
+<span class="k">library</span><span class="w"> </span><span class="nn">unisim</span><span class="p">;</span>
+<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">UNISIM.Vcomponents.</span><span class="k">ALL</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -1010,16 +1010,16 @@ languages.</p>
 <p>An <strong>entity</strong> in VHDL is a declaration of a hardware module’s input and
 outputs. In other words, it describes the interface of a “black box”.</p>
 <p>The code comes with a partially completed entity description.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- entity name should match filename</span><span class="w"></span>
-<span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
-<span class="w">  </span><span class="k">port</span><span class="p">(</span><span class="w"></span>
-<span class="w">	</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span><span class="w"></span>
-<span class="w">	</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
-<span class="w">	</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span><span class="w"></span>
-<span class="w">							 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-- TODO:  Carry port</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span><span class="w"></span>
-<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- entity name should match filename</span>
+<span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
+<span class="w">  </span><span class="k">port</span><span class="p">(</span>
+<span class="w">	</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span>
+<span class="w">	</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">	</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span>
+<span class="w">							 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span>
+<span class="w">	</span><span class="c1">-- TODO:  Carry port</span>
+<span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span>
+<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Note, the port names are preceded by an <code class="docutils literal notranslate"><span class="pre">i_</span></code> for input and an <code class="docutils literal notranslate"><span class="pre">o_</span></code> for
@@ -1052,17 +1052,17 @@ C_{out} = AB
 <p><img alt="half-adder architecture" src="../_images/ice2_image15.jpg" /></p>
 <p>Again, we have gone to a lower level of abstraction. We are looking <em>inside</em> the black box entity that we described above.</p>
 <p>Our architecture is partially realized in the given VHDL code below:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-- this is where you would include components declarations and signals if you needed them</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
+<span class="w">	</span><span class="c1">-- this is where you would include components declarations and signals if you needed them</span>
 
-<span class="k">begin</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-- this is where you would map ports for any component instantiations if you needed to</span><span class="w"></span>
+<span class="k">begin</span>
+<span class="w">	</span><span class="c1">-- this is where you would map ports for any component instantiations if you needed to</span>
 
-<span class="w">	</span><span class="c1">-- *concurrent* signal assignments</span><span class="w"></span>
-<span class="w">	</span><span class="n">o_S</span><span class="w">    </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_A</span><span class="w"> </span><span class="k">xor</span><span class="w"> </span><span class="n">i_B</span><span class="p">;</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-- TODO:  Carry signal assignment</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- *concurrent* signal assignments</span>
+<span class="w">	</span><span class="n">o_S</span><span class="w">    </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_A</span><span class="w"> </span><span class="k">xor</span><span class="w"> </span><span class="n">i_B</span><span class="p">;</span>
+<span class="w">	</span><span class="c1">-- TODO:  Carry signal assignment</span>
 
-<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Note, the architecture is “of halfAdder” since that is the name of the
@@ -1093,8 +1093,8 @@ be added. If not, go back and add it per the directions in <a class="reference i
 <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> as a REQUIRED FILE.</p>
 <p>The entity in this file is the testbench itself, which is empty as shown
 below.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
-<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="w"> </span><span class="k">is</span>
+<span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>It is empty because it does not need any external interfaces. Instead,
@@ -1104,18 +1104,18 @@ we want to observe the signals generated by the hardware components
 then be stimulated by the testbench internal architecture, which
 realizes our test signals. To do this, first we must declare what
 hardware components will be inside of our test bench:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">test_bench</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">test_bench</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder_tb</span><span class="w"> </span><span class="k">is</span>
 
-<span class="w">  </span><span class="c1">-- declare the component of your top-level design unit under test (UUT)</span><span class="w"></span>
-<span class="w">  </span><span class="k">component</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
-<span class="w">	</span><span class="k">port</span><span class="p">(</span><span class="w"></span>
-<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span><span class="w"></span>
-<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
-<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span><span class="w"></span>
-<span class="w">								 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span><span class="w"></span>
-<span class="w">		</span><span class="c1">-- TODO:  Carry port</span><span class="w"></span>
-<span class="w">	</span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span><span class="w"></span>
-<span class="w">  </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">-- declare the component of your top-level design unit under test (UUT)</span>
+<span class="w">  </span><span class="k">component</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
+<span class="w">	</span><span class="k">port</span><span class="p">(</span>
+<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span>
+<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span>
+<span class="w">								 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span>
+<span class="w">		</span><span class="c1">-- TODO:  Carry port</span>
+<span class="w">	</span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span>
+<span class="w">  </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>This syntax is almost <em>identical</em> to what you saw in the implementation
@@ -1134,13 +1134,13 @@ shown below.</p>
 prepend the names with <code class="docutils literal notranslate"><span class="pre">w_</span></code> instead of <code class="docutils literal notranslate"><span class="pre">i_</span></code> or <code class="docutils literal notranslate"><span class="pre">o_</span></code>, but we will
 stick with the current names for this exercise. The code also sets
 an initial value of ‘0’.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">-- declare signals needed to stimulate the UUT inputs</span><span class="w"></span>
-<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">i_sw1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="c1">-- TODO:  sw0 signal</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">-- declare signals needed to stimulate the UUT inputs</span>
+<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">i_sw1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">-- TODO:  sw0 signal</span>
 
-<span class="w">  </span><span class="c1">-- also need signals for the outputs of the UUT</span><span class="w"></span>
-<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">o_led1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="c1">-- TODO:  led0 signal</span><span class="w"></span>
+<span class="w">  </span><span class="c1">-- also need signals for the outputs of the UUT</span>
+<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">o_led1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">-- TODO:  led0 signal</span>
 </pre></div>
 </div>
 <blockquote>
@@ -1150,16 +1150,16 @@ an initial value of ‘0’.</p>
 wires in it. <em>Nothing is connected yet</em>. To actually “wire up the
 hardware”, we need to map the ports. This is partially realized in the
 code snippet below.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">begin</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-- PORT MAPS ----------------------------------------</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">begin</span>
+<span class="w">	</span><span class="c1">-- PORT MAPS ----------------------------------------</span>
 
-<span class="w">	</span><span class="c1">-- map ports for any component instances (port mapping is like wiring hardware)</span><span class="w"></span>
-<span class="w">	</span><span class="n">halfAdder_inst</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span><span class="w"> </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw1</span><span class="p">,</span><span class="w"> </span><span class="c1">-- notice comma (not a semicolon)</span><span class="w"></span>
-<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw0</span><span class="p">,</span><span class="w"></span>
-<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o_led0</span><span class="w"> </span><span class="c1">-- no comma on LAST one</span><span class="w"></span>
-<span class="w">		</span><span class="c1">-- TODO:  map Cout</span><span class="w"></span>
-<span class="w">	</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="c1">-- map ports for any component instances (port mapping is like wiring hardware)</span>
+<span class="w">	</span><span class="n">halfAdder_inst</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span><span class="w"> </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span>
+<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw1</span><span class="p">,</span><span class="w"> </span><span class="c1">-- notice comma (not a semicolon)</span>
+<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw0</span><span class="p">,</span>
+<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o_led0</span><span class="w"> </span><span class="c1">-- no comma on LAST one</span>
+<span class="w">		</span><span class="c1">-- TODO:  map Cout</span>
+<span class="w">	</span><span class="p">);</span>
 </pre></div>
 </div>
 <blockquote>
@@ -1168,17 +1168,17 @@ code snippet below.</p>
 <p>Now all that is left is to assign values to the test input wires (<code class="docutils literal notranslate"><span class="pre">i_sw0</span></code>
 and <code class="docutils literal notranslate"><span class="pre">i_sw1</span></code>) inside the <strong>test plan process</strong>:</p>
 <p>The <strong>test plan process</strong> is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Test Plan Process --------------------------------</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-- Implement the test plan here.  Body of process is continuously from time = 0</span><span class="w"></span>
-<span class="w">	</span><span class="n">test_process</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span><span class="w"></span>
-<span class="w">	</span><span class="k">begin</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Test Plan Process --------------------------------</span>
+<span class="w">	</span><span class="c1">-- Implement the test plan here.  Body of process is continuously from time = 0</span>
+<span class="w">	</span><span class="n">test_process</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span>
+<span class="w">	</span><span class="k">begin</span>
 
-<span class="w">		</span><span class="n">i_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">i_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span><span class="w"></span>
-<span class="w">		</span><span class="c1">-- TODO:  rest of test plan</span><span class="w"></span>
+<span class="w">		</span><span class="n">i_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">i_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
+<span class="w">		</span><span class="c1">-- TODO:  rest of test plan</span>
 
-<span class="w">		</span><span class="k">wait</span><span class="p">;</span><span class="w"> </span><span class="c1">-- wait forever</span><span class="w"></span>
-<span class="w">	</span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span><span class="w"></span>
-<span class="w">	</span><span class="c1">-----------------------------------------------------</span><span class="w"></span>
+<span class="w">		</span><span class="k">wait</span><span class="p">;</span><span class="w"> </span><span class="c1">-- wait forever</span>
+<span class="w">	</span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span>
+<span class="w">	</span><span class="c1">-----------------------------------------------------</span>
 </pre></div>
 </div>
 <p>How many test cases do we need?</p>

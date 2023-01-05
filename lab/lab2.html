@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+                    ECE 281: Digital Design and Computer Architecture
                 </a>
             </li>
         </ul>
@@ -641,7 +641,7 @@ indicates that the input, <code class="docutils literal notranslate"><span class
 is a bus of 7 wires. This can be created in VHDL by using a
 <strong>std_logic_vector</strong> signal type. For instance, <code class="docutils literal notranslate"><span class="pre">i_D</span></code> could be created in
 the <strong>port</strong> statement with the following:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">i_D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">i_D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Remember, the <code class="docutils literal notranslate"><span class="pre">i_</span></code> follows the naming convention provided in the header
@@ -668,7 +668,7 @@ wired to <code class="docutils literal notranslate"><span class="pre">c_Sa</span
 <li><p>There are no PORT MAPS or PROCESSES needed for this module, so you can delete those sections.</p></li>
 <li><p>In the CONCURRENT STATEMENTS section, map the output <code class="docutils literal notranslate"><span class="pre">S</span></code> to the signals you created above per Figure 3. For instance:</p></li>
 </ul>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">o_S</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">c_Sa</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">o_S</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">c_Sa</span><span class="p">;</span>
 </pre></div>
 </div>
 <section id="implement-your-prelab-equations-using-behavioral-modelling">
