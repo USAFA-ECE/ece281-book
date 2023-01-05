@@ -1,5 +1,10 @@
 # ICE 3: Top Level Design
 
+```{contents}
+:local:
+:depth: 2
+```
+
 ## OVERVIEW
 
 So far in this course you have implemented individual components on your

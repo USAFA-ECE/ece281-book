@@ -1,6 +1,11 @@
 # ICE 2: Half-Adder
 
-Half-Adder in VHDL **Due Lesson 8**
+Due Lesson 8
+
+```{contents}
+:local:
+:depth: 2
+```
 
 ## Overview
 

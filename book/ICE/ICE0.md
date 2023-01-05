@@ -2,6 +2,11 @@
 
 This is a "Before Class Exercise." You can wait to complete it with one of the labs or In Class Exercises, but doing this early will save you time later.
 
+```{contents}
+:local:
+:depth: 2
+```
+
 Using proper version control techniques is an expectation for this course, and you should expect yourself to use it for *all* of your courses that involve writing code.
 
 ## Overview

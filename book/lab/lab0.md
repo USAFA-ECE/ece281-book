@@ -1,5 +1,12 @@
 # Lab 0: Install Vivado
 
+```{contents}
+:local:
+:depth: 2
+```
+
+## Overview
+
 That's right, it takes an entire lab to make sure Vivado is setup!
 
 This lab will have you:
@@ -14,6 +21,8 @@ This lab will have you:
 Follow the instructions in `Vivado Installation Instructions.pdf` under the Teams Files tab.
 
 ## Setup a Vivado project
+
+In order to make sure Vivado was installed properly, we'll build the "Hello, World!" equivalent for an FPGA.
 
 ### Clone a repository with git
 
