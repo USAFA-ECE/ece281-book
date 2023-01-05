@@ -636,8 +636,43 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ice-3-top-level-design">
 <h1>ICE 3: Top Level Design<a class="headerlink" href="#ice-3-top-level-design" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">OVERVIEW</a></p></li>
+<li><p><a class="reference internal" href="#objectives" id="id2">OBJECTIVES</a></p></li>
+<li><p><a class="reference internal" href="#desired-end-state" id="id3">DESIRED END STATE</a></p></li>
+<li><p><a class="reference internal" href="#full-adder-and-design-flow" id="id4">FULL-ADDER AND DESIGN FLOW</a></p></li>
+<li><p><a class="reference internal" href="#create-a-vivado-project" id="id5">1. CREATE A VIVADO PROJECT</a></p></li>
+<li><p><a class="reference internal" href="#create-code-and-images-directories-and-add-files-to-them" id="id6">2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM</a></p>
+<ul>
+<li><p><a class="reference internal" href="#import-provided-files" id="id7">Import provided files</a></p></li>
+<li><p><a class="reference internal" href="#add-stage-and-commit-your-changes" id="id8">Add/stage and commit your changes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#create-design" id="id9">3. CREATE DESIGN</a></p>
+<ul>
+<li><p><a class="reference internal" href="#add-sources-design-simulation-and-constraints" id="id10">ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS)</a></p></li>
+<li><p><a class="reference internal" href="#edit-your-top-basys3" id="id11">EDIT YOUR TOP_BASYS3</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#test-design" id="id12">4. TEST DESIGN</a></p>
+<ul>
+<li><p><a class="reference internal" href="#edit-your-testbench" id="id13">EDIT YOUR TESTBENCH</a></p></li>
+<li><p><a class="reference internal" href="#check-syntax-and-simulate-your-project" id="id14">CHECK SYNTAX AND SIMULATE YOUR PROJECT</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#implement-design" id="id15">5. IMPLEMENT DESIGN</a></p>
+<ul>
+<li><p><a class="reference internal" href="#edit-the-constraints-file" id="id16">EDIT THE CONSTRAINTS FILE</a></p></li>
+<li><p><a class="reference internal" href="#implement-and-generate-bitstream" id="id17">IMPLEMENT AND GENERATE BITSTREAM</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#download-onto-fpga-and-test-functionality" id="id18">6. DOWNLOAD ONTO FPGA AND TEST FUNCTIONALITY</a></p></li>
+<li><p><a class="reference internal" href="#wrapping-up" id="id19">7. WRAPPING UP…</a></p></li>
+</ul>
+</div>
 <section id="overview">
-<h2>OVERVIEW<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id1">OVERVIEW</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>So far in this course you have implemented individual components on your
 FPGA. However, one of the benefits of VHDL is that we can pull multiple
 components into a single design. To do this, we are introducing the
@@ -647,7 +682,7 @@ connecting them to the IO of the board. You will need to use the concept
 of a top_level design in Lab 2 so this is directly applicable.</p>
 </section>
 <section id="objectives">
-<h2>OBJECTIVES<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id2">OBJECTIVES</a><a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <p>The objectives of this in-class exercise are for you to:</p>
 <ul class="simple">
 <li><p>Implement and test a full adder with half-adders using VDHL</p></li>
@@ -655,7 +690,7 @@ of a top_level design in Lab 2 so this is directly applicable.</p>
 </ul>
 </section>
 <section id="desired-end-state">
-<h2>DESIRED END STATE<a class="headerlink" href="#desired-end-state" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id3">DESIRED END STATE</a><a class="headerlink" href="#desired-end-state" title="Permalink to this headline">#</a></h2>
 <p>You will be able to provide a live demo to your instructor. You are not
 required to turn in ICE3 however, you will need to demonstrate
 functionality and ensure the following files are pushed to your
@@ -668,7 +703,7 @@ folder</p></li>
 </ol>
 </section>
 <section id="full-adder-and-design-flow">
-<h2>FULL-ADDER AND DESIGN FLOW<a class="headerlink" href="#full-adder-and-design-flow" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id4">FULL-ADDER AND DESIGN FLOW</a><a class="headerlink" href="#full-adder-and-design-flow" title="Permalink to this headline">#</a></h2>
 <p>A half-adder takes two single-bit inputs and outputs their sum. A truth
 table, schematic symbol, and logic equations for a half-adder are shown
 in Figure 1. We will follow the digital design shown in Figure 3.</p>
@@ -753,7 +788,7 @@ C_{out} = AB + AC_{in} + BC_{in}
 </table>
 </section>
 <section id="create-a-vivado-project">
-<h2>1. CREATE A VIVADO PROJECT<a class="headerlink" href="#create-a-vivado-project" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5">1. CREATE A VIVADO PROJECT</a><a class="headerlink" href="#create-a-vivado-project" title="Permalink to this headline">#</a></h2>
 <p>At this point you should NOT have an ICE3 directory in your git
 repository. Instead, Vivado will create that directory for you when you
 create a project. Create a new project titled ICE3. The process to do
@@ -761,9 +796,9 @@ this was covered in ICE2. Refer back to ICE2 instructions if you need
 help</p>
 </section>
 <section id="create-code-and-images-directories-and-add-files-to-them">
-<h2>2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM<a class="headerlink" href="#create-code-and-images-directories-and-add-files-to-them" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id6">2. CREATE CODE AND IMAGES DIRECTORIES AND ADD FILES TO THEM</a><a class="headerlink" href="#create-code-and-images-directories-and-add-files-to-them" title="Permalink to this headline">#</a></h2>
 <section id="import-provided-files">
-<h3>Import provided files<a class="headerlink" href="#import-provided-files" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id7">Import provided files</a><a class="headerlink" href="#import-provided-files" title="Permalink to this headline">#</a></h3>
 <p>Navigate to your ICE3 folder in Windows Explorer (file manager), create
 a code folder, and add these provided files to it:</p>
 <ul class="simple">
@@ -774,7 +809,7 @@ use yours if desired)</p></li>
 </ul>
 </section>
 <section id="add-stage-and-commit-your-changes">
-<h3>Add/stage and commit your changes<a class="headerlink" href="#add-stage-and-commit-your-changes" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id8">Add/stage and commit your changes</a><a class="headerlink" href="#add-stage-and-commit-your-changes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Use <a class="reference external" href="https://www.atlassian.com/git/tutorials/saving-changes">git add</a> to stage the relevant changes</p></li>
 <li><p>Use <a class="reference external" href="https://www.atlassian.com/git/tutorials/saving-changes/git-commit">git commit</a> to commit the changes. Prepend all commit statements for ICE3 with <code class="docutils literal notranslate"><span class="pre">ICE3</span> <span class="pre">--</span> </code>. For instance, your first commit might be:</p></li>
@@ -785,16 +820,16 @@ use yours if desired)</p></li>
 </section>
 </section>
 <section id="create-design">
-<h2>3. CREATE DESIGN<a class="headerlink" href="#create-design" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id9">3. CREATE DESIGN</a><a class="headerlink" href="#create-design" title="Permalink to this headline">#</a></h2>
 <section id="add-sources-design-simulation-and-constraints">
-<h3>ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS)<a class="headerlink" href="#add-sources-design-simulation-and-constraints" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id10">ADD SOURCES (DESIGN, SIMULATION, AND CONSTRAINTS)</a><a class="headerlink" href="#add-sources-design-simulation-and-constraints" title="Permalink to this headline">#</a></h3>
 <p>Add all of the provided files to your project. Instructions were given
 in ICE2 to do this. The _tb files will be simulation sources, the .xdc
 file will be a constraint, and the remaining two files will be design
 sources.</p>
 </section>
 <section id="edit-your-top-basys3">
-<h3>EDIT YOUR TOP_BASYS3<a class="headerlink" href="#edit-your-top-basys3" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id11">EDIT YOUR TOP_BASYS3</a><a class="headerlink" href="#edit-your-top-basys3" title="Permalink to this headline">#</a></h3>
 <p>Open up your <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> file in a text editor.</p>
 <section id="file-header">
 <h4>FILE HEADER<a class="headerlink" href="#file-header" title="Permalink to this headline">#</a></h4>
@@ -891,11 +926,11 @@ and we have given them unique names (<code class="docutils literal notranslate">
 </section>
 </section>
 <section id="test-design">
-<h2>4. TEST DESIGN<a class="headerlink" href="#test-design" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id12">4. TEST DESIGN</a><a class="headerlink" href="#test-design" title="Permalink to this headline">#</a></h2>
 <p>At this point your testbench VHDL file (<code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code>) should
 already be added. If not, go back and add it.</p>
 <section id="edit-your-testbench">
-<h3>EDIT YOUR TESTBENCH<a class="headerlink" href="#edit-your-testbench" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id13">EDIT YOUR TESTBENCH</a><a class="headerlink" href="#edit-your-testbench" title="Permalink to this headline">#</a></h3>
 <p>Open your testbench file in a text editor. Note the header has
 top_basys3.vhd as a REQUIRED FILE. This exercise will not walk you
 through the details of creating a test bench. If you are unsure, revisit
@@ -913,13 +948,13 @@ you need?</p>
 <p><em>Figure 6 – Example test case</em></p>
 </section>
 <section id="check-syntax-and-simulate-your-project">
-<h3>CHECK SYNTAX AND SIMULATE YOUR PROJECT<a class="headerlink" href="#check-syntax-and-simulate-your-project" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id14">CHECK SYNTAX AND SIMULATE YOUR PROJECT</a><a class="headerlink" href="#check-syntax-and-simulate-your-project" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="implement-design">
-<h2>5. IMPLEMENT DESIGN<a class="headerlink" href="#implement-design" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id15">5. IMPLEMENT DESIGN</a><a class="headerlink" href="#implement-design" title="Permalink to this headline">#</a></h2>
 <section id="edit-the-constraints-file">
-<h3>EDIT THE CONSTRAINTS FILE<a class="headerlink" href="#edit-the-constraints-file" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id16">EDIT THE CONSTRAINTS FILE</a><a class="headerlink" href="#edit-the-constraints-file" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Click on the Project Manager in the Flow Navigator</p></li>
 <li><p>Double click on the <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code> file in the Sources sub-window
@@ -940,15 +975,15 @@ led{0}, and led{1}.</p></li>
 </ol>
 </section>
 <section id="implement-and-generate-bitstream">
-<h3>IMPLEMENT AND GENERATE BITSTREAM<a class="headerlink" href="#implement-and-generate-bitstream" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id17">IMPLEMENT AND GENERATE BITSTREAM</a><a class="headerlink" href="#implement-and-generate-bitstream" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="download-onto-fpga-and-test-functionality">
-<h2>6. DOWNLOAD ONTO FPGA AND TEST FUNCTIONALITY<a class="headerlink" href="#download-onto-fpga-and-test-functionality" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id18">6. DOWNLOAD ONTO FPGA AND TEST FUNCTIONALITY</a><a class="headerlink" href="#download-onto-fpga-and-test-functionality" title="Permalink to this headline">#</a></h2>
 <p>IF you are unsure how to proceed, revisit ICE2</p>
 </section>
 <section id="wrapping-up">
-<h2>7. WRAPPING UP…<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id19">7. WRAPPING UP…</a><a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Double check that you have everything <strong>committed</strong> to your git repo.</p></li>
 <li><p>Then <a class="reference external" href="https://www.atlassian.com/git/tutorials/syncing/git-push">push</a> them to your repo.</p></li>

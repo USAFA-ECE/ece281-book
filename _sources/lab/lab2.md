@@ -1,5 +1,12 @@
 # Lab 2 - Seven Segment Display Decoder
 
+```{contents}
+:local:
+:depth: 2
+```
+
+## Overview
+
 Implement the seven-segment decoder in VHDL.
 
 Now that you have Boolean equations established for each of your seven

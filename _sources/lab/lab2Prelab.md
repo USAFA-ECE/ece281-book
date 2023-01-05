@@ -1,5 +1,10 @@
 # Lab 2 Prelab - Seven Segment Display Decoder
 
+```{contents}
+:local:
+:depth: 2
+```
+
 ## Overview
 
 ### Authorized Resources

@@ -371,6 +371,11 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview">
+     Overview
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#implement-ssd-component-in-vhdl">
      Implement SSD component in VHDL
     </a>
@@ -491,6 +496,11 @@ preliminary design.
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview">
+     Overview
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#implement-ssd-component-in-vhdl">
      Implement SSD component in VHDL
     </a>
@@ -598,6 +608,21 @@ preliminary design.
                 
   <section class="tex2jax_ignore mathjax_ignore" id="lab-2-seven-segment-display-decoder">
 <h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#implement-ssd-component-in-vhdl" id="id2">Implement SSD component in VHDL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdl-templates" id="id3">VHDL templates</a></p></li>
+<li><p><a class="reference internal" href="#create-ssd-entity" id="id4">Create SSD Entity</a></p></li>
+<li><p><a class="reference internal" href="#create-ssd-architecture" id="id5">Create SSD Architecture</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#edit-the-vhdl-template" id="id6">EDIT THE VHDL TEMPLATE</a></p></li>
+</ul>
+</div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>Implement the seven-segment decoder in VHDL.</p>
 <p>Now that you have Boolean equations established for each of your seven
 segment outputs, it is time to implement them in hardware with VHDL!
@@ -610,10 +635,11 @@ component in a top level Basys3 component where you wire your decoder to
 a seven-segment display (7SD) and switches, along with connecting a
 button to the 7SD to enable it. Finally, you will test your implemented
 design in hardware.</p>
+</section>
 <section id="implement-ssd-component-in-vhdl">
-<h2>Implement SSD component in VHDL<a class="headerlink" href="#implement-ssd-component-in-vhdl" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id2">Implement SSD component in VHDL</a><a class="headerlink" href="#implement-ssd-component-in-vhdl" title="Permalink to this headline">#</a></h2>
 <section id="vhdl-templates">
-<h3>VHDL templates<a class="headerlink" href="#vhdl-templates" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id3">VHDL templates</a><a class="headerlink" href="#vhdl-templates" title="Permalink to this headline">#</a></h3>
 <p>You should have all templates loaded from Lab1 in your repository,
 but you can find the VHDL template files from the General Teams
 Channel under “Handouts and Resources”.</p>
@@ -633,7 +659,7 @@ Channel under “Handouts and Resources”.</p>
 <p><img alt="Replace All" src="../_images/lab2_image6.jpg" /></p>
 </section>
 <section id="create-ssd-entity">
-<h3>Create SSD Entity<a class="headerlink" href="#create-ssd-entity" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id4">Create SSD Entity</a><a class="headerlink" href="#create-ssd-entity" title="Permalink to this headline">#</a></h3>
 <p><strong>Create your interface (ports) for your sevenSegDecoder according to
 Figure 3 below</strong>. Figure 3 shows the sevenSegDecoder module entity
 interface in blue and the architecture in purple. Notice that the figure
@@ -655,7 +681,7 @@ input, D.</p>
 <em>Figure 3: sevenSegDecoder entity and architecture</em></p>
 </section>
 <section id="create-ssd-architecture">
-<h3>Create SSD Architecture<a class="headerlink" href="#create-ssd-architecture" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id5">Create SSD Architecture</a><a class="headerlink" href="#create-ssd-architecture" title="Permalink to this headline">#</a></h3>
 <p>After you have created your component interface, you need to describe
 the architecture. Figure 3 on the previous page shows that the output of
 the combinational logic produces a signal for each 7SD segment (<code class="docutils literal notranslate"><span class="pre">c_Sa</span></code> …
@@ -723,7 +749,7 @@ your outputs?</p></li>
 </section>
 </section>
 <section id="edit-the-vhdl-template">
-<h2>EDIT THE VHDL TEMPLATE<a class="headerlink" href="#edit-the-vhdl-template" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id6">EDIT THE VHDL TEMPLATE</a><a class="headerlink" href="#edit-the-vhdl-template" title="Permalink to this headline">#</a></h2>
 <p>a.  You can find the VHDL template files from the General Teams Channel
 under “Handouts and Resources”..</p>
 <p>b.  If not already done, save a copy of ECE_template_tb.vhd as a file

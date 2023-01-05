@@ -558,19 +558,47 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ice-1-or-gates">
 <h1>ICE 1: OR Gates<a class="headerlink" href="#ice-1-or-gates" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#objectives" id="id2">Objectives</a></p></li>
+<li><p><a class="reference internal" href="#agenda" id="id3">Agenda</a></p></li>
+<li><p><a class="reference internal" href="#supplies" id="id4">Supplies</a></p></li>
+<li><p><a class="reference internal" href="#collaboration" id="id5">Collaboration</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#background" id="id6">Background</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-logic-equation" id="id7">The logic equation</a></p></li>
+<li><p><a class="reference internal" href="#the-chip" id="id8">The chip</a></p></li>
+<li><p><a class="reference internal" href="#breadboards" id="id9">Breadboards</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#build-the-circuit" id="id10">Build the circuit</a></p>
+<ul>
+<li><p><a class="reference internal" href="#power-supply" id="id11">Power Supply</a></p></li>
+<li><p><a class="reference internal" href="#switches-and-resistors" id="id12">Switches and Resistors</a></p></li>
+<li><p><a class="reference internal" href="#chip" id="id13">7432 Chip</a></p></li>
+<li><p><a class="reference internal" href="#wire-led" id="id14">Wire LED</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#exit-criteria" id="id15">Exit Criteria</a></p></li>
+</ul>
+</div>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>Due: Lesson 6</p>
 <p>In this course you have learned how to design basic combinational logic circuits. In this ICE you will implement a basic logic design using transistor-transistor logic (TTL) chips. This will help you prepare for Lab 1.</p>
 <section id="objectives">
-<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id2">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Implement and test a simple logic design in hardware.</p></li>
 <li><p>Gain experience using hardware.</p></li>
 </ol>
 </section>
 <section id="agenda">
-<h3>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id3">Agenda</a><a class="headerlink" href="#agenda" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Build the required circuit.</p></li>
 <li><p>Test your circuit.</p></li>
@@ -578,7 +606,7 @@ title="Print to PDF"
 </ol>
 </section>
 <section id="supplies">
-<h3>Supplies<a class="headerlink" href="#supplies" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id4">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>5x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors.</p></li>
 <li><p>1x red LED.</p></li>
@@ -590,14 +618,14 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="collaboration">
-<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id5">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this headline">#</a></h3>
 <p>For this lab, <strong>work in teams of two</strong>. You may seek help from any ECE 281 instructor or authorized online resource, but may not utilize any student other than your partner. Documentation is required (you do not need to document work with your partner). We expect all code or design work to be your own.</p>
 </section>
 </section>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id6">Background</a><a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
 <section id="the-logic-equation">
-<h3>The logic equation<a class="headerlink" href="#the-logic-equation" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id7">The logic equation</a><a class="headerlink" href="#the-logic-equation" title="Permalink to this headline">#</a></h3>
 <p>You will implement the simple logic equation using transistor-transistor logic (TTL) chips:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -606,7 +634,7 @@ Y = A + B + C + D
 <p>where <code class="docutils literal notranslate"><span class="pre">+</span></code> represents OR. If any input, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, or <span class="math notranslate nohighlight">\(D\)</span>, is high (logic one), then the output, <span class="math notranslate nohighlight">\(Y\)</span>, is high (logic one). If all four inputs are low (logic zero), then the output is low (logic zero).</p>
 </section>
 <section id="the-chip">
-<h3>The chip<a class="headerlink" href="#the-chip" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id8">The chip</a><a class="headerlink" href="#the-chip" title="Permalink to this headline">#</a></h3>
 <p>You will use a SN7432 TTL chip to build this logic equation, which includes four, 2-Input OR Gates. You can find the data sheet for the chip (sn74ls32.pdf) on the Team under Data Sheets. <a class="reference internal" href="#sn7432-ttl-layout"><span class="std std-numref">Fig. 1</span></a> provides the chip layout.</p>
 <figure class="align-default" id="sn7432-ttl-layout">
 <img alt="../_images/ice01_image2.jpg" src="../_images/ice01_image2.jpg" />
@@ -631,7 +659,7 @@ Y = (A + B) + (C + D)
 <p>The 4-Input OR equation is now implemented using three, 2-Input OR  gates.</p>
 </section>
 <section id="breadboards">
-<h3>Breadboards<a class="headerlink" href="#breadboards" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id9">Breadboards</a><a class="headerlink" href="#breadboards" title="Permalink to this headline">#</a></h3>
 <p>A breadboard is a prototyping device that allows you to easily connect
 different portions of a circuit together.
 <a class="reference internal" href="#breadboard-connections"><span class="std std-numref">Fig. 3</span></a> depicts how the
@@ -650,9 +678,9 @@ to your circuits.</p>
 </section>
 </section>
 <section id="build-the-circuit">
-<h2>Build the circuit<a class="headerlink" href="#build-the-circuit" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id10">Build the circuit</a><a class="headerlink" href="#build-the-circuit" title="Permalink to this headline">#</a></h2>
 <section id="power-supply">
-<h3>Power Supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id11">Power Supply</a><a class="headerlink" href="#power-supply" title="Permalink to this headline">#</a></h3>
 <p>You will use a USB power supply to power your circuit. Attach the
 power supply to the top of the breadboard so the red vertical lines
 align with the 5V and 3.3V pins and the blue lines align with the
@@ -680,7 +708,7 @@ turn off your power supply by depressing the white button.</p>
 </div></blockquote>
 </section>
 <section id="switches-and-resistors">
-<h3>Switches and Resistors<a class="headerlink" href="#switches-and-resistors" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id12">Switches and Resistors</a><a class="headerlink" href="#switches-and-resistors" title="Permalink to this headline">#</a></h3>
 <p>Next you are going to configure your input switches. This portion of
 the circuit will allow us to provide a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> to the circuit (0 V
 or low) when the switch is not active and a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> to the circuit
@@ -721,7 +749,7 @@ four switched values (A-D). When complete, turn off the power supply.</p>
 </div></blockquote>
 </section>
 <section id="chip">
-<h3>7432 Chip<a class="headerlink" href="#chip" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id13">7432 Chip</a><a class="headerlink" href="#chip" title="Permalink to this headline">#</a></h3>
 <p>You will now add the 7432 chip, which provides 4 logic OR gates.</p>
 <p>Place the chip along the center spacing to ensure each lead of
 the chip is on its own node (and not connected). Note the indentation
@@ -761,7 +789,7 @@ anything less than 0.8 V would register as a logic <code class="docutils literal
 </figure>
 </section>
 <section id="wire-led">
-<h3>Wire LED<a class="headerlink" href="#wire-led" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id14">Wire LED</a><a class="headerlink" href="#wire-led" title="Permalink to this headline">#</a></h3>
 <p>The final step is to wire the LED. This LED will indicate if the
 circuit output is a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> (LED is on) or logic <code class="docutils literal notranslate"><span class="pre">0</span></code> (LED is off).</p>
 <div class="admonition warning">
@@ -794,7 +822,7 @@ This will be directly applicable to your circuit building in lab 1!</p>
 </section>
 </section>
 <section id="exit-criteria">
-<h2>Exit Criteria<a class="headerlink" href="#exit-criteria" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id15">Exit Criteria</a><a class="headerlink" href="#exit-criteria" title="Permalink to this headline">#</a></h2>
 <p>The instructor will check the circuit accurately implements a 4-input
 OR gate function:</p>
 <ul class="simple">

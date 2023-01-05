@@ -1,5 +1,10 @@
 # ICE 1: OR Gates
 
+```{contents}
+:local:
+:depth: 2
+```
+
 ## Overview
 
 Due: Lesson 6

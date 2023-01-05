@@ -364,6 +364,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#install-vivado">
    Install Vivado
   </a>
@@ -420,6 +425,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#install-vivado">
    Install Vivado
   </a>
@@ -468,6 +478,23 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="lab-0-install-vivado">
 <h1>Lab 0: Install Vivado<a class="headerlink" href="#lab-0-install-vivado" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#install-vivado" id="id2">Install Vivado</a></p></li>
+<li><p><a class="reference internal" href="#setup-a-vivado-project" id="id3">Setup a Vivado project</a></p>
+<ul>
+<li><p><a class="reference internal" href="#clone-a-repository-with-git" id="id4">Clone a repository with git</a></p></li>
+<li><p><a class="reference internal" href="#build-the-vivado-project" id="id5">Build the Vivado project</a></p></li>
+<li><p><a class="reference internal" href="#test-vivado-project" id="id6">Test Vivado project</a></p></li>
+<li><p><a class="reference internal" href="#program-fpga" id="id7">Program FPGA</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#github-setup" id="id8">GitHub setup</a></p></li>
+</ul>
+</div>
+<section id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>That’s right, it takes an entire lab to make sure Vivado is setup!</p>
 <p>This lab will have you:</p>
 <ol class="simple">
@@ -476,18 +503,20 @@ title="Print to PDF"
 <li><p>Test our ability to squirt a bitstream to our FPGA</p></li>
 <li><p>Ensure GitHub classroom is setup</p></li>
 </ol>
+</section>
 <section id="install-vivado">
-<h2>Install Vivado<a class="headerlink" href="#install-vivado" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id2">Install Vivado</a><a class="headerlink" href="#install-vivado" title="Permalink to this headline">#</a></h2>
 <p>Follow the instructions in <code class="docutils literal notranslate"><span class="pre">Vivado</span> <span class="pre">Installation</span> <span class="pre">Instructions.pdf</span></code> under the Teams Files tab.</p>
 </section>
 <section id="setup-a-vivado-project">
-<h2>Setup a Vivado project<a class="headerlink" href="#setup-a-vivado-project" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id3">Setup a Vivado project</a><a class="headerlink" href="#setup-a-vivado-project" title="Permalink to this headline">#</a></h2>
+<p>In order to make sure Vivado was installed properly, we’ll build the “Hello, World!” equivalent for an FPGA.</p>
 <section id="clone-a-repository-with-git">
-<h3>Clone a repository with git<a class="headerlink" href="#clone-a-repository-with-git" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id4">Clone a repository with git</a><a class="headerlink" href="#clone-a-repository-with-git" title="Permalink to this headline">#</a></h3>
 <p>Clone <a class="reference external" href="https://github.com/USAFA-ECE/helloLed">GitHub USAFA-ECE helloLed</a></p>
 </section>
 <section id="build-the-vivado-project">
-<h3>Build the Vivado project<a class="headerlink" href="#build-the-vivado-project" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id5">Build the Vivado project</a><a class="headerlink" href="#build-the-vivado-project" title="Permalink to this headline">#</a></h3>
 <p>We will dive into what’s going on here later in ICE 2 <a class="reference internal" href="../ICE/ICE2.html#setup-vivado-project"><span class="std std-ref">Setup Vivado Project</span></a>.
 But for now,</p>
 <ol class="simple">
@@ -496,7 +525,7 @@ But for now,</p>
 </ol>
 </section>
 <section id="test-vivado-project">
-<h3>Test Vivado project<a class="headerlink" href="#test-vivado-project" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id6">Test Vivado project</a><a class="headerlink" href="#test-vivado-project" title="Permalink to this headline">#</a></h3>
 <p>In the Flow Navigator pane on the left hand side:</p>
 <ol class="simple">
 <li><p>Under SIMULATION, click “Run Simulation” then <strong>Run Behavioral Simulation</strong>.</p></li>
@@ -507,7 +536,7 @@ But for now,</p>
 </ol>
 </section>
 <section id="program-fpga">
-<h3>Program FPGA<a class="headerlink" href="#program-fpga" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id7">Program FPGA</a><a class="headerlink" href="#program-fpga" title="Permalink to this headline">#</a></h3>
 <p>We will go into more detail with <a class="reference internal" href="../ICE/ICE2.html#download-onto-fpga"><span class="std std-ref">Download onto FPGA and test</span></a>.
 For now just:</p>
 <ol class="simple">
@@ -526,7 +555,7 @@ For now just:</p>
 </section>
 </section>
 <section id="github-setup">
-<h2>GitHub setup<a class="headerlink" href="#github-setup" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id8">GitHub setup</a><a class="headerlink" href="#github-setup" title="Permalink to this headline">#</a></h2>
 <p>If you have not already completed <a class="reference internal" href="../ICE/ICE0.html"><span class="doc std std-doc">BCE 0: Get started with Git</span></a>, do so now.</p>
 </section>
 </section>
