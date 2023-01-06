@@ -59,13 +59,18 @@ exercise and throughout the course.
 ### Half-adder
 
 A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 10.1 of your textbook. Figure 1 shows the schematic symbol. The logic equations and truth table for a half-adder are shown below.
+read more about half-adders in Section 10.1 of your textbook. {numref}`half-adder-schem` shows the schematic symbol.
+
+```{figure} img/ice2_halfadder.png
+---
+name: half-adder-schem
+---
+Half-adder schematic symbol
+```
 
 $S$ stands for "sum", $C_{out}$ stands for "Carry out". The "circled plus sign" represents XOR.
 
-![Half-adder schematic](img/ice2_halfadder.png)
-
-*Figure 1: Half-adder schematic symbol*
+The logic equations are:
 
 $$
 S = A \oplus B
@@ -75,12 +80,18 @@ $$
 C_{out} = AB
 $$
 
+The cooresponding truth table is shown in {numref}`half-adder-truth`.
+
+```{table} Half-adder truth table
+:name: half-adder-truth
+
 | $A$ | $B$ |   | $C_{out}$ | $S$ |
 |-----|-----|---|-----------|-----|
 | 0   | 0   |   | 0         | 0   |
 | 0   | 1   |   | 0         | 1   |
 | 1   | 0   |   | 0         | 1   |
 | 1   | 1   |   | 1         | 0   |
+```
 
 ### Design flow
 
@@ -114,6 +125,11 @@ We will then tell Viavdo to setup the project for us using a `build.tcl` file.
 
 ### Clone project with Git
 
+The template for this assignment is in GitHub Classroom.
+
+1. Join the assignment
+2. Create your copy of the repository
+3. Clone the repository to your local computer
 
 ### Build the project with Vivado
 
@@ -161,14 +177,16 @@ We said earlier that we have
 These were all in the `src/` folder of our cloned repo, but the `build.tcl` told Vivado which was which.
 You can now see them assigned appropriately under "Sources"
 
-![source files in Vivado](img/ice2_vivado_sources.png)
-*Vivado sources*
+```{figure} img/ice2_vivado_sources.png
+---
+name: vivado-sources
+---
+Vivado sources
+```
 
-**Design sources** describe the architecture and behavior of our hardware.
-
-**Constraints** map the signals and ports we define to actual pins on our Basys board
-
-**Simulation sources** include test bench files that are used to test our design before we put it on hardware.
+- **Design sources** describe the architecture and behavior of our hardware.
+- **Constraints** map the signals and ports we define to actual pins on our Basys board
+- **Simulation sources** include test bench files that are used to test our design before we put it on hardware.
 
 ## Edit your half-adder implementation
 
@@ -242,31 +260,31 @@ languages.
 
 The ieee std_logic library will be our 🍞 and 🧈
 
-> Delete the unisim library since we are not using them currently.
-
 ```vhdl
 library ieee;
   use ieee.std_logic_1164.all;
   use ieee.numeric_std.all;
-
-library unisim;
-  use UNISIM.Vcomponents.ALL;
 ```
 
 ### Modify half-adder entity
 
-Remember the schematic of the half-adder we are trying to create:
+Remember the half-adder schematic in {numref}`half-adder-schem`. This is what we are trying to create.
 
-![Half-adder schematic](img/ice2_halfadder.png)
+![half-adder architecture](img/ice2_halfadder.png)
 
-This conceptual device has no way for us to interact with it! However, if we go one level of abstraction lower, we can say:
+But! This conceptual device has no way for us to interact with it. However, if we go one level of abstraction lower:
 
 - We will map switches to inputs
 - We will map LEDs to outputs
 
 Now we can redraw our schematic as a block diagram:
 
-![](img/ice2_image13.jpg)
+```{figure} ice2_image13.jpg
+---
+name: half-adder-entity
+---
+Half-adder entity block diagram
+```
 
 In VHDL this is called an **entity**.
 
@@ -320,7 +338,12 @@ $$
 
 We can directly represent this in architecture with an AND and XOR gate.
 
-![half-adder architecture](img/ice2_image15.jpg)
+```{figure} img/ice2_image15.jpg
+---
+name: half-adder-arch
+---
+Architecture of half-adder
+```
 
 Again, we have gone to a lower level of abstraction. We are looking *inside* the black box entity that we described above.
 
@@ -406,7 +429,7 @@ testbench.
 
 Now that your halfAdder hardware is inside your testbench entity, we are
 going to declare some additional signals that correspond to the switches
-and LEDs per our previous block diagram:
+and LEDs per our previous block diagram {numref}`half-adder-entity`
 
 ![half-adder architecture](img/ice2_image13.jpg)
 

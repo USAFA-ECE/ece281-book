@@ -850,10 +850,15 @@ exercise and throughout the course.</p>
 <section id="half-adder">
 <h3><a class="toc-backref" href="#id7">Half-adder</a><a class="headerlink" href="#half-adder" title="Permalink to this headline">#</a></h3>
 <p>A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 10.1 of your textbook. Figure 1 shows the schematic symbol. The logic equations and truth table for a half-adder are shown below.</p>
+read more about half-adders in Section 10.1 of your textbook. <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 11</span></a> shows the schematic symbol.</p>
+<figure class="align-default" id="half-adder-schem">
+<img alt="../_images/ice2_halfadder.png" src="../_images/ice2_halfadder.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Half-adder schematic symbol</span><a class="headerlink" href="#half-adder-schem" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><span class="math notranslate nohighlight">\(S\)</span> stands for “sum”, <span class="math notranslate nohighlight">\(C_{out}\)</span> stands for “Carry out”. The “circled plus sign” represents XOR.</p>
-<p><img alt="Half-adder schematic" src="../_images/ice2_halfadder.png" /></p>
-<p><em>Figure 1: Half-adder schematic symbol</em></p>
+<p>The logic equations are:</p>
 <div class="math notranslate nohighlight">
 \[
 S = A \oplus B
@@ -862,7 +867,9 @@ S = A \oplus B
 \[
 C_{out} = AB
 \]</div>
-<table class="colwidths-auto table">
+<p>The cooresponding truth table is shown in <a class="reference internal" href="#half-adder-truth"><span class="std std-numref">Table 1</span></a>.</p>
+<table class="colwidths-auto table" id="half-adder-truth">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Half-adder truth table</span><a class="headerlink" href="#half-adder-truth" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(A\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(B\)</span></p></th>
@@ -928,6 +935,12 @@ An FPGA can be programmed to be many circuits.</p>
 We will then tell Viavdo to setup the project for us using a <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> file.</p>
 <section id="clone-project-with-git">
 <h3><a class="toc-backref" href="#id10">Clone project with Git</a><a class="headerlink" href="#clone-project-with-git" title="Permalink to this headline">#</a></h3>
+<p>The template for this assignment is in GitHub Classroom.</p>
+<ol class="simple">
+<li><p>Join the assignment</p></li>
+<li><p>Create your copy of the repository</p></li>
+<li><p>Clone the repository to your local computer</p></li>
+</ol>
 </section>
 <section id="build-the-project-with-vivado">
 <h3><a class="toc-backref" href="#id11">Build the project with Vivado</a><a class="headerlink" href="#build-the-project-with-vivado" title="Permalink to this headline">#</a></h3>
@@ -963,11 +976,17 @@ If you are having trouble locating the file, you can open the explorer to the di
 </ul>
 <p>These were all in the <code class="docutils literal notranslate"><span class="pre">src/</span></code> folder of our cloned repo, but the <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> told Vivado which was which.
 You can now see them assigned appropriately under “Sources”</p>
-<p><img alt="source files in Vivado" src="../_images/ice2_vivado_sources.png" />
-<em>Vivado sources</em></p>
-<p><strong>Design sources</strong> describe the architecture and behavior of our hardware.</p>
-<p><strong>Constraints</strong> map the signals and ports we define to actual pins on our Basys board</p>
-<p><strong>Simulation sources</strong> include test bench files that are used to test our design before we put it on hardware.</p>
+<figure class="align-default" id="vivado-sources">
+<img alt="../_images/ice2_vivado_sources.png" src="../_images/ice2_vivado_sources.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Vivado sources</span><a class="headerlink" href="#vivado-sources" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Design sources</strong> describe the architecture and behavior of our hardware.</p></li>
+<li><p><strong>Constraints</strong> map the signals and ports we define to actual pins on our Basys board</p></li>
+<li><p><strong>Simulation sources</strong> include test bench files that are used to test our design before we put it on hardware.</p></li>
+</ul>
 </section>
 </section>
 <section id="edit-your-half-adder-implementation">
@@ -1033,30 +1052,29 @@ develop good habits now.</p>
 statements are very similar to importing modules or includes in other
 languages.</p>
 <p>The ieee std_logic library will be our 🍞 and 🧈</p>
-<blockquote>
-<div><p>Delete the unisim library since we are not using them currently.</p>
-</div></blockquote>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">library</span><span class="w"> </span><span class="nn">ieee</span><span class="p">;</span>
 <span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
 <span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">ieee.numeric_std.</span><span class="k">all</span><span class="p">;</span>
-
-<span class="k">library</span><span class="w"> </span><span class="nn">unisim</span><span class="p">;</span>
-<span class="w">  </span><span class="k">use</span><span class="w"> </span><span class="nn">UNISIM.Vcomponents.</span><span class="k">ALL</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="modify-half-adder-entity">
 <h3><a class="toc-backref" href="#id15">Modify half-adder entity</a><a class="headerlink" href="#modify-half-adder-entity" title="Permalink to this headline">#</a></h3>
-<p>Remember the schematic of the half-adder we are trying to create:</p>
-<p><img alt="Half-adder schematic" src="../_images/ice2_halfadder.png" /></p>
-<p>This conceptual device has no way for us to interact with it! However, if we go one level of abstraction lower, we can say:</p>
+<p>Remember the half-adder schematic in <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 11</span></a>. This is what we are trying to create.</p>
+<p><img alt="half-adder architecture" src="../_images/ice2_halfadder.png" /></p>
+<p>But! This conceptual device has no way for us to interact with it. However, if we go one level of abstraction lower:</p>
 <ul class="simple">
 <li><p>We will map switches to inputs</p></li>
 <li><p>We will map LEDs to outputs</p></li>
 </ul>
 <p>Now we can redraw our schematic as a block diagram:</p>
-<p><img alt="" src="../_images/ice2_image13.jpg" /></p>
+<figure class="align-default" id="half-adder-entity">
+<img alt="ICE/ice2_image13.jpg" src="ICE/ice2_image13.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Half-adder entity block diagram</span><a class="headerlink" href="#half-adder-entity" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In VHDL this is called an <strong>entity</strong>.</p>
 <p>An <strong>entity</strong> in VHDL is a declaration of a hardware module’s input and
 outputs. In other words, it describes the interface of a “black box”.</p>
@@ -1100,7 +1118,12 @@ S = A \oplus B
 C_{out} = AB
 \]</div>
 <p>We can directly represent this in architecture with an AND and XOR gate.</p>
-<p><img alt="half-adder architecture" src="../_images/ice2_image15.jpg" /></p>
+<figure class="align-default" id="half-adder-arch">
+<img alt="../_images/ice2_image15.jpg" src="../_images/ice2_image15.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Architecture of half-adder</span><a class="headerlink" href="#half-adder-arch" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Again, we have gone to a lower level of abstraction. We are looking <em>inside</em> the black box entity that we described above.</p>
 <p>Our architecture is partially realized in the given VHDL code below:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
@@ -1176,7 +1199,7 @@ your implementation file to the corresponding component in your
 testbench.</p>
 <p>Now that your halfAdder hardware is inside your testbench entity, we are
 going to declare some additional signals that correspond to the switches
-and LEDs per our previous block diagram:</p>
+and LEDs per our previous block diagram <a class="reference internal" href="#half-adder-entity"><span class="std std-numref">Fig. 13</span></a></p>
 <p><img alt="half-adder architecture" src="../_images/ice2_image13.jpg" /></p>
 <p>You can think of these signals as <em>wires</em> that we place inside our
 testbench box. This is partially realized in the given testbench snippet
