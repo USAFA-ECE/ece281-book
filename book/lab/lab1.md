@@ -1,31 +1,13 @@
-Lab 1 - Logic
+# Lab 1 - Logic
 
-Lab Objectives:
+Due: Lesson 11
 
-1.  Design and implement a circuit in hardware using integrated
-    > circuits.
+```{contents}
+:local:
+:depth: 2
+```
 
-2.  Design and implement a circuit in hardware using VHDL.
-
-Agenda:
-
-1.  Pre-lab.
-
-2.  In-class.
-
-3.  Assignment.
-
-Collaboration:
-
-Your instructor will inform you if you are allowed to work in pairs or
-not. For all assignments in this course, unless otherwise noted on the
-assignment, you may work with anyone. We expect all graded work, to
-include code, lab notebooks, and written reports, to be in your own
-work. Copying another person's work, with or without documentation, will
-result in NO academic credit. Furthermore, copying without attribution
-is dishonorable and will be dealt with as an honor code violation.
-
-1 Purpose.
+## Overview
 
 In this lab you will design a circuit that takes a month as a 4-bit
 binary input (e.g., January is equivalent to 0001 and December is
@@ -36,123 +18,152 @@ inputs should produce an output of '0'.
 This circuit will rst be implemented in hardware using integrated
 circuits and then implemented in hardware using VHDL.
 
-# Pre-lab. Due beginning of class on lesson 10 \[25 Points\]
+### Objectives
 
-1.  \[5 Points\] Create a truth table that represents the conditions
-    > above.
+1. Design and implement a circuit in hardware using integrated circuits.
+2. Design and implement a circuit in hardware using VHDL.
 
-2.  \[5 Points\] Use a K-map to nd the simpli ed equation for Y.
+### Supplies
 
-3.  \[15\] Using the datasheets provided via Teams, draw
-    > [four]{.underline} separate schematics that can implement your
-    > truth table. Make sure to reference data sheets for the components
-    > to ensure you have included every input they need to function
-    > (Hint: some of the chips must be enabled (Vcc or Gnd)). Pay
-    > attention to the order of the inputs to the MUX and encoder (which
-    > bit is the MSB)?
+- Basys3 board
 
-    a.  The rst schematic will use an 8:1 MUX (74151) and inverter(s)
-        (7404).
+### Collaboration
 
-    b.  The second schematic will use a 4:16 \"one-cold\" (active low
-        output) decoder (74154), inverter(s), and two-input OR gate(s)
-        (7432). Using 2-input NANDs (7400) is also acceptable.
+Your instructor will inform you if you are allowed to work in pairs or
+not. For all assignments in this course, unless otherwise noted on the
+assignment, you may work with anyone. We expect all graded work, to
+include code, lab notebooks, and written reports, to be in your own
+work. Copying another person's work, with or without documentation, will
+result in NO academic credit. Furthermore, copying without attribution
+is dishonorable and will be dealt with as an honor code violation.
 
-    c.  The third schematic will use only inverter(s), two-input OR
-        gate(s), and three-input AND gate(s) (7411).
+## Background
 
-    d.  The fourth schematic will only use NAND gates with either two or
-        four inputs.
+In order to represent 12 months in unsigned binary, we know we need a four bits.
 
-> \[25 Points\] Submit all materials within the gradescope assignment,
-> Lab 1 - Prelab.
+$$
+ceiling(log_2(12)) = 4
+$$
 
-# In-class. \[25 Points\]
+Eventually we will move to representing that with a vector, but for now let's just give each input bit a letter: $A$, $B$, $C$, $D$, from most to least significant bit.
 
-You will implement your rst schematic (3.a 8:1 MUX (74151) and
+Then our output is simply $Y$.
+
+We want $Y$ to be `1` when the inputs are a month with 31 days and otherwise `0`.
+
+## Pre-lab
+
+Due beginning of class on lesson 10.
+
+### Logic equation
+
+1. Create a truth table that represents the conditions above.
+2. Use a K-map to find the simplified equation for $Y$.
+
+### Draw schematics
+
+Using the datasheets provided via Teams, draw **four** separate schematics that can implement your truth table.
+Make sure to reference data sheets for the components to ensure you
+have included every input they need to function
+
+```{Hint}
+Some of the chips must be enabled (`Vcc` or `Gnd`)).
+Pay attention to the order of the inputs to the MUX and encoder;
+which bit is the MSB?
+```
+
+- The first schematic will use an 8:1 MUX (74151) and inverter(s) (7404).
+- The second schematic will use a 4:16 \"one-cold\" (active low output) decoder (74154), inverter(s), and two-input OR gate(s) (7432). Using 2-input NANDs (7400) is also acceptable.
+- The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
+- The fourth schematic will only use NAND gates with either two or four inputs.
+
+### Submit
+
+> Submit all materials within the gradescope assignment, Lab 1 - Prelab.
+
+## Lab
+
+You will implement your first schematic (3.a 8:1 MUX (74151) and
 inverter(s) (7404)) in hardware using integrated circuits.
 
-> Reference ICE1 if you need a refresher on how the breadboard functions
-> and how to place your power converter. You can also reference the
-> breadboard handout in the Datasheets Library to determine how the
-> breadboard is connected.
->
-> DO NOT leave oating inputs or control signals unconnected. All unused
-> input pins need to be grounded or connected to Vcc.
->
-> Double check all connections before turning on power.
->
-> Power down your circuit before making any adjustments or changes!
->
-> \[25 Points\] Demo your operational integrated circuit to an
-> instructor.
+Reference [](../ICE/ICE1.md) if you need a refresher on how the breadboard functions
+and how to place your power converter. You can also reference the
+breadboard handout in the Datasheets Library to determine how the
+breadboard is connected.
 
-# Assignment. \[50 Points\]
+**DO NOT** leave floating inputs or control signals unconnected.
+All unused input pins need to be grounded or connected to `Vcc`.
 
-You will implement your rst schematic (3.a 8:1 MUX and inverter(s)) in
-hardware using VHDL.
+Double check all connections before turning on power.
 
-4.1 Source Code
+```{danger}
+Power down your circuit before making any adjustments or changes!
+```
 
-1.  Download the VHDL templates from the 281 Team → Labs → Lab1
+When complete, demo your operational integrated circuit to an instructor.
 
-    a.  thirtyOneDayMonth.vhd
+### Setup Vivado Project
 
-    b.  thirtyOneDayMonth_tb.vhd
+Just like in {ref}`setup-vivado-project`, join the assignment, clone the project, and source the `build.tcl` file to setup the project.
 
-    c.  Basys3Master_Lab1.xdc
+You should see the following files:
 
-2.  Add your sources and constraints to Vivado. (Remember to leave
-    > \"Copy sources into project\" unchecked) 3. Edit the le headers as
-    > needed.
+- `thirtyOneDayMonth.vhd`
+- `thirtyOneDayMonth_tb.vhd`
+- `Basys3Master_Lab1.xdc`
 
-4.2 Entity (interface/ports)
+Edit the file headers as needed, then make the initial commit.
 
-Create your interface (ports) for the thirtyOneDayMonth according to
-gure 1. Figure 1 shows the thirtyOneDayMonth component entity interface
-in blue (think of this as the actual chip we used in the integrated
-circuit) and the architecture in purple (this is the circuitry inside
-the chip). The ports can be created in VHDL using the std_logic signal
-type (think of this as a single wire in our integrated circuit). For
-instance, i_A could be created in the port statement with the following:
+### Entity
 
-+------+---+----------+---+---+---+----+--------------------------------+
-| >    | i | st       | \ | o | o | fo | inputs                         |
-|  i_A | n | d_logic; | - | n | f | ur |                                |
-| > :  |   |          | - | e |   |    |                                |
-+======+===+==========+===+===+===+====+================================+
-+------+---+----------+---+---+---+----+--------------------------------+
+Create your interface (ports) for the `thirtyOneDayMonth` according to {numref}`thirtyone-day-month`.
 
-Remember, the \"i\_\" follows the naming convention provided in the
-header that indicates the signal is an input.
+```{figure} img/lab1_image1.jpg
+---
+name: thirtyone-day-month
+---
+thirtyOneDayMonth entity with interfaces shown in blue and architecture in purple.
+```
 
-1.  Use the above syntax to create the rest of the input ports within
-    > the entity.
+Think of this as the actual chip we used in the integrated circuit.
+The internal architecture is purple. It is a cloud because we haven't
+defined the circuitry inside that makes the chip
+do the desired combinational logic.
 
-The output, \"o_Y\" is a single wire. This can be created in VHDL by
-using a std_logic signal type. For instance, \"o_Y\" can be created in
-the port statement with the following:
+The ports can be created in VHDL using the `std_logic` signal type.
+Remember, `std_logic` is like a single digital logic wire.
 
-+------+---+----------+---+--------------------------------------------+
-| >    | o | st       | \ | output                                     |
-|  o_Y | u | d_logic; | - |                                            |
-| > :  | t |          | - |                                            |
-+======+===+==========+===+============================================+
-+------+---+----------+---+--------------------------------------------+
+#### Input interface
 
-2.  Use the above syntax to create the output port within the entity.
+You found the logic equation during the pre-lab.
+Let's map the input $A$ from that equation to `i_A` in our entity.
+
+Recall that the `i_` prefix matches the naming convention for inputs described in the header.
+
+```vhdl
+i_A : in std_logic;
+```
+
+> Use the above syntax to create the rest of the input ports within the entity.
+
+#### Output interface
+
+Our pre-lab output $Y$ was a single bit; likewise, the output, `o_Y`
+is a single wire, so will still be of the `std_logic` type.
+
+```vhdl
+o_Y : std_logic;
+```
+
+> Use the above syntax to create the output port within the entity.
 
 You now have the entity portion of the thirtyOneDayMonth component
 complete. Next, you need to develop the internal logic, the
 architecture.
 
-> ![](img/media/image1.jpg){width="4.875169510061243in"
-> height="3.3891240157480316in"}
+### Architecture
 
-Figure 1: thirtyOneDayMonth component depicting the entity in blue and
-architecture in purple
-
-4.3 Architecture
+Now that we have our entity interfaces, it's time to describe the internal behavior of our circuit.
 
 Create the logic to implement the internals of the thirtyOneDayMonth
 entity. The logic is described using VHDL, but the Basys3 board will
@@ -273,7 +284,7 @@ following:
 
 3.  Make sure the simulation results match your truth table.
 
-> \[15 Points\] Submit your waveform screenshot as an image in the
+> **[15 Points]** Submit your waveform screenshot as an image in the
 > gradescope assignment, Lab1.
 
 4.5 Constraints File
@@ -294,20 +305,20 @@ is done correctly.
 
 2.  Verify that your design functions correctly.
 
-> \[25 Points\] Demo the operational VHDL circuit to an instructor.
+> **[25 Points]** Demo the operational VHDL circuit to an instructor.
 >
-> \[10 Points\] Push your .vhd and .xdc les using git.
+> **[10 Points]** Push your .vhd and .xdc les using git.
 
 5 Deliverables.
 
-1.  \[25 Points\] Prelab materials submitted to gradescope (Lab1 -
+1.  **[25 Points]** Prelab materials submitted to gradescope (Lab1 -
     > Prelab).
 
-2.  \[25 Points\] Demo integrated circuit.
+2.  **[25 Points]** Demo integrated circuit.
 
-3.  \[15 Points\] Simulation results waveform submitted to gradescope
+3.  **[15 Points]** Simulation results waveform submitted to gradescope
     > (Lab1).
 
-4.  \[25 Points\] Demo vhdl circuit.
+4.  **[25 Points]** Demo vhdl circuit.
 
-5.  \[10 Points\] Push your .vhd and .xdc les using git.
+5.  **[10 Points]** Push your .vhd and .xdc les using git.
