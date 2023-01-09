@@ -77,9 +77,7 @@ which bit is the MSB?
 - The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
 - The fourth schematic will only use NAND gates with either two or four inputs.
 
-### Submit
-
-> Submit all materials within the Gradescope assignment, Lab 1 - Prelab.
+> **[25 Points]** Submit all materials within the Gradescope assignment, Lab 1 - Prelab.
 
 ## Lab: Integrated Circuit
 
