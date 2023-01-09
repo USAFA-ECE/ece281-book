@@ -41,7 +41,12 @@ This is a template repository, so you can [create your own repository from this 
 
 Making updates to the content can be as simple as adding/editing the Markdown or Jupyter Book YAML files and pushing to `main`. No depenedencies needed!
 
+**BUT** you should source a virtual `env/` and execute `pre-commit install`.
+Also, the VS Code **MyST-Markdown** extension is super handy for previews.
+
 #### Preview site before you push
+
+If you use VS Code and the **MyST-Markdown** extension then most everything should render well enough for a preview.
 
 If you want to build the site locally, you need to install Jupyter Book.
 This requires Python 3.9 or higher, which you should run in a virtual environment.
