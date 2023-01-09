@@ -10,12 +10,12 @@ Due: Lesson 11
 ## Overview
 
 In this lab you will design a circuit that takes a month as a 4-bit
-binary input (e.g., January is equivalent to 0001 and December is
-equivalent to 1100). For each month that has 31 days, you should turn on
-the red LED (your output value, Y, is '1'). All other months and unused
-inputs should produce an output of '0'.
+binary input (e.g., January is equivalent to `0001` and December is
+equivalent to `1100`). For each month that has 31 days, you should turn on
+the red LED (your output value, $Y$, is `1`). All other months and unused
+inputs should produce an output of `0`.
 
-This circuit will rst be implemented in hardware using integrated
+This circuit will first be implemented in hardware using integrated
 circuits and then implemented in hardware using VHDL.
 
 ### Objectives
@@ -39,7 +39,7 @@ is dishonorable and will be dealt with as an honor code violation.
 
 ## Background
 
-In order to represent 12 months in unsigned binary, we know we need a four bits.
+In order to represent 12 months in unsigned binary, we know we need a four bits:
 
 $$
 ceiling(log_2(12)) = 4
@@ -47,7 +47,7 @@ $$
 
 Eventually we will move to representing that with a vector, but for now let's just give each input bit a letter: $A$, $B$, $C$, $D$, from most to least significant bit.
 
-Then our output is simply $Y$.
+Our output is $Y$.
 
 We want $Y$ to be `1` when the inputs are a month with 31 days and otherwise `0`.
 
@@ -79,9 +79,9 @@ which bit is the MSB?
 
 ### Submit
 
-> Submit all materials within the gradescope assignment, Lab 1 - Prelab.
+> Submit all materials within the Gradescope assignment, Lab 1 - Prelab.
 
-## Lab
+## Lab: Integrated Circuit
 
 You will implement your first schematic (3.a 8:1 MUX (74151) and
 inverter(s) (7404)) in hardware using integrated circuits.
@@ -100,11 +100,16 @@ Double check all connections before turning on power.
 Power down your circuit before making any adjustments or changes!
 ```
 
-When complete, demo your operational integrated circuit to an instructor.
+> **[25 Points]** Demo your operational integrated circuit to an instructor.
+
+## Lab: FPGA
+
+Now we will construct the same circuit in VHDL.
 
 ### Setup Vivado Project
 
-Just like in {ref}`setup-vivado-project`, join the assignment, clone the project, and source the `build.tcl` file to setup the project.
+Just like in {ref}`setup-vivado-project`, join the github classroom assignment,
+clone the project, and source the `build.tcl` file to setup the project.
 
 You should see the following files:
 
@@ -166,80 +171,46 @@ architecture.
 Now that we have our entity interfaces, it's time to describe the internal behavior of our circuit.
 
 Create the logic to implement the internals of the thirtyOneDayMonth
-entity. The logic is described using VHDL, but the Basys3 board will
-implement the design using logic gates and other hardware components
+entity. The logic is *described* using VHDL, but the Basys3 board will
+*implement* the design using logic gates and other hardware components
 similar to what is inside the chip used during the integrated circuit
 portion of the lab.
 
-As we saw in class, a multiplexer has 3 di erent signals: select, input,
+As we saw in class, a multiplexer has 3 different signals: select, input,
 and output. We will connect three of our entity inputs to select bits
 and the fourth input bit to the input of the multiplexer. The entity
-output will be used as the multiplexer output. Since we already created
-the entity inputs and outputs, the only internal signal we need to
-implement is the select. This can be created using the std_logic_vector
-signal type as seen below. This is declared before begin:
+output will be used as the multiplexer output.
 
-+-------+-----+---+-------------------+------+---+---+---+--------------+
-| > s   | w_  | : | s                 | do   | 0 | \ | M | sel          |
-| ignal | sel |   | td_logic_vector(2 | wnto | ) | - | U |              |
-|       |     |   |                   |      | ; | - | X |              |
-+=======+=====+===+===================+======+===+===+===+==============+
-+-------+-----+---+-------------------+------+---+---+---+--------------+
+Since we already created the entity inputs and outputs, the only internal
+signal we need to implement is the select.
+This can be created using the `std_logic_vector` signal type as seen below.
+This is declared *before* **begin**:
 
-1.  Replace the example code to include the multiplexer select signal
-    > within the architecture.
+```vhdl
+signal w_sel : std_logic_vector (2 downto 0); -- MUX sel
+```
+
+```{hint}
+A std_logic_vector signal is a vector of std_logic signals; meaning,
+you can access a wire within the vector using an index inside of parentheses. 
+```
+
+> Replace the example code to include the multiplexer select signal within the architecture.
 
 In the CONCURRENT STATEMENTS section of the architecture you will need
-to connect your entity inputs to the appropriate wires of the w_sel
+to connect your entity inputs to the appropriate wires of the `w_sel`
 vector. The individual wires of a vector can be accessed with indexes.
 To assign a value to the LSB of the vector you would do the following:
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 4%" />
-<col style="width: 11%" />
-<col style="width: 8%" />
-<col style="width: 2%" />
-<col style="width: 4%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 4%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p>w_sel(0)&lt;=i_D;</p>
-</blockquote></th>
-<th>--</th>
-<th>connect</th>
-<th>input</th>
-<th>D</th>
-<th>to</th>
-<th>the</th>
-<th>LSB</th>
-<th>of</th>
-<th>w_sel</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```vhdl
+w_sel (0) <= i_D ; -- connect input D to the LSB of w_sel
+```
 
-2.  Repeat the signal assignment for i_C to index 1 and i_B to index 2.
+> Repeat the signal assignment for `i_C` to index 1 and `i_B` to index 2.
 
-+-----+--------+----+---+---+------------------------------------------+
-| > w | \<=    | wa | f | 1 | ns;                                      |
-| _sw | x      | it | o | 0 |                                          |
-|     | \"0\"; |    | r |   |                                          |
-+=====+========+====+===+===+==========================================+
-+-----+--------+----+---+---+------------------------------------------+
+Finally, implement your prelab design using behavioral modeling as discussed in class.
 
-3.  Implement your prelab design using behavioral modeling as discussed
-    > in class.
-
-4.4 Testbench and Simulation
+### Testbench and Simulation
 
 The testbench will be used to simulate your entity prior to implementing
 it on the Basys3 board. As you will learn, implementation takes a very
@@ -249,76 +220,79 @@ The general concept of a testbench is to include the component you
 created and then test every input and observe if the output matches the
 truth table designed in the prelab.
 
-As this is the rst time using a testbench, a lot is lled out for you.
+As this is the first time using a testbench, a lot is spelled out for you.
 Read through the provided template to see how it was set up. In the
 future you will have to write a lot of this code. There are three main
 sections that are complete to pay attention to:
 
-> Component: declares the component of your top-level entity (this is
-> the unit under test, UUT). This section will be an exact copy of your
-> entity.
->
-> Additional components: These are internal signals used to wire your
-> simulated inputs and outputs to the entity. You will typically need a
-> wire that corresponds to each port of your top-level entity.
->
-> Port Maps: A port map wires your internal signals to the entity. There
-> should be a port map for each entity you are testing.
+- **Component**: declares the component of your top-level entity (this is
+    the unit under test, UUT). This section will be an exact copy of your entity.
+- **Additional components**: These are internal signals used to wire your
+    simulated inputs and outputs to the entity. You will typically need a
+    wire that corresponds to each port of your top-level entity.
+- **Port Maps**: A port map wires your internal signals to the entity. There
+    should be a port map for each entity you are testing.
 
-A 4-bit test signal vector, w_sw, was created for you in the Additional
+A 4-bit test signal vector, `w_sw`, was created for you in the Additional
 components section to create your test cases. Instead of assigning each
 bit of the entity (A-D), you can assign all 4 inputs at once using hex.
-For example, you can use x\"1\" to represent the binary \"0001\" which
-would then assign a \"0\" to i_A - i_C and a \"1\" to i_D. Since we are
+For example, you can use `x"1"` to represent the binary `"0001"` which
+would then assign a `0` to `i_A` to `i_C` and a `1` to `i_D`. Since we are
 simulating real hardware, we will have to create delays between each
 change in input. We can test an input and delay for 10 ns using the
 following:
 
-1.  Finish the test process. You will need to create 16 lines (2^4^),
-    > similar to the one above, for each test case.
+```vhdl
+w_sw <= x"0"; wait for 10 ns;
+```
 
-2.  Edit the names of the i_sw bits as A, B, C, and D, to help match the
-    > results to your truth table. Click the \"\>\" to expand the
-    > vector. Then right click on \[3\] and select rename. You can then
-    > change it to \"i_A\". Repeat for the other three signals.
+This is the first test case of our 4-bit input truth table. To finish the test process, you need to create the additional $2^4 - 1$ lines.
 
-3.  Make sure the simulation results match your truth table.
+> Complete the test process
 
-> **[15 Points]** Submit your waveform screenshot as an image in the
-> gradescope assignment, Lab1.
+#### Run the simulation
 
-4.5 Constraints File
+After the testbench is written, under SIMULATION click **Run Simulation**.
 
-1\. Open your Basys3Master_Lab1.xdc le.
+When the waveform appears, maximize the window. Then, edit the names of the `i_sw` bits as $A$, $B$, $C$, and $D$, to help match the results to your truth table.
 
-This time the constraints le is complete and you will not need to make
-changes to it. The .xdc le maps the signals in your entity to the
-physical pins on the board. As an example, i_A is mapped to pin V17
-which is the 4th siwtch from the right. The other inputs are mapped
-similarly. The output, o_Y is mapped to pin U16 which corresponds to the
-LED on the far right. In the future, you will have to ensure the mapping
-is done correctly.
+Click the `>` to expand the vector. Then right click on `[3]` and select rename.
+You can then change it to `i_A`. Repeat for the other three signals.
 
-4.6 Implement
+Make sure the simulation results match your truth table.
 
-1.  Generate the bitstream (.bit) le and download it to your FPGA.
+> **[15 Points]** Submit your waveform screenshot as an image in the gradescope assignment, Lab1.
 
-2.  Verify that your design functions correctly.
+### Constraints File
+
+Open your Basys3Master_Lab1.xdc file.
+
+The .xdc file maps the signals in your entity to the
+physical pins on the board. This time the constraints file is complete and you will not need to make changes to it.
+
+As an example, `i_A` is mapped to pin **V17** which is the 4th switch from the right.
+The other inputs are mapped similarly.
+
+The output, `o_Y` is mapped to pin **U16** which corresponds to the
+LED on the far right.
+
+In the future, you will have to ensure the mapping is done correctly.
+
+### Implement
+
+1. Generate the bitstream (.bit) file and download it to your FPGA.
+2. Verify that your design functions correctly.
 
 > **[25 Points]** Demo the operational VHDL circuit to an instructor.
->
-> **[10 Points]** Push your .vhd and .xdc les using git.
+
+Then
+
+> **[10 Points]** Push your .vhd and .xdc files using git.
 
 5 Deliverables.
 
-1.  **[25 Points]** Prelab materials submitted to gradescope (Lab1 -
-    > Prelab).
-
-2.  **[25 Points]** Demo integrated circuit.
-
-3.  **[15 Points]** Simulation results waveform submitted to gradescope
-    > (Lab1).
-
-4.  **[25 Points]** Demo vhdl circuit.
-
-5.  **[10 Points]** Push your .vhd and .xdc les using git.
+1. **[25 Points]** Prelab materials submitted to gradescope (Lab1 - Prelab).
+2. **[25 Points]** Demo integrated circuit.
+3. **[15 Points]** Simulation results waveform submitted to gradescope (Lab1).
+4. **[25 Points]** Demo vhdl circuit.
+5. **[10 Points]** Push your .vhd and .xdc files using git.

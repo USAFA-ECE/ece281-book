@@ -16,6 +16,7 @@ parts:
   - caption: Labs
     chapters:
       - file: lab/lab0
+      - file: lab/lab1
       - file: lab/lab2Prelab
       - file: lab/lab2
   - caption: Appendix
