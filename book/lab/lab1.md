@@ -1,4 +1,4 @@
-# Lab 1 - Logic
+# Lab 1 - ThirtyOneDayMonth
 
 Due: Lesson 11
 
