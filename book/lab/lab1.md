@@ -190,7 +190,7 @@ signal w_sel : std_logic_vector (2 downto 0); -- MUX sel
 
 ```{hint}
 A std_logic_vector signal is a vector of std_logic signals; meaning,
-you can access a wire within the vector using an index inside of parentheses. 
+you can access a wire within the vector using an index inside of parentheses.
 ```
 
 > Replace the example code to include the multiplexer select signal within the architecture.
