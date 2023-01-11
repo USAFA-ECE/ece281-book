@@ -20,8 +20,8 @@ logic design in VHDL.
 
 The objectives of this in-class exercise are for you to:
 
--   Implement and test a simple logic design (half-adder) using VDHL
--   Gain more experience using tools (Git, Xilinx Vivado)
+- Implement and test a simple logic design (half-adder) using VDHL
+- Gain more experience using tools (Git, Xilinx Vivado)
 
 ### End state
 
@@ -31,10 +31,10 @@ the files you used through Git. Your instructor will be able to view
 your ICE2 folder through Git. The folder will contain at least the
 following:
 
-1.  VHDL files used (half-adder implementation and testbench) in a
+1. VHDL files used (half-adder implementation and testbench) in a
     **code** folder
-2.  Constraints (.xdc) file in a **code** folder
-3.  .bit file used to program board
+2. Constraints (.xdc) file in a **code** folder
+3. .bit file used to program board
 
 ## Background
 
@@ -100,8 +100,6 @@ Hardware development is an exercise in moving between layers of [abstraction](ht
 Vivado will help us describe, simulate, test, and implement the design.
 The input to Vivado is VHDL. Ultimately, we will use Vivado to emulate the circuit on an FPGA (Field Programmable Gate Array).
 An FPGA can be programmed to be many circuits.
-
-*Design flow in Vivado*
 
 1. Setup project
 2. Create design
@@ -279,7 +277,7 @@ But! This conceptual device has no way for us to interact with it. However, if w
 
 Now we can redraw our schematic as a block diagram:
 
-```{figure} ice2_image13.jpg
+```{figure} img/ice2_image13.jpg
 ---
 name: half-adder-entity
 ---
@@ -297,11 +295,11 @@ The code comes with a partially completed entity description.
 -- entity name should match filename
 entity halfAdder is
   port(
-	i_A     : in  std_logic; -- 1-bit input port
-	i_B     : in  std_logic;
-	o_S     : out std_logic  -- 1-bit output port
-							 -- (NOTE: NO semicolon on LAST port only!)
-	-- TODO:  Carry port
+  i_A     : in  std_logic; -- 1-bit input port
+  i_B     : in  std_logic;
+  o_S     : out std_logic  -- 1-bit output port
+            -- (NOTE: NO semicolon on LAST port only!)
+  -- TODO:  Carry port
   ); -- the semicolon is here instead
 end halfAdder;
 ```
@@ -311,7 +309,7 @@ output per the naming convention in our file header.
 
 The inputs and output ports are signals described by the pattern
 
-```
+```text
 <portName> : <mode> <signalType>
 ```
 
@@ -351,14 +349,14 @@ Our architecture is partially realized in the given VHDL code below:
 
 ```vhdl
 architecture halfAdder_arch of halfAdder is
-	-- this is where you would include components declarations and signals if you needed them
+  -- this is where you would include components declarations and signals if you needed them
 
 begin
-	-- this is where you would map ports for any component instantiations if you needed to
+  -- this is where you would map ports for any component instantiations if you needed to
 
-	-- *concurrent* signal assignments
-	o_S    <= i_A xor i_B;
-	-- TODO:  Carry signal assignment
+  -- *concurrent* signal assignments
+  o_S    <= i_A xor i_B;
+  -- TODO:  Carry signal assignment
 
 end halfAdder_arch;
 ```
@@ -411,13 +409,13 @@ architecture test_bench of halfAdder_tb is
 
   -- declare the component of your top-level design unit under test (UUT)
   component halfAdder is
-	port(
-		i_A     : in  std_logic; -- 1-bit input port
-		i_B     : in  std_logic;
-		o_S     : out std_logic  -- 1-bit output port
-								 -- (NOTE: NO semicolon on LAST port only!)
-		-- TODO:  Carry port
-	); -- the semicolon is here instead
+  port(
+    i_A     : in  std_logic; -- 1-bit input port
+    i_B     : in  std_logic;
+    o_S     : out std_logic  -- 1-bit output port
+              -- (NOTE: NO semicolon on LAST port only!)
+  -- TODO:  Carry port
+  ); -- the semicolon is here instead
   end component;
 ```
 
@@ -437,20 +435,19 @@ You can think of these signals as *wires* that we place inside our
 testbench box. This is partially realized in the given testbench snippet
 shown below.
 
-Since these are top level wires, we would normally
-prepend the names with `w_` instead of `i_` or `o_`, but we will
-stick with the current names for this exercise. The code also sets
-an initial value of '0'.
+Since these are top level wires, we will prepent the names with `w_`.
+The code also sets an initial value of '0'.
 
 ```vhdl
   -- declare signals needed to stimulate the UUT inputs
-  signal i_sw1 : std_logic := '0';
+  signal w_sw1 : std_logic := '0';
   -- TODO:  sw0 signal
 
   -- also need signals for the outputs of the UUT
-  signal o_led1 : std_logic := '0';
+  signal w_led1 : std_logic := '0';
   -- TODO:  led0 signal
 ```
+
 > Declare the two missing signals.
 
 So, now we have a testbench box with a half-adder component and four
@@ -460,43 +457,48 @@ code snippet below.
 
 ```vhdl
 begin
-	-- PORT MAPS ----------------------------------------
+begin
+  -- PORT MAPS ----------------------------------------
 
-	-- map ports for any component instances (port mapping is like wiring hardware)
-	halfAdder_inst : halfAdder port map (
-		i_A     => i_sw1, -- notice comma (not a semicolon)
-		i_B     => i_sw0,
-		o_S     => o_led0 -- no comma on LAST one
-		-- TODO:  map Cout
-	);
+  -- map ports for any component instances (port mapping is like wiring hardware)
+  halfAdder_inst : halfAdder port map (
+    i_A     => w_sw1, -- notice comma (not a semicolon)
+    i_B     => w_sw0,
+    o_S     => w_led0 -- no comma on LAST one
+    -- TODO:  map Cout
+  );
 ```
 
-> Wire up the `o_Cout` signal to `o_led1`.
+> Wire up the `o_Cout` signal to `w_led1`.
 
-Now all that is left is to assign values to the test input wires (`i_sw0`
-and `i_sw1`) inside the **test plan process**:
+Now all that is left is to assign values to the test input wires (`w_sw0`
+and `w_sw1`) inside the **test plan process**:
 
 The **test plan process** is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.
 
+We use the **assert** statement to automatically check that our values are what we expect.
+If the assert fails, then the test will **report** a failure. The report also
+has a message; we should write the message to be helpful to ourselves while debugging.
+There are other severity levels, but we will use "failure" here. The "error" level generates
+a message but will continue to execute the test instead of exiting immediately.
+
 ```vhdl
 -- Test Plan Process --------------------------------
-	-- Implement the test plan here.  Body of process is continuously from time = 0
-	test_process : process
-	begin
+  test_process : process
+  begin
 
-		i_sw1 <= '0'; i_sw0 <= '0'; wait for 10 ns;
-		-- TODO:  rest of test plan
+    w_sw1 <= '0'; w_sw0 <= '0'; wait for 10 ns;
+      assert w_led0 = '0' report "bad sum" severity failure;
+      assert w_led1 = '0' report "bad carry" severity failure;
+    -- TODO:  rest of test plan
 
-		wait; -- wait forever
-	end process;
-	-----------------------------------------------------
+    wait; -- wait forever
+  end process;
 ```
 
-How many test cases do we need?
+How many test cases do we need for this circuit?
 
-> Implement the rest of the test plan
-
-> Save the file.
+> Implement the rest of the test plan. Save the file.
 
 ### Check syntax
 
@@ -514,34 +516,26 @@ Testing our project involves simulation and viewing schematics.
 
 ### Simulate project
 
-1.  In the Flow Navigator (the left panel), **right** click on "Run
+1. In the Flow Navigator (the left panel), **right** click on "Run
     Simulation" and select "Simulation Settings"
-
-2.  Click on the **Simulation** tab and change the runtime to **50 ns**
+2. Click on the **Simulation** tab and change the runtime to **50 ns**
     or an otherwise appropriate length based on
     your test plan process. Click OK.
-
 ![simulation runtime](img/ice2_image23.jpg)
-
-3.  **Left** click on **Run Simulation** and then click on **Run
-    Behavioral Simulation**
-
-    a.  You can ignore/cancel any firewall access popups
-
-4.  If for some reason a waveform window did not pop up, check the
+3. **Left** click on **Run Simulation** and then click on **Run
+    Behavioral Simulation**. You can ignore/cancel any firewall access popups
+4. If for some reason a waveform window did not pop up, check the
     Messages and Log tabs near the bottom of your window. Look for error
     messages.
-
-5.  Once the waveform window is in view, click on the Zoom Fit icon
+5. Once the waveform window is in view, click on the Zoom Fit icon
     or adjust the zoom window as needed to see the time periods of interest
-    ![zoom fit](img/ice2_image24.jpg)
+![zoom fit](img/ice2_image24.jpg)
 
-    a.  Verify that the waveforms show your design is working correctly        (inputs and outputs should match truth table)
-
-6.  Try changing the outputs to different colors by right clicking on
+6. Verify that the waveforms show your design is working correctly
+  (inputs and outputs should match truth table)
+7. Try changing the outputs to different colors by right clicking on
     the signals and selecting **Signal Color**.
-
-7.  Rename signals to show what they correspond to (e.g., A) and define
+8. Rename signals to show what they correspond to (e.g., A) and define
     virtual busses for your inputs and outputs as shown in the figure
     below. To define a virtual bus, simply highlight multiple signals
     and right click. Then, select "**Virtual Bus**" and name it as
@@ -605,7 +599,12 @@ bottom of the "Cell Properties" sub-window.
 
 Notice an equation is also given for the output.
 
-![](img/ice2_image28.jpg)
+```{figure} img/ice2_image28.jpg
+---
+name: lookup-table
+---
+Synthesis lookup table
+```
 
 Do the truth tables for the LUTs make sense for your design?
 
@@ -617,21 +616,21 @@ If all of your testing succeeded...
 
 ### Edit the constraints file
 
-1.  Click on the Project Manager in the Flow Navigator
-2.  Double click on the Basys3_Master.xdc file in the Sources sub-window
-    to open it.
-3.  Get your BASYS 3 board out and look at the text surrounding the
+1. Click on the Project Manager in the Flow Navigator
+2. Double click on the Basys3_Master.xdc file in the Sources sub-window
+   to open it.
+3. Get your BASYS 3 board out and look at the text surrounding the
     switches and LEDs. Note, the labels underneath the switches are the
     physical pin locations on your BASYS 3 board. For example, `SW0` is
     connected to pin `V17`. Find (use CTRL+f) `V17` in the constraints
     file. You should see it first on line 12 as shown below.
 
-```
+```text
 #set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
-	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
+  #set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
 ```
 
-4.  Replace the `sw[0]` with the name of the node (signal) that should connect to the switch.
+Replace the `sw[0]` with the name of the node (signal) that should connect to the switch.
 In this case, we want to connect `i_B` from our halfAdder entity to this
 switch. In the future we will utilize the `sw[0]` naming convention
 so changing the xdc file may not be required.
@@ -642,19 +641,20 @@ for your half-adder interface in halfAdder.vhd and NOT the
 signal names in your testbench.
 ```
 
-5.  Uncomment the two lines by removing the '#' signs. The final result
-    should look similar to below:
+Uncomment the two lines by removing the `#` signs. The final result
+should look similar to below:
 
-```
+```text
 ## Switches
 set_property PACKAGE_PIN V17 [get_ports {i_B}]
-	set_property IOSTANDARD LVCMOS33 [get_ports {i_B}]
+  set_property IOSTANDARD LVCMOS33 [get_ports {i_B}]
 ```
 
-6.  Repeat steps 3-5 to connect `sw[1]` to `i_A`
-7.  Repeat steps 3-5 to connect `led[0]` to `o_S`
-8.  Repeat steps 3-5 to connect `led[1]` to `o_Cout`
-9.  Save the constraints file (CTRL+s)
+- connect `sw[1]` to `i_A`
+- connect `led[0]` to `o_S`
+- connect `led[1]` to `o_Cout`
+
+Save the constraints file (CTRL+s)
 
 ### Implement and generate bitstream
 
@@ -670,19 +670,19 @@ You should get a window reporting successful Bitstream Generation.
 (download-onto-fpga)=
 ## Download onto FPGA and test
 
-1.  Plug in your BASYS 3 board and turn it on.
-2.  Open the Hardware Manager (bottom of Flow Navigator)
-3.  Click on the **Open target** link and then click on **Auto Connect**
+1. Plug in your BASYS 3 board and turn it on.
+2. Open the Hardware Manager (bottom of Flow Navigator)
+3. Click on the **Open target** link and then click on **Auto Connect**
 
 ![hardware manager](img/ice2_image32.jpg)
 
-4.  Click on **Program device**
+4. Click on **Program device**
 
 ![program device](img/ice2_image33.jpg)
 
-5.  By default the Bitstream (`.bit`) file that you last created will be selected for programming. Click **Program**
-6.  After a successful program, test your design by flipping switches and verifying that the LED outputs are correct.
-7.  If your hardware works correctly, demo it to an instructor.
+5. By default the Bitstream (`.bit`) file that you last created will be selected for programming. Click **Program**
+6. After a successful program, test your design by flipping switches and verifying that the LED outputs are correct.
+7. If your hardware works correctly, demo it to an instructor.
 
 Alternatively, you may document your functionality by taking a short
 video or a series of pictures. Include the documentation in your
@@ -699,11 +699,12 @@ menu. Simply select the correct `.bit` file.
 ```
 
 > Add a Documentation statement to your README. The documentation *must* take the following form. Emphasis on the `## Documentation` because we use a regex to check that it exists.
->```markdown
->## Documentation
->
->your statement here
->```
+
+```markdown
+## Documentation
+
+your statement here
+```
 
 Then
 
@@ -714,5 +715,6 @@ Then
 1. Double check that you have everything **committed** to your git repo.
 2. Then **push** your changes to your repo.
 3. Make sure all your work appears on GitHub as you expect
+4. Verify that the Action ran successfully on GitHub.
 
 Congratulations, you have completed In Class Exercise 2!
