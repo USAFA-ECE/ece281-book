@@ -917,7 +917,6 @@ C_{out} = AB
 <p>Vivado will help us describe, simulate, test, and implement the design.
 The input to Vivado is VHDL. Ultimately, we will use Vivado to emulate the circuit on an FPGA (Field Programmable Gate Array).
 An FPGA can be programmed to be many circuits.</p>
-<p><em>Design flow in Vivado</em></p>
 <ol class="simple">
 <li><p>Setup project</p></li>
 <li><p>Create design</p></li>
@@ -1075,7 +1074,7 @@ languages.</p>
 </ul>
 <p>Now we can redraw our schematic as a block diagram:</p>
 <figure class="align-default" id="half-adder-entity">
-<img alt="ICE/ice2_image13.jpg" src="ICE/ice2_image13.jpg" />
+<img alt="../_images/ice2_image13.jpg" src="../_images/ice2_image13.jpg" />
 <figcaption>
 <p><span class="caption-number">Fig. 13 </span><span class="caption-text">Half-adder entity block diagram</span><a class="headerlink" href="#half-adder-entity" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -1087,11 +1086,11 @@ outputs. In other words, it describes the interface of a “black box”.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- entity name should match filename</span>
 <span class="k">entity</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
 <span class="w">  </span><span class="k">port</span><span class="p">(</span>
-<span class="w">	</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span>
-<span class="w">	</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">	</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span>
-<span class="w">							 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span>
-<span class="w">	</span><span class="c1">-- TODO:  Carry port</span>
+<span class="w">  </span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span>
+<span class="w">  </span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">  </span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span>
+<span class="w">            </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span>
+<span class="w">  </span><span class="c1">-- TODO:  Carry port</span>
 <span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span>
 <span class="k">end</span><span class="w"> </span><span class="nc">halfAdder</span><span class="p">;</span>
 </pre></div>
@@ -1099,7 +1098,7 @@ outputs. In other words, it describes the interface of a “black box”.</p>
 <p>Note, the port names are preceded by an <code class="docutils literal notranslate"><span class="pre">i_</span></code> for input and an <code class="docutils literal notranslate"><span class="pre">o_</span></code> for
 output per the naming convention in our file header.</p>
 <p>The inputs and output ports are signals described by the pattern</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">portName</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">mode</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">signalType</span><span class="o">&gt;</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;portName&gt; : &lt;mode&gt; &lt;signalType&gt;
 </pre></div>
 </div>
 <p><strong>Std_logic</strong> and <strong>std_logic_vector</strong> are the two most common types you
@@ -1132,14 +1131,14 @@ C_{out} = AB
 <p>Again, we have gone to a lower level of abstraction. We are looking <em>inside</em> the black box entity that we described above.</p>
 <p>Our architecture is partially realized in the given VHDL code below:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
-<span class="w">	</span><span class="c1">-- this is where you would include components declarations and signals if you needed them</span>
+<span class="w">  </span><span class="c1">-- this is where you would include components declarations and signals if you needed them</span>
 
 <span class="k">begin</span>
-<span class="w">	</span><span class="c1">-- this is where you would map ports for any component instantiations if you needed to</span>
+<span class="w">  </span><span class="c1">-- this is where you would map ports for any component instantiations if you needed to</span>
 
-<span class="w">	</span><span class="c1">-- *concurrent* signal assignments</span>
-<span class="w">	</span><span class="n">o_S</span><span class="w">    </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_A</span><span class="w"> </span><span class="k">xor</span><span class="w"> </span><span class="n">i_B</span><span class="p">;</span>
-<span class="w">	</span><span class="c1">-- TODO:  Carry signal assignment</span>
+<span class="w">  </span><span class="c1">-- *concurrent* signal assignments</span>
+<span class="w">  </span><span class="n">o_S</span><span class="w">    </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_A</span><span class="w"> </span><span class="k">xor</span><span class="w"> </span><span class="n">i_B</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">-- TODO:  Carry signal assignment</span>
 
 <span class="k">end</span><span class="w"> </span><span class="nc">halfAdder_arch</span><span class="p">;</span>
 </pre></div>
@@ -1187,13 +1186,13 @@ hardware components will be inside of our test bench:</p>
 
 <span class="w">  </span><span class="c1">-- declare the component of your top-level design unit under test (UUT)</span>
 <span class="w">  </span><span class="k">component</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
-<span class="w">	</span><span class="k">port</span><span class="p">(</span>
-<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span>
-<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span>
-<span class="w">								 </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span>
-<span class="w">		</span><span class="c1">-- TODO:  Carry port</span>
-<span class="w">	</span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span>
+<span class="w">  </span><span class="k">port</span><span class="p">(</span>
+<span class="w">    </span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 1-bit input port</span>
+<span class="w">    </span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">    </span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="w">  </span><span class="c1">-- 1-bit output port</span>
+<span class="w">              </span><span class="c1">-- (NOTE: NO semicolon on LAST port only!)</span>
+<span class="w">  </span><span class="c1">-- TODO:  Carry port</span>
+<span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="c1">-- the semicolon is here instead</span>
 <span class="w">  </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -1209,16 +1208,14 @@ and LEDs per our previous block diagram <a class="reference internal" href="#hal
 <p>You can think of these signals as <em>wires</em> that we place inside our
 testbench box. This is partially realized in the given testbench snippet
 shown below.</p>
-<p>Since these are top level wires, we would normally
-prepend the names with <code class="docutils literal notranslate"><span class="pre">w_</span></code> instead of <code class="docutils literal notranslate"><span class="pre">i_</span></code> or <code class="docutils literal notranslate"><span class="pre">o_</span></code>, but we will
-stick with the current names for this exercise. The code also sets
-an initial value of ‘0’.</p>
+<p>Since these are top level wires, we will prepent the names with <code class="docutils literal notranslate"><span class="pre">w_</span></code>.
+The code also sets an initial value of ‘0’.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">-- declare signals needed to stimulate the UUT inputs</span>
-<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">i_sw1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">w_sw1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
 <span class="w">  </span><span class="c1">-- TODO:  sw0 signal</span>
 
 <span class="w">  </span><span class="c1">-- also need signals for the outputs of the UUT</span>
-<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">o_led1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">signal</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
 <span class="w">  </span><span class="c1">-- TODO:  led0 signal</span>
 </pre></div>
 </div>
@@ -1230,42 +1227,45 @@ wires in it. <em>Nothing is connected yet</em>. To actually “wire up the
 hardware”, we need to map the ports. This is partially realized in the
 code snippet below.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">begin</span>
-<span class="w">	</span><span class="c1">-- PORT MAPS ----------------------------------------</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="c1">-- PORT MAPS ----------------------------------------</span>
 
-<span class="w">	</span><span class="c1">-- map ports for any component instances (port mapping is like wiring hardware)</span>
-<span class="w">	</span><span class="n">halfAdder_inst</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span><span class="w"> </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span>
-<span class="w">		</span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw1</span><span class="p">,</span><span class="w"> </span><span class="c1">-- notice comma (not a semicolon)</span>
-<span class="w">		</span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i_sw0</span><span class="p">,</span>
-<span class="w">		</span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">o_led0</span><span class="w"> </span><span class="c1">-- no comma on LAST one</span>
-<span class="w">		</span><span class="c1">-- TODO:  map Cout</span>
-<span class="w">	</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">-- map ports for any component instances (port mapping is like wiring hardware)</span>
+<span class="w">  </span><span class="n">halfAdder_inst</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span><span class="w"> </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_sw1</span><span class="p">,</span><span class="w"> </span><span class="c1">-- notice comma (not a semicolon)</span>
+<span class="w">    </span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_sw0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="c1">-- no comma on LAST one</span>
+<span class="w">    </span><span class="c1">-- TODO:  map Cout</span>
+<span class="w">  </span><span class="p">);</span>
 </pre></div>
 </div>
 <blockquote>
-<div><p>Wire up the <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code> signal to <code class="docutils literal notranslate"><span class="pre">o_led1</span></code>.</p>
+<div><p>Wire up the <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code> signal to <code class="docutils literal notranslate"><span class="pre">w_led1</span></code>.</p>
 </div></blockquote>
-<p>Now all that is left is to assign values to the test input wires (<code class="docutils literal notranslate"><span class="pre">i_sw0</span></code>
-and <code class="docutils literal notranslate"><span class="pre">i_sw1</span></code>) inside the <strong>test plan process</strong>:</p>
+<p>Now all that is left is to assign values to the test input wires (<code class="docutils literal notranslate"><span class="pre">w_sw0</span></code>
+and <code class="docutils literal notranslate"><span class="pre">w_sw1</span></code>) inside the <strong>test plan process</strong>:</p>
 <p>The <strong>test plan process</strong> is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.</p>
+<p>We use the <strong>assert</strong> statement to automatically check that our values are what we expect.
+If the assert fails, then the test will <strong>report</strong> a failure. The report also
+has a message; we should write the message to be helpful to ourselves while debugging.
+There are other severity levels, but we will use “failure” here. The “error” level generates
+a message but will continue to execute the test instead of exiting immediately.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Test Plan Process --------------------------------</span>
-<span class="w">	</span><span class="c1">-- Implement the test plan here.  Body of process is continuously from time = 0</span>
-<span class="w">	</span><span class="n">test_process</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span>
-<span class="w">	</span><span class="k">begin</span>
+<span class="w">  </span><span class="n">test_process</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span>
+<span class="w">  </span><span class="k">begin</span>
 
-<span class="w">		</span><span class="n">i_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">i_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">		</span><span class="c1">-- TODO:  rest of test plan</span>
+<span class="w">    </span><span class="n">w_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">w_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">-- TODO:  rest of test plan</span>
 
-<span class="w">		</span><span class="k">wait</span><span class="p">;</span><span class="w"> </span><span class="c1">-- wait forever</span>
-<span class="w">	</span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span>
-<span class="w">	</span><span class="c1">-----------------------------------------------------</span>
+<span class="w">    </span><span class="k">wait</span><span class="p">;</span><span class="w"> </span><span class="c1">-- wait forever</span>
+<span class="w">  </span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>How many test cases do we need?</p>
+<p>How many test cases do we need for this circuit?</p>
 <blockquote>
-<div><p>Implement the rest of the test plan</p>
-</div></blockquote>
-<blockquote>
-<div><p>Save the file.</p>
+<div><p>Implement the rest of the test plan. Save the file.</p>
 </div></blockquote>
 </section>
 <section id="check-syntax">
@@ -1288,22 +1288,18 @@ right-hand margin indicate locations of syntax errors.</p>
 Simulation” and select “Simulation Settings”</p></li>
 <li><p>Click on the <strong>Simulation</strong> tab and change the runtime to <strong>50 ns</strong>
 or an otherwise appropriate length based on
-your test plan process. Click OK.</p></li>
-</ol>
-<p><img alt="simulation runtime" src="../_images/ice2_image23.jpg" /></p>
-<ol>
+your test plan process. Click OK.
+<img alt="simulation runtime" src="../_images/ice2_image23.jpg" /></p></li>
 <li><p><strong>Left</strong> click on <strong>Run Simulation</strong> and then click on <strong>Run
-Behavioral Simulation</strong></p>
-<p>a.  You can ignore/cancel any firewall access popups</p>
-</li>
+Behavioral Simulation</strong>. You can ignore/cancel any firewall access popups</p></li>
 <li><p>If for some reason a waveform window did not pop up, check the
 Messages and Log tabs near the bottom of your window. Look for error
 messages.</p></li>
 <li><p>Once the waveform window is in view, click on the Zoom Fit icon
 or adjust the zoom window as needed to see the time periods of interest
-<img alt="zoom fit" src="../_images/ice2_image24.jpg" /></p>
-<p>a.  Verify that the waveforms show your design is working correctly        (inputs and outputs should match truth table)</p>
-</li>
+<img alt="zoom fit" src="../_images/ice2_image24.jpg" /></p></li>
+<li><p>Verify that the waveforms show your design is working correctly
+(inputs and outputs should match truth table)</p></li>
 <li><p>Try changing the outputs to different colors by right clicking on
 the signals and selecting <strong>Signal Color</strong>.</p></li>
 <li><p>Rename signals to show what they correspond to (e.g., A) and define
@@ -1360,7 +1356,12 @@ click on any of the two LUTs you should see, you also can view their
 associated truth table by clicking on the “Truth Table” tab at the
 bottom of the “Cell Properties” sub-window.</p>
 <p>Notice an equation is also given for the output.</p>
-<p><img alt="" src="../_images/ice2_image28.jpg" /></p>
+<figure class="align-default" id="lookup-table">
+<img alt="../_images/ice2_image28.jpg" src="../_images/ice2_image28.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Synthesis lookup table</span><a class="headerlink" href="#lookup-table" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Do the truth tables for the LUTs make sense for your design?</p>
 <p>If all of your testing succeeded…</p>
 <blockquote>
@@ -1383,37 +1384,33 @@ physical pin locations on your BASYS 3 board. For example, <code class="docutils
 connected to pin <code class="docutils literal notranslate"><span class="pre">V17</span></code>. Find (use CTRL+f) <code class="docutils literal notranslate"><span class="pre">V17</span></code> in the constraints
 file. You should see it first on line 12 as shown below.</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]</span>
-	<span class="c1">#set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
+  #set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Replace the <code class="docutils literal notranslate"><span class="pre">sw[0]</span></code> with the name of the node (signal) that should connect to the switch.
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">sw[0]</span></code> with the name of the node (signal) that should connect to the switch.
 In this case, we want to connect <code class="docutils literal notranslate"><span class="pre">i_B</span></code> from our halfAdder entity to this
 switch. In the future we will utilize the <code class="docutils literal notranslate"><span class="pre">sw[0]</span></code> naming convention
-so changing the xdc file may not be required.</p></li>
-</ol>
+so changing the xdc file may not be required.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The node names correspond to the signal names you defined
 for your half-adder interface in halfAdder.vhd and NOT the
 signal names in your testbench.</p>
 </div>
-<ol class="simple">
-<li><p>Uncomment the two lines by removing the ‘#’ signs. The final result
-should look similar to below:</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Switches</span>
-<span class="n">set_property</span> <span class="n">PACKAGE_PIN</span> <span class="n">V17</span> <span class="p">[</span><span class="n">get_ports</span> <span class="p">{</span><span class="n">i_B</span><span class="p">}]</span>
-	<span class="n">set_property</span> <span class="n">IOSTANDARD</span> <span class="n">LVCMOS33</span> <span class="p">[</span><span class="n">get_ports</span> <span class="p">{</span><span class="n">i_B</span><span class="p">}]</span>
+<p>Uncomment the two lines by removing the <code class="docutils literal notranslate"><span class="pre">#</span></code> signs. The final result
+should look similar to below:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>## Switches
+set_property PACKAGE_PIN V17 [get_ports {i_B}]
+  set_property IOSTANDARD LVCMOS33 [get_ports {i_B}]
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Repeat steps 3-5 to connect <code class="docutils literal notranslate"><span class="pre">sw[1]</span></code> to <code class="docutils literal notranslate"><span class="pre">i_A</span></code></p></li>
-<li><p>Repeat steps 3-5 to connect <code class="docutils literal notranslate"><span class="pre">led[0]</span></code> to <code class="docutils literal notranslate"><span class="pre">o_S</span></code></p></li>
-<li><p>Repeat steps 3-5 to connect <code class="docutils literal notranslate"><span class="pre">led[1]</span></code> to <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code></p></li>
-<li><p>Save the constraints file (CTRL+s)</p></li>
-</ol>
+<ul class="simple">
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">sw[1]</span></code> to <code class="docutils literal notranslate"><span class="pre">i_A</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">led[0]</span></code> to <code class="docutils literal notranslate"><span class="pre">o_S</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">led[1]</span></code> to <code class="docutils literal notranslate"><span class="pre">o_Cout</span></code></p></li>
+</ul>
+<p>Save the constraints file (CTRL+s)</p>
 </section>
 <section id="implement-and-generate-bitstream">
 <h3><a class="toc-backref" href="#id25">Implement and generate bitstream</a><a class="headerlink" href="#implement-and-generate-bitstream" title="Permalink to this headline">#</a></h3>
@@ -1458,12 +1455,12 @@ menu. Simply select the correct <code class="docutils literal notranslate"><span
 </div>
 <blockquote>
 <div><p>Add a Documentation statement to your README. The documentation <em>must</em> take the following form. Emphasis on the <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Documentation</span></code> because we use a regex to check that it exists.</p>
+</div></blockquote>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Documentation</span>
 
 your statement here
 </pre></div>
 </div>
-</div></blockquote>
 <p>Then</p>
 <blockquote>
 <div><p>Commit your README changes along with your <code class="docutils literal notranslate"><span class="pre">.bit</span></code> file.</p>
@@ -1475,6 +1472,7 @@ your statement here
 <li><p>Double check that you have everything <strong>committed</strong> to your git repo.</p></li>
 <li><p>Then <strong>push</strong> your changes to your repo.</p></li>
 <li><p>Make sure all your work appears on GitHub as you expect</p></li>
+<li><p>Verify that the Action ran successfully on GitHub.</p></li>
 </ol>
 <p>Congratulations, you have completed In Class Exercise 2!</p>
 </section>
