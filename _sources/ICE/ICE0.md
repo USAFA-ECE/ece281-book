@@ -89,7 +89,22 @@ git config --global user.email "<github noreply email>@users.noreply.github.com"
 
 This is optional, but will keep you from having to type your password over and over.
 
-Go to [GitHub SSH Keys](https://github.com/settings/keys) follow their guide "generating SSH keys"
+Go to [GitHub SSH Keys](https://github.com/settings/keys) follow their guide "generating SSH keys."
+
+```{hint}
+SSH keys use a public/private keypair to cryptographically prove your identity.
+
+By default, SSH keys are stored in C:\Users\user.name\.ssh in Windows or
+/home/username/.ssh/ in linux.
+
+The private key will be named id_algorithm and the public key will be id_algorithm.pub by default.
+```
+
+Some cadets were having issues with ed25519. Try RSA instead:
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
 
 1. Generate an SSH key, put it in the default location
 2. Print the **public** key and upload to GitHub

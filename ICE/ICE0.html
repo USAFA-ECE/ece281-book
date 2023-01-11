@@ -594,7 +594,18 @@ If in PowerShell, make sure git is installed.</p>
 <section id="setup-ssh-key">
 <h3><a class="toc-backref" href="#id6">Setup SSH key</a><a class="headerlink" href="#setup-ssh-key" title="Permalink to this headline">#</a></h3>
 <p>This is optional, but will keep you from having to type your password over and over.</p>
-<p>Go to <a class="reference external" href="https://github.com/settings/keys">GitHub SSH Keys</a> follow their guide “generating SSH keys”</p>
+<p>Go to <a class="reference external" href="https://github.com/settings/keys">GitHub SSH Keys</a> follow their guide “generating SSH keys.”</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>SSH keys use a public/private keypair to cryptographically prove your identity.</p>
+<p>By default, SSH keys are stored in C:\Users\user.name.ssh in Windows or
+/home/username/.ssh/ in linux.</p>
+<p>The private key will be named id_algorithm and the public key will be id_algorithm.pub by default.</p>
+</div>
+<p>Some cadets were having issues with ed25519. Try RSA instead:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</pre></div>
+</div>
 <ol class="simple">
 <li><p>Generate an SSH key, put it in the default location</p></li>
 <li><p>Print the <strong>public</strong> key and upload to GitHub</p></li>
