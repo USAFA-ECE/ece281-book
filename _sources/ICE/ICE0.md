@@ -23,9 +23,9 @@ Git is software that allows for distributed version control between multiple col
 
 ## Create GitHub account
 
-Use a personal email to create account on [GitHub](https://github.com/). The account name should be professional, can include part or all of your real name, but can also be a screen name. Keep in mind it will be public and GitHub functions as sort of a social media for developers.
+Use a **personal email** to create account on [GitHub](https://github.com/). The account name should be professional, can include part or all of your real name, but can also be a screen name. Keep in mind it will be public and GitHub functions as sort of a social media for developers.
 
-Go to [email settings](https://github.com/settings/emails) and add and verify your USAFA email.
+Go to [email settings](https://github.com/settings/emails) and *add and verify* your **USAFA email**.
 
 Check the box "Keep my email address private" and copy the generated `@users.noreply.github.com` email for later use.
 Check the box "Block command line pushes that expose my email."
