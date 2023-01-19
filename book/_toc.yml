@@ -21,4 +21,5 @@ parts:
       - file: lab/lab2
   - caption: Appendix
     chapters:
+      - file: appendix/github.md
       - file: appendix/vivado-project.md
