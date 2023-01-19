@@ -26,12 +26,29 @@ In order to make sure Vivado was installed properly, we'll build the "Hello, Wor
 
 ### Clone a repository with git
 
-Clone [GitHub USAFA-ECE helloLed](https://github.com/USAFA-ECE/helloLed)
+Get a local copy of the code located at [GitHub USAFA-ECE helloLed](https://github.com/USAFA-ECE/helloLed) by using `git clone`.
+
+First, copy the URL from GitHub. Use SSH if you have SSH keys working; otherwise, use HTTPS.
+
+```{figure} img/lab0_githubclone.png
+Get the URL to clone from GitHub
+```
+
+Then, in Git Bash or Powershell, navigate to wherever you want to create the new folder.
+A common option is `~/code/`. Storing in your One Drive is also a good idea.
+Use `cd` to change directories from the terminal. Make a new directory with `mkdir`.
+Alternatively, use the explorer GUI to get to the folder you want,
+then right click > "Open in Terminal".
+
+```bash
+# Use SSH if you have that working
+git clone https://github.com/USAFA-ECE/helloLed.git
+```
 
 ### Build the Vivado project
 
 We will dive into what's going on here later in ICE 2 {ref}`setup-vivado-project`.
-But for now,
+But for now, in the newly cloned helloLed folder,
 
 1. Run the `build.bat` file
 2. Double click the generated `helloLed.xpr` to open it in Vivado
