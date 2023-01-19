@@ -9,6 +9,8 @@ This is a "Before Class Exercise." You can wait to complete it with one of the l
 
 Using proper version control techniques is an expectation for this course, and you should expect yourself to use it for *all* of your courses that involve writing code.
 
+Also see [GitHub real fast](../appendix/github.md) in the appendix.
+
 ## Overview
 
 This exercise will get you ready to use Git for version control of your projects. It will prepare you to use GitHub Classroom to remotely store and submit your code.
