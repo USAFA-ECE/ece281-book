@@ -179,10 +179,6 @@ i.  Create your test plan process. Remember, you can use hex values with
     busses: ![](img/lab2_image17.jpg){width="1.0479166666666666in"
     height="0.188082895888014in"} j. Fix any syntax errors, and run the
     simulation.
-
-```{=html}
-<!-- -->
-```
 k.  Inputs and outputs should already be grouped, but ensure the radix
     is set to hex. Make sure the signals are in the proper order so the
     hex values make sense. This makes verification easier. If you used a
@@ -312,9 +308,7 @@ Point distribution for Lab 2**
 
 ### (30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED)
 
-  -----------------------------------------------------------------------------------------
-  **Rating**         **Points**   **Quality**
-  ------------------ ------------ ---------------------------------------------------------
+
   **Excellent**      9-10         Report is well laid out and follows provided template.
                                   All schematics are digitally generated or NEATLY hand
                                   drawn. All figures, tables, and pictures are referenced
