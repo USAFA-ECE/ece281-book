@@ -59,6 +59,11 @@ name: SN7432-TTL-Layout
 SN7432 TTL Layout
 ```
 
+```{figure} img/ice1_7432inard.png
+Inside makeup of SN7432
+```
+
+
 The SN7432 chip only contains 2-Input OR gates, but the logic equation
 requires a 4-Input OR gate. Boolean algebra can be used to find an
 arrangement of 2-Input OR gates that will work. The simple logic
