@@ -860,11 +860,11 @@ exercise and throughout the course.</p>
 <section id="half-adder">
 <h3><a class="toc-backref" href="#id7">Half-adder</a><a class="headerlink" href="#half-adder" title="Permalink to this headline">#</a></h3>
 <p>A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 10.1 of your textbook. <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 11</span></a> shows the schematic symbol.</p>
+read more about half-adders in Section 10.1 of your textbook. <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 12</span></a> shows the schematic symbol.</p>
 <figure class="align-default" id="half-adder-schem">
 <img alt="../_images/ice2_halfadder.png" src="../_images/ice2_halfadder.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Half-adder schematic symbol</span><a class="headerlink" href="#half-adder-schem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Half-adder schematic symbol</span><a class="headerlink" href="#half-adder-schem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><span class="math notranslate nohighlight">\(S\)</span> stands for “sum”, <span class="math notranslate nohighlight">\(C_{out}\)</span> stands for “Carry out”. The “circled plus sign” represents XOR.</p>
@@ -988,7 +988,7 @@ You can now see them assigned appropriately under “Sources”</p>
 <figure class="align-default" id="vivado-sources">
 <img alt="../_images/ice2_vivado_sources.png" src="../_images/ice2_vivado_sources.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Vivado sources</span><a class="headerlink" href="#vivado-sources" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Vivado sources</span><a class="headerlink" href="#vivado-sources" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -1070,7 +1070,7 @@ languages.</p>
 </section>
 <section id="modify-half-adder-entity">
 <h3><a class="toc-backref" href="#id15">Modify half-adder entity</a><a class="headerlink" href="#modify-half-adder-entity" title="Permalink to this headline">#</a></h3>
-<p>Remember the half-adder schematic in <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 11</span></a>. This is what we are trying to create.</p>
+<p>Remember the half-adder schematic in <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 12</span></a>. This is what we are trying to create.</p>
 <p><img alt="half-adder architecture" src="../_images/ice2_halfadder.png" /></p>
 <p>But! This conceptual device has no way for us to interact with it. However, if we go one level of abstraction lower:</p>
 <ul class="simple">
@@ -1081,7 +1081,7 @@ languages.</p>
 <figure class="align-default" id="half-adder-entity">
 <img alt="../_images/ice2_image13.jpg" src="../_images/ice2_image13.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Half-adder entity block diagram</span><a class="headerlink" href="#half-adder-entity" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Half-adder entity block diagram</span><a class="headerlink" href="#half-adder-entity" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In VHDL this is called an <strong>entity</strong>.</p>
@@ -1130,7 +1130,7 @@ C_{out} = AB
 <figure class="align-default" id="half-adder-arch">
 <img alt="../_images/ice2_image15.jpg" src="../_images/ice2_image15.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Architecture of half-adder</span><a class="headerlink" href="#half-adder-arch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Architecture of half-adder</span><a class="headerlink" href="#half-adder-arch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Again, we have gone to a lower level of abstraction. We are looking <em>inside</em> the black box entity that we described above.</p>
@@ -1208,7 +1208,7 @@ your implementation file to the corresponding component in your
 testbench.</p>
 <p>Now that your halfAdder hardware is inside your testbench entity, we are
 going to declare some additional signals that correspond to the switches
-and LEDs per our previous block diagram <a class="reference internal" href="#half-adder-entity"><span class="std std-numref">Fig. 13</span></a></p>
+and LEDs per our previous block diagram <a class="reference internal" href="#half-adder-entity"><span class="std std-numref">Fig. 14</span></a></p>
 <p><img alt="half-adder architecture" src="../_images/ice2_image13.jpg" /></p>
 <p>You can think of these signals as <em>wires</em> that we place inside our
 testbench box. This is partially realized in the given testbench snippet
@@ -1364,7 +1364,7 @@ bottom of the “Cell Properties” sub-window.</p>
 <figure class="align-default" id="lookup-table">
 <img alt="../_images/ice2_image28.jpg" src="../_images/ice2_image28.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Synthesis lookup table</span><a class="headerlink" href="#lookup-table" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Synthesis lookup table</span><a class="headerlink" href="#lookup-table" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Do the truth tables for the LUTs make sense for your design?</p>
