@@ -56,6 +56,7 @@ The exception to this is some statements within a
 process. More details on VHDL will be provided later in this in-class
 exercise and throughout the course.
 
+(half-adder-traits)=
 ### Half-adder
 
 A half-adder takes two single-bit inputs and outputs their sum. You can
