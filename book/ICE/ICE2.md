@@ -126,32 +126,41 @@ We will then tell Viavdo to setup the project for us using a `build.tcl` file.
 
 The template for this assignment is in GitHub Classroom.
 
-1. Join the assignment
-2. Create your copy of the repository
-3. Clone the repository to your local computer
+You instructor will post a link for you to join the assignment.
+Joining the assignment will create a private copy of the repository for you.
+
+Clone *your* newly created repository to your local computer.
+
+```{hint}
+If you are in Windows Explorer, you can browse to where you want the cloned folder to be created.
+Then hold the "Shift" key and right click. On the menu you should now see an option to "Open Git Bash here..."
+This is an alternative to the `cd` command.
+```
+
+See [Appendix > Github real fast](../appendix/github.md) if you need help cloning.
 
 ### Build the project with Vivado
 
-Open up the cloned folder in a PowerShell terminal.
+Once you have cloned the folder, `cd` into it with git bash.
+
+```bash
+cd ece281#tab to auto-complete the folder name
+```
 
 Run `ls` to view the files. You should see a file called `build.tcl`.
 You should also see a file called `build.bat`.
 
 Because we are cyber security conscious, we *always* read `.bat` files before running them.
 
-Make PowerShell print out the contents:
+Make bash print out the contents:
 
-```powershell
-type build.bat
+```bash
+cat build.bat
 ```
 
 What does it look like the one-liner is doing?
 
-If it looks good to you, go ahead and execute the file:
-
-```powershell
-.\build.bat
-```
+If it looks good to you, go ahead and execute `build.bat` by double-clicking it in the explorer window.
 
 Now run `ls` again and you should see a bunch of newly created files. Vivado build them for us!
 
