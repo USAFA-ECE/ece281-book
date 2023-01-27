@@ -2,6 +2,16 @@
 
 Due Lesson 8
 
+```{attention}
+This exercise functions as a lecture on what VHDL is and how this stuff works.
+You need to **read** and not just skip through to find the commands.
+
+If you just bust it out without trying to understand you will suffer greatly
+when it comes time to do the labs.
+
+![](img/buttonmeme.png)
+```
+
 ```{contents}
 :local:
 :depth: 2
