@@ -54,8 +54,10 @@ We want $Y$ to be `1` when the inputs are a month with 31 days and otherwise `0`
 ## Pre-lab
 
 Due beginning of class on lesson 10.
+**Template available on Gradescope.** You may either fill out electronically on a tablet
+or you may print, complete by hand, and scan to a PDF.
 
-### Logic equation
+### Truth Table and K-Map
 
 1. Create a truth table that represents the conditions above.
 2. Use a K-map to find the simplified equation for $Y$.
@@ -77,7 +79,7 @@ which bit is the MSB?
 - The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
 - The fourth schematic will only use NAND gates with either two or four inputs.
 
-> **[25 Points]** Submit all materials within the Gradescope assignment, Lab 1 - Prelab.
+> **[15 Points]** Submit completed PDF within the Gradescope assignment, Lab 1 - Prelab.
 
 ## Lab: Integrated Circuit
 
@@ -289,7 +291,7 @@ Then
 
 5 Deliverables.
 
-1. **[25 Points]** Prelab materials submitted to gradescope (Lab1 - Prelab).
+1. **[15 Points]** Prelab materials submitted to gradescope (Lab1 - Prelab).
 2. **[25 Points]** Demo integrated circuit.
 3. **[15 Points]** Simulation results waveform submitted to gradescope (Lab1).
 4. **[25 Points]** Demo vhdl circuit.

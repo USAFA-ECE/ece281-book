@@ -757,6 +757,14 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="ice-2-half-adder">
 <h1>ICE 2: Half-Adder<a class="headerlink" href="#ice-2-half-adder" title="Permalink to this headline">#</a></h1>
 <p>Due Lesson 8</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This exercise functions as a lecture on what VHDL is and how this stuff works.
+You need to <strong>read</strong> and not just skip through to find the commands.</p>
+<p>If you just bust it out without trying to understand you will suffer greatly
+when it comes time to do the labs.</p>
+<p><img alt="" src="../_images/buttonmeme.png" /></p>
+</div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
@@ -945,27 +953,32 @@ We will then tell Viavdo to setup the project for us using a <code class="docuti
 <section id="clone-project-with-git">
 <h3><a class="toc-backref" href="#id10">Clone project with Git</a><a class="headerlink" href="#clone-project-with-git" title="Permalink to this headline">#</a></h3>
 <p>The template for this assignment is in GitHub Classroom.</p>
-<ol class="simple">
-<li><p>Join the assignment</p></li>
-<li><p>Create your copy of the repository</p></li>
-<li><p>Clone the repository to your local computer</p></li>
-</ol>
+<p>You instructor will post a link for you to join the assignment.
+Joining the assignment will create a private copy of the repository for you.</p>
+<p>Clone <em>your</em> newly created repository to your local computer.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you are in Windows Explorer, you can browse to where you want the cloned folder to be created.
+Then hold the “Shift” key and right click. On the menu you should now see an option to “Open Git Bash here…”
+This is an alternative to the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command.</p>
+</div>
+<p>See <a class="reference internal" href="../appendix/github.html"><span class="doc std std-doc">Appendix &gt; Github real fast</span></a> if you need help cloning.</p>
 </section>
 <section id="build-the-project-with-vivado">
 <h3><a class="toc-backref" href="#id11">Build the project with Vivado</a><a class="headerlink" href="#build-the-project-with-vivado" title="Permalink to this headline">#</a></h3>
-<p>Open up the cloned folder in a PowerShell terminal.</p>
+<p>Once you have cloned the folder, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into it with git bash.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ece281#tab<span class="w"> </span>to<span class="w"> </span>auto-complete<span class="w"> </span>the<span class="w"> </span>folder<span class="w"> </span>name
+</pre></div>
+</div>
 <p>Run <code class="docutils literal notranslate"><span class="pre">ls</span></code> to view the files. You should see a file called <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code>.
 You should also see a file called <code class="docutils literal notranslate"><span class="pre">build.bat</span></code>.</p>
 <p>Because we are cyber security conscious, we <em>always</em> read <code class="docutils literal notranslate"><span class="pre">.bat</span></code> files before running them.</p>
-<p>Make PowerShell print out the contents:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">type </span><span class="n">build</span><span class="p">.</span><span class="n">bat</span>
+<p>Make bash print out the contents:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>build.bat
 </pre></div>
 </div>
 <p>What does it look like the one-liner is doing?</p>
-<p>If it looks good to you, go ahead and execute the file:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\</span><span class="n">build</span><span class="p">.</span><span class="n">bat</span>
-</pre></div>
-</div>
+<p>If it looks good to you, go ahead and execute <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> by double-clicking it in the explorer window.</p>
 <p>Now run <code class="docutils literal notranslate"><span class="pre">ls</span></code> again and you should see a bunch of newly created files. Vivado build them for us!</p>
 <p>You can open the project in Vivado by opening the <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file.
 If you are having trouble locating the file, you can open the explorer to the directory your terminal is already in.</p>
