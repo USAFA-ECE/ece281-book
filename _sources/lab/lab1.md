@@ -261,8 +261,6 @@ You can then change it to `i_A`. Repeat for the other three signals.
 
 Make sure the simulation results match your truth table.
 
-> **[15 Points]** Submit your waveform screenshot as an image in the gradescope assignment, Lab1.
-
 ### Constraints File
 
 Open your Basys3Master_Lab1.xdc file.
@@ -283,16 +281,15 @@ In the future, you will have to ensure the mapping is done correctly.
 1. Generate the bitstream (.bit) file and download it to your FPGA.
 2. Verify that your design functions correctly.
 
-> **[25 Points]** Demo the operational VHDL circuit to an instructor.
+> **[10 Points]** Demo the operational VHDL circuit to an instructor.
 
 Then
 
-> **[10 Points]** Push your .vhd and .xdc files using git.
+> **[40 Points]** Push your .vhd and .xdc files using git. Verify the testbench Action runs successfully.
 
-5 Deliverables.
+### Deliverables.
 
-1. **[15 Points]** Prelab materials submitted to gradescope (Lab1 - Prelab).
-2. **[25 Points]** Demo integrated circuit.
-3. **[15 Points]** Simulation results waveform submitted to gradescope (Lab1).
-4. **[25 Points]** Demo vhdl circuit.
-5. **[10 Points]** Push your .vhd and .xdc files using git.
+1. **[15 Points]** Submit completed PDF within the Gradescope assignment, Lab 1 - Prelab.
+2. **[25 Points]** Demo your operational integrated circuit to an instructor.
+3. **[40 Points]** Push your .vhd and .xdc files using git. Verify the testbench Action runs successfully.
+4. **[10 Points]** Demo the operational VHDL circuit to an instructor.
