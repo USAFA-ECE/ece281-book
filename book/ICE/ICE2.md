@@ -701,7 +701,8 @@ You should get a window reporting successful Bitstream Generation.
 (download-onto-fpga)=
 ## Download onto FPGA and test
 
-1. Plug in your BASYS 3 board and turn it on.
+1. Plug in your BASYS 3 board and turn it on using the switch on the board next to the USB connector. If you don't see numbers on the LED displays, consult an instructor.
+2. Verify the drivers installed correctly. You may need to [turn off Windows Memory Integrity](https://support.microsoft.com/en-us/windows/options-to-optimize-gaming-performance-in-windows-11-a255f612-2949-4373-a566-ff6f3f474613#:~:text=turning%20off%20memory%20integrity).
 2. Open the Hardware Manager (bottom of Flow Navigator)
 3. Click on the **Open target** link and then click on **Auto Connect**
 
@@ -720,7 +721,7 @@ video or a series of pictures. Include the documentation in your
 README (a link is fine for a video).
 
 ```{note}
-Your FPG will not maintain its programming after it loses power.
+Your FPGA will not maintain its programming after it loses power.
 ```
 
 ```{tip}
@@ -729,7 +730,7 @@ you can directly open the Hardware Manager from the main Vivado
 menu. Simply select the correct `.bit` file.
 ```
 
-> Add a Documentation statement to your README. The documentation *must* take the following form. Emphasis on the `## Documentation` because we use a regex to check that it exists.
+> Add a Documentation statement to your README. The documentation *must* take the following form. Emphasis on the `## Documentation` because we use a regular expression to check that it exists.
 
 ```markdown
 ## Documentation
@@ -739,7 +740,13 @@ your statement here
 
 Then
 
-> Commit your README changes along with your `.bit` file.
+> Commit your README changes along with your `.bit` file. Use what you learned in BCE0 and the "Git Real Fast" guide!
+> Push your changes to your remote repository on Github
+> Verify the Github Action ran successfully.
+
+```{tip}
+Github Actions are verification code that runs whenever you push anything to Github. If you open your repository on github.com and click on the "Actions" tab, you should see one Action run for each time you pushed. A green check mark ✅ confirms that your code passes all tests!
+```
 
 ## Wrapping up
 
