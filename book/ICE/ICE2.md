@@ -497,7 +497,12 @@ and `w_sw1`) inside the **test plan process**:
 The **test plan process** is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.
 
 We use the **assert** statement to automatically check that our values are what we expect.
-It can be read as "assert this is true, and if it isn't then **report** this message"
+
+```{hint}
+The assert statement can be read as "assert this is true,
+and if it isn't then **report** this message."
+```
+
 We should write the message to be helpful to ourselves while debugging.
 There are other severity levels, but we will use "failure" here.
 The "error" level generates a message but will continue to execute the test instead of exiting immediately.
