@@ -1263,9 +1263,13 @@ code snippet below.</p>
 <p>Now all that is left is to assign values to the test input wires (<code class="docutils literal notranslate"><span class="pre">w_sw0</span></code>
 and <code class="docutils literal notranslate"><span class="pre">w_sw1</span></code>) inside the <strong>test plan process</strong>:</p>
 <p>The <strong>test plan process</strong> is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.</p>
-<p>We use the <strong>assert</strong> statement to automatically check that our values are what we expect.
-It can be read as “assert this is true, and if it isn’t then <strong>report</strong> this message”
-We should write the message to be helpful to ourselves while debugging.
+<p>We use the <strong>assert</strong> statement to automatically check that our values are what we expect.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The assert statement can be read as “assert this is true,
+and if it isn’t then <strong>report</strong> this message.”</p>
+</div>
+<p>We should write the message to be helpful to ourselves while debugging.
 There are other severity levels, but we will use “failure” here.
 The “error” level generates a message but will continue to execute the test instead of exiting immediately.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Test Plan Process --------------------------------</span>
