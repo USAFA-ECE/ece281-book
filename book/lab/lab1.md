@@ -74,9 +74,9 @@ Pay attention to the order of the inputs to the MUX and encoder;
 which bit is the MSB?
 ```
 
-- The first schematic will use an 8:1 MUX ([74151](datasheets/74151.pdf)) and inverter(s) (7404).
-- The second schematic will use a 4:16 \"one-cold\" (active low output) decoder (74154), inverter(s), and two-input OR gate(s) (7432). Using 2-input NANDs (7400) is also acceptable.
-- The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
+- The first schematic will use an 8:1 MUX ([74151](/datasheets/74151.pdf)) and inverter(s) ([7404](/datasheets/7404.pdf)).
+- The second schematic will use a 4:16 \"one-cold\" (active low output) decoder ([74154](/datasheets/74154.pdf)), inverter(s), and two-input OR gate(s) ([7432](/datasheets/7432.pdf)). Using 2-input NANDs ([7400](/datasheets/7400.pdf)) is also acceptable.
+- The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) ([7411](/datasheets/7411.pdf)).
 - The fourth schematic will only use NAND gates with either two or four inputs.
 
 > **[15 Points]** Submit completed PDF within the Gradescope assignment, Lab 1 - Prelab.
