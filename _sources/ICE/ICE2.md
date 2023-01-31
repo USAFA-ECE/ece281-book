@@ -497,10 +497,10 @@ and `w_sw1`) inside the **test plan process**:
 The **test plan process** is a sequential plan that will drive inputs to the values we specify. It will then record the resulting outputs.
 
 We use the **assert** statement to automatically check that our values are what we expect.
-If the assert fails, then the test will **report** a failure. The report also
-has a message; we should write the message to be helpful to ourselves while debugging.
-There are other severity levels, but we will use "failure" here. The "error" level generates
-a message but will continue to execute the test instead of exiting immediately.
+It can be read as "assert this is true, and if it isn't then **report** this message"
+We should write the message to be helpful to ourselves while debugging.
+There are other severity levels, but we will use "failure" here.
+The "error" level generates a message but will continue to execute the test instead of exiting immediately.
 
 ```vhdl
 -- Test Plan Process --------------------------------
@@ -509,6 +509,12 @@ a message but will continue to execute the test instead of exiting immediately.
 
     w_sw1 <= '0'; w_sw0 <= '0'; wait for 10 ns;
       assert w_led0 = '0' report "bad sum" severity failure;
+      assert w_led1 = '0' report "bad carry" severity failure;
+    w_sw1 <= '0'; w_sw0 <= '1'; wait for 10 ns;
+      assert w_led0 = '1' report "bad sum" severity failure;
+      assert w_led1 = '0' report "bad carry" severity failure;
+    w_sw1 <= '1'; w_sw0 <= '0'; wait for 10 ns;
+      assert w_led0 = '1' report "bad sum" severity failure;
       assert w_led1 = '0' report "bad carry" severity failure;
     -- TODO:  rest of test plan
 
