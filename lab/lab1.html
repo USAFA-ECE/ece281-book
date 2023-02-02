@@ -844,11 +844,11 @@ you can access a wire within the vector using an index inside of parentheses.</p
 to connect your entity inputs to the appropriate wires of the <code class="docutils literal notranslate"><span class="pre">w_sel</span></code>
 vector. The individual wires of a vector can be accessed with indexes.
 To assign a value to the LSB of the vector you would do the following:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">w_sel</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_D</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">-- connect input D to the LSB of w_sel</span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">w_sel</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i_C</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">-- connect input C to the LSB of w_sel</span>
 </pre></div>
 </div>
 <blockquote>
-<div><p>Repeat the signal assignment for <code class="docutils literal notranslate"><span class="pre">i_C</span></code> to index 1 and <code class="docutils literal notranslate"><span class="pre">i_B</span></code> to index 2.</p>
+<div><p>Repeat the signal assignment for <code class="docutils literal notranslate"><span class="pre">i_B</span></code> to index 1 and <code class="docutils literal notranslate"><span class="pre">i_A</span></code> to index 2.</p>
 </div></blockquote>
 <p>Finally, implement your prelab design using behavioral modeling as discussed in class.</p>
 </section>
