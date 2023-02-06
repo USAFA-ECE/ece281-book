@@ -280,6 +280,7 @@ This could then be implemented *behaviorally* with the following VHDL
 code:
 
 ```vhdl
+
 ```
 ![](img/lab2_image15.jpg){width="5.322916666666667in"
 height="0.8020833333333334in"}
