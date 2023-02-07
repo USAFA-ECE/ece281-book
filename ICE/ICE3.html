@@ -194,8 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/vivado-project.html">
-   Manually Setup a Vivado Project
+  <a class="reference internal" href="../appendix/vivado.html">
+   Xilinx Vivado
   </a>
  </li>
 </ul>
@@ -415,8 +415,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-your-half-adder">
-     Import your half-adder
+    <a class="reference internal nav-link" href="#import-half-adder">
+     Import half adder
     </a>
    </li>
   </ul>
@@ -427,11 +427,6 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#file-header">
-     File Header
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#top-basys3-entity">
      top_basys3 entity
     </a>
@@ -441,6 +436,11 @@ title="Print to PDF"
      top_basys3 architecture
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#declare-half-adder-component">
+       Declare half-adder component
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#instantiate-half-adder-components">
        Instantiate half-adder components
@@ -488,6 +488,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#wrapping-up">
    Wrapping up
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readme">
+     README
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-files">
+     Other files
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -548,8 +560,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-your-half-adder">
-     Import your half-adder
+    <a class="reference internal nav-link" href="#import-half-adder">
+     Import half adder
     </a>
    </li>
   </ul>
@@ -560,11 +572,6 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#file-header">
-     File Header
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#top-basys3-entity">
      top_basys3 entity
     </a>
@@ -574,6 +581,11 @@ title="Print to PDF"
      top_basys3 architecture
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#declare-half-adder-component">
+       Declare half-adder component
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#instantiate-half-adder-components">
        Instantiate half-adder components
@@ -621,6 +633,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#wrapping-up">
    Wrapping up
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readme">
+     README
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-files">
+     Other files
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -650,29 +674,33 @@ title="Print to PDF"
 <li><p><a class="reference internal" href="#the-project" id="id7">The Project</a></p>
 <ul>
 <li><p><a class="reference internal" href="#setup-vivado" id="id8">Setup Vivado</a></p></li>
-<li><p><a class="reference internal" href="#import-your-half-adder" id="id9">Import your half-adder</a></p></li>
+<li><p><a class="reference internal" href="#import-half-adder" id="id9">Import half adder</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#top-level-design" id="id10">Top Level Design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#file-header" id="id11">File Header</a></p></li>
-<li><p><a class="reference internal" href="#top-basys3-entity" id="id12">top_basys3 entity</a></p></li>
-<li><p><a class="reference internal" href="#top-basys3-architecture" id="id13">top_basys3 architecture</a></p></li>
+<li><p><a class="reference internal" href="#top-basys3-entity" id="id11">top_basys3 entity</a></p></li>
+<li><p><a class="reference internal" href="#top-basys3-architecture" id="id12">top_basys3 architecture</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#test-design" id="id14">Test design</a></p>
+<li><p><a class="reference internal" href="#test-design" id="id13">Test design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#edit-testbench" id="id15">Edit testbench</a></p></li>
-<li><p><a class="reference internal" href="#simulate-project" id="id16">Simulate project</a></p></li>
+<li><p><a class="reference internal" href="#edit-testbench" id="id14">Edit testbench</a></p></li>
+<li><p><a class="reference internal" href="#simulate-project" id="id15">Simulate project</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#implement-design" id="id17">Implement Design</a></p>
+<li><p><a class="reference internal" href="#implement-design" id="id16">Implement Design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#constraints-file" id="id18">Constraints File</a></p></li>
-<li><p><a class="reference internal" href="#test-bitstream-on-fpga" id="id19">Test bitstream on FPGA</a></p></li>
+<li><p><a class="reference internal" href="#constraints-file" id="id17">Constraints File</a></p></li>
+<li><p><a class="reference internal" href="#test-bitstream-on-fpga" id="id18">Test bitstream on FPGA</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#wrapping-up" id="id20">Wrapping up</a></p></li>
+<li><p><a class="reference internal" href="#wrapping-up" id="id19">Wrapping up</a></p>
+<ul>
+<li><p><a class="reference internal" href="#readme" id="id20">README</a></p></li>
+<li><p><a class="reference internal" href="#other-files" id="id21">Other files</a></p></li>
+</ul>
+</li>
 </ul>
 </div>
 <section id="overview">
@@ -831,41 +859,47 @@ C_{out} = AB + AC_{in} + BC_{in}
 <li><p>Build the project with <code class="docutils literal notranslate"><span class="pre">build.bat</span></code></p></li>
 </ul>
 <blockquote>
-<div><p>Build your project and open it in Vivado</p>
+<div><p>Build your project, open it in Vivado, and modify headers.</p>
 </div></blockquote>
 </section>
-<section id="import-your-half-adder">
-<h3><a class="toc-backref" href="#id9">Import your half-adder</a><a class="headerlink" href="#import-your-half-adder" title="Permalink to this headline">#</a></h3>
-<p>In the previous ICE you got <code class="docutils literal notranslate"><span class="pre">half-adder.vhd</span></code> working.
-Copy and paste that code into the file <code class="docutils literal notranslate"><span class="pre">half-adder.vhd</span></code>, replacing the comment:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- replace this line with your half-adder implementation from ICE2!</span>
-</pre></div>
+<section id="import-half-adder">
+<h3><a class="toc-backref" href="#id9">Import half adder</a><a class="headerlink" href="#import-half-adder" title="Permalink to this headline">#</a></h3>
+<p>You created a half adder during <a class="reference internal" href="ICE2.html"><span class="doc std std-doc">ICE2</span></a>. We will reuse that code here.</p>
+<p>First, copy and past your completed the <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> file into <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code></p>
+<p>Then, follow the instructions in <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a>
+to add <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> to the project as a source.
+Make sure you see hallfAdder in the sources hierarchy.</p>
+<p>The half-adder test bench has already been added for you.
+We recommend you run the simulation just to verify that things
+are working properly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding a file to the project will allow Vivado to see it and use it
+but the file will <strong>NOT</strong> be automatically added if you migrate
+the project to a new computer (such as with Git).</p>
+<p>In order to do this you must <a class="reference internal" href="../appendix/vivado.html#write-tcl-file"><span class="std std-ref">Write a TCL file for use with Git</span></a>
+and commit those changes as well.
+You are not required to do this for the lab.</p>
 </div>
-<p>Save the file and you should see Vivado recalibrate and insert the halfAdder
-under “Design Sources.”</p>
+<blockquote>
+<div><p>Commit the addition of <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> with Git</p>
+</div></blockquote>
 </section>
 </section>
 <section id="top-level-design">
 <h2><a class="toc-backref" href="#id10">Top Level Design</a><a class="headerlink" href="#top-level-design" title="Permalink to this headline">#</a></h2>
-<p>The point of our Top Level Design is to connect multiple half-adders to do what we want.
-This keeps us from having to reconstruct (and retest!) the half-adder multiple times.
-Instead, we just use the one we know works!</p>
-<section id="file-header">
-<h3><a class="toc-backref" href="#id11">File Header</a><a class="headerlink" href="#file-header" title="Permalink to this headline">#</a></h3>
-<p>Open up your <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> file in a text editor.</p>
-<p>Modify the file header to reflect your work. Do not leave the
-documentation statement blank. You may refer all documentation
-statements to top_basys3 header. (ex: your top_basys3_tb file header
-will say “See top_basys3.vhd” for documentation.</p>
-</section>
+<p>Our top level design is the boundary of our system.</p>
+<p>It allows us to connect internal components and our I/O.</p>
 <section id="top-basys3-entity">
-<h3><a class="toc-backref" href="#id12">top_basys3 entity</a><a class="headerlink" href="#top-basys3-entity" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id11">top_basys3 entity</a><a class="headerlink" href="#top-basys3-entity" title="Permalink to this headline">#</a></h3>
 <p>Unlike the half-adder, the full-adder has three inputs, though it shares
 the same two outputs. This has been given to you.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p>A std_logic_vector combines multiple std_logic bits into one variable.
 The different signals within the vector can be referenced by index.</p>
+</div>
+<p>We will use switches for inputs and LEDs for outputs.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">top_basys3</span><span class="w"> </span><span class="k">is</span>
 <span class="w">    </span><span class="k">port</span><span class="p">(</span>
 <span class="w">        </span><span class="c1">-- Switches</span>
@@ -877,13 +911,10 @@ The different signals within the vector can be referenced by index.</p>
 <span class="k">end</span><span class="w"> </span><span class="nc">top_basys3</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
 </section>
 <section id="top-basys3-architecture">
-<h3><a class="toc-backref" href="#id13">top_basys3 architecture</a><a class="headerlink" href="#top-basys3-architecture" title="Permalink to this headline">#</a></h3>
-<p>You need to modify the architecture of your top_basys3 file to reflect
-the schematic in <a class="reference internal" href="#full-adder-from-two"><span class="std std-numref">Fig. 19</span></a>.
-But first, always with layers of abstraction in mind, let’s redraw the schematic
+<h3><a class="toc-backref" href="#id12">top_basys3 architecture</a><a class="headerlink" href="#top-basys3-architecture" title="Permalink to this headline">#</a></h3>
+<p>Always with layers of abstraction in mind, let’s redraw the schematic
 with the additional details of internal signals and board inputs and outputs.
 This is shown in <a class="reference internal" href="#full-adder-entity"><span class="std std-numref">Fig. 20</span></a>.</p>
 <figure class="align-default" id="full-adder-entity">
@@ -892,14 +923,14 @@ This is shown in <a class="reference internal" href="#full-adder-entity"><span c
 <p><span class="caption-number">Fig. 20 </span><span class="caption-text">Entity architecture for implementing full adder with two half-adders</span><a class="headerlink" href="#full-adder-entity" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The first step is to add the half-adder component and any signals you
-will need to implement your design. The half-adder component must match
+<p>You need to modify the architecture of your top_basys3 file to reflect
+the schematic in <a class="reference internal" href="#full-adder-from-two"><span class="std std-numref">Fig. 19</span></a>.</p>
+<section id="declare-half-adder-component">
+<h4>Declare half-adder component<a class="headerlink" href="#declare-half-adder-component" title="Permalink to this headline">#</a></h4>
+<p>The half-adder component must match
 the halfAdder entity declaration in <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code>
-These declarations go in between the architecture and begin statements.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>You can reference the signals in the ICE 2 testbench if you don’t remember the syntax.</p>
-</div>
+These declarations go in between the architecture and begin statements.
+Reference <a class="reference internal" href="ICE2.html"><span class="doc std std-doc">ICE2 testbench</span></a> if you don’t remember the syntax.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">top_basys3_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">top_basys3</span><span class="w"> </span><span class="k">is</span>
 
 <span class="w">    </span><span class="c1">-- declare the component of your top-level design</span>
@@ -919,10 +950,11 @@ These declarations go in between the architecture and begin statements.</p>
 a top level design will bring in components and wire them together.
 If you aren’t sure what signals you may need to create, the general rule is to create
 a signal for any wire not connected directly to an input or an output.</p>
+</section>
 <section id="instantiate-half-adder-components">
 <h4>Instantiate half-adder components<a class="headerlink" href="#instantiate-half-adder-components" title="Permalink to this headline">#</a></h4>
 <p>Now that we have made the halfAdder component available to the top_basys3 entity,
-we need to instantiate occurances of the components and declare the logic to connect them
+we need to instantiate occurrences of the components and declare the logic to connect them
 to each other, and to inputs/outputs.</p>
 <p>Remember, we are trying to build what is in <a class="reference internal" href="#full-adder-entity"><span class="std std-numref">Fig. 20</span></a>.</p>
 <p>Notice that we have TWO instantiations of halfAdder and we have given them unique names
@@ -955,76 +987,92 @@ The <code class="docutils literal notranslate"><span class="pre">or</span></code
 </section>
 </section>
 <section id="test-design">
-<h2><a class="toc-backref" href="#id14">Test design</a><a class="headerlink" href="#test-design" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id13">Test design</a><a class="headerlink" href="#test-design" title="Permalink to this headline">#</a></h2>
 <p>We already have a completed <code class="docutils literal notranslate"><span class="pre">halfAdder_tb.vhd</span></code> file, which is awesome, because it means
 we can test our system at multiple layers!</p>
 <p>Your job is to complete the <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code> file and test the system as a whole.</p>
 <section id="edit-testbench">
-<h3><a class="toc-backref" href="#id15">Edit testbench</a><a class="headerlink" href="#edit-testbench" title="Permalink to this headline">#</a></h3>
-<p>Open your testbench file in a text editor. Note the header has
-<code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> as a REQUIRED FILE. This exercise will not walk you
-through the details of creating a test bench. If you are unsure, revisit
-<a class="reference internal" href="ICE2.html"><span class="doc std std-doc">ICE2</span></a> for more detailed instructions.</p>
+<h3><a class="toc-backref" href="#id14">Edit testbench</a><a class="headerlink" href="#edit-testbench" title="Permalink to this headline">#</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code>.
+Note the header has <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> as a REQUIRED FILE.
+Revisit <a class="reference internal" href="ICE2.html"><span class="doc std std-doc">ICE2</span></a> for more detailed instructions if you need them.</p>
 <p>Declare your top_basys3 “component” in the test bench, create signals to simulate
 the inputs and outputs, and connect them in a port map.</p>
 <p>Then create your test cases within the test process. Here is an example of the first line:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="k">begin</span>
 
-<span class="w">        </span><span class="n">i_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s">&quot;000&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">        </span><span class="k">assert</span><span class="w"> </span><span class="n">o_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;00&quot;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">        </span><span class="n">w_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">x&quot;0&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
+<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;00&quot;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad x0&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">        </span><span class="n">w_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">x&quot;1&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
+<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;01&quot;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad x1&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
 <span class="w">        </span><span class="c1">--You must fill in the remaining test cases.</span>
 </pre></div>
 </div>
-<p>Note that we were able to simulate all three bits of the input with a single command.
-Create all additional test cases you will need. How many test cases will you need?</p>
+<p>Just like in <a class="reference internal" href="../lab/lab1.html"><span class="doc std std-doc">Lab 1</span></a> we are using hex to set our 3-bit input.
+We could use hex for the output too, but for two bits binary is easier.</p>
+<blockquote>
+<div><p>How many test cases will you need? Create them all 😄</p>
+</div></blockquote>
 </section>
 <section id="simulate-project">
-<h3><a class="toc-backref" href="#id16">Simulate project</a><a class="headerlink" href="#simulate-project" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id15">Simulate project</a><a class="headerlink" href="#simulate-project" title="Permalink to this headline">#</a></h3>
 <p>Your half-adder <em>should</em> be working already, so focus on the top_basys3_tb.
 Use your waveform to debug if any of the assert statements fail.</p>
 </section>
 </section>
 <section id="implement-design">
-<h2><a class="toc-backref" href="#id17">Implement Design</a><a class="headerlink" href="#implement-design" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id16">Implement Design</a><a class="headerlink" href="#implement-design" title="Permalink to this headline">#</a></h2>
 <section id="constraints-file">
-<h3><a class="toc-backref" href="#id18">Constraints File</a><a class="headerlink" href="#constraints-file" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p>Click on the Project Manager in the Flow Navigator</p></li>
-<li><p>Double click on the <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code> file in the Sources sub-window to open it.</p></li>
-<li><p>Get your BASYS 3 board out and look at the text surrounding the
-switches and LEDs. Note, the labels underneath the switches are the
-physical pin locations on your BASYS 3 board. For example, <code class="docutils literal notranslate"><span class="pre">SW0</span></code> is
-connected to pin <code class="docutils literal notranslate"><span class="pre">V17</span></code>. Find (use CTRL+f) <code class="docutils literal notranslate"><span class="pre">V17</span></code> in the constraints
-file. You should see it first on line 12 as shown below.</p></li>
-</ol>
+<h3><a class="toc-backref" href="#id17">Constraints File</a><a class="headerlink" href="#constraints-file" title="Permalink to this headline">#</a></h3>
+<p>Unlike our pervious exercise, you will not need to replace the highlighted portions.
+We made our entity inputs and outputs reflect the default constraint file naming convention.</p>
 <div class="highlight-xdc notranslate"><div class="highlight"><pre><span></span>## Switches
 #set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
     #set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
 </pre></div>
 </div>
-<p>Unlike our pervious exercise, you will not need to replace the highlighted portions.
-We made our entity inputs and outputs reflect the default constraint file naming convention.</p>
 <blockquote>
 <div><p>Uncomment all lines needed for this design (<code class="docutils literal notranslate"><span class="pre">sw{0}</span></code>, <code class="docutils literal notranslate"><span class="pre">sw{1}</span></code>, <code class="docutils literal notranslate"><span class="pre">sw{2}</span></code>, <code class="docutils literal notranslate"><span class="pre">led{0}</span></code>, and <code class="docutils literal notranslate"><span class="pre">led{1}</span></code>.</p>
 </div></blockquote>
 </section>
 <section id="test-bitstream-on-fpga">
-<h3><a class="toc-backref" href="#id19">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id18">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Permalink to this headline">#</a></h3>
 <p>Synthesize, implement, generate.</p>
 <p>Squirt the bitstream to the board, and test!</p>
 </section>
 </section>
 <section id="wrapping-up">
-<h2><a class="toc-backref" href="#id20">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id19">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="../appendix/github.html"><span class="doc std std-doc">GitHub real fast</span></a> if you need some tips.</p>
+<section id="readme">
+<h3><a class="toc-backref" href="#id20">README</a><a class="headerlink" href="#readme" title="Permalink to this headline">#</a></h3>
+<p>Take a screenshot of your waveform, save it to an the top level
+of your directory (or you can use an <code class="docutils literal notranslate"><span class="pre">img/</span></code> folder).</p>
+<p>Make the screenshot appear in your README with the following Markdown syntax:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">description of my waveform</span>](<span class="na">imagename.png</span>)
+</pre></div>
+</div>
+<p>Add a <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Documentation</span></code> section to the README. This is the only
+one you need for the entire ICE; you don’t need one in the file headers.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Documentation</span>
+
+My statement here.
+</pre></div>
+</div>
+<p>Add the image and <a class="reference external" href="http://README.md">README.md</a> to git and commit.</p>
+</section>
+<section id="other-files">
+<h3><a class="toc-backref" href="#id21">Other files</a><a class="headerlink" href="#other-files" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
 <li><p>Double check that you have all <code class="docutils literal notranslate"><span class="pre">.vhd</span></code> and <code class="docutils literal notranslate"><span class="pre">.bit</span></code> files <strong>committed</strong> to your git repo.</p></li>
 <li><p>Then <a class="reference external" href="https://www.atlassian.com/git/tutorials/syncing/git-push">push</a> them to your repo.</p></li>
 <li><p>Make sure all your work appears in GitHub as you expect.</p></li>
-<li><p>Show your simulation waveform to an instructor</p></li>
-<li><p>Demo your working board to an instructor</p></li>
+<li><p>Make sure the GitHub action passed.</p></li>
+<li><p>Demo your working board to an instructor.</p></li>
 </ul>
 <p>Congratulations, you have completed In Class Exercise 3!</p>
+</section>
 </section>
 </section>
 

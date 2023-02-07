@@ -111,43 +111,52 @@ Just like in the previous ICE, we will get our starter code from GitHub Classroo
 - Clone the code to your local workstation
 - Build the project with `build.bat`
 
-> Build your project and open it in Vivado
+> Build your project, open it in Vivado, and modify headers.
 
-### Import your half-adder
+### Import half adder
 
-In the previous ICE you got `half-adder.vhd` working.
-Copy and paste that code into the file `half-adder.vhd`, replacing the comment:
+You created a half adder during [ICE2](ICE2.md). We will reuse that code here.
 
-```vhdl
--- replace this line with your half-adder implementation from ICE2!
+First, copy and past your completed the `halfAdder.vhd` file into `src/hdl/`
+
+Then, follow the instructions in {ref}`manual-add-to-vivado-project`
+to add `halfAdder.vhd` to the project as a source.
+Make sure you see hallfAdder in the sources hierarchy.
+
+The half-adder test bench has already been added for you.
+We recommend you run the simulation just to verify that things
+are working properly.
+
+```{note}
+Adding a file to the project will allow Vivado to see it and use it
+but the file will **NOT** be automatically added if you migrate
+the project to a new computer (such as with Git).
+
+In order to do this you must {ref}`write-tcl-file`
+and commit those changes as well.
+You are not required to do this for the lab.
 ```
 
-Save the file and you should see Vivado recalibrate and insert the halfAdder
-under "Design Sources."
+> Commit the addition of `halfAdder.vhd` with Git
 
 ## Top Level Design
 
-The point of our Top Level Design is to connect multiple half-adders to do what we want.
-This keeps us from having to reconstruct (and retest!) the half-adder multiple times.
-Instead, we just use the one we know works!
+Our top level design is the boundary of our system.
 
-### File Header
-
-Open up your `top_basys3.vhd` file in a text editor.
-
-Modify the file header to reflect your work. Do not leave the
-documentation statement blank. You may refer all documentation
-statements to top_basys3 header. (ex: your top_basys3_tb file header
-will say "See top_basys3.vhd" for documentation.
+It allows us to connect internal components and our I/O.
 
 ### top_basys3 entity
 
 Unlike the half-adder, the full-adder has three inputs, though it shares
 the same two outputs. This has been given to you.
 
-```{note}
+```{hint}
 A std_logic_vector combines multiple std_logic bits into one variable.
 The different signals within the vector can be referenced by index.
+```
+
+We will use switches for inputs and LEDs for outputs.
+
 ```vhdl
 
 entity top_basys3 is
@@ -163,9 +172,7 @@ end top_basys3;
 
 ### top_basys3 architecture
 
-You need to modify the architecture of your top_basys3 file to reflect
-the schematic in {numref}`full-adder-from-two`.
-But first, always with layers of abstraction in mind, let's redraw the schematic
+Always with layers of abstraction in mind, let's redraw the schematic
 with the additional details of internal signals and board inputs and outputs.
 This is shown in {numref}`full-adder-entity`.
 
@@ -176,14 +183,15 @@ name: full-adder-entity
 Entity architecture for implementing full adder with two half-adders
 ```
 
-The first step is to add the half-adder component and any signals you
-will need to implement your design. The half-adder component must match
+You need to modify the architecture of your top_basys3 file to reflect
+the schematic in {numref}`full-adder-from-two`.
+
+#### Declare half-adder component
+
+The half-adder component must match
 the halfAdder entity declaration in `halfAdder.vhd`
 These declarations go in between the architecture and begin statements.
-
-```{hint}
-You can reference the signals in the ICE 2 testbench if you don't remember the syntax.
-```
+Reference [ICE2 testbench](ICE2.md) if you don't remember the syntax.
 
 ```vhdl
 architecture top_basys3_arch of top_basys3 is
@@ -210,7 +218,7 @@ a signal for any wire not connected directly to an input or an output.
 #### Instantiate half-adder components
 
 Now that we have made the halfAdder component available to the top_basys3 entity,
-we need to instantiate occurances of the components and declare the logic to connect them
+we need to instantiate occurrences of the components and declare the logic to connect them
 to each other, and to inputs/outputs.
 
 Remember, we are trying to build what is in {numref}`full-adder-entity`.
@@ -252,10 +260,9 @@ Your job is to complete the `top_basys3_tb.vhd` file and test the system as a wh
 
 ### Edit testbench
 
-Open your testbench file in a text editor. Note the header has
-`top_basys3.vhd` as a REQUIRED FILE. This exercise will not walk you
-through the details of creating a test bench. If you are unsure, revisit
-[ICE2](ICE2.md) for more detailed instructions.
+Open `top_basys3_tb.vhd`.
+Note the header has `top_basys3.vhd` as a REQUIRED FILE.
+Revisit [ICE2](ICE2.md) for more detailed instructions if you need them.
 
 Declare your top_basys3 "component" in the test bench, create signals to simulate
 the inputs and outputs, and connect them in a port map.
@@ -265,13 +272,17 @@ Then create your test cases within the test process. Here is an example of the f
 ```vhdl
     begin
 
-        i_sw <= "000"; wait for 10 ns;
-        assert o_led = "00" report "bad sum" severity failure;
+        w_sw <= x"0"; wait for 10 ns;
+            assert w_led = "00" report "bad x0" severity failure;
+        w_sw <= x"1"; wait for 10 ns;
+            assert w_led = "01" report "bad x1" severity failure;
         --You must fill in the remaining test cases.
 ```
 
-Note that we were able to simulate all three bits of the input with a single command.
-Create all additional test cases you will need. How many test cases will you need?
+Just like in [Lab 1](../lab/lab1.md) we are using hex to set our 3-bit input.
+We could use hex for the output too, but for two bits binary is easier.
+
+> How many test cases will you need? Create them all 😄
 
 ### Simulate project
 
@@ -282,22 +293,14 @@ Use your waveform to debug if any of the assert statements fail.
 
 ### Constraints File
 
-1. Click on the Project Manager in the Flow Navigator
-2. Double click on the `Basys3_Master.xdc` file in the Sources sub-window to open it.
-3. Get your BASYS 3 board out and look at the text surrounding the
-    switches and LEDs. Note, the labels underneath the switches are the
-    physical pin locations on your BASYS 3 board. For example, `SW0` is
-    connected to pin `V17`. Find (use CTRL+f) `V17` in the constraints
-    file. You should see it first on line 12 as shown below.
+Unlike our pervious exercise, you will not need to replace the highlighted portions.
+We made our entity inputs and outputs reflect the default constraint file naming convention.
 
 ```xdc
 ## Switches
 #set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
     #set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
 ```
-
-Unlike our pervious exercise, you will not need to replace the highlighted portions.
-We made our entity inputs and outputs reflect the default constraint file naming convention.
 
 > Uncomment all lines needed for this design (`sw{0}`, `sw{1}`, `sw{2}`, `led{0}`, and `led{1}`.
 
@@ -311,10 +314,35 @@ Squirt the bitstream to the board, and test!
 
 See [GitHub real fast](../appendix/github.md) if you need some tips.
 
+### README
+
+Take a screenshot of your waveform, save it to an the top level
+of your directory (or you can use an `img/` folder).
+
+Make the screenshot appear in your README with the following Markdown syntax:
+
+```markdown
+![description of my waveform](imagename.png)
+```
+
+Add a `## Documentation` section to the README. This is the only
+one you need for the entire ICE; you don't need one in the file headers.
+
+```markdown
+## Documentation
+
+My statement here.
+```
+
+Add the image and README.md to git and commit.
+
+### Other files
+
+- Run `git status`
 - Double check that you have all `.vhd` and `.bit` files **committed** to your git repo.
 - Then [push](https://www.atlassian.com/git/tutorials/syncing/git-push) them to your repo.
 - Make sure all your work appears in GitHub as you expect.
-- Show your simulation waveform to an instructor
-- Demo your working board to an instructor
+- Make sure the GitHub action passed.
+- Demo your working board to an instructor.
 
 Congratulations, you have completed In Class Exercise 3!
