@@ -52,11 +52,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GitHub real fast" href="../appendix/github.html" />
-    <link rel="prev" title="Lab 2 Prelab - Seven Segment Display Decoder" href="lab2Prelab.html" />
+    <link rel="prev" title="Lab 1 - ThirtyOneDayMonth" href="lab1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -169,11 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="lab1.html">
    Lab 1 - ThirtyOneDayMonth
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab2Prelab.html">
-   Lab 2 Prelab - Seven Segment Display Decoder
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -384,30 +381,74 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#overview">
      Overview
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objectives">
+       Objectives
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#supplies">
+       Supplies
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#collaboration">
+       Collaboration
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implement-ssd-component-in-vhdl">
-     Implement SSD component in VHDL
+    <a class="reference internal nav-link" href="#background">
+     Background
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-lab">
+     Pre-lab
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lab">
+     Lab
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vhdl-templates">
-       VHDL templates
+      <a class="reference internal nav-link" href="#setup-vivado-project">
+       Setup Vivado Project
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-ssd-entity">
-       Create SSD Entity
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-ssd-architecture">
-       Create SSD Architecture
+      <a class="reference internal nav-link" href="#top-level-file">
+       Top-level file
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#implement-your-prelab-equations-using-behavioral-modelling">
-         Implement your prelab equations using behavioral modelling
+        <a class="reference internal nav-link" href="#a-note-on-vs">
+         A note on &lt;= vs. =&gt;
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-vhdl-template-to-project">
+       Add VHDL template to project
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sd-entity">
+       7SD Entity
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sd-architecture">
+       7SD Architecture
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#behavioral-vs-structural-modeling">
+         Behavioral vs. Structural modeling
         </a>
        </li>
       </ul>
@@ -509,30 +550,74 @@ preliminary design.
     <a class="reference internal nav-link" href="#overview">
      Overview
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objectives">
+       Objectives
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#supplies">
+       Supplies
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#collaboration">
+       Collaboration
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#implement-ssd-component-in-vhdl">
-     Implement SSD component in VHDL
+    <a class="reference internal nav-link" href="#background">
+     Background
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-lab">
+     Pre-lab
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lab">
+     Lab
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vhdl-templates">
-       VHDL templates
+      <a class="reference internal nav-link" href="#setup-vivado-project">
+       Setup Vivado Project
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-ssd-entity">
-       Create SSD Entity
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-ssd-architecture">
-       Create SSD Architecture
+      <a class="reference internal nav-link" href="#top-level-file">
+       Top-level file
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#implement-your-prelab-equations-using-behavioral-modelling">
-         Implement your prelab equations using behavioral modelling
+        <a class="reference internal nav-link" href="#a-note-on-vs">
+         A note on &lt;= vs. =&gt;
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-vhdl-template-to-project">
+       Add VHDL template to project
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sd-entity">
+       7SD Entity
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sd-architecture">
+       7SD Architecture
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#behavioral-vs-structural-modeling">
+         Behavioral vs. Structural modeling
         </a>
        </li>
       </ul>
@@ -618,45 +703,196 @@ preliminary design.
                 
   <section class="tex2jax_ignore mathjax_ignore" id="lab-2-seven-segment-display-decoder">
 <h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this headline">#</a></h1>
+<p>Due: Lesson 17</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
-<li><p><a class="reference internal" href="#implement-ssd-component-in-vhdl" id="id2">Implement SSD component in VHDL</a></p>
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vhdl-templates" id="id3">VHDL templates</a></p></li>
-<li><p><a class="reference internal" href="#create-ssd-entity" id="id4">Create SSD Entity</a></p></li>
-<li><p><a class="reference internal" href="#create-ssd-architecture" id="id5">Create SSD Architecture</a></p></li>
+<li><p><a class="reference internal" href="#objectives" id="id2">Objectives</a></p></li>
+<li><p><a class="reference internal" href="#supplies" id="id3">Supplies</a></p></li>
+<li><p><a class="reference internal" href="#collaboration" id="id4">Collaboration</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#edit-the-vhdl-template" id="id6">EDIT THE VHDL TEMPLATE</a></p></li>
+<li><p><a class="reference internal" href="#background" id="id5">Background</a></p></li>
+<li><p><a class="reference internal" href="#pre-lab" id="id6">Pre-lab</a></p></li>
+<li><p><a class="reference internal" href="#lab" id="id7">Lab</a></p>
+<ul>
+<li><p><a class="reference internal" href="#setup-vivado-project" id="id8">Setup Vivado Project</a></p></li>
+<li><p><a class="reference internal" href="#top-level-file" id="id9">Top-level file</a></p></li>
+<li><p><a class="reference internal" href="#add-vhdl-template-to-project" id="id10">Add VHDL template to project</a></p></li>
+<li><p><a class="reference internal" href="#sd-entity" id="id11">7SD Entity</a></p></li>
+<li><p><a class="reference internal" href="#sd-architecture" id="id12">7SD Architecture</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#edit-the-vhdl-template" id="id13">EDIT THE VHDL TEMPLATE</a></p></li>
 </ul>
 </div>
 <section id="overview">
 <h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>Implement the seven-segment decoder in VHDL.</p>
-<p>Now that you have Boolean equations established for each of your seven
-segment outputs, it is time to implement them in hardware with VHDL!
-Once you have written your seven-segment decoder (SSD) VHDL module, you
-will test it with a simulation test bench. The test bench allows you to
-simulate your design to see what outputs would be given inputs you
-define. This way, you can see if your design does what you expect before
-attempting to program your board. Then you will use your verified SSD
-component in a top level Basys3 component where you wire your decoder to
-a seven-segment display (7SD) and switches, along with connecting a
-button to the 7SD to enable it. Finally, you will test your implemented
-design in hardware.</p>
-</section>
-<section id="implement-ssd-component-in-vhdl">
-<h2><a class="toc-backref" href="#id2">Implement SSD component in VHDL</a><a class="headerlink" href="#implement-ssd-component-in-vhdl" title="Permalink to this headline">#</a></h2>
-<section id="vhdl-templates">
-<h3><a class="toc-backref" href="#id3">VHDL templates</a><a class="headerlink" href="#vhdl-templates" title="Permalink to this headline">#</a></h3>
-<p>You should have all templates loaded from Lab1 in your repository,
-but you can find the VHDL template files from the General Teams
-Channel under “Handouts and Resources”.</p>
+<p>In this lab you will implement the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Seven-segment_display">seven-segment display</a> decoder
+in VHDL to display a hexadecimal digit. The hex digit will come from a
+hardware-based binary to hex converter, which you will develop.</p>
+<p>A four-bit value will be input using switches.
+Upon pressing the center button, a seven-segment display will
+output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 23</span></a></p>
+<figure class="align-default" id="hex-of-switch">
+<img alt="../_images/lab2_image1.jpg" src="../_images/lab2_image1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="objectives">
+<h3><a class="toc-backref" href="#id2">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
-<li><p>Save a copy of ECE_template.vhd as a file named <strong>sevenSegDecoder.vhd</strong> into your Lab2 <strong>code</strong> folder.</p></li>
-<li><p>Save a copy of ECE_template_tb.vhd as a file named <strong>sevenSegDecoder_tb.vhd</strong> into your Lab2 <strong>code</strong> folder.</p></li>
-<li><p>Add your sources to Vivado. Remember to leave “Copy sources into project” <strong>unchecked</strong></p></li>
+<li><p>Develop a hardware-based binary to hex converter</p></li>
+<li><p>Display switch value on seven-segment display</p></li>
+</ol>
+</section>
+<section id="supplies">
+<h3><a class="toc-backref" href="#id3">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Basys3 board</p></li>
+</ul>
+</section>
+<section id="collaboration">
+<h3><a class="toc-backref" href="#id4">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this headline">#</a></h3>
+<p>Your instructor will inform you if you can work in pairs or not. For all assignments in this course, unless
+otherwise noted on the assignment, you may work with anyone. We expect
+all graded work, to include code, lab notebooks, and written reports, to
+be in your own work. Copying another person’s work, with or without
+documentation, will result in NO academic credit. Furthermore, copying
+without attribution is dishonorable and will be dealt with as an honor
+code violation.</p>
+</section>
+</section>
+<section id="background">
+<h2><a class="toc-backref" href="#id5">Background</a><a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<p>When creating simple embedded digital designs, a seven-segment display
+is a common way to display numbers or simple letters to the end-user. In
+this lab, you will design a seven-segment display decoder. This decoder
+takes a 4-bit binary input, and produces 7 bits that indicate whether
+each “segment” of the display is <strong>on</strong> (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or <strong>off</strong> (<code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
+<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 24</span></a>) and one decimal point
+(we will ignore the d.p. in this lab) in a seven-segment display.</p>
+<figure class="align-default" id="seg-label">
+<img alt="../_images/lab2_image2.png" src="../_images/lab2_image2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>On our Basys3 board an anode determines which of the displays are on,
+while a cathodes allow you to turn on each individual segment, <a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 25</span></a></p>
+<figure class="align-default" id="sd-anodes">
+<img alt="../_images/lab2_image18.jpg" src="../_images/lab2_image18.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Said differently, you disable an entire display by connecting it to power, aka <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Placing a <code class="docutils literal notranslate"><span class="pre">0</span></code> on a segment will cause it to light up, while a <code class="docutils literal notranslate"><span class="pre">1</span></code> will keep the segment dark.
+This is called “active low.”
+For example, to display the number “0”, a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> must be placed on segments <code class="docutils literal notranslate"><span class="pre">b</span></code>-<code class="docutils literal notranslate"><span class="pre">g</span></code>,
+while segment <code class="docutils literal notranslate"><span class="pre">a</span></code> will be a logic <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>In this way, you can display every hexadecimal digit:
+“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 26</span></a></p>
+<figure class="align-default" id="sd-digits">
+<img alt="../_images/lab2_image3.png" src="../_images/lab2_image3.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="pre-lab">
+<h2><a class="toc-backref" href="#id6">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Permalink to this headline">#</a></h2>
+<p>First, complete the truth table for converting binary inputs to a hex output on the display.</p>
+<p><strong>TODO: make excel file available</strong></p>
+<p>Second, use this truth table to generate logic equations for each output.</p>
+</section>
+<section id="lab">
+<h2><a class="toc-backref" href="#id7">Lab</a><a class="headerlink" href="#lab" title="Permalink to this headline">#</a></h2>
+<p>Now that you have Boolean equations established for each of your seven
+segment outputs, it is time to implement them in hardware with VHDL!</p>
+<section id="setup-vivado-project">
+<h3><a class="toc-backref" href="#id8">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Permalink to this headline">#</a></h3>
+<p>Just like in previous ICEs, you will join the assignment, clone your GitHub repository,
+and run <code class="docutils literal notranslate"><span class="pre">build.bat</span></code>.</p>
+<p>Edit the file headers as necessary.</p>
+</section>
+<section id="top-level-file">
+<h3><a class="toc-backref" href="#id9">Top-level file</a><a class="headerlink" href="#top-level-file" title="Permalink to this headline">#</a></h3>
+<p>The functionality we are looking for is this:</p>
+<div class="mermaid">
+            flowchart LR
+    binary([4-bit input]) --&gt; hex[Convert to hex]
+    hex --&gt; button{Display active?}
+    button --&gt; out[Display hex output]
+        </div><p>We have opted to use switches for our input and the seven segment display as our output.
+A button press will activate the display.</p>
+<p>In order to make this happen we need to use a top level design to wire our inputs and outputs
+as well as some internal logic.
+We will make the seven segment display an internal component - like we did with the half-adder in ICE3 -
+since it is more complex and should be tested independently.</p>
+<p>The repository you cloned and built has a top-level file already defined.
+The schematic is shown in <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 27</span></a>.</p>
+<figure class="align-default" id="sd-top-level-schem">
+<img alt="../_images/lab2_image19.png" src="../_images/lab2_image19.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Top-level schematic</span><a class="headerlink" href="#sd-top-level-schem" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You need to connect your 7SD component to four physical switches (sw)
+and the seven cathodes (seg) of a seven-segment display (7SD).
+Also wire a push button (btnC) to activate the 7SD by sending a <strong>low signal</strong> to the anode.
+Since the button itself is active-high, an inverter is required.</p>
+<p>The entity is provided for you, but you must complete the architecture.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The entity interface has been designed so that the port names match exactly
+what the constraints file (<code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code>) is already using.</p>
+</div>
+<section id="a-note-on-vs">
+<h4>A note on &lt;= vs. =&gt;<a class="headerlink" href="#a-note-on-vs" title="Permalink to this headline">#</a></h4>
+<p>When connecting an input to a wire, the input must be on the right side.</p>
+<p>In the below statement, <code class="docutils literal notranslate"><span class="pre">btnC</span></code> is the input and <code class="docutils literal notranslate"><span class="pre">w_7SD_EN_n</span></code> is
+the wire connecting the button to the 7SD active-low enable pin:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">w_7SD_EN_n</span><span class="w">  </span><span class="o">&lt;=</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">btnC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> is an <strong>assignment statement</strong> and connects the button to a wire.</p>
+<p>To connect the other end of the wire and enable the (anode) pin, you have to
+use a <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code> because the <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code> is used for <strong>case statements</strong>, <strong>array assignments</strong>,
+and component <strong>port mapping</strong>.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">an</span><span class="w">  </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w7SD_EN_n</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In the above statement, the signal an is an <em>output</em>, so it must be on the left side.
+We declared <code class="docutils literal notranslate"><span class="pre">an</span></code> earlier as a 4-bit vector. The right side is using the <code class="docutils literal notranslate"><span class="pre">()</span></code> aggregate operator
+to concatenate bus signals; in this case, the LSB is assigned to <code class="docutils literal notranslate"><span class="pre">w&amp;SD_EN_n</span></code>.
+The keyword “others” refers to any bus signals not otherwise explicitly listed, so sets the other
+three bits to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Another way to describe the above connections is as follows:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w">    </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">w_7SD_EN_n</span><span class="p">;</span>
+<span class="n">an</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span>
+<span class="n">an</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span>
+<span class="n">an</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Follow the comments in <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> to complete the architecture.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="add-vhdl-template-to-project">
+<h3><a class="toc-backref" href="#id10">Add VHDL template to project</a><a class="headerlink" href="#add-vhdl-template-to-project" title="Permalink to this headline">#</a></h3>
+<p>For better modularity, we will implement our seven segment display decoder as a its own component.</p>
+<p>We have provided a template file
+<strong>TODO: make template available</strong></p>
+<!-- <a href="https://raw.githubusercontent.com/USAFA-ECE/helloLed/main/src/hdl/Basys3_Master.xdc" download>template.vhd</a> -->
+<ol class="simple">
+<li><p>Save a copy of ECE_template.vhd as a file named <strong>sevenSegDecoder.vhd</strong> into your Lab2 <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code> folder.</p></li>
+<li><p>Save a copy of ECE_template_tb.vhd as a file named <strong>sevenSegDecoder_tb.vhd</strong> into your Lab2 `src/hdl/ folder.</p></li>
+<li><p>Add your sources to Vivado. Remember to leave “Copy sources into project” <strong>unchecked</strong>. See <span class="xref myst">Add source files to project</span></p></li>
 </ol>
 <p>Edit the file headers as needed.</p>
 <ol class="simple">
@@ -668,15 +904,22 @@ Channel under “Handouts and Resources”.</p>
 <p>In the message area (bottom of Vivado screen) click “Replace All”</p>
 <p><img alt="Replace All" src="../_images/lab2_image6.jpg" /></p>
 </section>
-<section id="create-ssd-entity">
-<h3><a class="toc-backref" href="#id4">Create SSD Entity</a><a class="headerlink" href="#create-ssd-entity" title="Permalink to this headline">#</a></h3>
-<p><strong>Create your interface (ports) for your sevenSegDecoder according to
-Figure 3 below</strong>. Figure 3 shows the sevenSegDecoder module entity
-interface in blue and the architecture in purple. Notice that the figure
-indicates that the input, <code class="docutils literal notranslate"><span class="pre">i_D</span></code>, is a bus of 4 wires, and the output, <code class="docutils literal notranslate"><span class="pre">o_S</span></code>,
-is a bus of 7 wires. This can be created in VHDL by using a
-<strong>std_logic_vector</strong> signal type. For instance, <code class="docutils literal notranslate"><span class="pre">i_D</span></code> could be created in
-the <strong>port</strong> statement with the following:</p>
+<section id="sd-entity">
+<h3><a class="toc-backref" href="#id11">7SD Entity</a><a class="headerlink" href="#sd-entity" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>Create your interface (ports) for your sevenSegDecoder according to <code class="xref std std-numref docutils literal notranslate"><span class="pre">7sd-entity-arch</span></code></p>
+</div></blockquote>
+<div class="highlight-{figure}img/lab2_image9.jpg notranslate"><div class="highlight"><pre><span></span>---
+name: 7sd-entity-arch
+---
+sevenSegDecoder entity and architecture
+</pre></div>
+</div>
+<p>The sevenSegDecoder module entity interface is shown in blue and the architecture in purple.
+The input, <code class="docutils literal notranslate"><span class="pre">i_D</span></code>, is a bus of four wires.
+The output, <code class="docutils literal notranslate"><span class="pre">o_S</span></code>, is a bus of seven wires.</p>
+<p>This can be created in VHDL by using a <strong>std_logic_vector</strong> signal type.
+For instance, <code class="docutils literal notranslate"><span class="pre">i_D</span></code> could be created in the <strong>port</strong> statement with the following:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">i_D</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -687,13 +930,11 @@ reverse this by swapping the locations of the two numbers.</p>
 <p>To access each wire from the bus you created simply refer to the bit
 number in parentheses. For instance, <code class="docutils literal notranslate"><span class="pre">i_D(3)</span></code> refers to the MSB of the
 input, D.</p>
-<p><img alt="Figure 3: sevenSegDecoder entity and architecture" src="../_images/lab2_image9.jpg" />
-<em>Figure 3: sevenSegDecoder entity and architecture</em></p>
 </section>
-<section id="create-ssd-architecture">
-<h3><a class="toc-backref" href="#id5">Create SSD Architecture</a><a class="headerlink" href="#create-ssd-architecture" title="Permalink to this headline">#</a></h3>
+<section id="sd-architecture">
+<h3><a class="toc-backref" href="#id12">7SD Architecture</a><a class="headerlink" href="#sd-architecture" title="Permalink to this headline">#</a></h3>
 <p>After you have created your component interface, you need to describe
-the architecture. Figure 3 on the previous page shows that the output of
+the architecture. <code class="xref std std-numref docutils literal notranslate"><span class="pre">7sd-entity-arch</span></code> shows that the output of
 the combinational logic produces a signal for each 7SD segment (<code class="docutils literal notranslate"><span class="pre">c_Sa</span></code> …
 <code class="docutils literal notranslate"><span class="pre">c_Sg</span></code>). These combinational signals (denoted by the <code class="docutils literal notranslate"><span class="pre">c_</span></code> at the
 beginning) are wired to each bit of the output segment bus (<code class="docutils literal notranslate"><span class="pre">o_S</span></code>). The
@@ -702,29 +943,31 @@ wired to <code class="docutils literal notranslate"><span class="pre">c_Sa</span
 <ul class="simple">
 <li><p>For clarity, declare intermediate combinatorial signals (e.g., <code class="docutils literal notranslate"><span class="pre">c_Sa</span></code>) that break out output <code class="docutils literal notranslate"><span class="pre">S</span></code> and set them to a default value of <code class="docutils literal notranslate"><span class="pre">1</span></code> (off). This should be done <em>before</em> <strong>begin</strong>.</p></li>
 <li><p>There are no PORT MAPS or PROCESSES needed for this module, so you can delete those sections.</p></li>
-<li><p>In the CONCURRENT STATEMENTS section, map the output <code class="docutils literal notranslate"><span class="pre">S</span></code> to the signals you created above per Figure 3. For instance:</p></li>
+<li><p>In the CONCURRENT STATEMENTS section, map the output <code class="docutils literal notranslate"><span class="pre">S</span></code> to the signals you created above. For instance:</p></li>
 </ul>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">o_S</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">c_Sa</span><span class="p">;</span>
 </pre></div>
 </div>
-<section id="implement-your-prelab-equations-using-behavioral-modelling">
-<h4>Implement your prelab equations using behavioral modelling<a class="headerlink" href="#implement-your-prelab-equations-using-behavioral-modelling" title="Permalink to this headline">#</a></h4>
-<p>There are two basic philosophies for modelling digital architectures:
-<strong>structural</strong> and <strong>behavioral</strong>. A structural model means that you are
-describing <em>how</em> the module would be composed as a hierarchy of simpler
-modules. A behavioral model means that you are describing <em>what</em> the
-logic does in terms of inputs and outputs. <strong>We will be using behavioral
-modelling in this lab.</strong></p>
-<p>For instance, given the truth table below of inputs D3 down to D0 and
-output Sa, you could derive the simplified Boolean expression:</p>
+<hr class="docutils" />
+<p>Below this line is a work in progress</p>
+<section id="behavioral-vs-structural-modeling">
+<h4>Behavioral vs. Structural modeling<a class="headerlink" href="#behavioral-vs-structural-modeling" title="Permalink to this headline">#</a></h4>
+<p>There are two basic philosophies for modelling digital architectures:</p>
+<ul class="simple">
+<li><p><strong>structural</strong> describes <em>how</em> the module would be composed as a hierarchy of simpler modules.</p></li>
+<li><p><strong>behavioral</strong> describes <em>what</em> the logic does in terms of inputs and outputs.</p></li>
+</ul>
+<p>We will be using behavioral modelling in this lab.</p>
+<p>For instance, you could derive the simplified Boolean expression:</p>
 <div class="math notranslate nohighlight">
 \[
 Sa = (D3')(D2')(D1')(D0) + (D3)(D2')(D1)(D0) + (D2)(D1')(D0') + (D3)(D2)(D1')
 \]</div>
-<p><em>Table 2: Seven-Segment Decoder Truth Table with output Sa</em>
-<img alt="Table 2: Seven-Segment Decoder Truth Table with output Sa" src="../_images/lab2_image14.jpg" /></p>
 <p>This could then be implemented <em>behaviorally</em> with the following VHDL
 code:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <p><img alt="" src="../_images/lab2_image15.jpg" />{width=”5.322916666666667in”
 height=”0.8020833333333334in”}</p>
 <p>Notice that the logic for the intermediate signal c_Sa is described in
@@ -754,12 +997,12 @@ two of them.</p></li>
 your outputs?</p></li>
 <li><p>Implement the remaining outputs with your preferred choice.</p></li>
 </ul>
-<p>2. CREATE SSD TESTBENCH AND SIMULATE</p>
+<p>2. CREATE 7SD TESTBENCH AND SIMULATE</p>
 </section>
 </section>
 </section>
 <section id="edit-the-vhdl-template">
-<h2><a class="toc-backref" href="#id6">EDIT THE VHDL TEMPLATE</a><a class="headerlink" href="#edit-the-vhdl-template" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id13">EDIT THE VHDL TEMPLATE</a><a class="headerlink" href="#edit-the-vhdl-template" title="Permalink to this headline">#</a></h2>
 <p>a.  You can find the VHDL template files from the General Teams Channel
 under “Handouts and Resources”..</p>
 <p>b.  If not already done, save a copy of ECE_template_tb.vhd as a file
@@ -794,7 +1037,7 @@ Bit Order).</p>
 <p>3. CREATE TOP LEVEL VHDL FILE</p>
 <p>The top level VHDL file is what connects your component to the Basys3
 development board. Figure 5 below shows the top level schematic for this
-lab. As can be seen in the figure, you need to connect your SSD
+lab. As can be seen in the figure, you need to connect your 7SD
 component to four physical switches (sw) and the seven cathodes (seg) of
 a seven-segment display (7SD). You also need to wire a push button
 (btnC) up so that it can be used to activate the 7SD by sending a <strong>low
@@ -1073,11 +1316,11 @@ course projects (2.5 pts)</p></li>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="lab2Prelab.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lab1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 2 Prelab - Seven Segment Display Decoder</p>
+            <p class="prev-next-title">Lab 1 - ThirtyOneDayMonth</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../appendix/github.html" title="next page">

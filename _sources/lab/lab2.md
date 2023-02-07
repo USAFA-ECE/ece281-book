@@ -1,5 +1,7 @@
 # Lab 2 - Seven Segment Display Decoder
 
+Due: Lesson 17
+
 ```{contents}
 :local:
 :depth: 2
@@ -7,31 +9,196 @@
 
 ## Overview
 
-Implement the seven-segment decoder in VHDL.
+In this lab you will implement the
+[seven-segment display](https://en.wikipedia.org/wiki/Seven-segment_display) decoder
+in VHDL to display a hexadecimal digit. The hex digit will come from a
+hardware-based binary to hex converter, which you will develop.
+
+A four-bit value will be input using switches.
+Upon pressing the center button, a seven-segment display will
+output the correct hex digit, {numref}`hex-of-switch`
+
+```{figure} img/lab2_image1.jpg
+---
+name: hex-of-switch
+---
+Binary-to-hex displayed on seven-segment display
+```
+
+### Objectives
+
+1. Develop a hardware-based binary to hex converter
+2. Display switch value on seven-segment display
+
+### Supplies
+
+- Basys3 board
+
+### Collaboration
+
+Your instructor will inform you if you can work in pairs or not. For all assignments in this course, unless
+otherwise noted on the assignment, you may work with anyone. We expect
+all graded work, to include code, lab notebooks, and written reports, to
+be in your own work. Copying another person's work, with or without
+documentation, will result in NO academic credit. Furthermore, copying
+without attribution is dishonorable and will be dealt with as an honor
+code violation.
+
+## Background
+
+When creating simple embedded digital designs, a seven-segment display
+is a common way to display numbers or simple letters to the end-user. In
+this lab, you will design a seven-segment display decoder. This decoder
+takes a 4-bit binary input, and produces 7 bits that indicate whether
+each "segment" of the display is **on** (`0`) or **off** (`1`).
+
+There are seven "segments" (labeled a -- g, see {numref}`7seg-label`) and one decimal point
+(we will ignore the d.p. in this lab) in a seven-segment display.
+
+```{figure} img/lab2_image2.png
+---
+name: 7seg-label
+---
+Labeled segments in display
+```
+
+On our Basys3 board an anode determines which of the displays are on,
+while a cathodes allow you to turn on each individual segment, {numref}`7SD-anodes`
+
+```{figure} img/lab2_image18.jpg
+---
+name: 7SD-anodes
+---
+Basys3 7SD cathodes and anodes.
+```
+
+Said differently, you disable an entire display by connecting it to power, aka `1`.
+
+Placing a `0` on a segment will cause it to light up, while a `1` will keep the segment dark.
+This is called "active low."
+For example, to display the number "0", a logic `0` must be placed on segments `b`-`g`,
+while segment `a` will be a logic `1`.
+
+In this way, you can display every hexadecimal digit:
+"0" - "F" as shown in {numref}`7SD-digits`
+
+```{figure} img/lab2_image3.png
+---
+name: 7SD-digits
+---
+Hexadecimal digits on a seven-segment display
+```
+
+## Pre-lab
+
+First, complete the truth table for converting binary inputs to a hex output on the display.
+
+**TODO: make excel file available**
+
+Second, use this truth table to generate logic equations for each output.
+
+## Lab
 
 Now that you have Boolean equations established for each of your seven
 segment outputs, it is time to implement them in hardware with VHDL!
-Once you have written your seven-segment decoder (SSD) VHDL module, you
-will test it with a simulation test bench. The test bench allows you to
-simulate your design to see what outputs would be given inputs you
-define. This way, you can see if your design does what you expect before
-attempting to program your board. Then you will use your verified SSD
-component in a top level Basys3 component where you wire your decoder to
-a seven-segment display (7SD) and switches, along with connecting a
-button to the 7SD to enable it. Finally, you will test your implemented
-design in hardware.
 
-## Implement SSD component in VHDL
+### Setup Vivado Project
 
-### VHDL templates
+Just like in previous ICEs, you will join the assignment, clone your GitHub repository,
+and run `build.bat`.
 
-You should have all templates loaded from Lab1 in your repository,
-but you can find the VHDL template files from the General Teams
-Channel under "Handouts and Resources".
+Edit the file headers as necessary.
 
-1. Save a copy of ECE_template.vhd as a file named **sevenSegDecoder.vhd** into your Lab2 **code** folder.
-2. Save a copy of ECE_template_tb.vhd as a file named **sevenSegDecoder_tb.vhd** into your Lab2 **code** folder.
-3. Add your sources to Vivado. Remember to leave "Copy sources into project" **unchecked**
+### Top-level file
+
+The functionality we are looking for is this:
+
+```{mermaid}
+flowchart LR
+    binary([4-bit input]) --> hex[Convert to hex]
+    hex --> button{Display active?}
+    button --> out[Display hex output]
+```
+
+We have opted to use switches for our input and the seven segment display as our output.
+A button press will activate the display.
+
+In order to make this happen we need to use a top level design to wire our inputs and outputs
+as well as some internal logic.
+We will make the seven segment display an internal component - like we did with the half-adder in ICE3 -
+since it is more complex and should be tested independently.
+
+The repository you cloned and built has a top-level file already defined.
+The schematic is shown in {numref}`7SD-top-level-schem`.
+
+```{figure} img/lab2_image19.png
+---
+name: 7SD-top-level-schem
+---
+Top-level schematic
+```
+
+You need to connect your 7SD component to four physical switches (sw)
+and the seven cathodes (seg) of a seven-segment display (7SD).
+Also wire a push button (btnC) to activate the 7SD by sending a **low signal** to the anode.
+Since the button itself is active-high, an inverter is required.
+
+The entity is provided for you, but you must complete the architecture.
+
+```{note}
+The entity interface has been designed so that the port names match exactly
+what the constraints file (`Basys3_Master.xdc`) is already using.
+```
+
+#### A note on <= vs. =>
+
+When connecting an input to a wire, the input must be on the right side.
+
+In the below statement, `btnC` is the input and `w_7SD_EN_n` is
+the wire connecting the button to the 7SD active-low enable pin:
+
+```vhdl
+w_7SD_EN_n  <= not btnC;
+```
+
+In this case, `<=` is an **assignment statement** and connects the button to a wire.
+
+To connect the other end of the wire and enable the (anode) pin, you have to
+use a `=>` because the `=>` is used for **case statements**, **array assignments**,
+and component **port mapping**.
+
+```vhdl
+an  <= (0 => w7SD_EN_n, other => '1');
+```
+
+In the above statement, the signal an is an *output*, so it must be on the left side.
+We declared `an` earlier as a 4-bit vector. The right side is using the `()` aggregate operator
+to concatenate bus signals; in this case, the LSB is assigned to `w&SD_EN_n`.
+The keyword "others" refers to any bus signals not otherwise explicitly listed, so sets the other
+three bits to `1`.
+
+Another way to describe the above connections is as follows:
+
+```vhdl
+a(0)    <= w_7SD_EN_n;
+an(1)   <= '1';
+an(2)   <= '1';
+an(3)   <= '1';
+```
+
+> Follow the comments in `top_basys3.vhd` to complete the architecture.
+
+### Add VHDL template to project
+
+For better modularity, we will implement our seven segment display decoder as a its own component.
+
+We have provided a template file
+**TODO: make template available**
+<!-- <a href="https://raw.githubusercontent.com/USAFA-ECE/helloLed/main/src/hdl/Basys3_Master.xdc" download>template.vhd</a> -->
+
+1. Save a copy of ECE_template.vhd as a file named **sevenSegDecoder.vhd** into your Lab2 `src/hdl/` folder.
+2. Save a copy of ECE_template_tb.vhd as a file named **sevenSegDecoder_tb.vhd** into your Lab2 `src/hdl/ folder.
+3. Add your sources to Vivado. Remember to leave "Copy sources into project" **unchecked**. See [Add source files to project](../appendix/vivado-project.md)
 
 Edit the file headers as needed.
 
@@ -45,15 +212,23 @@ In the message area (bottom of Vivado screen) click "Replace All"
 
 ![Replace All](img/lab2_image6.jpg)
 
-### Create SSD Entity
+### 7SD Entity
 
-**Create your interface (ports) for your sevenSegDecoder according to
-Figure 3 below**. Figure 3 shows the sevenSegDecoder module entity
-interface in blue and the architecture in purple. Notice that the figure
-indicates that the input, `i_D`, is a bus of 4 wires, and the output, `o_S`,
-is a bus of 7 wires. This can be created in VHDL by using a
-**std_logic_vector** signal type. For instance, `i_D` could be created in
-the **port** statement with the following:
+> Create your interface (ports) for your sevenSegDecoder according to {numref}`7sd-entity-arch`
+
+```{figure}img/lab2_image9.jpg
+---
+name: 7sd-entity-arch
+---
+sevenSegDecoder entity and architecture
+```
+
+The sevenSegDecoder module entity interface is shown in blue and the architecture in purple.
+The input, `i_D`, is a bus of four wires.
+The output, `o_S`, is a bus of seven wires.
+
+This can be created in VHDL by using a **std_logic_vector** signal type.
+For instance, `i_D` could be created in the **port** statement with the following:
 
 ```vhdl
 i_D : in std_logic_vector(3 downto 0)
@@ -68,13 +243,10 @@ To access each wire from the bus you created simply refer to the bit
 number in parentheses. For instance, `i_D(3)` refers to the MSB of the
 input, D.
 
-![Figure 3: sevenSegDecoder entity and architecture](img/lab2_image9.jpg)
-*Figure 3: sevenSegDecoder entity and architecture*
-
-### Create SSD Architecture
+### 7SD Architecture
 
 After you have created your component interface, you need to describe
-the architecture. Figure 3 on the previous page shows that the output of
+the architecture. {numref}`7sd-entity-arch` shows that the output of
 the combinational logic produces a signal for each 7SD segment (`c_Sa` ...
 `c_Sg`). These combinational signals (denoted by the `c_` at the
 beginning) are wired to each bit of the output segment bus (`o_S`). The
@@ -83,34 +255,36 @@ wired to `c_Sa`.
 
 - For clarity, declare intermediate combinatorial signals (e.g., `c_Sa`) that break out output `S` and set them to a default value of `1` (off). This should be done *before* **begin**.
 - There are no PORT MAPS or PROCESSES needed for this module, so you can delete those sections.
-- In the CONCURRENT STATEMENTS section, map the output `S` to the signals you created above per Figure 3. For instance:
+- In the CONCURRENT STATEMENTS section, map the output `S` to the signals you created above. For instance:
 
 ```vhdl
 o_S(0) <= c_Sa;
 ```
 
-#### Implement your prelab equations using behavioral modelling
+---
+Below this line is a work in progress
+
+#### Behavioral vs. Structural modeling
 
 There are two basic philosophies for modelling digital architectures:
-**structural** and **behavioral**. A structural model means that you are
-describing *how* the module would be composed as a hierarchy of simpler
-modules. A behavioral model means that you are describing *what* the
-logic does in terms of inputs and outputs. **We will be using behavioral
-modelling in this lab.**
 
-For instance, given the truth table below of inputs D3 down to D0 and
-output Sa, you could derive the simplified Boolean expression:
+- **structural** describes *how* the module would be composed as a hierarchy of simpler modules.
+- **behavioral** describes *what* the logic does in terms of inputs and outputs.
+
+We will be using behavioral modelling in this lab.
+
+For instance, you could derive the simplified Boolean expression:
 
 $$
 Sa = (D3')(D2')(D1')(D0) + (D3)(D2')(D1)(D0) + (D2)(D1')(D0') + (D3)(D2)(D1')
 $$
 
-*Table 2: Seven-Segment Decoder Truth Table with output Sa*
-![Table 2: Seven-Segment Decoder Truth Table with output Sa](img/lab2_image14.jpg)
-
 This could then be implemented *behaviorally* with the following VHDL
 code:
 
+```vhdl
+
+```
 ![](img/lab2_image15.jpg){width="5.322916666666667in"
 height="0.8020833333333334in"}
 
@@ -138,6 +312,8 @@ bits. This is one of the advantages of using that signal type.
 Now that you have an understanding of how to implement behavioral models
 in VHDL, implement all seven of your outputs.
 
+
+
 -   Use behavioral modelling with AND, NOT, and OR gates for at least
     two of them, and use behavioral modelling with a LUT for at least
     two of them.
@@ -147,7 +323,7 @@ in VHDL, implement all seven of your outputs.
 
 -   Implement the remaining outputs with your preferred choice.
 
-2\. CREATE SSD TESTBENCH AND SIMULATE
+2\. CREATE 7SD TESTBENCH AND SIMULATE
 
 ## EDIT THE VHDL TEMPLATE
 
@@ -193,7 +369,7 @@ l.  Make sure the simulation results match your Prelab truth table, and
 
 The top level VHDL file is what connects your component to the Basys3
 development board. Figure 5 below shows the top level schematic for this
-lab. As can be seen in the figure, you need to connect your SSD
+lab. As can be seen in the figure, you need to connect your 7SD
 component to four physical switches (sw) and the seven cathodes (seg) of
 a seven-segment display (7SD). You also need to wire a push button
 (btnC) up so that it can be used to activate the 7SD by sending a **low
@@ -219,6 +395,8 @@ lines in Basys3_Master.xdc that you need to use.
 height="4.4430555555555555in"}
 
 > **Figure 5 -- Top Level Schematic**
+
+
 
 The comments in the VHDL file provide a guide on what you need to do.
 Additionally, the code that connects the push buttons to the enable
