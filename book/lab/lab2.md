@@ -261,6 +261,9 @@ wired to `c_Sa`.
 o_S(0) <= c_Sa;
 ```
 
+---
+Below this line is a work in progress
+
 #### Behavioral vs. Structural modeling
 
 There are two basic philosophies for modelling digital architectures:
