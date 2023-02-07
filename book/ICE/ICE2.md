@@ -127,7 +127,7 @@ You can create a Viavado project from scratch. This involves telling the suite a
 - Constraints (`.xdc`)
 - Simulation Sources (`.vhd`)
 
-You can also add files to an existing project. For instructions on how to do this, see [Manually Setup a Vivado Project](../appendix/vivado-project.md)
+You can also add files to an existing project. For instructions on how to do this, see {ref}`manual-add-to-vivado-project`
 
 But **good news** 🥳🎉 we will be using Git to clone an already created project.
 We will then tell Viavdo to setup the project for us using a `build.tcl` file.
@@ -396,7 +396,7 @@ zyBook may be helpful if you are stuck.
 ## Test design
 
 At this point your testbench VHDL file `halfAdder_tb.vhd` should already
-be added. If not, go back and add it per the directions in [Manually Setup a Vivado Project](../appendix/vivado-project.md).
+be added. If not, go back and add it per the directions in {ref}`manual-add-to-vivado-project`.
 
 ```{tip}
 Generally, your testbench files will have the same name as the component you are testing with them but with a `_tb` at the end.
