@@ -272,15 +272,15 @@ Then create your test cases within the test process. Here is an example of the f
 ```vhdl
     begin
 
-        w_sw <= x"0"; wait for 10 ns;
-            assert w_led = "00" report "bad x0" severity failure;
-        w_sw <= x"1"; wait for 10 ns;
-            assert w_led = "01" report "bad x1" severity failure;
+        w_sw <= o"0"; wait for 10 ns;
+            assert w_led = "00" report "bad 000" severity failure;
+        w_sw <= o"1"; wait for 10 ns;
+            assert w_led = "01" report "bad 001" severity failure;
         --You must fill in the remaining test cases.
 ```
 
-Just like in [Lab 1](../lab/lab1.md) we are using hex to set our 3-bit input.
-We could use hex for the output too, but for two bits binary is easier.
+Similar to [Lab 1](../lab/lab1.md) we can set the enitre vector with a single value, but because there are only three bits,
+we need to use octal instead of hex. The leading `o` is how you express an octal number in VHDL.
 
 > How many test cases will you need? Create them all 😄
 
