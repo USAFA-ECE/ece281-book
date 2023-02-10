@@ -380,193 +380,39 @@ Verify the hardware functions as expected.
 
 ## Deliverables
 
-Table 3 below shows how the points will be distributed for this
-assignment. Details for how each item will be scored follows. **Table 3:
-Point distribution for Lab 2**
+Below are the deliverables and point distributions for the Lab 2:
 
-  -----------------------------------------------------------------------
-  **Item**                                                **Out of**
-  ------------------------------------------------------- ---------------
-  Prelab                                                  15
+| Deliverable           | Points |
+|-----------------------|--------|
+| Prelab                | 15     |
+| Hardware Demo         | 30     |
+| Written Report        | 30     |
+| Passing GitHub Action | 25     |
 
-  Hardware demo                                           30
+**Documentation statements** will be in the README for any help on the code files.
+Otherwise, the statement will be submitted on Gradescope (for the prelab and report).
 
-  Report                                                  30
+### Prelab
 
-  Files                                                   20
+See instructions at the top of this lab.
+Submit on Gradescope.
 
-  Git usage                                               5
+### Hardware demo
 
-  **Total**                                               **100**
-  -----------------------------------------------------------------------
+- You have to hold the center push button down for a 7SD to show your output. (10 pts)
+- The correct hex digit is shown based on the switch positions for all input possibilities. (20 pts)
 
-## **(30 PTS) HARDWARE DEMO (BY 1700 ON T17)**
+Demo can be performed live with an instructor (preferred) OR submitted via Teams
 
--   You have to hold the center push button down for a 7SD to show your
-    output. (10 pts) • The correct hex digit is shown based on the
-    switch positions for all input possibilities. (20 pts)
+### Written Report
 
--   Demo can be performed live with an instructor (preferred) OR
-    submitted via Teams. o If via Teams, refer to your instructor for
-    instructions.
+Rubric and template on Teams. Submit on Gradescope.
 
-### (30 PTS) REPORT (SUBMITTED VIA GRADESCOPE BY 1700 ON T17) (10 PTS) REPORT QUALITY (TEMPLATE PROVIDED)
+### Git and GitHub Actions
 
-
-  **Excellent**      9-10         Report is well laid out and follows provided template.
-                                  All schematics are digitally generated or NEATLY hand
-                                  drawn. All figures, tables, and pictures are referenced
-                                  and discussed in the report. The flow of the lab should
-                                  communicate the student understands what the lab was
-                                  accomplishing and should describe their process from
-                                  beginning to end. All schematics and other designs are
-                                  updated to reflect the final product.
-
-  **Good**           6-8          Report follows the structure dictated below. Most
-                                  schematics are digitally generated or NEATLY hand drawn.
-                                  Most figures and tables are referenced and discussed in
-                                  the report. The flow of the lab indicates the student
-                                  understands what the lab was accomplishing and loosely
-                                  describes their process from beginning to end. Most
-                                  schematics and other designs are updated to reflect the
-                                  final product.
-
-  **Acceptable**     3-5          All the major sections dictated below are present but
-                                  there is little flow to the document. The different
-                                  sections are dropped in with little discussion. Figures,
-                                  tables, and pictures are present, but have little
-                                  discussion. It is hard to tell what thought process the
-                                  students used when developing their solution. Schematics
-                                  and other designs are present, but may not have been
-                                  updated to reflect the final design or may be of poor
-                                  quality.
-
-  **Unacceptable**   0-2          Lab is incomplete. Sections are completely missing or
-                                  have little to no discussion. Figures, tables, and
-                                  pictures are present but have little to no discussion.
-                                  The student did not communicate their thought process and
-                                  it is not clear how they developed their solution.
-                                  Schematics and other aspects of the design were not
-                                  updated at all to reflect errors or changes from the
-                                  preliminary design.
-  -----------------------------------------------------------------------------------------
-
-Report file includes the following content (template will be provided):
-
--   **Title** **and Author**
-
--   **[Documentation statement]{.underline}** Be specific here. You are
-    allowed to help each other but you must not copy code or write code
-    for other students. You do not need to document work with your
-    partner.
-
--   **Purpose** of the exercise
-
--   **Prelab (majority of grade in prelab)** or preliminary design work
-    o Include anything that helped you develop your software (algorithms
-    or flow charts) o **Schematics** (created or used,)
-
--   **Design/Testing/Debugging methodology.** Use this section to detail
-    how you designed your final solution and what steps you took to test
-    it at it was being built. Include anything important for the reader
-    to understand about your final design. At a minimum you need to
-    explain anything that is different from you preliminary design and
-    why you had to change it. Describe problems you encountered while
-    working on this exercise and how you fixed them. Some people make
-    numbered lists to keep track of their issues. This section should
-    always be open and being edited while you are working on a lab or
-    Homework.
-
-    -   Be sure to document any issues (and solutions) you run into
-        while doing this lab. Remembering past mistakes may help you in
-        the future!
-
--   **Results:** o **Simulation Results.** Present and discuss your
-    simulation results. Does your lab do what it is supposed to?
-
-    -   **Final Results/Demonstration.** Discuss your final results
-        here. Do they make sense? If not given in person, your demo
-        should be here. Answer any remaining lab questions here if not
-        answered throughout report.
-
--   **Observations and Conclusions** What did you learn in this lab? Did
-    anything cool catch your eye?
-
--   **Reflection** o **Number of hours spent on Lab2:** \_\_\_\_\_\_\_\_
-    o What portion of the lab was the most difficult for you? How did
-    you overcome it? o What lessons, previous assignments, or activities
-    did you find helpful is completing this lab?
-
-    -   What suggestions do you have for improving Lab2 in future years?
-        Be specific. Ex: "The instructions were confusing" does not
-        help. What parts of the instructions were confusing
-
-(20 PTS) SIMULATION RESULTS WAVEFORM
-
-> • Clearly shows that that all possible inputs and outputs match the
-> correct Prelab truth table. (16 pts) • Signals are named and grouped
-> per instructions. (4pts)
-
-### (20 PTS) FILES (SUBMITTED VIA GIT BY 1700 ON T17)
-
-+-----------+-----+----------------------------------------------------+
-| *         | > * | **Quality**                                        |
-| *Rating** | *Po |                                                    |
-|           | int |                                                    |
-|           | s** |                                                    |
-+===========+=====+====================================================+
-| **Ex      | >   | All required files are included in the "Code"      |
-| cellent** |  17 | folder of the repository. Each file includes an    |
-|           | -20 | updated header with accurate filename, author,     |
-|           |     | creation date, description, and documentation.     |
-|           |     | Each entity has a name that matches the file name. |
-|           |     | Entity inputs and outputs match provided/designed  |
-|           |     | schematics. Variables have descriptive names that  |
-|           |     | meet the naming                                    |
-|           |     |                                                    |
-|           |     | conventions. Code is commented throughout          |
-|           |     | providing concise descriptions of what is          |
-|           |     | occurring (not every line needs to be commented,   |
-|           |     | but generally blocks of code should be). There are |
-|           |     | no extraneous comments or code.                    |
-|           |     | Spacing/indentation is clear and organized.        |
-+-----------+-----+----------------------------------------------------+
-| **Good**  | >   | All required ".vhd" files are included in the      |
-|           |  13 | "Code" folder of the repository. Each file         |
-|           | -16 | includes an updated header with author. Each       |
-|           |     | entity has a name, inputs, and outputs that match  |
-|           |     | provided/designed schematics. Variables meet the   |
-|           |     | naming conventions. There are no extraneous        |
-|           |     | comments or code.                                  |
-+-----------+-----+----------------------------------------------------+
-| **Acc     | > 9 | All required files are included in the repository. |
-| eptable** | -12 | Each entity has a name that matches the            |
-|           |     | provided/designed schematics. Variables meet the   |
-|           |     | naming conventions.                                |
-+-----------+-----+----------------------------------------------------+
-| **Unacc   | >   | Files were not included. Header was not updated.   |
-| eptable** | 0-8 | Extraneous comments exist. Variables do not meet   |
-|           |     | naming conventions. No helpful comments.           |
-+-----------+-----+----------------------------------------------------+
-
--   sevenSegDecoder.vhd, sevenSegDecoder_tb.vhd, and top_basys3.vhd
-    included in **code** folder o Fill out headers as appropriate o
-    Remove extraneous code and comments
-
--   Basys3_Master.xdc file included in **code** folder
-
--   Bitstream (.bit) file used for hardware demo in repo (likely at
-    Lab2\\Lab2.runs\\impl_1\\top_basys3.bit)
-
-## **(5 PTS) GIT USAGE**
-
--   Commit messages begin with "Lab2 - " to easily distinguish between
-    course projects (2.5 pts)
-
--   Repo file structure makes sense and is easy to navigate (2.5 pts)
-
-[^1]: Modeled after a lab provided with instructor notes for [Digital
-    Design and Computer Architecture]{.underline}, David Money Harris &
-    Sarah L.
-
-    Harris, 2^nd^ Edition
+- sevenSegDecoder.vhd, sevenSegDecoder_tb.vhd, and top_basys3.vhd included in `src/hdl/`
+- Extraneous comments are removed and code is formatted in a sane manner
+- Basys3_Master.xdc file included in `src/hdl/`
+- Bitstream (.bit) file used for hardware demo in repo (in default location)
+- Include a `## Documentation` section in the README
+- Commit messages are useful in tracing the development of the project
