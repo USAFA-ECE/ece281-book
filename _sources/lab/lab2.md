@@ -93,7 +93,7 @@ Hexadecimal digits on a seven-segment display
 
 First, complete the truth table for converting binary inputs to a hex output on the display.
 
-**TODO: make excel file available**
+Excel template is available on Teams!
 
 Second, use this truth table to generate logic equations for each output.
 
