@@ -168,12 +168,12 @@ use a `=>` because the `=>` is used for **case statements**, **array assignments
 and component **port mapping**.
 
 ```vhdl
-an  <= (0 => w7SD_EN_n, other => '1');
+an  <= (0 => w_7SD_EN_n, others => '1');
 ```
 
 In the above statement, the signal an is an *output*, so it must be on the left side.
 We declared `an` earlier as a 4-bit vector. The right side is using the `()` aggregate operator
-to concatenate bus signals; in this case, the LSB is assigned to `w&SD_EN_n`.
+to concatenate bus signals; in this case, the LSB is assigned to `w_SD_EN_n`.
 The keyword "others" refers to any bus signals not otherwise explicitly listed, so sets the other
 three bits to `1`.
 
@@ -309,7 +309,7 @@ bits. This is one of the advantages of using that signal type.
 
 ### Test sevenSegDecoder
 
-If you skipped the part above about bringing in the ECE_template_tb.vhd,
+If you skipped the part above about bringing in the **ECE_template_tb.vhd**,
 do it now.
 
 1. Copy in the port information for your sevenSegDecoder component.
