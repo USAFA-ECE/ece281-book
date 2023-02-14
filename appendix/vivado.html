@@ -370,8 +370,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#board-files">
-   Board files
+  <a class="reference internal nav-link" href="#create-a-new-vivado-project">
+   Create a new Vivado Project
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -380,8 +380,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-vivado-project">
-   Create a new Vivado Project
+  <a class="reference internal nav-link" href="#board-files">
+   Board files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -440,8 +440,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#board-files">
-   Board files
+  <a class="reference internal nav-link" href="#create-a-new-vivado-project">
+   Create a new Vivado Project
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -450,8 +450,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-vivado-project">
-   Create a new Vivado Project
+  <a class="reference internal nav-link" href="#board-files">
+   Board files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -504,9 +504,9 @@ title="Print to PDF"
 <h1>Xilinx Vivado<a class="headerlink" href="#xilinx-vivado" title="Permalink to this headline">#</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#board-files" id="id1">Board files</a></p></li>
+<li><p><a class="reference internal" href="#create-a-new-vivado-project" id="id1">Create a new Vivado Project</a></p></li>
 <li><p><a class="reference internal" href="#manually-add-files-to-vivado-project" id="id2">Manually add files to Vivado Project</a></p></li>
-<li><p><a class="reference internal" href="#create-a-new-vivado-project" id="id3">Create a new Vivado Project</a></p></li>
+<li><p><a class="reference internal" href="#board-files" id="id3">Board files</a></p></li>
 <li><p><a class="reference internal" href="#write-a-tcl-file-for-use-with-git" id="id4">Write a TCL file for use with Git</a></p>
 <ul>
 <li><p><a class="reference internal" href="#to-write-a-tcl-file" id="id5">To write a TCL file</a></p></li>
@@ -515,24 +515,18 @@ title="Print to PDF"
 </li>
 </ul>
 </div>
-<section id="board-files">
-<h2><a class="toc-backref" href="#id1">Board files</a><a class="headerlink" href="#board-files" title="Permalink to this headline">#</a></h2>
-<p>If you have not already installed the board files
-(should have been done as part of Lab0), do this.
-It assumes Vivado is installed at the default location.</p>
-<ol class="simple">
-<li><p>Close all Vivado windows</p></li>
-<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">C:\Xilinx\Vivado\2018.2\data\boards\board_files\</span></code></p></li>
-<li><p>Create a directory named <code class="docutils literal notranslate"><span class="pre">basys3\C.0\</span></code></p></li>
-<li><p>Go to <a class="reference external" href="https://github.com/Xilinx/XilinxBoardStore/tree/2018.2/boards/Digilent/basys3/C.0">XilinxBoardStore</a>.
-Note the tag <strong>2018.2</strong> should match your Vivado version.</p></li>
-<li><p>Copy all four of those files (3 .xml and 1 .json) to
-<code class="docutils literal notranslate"><span class="pre">C:\Xilinx\Vivado\2018.2\data\boards\board_files\basys3\C.0\</span></code></p></li>
-<li><p>Repeat for any other boards you plan to use</p></li>
-<li><p>Restart your computer, just to make sure</p></li>
-</ol>
-<p>Vivado should now be able to see the board and present it as an option
-if you create a new project or modify project settings.</p>
+<section id="create-a-new-vivado-project">
+<span id="create-new-vivado-project"></span><h2><a class="toc-backref" href="#id1">Create a new Vivado Project</a><a class="headerlink" href="#create-a-new-vivado-project" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>In “Quick Start” click <strong>Create Project &gt;</strong></p></li>
+<li><p>In wizard, click <strong>Next</strong></p></li>
+<li><p>Name your project and pick a location. Only create a subdirectory if you don’t already have one for the project</p></li>
+<li><p>RTL Project. <strong>Check</strong> Do not specify sources at this time</p></li>
+<li><p>Click “Boards” tab at the top</p></li>
+<li><p>Search for <strong>Basys3</strong> (or whatever board you are using)</p></li>
+<li><p>Next and Finish.</p></li>
+<li><p>Add source, sim, and constraint files using steps in <a class="reference internal" href="#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a></p></li>
+</ul>
 </section>
 <section id="manually-add-files-to-vivado-project">
 <span id="manual-add-to-vivado-project"></span><h2><a class="toc-backref" href="#id2">Manually add files to Vivado Project</a><a class="headerlink" href="#manually-add-files-to-vivado-project" title="Permalink to this headline">#</a></h2>
@@ -565,18 +559,26 @@ The <strong>bolded</strong> name is based on the entity name.</p>
 with <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> then you must rewrite the TCL file. See <a class="reference internal" href="#write-tcl-file"><span class="std std-ref">Write a TCL file for use with Git</span></a>.</p>
 </div>
 </section>
-<section id="create-a-new-vivado-project">
-<span id="create-new-vivado-project"></span><h2><a class="toc-backref" href="#id3">Create a new Vivado Project</a><a class="headerlink" href="#create-a-new-vivado-project" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>In “Quick Start” click <strong>Create Project &gt;</strong></p></li>
-<li><p>In wizard, click <strong>Next</strong></p></li>
-<li><p>Name your project and pick a location. Only create a subdirectory if you don’t already have one for the project</p></li>
-<li><p>RTL Project. <strong>Check</strong> Do not specify sources at this time</p></li>
-<li><p>Click “Boards” tab at the top</p></li>
-<li><p>Search for <strong>Basys3</strong> (or whatever board you are using)</p></li>
-<li><p>Next and Finish.</p></li>
-<li><p>Add source, sim, and constraint files using steps in <a class="reference internal" href="#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a></p></li>
-</ul>
+<section id="board-files">
+<h2><a class="toc-backref" href="#id3">Board files</a><a class="headerlink" href="#board-files" title="Permalink to this headline">#</a></h2>
+<p>If you have not already installed the board files
+(should have been done as part of Lab0), do this.
+It assumes Vivado is installed at the default location.</p>
+<ol class="simple">
+<li><p>Close all Vivado windows</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">C:\Xilinx\Vivado\2018.2\data\boards\board_files\</span></code></p></li>
+<li><p>Create a directory named <code class="docutils literal notranslate"><span class="pre">basys3\C.0\</span></code></p></li>
+<li><p>Go to <a class="reference external" href="https://github.com/Xilinx/XilinxBoardStore/tree/2018.2/boards/Digilent/basys3/C.0">XilinxBoardStore</a>.
+Note the tag <strong>2018.2</strong> should match your Vivado version.</p></li>
+<li><p>Copy all four of those files (3 .xml and 1 .json) to
+<code class="docutils literal notranslate"><span class="pre">C:\Xilinx\Vivado\2018.2\data\boards\board_files\basys3\C.0\</span></code></p></li>
+<li><p>Repeat for any other boards you plan to use</p></li>
+<li><p>Restart your computer, just to make sure</p></li>
+</ol>
+<p>Vivado should now be able to see the board and present it as an option
+if you create a new project or modify project settings.</p>
+<hr class="docutils" />
+<p>Below this is for advanced usage only</p>
 </section>
 <section id="write-a-tcl-file-for-use-with-git">
 <span id="write-tcl-file"></span><h2><a class="toc-backref" href="#id4">Write a TCL file for use with Git</a><a class="headerlink" href="#write-a-tcl-file-for-use-with-git" title="Permalink to this headline">#</a></h2>

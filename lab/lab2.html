@@ -773,7 +773,7 @@ Vivado project and then adding the source files manually.</p>
 <ol class="simple">
 <li><p>Accept the assignment and clone the newly created repository</p></li>
 <li><p>Open Vivado</p></li>
-<li><p>Follow instructions in <a class="reference internal" href="../appendix/vivado.html#create-new-vivado-project"><span class="std std-ref">Create a new Vivado Project</span></a></p></li>
+<li><p>Follow instructions in <a class="reference internal" href="../appendix/vivado.html#create-new-vivado-project"><span class="std std-ref">Create a new Vivado Project</span></a>. Suggested project name is <strong>binaryHexDisp</strong></p></li>
 <li><p>Follow instructions in <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a> to add everything in <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code> to your project</p></li>
 <li><p>Ensure your source hierarchy looks like you expect.</p></li>
 </ol>
@@ -997,14 +997,16 @@ a seven-segment display (7SD).</p>
 <p>Since the button itself is active-high, an inverter is required. The
 other 7SDs (display 3, 2, and 1) are disabled by connecting them to
 power.</p>
-<blockquote>
-<div><p>Use the provided top_basys3.vhd file to complete the top level architecture.</p>
-</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The entity interface has been designed so that the port names match exactly what the constraints file (Basys3_Master.xdc) is already using.</p>
 <p>You simply need to uncomment the lines in Basys3_Master.xdc that you need to use.</p>
 </div>
+<blockquote>
+<div><p>Use the provided top_basys3.vhd file to complete the top level architecture.</p>
+</div></blockquote>
+<p>After you finish, your source hierarchy should look something like this:</p>
+<p><img alt="binaryHexDisp Source Hierarchy" src="../_images/lab2_source_hierarchy.png" /></p>
 <section id="implement-in-hardware">
 <h4>Implement in hardware<a class="headerlink" href="#implement-in-hardware" title="Permalink to this headline">#</a></h4>
 <p>Synthesize and implement your design.</p>
