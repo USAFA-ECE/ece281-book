@@ -109,7 +109,7 @@ Vivado project and then adding the source files manually.
 
 1. Accept the assignment and clone the newly created repository
 2. Open Vivado
-3. Follow instructions in {ref}`create-new-vivado-project`
+3. Follow instructions in {ref}`create-new-vivado-project`. Suggested project name is **binaryHexDisp**
 4. Follow instructions in {ref}`manual-add-to-vivado-project` to add everything in `src/hdl/` to your project
 5. Ensure your source hierarchy looks like you expect.
 
@@ -360,13 +360,17 @@ Since the button itself is active-high, an inverter is required. The
 other 7SDs (display 3, 2, and 1) are disabled by connecting them to
 power.
 
-> Use the provided top_basys3.vhd file to complete the top level architecture.
-
 ```{note}
 The entity interface has been designed so that the port names match exactly what the constraints file (Basys3_Master.xdc) is already using.
 
 You simply need to uncomment the lines in Basys3_Master.xdc that you need to use.
 ```
+
+> Use the provided top_basys3.vhd file to complete the top level architecture.
+
+After you finish, your source hierarchy should look something like this:
+
+![binaryHexDisp Source Hierarchy](img/lab2_source_hierarchy.png)
 
 #### Implement in hardware
 
