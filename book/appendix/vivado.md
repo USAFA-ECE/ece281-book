@@ -5,24 +5,17 @@
 :depth: 2
 ```
 
-## Board files
+(create-new-vivado-project)=
+## Create a new Vivado Project
 
-If you have not already installed the board files
-(should have been done as part of Lab0), do this.
-It assumes Vivado is installed at the default location.
-
-1. Close all Vivado windows
-2. Navigate to `C:\Xilinx\Vivado\2018.2\data\boards\board_files\`
-3. Create a directory named `basys3\C.0\`
-4. Go to [XilinxBoardStore](https://github.com/Xilinx/XilinxBoardStore/tree/2018.2/boards/Digilent/basys3/C.0).
-Note the tag **2018.2** should match your Vivado version.
-5. Copy all four of those files (3 .xml and 1 .json) to
-`C:\Xilinx\Vivado\2018.2\data\boards\board_files\basys3\C.0\`
-6. Repeat for any other boards you plan to use
-7. Restart your computer, just to make sure
-
-Vivado should now be able to see the board and present it as an option
-if you create a new project or modify project settings.
+- In "Quick Start" click **Create Project >**
+- In wizard, click **Next**
+- Name your project and pick a location. Only create a subdirectory if you don't already have one for the project
+- RTL Project. **Check** Do not specify sources at this time
+- Click "Boards" tab at the top
+- Search for **Basys3** (or whatever board you are using)
+- Next and Finish.
+- Add source, sim, and constraint files using steps in {ref}`manual-add-to-vivado-project`
 
 (manual-add-to-vivado-project)=
 ## Manually add files to Vivado Project
@@ -55,17 +48,28 @@ If you plan on pushing the project to git and rebuilding it elsewhere
 with `build.bat` and `build.tcl` then you must rewrite the TCL file. See {ref}`write-tcl-file`.
 ```
 
-(create-new-vivado-project)=
-## Create a new Vivado Project
+## Board files
 
-- In "Quick Start" click **Create Project >**
-- In wizard, click **Next**
-- Name your project and pick a location. Only create a subdirectory if you don't already have one for the project
-- RTL Project. **Check** Do not specify sources at this time
-- Click "Boards" tab at the top
-- Search for **Basys3** (or whatever board you are using)
-- Next and Finish.
-- Add source, sim, and constraint files using steps in {ref}`manual-add-to-vivado-project`
+If you have not already installed the board files
+(should have been done as part of Lab0), do this.
+It assumes Vivado is installed at the default location.
+
+1. Close all Vivado windows
+2. Navigate to `C:\Xilinx\Vivado\2018.2\data\boards\board_files\`
+3. Create a directory named `basys3\C.0\`
+4. Go to [XilinxBoardStore](https://github.com/Xilinx/XilinxBoardStore/tree/2018.2/boards/Digilent/basys3/C.0).
+Note the tag **2018.2** should match your Vivado version.
+5. Copy all four of those files (3 .xml and 1 .json) to
+`C:\Xilinx\Vivado\2018.2\data\boards\board_files\basys3\C.0\`
+6. Repeat for any other boards you plan to use
+7. Restart your computer, just to make sure
+
+Vivado should now be able to see the board and present it as an option
+if you create a new project or modify project settings.
+
+---
+
+Below this is for advanced usage only
 
 (write-tcl-file)=
 ## Write a TCL file for use with Git
