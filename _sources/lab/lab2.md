@@ -335,6 +335,9 @@ your simulation)
 6. Add enough assert statements to cover the truth table.
 7. Fix any syntax errors, and run the simulation.
 
+If **sevenSegDecoder_tb** is not set as the top of your simulation hierarchy,
+right click on it and choose "Set as top."
+
 > Make sure the simulation results match your Prelab truth table, and
 > then **take a waveform screenshot for your report**.
 
