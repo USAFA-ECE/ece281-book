@@ -55,6 +55,7 @@ If you plan on pushing the project to git and rebuilding it elsewhere
 with `build.bat` and `build.tcl` then you must rewrite the TCL file. See {ref}`write-tcl-file`.
 ```
 
+(create-new-vivado-project)=
 ## Create a new Vivado Project
 
 - In "Quick Start" click **Create Project >**

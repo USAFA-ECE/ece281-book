@@ -104,10 +104,16 @@ segment outputs, it is time to implement them in hardware with VHDL!
 
 ### Setup Vivado Project
 
-Just like in previous ICEs, you will join the assignment, clone your GitHub repository,
-and run `build.bat`.
+Due to issues with the automated build process in ICE3, we recommend manually creating a
+Vivado project and then adding the source files manually.
 
-Edit the file headers as necessary.
+1. Accept the assignment and clone the newly created repository
+2. Open Vivado
+3. Follow instructions in {ref}`create-new-vivado-project`
+4. Follow instructions in {ref}`manual-add-to-vivado-project` to add everything in `src/hdl/` to your project
+5. Ensure your source hierarchy looks like you expect.
+
+> Edit the file headers as necessary. Then commit your changes with git.
 
 ### Top-level file
 
