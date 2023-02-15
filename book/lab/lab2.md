@@ -63,7 +63,8 @@ Labeled segments in display
 ```
 
 On our Basys3 board an anode determines which of the displays are on,
-while a cathodes allow you to turn on each individual segment, {numref}`7SD-anodes`
+while cathodes allow you to turn on each individual segment,
+{numref}`7SD-anodes`
 
 ```{figure} img/lab2_image18.jpg
 ---
@@ -137,6 +138,12 @@ since it is more complex and should be tested independently.
 The repository you cloned and built has a top-level file already defined.
 The schematic is shown in {numref}`7SD-top-level-schem`.
 
+```{warning}
+This diagram is mislabeled. Do not invert the vector between `o_S` and `seg`.
+Just like your truth table, `s_G` should be the MSB.
+New picture will be posed soon.
+```
+
 ```{figure} img/lab2_image19.png
 ---
 name: 7SD-top-level-schem
@@ -170,7 +177,7 @@ w_7SD_EN_n  <= not btnC;
 In this case, `<=` is an **assignment statement** and connects the button to a wire.
 
 To connect the other end of the wire and enable the (anode) pin, you have to
-use a `=>` because the `=>` is used for **case statements**, **array assignments**,
+use an `=>` because the `=>` is used for **case statements**, **array assignments**,
 and component **port mapping**.
 
 ```vhdl
@@ -180,13 +187,13 @@ an  <= (0 => w_7SD_EN_n, others => '1');
 In the above statement, the signal an is an *output*, so it must be on the left side.
 We declared `an` earlier as a 4-bit vector. The right side is using the `()` aggregate operator
 to concatenate bus signals; in this case, the LSB is assigned to `w_SD_EN_n`.
-The keyword "others" refers to any bus signals not otherwise explicitly listed, so sets the other
-three bits to `1`.
+The keyword "others" refers to any bus signals not otherwise explicitly listed,
+so it sets the other three bits to `1`.
 
 Another way to describe the above connections is as follows:
 
 ```vhdl
-a(0)    <= w_7SD_EN_n;
+an(0)    <= w_7SD_EN_n;
 an(1)   <= '1';
 an(2)   <= '1';
 an(3)   <= '1';
@@ -196,7 +203,7 @@ an(3)   <= '1';
 
 ### Seven Segment Display Decoder
 
-For better modularity, we will implement our seven segment display decoder as a its own component.
+For better modularity, we will implement our seven segment display decoder as its own component.
 
 We have provided a template file in Teams under **Files > Handouts and Resources > Templates**.
 
@@ -218,7 +225,22 @@ In the message area (bottom of Vivado screen) click "Replace All"
 
 ### 7SD Entity
 
+How do we determine which should be out most signifigatn bit (MSB): $Sa$ or $Sg$?
+Fundamentally, **we want to adhere to the constraints file.**
+Referencing [Basys3 I/O](https://digilent.com/reference/basys3/refmanual#basic_io) *(this is a great page to know about!!!)*
+and comparing it to **Basys3_Master.xdc** we can see that:
+
+- The pin `W7` is connected to cathode `CA`, which we have called `sA`.
+- .xdc shows `PACKAGE_PIN W7 [get_ports {seg[0]}]`, so **`sA` is the LSB**
+- The pin `U7` is connected to cathode `CG`, which we have called `sG`.
+- .xdc shows `PACKAGE_PIN U7 [get_ports {seg[6]}]`, so **`sG` is the MSB**
+- This already corresponds with how our Prelab truth table is organized!
+
 > Create your interface (ports) for your sevenSegDecoder according to {numref}`7sd-entity-arch`
+
+```{warning}
+This diagram is mislabeled. c_Sa should be 0 and c_sG should be 6. New picture will be posed soon.
+```
 
 ```{figure} img/lab2_image9.jpg
 ---
@@ -227,7 +249,7 @@ name: 7sd-entity-arch
 sevenSegDecoder entity and architecture
 ```
 
-The sevenSegDecoder module entity interface is shown in blue and the architecture in purple.
+The interface for the sevenSegDecoder entity is shown in blue and the architecture in purple.
 The input, `i_D`, is a bus of four wires.
 The output, `o_S`, is a bus of seven wires.
 
@@ -267,12 +289,12 @@ o_S(0) <= c_Sa;
 
 #### Behavioral vs. Structural modeling
 
-There are two basic philosophies for modelling digital architectures:
+There are two basic philosophies for modeling digital architectures:
 
 - **structural** describes *how* the module would be composed as a hierarchy of simpler modules.
 - **behavioral** describes *what* the logic does in terms of inputs and outputs.
 
-We will be using behavioral modelling in this lab.
+We will be using behavioral modeling in this lab.
 
 For instance, you could derive the simplified Boolean expression:
 
@@ -308,8 +330,8 @@ bits. This is one of the advantages of using that signal type.
 > Now that you have an understanding of how to implement behavioral models
 > in VHDL, implement all seven of your outputs for sevenSegDecoder.
 
-- Use behavioral modelling with AND, NOT, and OR gates for at least two of them.
-- Use behavioral modelling with a LUT for at least two of them.
+- Use behavioral modeling with AND, NOT, and OR gates for at least two of them.
+- Use behavioral modeling with a LUT for at least two of them.
 - Which model method do you think is easier to use for implementing your outputs?
 - Implement the remaining outputs with your preferred choice.
 
@@ -351,6 +373,12 @@ You may need to reverse the order to make your sim match the truth table:
 The top level VHDL file is what connects your component to the Basys3
 development board. {numref}`7SD-top-level-schem` is shown again below.
 
+```{warning}
+This diagram is mislabeled. Do not invert the vector between `o_S` and `seg`.
+Just like your truth table, `s_G` should be the MSB.
+New picture will be posed soon.
+```
+
 ![top_basys3](img/lab2_image19.png)
 
 As can be seen in the figure, you need to connect your 7SD
@@ -382,12 +410,12 @@ Synthesize and implement your design.
 > Look at the RTL schematic:
 > In RTL Analysis in the Flow> Navigator on the left side of the window.
 
-- Is this what you expect? Did vivado implement the circuit like you thought it would?
-- Double click on the sevenSegDecoder component. Did vivado implement
-    the circuit like you thought it would? b.
-- Generate the bitstream (.bit) file and download it to your FPGA.
+- Is this what you expect? Did Vivado implement the circuit like you thought it would?
+- Double click on the sevenSegDecoder component. Did Vivado implement
+    the circuit like you thought it would?
 
-Verify the hardware functions as expected.
+Generate the bitstream (.bit) file and download it to your FPGA.
+Verify the hardware functions as expected; **demo to your instructor**.
 
 > Commit the bitstream to your repo
 
