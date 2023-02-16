@@ -298,8 +298,8 @@ We made our entity inputs and outputs reflect the default constraint file naming
 
 ```xdc
 ## Switches
-#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
-    #set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
+set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
 ```
 
 > Uncomment all lines needed for this design (`sw{0}`, `sw{1}`, `sw{2}`, `led{0}`, and `led{1}`.
