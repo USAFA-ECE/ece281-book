@@ -1,48 +1,56 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Lab 2 - Seven Segment Display Decoder &#8212; ECE 281</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,64 +60,385 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab2';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GitHub real fast" href="../appendix/github.html" />
     <link rel="prev" title="Lab 1 - ThirtyOneDayMonth" href="lab1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
         
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../faq.html">
+                        FAQ
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE0.html">
+                        BCE 0: Get started with Git
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE1.html">
+                        ICE 1: OR Gates
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE2.html">
+                        ICE 2: Half-Adder
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE3.html">
+                        ICE 3: Top Level Design
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE4.html">
+                        ICE 3: Stoplight
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lab0.html">
+                        Lab 0: Install Vivado
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lab1.html">
+                        Lab 1 - ThirtyOneDayMonth
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Lab 2 - Seven Segment Display Decoder
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix/github.html">
+                        GitHub real fast
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix/vivado.html">
+                        Xilinx Vivado
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
       
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
       
-      <h1 class="site-logo" id="site-title">ECE 281</h1>
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../faq.html">
+                        FAQ
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE0.html">
+                        BCE 0: Get started with Git
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE1.html">
+                        ICE 1: OR Gates
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE2.html">
+                        ICE 2: Half-Adder
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE3.html">
+                        ICE 3: Top Level Design
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ICE/ICE4.html">
+                        ICE 3: Stoplight
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lab0.html">
+                        Lab 0: Install Vivado
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lab1.html">
+                        Lab 1 - ThirtyOneDayMonth
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Lab 2 - Seven Segment Display Decoder
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix/github.html">
+                        GitHub real fast
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../appendix/vivado.html">
+                        Xilinx Vivado
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -118,537 +447,316 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Course Info
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../faq.html">
-   FAQ
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  In Class Exercise
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ICE/ICE0.html">
-   BCE 0: Get started with Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ICE/ICE1.html">
-   ICE 1: OR Gates
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ICE/ICE2.html">
-   ICE 2: Half-Adder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../ICE/ICE3.html">
-   ICE 3: Top Level Design
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE0.html">BCE 0: Get started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE1.html">ICE 1: OR Gates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE2.html">ICE 2: Half-Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE3.html">ICE 3: Top Level Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 3: Stoplight</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Labs
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="lab0.html">
-   Lab 0: Install Vivado
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab1.html">
-   Lab 1 - ThirtyOneDayMonth
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lab 2 - Seven Segment Display Decoder
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="lab0.html">Lab 0: Install Vivado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 2 - Seven Segment Display Decoder</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/github.html">
-   GitHub real fast
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/vivado.html">
-   Xilinx Vivado
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/github.html">GitHub real fast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/vivado.html">Xilinx Vivado</a></li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
+</nav>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  </div>
+  
 
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
 
-          
+  
+  <div id="rtd-footer-container"></div>
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
+      </div>
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
+  class="btn btn-sm"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/usafa-ece/ece281-book"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/usafa-ece/ece281-book" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Source repository"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="headerbtn__text-container">repository</span>
+<span class="btn__text-container">repository</span>
 </a>
-
-      </li>
+</a>
       
-      <li>
-        <a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Flab/lab2.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
+      <li><a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Flab/lab2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Open an issue"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
   </span>
-<span class="headerbtn__text-container">open issue</span>
+<span class="btn__text-container">open issue</span>
 </a>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/lab/lab2.md"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/lab/lab2.md" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download source file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="btn__text-container">.md</span>
 </a>
-
-      </li>
+</a>
       
       <li>
-        
 <button onclick="printPdf(this)"
-  class="headerbtn"
+  class="btn btn-sm dropdown-item"
   data-toggle="tooltip"
 data-placement="left"
 title="Print to PDF"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectives">
-     Objectives
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#supplies">
-     Supplies
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#collaboration">
-     Collaboration
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pre-lab">
-   Pre-lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lab">
-   Lab
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-vivado-project">
-     Setup Vivado Project
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#top-level-file">
-     Top-level file
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-note-on-vs">
-       A note on &lt;= vs. =&gt;
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#seven-segment-display-decoder">
-     Seven Segment Display Decoder
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sd-entity">
-     7SD Entity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sd-architecture">
-     7SD Architecture
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#behavioral-vs-structural-modeling">
-       Behavioral vs. Structural modeling
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-sevensegdecoder">
-     Test sevenSegDecoder
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#complete-top-level">
-     Complete top level
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#implement-in-hardware">
-       Implement in hardware
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deliverables">
-   Deliverables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prelab">
-     Prelab
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hardware-demo">
-     Hardware demo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#written-report">
-     Written Report
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-and-github-actions">
-     Git and GitHub Actions
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab 2 - Seven Segment Display Decoder</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectives">
-     Objectives
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#supplies">
-     Supplies
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#collaboration">
-     Collaboration
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pre-lab">
-   Pre-lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lab">
-   Lab
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-vivado-project">
-     Setup Vivado Project
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#top-level-file">
-     Top-level file
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-note-on-vs">
-       A note on &lt;= vs. =&gt;
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#seven-segment-display-decoder">
-     Seven Segment Display Decoder
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sd-entity">
-     7SD Entity
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sd-architecture">
-     7SD Architecture
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#behavioral-vs-structural-modeling">
-       Behavioral vs. Structural modeling
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-sevensegdecoder">
-     Test sevenSegDecoder
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#complete-top-level">
-     Complete top level
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#implement-in-hardware">
-       Implement in hardware
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deliverables">
-   Deliverables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prelab">
-     Prelab
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hardware-demo">
-     Hardware demo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#written-report">
-     Written Report
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-and-github-actions">
-     Git and GitHub Actions
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 2 - Seven Segment Display Decoder</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supplies">
+     Supplies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-lab">
+   Pre-lab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab">
+   Lab
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup-vivado-project">
+     Setup Vivado Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#top-level-file">
+     Top-level file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-note-on-vs">
+       A note on &lt;= vs. =&gt;
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seven-segment-display-decoder">
+     Seven Segment Display Decoder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sd-entity">
+     7SD Entity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sd-architecture">
+     7SD Architecture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#behavioral-vs-structural-modeling">
+       Behavioral vs. Structural modeling
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-sevensegdecoder">
+     Test sevenSegDecoder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complete-top-level">
+     Complete top level
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#implement-in-hardware">
+       Implement in hardware
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prelab">
+     Prelab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardware-demo">
+     Hardware demo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#written-report">
+     Written Report
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git-and-github-actions">
+     Git and GitHub Actions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
   <section class="tex2jax_ignore mathjax_ignore" id="lab-2-seven-segment-display-decoder">
-<h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this headline">#</a></h1>
+<h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this heading">#</a></h1>
 <p>Due: Lesson 17</p>
-<div class="contents local topic" id="contents">
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p>
 <ul>
@@ -679,37 +787,37 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>In this lab you will implement the
 <a class="reference external" href="https://en.wikipedia.org/wiki/Seven-segment_display">seven-segment display</a> decoder
 in VHDL to display a hexadecimal digit. The hex digit will come from a
 hardware-based binary to hex converter, which you will develop.</p>
 <p>A four-bit value will be input using switches.
 Upon pressing the center button, a seven-segment display will
-output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 23</span></a></p>
+output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 30</span></a></p>
 <figure class="align-default" id="hex-of-switch">
 <img alt="../_images/lab2_image1.jpg" src="../_images/lab2_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id2">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Develop a hardware-based binary to hex converter</p></li>
 <li><p>Display switch value on seven-segment display</p></li>
 </ol>
 </section>
 <section id="supplies">
-<h3><a class="toc-backref" href="#id3">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Basys3 board</p></li>
 </ul>
 </section>
 <section id="collaboration">
-<h3><a class="toc-backref" href="#id4">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this heading">#</a></h3>
 <p>Your instructor will inform you if you can work in pairs or not. For all assignments in this course, unless
 otherwise noted on the assignment, you may work with anyone. We expect
 all graded work, to include code, lab notebooks, and written reports, to
@@ -720,27 +828,27 @@ code violation.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id5">Background</a><a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>When creating simple embedded digital designs, a seven-segment display
 is a common way to display numbers or simple letters to the end-user. In
 this lab, you will design a seven-segment display decoder. This decoder
 takes a 4-bit binary input, and produces 7 bits that indicate whether
 each “segment” of the display is <strong>on</strong> (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or <strong>off</strong> (<code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
-<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 24</span></a>) and one decimal point
+<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 31</span></a>) and one decimal point
 (we will ignore the d.p. in this lab) in a seven-segment display.</p>
 <figure class="align-default" id="seg-label">
 <img alt="../_images/lab2_image2.png" src="../_images/lab2_image2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>On our Basys3 board an anode determines which of the displays are on,
 while cathodes allow you to turn on each individual segment,
-<a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 25</span></a></p>
+<a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 32</span></a></p>
 <figure class="align-default" id="sd-anodes">
 <img alt="../_images/lab2_image18.jpg" src="../_images/lab2_image18.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Said differently, you disable an entire display by connecting it to power, aka <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
@@ -749,29 +857,29 @@ This is called “active low.”
 For example, to display the number “0”, a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> must be placed on segments <code class="docutils literal notranslate"><span class="pre">b</span></code>-<code class="docutils literal notranslate"><span class="pre">g</span></code>,
 while segment <code class="docutils literal notranslate"><span class="pre">a</span></code> will be a logic <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>In this way, you can display every hexadecimal digit:
-“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 26</span></a></p>
+“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 33</span></a></p>
 <figure class="align-default" id="sd-digits">
 <img alt="../_images/lab2_image3.png" src="../_images/lab2_image3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="pre-lab">
-<h2><a class="toc-backref" href="#id6">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Permalink to this heading">#</a></h2>
 <p>First, complete the truth table for converting binary inputs to a hex output on the display.</p>
 <p>Excel template is available on Teams!</p>
 <p>Second, use this truth table to generate logic equations for each output.</p>
 </section>
 <section id="lab">
-<h2><a class="toc-backref" href="#id7">Lab</a><a class="headerlink" href="#lab" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Lab</a><a class="headerlink" href="#lab" title="Permalink to this heading">#</a></h2>
 <p>Now that you have Boolean equations established for each of your seven
 segment outputs, it is time to implement them in hardware with VHDL!</p>
 <section id="setup-vivado-project">
-<h3><a class="toc-backref" href="#id8">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Permalink to this heading">#</a></h3>
 <p>Due to issues with the automated build process in ICE3, we recommend manually creating a
 Vivado project and then adding the source files manually.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Accept the assignment and clone the newly created repository</p></li>
 <li><p>Open Vivado</p></li>
 <li><p>Follow instructions in <a class="reference internal" href="../appendix/vivado.html#create-new-vivado-project"><span class="std std-ref">Create a new Vivado Project</span></a>. Suggested project name is <strong>binaryHexDisp</strong></p></li>
@@ -783,7 +891,7 @@ Vivado project and then adding the source files manually.</p>
 </div></blockquote>
 </section>
 <section id="top-level-file">
-<h3><a class="toc-backref" href="#id9">Top-level file</a><a class="headerlink" href="#top-level-file" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Top-level file</a><a class="headerlink" href="#top-level-file" title="Permalink to this heading">#</a></h3>
 <p>The functionality we are looking for is this:</p>
 <div class="mermaid">
             flowchart LR
@@ -797,7 +905,7 @@ as well as some internal logic.
 We will make the seven segment display an internal component - like we did with the half-adder in ICE3 -
 since it is more complex and should be tested independently.</p>
 <p>The repository you cloned and built has a top-level file already defined.
-The schematic is shown in <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 27</span></a>.</p>
+The schematic is shown in <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 34</span></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This diagram is mislabeled. Do not invert the vector between <code class="docutils literal notranslate"><span class="pre">o_S</span></code> and <code class="docutils literal notranslate"><span class="pre">seg</span></code>.
@@ -807,7 +915,7 @@ New picture will be posed soon.</p>
 <figure class="align-default" id="sd-top-level-schem">
 <img alt="../_images/lab2_image19.png" src="../_images/lab2_image19.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Top-level schematic</span><a class="headerlink" href="#sd-top-level-schem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Top-level schematic</span><a class="headerlink" href="#sd-top-level-schem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You need to connect your 7SD component to four physical switches (sw)
@@ -821,7 +929,7 @@ Since the button itself is active-high, an inverter is required.</p>
 what the constraints file (<code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code>) is already using.</p>
 </div>
 <section id="a-note-on-vs">
-<h4>A note on &lt;= vs. =&gt;<a class="headerlink" href="#a-note-on-vs" title="Permalink to this headline">#</a></h4>
+<h4>A note on &lt;= vs. =&gt;<a class="headerlink" href="#a-note-on-vs" title="Permalink to this heading">#</a></h4>
 <p>When connecting an input to a wire, the input must be on the right side.</p>
 <p>In the below statement, <code class="docutils literal notranslate"><span class="pre">btnC</span></code> is the input and <code class="docutils literal notranslate"><span class="pre">w_7SD_EN_n</span></code> is
 the wire connecting the button to the 7SD active-low enable pin:</p>
@@ -853,16 +961,16 @@ so it sets the other three bits to <code class="docutils literal notranslate"><s
 </section>
 </section>
 <section id="seven-segment-display-decoder">
-<h3><a class="toc-backref" href="#id10">Seven Segment Display Decoder</a><a class="headerlink" href="#seven-segment-display-decoder" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Seven Segment Display Decoder</a><a class="headerlink" href="#seven-segment-display-decoder" title="Permalink to this heading">#</a></h3>
 <p>For better modularity, we will implement our seven segment display decoder as its own component.</p>
 <p>We have provided a template file in Teams under <strong>Files &gt; Handouts and Resources &gt; Templates</strong>.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Save a copy of ECE_template.vhd as a file named <strong>sevenSegDecoder.vhd</strong> into your Lab2 <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code> folder.</p></li>
 <li><p>Save a copy of ECE_template_tb.vhd as a file named <strong>sevenSegDecoder_tb.vhd</strong> into your Lab2 <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code> folder.</p></li>
 <li><p>Add your sources to Vivado. Remember to leave “Copy sources into project” <strong>unchecked</strong>. See <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a></p></li>
 </ol>
 <p>Edit the file headers as needed.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Find and replace all instances of “ECE_template” with <code class="docutils literal notranslate"><span class="pre">sevenSegDecoder</span></code></p></li>
 <li><p>Within Vivado, open one of your VHDL files and then type <code class="docutils literal notranslate"><span class="pre">CTRL+SHIFT+R</span></code> or click on Edit→Replace in Files</p></li>
 <li><p>Fill in the find and replace text boxes as required. Make sure to check all of the sources you want to change:</p></li>
@@ -872,7 +980,7 @@ so it sets the other three bits to <code class="docutils literal notranslate"><s
 <p><img alt="Replace All" src="../_images/lab2_image6.jpg" /></p>
 </section>
 <section id="sd-entity">
-<h3><a class="toc-backref" href="#id11">7SD Entity</a><a class="headerlink" href="#sd-entity" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">7SD Entity</a><a class="headerlink" href="#sd-entity" title="Permalink to this heading">#</a></h3>
 <p>How do we determine which should be out most signifigatn bit (MSB): <span class="math notranslate nohighlight">\(Sa\)</span> or <span class="math notranslate nohighlight">\(Sg\)</span>?
 Fundamentally, <strong>we want to adhere to the constraints file.</strong>
 Referencing <a class="reference external" href="https://digilent.com/reference/basys3/refmanual#basic_io">Basys3 I/O</a> <em>(this is a great page to know about!!!)</em>
@@ -885,7 +993,7 @@ and comparing it to <strong>Basys3_Master.xdc</strong> we can see that:</p>
 <li><p>This already corresponds with how our Prelab truth table is organized!</p></li>
 </ul>
 <blockquote>
-<div><p>Create your interface (ports) for your sevenSegDecoder according to <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 28</span></a></p>
+<div><p>Create your interface (ports) for your sevenSegDecoder according to <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 35</span></a></p>
 </div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -894,7 +1002,7 @@ and comparing it to <strong>Basys3_Master.xdc</strong> we can see that:</p>
 <figure class="align-default" id="sd-entity-arch">
 <img alt="../_images/lab2_image9.jpg" src="../_images/lab2_image9.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">sevenSegDecoder entity and architecture</span><a class="headerlink" href="#sd-entity-arch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">sevenSegDecoder entity and architecture</span><a class="headerlink" href="#sd-entity-arch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The interface for the sevenSegDecoder entity is shown in blue and the architecture in purple.
@@ -914,9 +1022,9 @@ number in parentheses. For instance, <code class="docutils literal notranslate">
 input, D.</p>
 </section>
 <section id="sd-architecture">
-<h3><a class="toc-backref" href="#id12">7SD Architecture</a><a class="headerlink" href="#sd-architecture" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">7SD Architecture</a><a class="headerlink" href="#sd-architecture" title="Permalink to this heading">#</a></h3>
 <p>After you have created your component interface, you need to describe
-the architecture. <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 28</span></a> shows that the output of
+the architecture. <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 35</span></a> shows that the output of
 the combinational logic produces a signal for each 7SD segment (<code class="docutils literal notranslate"><span class="pre">c_Sa</span></code> …
 <code class="docutils literal notranslate"><span class="pre">c_Sg</span></code>). These combinational signals (denoted by the <code class="docutils literal notranslate"><span class="pre">c_</span></code> at the
 beginning) are wired to each bit of the output segment bus (<code class="docutils literal notranslate"><span class="pre">o_S</span></code>). The
@@ -931,7 +1039,7 @@ wired to <code class="docutils literal notranslate"><span class="pre">c_Sa</span
 </pre></div>
 </div>
 <section id="behavioral-vs-structural-modeling">
-<h4>Behavioral vs. Structural modeling<a class="headerlink" href="#behavioral-vs-structural-modeling" title="Permalink to this headline">#</a></h4>
+<h4>Behavioral vs. Structural modeling<a class="headerlink" href="#behavioral-vs-structural-modeling" title="Permalink to this heading">#</a></h4>
 <p>There are two basic philosophies for modeling digital architectures:</p>
 <ul class="simple">
 <li><p><strong>structural</strong> describes <em>how</em> the module would be composed as a hierarchy of simpler modules.</p></li>
@@ -975,10 +1083,10 @@ in VHDL, implement all seven of your outputs for sevenSegDecoder.</p>
 </section>
 </section>
 <section id="test-sevensegdecoder">
-<h3><a class="toc-backref" href="#id13">Test sevenSegDecoder</a><a class="headerlink" href="#test-sevensegdecoder" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Test sevenSegDecoder</a><a class="headerlink" href="#test-sevensegdecoder" title="Permalink to this heading">#</a></h3>
 <p>If you skipped the part above about bringing in the <strong>ECE_template_tb.vhd</strong>,
 do it now.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Copy in the port information for your sevenSegDecoder component.</p></li>
 <li><p>Declare a bus (std_logic_vector) or series of signals for the switch inputs.</p></li>
 <li><p>Declare a signal vector to connect to the segment outputs (e.g., <code class="docutils literal notranslate"><span class="pre">w_seg</span></code>) from your component</p></li>
@@ -991,7 +1099,7 @@ switches and the 7SD segments.</p></li>
 something (e.g., you will read or manipulate the ports directly in
 your simulation)</p>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="5">
 <li><p>Create your test plan process. Remember, you can use hex values with
 busses, such as <code class="docutils literal notranslate"><span class="pre">sw</span> <span class="pre">&lt;=</span> <span class="pre">x&quot;F&quot;</span></code>.</p></li>
 <li><p>Add enough assert statements to cover the truth table.</p></li>
@@ -1010,9 +1118,9 @@ then <strong>take a waveform screenshot for your report</strong>.</p>
 </div>
 </section>
 <section id="complete-top-level">
-<h3><a class="toc-backref" href="#id14">Complete top level</a><a class="headerlink" href="#complete-top-level" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Complete top level</a><a class="headerlink" href="#complete-top-level" title="Permalink to this heading">#</a></h3>
 <p>The top level VHDL file is what connects your component to the Basys3
-development board. <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 27</span></a> is shown again below.</p>
+development board. <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 34</span></a> is shown again below.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This diagram is mislabeled. Do not invert the vector between <code class="docutils literal notranslate"><span class="pre">o_S</span></code> and <code class="docutils literal notranslate"><span class="pre">seg</span></code>.
@@ -1023,7 +1131,7 @@ New picture will be posed soon.</p>
 <p>As can be seen in the figure, you need to connect your 7SD
 component to four physical switches (<code class="docutils literal notranslate"><span class="pre">sw</span></code>) and the seven cathodes (<code class="docutils literal notranslate"><span class="pre">seg</span></code>) of
 a seven-segment display (7SD).</p>
-<p>You also need to wire a push button (<code class="docutils literal notranslate"><span class="pre">btnC</span></code>) so that it can be used to activate the 7SD by sending a <strong>low signal</strong> to the anode. As discussed in the Background <a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 25</span></a> the anode determines which of the displays are on, while the cathodes allow you to turn on each individual segment.</p>
+<p>You also need to wire a push button (<code class="docutils literal notranslate"><span class="pre">btnC</span></code>) so that it can be used to activate the 7SD by sending a <strong>low signal</strong> to the anode. As discussed in the Background <a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 32</span></a> the anode determines which of the displays are on, while the cathodes allow you to turn on each individual segment.</p>
 <p>Since the button itself is active-high, an inverter is required. The
 other 7SDs (display 3, 2, and 1) are disabled by connecting them to
 power.</p>
@@ -1038,7 +1146,7 @@ power.</p>
 <p>After you finish, your source hierarchy should look something like this:</p>
 <p><img alt="binaryHexDisp Source Hierarchy" src="../_images/lab2_source_hierarchy.png" /></p>
 <section id="implement-in-hardware">
-<h4>Implement in hardware<a class="headerlink" href="#implement-in-hardware" title="Permalink to this headline">#</a></h4>
+<h4>Implement in hardware<a class="headerlink" href="#implement-in-hardware" title="Permalink to this heading">#</a></h4>
 <p>Synthesize and implement your design.</p>
 <blockquote>
 <div><p>Look at the RTL schematic:
@@ -1058,9 +1166,9 @@ Verify the hardware functions as expected; <strong>demo to your instructor</stro
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id15">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this headline">#</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
 <p>Below are the deliverables and point distributions for the Lab 2:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Deliverable</p></th>
 <th class="head"><p>Points</p></th>
@@ -1084,12 +1192,12 @@ Verify the hardware functions as expected; <strong>demo to your instructor</stro
 <p><strong>Documentation statements</strong> will be in the README for any help on the code files.
 Otherwise, the statement will be submitted on Gradescope (for the prelab and report).</p>
 <section id="prelab">
-<h3><a class="toc-backref" href="#id16">Prelab</a><a class="headerlink" href="#prelab" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Permalink to this heading">#</a></h3>
 <p>See instructions at the top of this lab.
 Submit on Gradescope.</p>
 </section>
 <section id="hardware-demo">
-<h3><a class="toc-backref" href="#id17">Hardware demo</a><a class="headerlink" href="#hardware-demo" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Hardware demo</a><a class="headerlink" href="#hardware-demo" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You have to hold the center push button down for a 7SD to show your output. (10 pts)</p></li>
 <li><p>The correct hex digit is shown based on the switch positions for all input possibilities. (20 pts)</p></li>
@@ -1097,11 +1205,11 @@ Submit on Gradescope.</p>
 <p>Demo can be performed live with an instructor (preferred) OR submitted via Teams</p>
 </section>
 <section id="written-report">
-<h3><a class="toc-backref" href="#id18">Written Report</a><a class="headerlink" href="#written-report" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Written Report</a><a class="headerlink" href="#written-report" title="Permalink to this heading">#</a></h3>
 <p>Rubric and template on Teams. Submit on Gradescope.</p>
 </section>
 <section id="git-and-github-actions">
-<h3><a class="toc-backref" href="#id19">Git and GitHub Actions</a><a class="headerlink" href="#git-and-github-actions" title="Permalink to this headline">#</a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Git and GitHub Actions</a><a class="headerlink" href="#git-and-github-actions" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>sevenSegDecoder.vhd, sevenSegDecoder_tb.vhd, and top_basys3.vhd included in <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code></p></li>
 <li><p>Extraneous comments are removed and code is formatted in a sane manner</p></li>
@@ -1134,50 +1242,222 @@ Submit on Gradescope.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="lab1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 1 - ThirtyOneDayMonth</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../appendix/github.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GitHub real fast</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+  <a class='left-prev' id="prev-link" href="lab1.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Lab 1 - ThirtyOneDayMonth</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../appendix/github.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">GitHub real fast</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
   
-    By DFEC<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supplies">
+     Supplies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   Background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-lab">
+   Pre-lab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab">
+   Lab
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup-vivado-project">
+     Setup Vivado Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#top-level-file">
+     Top-level file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-note-on-vs">
+       A note on &lt;= vs. =&gt;
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seven-segment-display-decoder">
+     Seven Segment Display Decoder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sd-entity">
+     7SD Entity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sd-architecture">
+     7SD Architecture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#behavioral-vs-structural-modeling">
+       Behavioral vs. Structural modeling
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-sevensegdecoder">
+     Test sevenSegDecoder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complete-top-level">
+     Complete top level
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#implement-in-hardware">
+       Implement in hardware
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prelab">
+     Prelab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardware-demo">
+     Hardware demo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#written-report">
+     Written Report
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git-and-github-actions">
+     Git and GitHub Actions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
 </div>
 
-
-      </div>
-    </div>
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By DFEC
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   </body>
 </html>
