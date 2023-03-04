@@ -1,4 +1,4 @@
-# ICE 3: Stoplight
+# ICE 4: Stoplight
 
 ```{contents}
 :local:
@@ -57,14 +57,14 @@ Stoplight state transition diagram
 
 > Modify headers and make an initial commit.
 
-## stoplight.vhd
+## stoplight_fsm.vhd
 
 ### Entity
 
-The stoplight entity is given in `stoplight.vhd` as:
+The stoplight entity is given in `stoplight_fsm.vhd` as:
 
 ```vhdl
-entity stoplight is
+entity stoplight_fsm is
     port(
          i_C     : in  std_logic;
          i_reset : in  std_logic;
@@ -73,7 +73,7 @@ entity stoplight is
          o_Y     : out  std_logic;
          o_G     : out  std_logic
         );
-    end stoplight;
+    end stoplight_fsm;
 ```
 
 - `i_C` is the control signal to indicate if a car is present
@@ -161,7 +161,7 @@ register_proc : process (i_clk, i_reset)
 begin
     if i_reset = '1' then
         f_Q <= "10";        -- reset state is yellow
-    elseif (rising_edge(i_clk)) then
+    elsif (rising_edge(i_clk)) then
         f_Q <= f_Q_next;    -- next state becomes current state
     end if;
 end process register_proc;
@@ -212,6 +212,10 @@ $$
 Our final step in creating our stoplight component is Section 3: Output Logic.
 
 We simply take the equations from HW3 and implement them.
+
+$$
+G = \overline{Q(1)} * Q(0)
+$$
 
 $$
 Y = Q(1) * \overline{Q(0)}
@@ -267,7 +271,7 @@ half of the period creating an oscillating signal we can use as our clock.
 
 > Look through the `sim_proc` to see what the test bench is going to do.
 
-### Simulation## CHECK SYNTAX AND SIMULATE YOUR PROJECT
+### Simulation
 
 {numref}`stoplight-waveform` shows what your simulation should look like.
 Note the additional signals we have not seen in past simulations. Not only
@@ -278,9 +282,11 @@ verify that the state $Q$ and next state $Q_{next}$ are behaving as they should.
 By default the waveform will only show the signals in your test bench itself.
 To add a signal from any component click "Window" and then "Scope."
 Then select a subcomponent to view its internal signals. From there,
-select one or more signals, right click, and select "Add to Wave Window."
+select a signal by highlighting where you declare it (double click will do this).
+Right click on the highlighted signal and select "Add to Wave Window."
 
-You will then need to run the simulation again.
+You will then need to run the simulation again. When you do this you will be prompted to save
+the configuration. Click YES and add it to your project.
 ```
 
 The ability to add signals in sub components will be a useful
@@ -307,7 +313,7 @@ with the provided top_basys3.vhd file as well is the schematic seen in {numref}`
 
 ```{figure} img/ice4_image17.png
 ---
-name: soplight-top-basys
+name: stoplight-top-basys
 ---
 top_basys3 design for stoplight ICE
 ```
@@ -376,7 +382,7 @@ green to green.
 Picture of stoplight model we will be using
 ```
 
-### Test!!!
+### Test
 
 > Edit the constraints file to ensure that all signals from the top_Basys3 entity are uncommented.
 
