@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ICE 3: Stoplight &#8212; ECE 281</title>
+    <title>ICE 4: Stoplight &#8212; ECE 281</title>
   
   
   
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        ICE 3: Stoplight
+                        ICE 4: Stoplight
                       </a>
                     </li>
                 
@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        ICE 3: Stoplight
+                        ICE 4: Stoplight
                       </a>
                     </li>
                 
@@ -457,7 +457,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ICE1.html">ICE 1: OR Gates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE2.html">ICE 2: Half-Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE3.html">ICE 3: Top Level Design</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 3: Stoplight</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 4: Stoplight</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
@@ -612,7 +612,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICE 3: Stoplight</h1>
+    <h1>ICE 4: Stoplight</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -650,8 +650,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stoplight-vhd">
-   stoplight.vhd
+  <a class="reference internal nav-link" href="#stoplight-fsm-vhd">
+   stoplight_fsm.vhd
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -696,8 +696,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation-check-syntax-and-simulate-your-project">
-     Simulation## CHECK SYNTAX AND SIMULATE YOUR PROJECT
+    <a class="reference internal nav-link" href="#simulation">
+     Simulation
     </a>
    </li>
   </ul>
@@ -726,7 +726,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#test">
-     Test!!!
+     Test
     </a>
    </li>
   </ul>
@@ -745,8 +745,8 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="ice-3-stoplight">
-<h1>ICE 3: Stoplight<a class="headerlink" href="#ice-3-stoplight" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-4-stoplight">
+<h1>ICE 4: Stoplight<a class="headerlink" href="#ice-4-stoplight" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
@@ -757,7 +757,7 @@ title="Print to PDF"
 </li>
 <li><p><a class="reference internal" href="#background" id="id5">Background</a></p></li>
 <li><p><a class="reference internal" href="#setup-vivado" id="id6">Setup Vivado</a></p></li>
-<li><p><a class="reference internal" href="#stoplight-vhd" id="id7">stoplight.vhd</a></p>
+<li><p><a class="reference internal" href="#stoplight-fsm-vhd" id="id7">stoplight_fsm.vhd</a></p>
 <ul>
 <li><p><a class="reference internal" href="#entity" id="id8">Entity</a></p></li>
 <li><p><a class="reference internal" href="#architecture" id="id9">Architecture</a></p></li>
@@ -765,7 +765,7 @@ title="Print to PDF"
 </li>
 <li><p><a class="reference internal" href="#stoplight-tb-vhd" id="id10">stoplight_tb.vhd</a></p>
 <ul>
-<li><p><a class="reference internal" href="#simulation-check-syntax-and-simulate-your-project" id="id11">Simulation## CHECK SYNTAX AND SIMULATE YOUR PROJECT</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id11">Simulation</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#top-basys3-vhd" id="id12">top_basys3.vhd</a></p>
@@ -776,7 +776,7 @@ title="Print to PDF"
 <li><p><a class="reference internal" href="#hardware-test" id="id14">Hardware test</a></p>
 <ul>
 <li><p><a class="reference internal" href="#connect-stoplight" id="id15">Connect stoplight</a></p></li>
-<li><p><a class="reference internal" href="#test" id="id16">Test!!!</a></p></li>
+<li><p><a class="reference internal" href="#test" id="id16">Test</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#deliverables" id="id17">Deliverables</a></p></li>
@@ -837,12 +837,12 @@ be implement with a Moore FSM as seen is <a class="reference internal" href="#st
 <div><p>Modify headers and make an initial commit.</p>
 </div></blockquote>
 </section>
-<section id="stoplight-vhd">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">stoplight.vhd</a><a class="headerlink" href="#stoplight-vhd" title="Permalink to this heading">#</a></h2>
+<section id="stoplight-fsm-vhd">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">stoplight_fsm.vhd</a><a class="headerlink" href="#stoplight-fsm-vhd" title="Permalink to this heading">#</a></h2>
 <section id="entity">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Permalink to this heading">#</a></h3>
-<p>The stoplight entity is given in <code class="docutils literal notranslate"><span class="pre">stoplight.vhd</span></code> as:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">stoplight</span><span class="w"> </span><span class="k">is</span>
+<p>The stoplight entity is given in <code class="docutils literal notranslate"><span class="pre">stoplight_fsm.vhd</span></code> as:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">stoplight_fsm</span><span class="w"> </span><span class="k">is</span>
 <span class="w">    </span><span class="k">port</span><span class="p">(</span>
 <span class="w">         </span><span class="n">i_C</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
 <span class="w">         </span><span class="n">i_reset</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
@@ -851,7 +851,7 @@ be implement with a Moore FSM as seen is <a class="reference internal" href="#st
 <span class="w">         </span><span class="n">o_Y</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w">  </span><span class="kt">std_logic</span><span class="p">;</span>
 <span class="w">         </span><span class="n">o_G</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w">  </span><span class="kt">std_logic</span>
 <span class="w">        </span><span class="p">);</span>
-<span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="nc">stoplight</span><span class="p">;</span>
+<span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="nc">stoplight_fsm</span><span class="p">;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -932,7 +932,7 @@ in our test bench!</p>
 <span class="k">begin</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">i_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span><span class="n">f_Q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s">&quot;10&quot;</span><span class="p">;</span><span class="w">        </span><span class="c1">-- reset state is yellow</span>
-<span class="w">    </span><span class="n">elseif</span><span class="w"> </span><span class="p">(</span><span class="n">rising_edge</span><span class="p">(</span><span class="n">i_clk</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">elsif</span><span class="w"> </span><span class="p">(</span><span class="n">rising_edge</span><span class="p">(</span><span class="n">i_clk</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span><span class="n">f_Q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">f_Q_next</span><span class="p">;</span><span class="w">    </span><span class="c1">-- next state becomes current state</span>
 <span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span>
 <span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="w"> </span><span class="nc">register_proc</span><span class="p">;</span>
@@ -986,6 +986,10 @@ Q_{next}(1) = \overline{Q(1)} * Q(0) * \overline{C}
 <p>We simply take the equations from HW3 and implement them.</p>
 <div class="math notranslate nohighlight">
 \[
+G = \overline{Q(1)} * Q(0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 Y = Q(1) * \overline{Q(0)}
 \]</div>
 <div class="math notranslate nohighlight">
@@ -1035,8 +1039,8 @@ half of the period creating an oscillating signal we can use as our clock.</p>
 <blockquote>
 <div><p>Look through the <code class="docutils literal notranslate"><span class="pre">sim_proc</span></code> to see what the test bench is going to do.</p>
 </div></blockquote>
-<section id="simulation-check-syntax-and-simulate-your-project">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">Simulation## CHECK SYNTAX AND SIMULATE YOUR PROJECT</a><a class="headerlink" href="#simulation-check-syntax-and-simulate-your-project" title="Permalink to this heading">#</a></h3>
+<section id="simulation">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="#stoplight-waveform"><span class="std std-numref">Fig. 24</span></a> shows what your simulation should look like.
 Note the additional signals we have not seen in past simulations. Not only
 can we check that the outputs are happening as expected, but we can
@@ -1046,8 +1050,10 @@ verify that the state <span class="math notranslate nohighlight">\(Q\)</span> an
 <p>By default the waveform will only show the signals in your test bench itself.
 To add a signal from any component click “Window” and then “Scope.”
 Then select a subcomponent to view its internal signals. From there,
-select one or more signals, right click, and select “Add to Wave Window.”</p>
-<p>You will then need to run the simulation again.</p>
+select a signal by highlighting where you declare it (double click will do this).
+Right click on the highlighted signal and select “Add to Wave Window.”</p>
+<p>You will then need to run the simulation again. When you do this you will be prompted to save
+the configuration. Click YES and add it to your project.</p>
 </div>
 <p>The ability to add signals in sub components will be a useful
 tool when you are debugging your FSM designs. It can help you figure out
@@ -1070,11 +1076,11 @@ your process is incorrect.</p>
 <h2><a class="toc-backref" href="#id12" role="doc-backlink">top_basys3.vhd</a><a class="headerlink" href="#top-basys3-vhd" title="Permalink to this heading">#</a></h2>
 <p>Now that we have the stoplight FSM up and running, we need to create the
 top_basys3 design to connect it to the board’s hardware. We will do this
-with the provided top_basys3.vhd file as well is the schematic seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">stoplight-top-basys</span></code>.</p>
-<figure class="align-default" id="soplight-top-basys">
+with the provided top_basys3.vhd file as well is the schematic seen in <a class="reference internal" href="#stoplight-top-basys"><span class="std std-numref">Fig. 25</span></a>.</p>
+<figure class="align-default" id="stoplight-top-basys">
 <img alt="../_images/ice4_image17.png" src="../_images/ice4_image17.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">top_basys3 design for stoplight ICE</span><a class="headerlink" href="#soplight-top-basys" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">top_basys3 design for stoplight ICE</span><a class="headerlink" href="#stoplight-top-basys" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In order to fully implement this design, we have to introduce a new
@@ -1138,7 +1144,7 @@ green to green.</p>
 </figure>
 </section>
 <section id="test">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Test!!!</a><a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Edit the constraints file to ensure that all signals from the top_Basys3 entity are uncommented.</p>
 </div></blockquote>
@@ -1264,8 +1270,8 @@ Push the files.</p>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stoplight-vhd">
-   stoplight.vhd
+  <a class="reference internal nav-link" href="#stoplight-fsm-vhd">
+   stoplight_fsm.vhd
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1310,8 +1316,8 @@ Push the files.</p>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation-check-syntax-and-simulate-your-project">
-     Simulation## CHECK SYNTAX AND SIMULATE YOUR PROJECT
+    <a class="reference internal nav-link" href="#simulation">
+     Simulation
     </a>
    </li>
   </ul>
@@ -1340,7 +1346,7 @@ Push the files.</p>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#test">
-     Test!!!
+     Test
     </a>
    </li>
   </ul>
