@@ -384,6 +384,20 @@ Picture of stoplight model we will be using
 
 ### Test
 
+In order to use the clock we also need to employ the
+[create_clock](https://docs.xilinx.com/r/2021.2-English/ug835-vivado-tcl-commands/create_clock) function.
+This specifies the period of the waveform in nanoseconds; in our case, for a 100MHz clock we need a 10ns period.
+In part, this helps define propagation delays for static analysis.
+
+```xdc
+## Clock signal
+set_property PACKAGE_PIN W5 [get_ports clk]
+    set_property IOSTANDARD LVCMOS33 [get_ports clk]
+    create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
+```
+
+The other pins are as normal.
+
 > Edit the constraints file to ensure that all signals from the top_Basys3 entity are uncommented.
 
 Then:
