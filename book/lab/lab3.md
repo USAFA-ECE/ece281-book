@@ -55,6 +55,8 @@ yourself a great deal of time.
 
 ## Prelab - FSM Design
 
+Due on Gradescope midnight **T23**.
+
 ### Project functionality description
 
 - On RESET, the FSM should immediately enter a state with all lights off.
