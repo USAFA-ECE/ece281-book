@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lab 2 - Seven Segment Display Decoder &#8212; ECE 281</title>
+    <title>Lab 3 - Thunderbird Turn Signal &#8212; ECE 281</title>
   
   
   
@@ -61,14 +61,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab3';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GitHub real fast" href="../appendix/github.html" />
+    <link rel="prev" title="Lab 2 - Seven Segment Display Decoder" href="lab2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,10 +172,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 4: Stoplight</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lab0.html">Lab 0: Install Vivado</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 3 - Thunderbird Turn Signal</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -364,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lab 2 - Seven Segment Display Decoder</h1>
+    <h1>Lab 3 - Thunderbird Turn Signal</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -395,31 +396,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-2-seven-segment-display-decoder">
-<h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-3-thunderbird-turn-signal">
+<h1>Lab 3 - Thunderbird Turn Signal<a class="headerlink" href="#lab-3-thunderbird-turn-signal" title="Permalink to this heading">#</a></h1>
 <p>Due: Lesson 17</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p>
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p>
 <ul>
-<li><p><a class="reference internal" href="#authorized-resources" id="id4">Authorized Resources</a></p></li>
+<li><p><a class="reference internal" href="#authorized-resources" id="id2">Authorized Resources</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#background" id="id5">Background</a></p></li>
-<li><p><a class="reference internal" href="#prelab-fsm-design" id="id6">Prelab - FSM Design</a></p>
+<li><p><a class="reference internal" href="#background" id="id3">Background</a></p></li>
+<li><p><a class="reference internal" href="#prelab-fsm-design" id="id4">Prelab - FSM Design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#project-functionality-description" id="id7">Project functionality description</a></p></li>
-<li><p><a class="reference internal" href="#prelab-tasks" id="id8">Prelab Tasks</a></p></li>
+<li><p><a class="reference internal" href="#project-functionality-description" id="id5">Project functionality description</a></p></li>
+<li><p><a class="reference internal" href="#prelab-tasks" id="id6">Prelab Tasks</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>In this lab, you will design, write, test, and implement in hardware
 a finite state machine to simulate the taillights of a 1965 Ford Thunderbird.</p>
 <section id="authorized-resources">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Authorized Resources</a><a class="headerlink" href="#authorized-resources" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Authorized Resources</a><a class="headerlink" href="#authorized-resources" title="Permalink to this heading">#</a></h3>
 <p>For this lab, you may work in <strong>teams of two</strong> (including the prelab).
 You may seek help from any cadet or instructor,
 not limited to this course, and reference any publication in its
@@ -431,21 +432,21 @@ Normal documentation of all resources utilized is required.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>The 1965 Ford Thunderbird has three lights on each side that operate in
-sequence to indicate the direction of a turn. <code class="xref std std-numref docutils literal notranslate"><span class="pre">tailights</span></code> shows the tail
-lights and <a href="#id1"><span class="problematic" id="id2">tailight-flash</span></a> shows the flashing sequence for (a) left turns and
+sequence to indicate the direction of a turn. <a class="reference internal" href="#tailights"><span class="std std-numref">Fig. 36</span></a> shows the tail
+lights and <code class="xref std std-numref docutils literal notranslate"><span class="pre">tailight-flash</span></code> shows the flashing sequence for (a) left turns and
 (b) right turns.</p>
 <figure class="align-default" id="tailights">
 <img alt="../_images/lab3_tailights.png" src="../_images/lab3_tailights.png" />
 <figcaption>
-<p><span class="caption-text">Thunderbird taillights</span><a class="headerlink" href="#tailights" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Thunderbird taillights</span><a class="headerlink" href="#tailights" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="tailights-flash">
 <img alt="../_images/lab3_tailightsflash.png" src="../_images/lab3_tailightsflash.png" />
 <figcaption>
-<p><span class="caption-text">Flashing sequence for taillights. The lights shaded light
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Flashing sequence for taillights. The lights shaded light
 blue are illuminated.</span><a class="headerlink" href="#tailights-flash" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -457,13 +458,14 @@ implementation. If you follow the steps of FSM design carefully and
 yourself a great deal of time.</p>
 </section>
 <section id="prelab-fsm-design">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Prelab - FSM Design</a><a class="headerlink" href="#prelab-fsm-design" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Prelab - FSM Design</a><a class="headerlink" href="#prelab-fsm-design" title="Permalink to this heading">#</a></h2>
+<p>Due on Gradescope midnight <strong>T23</strong>.</p>
 <section id="project-functionality-description">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Project functionality description</a><a class="headerlink" href="#project-functionality-description" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Project functionality description</a><a class="headerlink" href="#project-functionality-description" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>On RESET, the FSM should immediately enter a state with all lights off.</p></li>
-<li><p>When you press LEFT, you should see <span class="math notranslate nohighlight">\(LA\)</span>, then <span class="math notranslate nohighlight">\(LA\)</span> and <span class="math notranslate nohighlight">\(LB\)</span>, then <span class="math notranslate nohighlight">\(LA\)</span>, <span class="math notranslate nohighlight">\(LB\)</span>, and
-<span class="math notranslate nohighlight">\(LC\)</span>, then finally all lights off again.</p></li>
+<li><p>When you press LEFT, you should see LA, then LA and LB, then LA, LB, and
+LC, then finally all lights off again.</p></li>
 <li><p>This pattern should occur even if you release LEFT during the sequence.</p></li>
 <li><p>If LEFT is still down when you return to the lights off state, the pattern should repeat.</p></li>
 <li><p>The logic for the right lights is similar.</p></li>
@@ -471,7 +473,7 @@ yourself a great deal of time.</p>
 </ul>
 </section>
 <section id="prelab-tasks">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Prelab Tasks</a><a class="headerlink" href="#prelab-tasks" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Prelab Tasks</a><a class="headerlink" href="#prelab-tasks" title="Permalink to this heading">#</a></h3>
 <p>You will use a <strong>Moore FSM</strong> to implement the above functionality.</p>
 <p>Complete the following tasks to prepare yourself for the lab.</p>
 <ol class="arabic simple">
@@ -532,6 +534,24 @@ Sarah L. Harris, 2nd Edition.</p>
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="lab2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 2 - Seven Segment Display Decoder</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix/github.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GitHub real fast</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

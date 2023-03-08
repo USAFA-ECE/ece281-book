@@ -1,4 +1,4 @@
-# Lab 2 - Seven Segment Display Decoder
+# Lab 3 - Thunderbird Turn Signal
 
 Due: Lesson 17
 
@@ -28,7 +28,7 @@ Normal documentation of all resources utilized is required.
 
 The 1965 Ford Thunderbird has three lights on each side that operate in
 sequence to indicate the direction of a turn. {numref}`tailights` shows the tail
-lights and {numre}`tailight-flash` shows the flashing sequence for (a) left turns and
+lights and {numref}`tailight-flash` shows the flashing sequence for (a) left turns and
 (b) right turns.
 
 ```{figure} img/lab3_tailights.png
@@ -55,11 +55,13 @@ yourself a great deal of time.
 
 ## Prelab - FSM Design
 
+Due on Gradescope midnight **T23**.
+
 ### Project functionality description
 
 - On RESET, the FSM should immediately enter a state with all lights off.
-- When you press LEFT, you should see $LA$, then $LA$ and $LB$, then $LA$, $LB$, and
-$LC$, then finally all lights off again.
+- When you press LEFT, you should see LA, then LA and LB, then LA, LB, and
+LC, then finally all lights off again.
 - This pattern should occur even if you release LEFT during the sequence.
 - If LEFT is still down when you return to the lights off state, the pattern should repeat.
 - The logic for the right lights is similar.
