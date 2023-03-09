@@ -12,6 +12,10 @@ Due: Lesson 17
 In this lab, you will design, write, test, and implement in hardware
 a finite state machine to simulate the taillights of a 1965 Ford Thunderbird.
 
+This lab is modeled after a lab provided with instructor notes for
+*Digital Design and Computer Architecture*, David Money Harris &
+Sarah L. Harris, 2nd Edition.
+
 ### Authorized Resources
 
 For this lab, you may work in **teams of two** (including the prelab).
@@ -28,8 +32,8 @@ Normal documentation of all resources utilized is required.
 
 The 1965 Ford Thunderbird has three lights on each side that operate in
 sequence to indicate the direction of a turn. {numref}`tailights` shows the tail
-lights and {numref}`tailight-flash` shows the flashing sequence for (a) left turns and
-(b) right turns.
+lights and {numref}`tailight-flash` shows the flashing sequence for
+(a) left turns and (b) right turns.
 
 ```{figure} img/lab3_tailights.png
 ---
@@ -92,8 +96,20 @@ FPGA. Since you are designing a synchronous sequential circuit,
 while not required for the Prelab, you should already be thinking about
 what **test cases** you will use to verify that your design is correct.
 
-```{note}
-This lab is modeled after a lab provided with instructor notes for
-*Digital Design and Computer Architecture*, David Money Harris &
-Sarah L. Harris, 2nd Edition.
-```
+## Lab
+
+## Deliverables
+
+Below are the deliverables and point distributions for the Lab 3:
+
+| Deliverable           | Points |
+|-----------------------|--------|
+| Prelab                | 20     |
+| Hardware Demo         | 25     |
+| Written Report        | 20     |
+| Waveform in README    | 15     |
+| Passing GitHub Action | 20     |
+
+**Documentation statements** will be in the README for any help on the Lab itself.
+Otherwise, the statement will be submitted on Gradescope
+(for the prelab and report).
