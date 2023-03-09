@@ -28,7 +28,7 @@ Normal documentation of all resources utilized is required.
 
 The 1965 Ford Thunderbird has three lights on each side that operate in
 sequence to indicate the direction of a turn. {numref}`tailights` shows the tail
-lights and {numref}`tailight-flash` shows the flashing sequence for (a) left turns and
+lights and {numref}`tailights-flash` shows the flashing sequence for (a) left turns and
 (b) right turns.
 
 ```{figure} img/lab3_tailights.png
