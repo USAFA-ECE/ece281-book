@@ -590,7 +590,17 @@ blinking pattern?
 </ul>
 <section id="assert-statements">
 <h4>Assert statements<a class="headerlink" href="#assert-statements" title="Permalink to this heading">#</a></h4>
-<p>TODO: Don’t use them… yet.</p>
+<p>We expect you to follow the examples in ICE4’s <code class="docutils literal notranslate"><span class="pre">stoplight_fsm_tb.vhd</span></code>
+to write <em>some</em> assert statements. However, as we move into larger
+and more complex projects, you will no longer be able to write exhaustive tests.</p>
+<p>Instead, shoot to hit:</p>
+<ol class="arabic simple">
+<li><p>The core functionality</p></li>
+<li><p>Anything that seems tricky and likely to mess up</p></li>
+<li><p>Cases where failure is catastrophic.</p></li>
+</ol>
+<p>Even then, you may not be able to hit them all, and that’s ok!
+You should also leverage your waveform for testing.</p>
 </section>
 <section id="waveform">
 <h4>Waveform<a class="headerlink" href="#waveform" title="Permalink to this heading">#</a></h4>

@@ -702,9 +702,9 @@ the board, we will use the clk we get from the board, but
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Clock process</span>
 <span class="n">clk_proc</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span>
 <span class="k">begin</span>
-<span class="w">    </span><span class="n">i_clk</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">w_clk</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
 <span class="w">        </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">k_clk_period</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-<span class="w">    </span><span class="n">i_clk</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">w_clk</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span>
 <span class="w">        </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">k_clk_period</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
 <span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span>
 </pre></div>
@@ -713,6 +713,13 @@ the board, we will use the clk we get from the board, but
 run continually in the background. Essentially, this process sets the
 clock value low for exactly half of the period and then sets it high for
 half of the period creating an oscillating signal we can use as our clock.</p>
+<p>Also, notice that we are still using <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements, but now we wait for the
+next rising edge before checking the for a value.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- red light</span>
+<span class="n">w_C</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">k_clk_period</span><span class="p">;</span>
+<span class="w">    </span><span class="k">assert</span><span class="w"> </span><span class="n">w_stoplight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;should be red when no car&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+</pre></div>
+</div>
 <blockquote>
 <div><p>Look through the <code class="docutils literal notranslate"><span class="pre">sim_proc</span></code> to see what the test bench is going to do.</p>
 </div></blockquote>
@@ -739,7 +746,7 @@ output is not then the issues is in your output equations. If <code class="docut
 is correct but <code class="docutils literal notranslate"><span class="pre">f_Q</span></code> is not then maybe you are resetting on accident or
 your process is incorrect.</p>
 <figure class="align-default" id="stoplight-waveform">
-<img alt="../_images/ice4_image16.jpg" src="../_images/ice4_image16.jpg" />
+<img alt="../_images/ice4_image16.png" src="../_images/ice4_image16.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 24 </span><span class="caption-text">Stoplight FSM test bench waveform</span><a class="headerlink" href="#stoplight-waveform" title="Permalink to this image">#</a></p>
 </figcaption>

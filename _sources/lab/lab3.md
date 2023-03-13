@@ -148,7 +148,18 @@ blinking pattern?
 
 #### Assert statements
 
-TODO: Don't use them... yet.
+We expect you to follow the examples in ICE4's `stoplight_fsm_tb.vhd`
+to write *some* assert statements. However, as we move into larger
+and more complex projects, you will no longer be able to write exhaustive tests.
+
+Instead, shoot to hit:
+
+1. The core functionality
+2. Anything that seems tricky and likely to mess up
+3. Cases where failure is catastrophic.
+
+Even then, you may not be able to hit them all, and that's ok!
+You should also leverage your waveform for testing.
 
 #### Waveform
 
