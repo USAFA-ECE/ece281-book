@@ -190,6 +190,13 @@ In both cases, Vivado will generate warnings, but they may be safely ignored. Th
 hardware interface pictured above is simply an example, so feel free to
 modify your design as desired.
 
+```{hint}
+Because of VHDL's type system, you cannot "swap" bit order in a vector
+by simply replacing `downto` with `to`.
+Instead, you'll have to find a different solution to make sure your right
+turn signal does indeed progress to the right!
+```
+
 #### Basys3 Clock
 
 Note, the Basys3 board provides a built-in 100-MHz clock. This is a bit
