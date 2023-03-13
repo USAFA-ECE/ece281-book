@@ -257,9 +257,9 @@ Once the constant has been created, we can make a process to implement our clock
 -- Clock process
 clk_proc : process
 begin
-    i_clk <= '0';
+    w_clk <= '0';
         wait for k_clk_period/2;
-    i_clk <= '1';
+    w_clk <= '1';
         wait for k_clk_period/2;
 end process;
 ```
@@ -268,6 +268,15 @@ Since **a process runs in parallel with the rest of the circuit**, this will
 run continually in the background. Essentially, this process sets the
 clock value low for exactly half of the period and then sets it high for
 half of the period creating an oscillating signal we can use as our clock.
+
+Also, notice that we are still using `assert` statements, but now we wait for the
+next rising edge before checking the for a value.
+
+```vhdl
+-- red light
+w_C <= '0'; wait for k_clk_period;
+    assert w_stoplight = "100" report "should be red when no car" severity failure;
+```
 
 > Look through the `sim_proc` to see what the test bench is going to do.
 
@@ -296,7 +305,7 @@ output is not then the issues is in your output equations. If `f_Q_next`
 is correct but `f_Q` is not then maybe you are resetting on accident or
 your process is incorrect.
 
-```{figure} img/ice4_image16.jpg
+```{figure} img/ice4_image16.png
 ---
 name: stoplight-waveform
 ---
