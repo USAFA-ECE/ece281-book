@@ -127,6 +127,9 @@ entity thunderbird_fsm is
 end thunderbird_fsm;
 ```
 
+Note that we expect the inside right taillight, **RA**, to be the **LSB of `o_lights_R`**,
+and **RC** should be the MSB.
+
 > Complete the architecture for thunderbird_fsm.vhd
 
 ### thunderbird_fsm_tb.vhd
@@ -135,7 +138,7 @@ Next, write a testbench that verifies functionality of your FSM. Make
 sure you carefully consider what test cases you need to run. For
 instance, what happens if you change an input in the middle of a
 blinking pattern?
-**In your test bench comments, *explain* at a high level the various tests you conduct in plain English and *why* they are important for verifying your design.**
+**In your test bench comments, *explain* at a high level the various tests you conduct in plain English.**
 
 - We recommend that you start off with a basic set of test cases first.
 - Make sure the first test you run is to apply a **reset**. This should put your FSM in a known good state.
@@ -314,8 +317,8 @@ The report should be kept to three pages, including diagrams.
 ```{important}
 This report should be written in a professional, technical style.
 This means, among other things:
-- Use **active voice** ~~should be used~~ in most cases
-    (occasionally passive voice is more appropriate).
+- ~~Active voice should be used~~ Use **active voice**, in most cases. Occasionally passive voice is more appropriate,
+    but it should be a deliberate choice.
 - The use of **we** is appropriate.
 - Write sentences that make information understandable; such sentences are beautiful.
 
@@ -350,15 +353,14 @@ The waveform should:
 
 #### Architecture Design
 
-How did you implement your Next-State and Output equations?
-
 - Discuss your overall approach to architecture design and schematic construction.
+- Did you implement one-hot encoding or binary encoding? Evaluate your choice.
 - Include your neat schematic.
 - Include the RTL schematic.
-- Discuss any differences.
+- Discuss any differences between the two schematics.
 
 #### Conclusion
 
-- Your main takeaway.
-- What you will continue or change when it comes Lab 4.
+- Your main takeaway!
+- What approaches will you continue or change when it comes Lab 4?
 - Feedback for the instructors on the lab.
