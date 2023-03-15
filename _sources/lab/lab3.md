@@ -105,6 +105,9 @@ what **test cases** you will use to verify that your design is correct.
 
 ## Lab
 
+Clone code template from GitHub Classroom.
+Then open the project by double clicking `thunderbird.xpr`.
+
 ### thunderbird_fsm.vhd
 
 First, in the comments, add your state encodings.
