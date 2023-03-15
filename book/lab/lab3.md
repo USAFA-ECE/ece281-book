@@ -302,11 +302,11 @@ Otherwise, the statement will be submitted on Gradescope
 
 ### Hardware Demo
 
-- Simulation results waveform provided prior to hardware demo
+- Show your instructor your waveform *before* demoing the hardware.
 - Using left and right switches generates correct LED patterns with **[changes occurring at a rate of 4 Hz**
 - Holding the clock reset freezes the light patterns
 - Pressing the FSM reset *immediately* (i.e. asynchronously) resets the light patterns
-- Demo can be performed live with an instructor OR via a video link (Streams Link preferred)
+- Demo can be performed live with an instructor OR via a video link
 - You must show good test cases for full credit!
 
 ### GitHub Actions
