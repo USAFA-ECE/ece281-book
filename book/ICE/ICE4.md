@@ -231,13 +231,10 @@ Check syntax, then:
 
 > Commit your changes with git
 
-## stoplight_tb.vhd
+## stoplight_fsm_tb.vhd
 
-At this point your testbench VHDL file (stoplight_tb.vhd) should already
-be added as a simulation source. If not, go back, add it, and set it as top.
-
-**A fully completed test bench has been provided for this exercise.**
-The provided test bench has two new aspects.
+First, **set `stoplight_fsm_tb.vhd` as top** in simulation sources.
+This testbench is fully complete, and has two new aspects.
 
 The first is the declaration of a constant.
 
