@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE2.html">ICE 2: Half-Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE3.html">ICE 3: Top Level Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 4: Stoplight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
@@ -465,11 +466,11 @@ in VHDL to display a hexadecimal digit. The hex digit will come from a
 hardware-based binary to hex converter, which you will develop.</p>
 <p>A four-bit value will be input using switches.
 Upon pressing the center button, a seven-segment display will
-output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 30</span></a></p>
+output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 31</span></a></p>
 <figure class="align-default" id="hex-of-switch">
 <img alt="../_images/lab2_image1.jpg" src="../_images/lab2_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="objectives">
@@ -503,21 +504,21 @@ is a common way to display numbers or simple letters to the end-user. In
 this lab, you will design a seven-segment display decoder. This decoder
 takes a 4-bit binary input, and produces 7 bits that indicate whether
 each “segment” of the display is <strong>on</strong> (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or <strong>off</strong> (<code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
-<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 31</span></a>) and one decimal point
+<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 32</span></a>) and one decimal point
 (we will ignore the d.p. in this lab) in a seven-segment display.</p>
 <figure class="align-default" id="seg-label">
 <img alt="../_images/lab2_image2.png" src="../_images/lab2_image2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>On our Basys3 board an anode determines which of the displays are on,
 while cathodes allow you to turn on each individual segment,
-<a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 32</span></a></p>
+<a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 33</span></a></p>
 <figure class="align-default" id="sd-anodes">
 <img alt="../_images/lab2_image18.jpg" src="../_images/lab2_image18.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Said differently, you disable an entire display by connecting it to power, aka <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
@@ -526,11 +527,11 @@ This is called “active low.”
 For example, to display the number “0”, a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> must be placed on segments <code class="docutils literal notranslate"><span class="pre">b</span></code>-<code class="docutils literal notranslate"><span class="pre">g</span></code>,
 while segment <code class="docutils literal notranslate"><span class="pre">a</span></code> will be a logic <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>In this way, you can display every hexadecimal digit:
-“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 33</span></a></p>
+“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 34</span></a></p>
 <figure class="align-default" id="sd-digits">
 <img alt="../_images/lab2_image3.png" src="../_images/lab2_image3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -574,7 +575,7 @@ as well as some internal logic.
 We will make the seven segment display an internal component - like we did with the half-adder in ICE3 -
 since it is more complex and should be tested independently.</p>
 <p>The repository you cloned and built has a top-level file already defined.
-The schematic is shown in <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 34</span></a>.</p>
+The schematic is shown in <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 35</span></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This diagram is mislabeled. Do not invert the vector between <code class="docutils literal notranslate"><span class="pre">o_S</span></code> and <code class="docutils literal notranslate"><span class="pre">seg</span></code>.
@@ -584,7 +585,7 @@ New picture will be posed soon.</p>
 <figure class="align-default" id="sd-top-level-schem">
 <img alt="../_images/lab2_image19.png" src="../_images/lab2_image19.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Top-level schematic</span><a class="headerlink" href="#sd-top-level-schem" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Top-level schematic</span><a class="headerlink" href="#sd-top-level-schem" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You need to connect your 7SD component to four physical switches (sw)
@@ -662,7 +663,7 @@ and comparing it to <strong>Basys3_Master.xdc</strong> we can see that:</p>
 <li><p>This already corresponds with how our Prelab truth table is organized!</p></li>
 </ul>
 <blockquote>
-<div><p>Create your interface (ports) for your sevenSegDecoder according to <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 35</span></a></p>
+<div><p>Create your interface (ports) for your sevenSegDecoder according to <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 36</span></a></p>
 </div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -671,7 +672,7 @@ and comparing it to <strong>Basys3_Master.xdc</strong> we can see that:</p>
 <figure class="align-default" id="sd-entity-arch">
 <img alt="../_images/lab2_image9.jpg" src="../_images/lab2_image9.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">sevenSegDecoder entity and architecture</span><a class="headerlink" href="#sd-entity-arch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">sevenSegDecoder entity and architecture</span><a class="headerlink" href="#sd-entity-arch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The interface for the sevenSegDecoder entity is shown in blue and the architecture in purple.
@@ -693,7 +694,7 @@ input, D.</p>
 <section id="sd-architecture">
 <h3><a class="toc-backref" href="#id12" role="doc-backlink">7SD Architecture</a><a class="headerlink" href="#sd-architecture" title="Permalink to this heading">#</a></h3>
 <p>After you have created your component interface, you need to describe
-the architecture. <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 35</span></a> shows that the output of
+the architecture. <a class="reference internal" href="#sd-entity-arch"><span class="std std-numref">Fig. 36</span></a> shows that the output of
 the combinational logic produces a signal for each 7SD segment (<code class="docutils literal notranslate"><span class="pre">c_Sa</span></code> …
 <code class="docutils literal notranslate"><span class="pre">c_Sg</span></code>). These combinational signals (denoted by the <code class="docutils literal notranslate"><span class="pre">c_</span></code> at the
 beginning) are wired to each bit of the output segment bus (<code class="docutils literal notranslate"><span class="pre">o_S</span></code>). The
@@ -789,7 +790,7 @@ then <strong>take a waveform screenshot for your report</strong>.</p>
 <section id="complete-top-level">
 <h3><a class="toc-backref" href="#id14" role="doc-backlink">Complete top level</a><a class="headerlink" href="#complete-top-level" title="Permalink to this heading">#</a></h3>
 <p>The top level VHDL file is what connects your component to the Basys3
-development board. <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 34</span></a> is shown again below.</p>
+development board. <a class="reference internal" href="#sd-top-level-schem"><span class="std std-numref">Fig. 35</span></a> is shown again below.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This diagram is mislabeled. Do not invert the vector between <code class="docutils literal notranslate"><span class="pre">o_S</span></code> and <code class="docutils literal notranslate"><span class="pre">seg</span></code>.
@@ -800,7 +801,7 @@ New picture will be posed soon.</p>
 <p>As can be seen in the figure, you need to connect your 7SD
 component to four physical switches (<code class="docutils literal notranslate"><span class="pre">sw</span></code>) and the seven cathodes (<code class="docutils literal notranslate"><span class="pre">seg</span></code>) of
 a seven-segment display (7SD).</p>
-<p>You also need to wire a push button (<code class="docutils literal notranslate"><span class="pre">btnC</span></code>) so that it can be used to activate the 7SD by sending a <strong>low signal</strong> to the anode. As discussed in the Background <a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 32</span></a> the anode determines which of the displays are on, while the cathodes allow you to turn on each individual segment.</p>
+<p>You also need to wire a push button (<code class="docutils literal notranslate"><span class="pre">btnC</span></code>) so that it can be used to activate the 7SD by sending a <strong>low signal</strong> to the anode. As discussed in the Background <a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 33</span></a> the anode determines which of the displays are on, while the cathodes allow you to turn on each individual segment.</p>
 <p>Since the button itself is active-high, an inverter is required. The
 other 7SDs (display 3, 2, and 1) are disabled by connecting them to
 power.</p>

@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE2.html">ICE 2: Half-Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE3.html">ICE 3: Top Level Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 4: Stoplight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
@@ -484,19 +485,19 @@ code yourself to learn the material.</p>
 <section id="background">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>The 1965 Ford Thunderbird has three lights on each side that operate in
-sequence to indicate the direction of a turn. <a class="reference internal" href="#tailights"><span class="std std-numref">Fig. 36</span></a> shows the tail</p>
+sequence to indicate the direction of a turn. <a class="reference internal" href="#tailights"><span class="std std-numref">Fig. 37</span></a> shows the tail</p>
 <p>lights and <code class="xref std std-numref docutils literal notranslate"><span class="pre">tailight-flash</span></code> shows the flashing sequence for
 (a) left turns and (b) right turns.</p>
 <figure class="align-default" id="tailights">
 <img alt="../_images/lab3_tailights.png" src="../_images/lab3_tailights.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Thunderbird taillights</span><a class="headerlink" href="#tailights" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Thunderbird taillights</span><a class="headerlink" href="#tailights" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="tailights-flash">
 <img alt="../_images/lab3_tailightsflash.png" src="../_images/lab3_tailightsflash.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Flashing sequence for taillights. The lights shaded light
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Flashing sequence for taillights. The lights shaded light
 blue are illuminated.</span><a class="headerlink" href="#tailights-flash" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -633,12 +634,12 @@ Add a screenshot of the waveform to your README and save a copy for your Report.
 <section id="top-basys3-vhd">
 <h3><a class="toc-backref" href="#id10" role="doc-backlink">top_basys3.vhd</a><a class="headerlink" href="#top-basys3-vhd" title="Permalink to this heading">#</a></h3>
 <p>Once you have verified that your FSM works correctly in simulation,
-create a top-level module and implement the hardware interface in <a class="reference internal" href="#tbird-myboard"><span class="std std-numref">Fig. 38</span></a>
+create a top-level module and implement the hardware interface in <a class="reference internal" href="#tbird-myboard"><span class="std std-numref">Fig. 39</span></a>
 similar to the one pictured below.</p>
 <figure class="align-default" id="tbird-myboard">
 <img alt="../_images/lab3_myboard.png" src="../_images/lab3_myboard.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Your super-sweet thunderbird control panel.</span><a class="headerlink" href="#tbird-myboard" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Your super-sweet thunderbird control panel.</span><a class="headerlink" href="#tbird-myboard" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You will need to ground any unused LEDs, but you can leave unused switches unconnected.
