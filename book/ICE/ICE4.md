@@ -24,7 +24,7 @@ In order to accomplish this, we will expand our use of processes.
 
 Provide a demo to your instructor.
 
-You are not required to turn in ICE3; however,
+You are not required to turn in ICE4; however,
 **ensure the following files are pushed to your repository**:
 
 1. VHDL files
@@ -51,7 +51,7 @@ Stoplight state transition diagram
 
 ## Setup Vivado
 
-1. Clone the ice3 assignment from GitHub Classroom
+1. Clone the ice4 assignment from GitHub Classroom
 2. Open the folder
 3. Double click `stoplight.xpr` to open Vivado!
 
