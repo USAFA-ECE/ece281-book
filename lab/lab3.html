@@ -569,14 +569,35 @@ we suggest you <strong>view your ICE4 GitHub repository in your web browser</str
 <p>First, in the comments, add your state encodings.</p>
 <p>Such as</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-----------------------</span>
-<span class="c1">--- ONE-HOT STATE ENCODINGS ---</span>
-<span class="c1">-- OFF: 10000000</span>
+<span class="c1">--| One-Hot State Encoding key</span>
+<span class="c1">--| --------------------</span>
+<span class="c1">--| State | Encoding</span>
+<span class="c1">--| --------------------</span>
+<span class="c1">--| OFF   | 10000000</span>
+<span class="c1">--| ON    |</span>
+<span class="c1">--| R1    |</span>
+<span class="c1">--| R2    |</span>
+<span class="c1">--| R3    |</span>
+<span class="c1">--| L1    |</span>
+<span class="c1">--| L2    |</span>
+<span class="c1">--| L3    |</span>
+<span class="c1">--| --------------------</span>
 </pre></div>
 </div>
 <p>Or</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-----------------------</span>
-<span class="c1">--- BINARY STATE ENCODINGS ---</span>
-<span class="c1">-- OFF: 00</span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--| Binary State Encoding key</span>
+<span class="c1">--| --------------------</span>
+<span class="c1">--| State | Encoding</span>
+<span class="c1">--| --------------------</span>
+<span class="c1">--| OFF   | 000</span>
+<span class="c1">--| ON    |</span>
+<span class="c1">--| R1    |</span>
+<span class="c1">--| R2    |</span>
+<span class="c1">--| R3    |</span>
+<span class="c1">--| L1    |</span>
+<span class="c1">--| L2    |</span>
+<span class="c1">--| L3    |</span>
+<span class="c1">--| --------------------</span>
 </pre></div>
 </div>
 <p>Next, declare the following entity:</p>

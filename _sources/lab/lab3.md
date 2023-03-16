@@ -128,16 +128,37 @@ Such as
 
 ```vhdl
 -----------------------
---- ONE-HOT STATE ENCODINGS ---
--- OFF: 10000000
+--| One-Hot State Encoding key
+--| --------------------
+--| State | Encoding
+--| --------------------
+--| OFF   | 10000000
+--| ON    |
+--| R1    |
+--| R2    |
+--| R3    |
+--| L1    |
+--| L2    |
+--| L3    |
+--| --------------------
 ```
 
 Or
 
 ```vhdl
------------------------
---- BINARY STATE ENCODINGS ---
--- OFF: 00
+--| Binary State Encoding key
+--| --------------------
+--| State | Encoding
+--| --------------------
+--| OFF   | 000
+--| ON    |
+--| R1    |
+--| R2    |
+--| R3    |
+--| L1    |
+--| L2    |
+--| L3    |
+--| --------------------
 ```
 
 Next, declare the following entity:
