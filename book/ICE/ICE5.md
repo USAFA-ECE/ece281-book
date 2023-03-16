@@ -135,7 +135,7 @@ with f_Q select
     o_floor <= <value> when s_floor1,
             ...
             ...
-            "?" when others; -- default is floor1
+            <value> when others; -- default is floor1
 ```
 
 - The entity declaration has been completed for you.

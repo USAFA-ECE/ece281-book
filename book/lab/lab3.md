@@ -36,9 +36,13 @@ code yourself to learn the material.
 
 ## Background
 
-The 1965 Ford Thunderbird has three lights on each side that operate in
-sequence to indicate the direction of a turn. {numref}`tailights` shows the tail
+```{figure} img/lab3_tbird.gif
+```
 
+The 1965 Ford Thunderbird has three lights on each side that operate in
+sequence to indicate the direction of a turn. [Video](https://www.youtube.com/watch?v=Qwzxn9ZPW-M).
+
+{numref}`tailights` shows the tail
 lights and {numref}`tailight-flash` shows the flashing sequence for
 (a) left turns and (b) right turns.
 
@@ -75,7 +79,7 @@ Due on Gradescope midnight **T23**.
 LC, then finally all lights off again.
 - This pattern should occur even if you release LEFT during the sequence.
 - If LEFT is still down when you return to the lights off state, the pattern should repeat.
-- The logic for the right lights is similar.
+- The logic for the right lights is similar. **LA** is the LSB and **LC** is the MSB.
 - When both LEFT and RIGHT switches are on, your state machine should blink all lights on and off (implementing hazard lights).
 
 ### Prelab Tasks
@@ -84,7 +88,7 @@ You will use a **Moore FSM** to implement the above functionality.
 
 Complete the following tasks to prepare yourself for the lab.
 
-1. Create a state transition diagramusing the
+1. Create a state transition diagram vusing the
 `Lab3_StateTransitionDiagram_Template.pptx` found in Teams.
 2. Complete the **binary** encoding, state transition, and output tables
 using the `Lab3_Tables_Template.xlsx` found in Teams.
@@ -108,14 +112,32 @@ what **test cases** you will use to verify that your design is correct.
 Clone code template from GitHub Classroom.
 Then open the project by double clicking `thunderbird.xpr`.
 
+```{tip}
+Much of this code can be extracted from [ICE4](https://usafa-ece.github.io/ece281-book/ICE/ICE4.html).
+Rather than open another Vivado project (and the confusion that comes with it),
+we suggest you **view your ICE4 GitHub repository in your web browser**.
+
+The repository should be located at `https://github.com/USAFA-ECE/ice4-<your github username>`.
+```
+
 ### thunderbird_fsm.vhd
 
 First, in the comments, add your state encodings.
 
+Such as
+
 ```vhdl
 -----------------------
---- STATE ENCODINGS ---
+--- ONE-HOT STATE ENCODINGS ---
 -- OFF: 10000000
+```
+
+Or
+
+```vhdl
+-----------------------
+--- BINARY STATE ENCODINGS ---
+-- OFF: 00
 ```
 
 Next, declare the following entity:
@@ -134,7 +156,9 @@ end thunderbird_fsm;
 Note that we expect the inside right taillight, **RA**, to be the **LSB of `o_lights_R`**,
 and **RC** should be the MSB.
 
-> Complete the architecture for thunderbird_fsm.vhd
+> Complete the architecture for `thunderbird_fsm.vhd`
+> by adding the necessary signals, next state logic, output logic,
+> and state register.
 
 ### thunderbird_fsm_tb.vhd
 
