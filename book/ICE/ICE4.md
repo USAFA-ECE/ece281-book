@@ -234,7 +234,8 @@ Check syntax, then:
 ## stoplight_fsm_tb.vhd
 
 First, **set `stoplight_fsm_tb.vhd` as top** in simulation sources.
-This testbench is fully complete, and has two new aspects.
+The testbench is already complete, so you do not need to add or change anything.
+BUT! It and has two new aspects we'll discuss.
 
 The first is the declaration of a constant.
 
