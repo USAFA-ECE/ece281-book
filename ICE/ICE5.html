@@ -462,6 +462,7 @@ goes to ‘0’.</p></li>
 <li><p>When the elevator is at the bottom floor, it will stay there until <code class="docutils literal notranslate"><span class="pre">i_up_down</span></code>
 goes to ‘1’.</p></li>
 <li><p>The system should <strong>output</strong> the floor it is on (1 - 4) as a <strong>four-bit binary number</strong>, <code class="docutils literal notranslate"><span class="pre">o_floor</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i_reset</span></code> <em>synchronously</em> puts the FSM into state <strong>Floor 2</strong>.</p></li>
 </ul>
 <p>This description is translated into a state diagram shown in <a class="reference internal" href="#elevator-fsm"><span class="std std-numref">Fig. 28</span></a>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Inputs</span><span class="p">:</span>
@@ -488,7 +489,7 @@ goes to ‘1’.</p></li>
 <ol class="arabic simple">
 <li><p>Clone the ice5 assignment from GitHub Classroom</p></li>
 <li><p>Open the folder</p></li>
-<li><p>Double click <code class="docutils literal notranslate"><span class="pre">stoplight.xpr</span></code> to open Vivado!</p></li>
+<li><p>Double click <code class="docutils literal notranslate"><span class="pre">elevatorController.xpr</span></code> to open Vivado!</p></li>
 </ol>
 <blockquote>
 <div><p>Modify headers and make an initial commit.</p>
@@ -499,7 +500,8 @@ goes to ‘1’.</p></li>
 <p>The entity description has been completed for you.</p>
 <section id="state-register-process">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">State register process</a><a class="headerlink" href="#state-register-process" title="Permalink to this heading">#</a></h3>
-<p>Recall that <code class="docutils literal notranslate"><span class="pre">i_reset</span></code> should be synchronous. Reference Lesson 22 Note Taker.</p>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">i_reset</span></code> should be synchronous! Reference Lesson 22 Note Taker.
+The reset state is <strong>Floor 2</strong>.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> effectively functions as an <em>enable</em>, we can handle it
 in our state register implementation.</p>
 <p>Effectively, (if reset is low) then current state gets next state only when
