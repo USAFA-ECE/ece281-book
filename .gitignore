@@ -5,5 +5,5 @@ env/
 # These will be built automatically by github actions
 **/_build/
 
-# VScode
+# vscode
 .vscode/

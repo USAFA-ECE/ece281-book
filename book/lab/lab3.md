@@ -390,16 +390,16 @@ than be bored with broad summaries.
 
 #### Front Matter
 
-- Title, Authors, ect.
+- Title, Authors, page numbers, ect.
 - Documentation Statement for the Report only.
-- A two or three sentence summary of the takeaway from this lab.
+- A two or three sentence summary of the **key takeaway** from this lab.
     Don't drone on, make it a punchy answer to "So what? Who cares?"
 
-#### Simulation Results Waveform
+#### Simulation Results
 
-- Discuss your overall approach to testing.
+- Discuss your **overall approach** to testing.
 - Include your waveform.
-- Discuss how the Waveform aided in testing and iterating.
+- Discuss **how simulation aided in testing** and iterating.
 - Show that you actually used the simulation to assist before moving to hardware.
 
 The waveform should:
@@ -413,9 +413,9 @@ The waveform should:
 
 #### Architecture Design
 
-- Discuss your overall approach to architecture design and schematic construction.
-- Did you implement one-hot encoding or binary encoding? Evaluate your choice.
-- Include your neat schematic.
+- Discuss your **overall approach** to architecture design and schematic construction.
+- Did you implement one-hot encoding or binary encoding? **Evaluate** your choice.
+- Include your neat (not hand-drawn) schematic.
 - Include the RTL schematic.
 - Discuss any differences between the two schematics.
 
