@@ -42,6 +42,7 @@ Your elevator controller will traverse four floors (numbered 1 to 4).
 - When the elevator is at the bottom floor, it will stay there until `i_up_down`
     goes to '1'.
 - The system should **output** the floor it is on (1 - 4) as a **four-bit binary number**, `o_floor`.
+- `i_reset` *synchronously* puts the FSM into state **Floor 2**.
 
 This description is translated into a state diagram shown in {numref}`elevator_fsm`.
 
@@ -69,7 +70,7 @@ Elevator controller state machine
 
 1. Clone the ice5 assignment from GitHub Classroom
 2. Open the folder
-3. Double click `stoplight.xpr` to open Vivado!
+3. Double click `elevatorController.xpr` to open Vivado!
 
 > Modify headers and make an initial commit.
 
@@ -79,7 +80,8 @@ The entity description has been completed for you.
 
 ### State register process
 
-Recall that `i_reset` should be synchronous. Reference Lesson 22 Note Taker.
+Recall that `i_reset` should be synchronous! Reference Lesson 22 Note Taker.
+The reset state is **Floor 2**.
 
 Because `i_stop` effectively functions as an *enable*, we can handle it
 in our state register implementation.
