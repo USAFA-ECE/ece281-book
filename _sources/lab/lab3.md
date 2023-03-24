@@ -79,7 +79,7 @@ Due on Gradescope midnight **T23**.
 LC, then finally all lights off again.
 - This pattern should occur even if you release LEFT during the sequence.
 - If LEFT is still down when you return to the lights off state, the pattern should repeat.
-- The logic for the right lights is similar. **LA** is the LSB and **LC** is the MSB.
+- The logic for the right lights is similar. **RA** is the LSB and **RC** is the MSB.
 - When both LEFT and RIGHT switches are on, your state machine should blink all lights on and off (implementing hazard lights).
 
 ### Prelab Tasks
