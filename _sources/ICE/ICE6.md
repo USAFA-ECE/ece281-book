@@ -34,7 +34,8 @@ all resources utilized is required.
 
 ### End State
 
-This ICE requires a Gradescope submission.
+This ICE requires a Gradescope submission with short answer questions,
+but there is no demo requirement!
 
 Additionally, there is a GitHub Action testbench that should pass.
 Ensure your two VHDL files are pushed to your repository.
@@ -162,6 +163,8 @@ Simulation waveform
 ```
 
 ## Deliverables
+
+The Gradescope submission includes several short answer questions.
 
 | Deliverable           | Points |
 |-----------------------|--------|
