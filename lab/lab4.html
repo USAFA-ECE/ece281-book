@@ -1,0 +1,795 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lab 4 - Moore Elevator Controller &#8212; ECE 281</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab4';</script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GitHub real fast" href="../appendix/github.html" />
+    <link rel="prev" title="Lab 3 - Thunderbird Turn Signal" href="lab3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ECE 281: Digital Design and Computer Architecture
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE0.html">BCE 0: Get started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE1.html">ICE 1: OR Gates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE2.html">ICE 2: Half-Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE3.html">ICE 3: Top Level Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 4: Stoplight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab0.html">Lab 0: Install Vivado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 4 - Moore Elevator Controller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/github.html">GitHub real fast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/vivado.html">Xilinx Vivado</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/usafa-ece/ece281-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Flab/lab4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lab/lab4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 4 - Moore Elevator Controller</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorized-resources">Authorized Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-flow">Lab Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-elevator-controller">Advanced Elevator Controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-4-moore-elevator-controller">
+<h1>Lab 4 - Moore Elevator Controller<a class="headerlink" href="#lab-4-moore-elevator-controller" title="Permalink to this heading">#</a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#authorized-resources" id="id3">Authorized Resources</a></p></li>
+<li><p><a class="reference internal" href="#lab-flow" id="id4">Lab Flow</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#prelab" id="id5">Prelab</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>This lab is all about <strong>designing complex systems!</strong>
+You will do this by integrating sequential and combinatorial building blocks
+to design, test, and debug the <strong>Basic Elevator Controller</strong> from ICE5
+before expanding functionality to an Advanced Elevator Controller.</p>
+<p>In order to accomplish this, you will need to integrate modules from previous
+in class exercises and labs. <strong>Start now and make steady progress!</strong></p>
+<section id="authorized-resources">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Authorized Resources</a><a class="headerlink" href="#authorized-resources" title="Permalink to this heading">#</a></h3>
+<p>For this lab, you may work in <strong>teams of two</strong> (including the prelab).
+If you worked in a team for Lab 3,
+you <strong>must</strong> work with a <em>different partner</em> for this lab.</p>
+<p>You may seek help from any cadet or instructor,
+not limited to this course, and reference any publication in its
+completion. Online resources are acceptable. However, no resources
+containing solutions to the course homework, labs, exams, quizzes, or in
+class/out of class exercises are allowed.</p>
+<p>Your work (and your code) must <strong>always</strong> be your own.
+Normal documentation of all resources utilized is required.</p>
+</section>
+<section id="lab-flow">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Lab Flow</a><a class="headerlink" href="#lab-flow" title="Permalink to this heading">#</a></h3>
+<p>This lab <em>iterates</em> to first implement a Basic Elevator Controller,
+and then expand that to an Advanced Elevator Controller.</p>
+<section id="basic-elevator-controller">
+<h4>Basic Elevator Controller<a class="headerlink" href="#basic-elevator-controller" title="Permalink to this heading">#</a></h4>
+<p>The <strong>initial phase</strong> of the lab only implements <a class="reference external" href="https://usafa-ece.github.io/ece281-book/ICE/ICE5.html">ICE5</a>
+Basic Elevator Controller, shown in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 40</span></a></p>
+<figure class="align-default" id="id1">
+<img alt="../_images/lab4_basic_controller.png" src="../_images/lab4_basic_controller.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Basic Elevator Controller user interface</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The elevator’s current floor is shown on the second seven-segment display</p></li>
+<li><p>The elevator takes 0.5 seconds to move between floors</p></li>
+<li><p>The display updates according to the output</p></li>
+<li><p>The elevator must not teleport… no skipping floors</p></li>
+<li><p>Three push buttons are to be used for resets</p></li>
+<li><p>The Master Reset button resets both the FSM <strong>and</strong> the clock.</p></li>
+<li><p>The reset floor is <strong>floor 2</strong>.</p></li>
+</ul>
+<p>This is the functionality who’s schematic you must design in the prelab.</p>
+</section>
+<section id="advanced-elevator-controller">
+<h4>Advanced Elevator Controller<a class="headerlink" href="#advanced-elevator-controller" title="Permalink to this heading">#</a></h4>
+<p>The <strong>final phase</strong> of the lab expands the basic functionality.</p>
+<ul class="simple">
+<li><p>The elevator will travel from floor 1 to floor 16</p></li>
+<li><p>Use the two left-most digits of the display to show the floor in decimal</p></li>
+<li><p>All other functions will stay the same as in Basic Elevator Controller.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Revisit ICE6 for using TDM to drive a seven segment display.</p>
+<p>Reference <a class="reference external" href="https://digilent.com/reference/basys3/refmanual#seven_segment_display">Basys3 Seven Segment Display</a></p>
+</div>
+<p>This functionality should not be “hooked-up” in the Prelab.
+However, the top level entity will reflect this advanced functionality from the start.</p>
+</section>
+</section>
+</section>
+<section id="prelab">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Permalink to this heading">#</a></h2>
+<p>Create a Top Level Schematic showing your architecture
+and <strong>submit one submission per team on Gradescope.</strong></p>
+<p>This schematic must <em>only cover the Basic Elevator Controller functionality</em>.
+You will be expected to update the schematic prior to implementing the
+Advanced Elevator Controller.</p>
+<p>This schematic should consist of the <strong>top_basys3</strong> entity, its I/O,
+the various modules inside it, and the connecting signals and logic.</p>
+<p>The top-level entity in <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> will be:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Lab 4</span>
+<span class="k">entity</span><span class="w"> </span><span class="nc">top_basys3</span><span class="w"> </span><span class="k">is</span>
+<span class="w">    </span><span class="k">port</span><span class="p">(</span>
+<span class="w">        </span><span class="c1">-- inputs</span>
+<span class="w">        </span><span class="n">clk</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- native 100MHz FPGA clock</span>
+<span class="w">        </span><span class="n">sw</span><span class="w">      </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">btnC</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- GO</span>
+<span class="w">        </span><span class="n">btnU</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- master_reset</span>
+<span class="w">        </span><span class="n">btnL</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- clk_reset</span>
+<span class="w">        </span><span class="n">btnR</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- fsm_reset</span>
+
+<span class="w">        </span><span class="c1">-- outputs</span>
+<span class="w">        </span><span class="n">led</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">-- 7-segment display segments (active-low cathodes)</span>
+<span class="w">        </span><span class="n">seg</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">-- 7-segment display active-low enables (anodes)</span>
+<span class="w">        </span><span class="n">an</span><span class="w">      </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="k">end</span><span class="w"> </span><span class="nc">top_basys3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The entity contains port you will not use for the Basic Elevator functionality,
+but leave them in the schematic because you will need them for the Advanced Elevator.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Changing interfaces incurs massive engineering costs. This is because
+<strong>interfaces are the promises you make to external systems.</strong></p>
+<p>Even though we want to iterate (rather than “hit a home run”), we save
+a lot of time by making our I/O large enough for advanced functionality from
+the start. Imagine if you had to change the size of a std_logic_vector each
+time you wanted to tweak something.</p>
+<p>But there is a cost! First, this requires additional hardware that may never be used.
+Second, you may waste effort solving problems that don’t actually need to be solved
+because by the time you get to it the project requirements may have changed or
+the implementation strategy may have changed.</p>
+<p>Long story short, these sorts of decisions are hard and why Engineers get 💰</p>
+</div>
+<p>You need to include a clock divider module, and the remaining modules you
+need will come from your previous in-class exercises and labs
+(MooreElevatorController and sevenSegDecoder).</p>
+<ul class="simple">
+<li><p>Do not hand draw the schematic; rather, use a tool such as
+<a class="reference external" href="https://excalidraw.com/">Excalidraw</a>, <a class="reference external" href="https://app.diagrams.net/">draw.io</a>, or PowerPoint.</p></li>
+<li><p>The components inside your top level should remain black boxes.
+The expectation is you will update this schematic at the end of this lab to reflect your final design.</p></li>
+<li><p>Label <strong>all</strong> wires not connected to the top-level entity ports.
+These will be additional signals you will create in your VHDL code.</p></li>
+<li><p>Only turn on seven-segment display 2 (display 0 is the far right).
+Force the others OFF by disabling their anodes. Reference earlier
+activities regarding how to turn on/off displays.</p></li>
+<li><p>Turn OFF (ground) all LEDs, since you do not need them for the basic
+elevator functionality, but they are in the entity for variations on
+the functionality.</p></li>
+<li><p>Just like in the last lab, the clock divider uses <em>generics</em> so that
+you can redefine characteristics at instantiation. For instance, you
+can redefine the number of times the clock divider divides a clock
+for each instance of the module. Be sure to specify the value for
+your clock divider to obtain 2 Hz. For an idea on how to accomplish
+this, look at the generic mapping of the clock divider in ICE4 and Lab 3.</p></li>
+<li><p>All component names should match the labels given to them
+(ex: MooreElevatorController should be labeled MooreElevatorController)</p></li>
+<li><p>All components should have their internal ports labeled so it is clear
+what a signal is being connected to.</p></li>
+</ul>
+<!--
+## Lab
+
+Clone code template from GitHub Classroom.
+Then open the project by double clicking `****.xpr`.
+
+```{tip}
+Much of this code can be extracted from previous projects.
+Rather than open another Vivado project (and the confusion that comes with it),
+we suggest you **view your previous project's GitHub repository in your web browser**.
+```
+
+## Deliverables
+
+Below are the deliverables and point distributions for the Lab 3:
+
+| Deliverable           | Points |
+|-----------------------|--------|
+| Prelab                | 20     |
+| Hardware Demo         | 25     |
+| Passing GitHub Action | 25     |
+| Written Report        | 30     |
+
+**Documentation statements** will be in the README for any help on the Lab itself.
+
+```markdown
+
+## Documentation
+Your statement here.
+```
+
+Otherwise, the statement will be submitted on Gradescope
+(for the prelab and report).
+
+### Hardware Demo
+
+- Show your instructor your waveform *before* demoing the hardware.
+- Using left and right switches generates correct LED patterns with **[changes occurring at a rate of 4 Hz**
+- Holding the clock reset freezes the light patterns
+- Pressing the FSM reset *immediately* (i.e. asynchronously) resets the light patterns
+- Demo can be performed live with an instructor OR via a video link
+- You must show good test cases for full credit!
+
+### GitHub Actions
+
+- All `.vhd`, `.xdc`, `.xpr`, and `.bit` files committed to repository
+- Headers are modified appropriately
+- *Multiple* commits with *good* messages
+- **Remove extraneous code and comments**
+- Your comments explain what you are doing and why
+- Student testbench passes for `thunderbird_fsm_tb.vhd`
+- Instructor testbench passes for `top_basys3_tb.vhd`
+- README includes `## Documentation` statement
+- README includes a `.png` Waveform
+
+### Report
+
+The report will be submitted on Gradescope. Subsections are described below.
+The report should be kept to three pages, including diagrams.
+
+```{important}
+This report should be written in a professional, technical style.
+This means, among other things:
+- ~~Active voice should be used~~ Use **active voice**, in most cases. Occasionally passive voice is more appropriate,
+    but it should be a deliberate choice.
+- The use of **we** is appropriate.
+- Write sentences that make information understandable; such sentences are beautiful.
+
+Know your audience: the instructors have a strong background in the lab.
+We would rather see you showcase your ability to communicate your hard-earned knowledge
+than be bored with broad summaries.
+**The true art is to 1) provide *context* and 2) follow it with *consequence*.**
+```
+
+#### Front Matter
+
+- Title, Authors, page numbers, ect.
+- Documentation Statement for the Report only.
+- A two or three sentence summary of the **key takeaway** from this lab.
+    Don't drone on, make it a punchy answer to "So what? Who cares?"
+
+#### Simulation Results
+
+- Discuss your **overall approach** to testing.
+- Include your waveform.
+- Discuss **how simulation aided in testing** and iterating.
+- Show that you actually used the simulation to assist before moving to hardware.
+
+The waveform should:
+
+- Begin with a reset test to start the FSM in a known state
+- Clearly show well thought out test cases with correct results
+- Include all required signals, (i_clk, i_reset, i_left, i_right,
+    o_lights_L, o_lights_R, and your current and next state bits).
+- Light output busses expanded to easily see progression of lights
+- Ensure the simulation results waveforms have visible values for inputs and outputs.
+
+#### Architecture Design
+
+- Discuss your **overall approach** to architecture design and schematic construction.
+- Did you implement one-hot encoding or binary encoding? **Evaluate** your choice.
+- Include your neat (not hand-drawn) schematic.
+- Include the RTL schematic.
+- Discuss any differences between the two schematics.
+
+#### Conclusion
+
+- Your main takeaway!
+- What approaches will you continue or change when it comes Lab 4?
+- Feedback for the instructors on the lab. -->
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lab"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lab3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 3 - Thunderbird Turn Signal</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix/github.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GitHub real fast</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorized-resources">Authorized Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-flow">Lab Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-elevator-controller">Advanced Elevator Controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By DFEC
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

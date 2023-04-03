@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../lab/lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab/lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lab/lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab4.html">Lab 4 - Moore Elevator Controller</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="current nav bd-sidenav">
@@ -504,21 +505,21 @@ tell Vivado where they are either manually or with a TCL file using <a class="re
 <h5>How to use git diff<a class="headerlink" href="#how-to-use-git-diff" title="Permalink to this heading">#</a></h5>
 <p>If you are working from an existing tcl file, it is easiest to work with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>
 to see what changed. Both options below show additions in green and deletions in red.</p>
-<p>Either open the <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> file in VS Code and use the Source Control Changes option to view, as shown in <a class="reference internal" href="#vivado-tcl-diff"><span class="std std-numref">Fig. 43</span></a>.</p>
+<p>Either open the <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> file in VS Code and use the Source Control Changes option to view, as shown in <a class="reference internal" href="#vivado-tcl-diff"><span class="std std-numref">Fig. 44</span></a>.</p>
 <figure class="align-default" id="vivado-tcl-diff">
 <img alt="../_images/vivado-tcl-diff.png" src="../_images/vivado-tcl-diff.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Using VS Code to view TCL diffs</span><a class="headerlink" href="#vivado-tcl-diff" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Using VS Code to view TCL diffs</span><a class="headerlink" href="#vivado-tcl-diff" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Or from Git Bash use the command below to produce output similar to <a class="reference internal" href="#vivado-tcl-gitdiff"><span class="std std-numref">Fig. 44</span></a></p>
+<p>Or from Git Bash use the command below to produce output similar to <a class="reference internal" href="#vivado-tcl-gitdiff"><span class="std std-numref">Fig. 45</span></a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>build.tcl
 </pre></div>
 </div>
 <figure class="align-default" id="vivado-tcl-gitdiff">
 <img alt="../_images/vivado-tcl-gitdiff.png" src="../_images/vivado-tcl-gitdiff.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Using Git Bash to view the TCL diffs</span><a class="headerlink" href="#vivado-tcl-gitdiff" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Using Git Bash to view the TCL diffs</span><a class="headerlink" href="#vivado-tcl-gitdiff" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -618,7 +619,10 @@ is probably ok as is.</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="github.html"
@@ -629,7 +633,10 @@ is probably ok as is.</p>
         <p class="prev-next-title">GitHub real fast</p>
       </div>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -667,7 +674,7 @@ is probably ok as is.</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -697,7 +704,7 @@ By DFEC
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -706,8 +713,8 @@ By DFEC
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
