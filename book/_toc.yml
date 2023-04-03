@@ -15,6 +15,7 @@ parts:
       - file: ICE/ICE3
       - file: ICE/ICE4
       - file: ICE/ICE5
+      - file: ICE/ICE6
   - caption: Labs
     chapters:
       - file: lab/lab0
