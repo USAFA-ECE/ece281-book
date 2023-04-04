@@ -143,6 +143,13 @@ with f_Q select
 - The entity declaration has been completed for you.
 - Use a **synchronous reset** for your controller FSM
 
+```{hint}
+We recommend that you handle `i_stop` logic in your **process**.
+This will save you *lots* of lines in the concurrent statements.
+
+Also, think about how nested if statements and `elsif` are helpful.
+```
+
 > Read through the provided code and comments, and then build the state machine in VHDL.
 
 ## elevator_controller_fsm_tb.vhd
