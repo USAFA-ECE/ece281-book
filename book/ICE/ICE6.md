@@ -40,7 +40,21 @@ but there is no demo requirement!
 Additionally, there is a GitHub Action testbench that should pass.
 Ensure your two VHDL files are pushed to your repository.
 
+### Time Division Multiplexing
+
+Time Division Multiplexing (TDM) is a method of transmitting multiple signals over a single communication channel. It works by dividing the available time on the channel into smaller time slots, with each slot allocated to a different signal. By rapidly switching between these time slots, TDM allows multiple signals to be transmitted simultaneously without interfering with each other.
+
+```{figure} img/ice6_tdm1.png
+TDM with shapes on $n = 3$ channels by switching at frequency $f_{TDM}$
+```
+
+```{figure} img/ice6_tdm2.png
+Demuxing after transmission to get data back in to separate channels.
+```
+
 ## TDM4.vhd
+
+The file is already completed for you! **But *please* read this section.**
 
 Again, a TDM outputs a single one of its inputs at a time based on **time**.
 This is like a normal MUX, but instead of using a select signal to determine which
@@ -106,7 +120,7 @@ each of which is `k_width := 4` bits wide.
 ### Architecture
 
 We introduce a new type in the signal declaration: **unsigned**.
-The unsigned type can take basic arithmetic operations, such as addition.
+The unsigned type can take basic arithmetic operations, such as addition!
 
 ```vhdl
  -- 2 bit counter output to select MUX input
@@ -117,21 +131,19 @@ signal f_sel : unsigned(1 downto 0) := "00";
 >
 > Read the two MUXs in concurrent statements and understand what's going on.
 
-The file is already completed for you!
-
 ## TDM4_tb.vhd
 
 1. Use the provided `TDM4_tb.vhd` file.
 2. Finish the component declaration started in the test bench.
-3. Declare the required signals
+3. Declare the required constants
+    - `k_clk_period` is type **time** set to `20 ns`
+    - `k_IO_width` is type **natural** set to `4`
+4. Declare the required signals
     - `w_clk`, `w_reset`
-    - `k_clk_period` is a constant set to 20 ns
-    - `k_IO_width` is a natrual set to 4
     - `w_D3`, `w_D2`, `w_D1`, `w_D0`, and `o_data`
     - `o_sel`
-
-4. Complete the port map
-5. Finish setting up the clk process to drive the TDM.
+5. Complete the port map
+6. Finish setting up the clk process to drive the TDM.
     This should resemble the FSM test benches.
 
 The only thing we have left is to define our input vectors.
