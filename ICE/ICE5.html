@@ -553,6 +553,12 @@ The <code class="docutils literal notranslate"><span class="pre">...</span></cod
 <li><p>The entity declaration has been completed for you.</p></li>
 <li><p>Use a <strong>synchronous reset</strong> for your controller FSM</p></li>
 </ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We recommend that you handle <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> logic in your <strong>process</strong>.
+This will save you <em>lots</em> of lines in the concurrent statements.</p>
+<p>Also, think about how nested if statements and <code class="docutils literal notranslate"><span class="pre">elsif</span></code> are helpful.</p>
+</div>
 <blockquote>
 <div><p>Read through the provided code and comments, and then build the state machine in VHDL.</p>
 </div></blockquote>
