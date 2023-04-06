@@ -496,7 +496,7 @@ input becomes the output, a TDM uses time to determine which input becomes the o
 <span class="w">        </span><span class="n">i_D1</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">STD_LOGIC_VECTOR</span><span class="w"> </span><span class="p">(</span><span class="n">k_WIDTH</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="n">i_D0</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="kt">STD_LOGIC_VECTOR</span><span class="w"> </span><span class="p">(</span><span class="n">k_WIDTH</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="n">o_data</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">STD_LOGIC_VECTOR</span><span class="w"> </span><span class="p">(</span><span class="n">k_WIDTH</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="n">o_sel</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">STD_LOGIC_VECTOR</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="c1">-- selected data line (one-cold)</span>
+<span class="w">        </span><span class="n">o_sel_n</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">STD_LOGIC_VECTOR</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="c1">-- selected data line (one-cold)</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="k">end</span><span class="w"> </span><span class="nc">TDM4</span><span class="p">;</span>
 </pre></div>
@@ -521,7 +521,7 @@ use this with your seven segment decoder you could set it to 7.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">i_D0</span></code> is the second of 4 data sets which are passed into the TDM.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">o_data</span></code> represents the output of the TDM. At any point in time it
 will be one of <code class="docutils literal notranslate"><span class="pre">i_D3</span></code>, <code class="docutils literal notranslate"><span class="pre">i_D2</span></code>, <code class="docutils literal notranslate"><span class="pre">i_D1</span></code>, or <code class="docutils literal notranslate"><span class="pre">i_D0</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">o_sel</span></code> is an output vector that tells the user which of the input
+<li><p><code class="docutils literal notranslate"><span class="pre">o_sel_n</span></code> is an output vector that tells the user which of the input
 channels has been selected. It is one cold meaning “0111” indicates
 <code class="docutils literal notranslate"><span class="pre">i_D3</span></code>, “1011” indicates <code class="docutils literal notranslate"><span class="pre">i_D2</span></code>, “1101” indicates <code class="docutils literal notranslate"><span class="pre">i_D1</span></code>, and “1110”
 indicates <code class="docutils literal notranslate"><span class="pre">i_D0</span></code>. You will not need to use this signal in this
@@ -545,11 +545,11 @@ and the size of the declared std_logic_vectors.</p></li>
 <p>We introduce a new type in the signal declaration: <strong>unsigned</strong>.
 The unsigned type can take basic arithmetic operations, such as addition!</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1">-- 2 bit counter output to select MUX input</span>
-<span class="k">signal</span><span class="w"> </span><span class="n">f_sel</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;00&quot;</span><span class="p">;</span>
+<span class="k">signal</span><span class="w"> </span><span class="n">f_sel_n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">unsigned</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;00&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <blockquote>
-<div><p>Read the <code class="docutils literal notranslate"><span class="pre">twoBitCounter_proc</span></code> and understand the lifecycle of <code class="docutils literal notranslate"><span class="pre">f_sel</span></code>.</p>
+<div><p>Read the <code class="docutils literal notranslate"><span class="pre">twoBitCounter_proc</span></code> and understand the lifecycle of <code class="docutils literal notranslate"><span class="pre">f_sel_n</span></code>.</p>
 <p>Read the two MUXs in concurrent statements and understand what’s going on.</p>
 </div></blockquote>
 </section>
@@ -568,8 +568,8 @@ The unsigned type can take basic arithmetic operations, such as addition!</p>
 <li><p>Declare the required signals</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">w_clk</span></code>, <code class="docutils literal notranslate"><span class="pre">w_reset</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">w_D3</span></code>, <code class="docutils literal notranslate"><span class="pre">w_D2</span></code>, <code class="docutils literal notranslate"><span class="pre">w_D1</span></code>, <code class="docutils literal notranslate"><span class="pre">w_D0</span></code>, and <code class="docutils literal notranslate"><span class="pre">o_data</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">o_sel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w_D3</span></code>, <code class="docutils literal notranslate"><span class="pre">w_D2</span></code>, <code class="docutils literal notranslate"><span class="pre">w_D1</span></code>, <code class="docutils literal notranslate"><span class="pre">w_D0</span></code>, and <code class="docutils literal notranslate"><span class="pre">f_data</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_sel_n</span></code></p></li>
 </ul>
 </li>
 <li><p>Complete the port map</p></li>
