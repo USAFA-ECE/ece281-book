@@ -435,15 +435,14 @@ document.write(`
 <span id="manual-add-to-vivado-project"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Manually add files to Vivado Project</a><a class="headerlink" href="#manually-add-files-to-vivado-project" title="Permalink to this heading">#</a></h2>
 <p>By convention (and for working nicely with git) we add
 source files to <code class="docutils literal notranslate"><span class="pre">src/</span></code> and if it is a hardware description file then to <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code>
-(there are other source files in advnaced projects that
-are not HDL).</p>
+(there are other source files in advnaced projects that are not HDL).</p>
 <p>Once a file is in that location, add it to a Vivado Project by:</p>
 <ol class="arabic simple">
 <li><p>On the leftmost pane (<em>Flow Navigator</em>) of Vivado,
 under PROJECT MANAGER, click on <strong>Add Sources</strong></p></li>
 <li><p>Select the appropriate radio button.</p>
 <ul class="simple">
-<li><p>“Add or creae constraints” for an <code class="docutils literal notranslate"><span class="pre">.xdc</span></code> file</p></li>
+<li><p>“Add or create constraints” for an <code class="docutils literal notranslate"><span class="pre">.xdc</span></code> file</p></li>
 <li><p>“Add or create design sources” for source file</p></li>
 <li><p>“Add or create simulation sources” for a <code class="docutils literal notranslate"><span class="pre">_tb.vhd</span></code> file</p></li>
 </ul>
@@ -456,11 +455,7 @@ under PROJECT MANAGER, click on <strong>Add Sources</strong></p></li>
 <p>You should now see the file in the Sources tab.</p>
 <p>The VHDL module should now be listed in your Sources sub-window.
 The <strong>bolded</strong> name is based on the entity name.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you plan on pushing the project to git and rebuilding it elsewhere
-with <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> then you must rewrite the TCL file. See <a class="reference internal" href="#write-tcl-file"><span class="std std-ref">Write a TCL file for use with Git</span></a>.</p>
-</div>
+<p>This will also make a change in your <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file that you will need to commit as well.</p>
 </section>
 <section id="board-files">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink">Board files</a><a class="headerlink" href="#board-files" title="Permalink to this heading">#</a></h2>

@@ -22,15 +22,14 @@
 
 By convention (and for working nicely with git) we add
 source files to `src/` and if it is a hardware description file then to `src/hdl/`
-(there are other source files in advnaced projects that
-are not HDL).
+(there are other source files in advnaced projects that are not HDL).
 
 Once a file is in that location, add it to a Vivado Project by:
 
 1. On the leftmost pane (*Flow Navigator*) of Vivado,
 under PROJECT MANAGER, click on **Add Sources**
 2. Select the appropriate radio button.
-    - "Add or creae constraints" for an `.xdc` file
+    - "Add or create constraints" for an `.xdc` file
     - "Add or create design sources" for source file
     - "Add or create simulation sources" for a `_tb.vhd` file
 3. Click on **Add Files**
@@ -43,10 +42,7 @@ You should now see the file in the Sources tab.
 The VHDL module should now be listed in your Sources sub-window.
 The **bolded** name is based on the entity name.
 
-```{warning}
-If you plan on pushing the project to git and rebuilding it elsewhere
-with `build.bat` and `build.tcl` then you must rewrite the TCL file. See {ref}`write-tcl-file`.
-```
+This will also make a change in your `.xpr` file that you will need to commit as well.
 
 ## Board files
 
