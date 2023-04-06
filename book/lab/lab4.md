@@ -95,17 +95,16 @@ entity top_basys3 is
         -- inputs
         clk     :   in std_logic; -- native 100MHz FPGA clock
         sw      :   in std_logic_vector(15 downto 0);
-        btnC    :   in std_logic; -- GO
         btnU    :   in std_logic; -- master_reset
         btnL    :   in std_logic; -- clk_reset
         btnR    :   in std_logic; -- fsm_reset
 
         -- outputs
-        led     :   out std_logic_vector(15 downto 0);
+        led :   out std_logic_vector(15 downto 0);
         -- 7-segment display segments (active-low cathodes)
-        seg     :   out std_logic_vector(6 downto 0);
+        seg :   out std_logic_vector(6 downto 0);
         -- 7-segment display active-low enables (anodes)
-        an      :   out std_logic_vector(3 downto 0)
+        an  :   out std_logic_vector(3 downto 0)
     );
 end top_basys3;
 ```
@@ -143,9 +142,8 @@ need will come from your previous in-class exercises and labs
 - Only turn on seven-segment display 2 (display 0 is the far right).
     Force the others OFF by disabling their anodes. Reference earlier
     activities regarding how to turn on/off displays.
-- Turn OFF (ground) all LEDs, since you do not need them for the basic
-    elevator functionality, but they are in the entity for variations on
-    the functionality.
+- LED 15 should be connected to the clock signal that drives the FSM
+- All other LEDs should be grounded.
 - Just like in the last lab, the clock divider uses *generics* so that
     you can redefine characteristics at instantiation. For instance, you
     can redefine the number of times the clock divider divides a clock
@@ -153,9 +151,8 @@ need will come from your previous in-class exercises and labs
     your clock divider to obtain 2 Hz. For an idea on how to accomplish
     this, look at the generic mapping of the clock divider in ICE4 and Lab 3.
 - All component names should match the labels given to them
-    (ex: MooreElevatorController should be labeled MooreElevatorController)
-- All components should have their internal ports labeled so it is clear
-    what a signal is being connected to.
+    (ex: elevator_controller should be labeled elevator_controller)
+- All components should have their internal ports labeled so it is clear what a signal is being connected to.
 
 ## Lab
 
@@ -325,3 +322,4 @@ Things to Add:
 - Share your thoughts on mudlarity and abstraction
 - Discuss how your schematic changed (and what stayed the same) between Basic and Advanced Controllers
 - Discuss how you used TDM to get the Seven Segment Display functioning
+- What is the problem with the MASTER RESET?
