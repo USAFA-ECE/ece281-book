@@ -511,17 +511,16 @@ the various modules inside it, and the connecting signals and logic.</p>
 <span class="w">        </span><span class="c1">-- inputs</span>
 <span class="w">        </span><span class="n">clk</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- native 100MHz FPGA clock</span>
 <span class="w">        </span><span class="n">sw</span><span class="w">      </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="n">btnC</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- GO</span>
 <span class="w">        </span><span class="n">btnU</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- master_reset</span>
 <span class="w">        </span><span class="n">btnL</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- clk_reset</span>
 <span class="w">        </span><span class="n">btnR</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- fsm_reset</span>
 
 <span class="w">        </span><span class="c1">-- outputs</span>
-<span class="w">        </span><span class="n">led</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">led</span><span class="w"> </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="c1">-- 7-segment display segments (active-low cathodes)</span>
-<span class="w">        </span><span class="n">seg</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">seg</span><span class="w"> </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="c1">-- 7-segment display active-low enables (anodes)</span>
-<span class="w">        </span><span class="n">an</span><span class="w">      </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">an</span><span class="w">  </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="k">end</span><span class="w"> </span><span class="nc">top_basys3</span><span class="p">;</span>
 </pre></div>
@@ -555,9 +554,8 @@ These will be additional signals you will create in your VHDL code.</p></li>
 <li><p>Only turn on seven-segment display 2 (display 0 is the far right).
 Force the others OFF by disabling their anodes. Reference earlier
 activities regarding how to turn on/off displays.</p></li>
-<li><p>Turn OFF (ground) all LEDs, since you do not need them for the basic
-elevator functionality, but they are in the entity for variations on
-the functionality.</p></li>
+<li><p>LED 15 should be connected to the clock signal that drives the FSM</p></li>
+<li><p>All other LEDs should be grounded.</p></li>
 <li><p>Just like in the last lab, the clock divider uses <em>generics</em> so that
 you can redefine characteristics at instantiation. For instance, you
 can redefine the number of times the clock divider divides a clock
@@ -565,9 +563,8 @@ for each instance of the module. Be sure to specify the value for
 your clock divider to obtain 2 Hz. For an idea on how to accomplish
 this, look at the generic mapping of the clock divider in ICE4 and Lab 3.</p></li>
 <li><p>All component names should match the labels given to them
-(ex: MooreElevatorController should be labeled MooreElevatorController)</p></li>
-<li><p>All components should have their internal ports labeled so it is clear
-what a signal is being connected to.</p></li>
+(ex: elevator_controller should be labeled elevator_controller)</p></li>
+<li><p>All components should have their internal ports labeled so it is clear what a signal is being connected to.</p></li>
 </ul>
 </section>
 <section id="lab">
@@ -742,6 +739,7 @@ it is time to implement advanced functionality!</p>
 <li><p>Share your thoughts on mudlarity and abstraction</p></li>
 <li><p>Discuss how your schematic changed (and what stayed the same) between Basic and Advanced Controllers</p></li>
 <li><p>Discuss how you used TDM to get the Seven Segment Display functioning</p></li>
+<li><p>What is the problem with the MASTER RESET?</p></li>
 </ul>
 </section>
 </section>
