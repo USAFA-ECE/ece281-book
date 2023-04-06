@@ -59,17 +59,7 @@ This is the functionality who's schematic you must design in the prelab.
 
 #### Advanced Elevator Controller
 
-The **final phase** of the lab expands the basic functionality.
-
-- The elevator will travel from floor 1 to floor 16
-- Use the two left-most digits of the display to show the floor in decimal
-- All other functions will stay the same as in Basic Elevator Controller.
-
-```{hint}
-Revisit ICE6 for using TDM to drive a seven segment display.
-
-Reference [Basys3 Seven Segment Display](https://digilent.com/reference/basys3/refmanual#seven_segment_display)
-```
+The **final phase** of the lab expands the basic functionality, see below.
 
 This functionality should not be "hooked-up" in the Prelab.
 However, the top level entity will reflect this advanced functionality from the start.
@@ -285,6 +275,16 @@ If for some reason you need to... use Google.
 
 *After* demonstrating your basic functionality *and after* pushing your `basicFunc` tag to GitHub,
 it is time to implement advanced functionality!
+
+- The elevator will travel from floor 1 to floor 16
+- Use the two left-most digits of the display to show the floor in decimal
+- All other functions will stay the same as in Basic Elevator Controller.
+
+```{hint}
+Revisit ICE6 for using TDM to drive a seven segment display.
+
+Reference [Basys3 Seven Segment Display](https://digilent.com/reference/basys3/refmanual#seven_segment_display)
+```
 
 **Before** you start to code, update your schematic. This schematic will be submitted in the Lab 4 Report.
 
