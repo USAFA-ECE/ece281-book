@@ -74,7 +74,7 @@ entity TDM4 is
         i_D1     : in  STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
         i_D0     : in  STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
         o_data   : out STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
-        o_sel    : out STD_LOGIC_VECTOR (3 downto 0) -- selected data line (one-cold)
+        o_sel_n    : out STD_LOGIC_VECTOR (3 downto 0) -- selected data line (one-cold)
     );
 end TDM4;
 ```
@@ -98,7 +98,7 @@ end TDM4;
 - `i_D0` is the second of 4 data sets which are passed into the TDM.
 - `o_data` represents the output of the TDM. At any point in time it
     will be one of `i_D3`, `i_D2`, `i_D1`, or `i_D0`.
-- `o_sel` is an output vector that tells the user which of the input
+- `o_sel_n` is an output vector that tells the user which of the input
     channels has been selected. It is one cold meaning "0111" indicates
     `i_D3`, "1011" indicates `i_D2`, "1101" indicates `i_D1`, and "1110"
     indicates `i_D0`. You will not need to use this signal in this
@@ -124,10 +124,10 @@ The unsigned type can take basic arithmetic operations, such as addition!
 
 ```vhdl
  -- 2 bit counter output to select MUX input
-signal f_sel : unsigned(1 downto 0) := "00";
+signal f_sel_n : unsigned(1 downto 0) := "00";
 ```
 
-> Read the `twoBitCounter_proc` and understand the lifecycle of `f_sel`.
+> Read the `twoBitCounter_proc` and understand the lifecycle of `f_sel_n`.
 >
 > Read the two MUXs in concurrent statements and understand what's going on.
 
@@ -140,8 +140,8 @@ signal f_sel : unsigned(1 downto 0) := "00";
     - `k_IO_width` is type **natural** set to `4`
 4. Declare the required signals
     - `w_clk`, `w_reset`
-    - `w_D3`, `w_D2`, `w_D1`, `w_D0`, and `o_data`
-    - `o_sel`
+    - `w_D3`, `w_D2`, `w_D1`, `w_D0`, and `f_data`
+    - `f_sel_n`
 5. Complete the port map
 6. Finish setting up the clk process to drive the TDM.
     This should resemble the FSM test benches.
