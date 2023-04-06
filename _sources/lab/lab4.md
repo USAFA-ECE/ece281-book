@@ -157,17 +157,149 @@ need will come from your previous in-class exercises and labs
 - All components should have their internal ports labeled so it is clear
     what a signal is being connected to.
 
-<!--
 ## Lab
 
 Clone code template from GitHub Classroom.
-Then open the project by double clicking `****.xpr`.
+Then open the project by double clicking `elevator_fsm.xpr`.
 
 ```{tip}
 Much of this code can be extracted from previous projects.
 Rather than open another Vivado project (and the confusion that comes with it),
 we suggest you **view your previous project's GitHub repository in your web browser**.
 ```
+
+### Basic Functionality
+
+First, directly implement the pre-lab scematic.
+
+#### Add files
+
+You will need to add VHDL files from your previous labs and ICEs to the project.
+Reference {ref}`manual-add-to-vivado-project`
+
+You need to add any design sources that you plan to bring in as a module.
+You do not need to bring in the testbench for these modules, since
+we have tested them in previous labs. However, you can if you'd like.
+
+#### Complete top level
+
+Using your Prelab drawing, complete the top-level module. Remember this basically involves:
+
+1. Copying in component definitions
+2. Creating additional signal wires
+3. Instantiating your component instances and connecting all wires
+
+For the clock divider, what value for k_DIV do you need to produce a 2 Hz clock?
+
+#### Simulation
+
+*A brief discussion on testing philosophy.*
+
+The type of testing you choose results in a tradeoff of **complexity** vs.
+how much **confidence** your test gives you that your design works.
+
+Each component within your top_level already has been simulated and tested.
+This is known as **unit testing** because you make sure that each
+unit (component) does what it is supposed to.
+Unit tests give you confidence that a single thing works and they are
+quick to write and run. But unit tests don't give you any information on how components
+will or won't work together.
+
+**Integration testing** tests if multiple units work together;
+for example, does the clock_divider indeed provide a slow clock to the FSM?
+While this type of testing is *awesome* for software design,
+it's difficult to do in hardware design.
+Rather than use a VHDL simulation, we have done our integration testing
+in previous ICEs and Labs by actually squirting to hardware.
+This is more complex and takes more time than unit tests do, but in turn
+we get greater confidence that the system works.
+
+For Lab 4, the only thing that isn't already tested is if the entire thing works!
+This type of testing is **end-to-end** testing. If the test passes then we know
+the entire system works. Unfortunately, end-to-end tests are also very complex to design and maintain.
+Because of this **you do not need to write a simulation test bench for this lab.**
+
+As engineers, part of our job is to determine what is the appropriate level of confidence
+and justify designing tests to meet that level. For this particular application,
+the cost of simulating an end-to-end test is too high, so we will debug on hardware (yikes!).
+
+#### Deliver
+
+- Don't forget to uncomment lines in you XDC file.
+- Generate bitstream and program device!
+- Show it to your instructor
+- Commit to git and **tag** (see below)
+
+> Demonstrate your basic functionality to your instructor.
+
+After you have demonstrated basic functionality, you want to make sure you
+save that result in case you ever need to go back to it. To do this we will
+use [git tag](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag).
+
+The normal flow:
+
+1. Type `git status` to see the current state
+2. Add all hardware files with `git add src/hdl/*.vhd`
+3. Add your constraints file with `git add src/hdl/*.xdc`
+4. Add you `.xpr` file.
+5. Add any other files you need to commit (like your bitstream)
+6. Run `git status` again to make sure you are good.
+7. Commit and push!
+8. Make sure your github action looks good
+
+```{note}
+Because we did not make a testbench to run, the GitHub Action simply runs
+[GHDL Synthesis](https://ghdl.github.io/ghdl/using/Synthesis.html#synthesis)
+
+This is an experimental feature.
+```
+
+Now for the annotated tag. The `-a` tells git to expect a message.
+The message can be whatever you'd like, but please be sure to tag as `basicFunc`.
+
+```bash
+git tag -a basicFunc -m "Four floor controller"
+```
+
+Now push the tag to GitHub
+
+```bash
+git push --follow-tags
+```
+
+You should now see the tag in your repository.
+
+```{figure} img/lab4_git_tag.png
+A tag saved in a GitHub repository
+```
+
+You can go back to this saved point at any time!
+
+```bash
+git checkout basicFunc
+```
+
+The point of a tag is that you cannot edit the branch.
+If for some reason you need to... use Google.
+
+> Push your tagged basic functionality to GitHub.
+
+### Advanced Functionality
+
+*After* demonstrating your basic functionality *and after* pushing your `basicFunc` tag to GitHub,
+it is time to implement advanced functionality!
+
+**Before** you start to code, update your schematic. This schematic will be submitted in the Lab 4 Report.
+
+> (Optional but recommended) Show your schematic to your instructor
+
+**After** you have finished your schematic, make it work!
+
+> Implement advanced functionality and demonstrate to instructor.
+
+Commit & push your changes.
+
+> Push changes for advanced functionality to GitHub.
 
 ## Deliverables
 
@@ -176,94 +308,20 @@ Below are the deliverables and point distributions for the Lab 3:
 | Deliverable           | Points |
 |-----------------------|--------|
 | Prelab                | 20     |
-| Hardware Demo         | 25     |
-| Passing GitHub Action | 25     |
+| Basic Controller Demo | 10     |
+| Advanced Demo         | 30     |
+| Passing GitHub Action | 10     |
 | Written Report        | 30     |
 
-**Documentation statements** will be in the README for any help on the Lab itself.
+The report will be very similar to Lab 3 Report requirements, with the following changes:
 
-```markdown
+Things to Exclude:
 
-## Documentation
-Your statement here.
-```
+- Do not include RTL schematics or discussion
+- There is no need to include a waveform
 
-Otherwise, the statement will be submitted on Gradescope
-(for the prelab and report).
+Things to Add:
 
-### Hardware Demo
-
-- Show your instructor your waveform *before* demoing the hardware.
-- Using left and right switches generates correct LED patterns with **[changes occurring at a rate of 4 Hz**
-- Holding the clock reset freezes the light patterns
-- Pressing the FSM reset *immediately* (i.e. asynchronously) resets the light patterns
-- Demo can be performed live with an instructor OR via a video link
-- You must show good test cases for full credit!
-
-### GitHub Actions
-
-- All `.vhd`, `.xdc`, `.xpr`, and `.bit` files committed to repository
-- Headers are modified appropriately
-- *Multiple* commits with *good* messages
-- **Remove extraneous code and comments**
-- Your comments explain what you are doing and why
-- Student testbench passes for `thunderbird_fsm_tb.vhd`
-- Instructor testbench passes for `top_basys3_tb.vhd`
-- README includes `## Documentation` statement
-- README includes a `.png` Waveform
-
-### Report
-
-The report will be submitted on Gradescope. Subsections are described below.
-The report should be kept to three pages, including diagrams.
-
-```{important}
-This report should be written in a professional, technical style.
-This means, among other things:
-- ~~Active voice should be used~~ Use **active voice**, in most cases. Occasionally passive voice is more appropriate,
-    but it should be a deliberate choice.
-- The use of **we** is appropriate.
-- Write sentences that make information understandable; such sentences are beautiful.
-
-Know your audience: the instructors have a strong background in the lab.
-We would rather see you showcase your ability to communicate your hard-earned knowledge
-than be bored with broad summaries.
-**The true art is to 1) provide *context* and 2) follow it with *consequence*.**
-```
-
-#### Front Matter
-
-- Title, Authors, page numbers, ect.
-- Documentation Statement for the Report only.
-- A two or three sentence summary of the **key takeaway** from this lab.
-    Don't drone on, make it a punchy answer to "So what? Who cares?"
-
-#### Simulation Results
-
-- Discuss your **overall approach** to testing.
-- Include your waveform.
-- Discuss **how simulation aided in testing** and iterating.
-- Show that you actually used the simulation to assist before moving to hardware.
-
-The waveform should:
-
-- Begin with a reset test to start the FSM in a known state
-- Clearly show well thought out test cases with correct results
-- Include all required signals, (i_clk, i_reset, i_left, i_right,
-    o_lights_L, o_lights_R, and your current and next state bits).
-- Light output busses expanded to easily see progression of lights
-- Ensure the simulation results waveforms have visible values for inputs and outputs.
-
-#### Architecture Design
-
-- Discuss your **overall approach** to architecture design and schematic construction.
-- Did you implement one-hot encoding or binary encoding? **Evaluate** your choice.
-- Include your neat (not hand-drawn) schematic.
-- Include the RTL schematic.
-- Discuss any differences between the two schematics.
-
-#### Conclusion
-
-- Your main takeaway!
-- What approaches will you continue or change when it comes Lab 4?
-- Feedback for the instructors on the lab. -->
+- Share your thoughts on mudlarity and abstraction
+- Discuss how your schematic changed (and what stayed the same) between Basic and Advanced Controllers
+- Discuss how you used TDM to get the Seven Segment Display functioning
