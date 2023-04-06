@@ -310,7 +310,7 @@ Below are the deliverables and point distributions for the Lab 3:
 | Passing GitHub Action | 10     |
 | Written Report        | 30     |
 
-The report will be very similar to Lab 3 Report requirements, with the following changes:
+The **2 page max** report will be very similar to Lab 3 Report requirements, with the following changes:
 
 Things to Exclude:
 
@@ -322,4 +322,5 @@ Things to Add:
 - Share your thoughts on mudlarity and abstraction
 - Discuss how your schematic changed (and what stayed the same) between Basic and Advanced Controllers
 - Discuss how you used TDM to get the Seven Segment Display functioning
+- How did you handle binary to decimal conversion for two displays?
 - What is the problem with the MASTER RESET?
