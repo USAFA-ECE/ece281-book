@@ -474,6 +474,8 @@ Basic Elevator Controller, shown in <a class="reference internal" href="#id1"><s
 <li><p>Three push buttons are to be used for resets</p></li>
 <li><p>The Master Reset button resets both the FSM <strong>and</strong> the clock.</p></li>
 <li><p>The reset floor is <strong>floor 2</strong>.</p></li>
+<li><p>LED 15 must be tied to the clock signal that drives the FSM.</p></li>
+<li><p>You <em>may</em> use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.</p></li>
 </ul>
 <p>This is the functionality who’s schematic you must design in the prelab.</p>
 </section>
@@ -544,8 +546,8 @@ These will be additional signals you will create in your VHDL code.</p></li>
 <li><p>Only turn on seven-segment display 2 (display 0 is the far right).
 Force the others OFF by disabling their anodes. Reference earlier
 activities regarding how to turn on/off displays.</p></li>
-<li><p>LED 15 should be connected to the clock signal that drives the FSM</p></li>
-<li><p>All other LEDs should be grounded.</p></li>
+<li><p>LED 15 must be tied to the clock signal that drives the FSM.</p></li>
+<li><p>You <em>may</em> use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.</p></li>
 <li><p>Just like in the last lab, the clock divider uses <em>generics</em> so that
 you can redefine characteristics at instantiation. For instance, you
 can redefine the number of times the clock divider divides a clock
