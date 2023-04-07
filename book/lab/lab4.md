@@ -54,6 +54,8 @@ Basic Elevator Controller user interface
 - Three push buttons are to be used for resets
 - The Master Reset button resets both the FSM **and** the clock.
 - The reset floor is **floor 2**.
+- LED 15 must be tied to the clock signal that drives the FSM.
+- You *may* use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.
 
 This is the functionality who's schematic you must design in the prelab.
 
@@ -132,8 +134,8 @@ need will come from your previous in-class exercises and labs
 - Only turn on seven-segment display 2 (display 0 is the far right).
     Force the others OFF by disabling their anodes. Reference earlier
     activities regarding how to turn on/off displays.
-- LED 15 should be connected to the clock signal that drives the FSM
-- All other LEDs should be grounded.
+- LED 15 must be tied to the clock signal that drives the FSM.
+- You *may* use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.
 - Just like in the last lab, the clock divider uses *generics* so that
     you can redefine characteristics at instantiation. For instance, you
     can redefine the number of times the clock divider divides a clock
