@@ -321,7 +321,7 @@ Things to Exclude:
 
 Things to Add:
 
-- Share your thoughts on mudlarity and abstraction
+- Share your thoughts on modularity and abstraction
 - Discuss how your schematic changed (and what stayed the same) between Basic and Advanced Controllers
 - Discuss how you used TDM to get the Seven Segment Display functioning
 - How did you handle binary to decimal conversion for two displays?
