@@ -568,13 +568,15 @@ LEDs are part of the output:</p>
 <section id="task-c">
 <h4>Task C<a class="headerlink" href="#task-c" title="Permalink to this heading">#</a></h4>
 <p>Augment the ALU to implement Addition, Subtraction, bit-wise OR, bit-wise AND,
-and logical shift operations on 8-bit two’s complement operands
-(values from <span class="math notranslate nohighlight">\(-128_d\)</span> to <span class="math notranslate nohighlight">\(127_d\)</span>) and display the result as a decimal number on the display.</p>
+left logical shift, and right logical shift operations
+on 8-bit two’s complement operands (values from <span class="math notranslate nohighlight">\(-128_d\)</span> to <span class="math notranslate nohighlight">\(127_d\)</span>).
+Display the result as a decimal number on the display.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is a <strong>logical shift</strong>, so there is no sign extension.</p>
 <p>The value of the first operand is shifted.
-The three least significant bits of the second operand specify how much to shift by.</p>
+The three least significant bits of the second operand specify how much to shift by.
+Left vs. Right shift are two different opcodes.</p>
 </div>
 <p>Use the <strong>center button</strong> on the BASYS3 board to step through the sames states as Task <span class="math notranslate nohighlight">\(B\)</span>.
 The LEDs should also match Task <span class="math notranslate nohighlight">\(B\)</span>.</p>

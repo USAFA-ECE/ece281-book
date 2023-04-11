@@ -124,14 +124,16 @@ LEDs are part of the output:
 #### Task C
 
 Augment the ALU to implement Addition, Subtraction, bit-wise OR, bit-wise AND,
-and logical shift operations on 8-bit two's complement operands
-(values from $-128_d$ to $127_d$) and display the result as a decimal number on the display.
+left logical shift, and right logical shift operations
+on 8-bit two's complement operands (values from $-128_d$ to $127_d$).
+Display the result as a decimal number on the display.
 
 ```{note}
 It is a **logical shift**, so there is no sign extension.
 
 The value of the first operand is shifted.
 The three least significant bits of the second operand specify how much to shift by.
+Left vs. Right shift are two different opcodes.
 ```
 
 Use the **center button** on the BASYS3 board to step through the sames states as Task $B$.
