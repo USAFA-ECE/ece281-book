@@ -179,3 +179,41 @@ This controller is responsible for cycling through the four CPU stages
 and ultimately controlling outputs.
 
 Draw the FSM diagram. You can draw it by hand as long as it is neat!
+
+## Lab
+
+Clone code template from GitHub Classroom and open the `.xpr`.
+
+You may take one of two approaches:
+
+1. Demo each of Task $A$, $B$, $C$ to your instructor.
+2. Demo only task $C$ to your instructor.
+
+However:
+
+If you choose **Option 1** you **must** push 3 git tags (like in Lab 3)
+to mark your progress on each task (i.e. `git tag -a taskA -m "ADD in hex"`).
+
+If you choose **Option 2** you **must** write a testbench for your ALU.
+The waveform from your ALU testbench must be submitted with your lab report.
+
+> Build the CPU.
+
+## Deliverables
+
+Below are the deliverables and point distributions for the Lab 4:
+
+| Deliverable           | Points |
+|-----------------------|--------|
+| Prelab                | 20     |
+| Demo                  | 30     |
+| Written Report        | 50     |
+
+The **2 page max** report will be very similar to Lab 4 Report requirements, with the following changes:
+
+- Explain why your CPU works
+- Discussion of your multiple-demo vs. ALU testbench approach
+- Discuss any challenges you had
+- Discuss your epic victories
+- Discuss how Assembly Code is ultimately executed on hardware
+- Note how many hours you spent on the lab and any feedback for the instructors on the lab.
