@@ -515,6 +515,8 @@ and display the result (including negative values in parts B and C) in decimal o
 </tr>
 </tbody>
 </table>
+<p>For all tasks, <strong>btnU</strong> should serve as the master reset (asynchronous preferred) for the
+FSM, clock divider, and anything else that should have a reset.</p>
 <section id="task-a">
 <h4>Task A<a class="headerlink" href="#task-a" title="Permalink to this heading">#</a></h4>
 <p>Implement an ALU that provides Addition only on two unsigned 8-bit operands and displays
@@ -536,8 +538,8 @@ Use the <strong>center button</strong> on the BASYS3 board to step through the f
 LEDs are part of the output:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0:3</span></code> - the state of the FSM (as one hot)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">7</span></code> - CPU Cout</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">9</span></code> - CPU zero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">13</span></code> - CPU Cout</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">14</span></code> - CPU zero</p></li>
 </ul>
 </section>
 <section id="task-b">
@@ -560,8 +562,8 @@ You will need to create a means to display a “-” sign.</p>
 LEDs are part of the output:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0:3</span></code> - the state of the FSM (as one hot)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">7</span></code> - CPU Cout</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">9</span></code> - CPU zero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">13</span></code> - CPU Cout</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">14</span></code> - CPU zero</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">15</span></code> - CPU sign</p></li>
 </ul>
 </section>
@@ -588,12 +590,29 @@ The LEDs should also match Task <span class="math notranslate nohighlight">\(B\)
 <p>Submit one submission per team on Gradescope.</p>
 <section id="schematics">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink">Schematics</a><a class="headerlink" href="#schematics" title="Permalink to this heading">#</a></h3>
-<p>You are responsible for two schematics for this Prelab.</p>
+<p>You are responsible for two schematics for this Prelab.
+They can both be done by hand, or digitally.</p>
 <ul class="simple">
-<li><p>Complete the top_basys3 schematic provided in <strong>Teams &gt; Lab5</strong>.</p></li>
-<li><p>Create an ALU schematic that is capable of accomplishing Task <span class="math notranslate nohighlight">\(C\)</span>.
-<strong>You cannot use a MUX larger than 4:1 in your ALU.</strong></p></li>
+<li><p>Complete the top_basys3 schematic in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lab5_top_level</span></code> (<strong>Teams &gt; Lab5</strong>).</p>
+<ul>
+<li><p>Use a color other than black</p></li>
+<li><p>All you need to do is name signals and unlabeled ports!</p></li>
+<li><p>For devices you plan to implement directly in the top_level
+instead of its own VHDL file, annotate with an ~~<a class="reference external" href="https://en.wikipedia.org/wiki/Asterix">asterix</a>~~ asterisk.</p></li>
 </ul>
+</li>
+<li><p>Create an ALU schematic that is capable of accomplishing Task <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<ul>
+<li><p>You cannot use a MUX larger than 4:1 in your ALU.</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default" id="lab5-top-level">
+<img alt="../_images/lab5_top_level.png" src="../_images/lab5_top_level.png" />
+<figcaption>
+<p><span class="caption-text">Partially complete Lab 5 top level - signals need to be labeled.</span><a class="headerlink" href="#lab5-top-level" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>A common way to implement addition and subtraction in an ALU is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">add_sub_gates</span></code>.</p>
 <figure class="align-default" id="add-sub-gates">
 <img alt="../_images/lab5_add_sub_gates.png" src="../_images/lab5_add_sub_gates.png" />
