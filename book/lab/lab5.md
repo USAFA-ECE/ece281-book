@@ -71,6 +71,9 @@ This lab has three functionality tasks: $A$, $B$, and $C$, summarized in {numref
 |    $C$          |     Task $B$, AND, OR, Shift   |     8-bit   2-comp      |     8-bit   2-comp      |     Decimal    |     fetch A, fetch B, execute, clear   |
 ```
 
+For all tasks, **btnU** should serve as the master reset (asynchronous preferred) for the
+FSM, clock divider, and anything else that should have a reset.
+
 #### Task A
 
 Implement an ALU that provides Addition only on two unsigned 8-bit operands and displays
@@ -93,8 +96,8 @@ In addition to the display of the result of the operation, the following
 LEDs are part of the output:
 
 - `0:3` - the state of the FSM (as one hot)
-- `7` - CPU Cout
-- `9` - CPU zero
+- `13` - CPU Cout
+- `14` - CPU zero
 
 #### Task B
 
@@ -117,8 +120,8 @@ In addition to the display of the result of the operation, the following
 LEDs are part of the output:
 
 - `0:3` - the state of the FSM (as one hot)
-- `7` - CPU Cout
-- `9` - CPU zero
+- `13` - CPU Cout
+- `14` - CPU zero
 - `15` - CPU sign
 
 #### Task C
@@ -146,10 +149,22 @@ Submit one submission per team on Gradescope.
 ### Schematics
 
 You are responsible for two schematics for this Prelab.
+They can both be done by hand, or digitally.
 
-- Complete the top_basys3 schematic provided in **Teams > Lab5**.
+- Complete the top_basys3 schematic in {numref}`lab5_top_level` (**Teams > Lab5**).
+    - Use a color other than black
+    - All you need to do is name signals and unlabeled ports!
+    - For devices you plan to implement directly in the top_level
+        instead of its own VHDL file, annotate with an ~~[asterix](https://en.wikipedia.org/wiki/Asterix)~~ asterisk.
 - Create an ALU schematic that is capable of accomplishing Task $C$.
-    **You cannot use a MUX larger than 4:1 in your ALU.**
+    - You cannot use a MUX larger than 4:1 in your ALU.
+
+```{figure} img/lab5_top_level.png
+---
+name: lab5_top_level
+---
+Partially complete Lab 5 top level - signals need to be labeled.
+```
 
 A common way to implement addition and subtraction in an ALU is shown in {numref}`add_sub_gates`.
 
