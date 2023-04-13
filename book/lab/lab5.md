@@ -151,7 +151,7 @@ Submit one submission per team on Gradescope.
 You are responsible for two schematics for this Prelab.
 They can both be done by hand, or digitally.
 
-- Complete the top_basys3 schematic in {numref}`lab5_top_level` (**Teams > Lab5**).
+- Complete the top_basys3 schematic in {numref}`lab5-top-level` (**Teams > Lab5**).
     - Use a color other than black
     - All you need to do is name signals and unlabeled ports!
     - For devices you plan to implement directly in the top_level
@@ -161,16 +161,16 @@ They can both be done by hand, or digitally.
 
 ```{figure} img/lab5_top_level.png
 ---
-name: lab5_top_level
+name: lab5-top-level
 ---
 Partially complete Lab 5 top level - signals need to be labeled.
 ```
 
-A common way to implement addition and subtraction in an ALU is shown in {numref}`add_sub_gates`.
+A common way to implement addition and subtraction in an ALU is shown in {numref}`add-sub-gates`.
 
 ```{figure} img/lab5_add_sub_gates.png
 ---
-name: add_sub_gates
+name: add-sub-gates
 ---
 A single select bit allows for addition and subtraction.
 ```
