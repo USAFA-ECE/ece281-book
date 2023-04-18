@@ -57,9 +57,7 @@ The instructions for this simple CPU will be executed in four cycles:
 3. Execute provided instruction on the Operands in memory
 4. Clear the display
 
-### Lab Flow
-
-This lab has three functionality tasks: $A$, $B$, and $C$, summarized in {numref}`alu-tasks`.
+### Lab Flow.
 
 ```{table} Lab 5 ALU Tasks
 :name: alu-tasks
@@ -70,6 +68,8 @@ This lab has three functionality tasks: $A$, $B$, and $C$, summarized in {numref
 |    $B$          |     Addition and Subtraction   |     8-bit   2-comp      |     8-bit   2-comp      |     Decimal    |     fetch A, fetch B, execute, clear   |
 |    $C$          |     Task $B$, AND, OR, Shift   |     8-bit   2-comp      |     8-bit   2-comp      |     Decimal    |     fetch A, fetch B, execute, clear   |
 ```
+
+This lab has three functionality tasks: $A$, $B$, and $C$, summarized in {numref}`alu-tasks`
 
 For all tasks, **btnU** should serve as the master reset (asynchronous preferred) for the
 FSM, clock divider, and anything else that should have a reset.
