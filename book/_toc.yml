@@ -23,6 +23,7 @@ parts:
       - file: lab/lab2
       - file: lab/lab3
       - file: lab/lab4
+      - file: lab/lab5
   - caption: Appendix
     chapters:
       - file: appendix/github.md
