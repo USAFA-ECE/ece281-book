@@ -69,6 +69,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GitHub real fast" href="../appendix/github.html" />
+    <link rel="prev" title="Lab 4 - Moore Elevator Controller" href="lab4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,12 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lab0.html">Lab 0: Install Vivado</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab4.html">Lab 4 - Moore Elevator Controller</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 5 - Basic CPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -480,7 +483,7 @@ and display the result (including negative values in parts B and C) in decimal o
 <section id="lab-flow">
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Lab Flow.</a><a class="headerlink" href="#lab-flow" title="Permalink to this heading">#</a></h3>
 <table class="table" id="alu-tasks">
-<caption><span class="caption-text">Lab 5 ALU Tasks</span><a class="headerlink" href="#alu-tasks" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Lab 5 ALU Tasks</span><a class="headerlink" href="#alu-tasks" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Lab Task</strong></p></th>
 <th class="head"><p>ALU Operation</p></th>
@@ -514,7 +517,7 @@ and display the result (including negative values in parts B and C) in decimal o
 </tr>
 </tbody>
 </table>
-<p>This lab has three functionality tasks: <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, summarized in <code class="xref std std-numref docutils literal notranslate"><span class="pre">alu-tasks</span></code></p>
+<p>This lab has three functionality tasks: <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, summarized in <a class="reference internal" href="#alu-tasks"><span class="std std-numref">Table 3</span></a></p>
 <p>For all tasks, <strong>btnU</strong> should serve as the master reset (asynchronous preferred) for the
 FSM, clock divider, and anything else that should have a reset.</p>
 <section id="task-a">
@@ -593,7 +596,7 @@ The LEDs should also match Task <span class="math notranslate nohighlight">\(B\)
 <p>You are responsible for two schematics for this Prelab.
 They can both be done by hand, or digitally.</p>
 <ul class="simple">
-<li><p>Complete the top_basys3 schematic in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lab5-top-level</span></code> (<strong>Teams &gt; Lab5</strong>).</p>
+<li><p>Complete the top_basys3 schematic in <a class="reference internal" href="#lab5-top-level"><span class="std std-numref">Fig. 45</span></a> (<strong>Teams &gt; Lab5</strong>).</p>
 <ul>
 <li><p>Use a color other than black</p></li>
 <li><p>All you need to do is name signals and unlabeled ports!</p></li>
@@ -610,14 +613,14 @@ instead of its own VHDL file, annotate with an ~~<a class="reference external" h
 <figure class="align-default" id="lab5-top-level">
 <img alt="../_images/lab5_top_level.png" src="../_images/lab5_top_level.png" />
 <figcaption>
-<p><span class="caption-text">Partially complete Lab 5 top level - signals need to be labeled.</span><a class="headerlink" href="#lab5-top-level" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Partially complete Lab 5 top level - signals need to be labeled.</span><a class="headerlink" href="#lab5-top-level" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>A common way to implement addition and subtraction in an ALU is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">add-sub-gates</span></code>.</p>
+<p>A common way to implement addition and subtraction in an ALU is shown in <a class="reference internal" href="#add-sub-gates"><span class="std std-numref">Fig. 46</span></a>.</p>
 <figure class="align-default" id="add-sub-gates">
 <img alt="../_images/lab5_add_sub_gates.png" src="../_images/lab5_add_sub_gates.png" />
 <figcaption>
-<p><span class="caption-text">A single select bit allows for addition and subtraction.</span><a class="headerlink" href="#add-sub-gates" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">A single select bit allows for addition and subtraction.</span><a class="headerlink" href="#add-sub-gates" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition tip">
@@ -722,6 +725,24 @@ The waveform from your ALU testbench must be submitted with your lab report.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="lab4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 4 - Moore Elevator Controller</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendix/github.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GitHub real fast</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
