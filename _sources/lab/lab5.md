@@ -223,7 +223,7 @@ Below are the deliverables and point distributions for the Lab 4:
 | Deliverable           | Points |
 |-----------------------|--------|
 | Prelab                | 20     |
-| Demo                  | 30     |
+| Demo(s)               | 30     |
 | Written Report        | 50     |
 
 The **2 page max** report will be very similar to Lab 4 Report requirements, with the following changes:
