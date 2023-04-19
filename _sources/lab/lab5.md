@@ -11,11 +11,11 @@ You will develop a basic CPU capable of Addition,
 Subtraction, AND, OR, and Shift operations in 3 phases!
 
 To do this, write, test, and implement a CPU on the Basys3 Development Board.
-A four-bit OPCODE and two six-bit operands will be input using the 16
+A three-bit OPCODE and two eight-bit operands will be input using the 16
 switches on the BASYS3 board. Upon pressing the center button, a
 seven-segment display will load the operands into the memory and then,
 upon a second push, will display the operands and output of the
-operation on the 4 digit seven segment display.
+operation on the 4-digit seven segment display.
 
 ### Authorized Resources
 
