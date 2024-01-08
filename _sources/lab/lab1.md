@@ -110,7 +110,7 @@ Now we will construct the same circuit in VHDL.
 
 ### Setup Vivado Project
 
-Just like in {ref}`setup-vivado-project`, join the github classroom assignment,
+Just like in {ref}`setup-vivado-project`, fork the [Lab 1 GitHub repository](https://github.com/USAFA-ECE/ece281-lab1),
 clone the project, and source the `build.tcl` file to setup the project.
 
 You should see the following files:

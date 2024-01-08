@@ -51,7 +51,7 @@ Stoplight state transition diagram
 
 ## Setup Vivado
 
-1. Clone the ice4 assignment from GitHub Classroom
+1. Fork and clone [ICE 4](https://github.com/USAFA-ECE/ece281-ice4)
 2. Open the folder
 3. Double click `stoplight.xpr` to open Vivado!
 

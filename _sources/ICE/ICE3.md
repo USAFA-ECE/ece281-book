@@ -105,13 +105,15 @@ Our goal will be to implement this in VHDL!
 
 ### Setup Vivado
 
-Just like in the previous ICE, we will get our starter code from GitHub Classroom.
+Just like in the previous ICE, we will create a fork of the repository.
 
-- Join the assignment to create your private copy of the repository
-- Clone the code to your local workstation
-- Build the project with `build.bat`
+- Navigate to https://github.com/USAFA-ECE/ece281-ice3
+- Fork the repository
+- Clone the repository
+- Open the project in Vivado
+- Modify the headers
 
-> Build your project, open it in Vivado, and modify headers.
+> Clone your repository, open it in Vivado, and modify headers.
 
 ### Import half adder
 

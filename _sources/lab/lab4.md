@@ -148,8 +148,8 @@ need will come from your previous in-class exercises and labs
 
 ## Lab
 
-Clone code template from GitHub Classroom.
-Then open the project by double clicking `elevator_fsm.xpr`.
+- Fork and clone [Lab 4](https://github.com/USAFA-ECE/ece281-lab4).
+- Open the project by double clicking `elevator_fsm.xpr`.
 
 ```{tip}
 Much of this code can be extracted from previous projects.

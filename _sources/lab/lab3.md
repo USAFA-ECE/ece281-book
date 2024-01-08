@@ -109,8 +109,8 @@ what **test cases** you will use to verify that your design is correct.
 
 ## Lab
 
-Clone code template from GitHub Classroom.
-Then open the project by double clicking `thunderbird.xpr`.
+- Fork and clone [Lab 3](https://github.com/USAFA-ECE/ece281-lab3)
+- Open the project by double clicking `thunderbird.xpr`.
 
 ```{tip}
 Much of this code can be extracted from [ICE4](https://usafa-ece.github.io/ece281-book/ICE/ICE4.html).
