@@ -199,7 +199,7 @@ Draw the FSM diagram. You can draw it by hand as long as it is neat!
 
 ## Lab
 
-Clone code template from GitHub Classroom and open the `.xpr`.
+- Fork and clone [Lab 5](https://github.com/USAFA-ECE/ece281-lab5).
 
 You may take one of two approaches:
 

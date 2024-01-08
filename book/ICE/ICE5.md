@@ -68,7 +68,7 @@ Elevator controller state machine
 
 ## Setup Vivado
 
-1. Clone the ice5 assignment from GitHub Classroom
+1. Fork and clone [ICE 5](https://github.com/USAFA-ECE/ece281-ice5)
 2. Open the folder
 3. Double click `elevatorController.xpr` to open Vivado!
 

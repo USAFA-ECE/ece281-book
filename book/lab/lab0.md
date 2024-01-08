@@ -14,7 +14,6 @@ This lab will have you:
 1. Install Vivado
 2. Setup a Vivado project
 3. Test our ability to squirt a bitstream to our FPGA
-4. Ensure GitHub classroom is setup
 
 ## Install Vivado
 

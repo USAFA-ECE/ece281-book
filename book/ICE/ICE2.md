@@ -134,17 +134,26 @@ We will then tell Viavdo to setup the project for us using a `build.tcl` file.
 
 ### Clone project with Git
 
-The template for this assignment is in GitHub Classroom.
-
-You instructor will post a link for you to join the assignment.
-Joining the assignment will create a private copy of the repository for you.
-
-Clone *your* newly created repository to your local computer.
+First, open Git Bash and `cd` to the folder you want to put your project code into.
+Remember that this *should not* be synced to One Drive!
 
 ```{hint}
 If you are in Windows Explorer, you can browse to where you want the cloned folder to be created.
 Then hold the "Shift" key and right click. On the menu you should now see an option to "Open Git Bash here..."
 This is an alternative to the `cd` command.
+```
+
+1. Browse to https://github.com/USAFA-ECE/ece281-ice2
+2. Click the **Fork** button in the upper right.
+3. You should see yourself as the new Owner. Click **Create Fork**.
+4. This will create a copy of repository under your account.
+5. Click the green **<> Code** button, **HTTPS**, and **copy** the URL
+6. Inside Git Bash, check where you are by "print working directory" by typing `pwd`.
+7. Inside Git Bash, type `git clone ` followed by the URL you copied.
+8. Press Enter. This may cause a login popup window. If it does, select **Browser** and authorize Git Bash.
+
+```{figure} img/ice2_gitclone.png
+Cloning with Git Bash
 ```
 
 See [Appendix > Github real fast](../appendix/github.md) if you need help cloning.
