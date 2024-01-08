@@ -28,7 +28,7 @@ In order to make sure Vivado was installed properly, we'll build the "Hello, Wor
 
 Get a local copy of the code located at [GitHub USAFA-ECE helloLed](https://github.com/USAFA-ECE/helloLed) by using `git clone`.
 
-First, copy the URL from GitHub. Use SSH if you have SSH keys working; otherwise, use HTTPS.
+First, copy the **HTTPS** URL from GitHub.
 
 ```{figure} img/lab0_githubclone.png
 Get the URL to clone from GitHub
@@ -41,7 +41,6 @@ Alternatively, use the explorer GUI to get to the folder you want,
 then right click > "Open in Terminal".
 
 ```bash
-# Use SSH if you have that working
 git clone https://github.com/USAFA-ECE/helloLed.git
 ```
 

@@ -25,7 +25,7 @@ The GitHub repository that builds this very website.
 See [GitHub Docs: Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?platform=windows)
 
 You can clone a repository with the `<> Code` dropdown menu.
-If you have SSH keys configured, prefer that. Otherwise, use HTTPS.
+You must use **HTTPS** instead of SSH if you are on MissionNet Wi-Fi.
 
 For example, to clone [USAFA-ECE/helloLed](https://github.com/USAFA-ECE/helloLed)
 
