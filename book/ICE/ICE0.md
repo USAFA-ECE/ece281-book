@@ -82,8 +82,6 @@ git config --global user.name <github user name>
 git config --global user.email "<github noreply email>@users.noreply.github.com"
 ```
 
-Your instructor will provide you an invite link in Teams to a "Git Basics" assignment. Completion of this assignment will walk you through all the steps for basic git operations.
-
 ## Install an IDE (optional)
 
 An integrated development environment (IDE) is software for building applications that combines common developer tools into a single graphical user interface (GUI).
