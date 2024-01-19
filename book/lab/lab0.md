@@ -39,6 +39,14 @@ Use `cd` to change directories from the terminal. Make a new directory with `mkd
 Alternatively, use the explorer GUI to get to the folder you want,
 then right click > "Open in Terminal".
 
+```{important}
+Place your Vivado code files into a local directory that
+**is not** backed up to OneDrive!
+
+OneDrive syncronization will cause conflicts with programatically
+managed project files. See Lesson 1 Notetaker.
+```
+
 ```bash
 git clone https://github.com/USAFA-ECE/helloLed.git
 ```
@@ -50,6 +58,13 @@ But for now, in the newly cloned helloLed folder,
 
 1. Run the `build.bat` file
 2. Double click the generated `helloLed.xpr` to open it in Vivado
+
+```{note}
+The `build.bat` process sometimes works better than others.
+While this is the technically appropriate approach,
+other ICEs and Labs will likely include the `.xpr` and you
+can just double-click that.
+```
 
 ### Test Vivado project
 
