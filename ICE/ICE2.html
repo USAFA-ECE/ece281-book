@@ -408,7 +408,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vivado-project">Setup Vivado Project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-project-with-git">Clone project with Git</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-project-with-vivado">Build the project with Vivado</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-project-in-vivado">View project in Vivado</a></li>
 </ul>
 </li>
@@ -429,7 +428,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-project">Test project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-project">Simulate project</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-wave-configuration">Remember wave configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optional">Optional</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-wave-configuration">Remember wave configuration</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rtl-and-technology-schematics">RTL and Technology Schematics</a><ul class="nav section-nav flex-column">
@@ -486,37 +488,36 @@ when it comes time to do the labs.</p>
 <li><p><a class="reference internal" href="#setup-vivado-project" id="id10">Setup Vivado Project</a></p>
 <ul>
 <li><p><a class="reference internal" href="#clone-project-with-git" id="id11">Clone project with Git</a></p></li>
-<li><p><a class="reference internal" href="#build-the-project-with-vivado" id="id12">Build the project with Vivado</a></p></li>
-<li><p><a class="reference internal" href="#view-project-in-vivado" id="id13">View project in Vivado</a></p></li>
+<li><p><a class="reference internal" href="#view-project-in-vivado" id="id12">View project in Vivado</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#edit-your-half-adder-implementation" id="id14">Edit your half-adder implementation</a></p>
+<li><p><a class="reference internal" href="#edit-your-half-adder-implementation" id="id13">Edit your half-adder implementation</a></p>
 <ul>
-<li><p><a class="reference internal" href="#understand-file" id="id15">Understand file</a></p></li>
-<li><p><a class="reference internal" href="#modify-half-adder-entity" id="id16">Modify half-adder entity</a></p></li>
-<li><p><a class="reference internal" href="#modify-the-half-adder-architecture" id="id17">Modify the half-adder architecture</a></p></li>
+<li><p><a class="reference internal" href="#understand-file" id="id14">Understand file</a></p></li>
+<li><p><a class="reference internal" href="#modify-half-adder-entity" id="id15">Modify half-adder entity</a></p></li>
+<li><p><a class="reference internal" href="#modify-the-half-adder-architecture" id="id16">Modify the half-adder architecture</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#test-design" id="id18">Test design</a></p>
+<li><p><a class="reference internal" href="#test-design" id="id17">Test design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#edit-your-half-adder-testbench" id="id19">Edit your half-adder testbench</a></p></li>
-<li><p><a class="reference internal" href="#check-syntax" id="id20">Check syntax</a></p></li>
+<li><p><a class="reference internal" href="#edit-your-half-adder-testbench" id="id18">Edit your half-adder testbench</a></p></li>
+<li><p><a class="reference internal" href="#check-syntax" id="id19">Check syntax</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#test-project" id="id21">Test project</a></p>
+<li><p><a class="reference internal" href="#test-project" id="id20">Test project</a></p>
 <ul>
-<li><p><a class="reference internal" href="#simulate-project" id="id22">Simulate project</a></p></li>
-<li><p><a class="reference internal" href="#rtl-and-technology-schematics" id="id23">RTL and Technology Schematics</a></p></li>
+<li><p><a class="reference internal" href="#simulate-project" id="id21">Simulate project</a></p></li>
+<li><p><a class="reference internal" href="#rtl-and-technology-schematics" id="id22">RTL and Technology Schematics</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#implement-design" id="id24">Implement design</a></p>
+<li><p><a class="reference internal" href="#implement-design" id="id23">Implement design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#edit-the-constraints-file" id="id25">Edit the constraints file</a></p></li>
-<li><p><a class="reference internal" href="#implement-and-generate-bitstream" id="id26">Implement and generate bitstream</a></p></li>
+<li><p><a class="reference internal" href="#edit-the-constraints-file" id="id24">Edit the constraints file</a></p></li>
+<li><p><a class="reference internal" href="#implement-and-generate-bitstream" id="id25">Implement and generate bitstream</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#download-onto-fpga-and-test" id="id27">Download onto FPGA and test</a></p></li>
-<li><p><a class="reference internal" href="#wrapping-up" id="id28">Wrapping up</a></p></li>
+<li><p><a class="reference internal" href="#download-onto-fpga-and-test" id="id26">Download onto FPGA and test</a></p></li>
+<li><p><a class="reference internal" href="#wrapping-up" id="id27">Wrapping up</a></p></li>
 </ul>
 </nav>
 <section id="overview">
@@ -539,7 +540,8 @@ logic design in VHDL.</p>
 <h3><a class="toc-backref" href="#id5" role="doc-backlink">End state</a><a class="headerlink" href="#end-state" title="Permalink to this heading">#</a></h3>
 <p>You will provide a live demo to your instructor or provide proof of
 functionality to receive credit (Due Lesson 8). You must also turn in
-the files you used through Git. Your instructor will be able to view
+the files you used through Git + Gradescope.</p>
+<p>Your instructor will be able to view
 your ICE2 folder through Git. The folder will contain at least the
 following:</p>
 <ol class="arabic simple">
@@ -571,7 +573,13 @@ exercise and throughout the course.</p>
 <section id="half-adder">
 <span id="half-adder-traits"></span><h3><a class="toc-backref" href="#id8" role="doc-backlink">Half-adder</a><a class="headerlink" href="#half-adder" title="Permalink to this heading">#</a></h3>
 <p>A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 10.1 of your textbook. <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 12</span></a> shows the schematic symbol.</p>
+read more about half-adders in Section 5.1 (page 238) of your textbook.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><em>Digital Design and Computer Architecture</em> really is a <strong>great</strong> textbook.
+It’s worth the time to go read the page on half and full adders.</p>
+</div>
+<p><a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 12</span></a> shows the schematic symbol.</p>
 <figure class="align-default" id="half-adder-schem">
 <img alt="../_images/ice2_halfadder.png" src="../_images/ice2_halfadder.png" />
 <figcaption>
@@ -651,8 +659,7 @@ An FPGA can be programmed to be many circuits.</p>
 <li><p>Simulation Sources (<code class="docutils literal notranslate"><span class="pre">.vhd</span></code>)</p></li>
 </ul>
 <p>You can also add files to an existing project. For instructions on how to do this, see <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a></p>
-<p>But <strong>good news</strong> 🥳🎉 we will be using Git to clone an already created project.
-We will then tell Viavdo to setup the project for us using a <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> file.</p>
+<p>But <strong>good news</strong> we will be using Git to clone an already created project. 🥳🎉</p>
 <section id="clone-project-with-git">
 <h3><a class="toc-backref" href="#id11" role="doc-backlink">Clone project with Git</a><a class="headerlink" href="#clone-project-with-git" title="Permalink to this heading">#</a></h3>
 <p>First, open Git Bash and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the folder you want to put your project code into.
@@ -680,32 +687,12 @@ This is an alternative to the <code class="docutils literal notranslate"><span c
 </figcaption>
 </figure>
 <p>See <a class="reference internal" href="../appendix/github.html"><span class="doc std std-doc">Appendix &gt; Github real fast</span></a> if you need help cloning.</p>
-</section>
-<section id="build-the-project-with-vivado">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">Build the project with Vivado</a><a class="headerlink" href="#build-the-project-with-vivado" title="Permalink to this heading">#</a></h3>
-<p>Once you have cloned the folder, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into it with git bash.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ece281#tab<span class="w"> </span>to<span class="w"> </span>auto-complete<span class="w"> </span>the<span class="w"> </span>folder<span class="w"> </span>name
-</pre></div>
-</div>
-<p>Run <code class="docutils literal notranslate"><span class="pre">ls</span></code> to view the files. You should see a file called <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code>.
-You should also see a file called <code class="docutils literal notranslate"><span class="pre">build.bat</span></code>.</p>
-<p>Because we are cyber security conscious, we <em>always</em> read <code class="docutils literal notranslate"><span class="pre">.bat</span></code> files before running them.</p>
-<p>Make bash print out the contents:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>build.bat
-</pre></div>
-</div>
-<p>What does it look like the one-liner is doing?</p>
-<p>If it looks good to you, go ahead and execute <code class="docutils literal notranslate"><span class="pre">build.bat</span></code> by double-clicking it in the explorer window.</p>
-<p>Now run <code class="docutils literal notranslate"><span class="pre">ls</span></code> again and you should see a bunch of newly created files. Vivado build them for us!</p>
-<p>You can open the project in Vivado by opening the <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file.
-If you are having trouble locating the file, you can open the explorer to the directory your terminal is already in.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># you need the . to make it open in this dir</span>
-<span class="n">explorer</span><span class="p">.</span><span class="n">exe</span> <span class="p">.</span>
-</pre></div>
-</div>
+<blockquote>
+<div><p>Open <strong>halfAdder.xpr</strong> in Vivado by double clicking on it.</p>
+</div></blockquote>
 </section>
 <section id="view-project-in-vivado">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">View project in Vivado</a><a class="headerlink" href="#view-project-in-vivado" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">View project in Vivado</a><a class="headerlink" href="#view-project-in-vivado" title="Permalink to this heading">#</a></h3>
 <p>Now that our project is open in Vivado, let’s explore it.</p>
 <p>We said earlier that we have</p>
 <ul class="simple">
@@ -729,10 +716,10 @@ You can now see them assigned appropriately under “Sources”</p>
 </section>
 </section>
 <section id="edit-your-half-adder-implementation">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Edit your half-adder implementation</a><a class="headerlink" href="#edit-your-half-adder-implementation" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Edit your half-adder implementation</a><a class="headerlink" href="#edit-your-half-adder-implementation" title="Permalink to this heading">#</a></h2>
 <p>In Vivado open <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code>.</p>
 <section id="understand-file">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Understand file</a><a class="headerlink" href="#understand-file" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Understand file</a><a class="headerlink" href="#understand-file" title="Permalink to this heading">#</a></h3>
 <section id="file-header">
 <h4>File header<a class="headerlink" href="#file-header" title="Permalink to this heading">#</a></h4>
 <p>The first thing you will notice is that the file contains a block of
@@ -799,7 +786,7 @@ languages.</p>
 </section>
 </section>
 <section id="modify-half-adder-entity">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Modify half-adder entity</a><a class="headerlink" href="#modify-half-adder-entity" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Modify half-adder entity</a><a class="headerlink" href="#modify-half-adder-entity" title="Permalink to this heading">#</a></h3>
 <p>Remember the half-adder schematic in <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 12</span></a>. This is what we are trying to create.</p>
 <p><img alt="half-adder architecture" src="../_images/ice2_halfadder.png" /></p>
 <p>But! This conceptual device has no way for us to interact with it. However, if we go one level of abstraction lower:</p>
@@ -830,8 +817,17 @@ outputs. In other words, it describes the interface of a “black box”.</p>
 <span class="k">end</span><span class="w"> </span><span class="nc">halfAdder</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Note, the port names are preceded by an <code class="docutils literal notranslate"><span class="pre">i_</span></code> for input and an <code class="docutils literal notranslate"><span class="pre">o_</span></code> for
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We just mad a big jump in terms of abstraction.
+If you don’t understand why the funny pants looking thing
+<em>is</em> the <code class="docutils literal notranslate"><span class="pre">halfAdder</span></code> entity, talk it over with a classmate now.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The port names are preceded by an <code class="docutils literal notranslate"><span class="pre">i_</span></code> for input and an <code class="docutils literal notranslate"><span class="pre">o_</span></code> for
 output per the naming convention in our file header.</p>
+</div>
 <p>The inputs and output ports are signals described by the pattern</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;portName&gt; : &lt;mode&gt; &lt;signalType&gt;
 </pre></div>
@@ -844,7 +840,7 @@ is more like a bus (multiple digital signals in parallel).</p>
 </div></blockquote>
 </section>
 <section id="modify-the-half-adder-architecture">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Modify the half-adder architecture</a><a class="headerlink" href="#modify-the-half-adder-architecture" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Modify the half-adder architecture</a><a class="headerlink" href="#modify-the-half-adder-architecture" title="Permalink to this heading">#</a></h3>
 <p>The architecture is the guts of an entity. It is the internal logic that
 makes it <em>do</em> something.</p>
 <p>Recall our logic equations for the half-adder are</p>
@@ -893,7 +889,7 @@ zyBook may be helpful if you are stuck.</p>
 </section>
 </section>
 <section id="test-design">
-<h2><a class="toc-backref" href="#id18" role="doc-backlink">Test design</a><a class="headerlink" href="#test-design" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Test design</a><a class="headerlink" href="#test-design" title="Permalink to this heading">#</a></h2>
 <p>At this point your testbench VHDL file <code class="docutils literal notranslate"><span class="pre">halfAdder_tb.vhd</span></code> should already
 be added. If not, go back and add it per the directions in <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a>.</p>
 <div class="admonition tip">
@@ -901,7 +897,7 @@ be added. If not, go back and add it per the directions in <a class="reference i
 <p>Generally, your testbench files will have the same name as the component you are testing with them but with a <code class="docutils literal notranslate"><span class="pre">_tb</span></code> at the end.</p>
 </div>
 <section id="edit-your-half-adder-testbench">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">Edit your half-adder testbench</a><a class="headerlink" href="#edit-your-half-adder-testbench" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Edit your half-adder testbench</a><a class="headerlink" href="#edit-your-half-adder-testbench" title="Permalink to this heading">#</a></h3>
 <p>Open your testbench file in a text editor. Note the header has
 <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> as a REQUIRED FILE.</p>
 <p>The entity in this file is the testbench itself, which is empty as shown
@@ -987,21 +983,23 @@ and <code class="docutils literal notranslate"><span class="pre">w_sw1</span></c
 and if it isn’t then <strong>report</strong> this message.”</p>
 </div>
 <p>We should write the message to be helpful to ourselves while debugging.
-There are other severity levels, but we will use “failure” here.
-The “error” level generates a message but will continue to execute the test instead of exiting immediately.</p>
+There are other severity levels, but we will use “error” here.
+The “error” level generates a message but will continue to execute the test instead of exiting immediately.
+We could use “failure” - which would immediately halt the test - but that
+can make debugging difficult.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Test Plan Process --------------------------------</span>
 <span class="w">  </span><span class="n">test_process</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">process</span>
 <span class="w">  </span><span class="k">begin</span>
 
 <span class="w">    </span><span class="n">w_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">w_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
-<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
 <span class="w">    </span><span class="n">w_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">w_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
-<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
 <span class="w">    </span><span class="n">w_sw1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span><span class="w"> </span><span class="n">w_sw0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
-<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad sum&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="w">      </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad carry&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">-- TODO:  rest of test plan</span>
 
 <span class="w">    </span><span class="k">wait</span><span class="p">;</span><span class="w"> </span><span class="c1">-- wait forever</span>
@@ -1014,7 +1012,7 @@ The “error” level generates a message but will continue to execute the test 
 </div></blockquote>
 </section>
 <section id="check-syntax">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink">Check syntax</a><a class="headerlink" href="#check-syntax" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Check syntax</a><a class="headerlink" href="#check-syntax" title="Permalink to this heading">#</a></h3>
 <p>While you edit your code in Vivado, it checks the syntax. If
 everything is good you should see a green box in the upper right-hand
 corner of your editor window. If you hover your mouse over the green box
@@ -1024,10 +1022,10 @@ right-hand margin indicate locations of syntax errors.</p>
 </section>
 </section>
 <section id="test-project">
-<h2><a class="toc-backref" href="#id21" role="doc-backlink">Test project</a><a class="headerlink" href="#test-project" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Test project</a><a class="headerlink" href="#test-project" title="Permalink to this heading">#</a></h2>
 <p>Testing our project involves simulation and viewing schematics.</p>
 <section id="simulate-project">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink">Simulate project</a><a class="headerlink" href="#simulate-project" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Simulate project</a><a class="headerlink" href="#simulate-project" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>In the Flow Navigator (the left panel), <strong>right</strong> click on “Run
 Simulation” and select “Simulation Settings”</p></li>
@@ -1045,6 +1043,10 @@ or adjust the zoom window as needed to see the time periods of interest
 <img alt="zoom fit" src="../_images/ice2_image24.jpg" /></p></li>
 <li><p>Verify that the waveforms show your design is working correctly
 (inputs and outputs should match truth table)</p></li>
+</ol>
+<section id="optional">
+<h4>Optional<a class="headerlink" href="#optional" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
 <li><p>Try changing the outputs to different colors by right clicking on
 the signals and selecting <strong>Signal Color</strong>.</p></li>
 <li><p>Rename signals to show what they correspond to (e.g., A) and define
@@ -1052,12 +1054,12 @@ virtual busses for your inputs and outputs as shown in the figure
 below. To define a virtual bus, simply highlight multiple signals
 and right click. Then, select “<strong>Virtual Bus</strong>” and name it as
 desired.</p></li>
-</ol>
+</ul>
 <p><img alt="virtual bus" src="../_images/ice2_image25.jpg" /></p>
 <p>Note, the wave editor also allows you to view data in different formats.
 Right click on a number in the “Value” column and select <strong>Radix</strong>.</p>
 <section id="remember-wave-configuration">
-<h4>Remember wave configuration<a class="headerlink" href="#remember-wave-configuration" title="Permalink to this heading">#</a></h4>
+<h5>Remember wave configuration<a class="headerlink" href="#remember-wave-configuration" title="Permalink to this heading">#</a></h5>
 <!---
 TODO: Tell where to save .wcfg so git can use it
 --->
@@ -1068,8 +1070,9 @@ Saving it to the main project folder is fine. Click OK to add it to your project
 Now future runs of your simulation will use the same settings!</p>
 </section>
 </section>
+</section>
 <section id="rtl-and-technology-schematics">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">RTL and Technology Schematics</a><a class="headerlink" href="#rtl-and-technology-schematics" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">RTL and Technology Schematics</a><a class="headerlink" href="#rtl-and-technology-schematics" title="Permalink to this heading">#</a></h3>
 <section id="view-rtl-schematic">
 <h4>View RTL Schematic<a class="headerlink" href="#view-rtl-schematic" title="Permalink to this heading">#</a></h4>
 <p>A Register Transfer Level (RTL) schematic is a gate-level schematic that
@@ -1116,9 +1119,9 @@ bottom of the “Cell Properties” sub-window.</p>
 </section>
 </section>
 <section id="implement-design">
-<h2><a class="toc-backref" href="#id24" role="doc-backlink">Implement design</a><a class="headerlink" href="#implement-design" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">Implement design</a><a class="headerlink" href="#implement-design" title="Permalink to this heading">#</a></h2>
 <section id="edit-the-constraints-file">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink">Edit the constraints file</a><a class="headerlink" href="#edit-the-constraints-file" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Edit the constraints file</a><a class="headerlink" href="#edit-the-constraints-file" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Click on the Project Manager in the Flow Navigator</p></li>
 <li><p>Double click on the Basys3_Master.xdc file in the Sources sub-window
@@ -1158,7 +1161,7 @@ set_property PACKAGE_PIN V17 [get_ports {i_B}]
 <p>Save the constraints file (CTRL+s)</p>
 </section>
 <section id="implement-and-generate-bitstream">
-<h3><a class="toc-backref" href="#id26" role="doc-backlink">Implement and generate bitstream</a><a class="headerlink" href="#implement-and-generate-bitstream" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Implement and generate bitstream</a><a class="headerlink" href="#implement-and-generate-bitstream" title="Permalink to this heading">#</a></h3>
 <p>In the Flow Navigator, click on <strong>Generate Bitstream</strong></p>
 <ul class="simple">
 <li><p>Click <strong>YES</strong> to run Synthesis and Implementation as required and then <strong>OK</strong> to start the job</p></li>
@@ -1169,7 +1172,7 @@ set_property PACKAGE_PIN V17 [get_ports {i_B}]
 </section>
 </section>
 <section id="download-onto-fpga-and-test">
-<span id="download-onto-fpga"></span><h2><a class="toc-backref" href="#id27" role="doc-backlink">Download onto FPGA and test</a><a class="headerlink" href="#download-onto-fpga-and-test" title="Permalink to this heading">#</a></h2>
+<span id="download-onto-fpga"></span><h2><a class="toc-backref" href="#id26" role="doc-backlink">Download onto FPGA and test</a><a class="headerlink" href="#download-onto-fpga-and-test" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Plug in your BASYS 3 board and turn it on using the switch on the board next to the USB connector. If you don’t see numbers on the LED displays, consult an instructor.</p></li>
 <li><p>Verify the drivers installed correctly. You may need to <a class="reference external" href="https://support.microsoft.com/en-us/windows/options-to-optimize-gaming-performance-in-windows-11-a255f612-2949-4373-a566-ff6f3f474613#:~:text=turning%20off%20memory%20integrity">turn off Windows Memory Integrity</a>.</p></li>
@@ -1200,32 +1203,30 @@ you can directly open the Hardware Manager from the main Vivado
 menu. Simply select the correct <code class="docutils literal notranslate"><span class="pre">.bit</span></code> file.</p>
 </div>
 <blockquote>
-<div><p>Add a Documentation statement to your README. The documentation <em>must</em> take the following form. Emphasis on the <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Documentation</span></code> because we use a regular expression to check that it exists.</p>
-</div></blockquote>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Documentation</span>
-
-your statement here
-</pre></div>
-</div>
-<p>Then</p>
-<blockquote>
 <div><p>Commit your README changes along with your <code class="docutils literal notranslate"><span class="pre">.bit</span></code> file. Use what you learned in BCE0 and the “Git Real Fast” guide!
 Push your changes to your remote repository on Github
 Verify the Github Action ran successfully.</p>
 </div></blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Github Actions are verification code that runs whenever you push anything to Github. If you open your repository on <a class="reference external" href="http://github.com">github.com</a> and click on the “Actions” tab, you should see one Action run for each time you pushed. A green check mark ✅ confirms that your code passes all tests!</p>
+<p>Github Actions are verification code that runs whenever you push anything to Github. If you open your repository on GitHub and click on the “Actions” tab, you should see one Action run for each time you pushed. A green check mark ✅ confirms that your code passes all tests!</p>
 </div>
 </section>
 <section id="wrapping-up">
-<h2><a class="toc-backref" href="#id28" role="doc-backlink">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Double check that you have everything <strong>committed</strong> to your git repo.</p></li>
 <li><p>Then <strong>push</strong> your changes to your repo.</p></li>
 <li><p>Make sure all your work appears on GitHub as you expect</p></li>
 <li><p>Verify that the Action ran successfully on GitHub.</p></li>
+<li><p>Go to ICE 2 on <a class="reference external" href="https://www.gradescope.com/">Gradescope</a></p></li>
+<li><p>Submit your code by pointing Gradescope to your GitHub repository.</p></li>
+<li><p>Check to make sure the autograder ran.</p></li>
 </ol>
+<blockquote>
+<div><p>When all is said and done, you should have working VHDL submitted
+into Gradescope via GitHub <em>and</em> have demo’d to your instructor.</p>
+</div></blockquote>
 <p>Congratulations, you have completed In Class Exercise 2!</p>
 </section>
 </section>
@@ -1307,7 +1308,6 @@ Verify the Github Action ran successfully.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vivado-project">Setup Vivado Project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-project-with-git">Clone project with Git</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-project-with-vivado">Build the project with Vivado</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-project-in-vivado">View project in Vivado</a></li>
 </ul>
 </li>
@@ -1328,7 +1328,10 @@ Verify the Github Action ran successfully.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-project">Test project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-project">Simulate project</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-wave-configuration">Remember wave configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optional">Optional</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-wave-configuration">Remember wave configuration</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rtl-and-technology-schematics">RTL and Technology Schematics</a><ul class="nav section-nav flex-column">

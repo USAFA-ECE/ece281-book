@@ -37,7 +37,9 @@ The objectives of this in-class exercise are for you to:
 
 You will provide a live demo to your instructor or provide proof of
 functionality to receive credit (Due Lesson 8). You must also turn in
-the files you used through Git. Your instructor will be able to view
+the files you used through Git + Gradescope.
+
+Your instructor will be able to view
 your ICE2 folder through Git. The folder will contain at least the
 following:
 
@@ -70,7 +72,14 @@ exercise and throughout the course.
 ### Half-adder
 
 A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 10.1 of your textbook. {numref}`half-adder-schem` shows the schematic symbol.
+read more about half-adders in Section 5.1 (page 238) of your textbook.
+
+```{tip}
+*Digital Design and Computer Architecture* really is a **great** textbook.
+It's worth the time to go read the page on half and full adders.
+```
+
+{numref}`half-adder-schem` shows the schematic symbol.
 
 ```{figure} img/ice2_halfadder.png
 ---
@@ -129,8 +138,7 @@ You can create a Viavado project from scratch. This involves telling the suite a
 
 You can also add files to an existing project. For instructions on how to do this, see {ref}`manual-add-to-vivado-project`
 
-But **good news** 🥳🎉 we will be using Git to clone an already created project.
-We will then tell Viavdo to setup the project for us using a `build.tcl` file.
+But **good news** we will be using Git to clone an already created project. 🥳🎉
 
 ### Clone project with Git
 
@@ -158,38 +166,7 @@ Cloning with Git Bash
 
 See [Appendix > Github real fast](../appendix/github.md) if you need help cloning.
 
-### Build the project with Vivado
-
-Once you have cloned the folder, `cd` into it with git bash.
-
-```bash
-cd ece281#tab to auto-complete the folder name
-```
-
-Run `ls` to view the files. You should see a file called `build.tcl`.
-You should also see a file called `build.bat`.
-
-Because we are cyber security conscious, we *always* read `.bat` files before running them.
-
-Make bash print out the contents:
-
-```bash
-cat build.bat
-```
-
-What does it look like the one-liner is doing?
-
-If it looks good to you, go ahead and execute `build.bat` by double-clicking it in the explorer window.
-
-Now run `ls` again and you should see a bunch of newly created files. Vivado build them for us!
-
-You can open the project in Vivado by opening the `.xpr` file.
-If you are having trouble locating the file, you can open the explorer to the directory your terminal is already in.
-
-```powershell
-# you need the . to make it open in this dir
-explorer.exe .
-```
+> Open **halfAdder.xpr** in Vivado by double clicking on it.
 
 ### View project in Vivado
 
@@ -333,8 +310,16 @@ entity halfAdder is
 end halfAdder;
 ```
 
-Note, the port names are preceded by an `i_` for input and an `o_` for
+```{warning}
+We just mad a big jump in terms of abstraction.
+If you don't understand why the funny pants looking thing
+*is* the `halfAdder` entity, talk it over with a classmate now.
+```
+
+```{note}
+The port names are preceded by an `i_` for input and an `o_` for
 output per the naming convention in our file header.
+```
 
 The inputs and output ports are signals described by the pattern
 
@@ -513,8 +498,10 @@ and if it isn't then **report** this message."
 ```
 
 We should write the message to be helpful to ourselves while debugging.
-There are other severity levels, but we will use "failure" here.
+There are other severity levels, but we will use "error" here.
 The "error" level generates a message but will continue to execute the test instead of exiting immediately.
+We could use "failure" - which would immediately halt the test - but that
+can make debugging difficult.
 
 ```vhdl
 -- Test Plan Process --------------------------------
@@ -522,14 +509,14 @@ The "error" level generates a message but will continue to execute the test inst
   begin
 
     w_sw1 <= '0'; w_sw0 <= '0'; wait for 10 ns;
-      assert w_led0 = '0' report "bad sum" severity failure;
-      assert w_led1 = '0' report "bad carry" severity failure;
+      assert w_led0 = '0' report "bad sum" severity error;
+      assert w_led1 = '0' report "bad carry" severity error;
     w_sw1 <= '0'; w_sw0 <= '1'; wait for 10 ns;
-      assert w_led0 = '1' report "bad sum" severity failure;
-      assert w_led1 = '0' report "bad carry" severity failure;
+      assert w_led0 = '1' report "bad sum" severity error;
+      assert w_led1 = '0' report "bad carry" severity error;
     w_sw1 <= '1'; w_sw0 <= '0'; wait for 10 ns;
-      assert w_led0 = '1' report "bad sum" severity failure;
-      assert w_led1 = '0' report "bad carry" severity failure;
+      assert w_led0 = '1' report "bad sum" severity error;
+      assert w_led1 = '0' report "bad carry" severity error;
     -- TODO:  rest of test plan
 
     wait; -- wait forever
@@ -573,9 +560,12 @@ Testing our project involves simulation and viewing schematics.
 
 6. Verify that the waveforms show your design is working correctly
   (inputs and outputs should match truth table)
-7. Try changing the outputs to different colors by right clicking on
+
+#### Optional
+
+- Try changing the outputs to different colors by right clicking on
     the signals and selecting **Signal Color**.
-8. Rename signals to show what they correspond to (e.g., A) and define
+- Rename signals to show what they correspond to (e.g., A) and define
     virtual busses for your inputs and outputs as shown in the figure
     below. To define a virtual bus, simply highlight multiple signals
     and right click. Then, select "**Virtual Bus**" and name it as
@@ -586,7 +576,7 @@ Testing our project involves simulation and viewing schematics.
 Note, the wave editor also allows you to view data in different formats.
 Right click on a number in the "Value" column and select **Radix**.
 
-#### Remember wave configuration
+##### Remember wave configuration
 
 <!---
 TODO: Tell where to save .wcfg so git can use it
@@ -739,22 +729,12 @@ you can directly open the Hardware Manager from the main Vivado
 menu. Simply select the correct `.bit` file.
 ```
 
-> Add a Documentation statement to your README. The documentation *must* take the following form. Emphasis on the `## Documentation` because we use a regular expression to check that it exists.
-
-```markdown
-## Documentation
-
-your statement here
-```
-
-Then
-
 > Commit your README changes along with your `.bit` file. Use what you learned in BCE0 and the "Git Real Fast" guide!
 > Push your changes to your remote repository on Github
 > Verify the Github Action ran successfully.
 
 ```{tip}
-Github Actions are verification code that runs whenever you push anything to Github. If you open your repository on github.com and click on the "Actions" tab, you should see one Action run for each time you pushed. A green check mark ✅ confirms that your code passes all tests!
+Github Actions are verification code that runs whenever you push anything to Github. If you open your repository on GitHub and click on the "Actions" tab, you should see one Action run for each time you pushed. A green check mark ✅ confirms that your code passes all tests!
 ```
 
 ## Wrapping up
@@ -763,5 +743,11 @@ Github Actions are verification code that runs whenever you push anything to Git
 2. Then **push** your changes to your repo.
 3. Make sure all your work appears on GitHub as you expect
 4. Verify that the Action ran successfully on GitHub.
+5. Go to ICE 2 on [Gradescope](https://www.gradescope.com/)
+6. Submit your code by pointing Gradescope to your GitHub repository.
+7. Check to make sure the autograder ran.
+
+> When all is said and done, you should have working VHDL submitted
+> into Gradescope via GitHub *and* have demo'd to your instructor.
 
 Congratulations, you have completed In Class Exercise 2!
