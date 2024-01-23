@@ -34,7 +34,7 @@ Get the URL to clone from GitHub
 ```
 
 Then, in Git Bash or Powershell, navigate to wherever you want to create the new folder.
-A common option is `~/code/`. Storing in your One Drive is also a good idea.
+A common option is `~/code/`. Storing in your One Drive is a bad idea because it tends to cause issues when it's trying to keep the files in sync.
 Use `cd` to change directories from the terminal. Make a new directory with `mkdir`.
 Alternatively, use the explorer GUI to get to the folder you want,
 then right click > "Open in Terminal".
