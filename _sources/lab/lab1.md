@@ -111,15 +111,13 @@ Now we will construct the same circuit in VHDL.
 ### Setup Vivado Project
 
 Just like in {ref}`setup-vivado-project`, fork the [Lab 1 GitHub repository](https://github.com/USAFA-ECE/ece281-lab1),
-clone the project, and source the `build.tcl` file to setup the project.
+clone your fork of the project, and open the `.xpr` file.
 
 You should see the following files:
 
 - `thirtyOneDayMonth.vhd`
 - `thirtyOneDayMonth_tb.vhd`
 - `Basys3Master_Lab1.xdc`
-
-Edit the file headers as needed, then make the initial commit.
 
 ### Entity
 
@@ -287,11 +285,14 @@ In the future, you will have to ensure the mapping is done correctly.
 
 Then
 
-> **[40 Points]** Push your .vhd and .xdc files using git. Verify the testbench Action runs successfully.
+> **[40 Points]** Push your .vhd and .xdc files using git,
+> then link to Gradescope.
 
-### Deliverables.
+### Deliverables
+
+Submit the following to Gradescope Lab 1.
 
 1. **[15 Points]** Submit completed PDF within the Gradescope assignment, Lab 1 - Prelab.
 2. **[25 Points]** Demo your operational integrated circuit to an instructor.
-3. **[40 Points]** Push your .vhd and .xdc files using git. Verify the testbench Action runs successfully.
+3. **[40 Points]** Push your .vhd and .xdc files using git and link the repo.
 4. **[10 Points]** Demo the operational VHDL circuit to an instructor.
