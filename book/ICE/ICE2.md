@@ -471,7 +471,6 @@ code snippet below.
 
 ```vhdl
 begin
-begin
   -- PORT MAPS ----------------------------------------
 
   -- map ports for any component instances (port mapping is like wiring hardware)
