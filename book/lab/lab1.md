@@ -48,7 +48,7 @@ Eventually we will move to representing that with a vector, but for now let's ju
 Our output is $Y$.
 
 - If input month has 31 days then $Y=1$
-- If input month does not have 31 days then $Y=0%
+- If input month does not have 31 days then $Y=0$
 - If input is not a month then $Y=X$ (don't care)
 
 ## Pre-lab
