@@ -119,6 +119,16 @@ You should see the following files:
 - `thirtyOneDayMonth_tb.vhd`
 - `Basys3Master_Lab1.xdc`
 
+```{tip}
+You can *optionally* enable GitHub Actions in your repository.
+Doing so will enable your simulation to run on every **push** to the repo.
+
+Whil you are also running simulations in Vivado, this will be useful because
+it gives you confidence that the Gradescope autograder will be happy.
+
+Additionally, this continual testing is a big piece of [DevOps](https://about.gitlab.com/topics/devops/).
+```
+
 ### Entity
 
 Create your interface (ports) for the `thirtyOneDayMonth` according to {numref}`thirtyone-day-month`.
@@ -282,8 +292,6 @@ In the future, you will have to ensure the mapping is done correctly.
 2. Verify that your design functions correctly.
 
 > **[10 Points]** Demo the operational VHDL circuit to an instructor.
-
-Then
 
 > **[40 Points]** Push your .vhd and .xdc files using git,
 > then link to Gradescope.

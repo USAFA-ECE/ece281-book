@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Xilinx Vivado &#8212; ECE 281</title>
   
@@ -29,41 +28,45 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix/vivado';</script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="GitHub real fast" href="github.html" />
@@ -160,7 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -419,7 +433,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="xilinx-vivado">
-<h1>Xilinx Vivado<a class="headerlink" href="#xilinx-vivado" title="Permalink to this heading">#</a></h1>
+<h1>Xilinx Vivado<a class="headerlink" href="#xilinx-vivado" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#create-a-new-vivado-project" id="id1">Create a new Vivado Project</a></p></li>
@@ -434,7 +448,7 @@ document.write(`
 </ul>
 </nav>
 <section id="create-a-new-vivado-project">
-<span id="create-new-vivado-project"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">Create a new Vivado Project</a><a class="headerlink" href="#create-a-new-vivado-project" title="Permalink to this heading">#</a></h2>
+<span id="create-new-vivado-project"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">Create a new Vivado Project</a><a class="headerlink" href="#create-a-new-vivado-project" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>In “Quick Start” click <strong>Create Project &gt;</strong></p></li>
 <li><p>In wizard, click <strong>Next</strong></p></li>
@@ -447,7 +461,7 @@ document.write(`
 </ul>
 </section>
 <section id="manually-add-files-to-vivado-project">
-<span id="manual-add-to-vivado-project"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Manually add files to Vivado Project</a><a class="headerlink" href="#manually-add-files-to-vivado-project" title="Permalink to this heading">#</a></h2>
+<span id="manual-add-to-vivado-project"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Manually add files to Vivado Project</a><a class="headerlink" href="#manually-add-files-to-vivado-project" title="Link to this heading">#</a></h2>
 <p>By convention (and for working nicely with git) we add
 source files to <code class="docutils literal notranslate"><span class="pre">src/</span></code> and if it is a hardware description file then to <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code>
 (there are other source files in advnaced projects that are not HDL).</p>
@@ -473,7 +487,7 @@ The <strong>bolded</strong> name is based on the entity name.</p>
 <p>This will also make a change in your <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file that you will need to commit as well.</p>
 </section>
 <section id="board-files">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Board files</a><a class="headerlink" href="#board-files" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Board files</a><a class="headerlink" href="#board-files" title="Link to this heading">#</a></h2>
 <p>If you have not already installed the board files
 (should have been done as part of Lab0), do this.
 It assumes Vivado is installed at the default location.</p>
@@ -494,13 +508,13 @@ if you create a new project or modify project settings.</p>
 <p>Below this is for advanced usage only</p>
 </section>
 <section id="write-a-tcl-file-for-use-with-git">
-<span id="write-tcl-file"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">Write a TCL file for use with Git</a><a class="headerlink" href="#write-a-tcl-file-for-use-with-git" title="Permalink to this heading">#</a></h2>
+<span id="write-tcl-file"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">Write a TCL file for use with Git</a><a class="headerlink" href="#write-a-tcl-file-for-use-with-git" title="Link to this heading">#</a></h2>
 <p>In order to work more seamlessly with Git, we place all of our <code class="docutils literal notranslate"><span class="pre">.vhd</span></code> and constraint files
 in <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code>. Otherwise, Vivado will place them in unexpected nested directories.</p>
 <p>Unfortunately, when we do this, Vivado will not know where to find our files unless we
 tell Vivado where they are either manually or with a TCL file using <a class="reference external" href="https://docs.xilinx.com/r/en-US/ug835-vivado-tcl-commands/Tcl-Batch-Mode">TCL Batch Mode</a>.</p>
 <section id="to-write-a-tcl-file">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">To write a TCL file</a><a class="headerlink" href="#to-write-a-tcl-file" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">To write a TCL file</a><a class="headerlink" href="#to-write-a-tcl-file" title="Link to this heading">#</a></h3>
 <p>Vivado will write the file for you <strong>but</strong> you need to make a few changes.</p>
 <ol class="arabic simple">
 <li><p>In Vivado **File –&gt; Project –&gt; Write Tcl</p></li>
@@ -510,17 +524,17 @@ tell Vivado where they are either manually or with a TCL file using <a class="re
 <li><p>No need to open the file.</p></li>
 </ol>
 <section id="edit-tcl-file-to-work-with-git">
-<h4>Edit TCL file to work with Git<a class="headerlink" href="#edit-tcl-file-to-work-with-git" title="Permalink to this heading">#</a></h4>
+<h4>Edit TCL file to work with Git<a class="headerlink" href="#edit-tcl-file-to-work-with-git" title="Link to this heading">#</a></h4>
 <p>This example assumes you named your file <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code>.</p>
 <section id="how-to-use-git-diff">
-<h5>How to use git diff<a class="headerlink" href="#how-to-use-git-diff" title="Permalink to this heading">#</a></h5>
+<h5>How to use git diff<a class="headerlink" href="#how-to-use-git-diff" title="Link to this heading">#</a></h5>
 <p>If you are working from an existing tcl file, it is easiest to work with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>
 to see what changed. Both options below show additions in green and deletions in red.</p>
 <p>Either open the <code class="docutils literal notranslate"><span class="pre">build.tcl</span></code> file in VS Code and use the Source Control Changes option to view, as shown in <a class="reference internal" href="#vivado-tcl-diff"><span class="std std-numref">Fig. 51</span></a>.</p>
 <figure class="align-default" id="vivado-tcl-diff">
 <img alt="../_images/vivado-tcl-diff.png" src="../_images/vivado-tcl-diff.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Using VS Code to view TCL diffs</span><a class="headerlink" href="#vivado-tcl-diff" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Using VS Code to view TCL diffs</span><a class="headerlink" href="#vivado-tcl-diff" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Or from Git Bash use the command below to produce output similar to <a class="reference internal" href="#vivado-tcl-gitdiff"><span class="std std-numref">Fig. 52</span></a></p>
@@ -530,12 +544,12 @@ to see what changed. Both options below show additions in green and deletions in
 <figure class="align-default" id="vivado-tcl-gitdiff">
 <img alt="../_images/vivado-tcl-gitdiff.png" src="../_images/vivado-tcl-gitdiff.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Using Git Bash to view the TCL diffs</span><a class="headerlink" href="#vivado-tcl-gitdiff" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Using Git Bash to view the TCL diffs</span><a class="headerlink" href="#vivado-tcl-gitdiff" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="what-to-actually-change">
-<h5>What to actually change<a class="headerlink" href="#what-to-actually-change" title="Permalink to this heading">#</a></h5>
+<h5>What to actually change<a class="headerlink" href="#what-to-actually-change" title="Link to this heading">#</a></h5>
 <p>In the comments, change the absolute path to a relative path.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># CHANGE</span>
 <span class="c">#    &quot;C:/Users/User.Name/vivado/bcy/ece281-lab1/src/hdl/thirtyOneDayMonth.vhd&quot;</span>
@@ -561,7 +575,7 @@ is probably ok as is.</p>
 </section>
 </section>
 <section id="to-use-a-tcl-file">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">To use a TCL file</a><a class="headerlink" href="#to-use-a-tcl-file" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">To use a TCL file</a><a class="headerlink" href="#to-use-a-tcl-file" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Clone the repo</p></li>
 <li><p>Open Vivado 2018.2 (but not the project)</p></li>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Lab 3 - Thunderbird Turn Signal &#8212; ECE 281</title>
   
@@ -29,41 +28,45 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab3';</script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lab 4 - Moore Elevator Controller" href="lab4.html" />
@@ -161,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -441,7 +455,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lab-3-thunderbird-turn-signal">
-<h1>Lab 3 - Thunderbird Turn Signal<a class="headerlink" href="#lab-3-thunderbird-turn-signal" title="Permalink to this heading">#</a></h1>
+<h1>Lab 3 - Thunderbird Turn Signal<a class="headerlink" href="#lab-3-thunderbird-turn-signal" title="Link to this heading">#</a></h1>
 <p>Due: Lesson 17</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
@@ -475,14 +489,14 @@ document.write(`
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>In this lab, you will design, write, test, and implement in hardware
 a finite state machine to simulate the taillights of a 1965 Ford Thunderbird.</p>
 <p>This lab is modeled after a lab provided with instructor notes for
 <em>Digital Design and Computer Architecture</em>, David Money Harris &amp;
 Sarah L. Harris, 2nd Edition.</p>
 <section id="authorized-resources">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink">Authorized Resources</a><a class="headerlink" href="#authorized-resources" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Authorized Resources</a><a class="headerlink" href="#authorized-resources" title="Link to this heading">#</a></h3>
 <p>For this lab, you may work in <strong>teams of two</strong> (including the prelab).
 You may seek help from any cadet or instructor,
 not limited to this course, and reference any publication in its
@@ -500,7 +514,7 @@ code yourself to learn the material.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <figure class="align-default">
 <img alt="../_images/lab3_tbird.gif" src="../_images/lab3_tbird.gif" />
 </figure>
@@ -512,14 +526,14 @@ lights and <code class="xref std std-numref docutils literal notranslate"><span 
 <figure class="align-default" id="tailights">
 <img alt="../_images/lab3_tailights.png" src="../_images/lab3_tailights.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Thunderbird taillights</span><a class="headerlink" href="#tailights" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Thunderbird taillights</span><a class="headerlink" href="#tailights" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="tailights-flash">
 <img alt="../_images/lab3_tailightsflash.png" src="../_images/lab3_tailightsflash.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 42 </span><span class="caption-text">Flashing sequence for taillights. The lights shaded light
-blue are illuminated.</span><a class="headerlink" href="#tailights-flash" title="Permalink to this image">#</a></p>
+blue are illuminated.</span><a class="headerlink" href="#tailights-flash" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The objective of this lab is to create a turn signal that will engage
@@ -530,10 +544,10 @@ implementation. If you follow the steps of FSM design carefully and
 yourself a great deal of time.</p>
 </section>
 <section id="prelab-fsm-design">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Prelab - FSM Design</a><a class="headerlink" href="#prelab-fsm-design" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Prelab - FSM Design</a><a class="headerlink" href="#prelab-fsm-design" title="Link to this heading">#</a></h2>
 <p>Due on Gradescope midnight <strong>T23</strong>.</p>
 <section id="project-functionality-description">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Project functionality description</a><a class="headerlink" href="#project-functionality-description" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Project functionality description</a><a class="headerlink" href="#project-functionality-description" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>On RESET, the FSM should immediately enter a state with all lights off.</p></li>
 <li><p>When you press LEFT, you should see LA, then LA and LB, then LA, LB, and
@@ -545,7 +559,7 @@ LC, then finally all lights off again.</p></li>
 </ul>
 </section>
 <section id="prelab-tasks">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Prelab Tasks</a><a class="headerlink" href="#prelab-tasks" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Prelab Tasks</a><a class="headerlink" href="#prelab-tasks" title="Link to this heading">#</a></h3>
 <p>You will use a <strong>Moore FSM</strong> to implement the above functionality.</p>
 <p>Complete the following tasks to prepare yourself for the lab.</p>
 <ol class="arabic simple">
@@ -571,7 +585,7 @@ what <strong>test cases</strong> you will use to verify that your design is corr
 </section>
 </section>
 <section id="lab">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Lab</a><a class="headerlink" href="#lab" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Lab</a><a class="headerlink" href="#lab" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fork and clone <a class="reference external" href="https://github.com/USAFA-ECE/ece281-lab3">Lab 3</a></p></li>
 <li><p>Open the project by double clicking <code class="docutils literal notranslate"><span class="pre">thunderbird.xpr</span></code>.</p></li>
@@ -584,7 +598,7 @@ we suggest you <strong>view your ICE4 GitHub repository in your web browser</str
 <p>The repository should be located at <code class="docutils literal notranslate"><span class="pre">https://github.com/USAFA-ECE/ice4-&lt;your</span> <span class="pre">github</span> <span class="pre">username&gt;</span></code>.</p>
 </div>
 <section id="thunderbird-fsm-vhd">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">thunderbird_fsm.vhd</a><a class="headerlink" href="#thunderbird-fsm-vhd" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">thunderbird_fsm.vhd</a><a class="headerlink" href="#thunderbird-fsm-vhd" title="Link to this heading">#</a></h3>
 <p>First, in the comments, add your state encodings.</p>
 <p>Such as</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-----------------------</span>
@@ -639,7 +653,7 @@ and state register.</p>
 </div></blockquote>
 </section>
 <section id="thunderbird-fsm-tb-vhd">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">thunderbird_fsm_tb.vhd</a><a class="headerlink" href="#thunderbird-fsm-tb-vhd" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">thunderbird_fsm_tb.vhd</a><a class="headerlink" href="#thunderbird-fsm-tb-vhd" title="Link to this heading">#</a></h3>
 <p>Next, write a testbench that verifies functionality of your FSM. Make
 sure you carefully consider what test cases you need to run. For
 instance, what happens if you change an input in the middle of a
@@ -652,7 +666,7 @@ blinking pattern?
 <li><p><strong>Define a <em>constant</em> for a clock period of 10ns</strong> and use the constant throughout your testbench file.</p></li>
 </ul>
 <section id="assert-statements">
-<h4>Assert statements<a class="headerlink" href="#assert-statements" title="Permalink to this heading">#</a></h4>
+<h4>Assert statements<a class="headerlink" href="#assert-statements" title="Link to this heading">#</a></h4>
 <p>We expect you to follow the examples in ICE4’s <code class="docutils literal notranslate"><span class="pre">stoplight_fsm_tb.vhd</span></code>
 to write <em>some</em> assert statements. However, as we move into larger
 and more complex projects, you will no longer be able to write exhaustive tests.</p>
@@ -666,7 +680,7 @@ and more complex projects, you will no longer be able to write exhaustive tests.
 You should also leverage your waveform for testing.</p>
 </section>
 <section id="waveform">
-<h4>Waveform<a class="headerlink" href="#waveform" title="Permalink to this heading">#</a></h4>
+<h4>Waveform<a class="headerlink" href="#waveform" title="Link to this heading">#</a></h4>
 <p>For the simulation waveform in your testbench, you should include at a
 minimum the following signals in order:</p>
 <ol class="arabic simple">
@@ -692,14 +706,14 @@ Add a screenshot of the waveform to your README and save a copy for your Report.
 </section>
 </section>
 <section id="top-basys3-vhd">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">top_basys3.vhd</a><a class="headerlink" href="#top-basys3-vhd" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">top_basys3.vhd</a><a class="headerlink" href="#top-basys3-vhd" title="Link to this heading">#</a></h3>
 <p>Once you have verified that your FSM works correctly in simulation,
 create a top-level module and implement the hardware interface in <a class="reference internal" href="#tbird-myboard"><span class="std std-numref">Fig. 43</span></a>
 similar to the one pictured below.</p>
 <figure class="align-default" id="tbird-myboard">
 <img alt="../_images/lab3_myboard.png" src="../_images/lab3_myboard.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Your super-sweet thunderbird control panel.</span><a class="headerlink" href="#tbird-myboard" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Your super-sweet thunderbird control panel.</span><a class="headerlink" href="#tbird-myboard" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You will need to ground any unused LEDs, but you can leave unused switches unconnected.
@@ -714,7 +728,7 @@ Instead, you’ll have to find a different solution to make sure your right
 turn signal does indeed progress to the right!</p>
 </div>
 <section id="basys3-clock">
-<h4>Basys3 Clock<a class="headerlink" href="#basys3-clock" title="Permalink to this heading">#</a></h4>
+<h4>Basys3 Clock<a class="headerlink" href="#basys3-clock" title="Link to this heading">#</a></h4>
 <p>Note, the Basys3 board provides a built-in 100-MHz clock. This is a bit
 too fast for our application, so you are also provided a VHDL module
 (<code class="docutils literal notranslate"><span class="pre">clock_divider.vhd</span></code>) that will take in the fast 100 MHz clock, and
@@ -756,7 +770,7 @@ Note any discrepancies from your original drawing.</p>
 </section>
 </section>
 <section id="implement-in-hardware">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Implement in Hardware</a><a class="headerlink" href="#implement-in-hardware" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Implement in Hardware</a><a class="headerlink" href="#implement-in-hardware" title="Link to this heading">#</a></h2>
 <p>In order to use the clock we also need to employ the
 <a class="reference external" href="https://docs.xilinx.com/r/2021.2-English/ug835-vivado-tcl-commands/create_clock">create_clock</a> function.
 This specifies the period of the waveform in nanoseconds; in our case, for a 100MHz clock we need a 10ns period.
@@ -777,7 +791,7 @@ This must happen <strong>after</strong> showing your waveform.</p>
 </div></blockquote>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
 <p>Below are the deliverables and point distributions for the Lab 3:</p>
 <table class="table">
 <thead>
@@ -808,7 +822,7 @@ Your statement here.
 <p>Otherwise, the statement will be submitted on Gradescope
 (for the prelab and report).</p>
 <section id="hardware-demo">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Hardware Demo</a><a class="headerlink" href="#hardware-demo" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Hardware Demo</a><a class="headerlink" href="#hardware-demo" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Show your instructor your waveform <em>before</em> demoing the hardware.</p></li>
 <li><p>Using left and right switches generates correct LED patterns with <strong>[changes occurring at a rate of 4 Hz</strong></p></li>
@@ -819,7 +833,7 @@ Your statement here.
 </ul>
 </section>
 <section id="github-actions">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">GitHub Actions</a><a class="headerlink" href="#github-actions" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">GitHub Actions</a><a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>All <code class="docutils literal notranslate"><span class="pre">.vhd</span></code>, <code class="docutils literal notranslate"><span class="pre">.xdc</span></code>, <code class="docutils literal notranslate"><span class="pre">.xpr</span></code>, and <code class="docutils literal notranslate"><span class="pre">.bit</span></code> files committed to repository</p></li>
 <li><p>Headers are modified appropriately</p></li>
@@ -833,7 +847,7 @@ Your statement here.
 </ul>
 </section>
 <section id="report">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Report</a><a class="headerlink" href="#report" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Report</a><a class="headerlink" href="#report" title="Link to this heading">#</a></h3>
 <p>The report will be submitted on Gradescope. Subsections are described below.
 The report should be kept to three pages, including diagrams.</p>
 <div class="admonition important">
@@ -852,7 +866,7 @@ than be bored with broad summaries.
 <strong>The true art is to 1) provide <em>context</em> and 2) follow it with <em>consequence</em>.</strong></p>
 </div>
 <section id="front-matter">
-<h4>Front Matter<a class="headerlink" href="#front-matter" title="Permalink to this heading">#</a></h4>
+<h4>Front Matter<a class="headerlink" href="#front-matter" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Title, Authors, page numbers, ect.</p></li>
 <li><p>Documentation Statement for the Report only.</p></li>
@@ -861,7 +875,7 @@ Don’t drone on, make it a punchy answer to “So what? Who cares?”</p></li>
 </ul>
 </section>
 <section id="simulation-results">
-<h4>Simulation Results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">#</a></h4>
+<h4>Simulation Results<a class="headerlink" href="#simulation-results" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Discuss your <strong>overall approach</strong> to testing.</p></li>
 <li><p>Include your waveform.</p></li>
@@ -879,7 +893,7 @@ o_lights_L, o_lights_R, and your current and next state bits).</p></li>
 </ul>
 </section>
 <section id="architecture-design">
-<h4>Architecture Design<a class="headerlink" href="#architecture-design" title="Permalink to this heading">#</a></h4>
+<h4>Architecture Design<a class="headerlink" href="#architecture-design" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Discuss your <strong>overall approach</strong> to architecture design and schematic construction.</p></li>
 <li><p>Did you implement one-hot encoding or binary encoding? <strong>Evaluate</strong> your choice.</p></li>
@@ -889,7 +903,7 @@ o_lights_L, o_lights_R, and your current and next state bits).</p></li>
 </ul>
 </section>
 <section id="conclusion">
-<h4>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h4>
+<h4>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Your main takeaway!</p></li>
 <li><p>What approaches will you continue or change when it comes Lab 4?</p></li>
