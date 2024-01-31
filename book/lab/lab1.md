@@ -79,7 +79,7 @@ Figure out which type of gates you have available for your use.
 
 #### Create viable solutions
 
-Using **logic gate symbols** that coorespond to the types of chips you have available
+Using **logic gate symbols** that correspond to the types of chips you have available
 draw **four** separate schematics that can implement your truth table.
 Make sure to reference data sheets for the components to ensure you
 have included every input they need to function
