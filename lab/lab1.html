@@ -523,12 +523,12 @@ circuits and <strong>then</strong> implemented in hardware using VHDL.</p>
 </section>
 <section id="background">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>In order to represent 12 months in unsigned binary, we know we need a four bits:</p>
+<p>In order to represent 12 months in unsigned binary, we know we need four bits:</p>
 <div class="math notranslate nohighlight">
 \[
 ceiling(log_2(12)) = 4
 \]</div>
-<p>Eventually we will move to representing that with a vector, but for now let’s just give each input bit a letter: <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, from most to least significant bit.</p>
+<p>Eventually we will move to representing that with a vector, but for now let’s just give each input bit a letter: <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(A\)</span>, from most to least significant bit.</p>
 <p>Our output is <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <ul class="simple">
 <li><p>If input month has 31 days then <span class="math notranslate nohighlight">\(Y=1\)</span></p></li>
@@ -747,7 +747,7 @@ should be a port map for each entity you are testing.</p></li>
 components section to create your test cases. Instead of assigning each
 bit of the entity (A-D), you can assign all 4 inputs at once using hex.
 For example, you can use <code class="docutils literal notranslate"><span class="pre">x&quot;1&quot;</span></code> to represent the binary <code class="docutils literal notranslate"><span class="pre">&quot;0001&quot;</span></code> which
-would then assign a <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">i_A</span></code> to <code class="docutils literal notranslate"><span class="pre">i_C</span></code> and a <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">i_D</span></code>. Since we are
+would then assign a <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">i_D</span></code> and a <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">i_A</span></code> through <code class="docutils literal notranslate"><span class="pre">i_C</span></code>. Since we are
 simulating real hardware, we will have to create delays between each
 change in input. We can test an input and delay for 10 ns using the
 following:</p>
