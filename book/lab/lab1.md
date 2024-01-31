@@ -12,8 +12,8 @@ Due: Lesson 11
 In this lab you will design a circuit that takes a month as a 4-bit
 binary input (e.g., January is equivalent to `0001` and December is
 equivalent to `1100`). For each month that has 31 days, you should turn on
-the red LED (your output value, $Y$, is `1`). All other months and unused
-inputs should produce an output of `0`.
+the red LED (your output value, $Y$, is `1`). All other months should produce an output of `0`
+and unused inputs can produce an output of `X` (don't care).
 
 This circuit will **first** be implemented in hardware using integrated
 circuits and **then** implemented in hardware using VHDL.
