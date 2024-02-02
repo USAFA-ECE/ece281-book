@@ -104,12 +104,15 @@ Now that you have **four** prototypes to compare, which would you select?
 For the sake of this lab, we'll forgoe the decesion matrix and just say
 **you will implement your first schematic (3.a 8:1 MUX (74151) and inverter(s) (7404)).**
 
-Before implementing, draw the schematic with integrated circuit chips.
+**Before implementing**, draw the schematic with integrated circuit chips.
 This new schematic should show you how you will wire the circuit
 during the lab.
 
 ```{Hint}
-Some of the chips must be enabled (`Vcc` or `Gnd`).
+Look at the datasheet!
+
+Some of the chips must be powered (`Vcc` or `Gnd`)
+as well as enabled (see "strobe").
 
 Pay attention to the order of the inputs to the MUX and encoder;
 which bit is the MSB?
@@ -122,6 +125,12 @@ which bit is the MSB?
 You will implement your first schematic (3.a 8:1 MUX (74151) and
 inverter(s) (7404)) in hardware using integrated circuits.
 
+**BEFORE** you wire the breadboard you **MUST** draw this schematic.
+The schematic should inlcude the chip and its pinout connections.
+Remember to avoid floating inputs, or you will spend a lot of time debugging.
+
+> Add a picture of this schematic to your folder and commit it with git.
+
 Reference [](../ICE/ICE1.md) if you need a refresher on how the breadboard functions
 and how to place your power converter. You can also reference the
 breadboard handout in the Datasheets Library to determine how the
@@ -133,6 +142,8 @@ All unused input pins need to be grounded or connected to `Vcc`.
 Double check all connections before turning on power.
 
 ```{danger}
+Do not connect unused outputs to Ground; this will cause a short and let out the magic smoke!
+
 Power down your circuit before making any adjustments or changes!
 ```
 
@@ -336,5 +347,6 @@ Submit the following to Gradescope Lab 1.
 
 1. **[15 Points]** Submit completed PDF within the Gradescope assignment, Lab 1 - Prelab.
 2. **[25 Points]** Demo your operational integrated circuit to an instructor.
-3. **[40 Points]** Push your .vhd and .xdc files using git and link the repo.
-4. **[10 Points]** Demo the operational VHDL circuit to an instructor.
+3. **[10 Points]** Push your IC schematic to your git repository.
+4. **[30 Points]** Push your .vhd and .xdc files using git and link the repo in Gradescope.
+5. **[10 Points]** Demo the operational VHDL circuit to an instructor.
