@@ -12,8 +12,8 @@ Due: Lesson 11
 In this lab you will design a circuit that takes a month as a 4-bit
 binary input (e.g., January is equivalent to `0001` and December is
 equivalent to `1100`). For each month that has 31 days, you should turn on
-the red LED (your output value, $Y$, is `1`). All other months and unused
-inputs should produce an output of `0`.
+the red LED (your output value, $Y$, is `1`). All other months should produce an output of `0`
+and unused inputs can produce an output of `X` (don't care).
 
 This circuit will **first** be implemented in hardware using integrated
 circuits and **then** implemented in hardware using VHDL.
@@ -37,13 +37,13 @@ circuits and **then** implemented in hardware using VHDL.
 
 ## Background
 
-In order to represent 12 months in unsigned binary, we know we need a four bits:
+In order to represent 12 months in unsigned binary, we know we need four bits:
 
 $$
 ceiling(log_2(12)) = 4
 $$
 
-Eventually we will move to representing that with a vector, but for now let's just give each input bit a letter: $A$, $B$, $C$, $D$, from most to least significant bit.
+Eventually we will move to representing that with a vector, but for now let's just give each input bit a letter: $D$, $C$, $B$, $A$, from most to least significant bit.
 
 Our output is $Y$.
 
@@ -79,7 +79,7 @@ Figure out which type of gates you have available for your use.
 
 #### Create viable solutions
 
-Using **logic gate symbols** that coorespond to the types of chips you have available
+Using **logic gate symbols** that correspond to the types of chips you have available
 draw **four** separate schematics that can implement your truth table.
 Make sure to reference data sheets for the components to ensure you
 have included every input they need to function
@@ -292,7 +292,7 @@ A 4-bit test signal vector, `w_sw`, was created for you in the Additional
 components section to create your test cases. Instead of assigning each
 bit of the entity (A-D), you can assign all 4 inputs at once using hex.
 For example, you can use `x"1"` to represent the binary `"0001"` which
-would then assign a `0` to `i_A` to `i_C` and a `1` to `i_D`. Since we are
+would then assign a `1` to `i_D` and a `0` to `i_A` through `i_C`. Since we are
 simulating real hardware, we will have to create delays between each
 change in input. We can test an input and delay for 10 ns using the
 following:
