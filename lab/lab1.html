@@ -585,12 +585,14 @@ See <em>Digital Design and Computer Architecture</em> <strong>Figure 2.23</stron
 <p>Now that you have <strong>four</strong> prototypes to compare, which would you select?</p>
 <p>For the sake of this lab, we’ll forgoe the decesion matrix and just say
 <strong>you will implement your first schematic (3.a 8:1 MUX (74151) and inverter(s) (7404)).</strong></p>
-<p>Before implementing, draw the schematic with integrated circuit chips.
+<p><strong>Before implementing</strong>, draw the schematic with integrated circuit chips.
 This new schematic should show you how you will wire the circuit
 during the lab.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Some of the chips must be enabled (<code class="docutils literal notranslate"><span class="pre">Vcc</span></code> or <code class="docutils literal notranslate"><span class="pre">Gnd</span></code>).</p>
+<p>Look at the datasheet!</p>
+<p>Some of the chips must be powered (<code class="docutils literal notranslate"><span class="pre">Vcc</span></code> or <code class="docutils literal notranslate"><span class="pre">Gnd</span></code>)
+as well as enabled (see “strobe”).</p>
 <p>Pay attention to the order of the inputs to the MUX and encoder;
 which bit is the MSB?</p>
 </div>
@@ -604,6 +606,12 @@ which bit is the MSB?</p>
 <h2><a class="toc-backref" href="#id9" role="doc-backlink">Lab: Integrated Circuit</a><a class="headerlink" href="#lab-integrated-circuit" title="Link to this heading">#</a></h2>
 <p>You will implement your first schematic (3.a 8:1 MUX (74151) and
 inverter(s) (7404)) in hardware using integrated circuits.</p>
+<p><strong>BEFORE</strong> you wire the breadboard you <strong>MUST</strong> draw this schematic.
+The schematic should inlcude the chip and its pinout connections.
+Remember to avoid floating inputs, or you will spend a lot of time debugging.</p>
+<blockquote>
+<div><p>Add a picture of this schematic to your folder and commit it with git.</p>
+</div></blockquote>
 <p>Reference <a class="reference internal" href="../ICE/ICE1.html"><span class="std std-doc">ICE 1: OR Gates</span></a> if you need a refresher on how the breadboard functions
 and how to place your power converter. You can also reference the
 breadboard handout in the Datasheets Library to determine how the
@@ -613,6 +621,7 @@ All unused input pins need to be grounded or connected to <code class="docutils 
 <p>Double check all connections before turning on power.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
+<p>Do not connect unused outputs to Ground; this will cause a short and let out the magic smoke!</p>
 <p>Power down your circuit before making any adjustments or changes!</p>
 </div>
 <blockquote>
@@ -796,7 +805,8 @@ then link to Gradescope.</p>
 <ol class="arabic simple">
 <li><p><strong>[15 Points]</strong> Submit completed PDF within the Gradescope assignment, Lab 1 - Prelab.</p></li>
 <li><p><strong>[25 Points]</strong> Demo your operational integrated circuit to an instructor.</p></li>
-<li><p><strong>[40 Points]</strong> Push your .vhd and .xdc files using git and link the repo.</p></li>
+<li><p><strong>[10 Points]</strong> Push your IC schematic to your git repository.</p></li>
+<li><p><strong>[30 Points]</strong> Push your .vhd and .xdc files using git and link the repo in Gradescope.</p></li>
 <li><p><strong>[10 Points]</strong> Demo the operational VHDL circuit to an instructor.</p></li>
 </ol>
 </section>
