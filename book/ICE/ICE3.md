@@ -341,10 +341,10 @@ Add the image and README.md to git and commit.
 ### Other files
 
 - Run `git status`
-- Double check that you have all `.vhd` and `.bit` files **committed** to your git repo.
+- Double check that you have the image, your README.md and all `.vhd` and `.bit` files **committed** to your git repo.
 - Then [push](https://www.atlassian.com/git/tutorials/syncing/git-push) them to your repo.
 - Make sure all your work appears in GitHub as you expect.
-- Make sure the GitHub action passed.
+- Submit the assignment on **Gradescope**.
 - Demo your working board to an instructor.
 
 Congratulations, you have completed In Class Exercise 3!
