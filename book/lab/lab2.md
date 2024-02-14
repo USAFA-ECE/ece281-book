@@ -77,8 +77,8 @@ Said differently, you disable an entire display by connecting it to power, aka `
 
 Placing a `0` on a segment will cause it to light up, while a `1` will keep the segment dark.
 This is called "active low."
-For example, to display the number "0", a logic `0` must be placed on segments `b`-`g`,
-while segment `a` will be a logic `1`.
+For example, to display the number "0", a logic `0` must be placed on segments `a`-`f`,
+while segment `g` will be a logic `1`.
 
 In this way, you can display every hexadecimal digit:
 "0" - "F" as shown in {numref}`7SD-digits`
