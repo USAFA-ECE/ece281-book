@@ -16,3 +16,7 @@ Cadets shall be able to:
 - Use contemporary software tools to debug a digital system design and verify that a digital system meets defined requirements.
 - Demonstrate the ability to understand and analyze a microarchitecture (datapath and control unit) to implement a simple computer architecture.
 - Demonstrate the ability to properly record and report laboratory work.
+
+> **Disclaimer:** The contents of this website are for educational use only
+> and do not necessarily reflect the official policy or position of the United States Air Force Academy,
+> the Air Force, or the U.S. Government.

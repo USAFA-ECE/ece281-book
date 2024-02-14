@@ -7,6 +7,8 @@ Due: Lesson 17
 :depth: 2
 ```
 
+[Lab 2 GitHub Repo](https://github.com/USAFA-ECE/ece281-lab2)
+
 ## Overview
 
 In this lab you will implement the
@@ -108,11 +110,13 @@ segment outputs, it is time to implement them in hardware with VHDL!
 Due to issues with the automated build process in ICE3, we recommend manually creating a
 Vivado project and then adding the source files manually.
 
-1. Accept the assignment and clone the newly created repository
-2. Open Vivado
-3. Follow instructions in {ref}`create-new-vivado-project`. Suggested project name is **binaryHexDisp**
-4. Follow instructions in {ref}`manual-add-to-vivado-project` to add everything in `src/hdl/` to your project
-5. Ensure your source hierarchy looks like you expect.
+1. Go to the [Lab 2 GitHub Repo](https://github.com/USAFA-ECE/ece281-lab2)
+2. Click the green "Use this template" button -> create a new repository.
+3. Once your new repo is created, clone it into where you want it.
+4. Open Vivado
+5. Follow instructions in {ref}`create-new-vivado-project`. Suggested project name is **binaryHexDisp**
+6. Follow instructions in {ref}`manual-add-to-vivado-project` to add everything in `src/hdl/` to your project
+7. Ensure your source hierarchy looks like you expect.
 
 > Edit the file headers as necessary. Then commit your changes with git.
 
@@ -428,10 +432,9 @@ Below are the deliverables and point distributions for the Lab 2:
 | Prelab                | 15     |
 | Hardware Demo         | 30     |
 | Written Report        | 30     |
-| Passing GitHub Action | 25     |
+| Passing Gradescope    | 25     |
 
-**Documentation statements** will be in the README for any help on the code files.
-Otherwise, the statement will be submitted on Gradescope (for the prelab and report).
+**Documentation statements** will be submitted on Gradescope.
 
 ### Prelab
 
@@ -455,5 +458,4 @@ Rubric and template on Teams. Submit on Gradescope.
 - Extraneous comments are removed and code is formatted in a sane manner
 - Basys3_Master.xdc file included in `src/hdl/`
 - Bitstream (.bit) file used for hardware demo in repo (in default location)
-- Include a `## Documentation` section in the README
 - Commit messages are useful in tracing the development of the project
