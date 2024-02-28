@@ -116,8 +116,6 @@ what **test cases** you will use to verify that your design is correct.
 Much of this code can be extracted from [ICE4](https://usafa-ece.github.io/ece281-book/ICE/ICE4.html).
 Rather than open another Vivado project (and the confusion that comes with it),
 we suggest you **view your ICE4 GitHub repository in your web browser**.
-
-The repository should be located at `https://github.com/USAFA-ECE/ice4-<your github username>`.
 ```
 
 ### thunderbird_fsm.vhd
