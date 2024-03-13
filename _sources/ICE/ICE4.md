@@ -55,6 +55,13 @@ Stoplight state transition diagram
 2. Open the folder
 3. Double click `stoplight.xpr` to open Vivado!
 
+```{tip}
+If you want, you can enable GitHub actions to run on your fork
+by going to your repository in the web browser and clicking the
+"Actions" tab. After you do this, subsequent commits will trigger
+and automated run of your stoplight_fsm testbench!
+```
+
 > Modify headers and make an initial commit.
 
 ## stoplight_fsm.vhd
@@ -425,6 +432,8 @@ pressing the left button should pause the whole system.
 | Deliverable           | Points |
 |-----------------------|--------|
 | Hardware Demo         | 50     |
-| Passing GitHub Action | 50
+| Code pushed to GitHub | 50     |
+
+There is no Gradescope requirement for this ICE.
 
 Congratulations, you have completed In Class Exercise 4!
