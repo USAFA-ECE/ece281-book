@@ -94,8 +94,8 @@ end TDM4;
     passed through. We will use 4 in this example, but if you were to
     use this with your seven segment decoder you could set it to 7.
 - `i_D2` is the second of 4 data sets which are passed into the TDM.
-- `i_D1` is the second of 4 data sets which are passed into the TDM.
-- `i_D0` is the second of 4 data sets which are passed into the TDM.
+- `i_D1` is the third of 4 data sets which are passed into the TDM.
+- `i_D0` is the fourth of 4 data sets which are passed into the TDM.
 - `o_data` represents the output of the TDM. At any point in time it
     will be one of `i_D3`, `i_D2`, `i_D1`, or `i_D0`.
 - `o_sel_n` is an output vector that tells the user which of the input
