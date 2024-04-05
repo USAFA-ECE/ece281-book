@@ -34,11 +34,19 @@ all resources utilized is required.
 
 ### End State
 
-This ICE requires a Gradescope submission with short answer questions,
+This ICE requires a Gradescope submission with short answer questions, 
 but there is no demo requirement!
 
 Additionally, there is a GitHub Action testbench that should pass.
 Ensure your two VHDL files are pushed to your repository.
+
+### Setup Vivado 
+
+1. Fork and clone [ICE6](https://github.com/USAFA-ECE/ece281-ice6)
+2. Open the folder.
+3. Double click `tdm.xpr` to open Vivado!
+
+> Modify headers and make an initial commit
 
 ### Time Division Multiplexing
 
