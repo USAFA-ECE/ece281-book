@@ -112,7 +112,7 @@ signal f_Q, f_Q_next : sm_floor;
 ```
 
 You can use an enumerated type for conditional assignments!
-See `VHDL Refernce.pdf` on Teams.
+See `VHDL Reference.pdf` on Teams.
 
 Because we handled `i_stop` in the state register (see above),
 our concurrent logic here can be greatly simplified.
