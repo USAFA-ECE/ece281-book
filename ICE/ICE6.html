@@ -405,6 +405,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorized-resources">Authorized Resources</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-state">End State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vivado">Setup Vivado</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-division-multiplexing">Time Division Multiplexing</a></li>
 </ul>
 </li>
@@ -435,17 +436,18 @@ document.write(`
 <li><p><a class="reference internal" href="#authorized-resources" id="id4">Authorized Resources</a></p></li>
 <li><p><a class="reference internal" href="#objectives" id="id5">Objectives</a></p></li>
 <li><p><a class="reference internal" href="#end-state" id="id6">End State</a></p></li>
-<li><p><a class="reference internal" href="#time-division-multiplexing" id="id7">Time Division Multiplexing</a></p></li>
+<li><p><a class="reference internal" href="#setup-vivado" id="id7">Setup Vivado</a></p></li>
+<li><p><a class="reference internal" href="#time-division-multiplexing" id="id8">Time Division Multiplexing</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tdm4-vhd" id="id8">TDM4.vhd</a></p>
+<li><p><a class="reference internal" href="#tdm4-vhd" id="id9">TDM4.vhd</a></p>
 <ul>
-<li><p><a class="reference internal" href="#entity" id="id9">Entity</a></p></li>
-<li><p><a class="reference internal" href="#architecture" id="id10">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#entity" id="id10">Entity</a></p></li>
+<li><p><a class="reference internal" href="#architecture" id="id11">Architecture</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#tdm4-tb-vhd" id="id11">TDM4_tb.vhd</a></p></li>
-<li><p><a class="reference internal" href="#deliverables" id="id12">Deliverables</a></p></li>
+<li><p><a class="reference internal" href="#tdm4-tb-vhd" id="id12">TDM4_tb.vhd</a></p></li>
+<li><p><a class="reference internal" href="#deliverables" id="id13">Deliverables</a></p></li>
 </ul>
 </nav>
 <section id="overview">
@@ -482,8 +484,19 @@ but there is no demo requirement!</p>
 <p>Additionally, there is a GitHub Action testbench that should pass.
 Ensure your two VHDL files are pushed to your repository.</p>
 </section>
+<section id="setup-vivado">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Fork and clone <a class="reference external" href="https://github.com/USAFA-ECE/ece281-ice6">ICE6</a></p></li>
+<li><p>Open the folder.</p></li>
+<li><p>Double click <code class="docutils literal notranslate"><span class="pre">tdm.xpr</span></code> to open Vivado!</p></li>
+</ol>
+<blockquote>
+<div><p>Modify headers and make an initial commit</p>
+</div></blockquote>
+</section>
 <section id="time-division-multiplexing">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Time Division Multiplexing</a><a class="headerlink" href="#time-division-multiplexing" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Time Division Multiplexing</a><a class="headerlink" href="#time-division-multiplexing" title="Link to this heading">#</a></h3>
 <p>Time Division Multiplexing (TDM) is a method of transmitting multiple signals over a single communication channel. It works by dividing the available time on the channel into smaller time slots, with each slot allocated to a different signal. By rapidly switching between these time slots, TDM allows multiple signals to be transmitted simultaneously without interfering with each other.</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/ice6_tdm1.png" src="../_images/ice6_tdm1.png" />
@@ -500,13 +513,13 @@ Ensure your two VHDL files are pushed to your repository.</p>
 </section>
 </section>
 <section id="tdm4-vhd">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">TDM4.vhd</a><a class="headerlink" href="#tdm4-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">TDM4.vhd</a><a class="headerlink" href="#tdm4-vhd" title="Link to this heading">#</a></h2>
 <p>The file is already completed for you! <strong>But <em>please</em> read this section.</strong></p>
 <p>Again, a TDM outputs a single one of its inputs at a time based on <strong>time</strong>.
 This is like a normal MUX, but instead of using a select signal to determine which
 input becomes the output, a TDM uses time to determine which input becomes the output.</p>
 <section id="entity">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Link to this heading">#</a></h3>
 <p>Lets start by going through each of the signals in a TDM entity with four data sets.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">TDM4</span><span class="w"> </span><span class="k">is</span>
 <span class="w">    </span><span class="k">generic</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="k">constant</span><span class="w"> </span><span class="n">k_width</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">natural</span><span class="w">  </span><span class="o">:=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">-- bits in input and output</span>
@@ -562,7 +575,7 @@ and the size of the declared std_logic_vectors.</p></li>
 </div>
 </section>
 <section id="architecture">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
 <p>We introduce a new type in the signal declaration: <strong>unsigned</strong>.
 The unsigned type can take basic arithmetic operations, such as addition!</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1">-- 2 bit counter output to select MUX input</span>
@@ -576,7 +589,7 @@ The unsigned type can take basic arithmetic operations, such as addition!</p>
 </section>
 </section>
 <section id="tdm4-tb-vhd">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">TDM4_tb.vhd</a><a class="headerlink" href="#tdm4-tb-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">TDM4_tb.vhd</a><a class="headerlink" href="#tdm4-tb-vhd" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use the provided <code class="docutils literal notranslate"><span class="pre">TDM4_tb.vhd</span></code> file.</p></li>
 <li><p>Finish the component declaration started in the test bench.</p></li>
@@ -623,7 +636,7 @@ You should get a waveform that looks like <a class="reference internal" href="#t
 </figure>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
 <p>The Gradescope submission includes several short answer questions.</p>
 <table class="table">
 <thead>
@@ -711,6 +724,7 @@ You should get a waveform that looks like <a class="reference internal" href="#t
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorized-resources">Authorized Resources</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-state">End State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vivado">Setup Vivado</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-division-multiplexing">Time Division Multiplexing</a></li>
 </ul>
 </li>
