@@ -101,7 +101,7 @@ entity top_basys3 is
 end top_basys3;
 ```
 
-The entity contains port you will not use for the Basic Elevator functionality,
+The entity contains ports you will not use for the Basic Elevator functionality,
 but leave them in the schematic because you will need them for the Advanced Elevator.
 
 ```{warning}
