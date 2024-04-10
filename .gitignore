@@ -7,3 +7,7 @@ env/
 
 # vscode
 .vscode/
+
+# Ignore Windows markers
+*Zone.Identifier
+
