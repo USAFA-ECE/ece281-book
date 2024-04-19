@@ -153,7 +153,8 @@ They can both be done by hand, or digitally.
 
 - Complete the top_basys3 schematic in {numref}`lab5-top-level` (**Teams > Lab5**).
     - Use a color other than black
-    - All you need to do is name signals and unlabeled ports!
+    - Name signals and unlabeled ports!
+    - Update the schematic with any necessary changes
     - For devices you plan to implement directly in the top_level
         instead of its own VHDL file, annotate with an asterisk.
 - Create an ALU schematic that is capable of accomplishing Task $C$.
