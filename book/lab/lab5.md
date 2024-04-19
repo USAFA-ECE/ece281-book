@@ -155,7 +155,7 @@ They can both be done by hand, or digitally.
     - Use a color other than black
     - All you need to do is name signals and unlabeled ports!
     - For devices you plan to implement directly in the top_level
-        instead of its own VHDL file, annotate with an ~~[asterix](https://en.wikipedia.org/wiki/Asterix)~~ asterisk.
+        instead of its own VHDL file, annotate with an asterisk.
 - Create an ALU schematic that is capable of accomplishing Task $C$.
     - You cannot use a MUX larger than 4:1 in your ALU.
 
