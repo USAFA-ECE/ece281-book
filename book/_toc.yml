@@ -24,6 +24,9 @@ parts:
       - file: lab/lab3
       - file: lab/lab4
       - file: lab/lab5
+  - caption: Homework
+    chapters:
+      - file: HW/HW6
   - caption: Appendix
     chapters:
       - file: appendix/github.md
