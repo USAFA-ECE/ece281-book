@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ECE 281: Digital Design and Computer Architecture &#8212; ECE 281</title>
+    <title>HW 7 - ICE3: Full Adder &#8212; ECE 281</title>
   
   
   
@@ -18,52 +18,49 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
-    <link rel="icon" href="_static/favicon.ico"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="FAQ" href="faq.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'HW/HW12';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -95,7 +92,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -146,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="../intro.html">
   
   
   
@@ -157,8 +154,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="ECE 281 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="ECE 281 - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="ECE 281 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="ECE 281 - Home"/>`);</script>
   
   
 </a></div>
@@ -177,43 +174,43 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
                     ECE 281: Digital Design and Computer Architecture
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE0.html">BCE 0: Get started with Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE1.html">ICE 1: OR Gates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE2.html">ICE 2: Half-Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE3.html">ICE 3: Full Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE4.html">ICE 4: Stoplight</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE0.html">BCE 0: Get started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE1.html">ICE 1: OR Gates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE2.html">ICE 2: Half-Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE3.html">ICE 3: Full Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 4: Stoplight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lab/lab0.html">Lab 0: Install Vivado</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab4.html">Lab 4 - Moore Elevator Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab5.html">Lab 5 - Basic CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab0.html">Lab 0: Install Vivado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab4.html">Lab 4 - Moore Elevator Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/lab5.html">Lab 5 - Basic CPU</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="HW/HW6.html">HW 6 - Digital Schematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HW6.html">HW 6 - Digital Schematics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="appendix/github.html">GitHub real fast</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix/vivado.html">Xilinx Vivado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/github.html">GitHub real fast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/vivado.html">Xilinx Vivado</a></li>
 </ul>
 
     </div>
@@ -285,7 +282,7 @@
       
       
       
-      <li><a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2FHW/HW12.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +312,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="../_sources/HW/HW12.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +396,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ECE 281: Digital Design and Computer Architecture</h1>
+    <h1>HW 7 - ICE3: Full Adder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,8 +406,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-adder-once-more">Half adder, once more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder">Full adder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
 </ul>
             </nav>
         </div>
@@ -422,69 +420,57 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ece-281-digital-design-and-computer-architecture">
-<h1>ECE 281: Digital Design and Computer Architecture<a class="headerlink" href="#ece-281-digital-design-and-computer-architecture" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE0.html">BCE 0: Get started with Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE1.html">ICE 1: OR Gates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE2.html">ICE 2: Half-Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE3.html">ICE 3: Full Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE4.html">ICE 4: Stoplight</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab0.html">Lab 0: Install Vivado</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab4.html">Lab 4 - Moore Elevator Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab5.html">Lab 5 - Basic CPU</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="HW/HW6.html">HW 6 - Digital Schematics</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="appendix/github.html">GitHub real fast</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix/vivado.html">Xilinx Vivado</a></li>
-</ul>
-</div>
-<section id="course-goals">
-<h2>Course Goals<a class="headerlink" href="#course-goals" title="Link to this heading">#</a></h2>
-<p>The goal of this course is for all cadets enrolled in the course to develop the ability to understand and design combinational and sequential circuits and construct, test, and debug these circuits using schematic diagrams and hardware description languages.  Cadets shall demonstrate an understanding of basic computer architecture and how a computer executes simple programs.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hw-7-ice3-full-adder">
+<h1>HW 7 - ICE3: Full Adder<a class="headerlink" href="#hw-7-ice3-full-adder" title="Link to this heading">#</a></h1>
+<p>The intent of this HW is to start thinking about reusing components to make more complex things.</p>
+<section id="half-adder-once-more">
+<h2>Half adder, once more<a class="headerlink" href="#half-adder-once-more" title="Link to this heading">#</a></h2>
+<p>In <a class="reference external" href="https://usafa-ece.github.io/ece281-book/HW/HW6.html">HW 6</a> you previously created a half adder in Digital.</p>
 </section>
-<section id="course-objectives">
-<h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Link to this heading">#</a></h2>
-<p>Cadets shall be able to:</p>
+<section id="full-adder">
+<h2>Full adder<a class="headerlink" href="#full-adder" title="Link to this heading">#</a></h2>
+<p>To make a full adder we are going to connect two half adders!</p>
+<p><strong>First</strong>, read the <a class="reference external" href="https://usafa-ece.github.io/ece281-book/ICE/ICE3.html#background">ICE3 Background</a> section to learn what a full adder is and how to make it with two half adders.</p>
+<p><strong>After</strong> reading the background section:</p>
+<ol class="arabic simple">
+<li><p>Open Digital, then click File &gt; New embedded Circuit</p></li>
+<li><p>Instead of making a half adder all over again, go Components &gt; Custom &gt; halfAdder !</p></li>
+<li><p>Do that again to get your second half adder.</p></li>
+<li><p>Add an OR gate</p></li>
+<li><p>Add inputs and outputs and give them the following <strong>exact</strong> labels:</p>
 <ul class="simple">
-<li><p>Demonstrate ability to design, analyze, and implement combinational and sequential circuits using schematic diagrams.</p></li>
-<li><p>Demonstrate ability to design, analyze, and implement combinational and sequential circuits using a hardware description language.</p></li>
-<li><p>Use contemporary software tools to debug a digital system design and verify that a digital system meets defined requirements.</p></li>
-<li><p>Demonstrate the ability to understand and analyze a microarchitecture (datapath and control unit) to implement a simple computer architecture.</p></li>
-<li><p>Demonstrate the ability to properly record and report laboratory work.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span></code></p></li>
 </ul>
-<blockquote>
-<div><p><strong>Disclaimer:</strong> The contents of this website are for educational use only
-and do not necessarily reflect the official policy or position of the United States Air Force Academy,
-the Air Force, or the U.S. Government.</p>
-</div></blockquote>
+</li>
+<li><p>Connect everything like this - but the pants are your halfAdder component, which appears as a box.</p></li>
+</ol>
+<p><img alt="Full adder from two half adders" src="../_images/ice3_fullfromtwo.png" /></p>
+<ol class="arabic simple" start="7">
+<li><p>Start simulation and test! It should match the <a class="reference external" href="https://usafa-ece.github.io/ece281-book/ICE/ICE3.html#full-adder-truth">full adder truth table</a>.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In Digital go to Analysis &gt; Analysis (or press F9) to open up a truth table!</p>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Save your final schematic as <strong>fullAdder.dig</strong></p></li>
+</ol>
+<p>Later, when we build this in VHDL we will connect switches and LEDs to the inputs and outputs, respectively.</p>
+</section>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>Zip both halfAdder.dig and fullAdder.dig and upload to the gradescope assignment.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You <strong>must</strong> use the exact label names that we specified above,
+otherwise the autograder will not work.</p>
+<p>This is actually very realistic; engineers have to design interfaces
+that work with external systems according to published standards!</p>
+</div>
 </section>
 </section>
 
@@ -501,7 +487,7 @@ the Air Force, or the U.S. Government.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./."
+            path: "./HW"
         },
         predefinedOutput: true
     }
@@ -518,15 +504,6 @@ the Air Force, or the U.S. Government.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="faq.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FAQ</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -543,8 +520,9 @@ the Air Force, or the U.S. Government.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-adder-once-more">Half adder, once more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder">Full adder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
 </ul>
   </nav></div>
 
@@ -593,8 +571,8 @@ By DFEC
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,4 +1,4 @@
-# ICE 3: Top Level Design
+# ICE 3: Full Adder
 
 ```{contents}
 :local:
