@@ -43,12 +43,12 @@ To make a full adder we are going to connect two half adders!
 2. Instead of making a half adder all over again, go Components > Custom > halfAdder !
 3. Do that again to get your second half adder.
 4. Add an OR gate
-5. Add inputs and outputs
-    - Cin
-    - A
-    - B
-    - Cout
-    - S
+5. Add inputs and outputs and give them the following **exact** labels:
+    - `Cin`
+    - `A`
+    - `B`
+    - `Cout`
+    - `S`
 6. Connect everything like this - but the pants are your halfAdder component.
 
 ![Full adder from two half adders](../ICE/img/ice3_fullfromtwo.png)
@@ -61,3 +61,11 @@ Later, when we build this in VHDL we will connect switches and LEDs to the input
 ## Submission
 
 Zip both halfAdder.dig and fullAdder.dig and upload to the gradescope assignment.
+
+```{important}
+You **must** use the exact label names that we specified above,
+otherwise the autograder will not work.
+
+This is actually very realistic; engineers have to design interfaces
+that work with external systems according to published standards!
+```
