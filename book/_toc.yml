@@ -4,9 +4,6 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Course Info
-    chapters:
-      - file: faq
   - caption: In Class Exercise
     chapters:
       - file: ICE/ICE0
