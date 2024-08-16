@@ -5,8 +5,5 @@ env/
 # These will be built automatically by github actions
 **/_build/
 
-# vscode
-.vscode/
-
 # Ignore Windows markers
 *Zone.Identifier
