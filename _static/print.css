@@ -3,6 +3,6 @@
 
 @media print {
     .bd-toc {
-        visibility: none !important;
+        visibility: hidden !important;
     }
 }
