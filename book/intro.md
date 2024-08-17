@@ -106,20 +106,102 @@ Schedule EI with an instructor if you are having difficulty with the course mate
 
  You must notify your instructor **via email** of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.
 
-#### Exams
+## Grading
 
-Graded Reviews and Final Exam are closed texbook, closed notes. Quizzes will be given at instructor discretion.
+This course uses an alternative grading format.
+The intent is that your grades will be fairer, more accurate, and more meaningful.
+This grading format should also improve your learning and retention of concepts taught throughout the semester.
+
+The systems is composed of two categories of assessments: **exams** and **activities**.
+More details on each of these is below. The grade weights are as follows:
+
+```{mermaid}
+%%{init: {'theme':'forest'}}%%
+pie title Prog Grade Weighting
+    "GR 1" : 25
+    "Activities" : 75
+```
+
+```{mermaid}
+%%{init: {'theme':'forest'}}%%
+pie title Final Grade Weighting
+    "GR 1" : 5
+    "GR 2" : 10
+    "Activities" : 60
+    "Final": 25
+```
+
+Grade breakdown follows the standard scale.
+
+```{mermaid}
+flowchart LR
+    J["A\n100%"] --> I["A-\n93%"] --> H["B+\n90%"] --> G["B\n87%"] --> F["B-\n83%"] --> E["C+\n79%"] --> D["C\n77%"] --> C["C-\n73%"] --> B["D\n70%"] --> A["F\n≤60%"]
+    style J fill:#006400,color:#000000
+    style I fill:#006400,color:#000000
+    style H fill:#90EE90,color:#000000
+    style G fill:#90EE90,color:#000000
+    style F fill:#90EE90,color:#000000
+    style E fill:#FFA500,color:#000000
+    style D fill:#FFA500,color:#000000
+    style C fill:#FFA500,color:#000000
+    style B fill:#FF4500,color:#000000
+    style A fill:#FF0000,color:#000000
+```
+
+### Activities
+
+Most "activities" assignments are pass/fail. The lab reports have an additional quality differentiator.
+
+All of these assignments are submitted on Gradescope. Most of these assignments are auto-graded,
+sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
+engage with the material and help you build context for how it all fits together.
+
+#### Pass/Fail Assignments
+
+To be considered a "pass" you must earn 75% of the available points for the assignment.
+
+- **Homeworks (HW)** are designed both as a preview and review of content.
+    There are *no deadline extensions* on HW (including SCA), with the exception of medical or family emergency.
+- **In-Class Exercises (ICE)** require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
+    They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.
+- **Pre-Labs** are designed to help you complete the lab exercise, so much be submitted *before* the lab starts.
+- **Labs** include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.
+
+#### Lab Reports
+
+Each lab has a report, submitted on Gradescope, that will be assessed using [The EMRN Rubric](https://rtalbert.org/emrn/)
+
+![EMRN Rubric](https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png)
+
+For lab reports #2, #3, and #4, you may resubmit once per report for re-evaluation,
+provided you earned an **M** or **R** on your original submission.
+To prevent grading backlogs, the resubmission must take place **within ten days** of the lab report being returned.
+
+#### Grade Assignment
+
+The activities grade is determined by meeting ALL required pass/fail items as outlined:
+
+| Grade | HW (15) | ICE (7) | Pre-Lab (5) | Lab (5) | Lab Report: Excellent | Lab Report: Meets Expectations |
+|-------|---------|---------|-------------|---------|-----------------------|--------------------------------|
+| 100   | 13      | 7       | 5           | 5       | 2                     | 3                              |
+| 90    | 12      | 7       | 5           | 5       | 1                     | 4                              |
+| 80    | 11      | 7       | 5           | 5       |                       | 5                              |
+| 70    | 10      | 7       | 4           | 4       |                       | 4                              |
+| 50    | 8       | 6       | 4           | 3       |                       | 3                              |
+
+### Exams
+
+Graded Reviews and Final Exam are closed textbook, closed notes.
+A reference sheet - also available in Teams - will be provided.
 Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
 **Not all testable concepts will necessarily be covered in lectures.**
 
-##### Missed Exams
+#### Missed Exams
 
 The following policies are outlined in USAFA FOI 537-3:
 
 - **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.
 - **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.
-
-## Grading
 
 ## Course Website Table of Contents
 
