@@ -1,0 +1,8 @@
+/* Hide the right table of contents when printing a PDF */
+/* https://jupyterbook.org/en/stable/advanced/pdf.html#control-the-look-of-pdf-via-html */
+
+@media print {
+    .bd-toc {
+        visibility: hidden !important;
+    }
+}
