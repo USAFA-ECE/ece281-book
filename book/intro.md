@@ -28,24 +28,24 @@
 | 22     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
 | 23     | Memory: RAM & ROM                        | 5.4-5.5                  |              | ICE4               |
 | 24     | Lab 3 - T-bird Turn Signal               |                          |              | Lab 3 Prelab       |
-| 25     | Lab 3 - T-bird Turn Signal               |                          |              |                    |
+| 25     | Lab 3 - T-bird Turn Signal               |                          | HW 25        |                    |
 | 26     | RV32I U-, S-, B-Type Instructions        | 6.3.3-6.3.6, 6.4.3-      |              |                    |
 | 27     | ICE5 - Basic Elevator Controller         |                          | Lab 4 Prelab | Lab 3              |
 | 28     | ICE6 - Time Division Multiplexing        |                          |              | ICE5               |
 | 29     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
-| 30     | Lab 4 - Moore Elevator Controller        |                          |              |                    |
-| 31     | Instructor Perrogative Day               |                          |              |                    |
+| 30     | Lab 4 - Moore Elevator Controller        |                          | HW 30        |                    |
+| 31     | Instructor Prerogative Day               |                          |              |                    |
 | 32     | GR #2                                    |                          |              | Lab 4              |
 | 33     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab |                    |
 | 34     | RV32I Memory Map and J-Type Instructions | 6.4.4-6.4.7              |              |                    |
-| 35     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           |              |                    |
+| 35     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | HW 35        |                    |
 | 36     | Lab 5 Prelab - CPU                       |                          |              | Lab 5 Prelab       |
-| 37     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              |              |                    |
+| 37     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              | HW 37        |                    |
 | 38     | Lab 5 - CPU                              |                          |              |                    |
 | 39     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
 | 40     | Review                                   |                          |              | ICE7, Lab 5 Report |
 
-All assignments are due at 1159 on the T-day of that lesson.
+All assignments are due at 1159 on the T-day of that lesson. HW due dates are not shown, as they are always due the next lesson.
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
 
 ## Course Information
@@ -164,7 +164,7 @@ To be considered a "pass" you must earn 75% of the available points for the assi
     There are *no deadline extensions* on HW (including SCA), with the exception of medical or family emergency.
 - **In-Class Exercises (ICE)** require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
     They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.
-- **Pre-Labs** are designed to help you complete the lab exercise, so much be submitted *before* the lab starts.
+- **Pre-Labs** are designed to help you complete the lab exercise, so must be submitted *before* the lab starts.
 - **Labs** include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.
 
 #### Lab Reports
@@ -185,9 +185,12 @@ The activities grade is determined by meeting ALL required pass/fail items as ou
 |-------|---------|---------|-------------|---------|-----------------------|--------------------------------|
 | 100   | 13      | 7       | 5           | 5       | 2                     | 3                              |
 | 90    | 12      | 7       | 5           | 5       | 1                     | 4                              |
-| 80    | 11      | 7       | 5           | 5       |                       | 5                              |
-| 70    | 10      | 7       | 4           | 4       |                       | 4                              |
-| 50    | 8       | 6       | 4           | 3       |                       | 3                              |
+| 80    | 11      | 6       | 5           | 5       |                       | 4                              |
+| 70    | 10      | 6       | 4           | 4       |                       | 3                              |
+| 50    | 8       | 5       | 4           | 3       |                       | 2                              |
+| 40    | -       | -       | -           | -       | -                     | -                              |
+
+For example, a student who completed 12 Homeworks, 6 ICEs, 5 Pre-Labs, 5 Labs, 2 Excellent Lab Reports, and 3 Lab Reports that meet expectations would get an 80%
 
 ### Exams
 
