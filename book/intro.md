@@ -112,22 +112,27 @@ This course uses an alternative grading format.
 The intent is that your grades will be fairer, more accurate, and more meaningful.
 This grading format should also improve your learning and retention of concepts taught throughout the semester.
 
-The systems is composed of two categories of assessments: **exams** and **activities**.
-More details on each of these is below. The grade weights are as follows:
+The grade weights are as follows:
 
 ```{mermaid}
-%%{init: {'theme':'forest'}}%%
-pie title Prog Grade Weighting
+pie showdata title Prog Grade Weighting
     "GR 1" : 25
-    "Activities" : 75
+    "HW" : 20
+    "ICE" : 15
+    "Prelab" : 10
+    "Lab Code"  : 10
+    "Lab Reports" : 20
 ```
 
 ```{mermaid}
-%%{init: {'theme':'forest'}}%%
-pie title Final Grade Weighting
+pie showdata title Final Grade Weighting
     "GR 1" : 5
     "GR 2" : 10
-    "Activities" : 60
+    "HW" : 10
+    "ICE" : 10
+    "Prelab" : 10
+    "Lab Code"  : 10
+    "Lab Reports" : 20
     "Final": 25
 ```
 
@@ -148,15 +153,11 @@ flowchart LR
     style A fill:#FF0000,color:#000000
 ```
 
-### Activities
+### Pass/Fail Assignments
 
-Most "activities" assignments are pass/fail. The lab reports have an additional quality differentiator.
-
-All of these assignments are submitted on Gradescope. Most of these assignments are auto-graded,
+All pas/fail assignments are submitted on Gradescope. Most of these assignments are auto-graded,
 sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
 engage with the material and help you build context for how it all fits together.
-
-#### Pass/Fail Assignments
 
 To be considered a "pass" you must earn 75% of the available points for the assignment.
 
@@ -167,7 +168,10 @@ To be considered a "pass" you must earn 75% of the available points for the assi
 - **Pre-Labs** are designed to help you complete the lab exercise, so must be submitted *before* the lab starts.
 - **Labs** include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.
 
-#### Lab Reports
+Your ultimate grade for a category will simply be the average of passed vs. total assignments for that category.
+For example, if you complete 6/7 ICEs, you will earn $6/7=85\%$ for ICEs.
+
+### Lab Reports
 
 Each lab has a report, submitted on Gradescope, that will be assessed using [The EMRN Rubric](https://rtalbert.org/emrn/)
 
@@ -177,20 +181,20 @@ For lab reports #2, #3, and #4, you may resubmit once per report for re-evaluati
 provided you earned an **M** or **R** on your original submission.
 To prevent grading backlogs, the resubmission must take place **within ten days** of the lab report being returned.
 
-#### Grade Assignment
+Points for lab reports are awarded categorically, based on the minimum requirements for a given tier.
+This scheme is designed to encourage revision and reward consistency.
 
-The activities grade is determined by meeting ALL required pass/fail items as outlined:
+|     Score    |     # of E reports    |     # of M reports    |     # of R or N reports    |
+|--------------|-----------------------|-----------------------|----------------------------|
+|       100    |                  2    |                  3    |                       0    |
+|        90    |                  1    |                  4    |                       0    |
+|        80    |                  0    |                  5    |                       0    |
+|        70    |                  0    |                  4    |                       1    |
+|        50    |                  0    |                  3    |                       2    |
 
-| Grade | HW (15) | ICE (7) | Pre-Lab (5) | Lab (5) | Lab Report: Excellent | Lab Report: Meets Expectations |
-|-------|---------|---------|-------------|---------|-----------------------|--------------------------------|
-| 100   | 13      | 7       | 5           | 5       | 2                     | 3                              |
-| 90    | 12      | 7       | 5           | 5       | 1                     | 4                              |
-| 80    | 11      | 6       | 5           | 5       |                       | 4                              |
-| 70    | 10      | 6       | 4           | 4       |                       | 3                              |
-| 50    | 8       | 5       | 4           | 3       |                       | 2                              |
-| 40    | -       | -       | -           | -       | -                     | -                              |
-
-For example, a student who completed 12 Homeworks, 6 ICEs, 5 Pre-Labs, 5 Labs, 2 Excellent Lab Reports, and 3 Lab Reports that meet expectations would get an 80%
+**Example:** A cadet earns an M on her first report.
+She then earns an R on her second report and resubmits, earning an E.
+Her next 3 reports earn an M. Her ultimate grade for Lab Reports will be 90%
 
 ### Exams
 
