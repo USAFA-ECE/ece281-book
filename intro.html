@@ -60,11 +60,13 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="next" title="BCE 0: Get started with Git" href="ICE/ICE0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,11 +186,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE0.html">BCE 0: Get started with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE1.html">ICE 1: OR Gates</a></li>
@@ -409,9 +407,37 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus">Syllabus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-information">Course Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors">Instructors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capt-brian-yarbrough">Capt Brian Yarbrough</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lt-col-james-trimble">Lt Col James Trimble</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-texts">Course Texts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration">Collaboration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-instruction-ei">Extra Instruction (EI)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-class">Missing Class</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-assignments">Late Assignments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-fail-assignments">Pass/Fail Assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-reports">Lab Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exams">Exams</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missed-exams">Missed Exams</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-website-table-of-contents">Course Website Table of Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -425,56 +451,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ece-281-digital-design-and-computer-architecture">
 <h1>ECE 281: Digital Design and Computer Architecture<a class="headerlink" href="#ece-281-digital-design-and-computer-architecture" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE0.html">BCE 0: Get started with Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE1.html">ICE 1: OR Gates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE2.html">ICE 2: Half-Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE3.html">ICE 3: Full Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE4.html">ICE 4: Stoplight</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab4.html">Lab 4 - Moore Elevator Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab/lab5.html">Lab 5 - Basic CPU</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="HW/HW6.html">HW 6 - Digital Schematics</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="appendix/github.html">GitHub real fast</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix/vivado.html">Xilinx Vivado</a></li>
-</ul>
-</div>
-<section id="syllabus">
-<h2>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h2>
+<p>2025 Spring Syllabus</p>
+<section id="schedule">
+<h2>Schedule<a class="headerlink" href="#schedule" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Lesson</p></th>
 <th class="head"><p>Topic</p></th>
 <th class="head"><p>Reading</p></th>
 <th class="head"><p>Assigned</p></th>
-<th class="head"><p>Due*</p></th>
+<th class="head"><p>Due</p></th>
 </tr>
 </thead>
 <tbody>
@@ -625,7 +611,7 @@ document.write(`
 <tr class="row-even"><td><p>25</p></td>
 <td><p>Lab 3 - T-bird Turn Signal</p></td>
 <td><p></p></td>
-<td><p></p></td>
+<td><p>HW 25</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>26</p></td>
@@ -655,11 +641,11 @@ document.write(`
 <tr class="row-odd"><td><p>30</p></td>
 <td><p>Lab 4 - Moore Elevator Controller</p></td>
 <td><p></p></td>
-<td><p></p></td>
+<td><p>HW 30</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>31</p></td>
-<td><p>Instructor Perrogative Day</p></td>
+<td><p>Instructor Prerogative Day</p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -685,7 +671,7 @@ document.write(`
 <tr class="row-even"><td><p>35</p></td>
 <td><p>RV32I Single-Cycle Microarchitecture 1</p></td>
 <td><p>7.1, 7.3-7.3.2</p></td>
-<td><p></p></td>
+<td><p>HW 35</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>36</p></td>
@@ -697,7 +683,7 @@ document.write(`
 <tr class="row-even"><td><p>37</p></td>
 <td><p>RV32I Single-Cycle Microarchitecture 2</p></td>
 <td><p>7.3.3-7.3.5</p></td>
-<td><p></p></td>
+<td><p>HW 37</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>38</p></td>
@@ -721,13 +707,35 @@ document.write(`
 </tbody>
 </table>
 </div>
+<p>All assignments are due at 1159 on the T-day of that lesson. HW due dates are not shown, as they are always due the next lesson.
+Unless stated otherwise, assignments are submitted on <a class="reference external" href="https://www.gradescope.com/">Gradescope</a>.</p>
+</section>
+<section id="course-information">
+<h2>Course Information<a class="headerlink" href="#course-information" title="Link to this heading">#</a></h2>
+<section id="instructors">
+<h3>Instructors<a class="headerlink" href="#instructors" title="Link to this heading">#</a></h3>
+<section id="capt-brian-yarbrough">
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54059">Capt Brian Yarbrough</a><a class="headerlink" href="#capt-brian-yarbrough" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Course Director</p></li>
+<li><p><a class="reference external" href="mailto:brian&#46;yarbrough&#37;&#52;&#48;afacademy&#46;af&#46;edu">brian<span>&#46;</span>yarbrough<span>&#64;</span>afacademy<span>&#46;</span>af<span>&#46;</span>edu</a></p></li>
+<li><p>Office: 2F48</p></li>
+</ul>
+</section>
+<section id="lt-col-james-trimble">
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54055">Lt Col James Trimble</a><a class="headerlink" href="#lt-col-james-trimble" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="mailto:james&#46;trimble&#37;&#52;&#48;afacademy&#46;af&#46;edu">james<span>&#46;</span>trimble<span>&#64;</span>afacademy<span>&#46;</span>af<span>&#46;</span>edu</a></p></li>
+<li><p>Office: 2F10</p></li>
+</ul>
+</section>
 </section>
 <section id="course-goals">
-<h2>Course Goals<a class="headerlink" href="#course-goals" title="Link to this heading">#</a></h2>
+<h3>Course Goals<a class="headerlink" href="#course-goals" title="Link to this heading">#</a></h3>
 <p>The goal of this course is for all cadets enrolled in the course to develop the ability to understand and design combinational and sequential circuits and construct, test, and debug these circuits using schematic diagrams and hardware description languages.  Cadets shall demonstrate an understanding of basic computer architecture and how a computer executes simple programs.</p>
 </section>
 <section id="course-objectives">
-<h2>Course Objectives<a class="headerlink" href="#course-objectives" title="Link to this heading">#</a></h2>
+<h3>Course Objectives<a class="headerlink" href="#course-objectives" title="Link to this heading">#</a></h3>
 <p>Cadets shall be able to:</p>
 <ul class="simple">
 <li><p>Demonstrate ability to design, analyze, and implement combinational and sequential circuits using schematic diagrams.</p></li>
@@ -736,11 +744,216 @@ document.write(`
 <li><p>Demonstrate the ability to understand and analyze a microarchitecture (datapath and control unit) to implement a simple computer architecture.</p></li>
 <li><p>Demonstrate the ability to properly record and report laboratory work.</p></li>
 </ul>
+</section>
+<section id="course-texts">
+<h3>Course Texts<a class="headerlink" href="#course-texts" title="Link to this heading">#</a></h3>
+<p><em>Digital Design and Computer Architecture: <strong>RISC-V Edition</strong></em> by Sarah L. Harris and David Harris.</p>
+<p>You <strong>must</strong> purchase an electronic or physical copy of this book. It will be one of the best textbooks of your career,
+and you will continue to reference it in other courses.
+<strong>Sharing a digital copy is illegal and a violation of the honor code.</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://shop.elsevier.com/books/digital-design-and-computer-architecture-risc-v-edition/harris/978-0-12-820064-3">Publisher link</a></p></li>
+<li><p><a class="reference external" href="https://pages.hmc.edu/harris/ddca/ddcarv.html">Supplemental materials</a></p></li>
+</ul>
+<p>Readings should be completed <em>prior</em> to class.</p>
+</section>
+<section id="policies">
+<h3>Policies<a class="headerlink" href="#policies" title="Link to this heading">#</a></h3>
+<p>All course policies are in accordance with and subject to USAFA policies.</p>
+<section id="collaboration">
+<h4>Collaboration<a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h4>
+<p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p>
+</section>
+<section id="extra-instruction-ei">
+<h4>Extra Instruction (EI)<a class="headerlink" href="#extra-instruction-ei" title="Link to this heading">#</a></h4>
+<p>Schedule EI with an instructor if you are having difficulty with the course material.  You must have read the assignment and attempted the homework before requesting EI.  You are responsible for material if you miss class. After you’ve read the assignment, attempted the homework, and checked with your classmates, you may then schedule EI if you have difficulty with the material. EI is not a remedial lecture.</p>
+</section>
+<section id="missing-class">
+<h4>Missing Class<a class="headerlink" href="#missing-class" title="Link to this heading">#</a></h4>
+<p>You must notify your instructor <strong>via email</strong> of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.</p>
+</section>
+<section id="late-assignments">
+<h4>Late Assignments<a class="headerlink" href="#late-assignments" title="Link to this heading">#</a></h4>
+<p>With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
+deadline extensions are liberally granted by instructor discretion,
+<em>provided that you coordinate <strong>prior</strong> to the day on which the assignment is due.</em>
+It is your responsibility to plan ahead and communicate clearly.
+These extensions will be reflected ni Gradescope individually for you on that particular assignment.</p>
+</section>
+</section>
+</section>
+<section id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
+<p>This course uses an alternative grading format.
+The intent is that your grades will be fairer, more accurate, and more meaningful.
+This grading format should also improve your learning and retention of concepts taught throughout the semester.</p>
+<p>There are three broad categories of assignments:</p>
+<ul class="simple">
+<li><p>Pass/fail</p></li>
+<li><p>Lab reports</p></li>
+<li><p>Exams</p></li>
+</ul>
+<p>The grade weights are as follows:</p>
+<div class="mermaid">
+            pie showdata title Prog Grade Weighting
+    &quot;GR 1&quot; : 25
+    &quot;HW&quot; : 20
+    &quot;ICE&quot; : 15
+    &quot;Prelab&quot; : 10
+    &quot;Lab Code&quot;  : 10
+    &quot;Lab Reports&quot; : 20
+        </div><div class="mermaid">
+            pie showdata title Final Grade Weighting
+    &quot;GR 1&quot; : 5
+    &quot;GR 2&quot; : 10
+    &quot;HW&quot; : 10
+    &quot;ICE&quot; : 10
+    &quot;Prelab&quot; : 10
+    &quot;Lab Code&quot;  : 10
+    &quot;Lab Reports&quot; : 20
+    &quot;Final&quot;: 25
+        </div><p>Grade breakdown follows the standard scale.</p>
+<div class="mermaid">
+            flowchart LR
+    J[&quot;A\n100%&quot;] --&gt; I[&quot;A-\n93%&quot;] --&gt; H[&quot;B+\n90%&quot;] --&gt; G[&quot;B\n87%&quot;] --&gt; F[&quot;B-\n83%&quot;] --&gt; E[&quot;C+\n79%&quot;] --&gt; D[&quot;C\n77%&quot;] --&gt; C[&quot;C-\n73%&quot;] --&gt; B[&quot;D\n70%&quot;] --&gt; A[&quot;F\n≤60%&quot;]
+    style J fill:#006400,color:#000000
+    style I fill:#006400,color:#000000
+    style H fill:#90EE90,color:#000000
+    style G fill:#90EE90,color:#000000
+    style F fill:#90EE90,color:#000000
+    style E fill:#FFA500,color:#000000
+    style D fill:#FFA500,color:#000000
+    style C fill:#FFA500,color:#000000
+    style B fill:#FF4500,color:#000000
+    style A fill:#FF0000,color:#000000
+        </div><section id="pass-fail-assignments">
+<h3>Pass/Fail Assignments<a class="headerlink" href="#pass-fail-assignments" title="Link to this heading">#</a></h3>
+<p>All pas/fail assignments are submitted on Gradescope. Most of these assignments are auto-graded,
+sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
+engage with the material and help you build context for how it all fits together.</p>
+<p>To be considered a “pass” you must earn 75% of the available points for the assignment.</p>
+<ul class="simple">
+<li><p><strong>Homeworks (HW)</strong> are designed both as a preview and review of content.
+There are <em>no deadline extensions</em> on HW (including SCA), with the exception of medical or family emergency.</p></li>
+<li><p><strong>In-Class Exercises (ICE)</strong> require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
+They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.</p></li>
+<li><p><strong>Pre-Labs</strong> are designed to help you complete the lab exercise, so must be submitted <em>before</em> the lab starts.</p></li>
+<li><p><strong>Labs</strong> include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.</p></li>
+</ul>
+<p>Your ultimate grade for a category will simply be the average of passed vs. total assignments for that category.
+For example, if you complete 6/7 ICEs, you will earn <span class="math notranslate nohighlight">\(6/7=85\%\)</span> for ICEs.</p>
+</section>
+<section id="lab-reports">
+<h3>Lab Reports<a class="headerlink" href="#lab-reports" title="Link to this heading">#</a></h3>
+<p>Each lab has a report, submitted on Gradescope, that will be assessed using <a class="reference external" href="https://rtalbert.org/emrn/">The EMRN Rubric</a></p>
+<p><img alt="EMRN Rubric" src="https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png" /></p>
+<p>For lab reports #2, #3, and #4, you may resubmit once per report for re-evaluation,
+provided you earned an <strong>M</strong> or <strong>R</strong> on your original submission.
+To prevent grading backlogs, the resubmission must take place <strong>within ten days</strong> of the lab report being returned.</p>
+<p>Points for lab reports are awarded categorically, based on the minimum requirements for a given tier.
+This scheme is designed to encourage revision and reward consistency.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Score</p></th>
+<th class="head"><p># of E reports</p></th>
+<th class="head"><p># of M reports</p></th>
+<th class="head"><p># of R or N reports</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>100</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>90</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>80</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>70</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>50</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Example:</strong> A cadet earns an M on her first report.
+She then earns an R on her second report and resubmits, earning an E.
+Her next 3 reports earn an M. Her ultimate grade for Lab Reports will be 90%</p>
+</section>
+<section id="exams">
+<h3>Exams<a class="headerlink" href="#exams" title="Link to this heading">#</a></h3>
+<p>Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
+Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
+<strong>Not all testable concepts will necessarily be covered in lectures.</strong></p>
+<section id="missed-exams">
+<h4>Missed Exams<a class="headerlink" href="#missed-exams" title="Link to this heading">#</a></h4>
+<p>The following policies are outlined in USAFA FOI 537-3:</p>
+<ul class="simple">
+<li><p><strong>Scheduled Absence:</strong> If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.</p></li>
+<li><p><strong>Unscheduled Absence:</strong> If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="course-website-table-of-contents">
+<h2>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Link to this heading">#</a></h2>
+<p>Course website: <a class="reference external" href="https://usafa-ece.github.io/ece281-book">https://usafa-ece.github.io/ece281-book</a>.</p>
+<p>Students are encouraged to submit pull requests to <a class="reference external" href="https://github.com/usafa-ece/ece281-book">the github repository</a>
+for error corrections!</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE0.html">BCE 0: Get started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE1.html">ICE 1: OR Gates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE2.html">ICE 2: Half-Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE3.html">ICE 3: Full Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE4.html">ICE 4: Stoplight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lab/lab1.html">Lab 1 - ThirtyOneDayMonth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab/lab2.html">Lab 2 - Seven Segment Display Decoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab/lab3.html">Lab 3 - Thunderbird Turn Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab/lab4.html">Lab 4 - Moore Elevator Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab/lab5.html">Lab 5 - Basic CPU</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HW/HW6.html">HW 6 - Digital Schematics</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="appendix/github.html">GitHub real fast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/vivado.html">Xilinx Vivado</a></li>
+</ul>
+</div>
 <blockquote>
 <div><p><strong>Disclaimer:</strong> The contents of this website are for educational use only
 and do not necessarily reflect the official policy or position of the United States Air Force Academy,
 the Air Force, or the U.S. Government.</p>
 </div></blockquote>
+<p>Department of Electrical and Computer Engineering, USAF Academy, CO 80840</p>
 </section>
 </section>
 
@@ -775,11 +988,11 @@ the Air Force, or the U.S. Government.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="faq.html"
+       href="ICE/ICE0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FAQ</p>
+        <p class="prev-next-title">BCE 0: Get started with Git</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -799,9 +1012,37 @@ the Air Force, or the U.S. Government.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus">Syllabus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-information">Course Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors">Instructors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capt-brian-yarbrough">Capt Brian Yarbrough</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lt-col-james-trimble">Lt Col James Trimble</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-texts">Course Texts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration">Collaboration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-instruction-ei">Extra Instruction (EI)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-class">Missing Class</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-assignments">Late Assignments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-fail-assignments">Pass/Fail Assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-reports">Lab Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exams">Exams</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missed-exams">Missed Exams</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-website-table-of-contents">Course Website Table of Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -826,7 +1067,7 @@ By DFEC
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>

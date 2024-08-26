@@ -1,11 +1,10 @@
 # ECE 281: Digital Design and Computer Architecture
 
-```{tableofcontents}
-```
+2025 Spring Syllabus
 
-## Syllabus
+## Schedule
 
-| Lesson | Topic                                    | Reading                  | Assigned     | Due*               |
+| Lesson | Topic                                    | Reading                  | Assigned     | Due                |
 |--------|------------------------------------------|--------------------------|--------------|--------------------|
 | 1      | My Computer & The Cloud                  | 1.2                      | HW 1         |                    |
 | 2      | Combinational Logic                      | 1.5                      | HW 2         |                    |
@@ -31,28 +30,46 @@
 | 22     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
 | 23     | Memory: RAM & ROM                        | 5.4-5.5                  |              | ICE4               |
 | 24     | Lab 3 - T-bird Turn Signal               |                          |              | Lab 3 Prelab       |
-| 25     | Lab 3 - T-bird Turn Signal               |                          |              |                    |
+| 25     | Lab 3 - T-bird Turn Signal               |                          | HW 25        |                    |
 | 26     | RV32I U-, S-, B-Type Instructions        | 6.3.3-6.3.6, 6.4.3-      |              |                    |
 | 27     | ICE5 - Basic Elevator Controller         |                          | Lab 4 Prelab | Lab 3              |
 | 28     | ICE6 - Time Division Multiplexing        |                          |              | ICE5               |
 | 29     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
-| 30     | Lab 4 - Moore Elevator Controller        |                          |              |                    |
-| 31     | Instructor Perrogative Day               |                          |              |                    |
+| 30     | Lab 4 - Moore Elevator Controller        |                          | HW 30        |                    |
+| 31     | Instructor Prerogative Day               |                          |              |                    |
 | 32     | GR #2                                    |                          |              | Lab 4              |
 | 33     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab |                    |
 | 34     | RV32I Memory Map and J-Type Instructions | 6.4.4-6.4.7              |              |                    |
-| 35     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           |              |                    |
+| 35     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | HW 35        |                    |
 | 36     | Lab 5 Prelab - CPU                       |                          |              | Lab 5 Prelab       |
-| 37     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              |              |                    |
+| 37     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              | HW 37        |                    |
 | 38     | Lab 5 - CPU                              |                          |              |                    |
 | 39     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
 | 40     | Review                                   |                          |              | ICE7, Lab 5 Report |
 
-## Course Goals
+All assignments are due at 1159 on the T-day of that lesson. HW due dates are not shown, as they are always due the next lesson.
+Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
+
+## Course Information
+
+### Instructors
+
+#### [Capt Brian Yarbrough](https://www.usafa.edu/facultyprofile/?smid=54059)
+
+- Course Director
+- [brian.yarbrough@afacademy.af.edu](mailto:brian.yarbrough@afacademy.af.edu)
+- Office: 2F48
+
+#### [Lt Col James Trimble](https://www.usafa.edu/facultyprofile/?smid=54055)
+
+- [james.trimble@afacademy.af.edu](mailto:james.trimble@afacademy.af.edu)
+- Office: 2F10
+
+### Course Goals
 
 The goal of this course is for all cadets enrolled in the course to develop the ability to understand and design combinational and sequential circuits and construct, test, and debug these circuits using schematic diagrams and hardware description languages.  Cadets shall demonstrate an understanding of basic computer architecture and how a computer executes simple programs.
 
-## Course Objectives
+### Course Objectives
 
 Cadets shall be able to:
 
@@ -62,6 +79,164 @@ Cadets shall be able to:
 - Demonstrate the ability to understand and analyze a microarchitecture (datapath and control unit) to implement a simple computer architecture.
 - Demonstrate the ability to properly record and report laboratory work.
 
+### Course Texts
+
+*Digital Design and Computer Architecture: **RISC-V Edition*** by Sarah L. Harris and David Harris.
+
+You **must** purchase an electronic or physical copy of this book. It will be one of the best textbooks of your career,
+and you will continue to reference it in other courses.
+**Sharing a digital copy is illegal and a violation of the honor code.**
+
+- [Publisher link](https://shop.elsevier.com/books/digital-design-and-computer-architecture-risc-v-edition/harris/978-0-12-820064-3)
+- [Supplemental materials](https://pages.hmc.edu/harris/ddca/ddcarv.html)
+
+Readings should be completed *prior* to class.
+
+### Policies
+
+All course policies are in accordance with and subject to USAFA policies.
+
+#### Collaboration
+
+For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
+
+#### Extra Instruction (EI)
+
+Schedule EI with an instructor if you are having difficulty with the course material.  You must have read the assignment and attempted the homework before requesting EI.  You are responsible for material if you miss class. After you’ve read the assignment, attempted the homework, and checked with your classmates, you may then schedule EI if you have difficulty with the material. EI is not a remedial lecture.
+
+#### Missing Class
+
+ You must notify your instructor **via email** of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.
+
+#### Late Assignments
+
+With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
+deadline extensions are liberally granted by instructor discretion,
+*provided that you coordinate **prior** to the day on which the assignment is due.*
+It is your responsibility to plan ahead and communicate clearly.
+These extensions will be reflected ni Gradescope individually for you on that particular assignment.
+
+## Grading
+
+This course uses an alternative grading format.
+The intent is that your grades will be fairer, more accurate, and more meaningful.
+This grading format should also improve your learning and retention of concepts taught throughout the semester.
+
+There are three broad categories of assignments:
+
+- Pass/fail
+- Lab reports
+- Exams
+
+The grade weights are as follows:
+
+```{mermaid}
+pie showdata title Prog Grade Weighting
+    "GR 1" : 25
+    "HW" : 20
+    "ICE" : 15
+    "Prelab" : 10
+    "Lab Code"  : 10
+    "Lab Reports" : 20
+```
+
+```{mermaid}
+pie showdata title Final Grade Weighting
+    "GR 1" : 5
+    "GR 2" : 10
+    "HW" : 10
+    "ICE" : 10
+    "Prelab" : 10
+    "Lab Code"  : 10
+    "Lab Reports" : 20
+    "Final": 25
+```
+
+Grade breakdown follows the standard scale.
+
+```{mermaid}
+flowchart LR
+    J["A\n100%"] --> I["A-\n93%"] --> H["B+\n90%"] --> G["B\n87%"] --> F["B-\n83%"] --> E["C+\n79%"] --> D["C\n77%"] --> C["C-\n73%"] --> B["D\n70%"] --> A["F\n≤60%"]
+    style J fill:#006400,color:#000000
+    style I fill:#006400,color:#000000
+    style H fill:#90EE90,color:#000000
+    style G fill:#90EE90,color:#000000
+    style F fill:#90EE90,color:#000000
+    style E fill:#FFA500,color:#000000
+    style D fill:#FFA500,color:#000000
+    style C fill:#FFA500,color:#000000
+    style B fill:#FF4500,color:#000000
+    style A fill:#FF0000,color:#000000
+```
+
+### Pass/Fail Assignments
+
+All pas/fail assignments are submitted on Gradescope. Most of these assignments are auto-graded,
+sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
+engage with the material and help you build context for how it all fits together.
+
+To be considered a "pass" you must earn 75% of the available points for the assignment.
+
+- **Homeworks (HW)** are designed both as a preview and review of content.
+    There are *no deadline extensions* on HW (including SCA), with the exception of medical or family emergency.
+- **In-Class Exercises (ICE)** require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
+    They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.
+- **Pre-Labs** are designed to help you complete the lab exercise, so must be submitted *before* the lab starts.
+- **Labs** include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.
+
+Your ultimate grade for a category will simply be the average of passed vs. total assignments for that category.
+For example, if you complete 6/7 ICEs, you will earn $6/7=85\%$ for ICEs.
+
+### Lab Reports
+
+Each lab has a report, submitted on Gradescope, that will be assessed using [The EMRN Rubric](https://rtalbert.org/emrn/)
+
+![EMRN Rubric](https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png)
+
+For lab reports #2, #3, and #4, you may resubmit once per report for re-evaluation,
+provided you earned an **M** or **R** on your original submission.
+To prevent grading backlogs, the resubmission must take place **within ten days** of the lab report being returned.
+
+Points for lab reports are awarded categorically, based on the minimum requirements for a given tier.
+This scheme is designed to encourage revision and reward consistency.
+
+|     Score    |     # of E reports    |     # of M reports    |     # of R or N reports    |
+|--------------|-----------------------|-----------------------|----------------------------|
+|       100    |                  2    |                  3    |                       0    |
+|        90    |                  1    |                  4    |                       0    |
+|        80    |                  0    |                  5    |                       0    |
+|        70    |                  0    |                  4    |                       1    |
+|        50    |                  0    |                  3    |                       2    |
+
+**Example:** A cadet earns an M on her first report.
+She then earns an R on her second report and resubmits, earning an E.
+Her next 3 reports earn an M. Her ultimate grade for Lab Reports will be 90%
+
+### Exams
+
+Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
+Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
+**Not all testable concepts will necessarily be covered in lectures.**
+
+#### Missed Exams
+
+The following policies are outlined in USAFA FOI 537-3:
+
+- **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.
+- **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.
+
+## Course Website Table of Contents
+
+Course website: [https://usafa-ece.github.io/ece281-book](https://usafa-ece.github.io/ece281-book).
+
+Students are encouraged to submit pull requests to [the github repository](https://github.com/usafa-ece/ece281-book)
+for error corrections!
+
+```{tableofcontents}
+```
+
 > **Disclaimer:** The contents of this website are for educational use only
 > and do not necessarily reflect the official policy or position of the United States Air Force Academy,
 > the Air Force, or the U.S. Government.
+
+Department of Electrical and Computer Engineering, USAF Academy, CO 80840
