@@ -1,6 +1,8 @@
 # ECE 281: Digital Design and Computer Architecture
 
-## Syllabus
+2025 Spring Syllabus
+
+## Schedule
 
 | Lesson | Topic                                    | Reading                  | Assigned     | Due                |
 |--------|------------------------------------------|--------------------------|--------------|--------------------|
@@ -96,21 +98,35 @@ All course policies are in accordance with and subject to USAFA policies.
 
 #### Collaboration
 
-For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone.   We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
+For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
 
 #### Extra Instruction (EI)
 
-Schedule EI with an instructor if you are having difficulty with the course material.  You must have read the assignment and attempted the homework before requesting EI.  You are responsible for material if you miss class, so get notes from someone in your section.  For example, you miss the lesson where the instructor announces a quiz for the next lesson or the instructor assigns homework due next lesson.  Even though you missed the lesson, you are still responsible for the quiz, homework, or any other assignments made.  It is in your best interest to check with your classmates after an absence.  After you’ve read the assignment, attempted the homework, and checked with your classmates, you may then schedule EI if you have difficulty with the material—EI is not a remedial lecture.
+Schedule EI with an instructor if you are having difficulty with the course material.  You must have read the assignment and attempted the homework before requesting EI.  You are responsible for material if you miss class. After you’ve read the assignment, attempted the homework, and checked with your classmates, you may then schedule EI if you have difficulty with the material. EI is not a remedial lecture.
 
 #### Missing Class
 
  You must notify your instructor **via email** of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.
+
+#### Late Assignments
+
+With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
+deadline extensions are liberally granted by instructor discretion,
+*provided that you coordinate **prior** to the day on which the assignment is due.*
+It is your responsibility to plan ahead and communicate clearly.
+These extensions will be reflected ni Gradescope individually for you on that particular assignment.
 
 ## Grading
 
 This course uses an alternative grading format.
 The intent is that your grades will be fairer, more accurate, and more meaningful.
 This grading format should also improve your learning and retention of concepts taught throughout the semester.
+
+There are three broad categories of assignments:
+
+- Pass/fail
+- Lab reports
+- Exams
 
 The grade weights are as follows:
 
@@ -198,8 +214,7 @@ Her next 3 reports earn an M. Her ultimate grade for Lab Reports will be 90%
 
 ### Exams
 
-Graded Reviews and Final Exam are closed textbook, closed notes.
-A reference sheet - also available in Teams - will be provided.
+Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
 Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
 **Not all testable concepts will necessarily be covered in lectures.**
 
