@@ -1,0 +1,7 @@
+{
+    "recommendations": ["vscode.markdown-language-features",
+                        "bierner.markdown-mermaid",
+                        "DavidAnson.vscode-markdownlint",
+                        "streetsidesoftware.code-spell-checker",
+                        "elagil.pre-commit-helper"]
+  }
