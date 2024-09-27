@@ -1,7 +1,10 @@
 {
-    "recommendations": ["vscode.markdown-language-features",
-                        "bierner.markdown-mermaid",
-                        "DavidAnson.vscode-markdownlint",
-                        "streetsidesoftware.code-spell-checker",
-                        "elagil.pre-commit-helper"]
+    "recommendations": [ 
+                            "executablebookproject.myst-highlight",
+                            "ms-toolsai.jupyter",
+                            "davidanson.vscode-markdownlint",
+                            "streetsidesoftware.code-spell-checker"
+                            "vscode.markdown-language-features",
+                            "bierner.markdown-mermaid",
+                        ]
   }
