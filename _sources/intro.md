@@ -47,8 +47,11 @@
 | 39     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
 | 40     | Review                                   |                          |              | ICE7, Lab 5 Report |
 
-All assignments are due at 1159 on the T-day of that lesson. HW due dates are not shown, as they are always due the next lesson.
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
+
+- Homework (HW) are always due at 0800 before the next lesson.
+    - Extensions on HW are *only* granted in the case of medical or family emergency.
+- All other assignments are due at 1159 on the T-day of that lesson.
 
 ## Course Information
 
