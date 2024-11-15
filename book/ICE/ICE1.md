@@ -154,11 +154,11 @@ Pull-down resistor configuration
 
 {numref} shows how to connect the single pole double throw switches. 
 
-```{figure} img/ice01_image8.jpg
+```{figure} img/ice01_image8.png
 ---
-name: 2-dip-switch
+name: Single throw double pole switch
 ---
-2x 2-Dip switch and resistor configuration (Left) and 4x 1-DIP configuration (Right)
+Switch wiring configuration
 ```
 
 Now you will test the circuit.
