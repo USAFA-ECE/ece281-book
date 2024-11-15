@@ -43,18 +43,19 @@ For this lab, **work in teams of two**. You may seek help from any ECE 281 instr
 
 You will implement the logic of a half adder using transistor-transistor logic (TTL) chips:
 
-The half adder takes two inputs, \( A \) and \( B \), and produces two outputs:
-**Sum** (\( S \)) — represents the sum of \( A \) and \( B \).
- **Carry** (\( C \)) — represents the carry-out when \( A \) and \( B \) are both high (logic one).
+The half adder takes two inputs, **A** and **B**, and produces two outputs:
+**Sum** (*S*) — represents the sum of **A** and **B**.
+ **Carry** (*C*) — represents the carry-out when **A** and **B** are both high (logic one).
 
 The logic equations for the half adder outputs are:
 $$
 S = A \oplus B
 $$
+
 $$
 C = A \cdot B
 $$
-where "$\oplus$" represents the XOR operation (Sum) and "$\cdot$" represents the AND operation (Carry).
+where $\oplus$ represents the XOR operation (Sum) and $\cdot$ represents the AND operation (Carry).
 
 ### The Chips
 
@@ -152,7 +153,7 @@ name: pull-down-resistor
 Pull-down resistor configuration
 ```
 
-{numref} shows how to connect the single pole double throw switches. 
+{numref}'pull-down-resistor' shows how to connect the single pole double throw switches. 
 
 ```{figure} img/ice01_image8.png
 ---
