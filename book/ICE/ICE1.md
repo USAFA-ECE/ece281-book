@@ -44,8 +44,8 @@ For this lab, **work in teams of two**. You may seek help from any ECE 281 instr
 You will implement the logic of a half adder using transistor-transistor logic (TTL) chips:
 
 The half adder takes two inputs, **A** and **B**, and produces two outputs:
-**Sum** (*S*) — represents the sum of **A** and **B**.
- **Carry** (*C*) — represents the carry-out when **A** and **B** are both high (logic one).
+Sum (**S**) — represents the sum of **A** and **B**.
+ Carry (**C**) — represents the carry-out when **A** and **B** are both high (logic one).
 
 The logic equations for the half adder outputs are:
 
