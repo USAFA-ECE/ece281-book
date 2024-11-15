@@ -1,4 +1,4 @@
-# ICE 1: OR Gates
+# ICE 1: Breadboard Half Adder
 
 ```{contents}
 :local:
@@ -48,6 +48,7 @@ The half adder takes two inputs, **A** and **B**, and produces two outputs:
  **Carry** (*C*) — represents the carry-out when **A** and **B** are both high (logic one).
 
 The logic equations for the half adder outputs are:
+
 $$
 S = A \oplus B
 $$
