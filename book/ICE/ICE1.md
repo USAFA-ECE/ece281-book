@@ -62,7 +62,7 @@ You will use two TTL chips to build the half adder:
 1. **74LS08** — A quad, 2-input AND gate, used to produce the Carry output.
 2. **74LS86** — A quad, 2-input XOR gate, used to produce the Sum output.
 
-```{figure} img/ice01_image2.jpg
+```{figure} img/ice01_image2.png
 ---
 name: LS08-Pin-Layout
 ---
