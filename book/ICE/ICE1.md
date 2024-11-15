@@ -184,33 +184,25 @@ The switch outputs will be wired to pins 1 and 2 of the 74LS08.
 
 Next, we will connect the 74LS08 AND chip to the 74LS86 XOR chip. Please note -- these will be connected on the same node as the switch outputs. 
 
-- Connect pin 1 of the 74LS08 to pin 1 of the 74LS86.
-- Connect pin 2 of the 74LS08 to pin 2 of the 74LS86.
+- Connect pin 1 (A) of the 74LS08 to pin 1 of the 74LS86.
+- Connect pin 2 (B) of the 74LS08 to pin 2 of the 74LS86.
 
-```{figure} img/ice01_image9.jpg
+```{figure} img/ice01_image9.png
 ---
-name: sn7432-wiring
+name: Chip wiring
 ---
-SN7432 Wiring
+Chip wiring
 ```
 
-According to our equation, if any of the switches are active, the
-output of the chip should be high (logic 111 or 5V).
+According to our equation, if any single switch is active, the **SUM** operation will be high. 
 
-> Connect the black lead of the DMM to ground and the red lead to the output of pin of the
-final OR gate (Pin 8). Turn on the power and test your circuit.
+> Connect the black lead of the DMM to ground and the red lead to the output of pin of the XOR gate (Pin 3). Turn on the power and test your circuit by turning a single switch on.
 
-Notice that the meter is reading closer to 4.5 V and not 5 V. Luckily, according to
-the data sheet seen in {numref}`sn7432-high-low`, anything above 2 V is considered high
-or logic `1`. This means that 4.5 V would register as a logic `1` and
-anything less than 0.8 V would register as a logic `0`.
+According to our equation, if both switches are active, the **CARRY** operation will be high. 
 
-```{figure} img/ice01_image10.jpg
----
-name: sn7432-high-low
----
-SN7432 High and low voltage ratings
-```
+> Connect the black lead of the DMM to ground and the red lead to the output of pin of the AND gate (Pin 3). Turn on the power and test your circuit by turning both switches on.
+
+Notice that the meter is reading closer to 4.5 V and not 5 V. Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic `1`. Similarly, anything less than 0.8 V would register as a logic `0`.
 
 ### Wire LED
 
@@ -228,7 +220,7 @@ Next, connect pin 3 (output pin) of the 74LS08 and 74LS86 to two different empty
 
 > Wire up the LED according to {numref}`led-wire`
 
-```{figure} img/ice01_image11.jpg
+```{figure} img/ice01_image11.png
 ---
 name: led-wire
 ---
@@ -237,7 +229,7 @@ LED wiring
 
 For your final test, simply turn on the power and test your switches.
 
-If any single the switch is turned **on** the LED connected to the XOR output will light up. If both switches are turned **on**, the LED connected to the AND output will light up. If the switches are **off**, the LEDs should remain off.
+If any single the switch is turned **on** the LED connected to the XOR output will light up (**Sum**). If both switches are turned **on**, the LED connected to the AND output will light up (**Carry**). If the switches are **off**, the LEDs should remain off.
 
 Congratulations! You have successfully completed In Class Exercise (ICE) 1.
 This will be directly applicable to your circuit building in lab 1!
