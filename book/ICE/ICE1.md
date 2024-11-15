@@ -84,7 +84,12 @@ Connect the first XOR gate from the 74LS86 to the inputs \( A \) and \( B \) to 
 
 We will get the following logic:
 
-<Insert pic of half adder logic>
+```{figure} img/ice01_image3.jpg
+---
+name: Half Adder logic
+---
+Half adder implementation
+```
 
 This setup will give you a half adder circuit, where:
 **Sum (S)** is high when exactly one of the inputs is high.
