@@ -80,9 +80,9 @@ Data sheets for these chips (74LS08.pdf and 74LS86.pdf) are available under **Da
 ### Connecting the Chips
 
 We will create a half adder circuit using the following process:
-Connect the first AND gate from the 74LS08 to the inputs \( A \) and \( B \) to produce the Carry output.
+Connect the first AND gate from the 74LS08 to the inputs \(A\) and \(B\) to produce the Carry output.
 
-Connect the first XOR gate from the 74LS86 to the inputs \( A \) and \( B \) to produce the Sum output.
+Connect the first XOR gate from the 74LS86 to the inputs \(A\) and \(B\) to produce the Sum output.
 
 We will get the following logic:
 
@@ -184,7 +184,7 @@ The switch outputs will be wired to pins 1 and 2 of the 74LS08.
 - Connect the switch 1 output to pin 1 on the 74LS08.
 - Connect the switch 2 output to pin 2 on the 74LS08.
 
-Next, we will connect the 74LS08 AND chip to the 74LS86 XOR chip. Please note -- these will be connected on the same node as the switch outputs. 
+Next, we will connect the 74LS08 AND chip to the 74LS86 XOR chip.
 
 - Connect pin 1 (A) of the 74LS08 to pin 1 of the 74LS86.
 - Connect pin 2 (B) of the 74LS08 to pin 2 of the 74LS86.
@@ -242,6 +242,6 @@ This will be directly applicable to your circuit building in lab 1!
 
 The instructor will check the circuit accurately implements a half adder function:
 
-- When all switches are **off**, LED is off.
+- When all switches are **off**, the LEDs are off.
 - When any one switch (A or B) is turned **on**, the LED connected to the 74LS86 will light up.
-- When both switches (A and B) are turned **on**, the LED connected to the 74LS06 will light up.
+- When both switches (A and B) are turned **on**, the LED connected to the 74LS08 will light up.
