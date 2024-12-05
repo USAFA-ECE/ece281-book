@@ -1,4 +1,4 @@
-# ICE 1: OR Gates
+# ICE 1: Breadboard Half Adder
 
 ```{contents}
 :local:
@@ -26,10 +26,11 @@ In this course you have learned how to design basic combinational logic circuits
 
 - 5x $1 kΩ$ resistors.
 - 1x red LED.
-- 1x SN7432 2-Input OR gate logic chip.
+- 1x 74LS08 2-Input AND gate logic chip.
+- 1x 74LS86 2-Input XOR gate logic chip.
 - 1x breadboard power supply.
 - 1x breadboard.
-- 1x 4-dip switch, 2x 2-dip switch, or 4x 1-dip switch.
+- 2x single pole double throw switches.
 - Jumper wires.
 
 ### Collaboration
@@ -38,61 +39,69 @@ For this lab, **work in teams of two**. You may seek help from any ECE 281 instr
 
 ## Background
 
-### The logic equation
+### The Half Adder Logic
 
-You will implement the simple logic equation using transistor-transistor logic (TTL) chips:
+You will implement the logic of a half adder using transistor-transistor logic (TTL) chips:
+
+The half adder takes two inputs, **A** and **B**, and produces two outputs:
+Sum (**S**) — represents the sum of **A** and **B**.
+ Carry (**C**) — represents the carry-out when **A** and **B** are both high (logic one).
+
+The logic equations for the half adder outputs are:
 
 $$
-Y = A + B + C + D
+S = A \oplus B
 $$
 
-where `+` represents OR. If any input, $A$, $B$, $C$, or $D$, is high (logic one), then the output, $Y$, is high (logic one). If all four inputs are low (logic zero), then the output is low (logic zero).
+$$
+C = A \cdot B
+$$
+where $\oplus$ represents the XOR operation (Sum) and $\cdot$ represents the AND operation (Carry).
 
-### The chip
+### The Chips
 
-You will use a SN7432 TTL chip to build this logic equation, which includes four, 2-Input OR Gates. You can find the data sheet for the chip (sn74ls32.pdf) on the Team under Data Sheets. {numref}`SN7432-TTL-Layout` provides the chip layout.
+You will use two TTL chips to build the half adder:
+1. **74LS08** — A quad, 2-input AND gate, used to produce the Carry output.
+2. **74LS86** — A quad, 2-input XOR gate, used to produce the Sum output.
 
-```{figure} img/ice01_image2.jpg
+```{figure} img/ice01_image2.png
 ---
-name: SN7432-TTL-Layout
+name: LS08-Pin-Layout
 ---
-SN7432 TTL Layout
+74LS08 Pin Out
 ```
 
-```{figure} img/ice1_7432inard.png
-Inside makeup of SN7432
+```{figure} img/ice1_74LS86.png
+74LS86 Pin Out
 ```
 
+Data sheets for these chips (74LS08.pdf and 74LS86.pdf) are available under **Data Sheets** on the Team. The `74LS08-TTL-Layout` and `74LS86-TTL-Layout` diagrams provide the chip layouts.
 
-The SN7432 chip only contains 2-Input OR gates, but the logic equation
-requires a 4-Input OR gate. Boolean algebra can be used to find an
-arrangement of 2-Input OR gates that will work. The simple logic
-equation can now be represented as:
+### Connecting the Chips
 
-$$
-Y = (A + B) + (C + D)
-$$
+We will create a half adder circuit using the following process:
+Connect the first AND gate from the 74LS08 to the inputs \(A\) and \(B\) to produce the Carry output.
+
+Connect the first XOR gate from the 74LS86 to the inputs \(A\) and \(B\) to produce the Sum output.
+
+We will get the following logic:
 
 ```{figure} img/ice01_image3.jpg
 ---
-name: 4-Input-OR
+name: Half Adder logic
 ---
-4-Input OR Implementation
+Half adder implementation
 ```
 
-The 4-Input OR equation is now implemented using three, 2-Input OR  gates.
+This setup will give you a half adder circuit, where:
+**Sum (S)** is high when exactly one of the inputs is high.
+**Carry (C)** is high only when both inputs are high.
+
 
 ### Breadboards
 
-A breadboard is a prototyping device that allows you to easily connect
-different portions of a circuit together.
-{numref}`breadboard-connections` depicts how the
-breadboard used in this ICE is connected. Each row (on either side of
-the center line) is a single node. This means two devices can be
-connected together by inserting them in the same row. Additionally,
-each of the columns on the outside of are connected the entire length
-of the board. These columns are ideal for supplying power and ground
-to your circuits.
+A breadboard is a prototyping device that allows you to easily connect different portions of a circuit together {numref}`breadboard-connections` depicts how the
+breadboard used in this ICE is connected. Each row (on either side of the center line) is a single node. This means two devices can be connected together by inserting them in the same row. Additionally, each of the columns on the outside of are connected the entire length of the board. These columns are ideal for supplying power and ground to your circuits.
 
 ```{figure} img/ice01_image4.jpg
 ---
@@ -108,7 +117,7 @@ Breadboard connections
 You will use a USB power supply to power your circuit. Attach the
 power supply to the top of the breadboard so the red vertical lines
 align with the 5V and 3.3V pins and the blue lines align with the
-ground pin according to {numref}`power-supply-placement`. Insert the USB cable into your
+ground pin according to {numref}`power-supply-placement`. **Double check to make sure your power supply is in the right place.** Insert the USB cable into your
 computer. Press the white button to turn on the power supply.
 
 ```{figure} img/ice01_image5.jpg
@@ -119,9 +128,7 @@ Power supply placement
 ```
 
 You will use a digital multi-meter (DMM) to test the power supply.
-Turn the multimeter to the DC voltage setting and place the black lead
-into the ground rail and the red lead into the 5V rail according to
-{numref}`test-power-supply`.
+Turn the multimeter to the DC voltage setting and place the black lead into the ground rail and the red lead into the 5V rail according to {numref}`test-power-supply`.
 
 ```{figure} img/ice01_image6.jpg
 ---
@@ -135,16 +142,10 @@ turn off your power supply by depressing the white button.
 
 ### Switches and Resistors
 
-Next you are going to configure your input switches. This portion of
-the circuit will allow us to provide a logic `0` to the circuit (0 V
-or low) when the switch is not active and a logic `1` to the circuit
-(5 V or high) when the switch is active. The switches and resistors
-are going to be in a pull down configuration or active high. This
-means when the switch is **open** there is a direct connection between
+Next you are going to configure your input switches. This portion of the circuit will allow us to provide a logic `0` to the circuit (0 V or low) when the switch is not active and a logic `1` to the circuit(5 V or high) when the switch is active. The switches and resistors are going to be in a pull down configuration or active high. This means when the switch is **open** there is a direct connection between
 the circuit and ground through a resistor which pulls the value to `0`.
-This provides a logic `0`. However, when the switch is **closed**, the
-circuit is now connected to the power supply (5 V). This provides a
-logic `1`. We will use 4x $1 kΩ$ resistors and 4-switch component.
+
+This provides a logic `0`. However, when the switch is **closed**, the circuit is now connected to the power supply (5 V). This provides a logic `1`. We will use 2x $1 kΩ$ resistors and 2-switch component.
 
 ```{figure} img/ice01_image7.jpg
 ---
@@ -153,76 +154,57 @@ name: pull-down-resistor
 Pull-down resistor configuration
 ```
 
-{numref}`2-dip-switch` shows how to connect the 4-dip switch (via 2 x double switch
-or 4 x single switch) and 4 resistors on the breadboard.
+Wire the switches according to the graphic below. Ensure your set up accomodates connections to the chips. 
 
-```{figure} img/ice01_image8.jpg
+```{figure} img/ice01_image8.png
 ---
-name: 2-dip-switch
+name: Single throw double pole switch
 ---
-2x 2-Dip switch and resistor configuration (Left) and 4x 1-DIP configuration (Right)
+Switch wiring configuration
 ```
 
 Now you will test the circuit.
 
-Connect the black lead of your DMM to
-ground and connect the red lead to one of the switches on the
-"switched" side of the switch (right side for the blue switch, middle
-for the black switch). Select the 20V DC voltage option on your meter
-and turn on your USB power supply.
+Connect the black lead of your DMM to ground and connect the red lead to one of the switches on the
+"switched" side of the switch (middle node). Select the DC voltage option on your meter and turn on your USB power supply.
 
 The meter should read about 5 V.
-When active, the switch acts just like a wire, therefore, we should
-see the same value from the voltage source. The meter should read 0V
-when the switch is not active.
+When active, the switch acts just like a wire, therefore, we should see the same value from the voltage source. The meter should read 0V when the switch is not active.
 
-> Repeat this testing for each of the
-four switched values (A-D). When complete, turn off the power supply.
+> Repeat this testing for the other switched value (B). When complete, turn off the power supply.
 
-### 7432 Chip
+### Chip Installation
 
-You will now add the 7432 chip, which provides 4 logic OR gates.
+You will now add the 74LS08 chip, and the 74LS86 chip.
 
-Place the chip along the center spacing to ensure each lead of
-the chip is on its own node (and not connected). Note the indentation
-on the switch, this is the OP. You will wire the pin to 5 V and the
-pin to ground (the negative 1-1 on the power supply).
+Place the chip along the center spacing to ensure each lead of the chip is on its own node (and not connected). Note the indentation and orientation of the chip. Wire the +5V of the 74LS08 to the corresponding Vcc pin (pin 14 on the data sheet). Repeat this with the 74LS86. Connect the ground pin (pin 7) of the 74LS08 to the ground rail. Repeat this with the 74LS86.
 
-Each of the switch outputs will be wired to one of the gate inputs and the outputs
-of the two gates will be connected to the inputs of a third gate. The
-switch outputs are located between the resistor and the switch.
+The switch outputs will be wired to pins 1 and 2 of the 74LS08. 
 
-- Connect the switch 1 output (top-most switch) to pin 1 on the chip
-- Connect the switch 2 output to pin 2 on the chip.
-- Connect the switch 3 output to pin 4 of the chip.
-- Connect the switch 4 output (bottom-most switch) to pin 5 of the chip.
+- Connect the switch 1 output to pin 1 on the 74LS08.
+- Connect the switch 2 output to pin 2 on the 74LS08.
 
-Next you need to connect the outputs of the first two OR gates to the third OR gate. Pin 3 needs to be connected to pin 10 and pin 6 needs to be connected to pin 9. {numref}`sn7432-wiring` demonstrates how the switch outputs should be connected. The blue bar is ground (the negative on the USB) and the red bar is $V_{cc}$ (5V).
+Next, we will connect the 74LS08 AND chip to the 74LS86 XOR chip.
 
-```{figure} img/ice01_image9.jpg
+- Connect pin 1 (A) of the 74LS08 to pin 1 of the 74LS86.
+- Connect pin 2 (B) of the 74LS08 to pin 2 of the 74LS86.
+
+```{figure} img/ice01_image9.png
 ---
-name: sn7432-wiring
+name: Chip wiring
 ---
-SN7432 Wiring
+Chip wiring
 ```
 
-According to our equation, if any of the switches are active, the
-output of the chip should be high (logic 111 or 5V).
+According to our equation, if any single switch is active, the **SUM** operation will be high. 
 
-> Connect the black lead of the DMM to ground and the red lead to the output of pin of the
-final OR gate (Pin 8). Turn on the power and test your circuit.
+> Connect the black lead of the DMM to ground and the red lead to the output of pin of the XOR gate (Pin 3). Turn on the power and test your circuit by turning a single switch on.
 
-Notice that the meter is reading closer to 4.5 V and not 5 V. Luckily, according to
-the data sheet seen in {numref}`sn7432-high-low`, anything above 2 V is considered high
-or logic `1`. This means that 4.5 V would register as a logic `1` and
-anything less than 0.8 V would register as a logic `0`.
+According to our equation, if both switches are active, the **CARRY** operation will be high. 
 
-```{figure} img/ice01_image10.jpg
----
-name: sn7432-high-low
----
-SN7432 High and low voltage ratings
-```
+> Connect the black lead of the DMM to ground and the red lead to the output of pin of the AND gate (Pin 3). Turn on the power and test your circuit by turning both switches on.
+
+Notice that the meter is reading closer to 4.5 V and not 5 V. Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic `1`. Similarly, anything less than 0.8 V would register as a logic `0`.
 
 ### Wire LED
 
@@ -234,15 +216,13 @@ To keep from destroying the LED due to a potential current spike, you
 will wire the LED **in series** with a $1 kΩ$ resistor.
 ```
 
-LEDs are directional components.
-The *longer* of the LED's two leads should be on the *positive* side `+5 V`)
-of the circuit (the side receiving the voltage or Pin 8 on the chip).
-The other indicator of the LEDs polarity is the flat edge on the LED which
-should be placed towards ground.
+LEDs are directional components. The *longer* of the LED's two leads are where current enters, where the shorter end is where current exits. Place the LEDs across two empty nodes, connecting the shorter ends to ground. Ensure the positive ends are on empty nodes. 
+
+Next, connect pin 3 (output pin) of the 74LS08 and 74LS86 to two different empty nodes. Use a 1 kΩ resistor to connect these nodes to the the nodes where the positive ends of the LEDs are connected. *You should have a 1 kΩ resistor between the LED and the output pin nodes*. 
 
 > Wire up the LED according to {numref}`led-wire`
 
-```{figure} img/ice01_image11.jpg
+```{figure} img/ice01_image11.png
 ---
 name: led-wire
 ---
@@ -251,8 +231,7 @@ LED wiring
 
 For your final test, simply turn on the power and test your switches.
 
-If any of the switches are turned **on** the LED will light up. If all
-of the switches are **off**, the LED should remain off.
+If any single the switch is turned **on** the LED connected to the XOR output will light up (**Sum**). If both switches are turned **on**, the LED connected to the AND output will light up (**Carry**). If the switches are **off**, the LEDs should remain off.
 
 Congratulations! You have successfully completed In Class Exercise (ICE) 1.
 This will be directly applicable to your circuit building in lab 1!
@@ -261,9 +240,8 @@ This will be directly applicable to your circuit building in lab 1!
 
 ## Exit Criteria
 
-The instructor will check the circuit accurately implements a 4-input
-OR gate function:
+The instructor will check the circuit accurately implements a half adder function:
 
-- When all switches are **off**, the output is `0`, LED is off.
-- When any switch (A-D) is turned **on**, the output is `1`, LED will
-light.
+- When all switches are **off**, the LEDs are off.
+- When any one switch (A or B) is turned **on**, the LED connected to the 74LS86 will light up.
+- When both switches (A and B) are turned **on**, the LED connected to the 74LS08 will light up.
