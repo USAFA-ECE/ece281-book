@@ -117,7 +117,7 @@ Breadboard connections
 You will use a USB power supply to power your circuit. Attach the
 power supply to the top of the breadboard so the red vertical lines
 align with the 5V and 3.3V pins and the blue lines align with the
-ground pin according to {numref}`power-supply-placement`. Insert the USB cable into your
+ground pin according to {numref}`power-supply-placement`. **Double check to make sure your power supply is in the right place.** Insert the USB cable into your
 computer. Press the white button to turn on the power supply.
 
 ```{figure} img/ice01_image5.jpg
@@ -154,7 +154,7 @@ name: pull-down-resistor
 Pull-down resistor configuration
 ```
 
-{numref}'pull-down-resistor' shows how to connect the single pole double throw switches. 
+Wire the switches according to the graphic below. Ensure your set up accomodates connections to the chips. 
 
 ```{figure} img/ice01_image8.png
 ---
