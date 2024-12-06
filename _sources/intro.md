@@ -11,7 +11,7 @@
 | 3      | Boolean Equations and Algebra            | 2.1-2.3                  | HW 3         |                    |
 | 4      | ICE1 - Breadboard Half Adder             |                          | HW 4         |                    |
 | 5      | Multilevel Logic & VHDL                  | 2.4-2.6                  | HW 5         | ICE1               |
-| 6      | ICE2 - VHDL Half Adder                   |                          | HW 6         |                    |
+| 6      | ICE2 - VHDL Half Adder                   |                          | [HW 6](./HW/HW6.md) |             |
 | 7      | Numbering Systems, MUX, Decoder          | 1.4, 2.8                 | HW 7         | ICE2               |
 | 8      | K-Maps                                   | 2.7                      | Lab 1 Prelab |                    |
 | 9      | Combinational Timing Analysis            | 2.9                      |              |                    |

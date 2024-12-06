@@ -7,7 +7,9 @@ The intent of this HW is to teach you how to draw and simulate digital logic sch
 1. Download [Digital](https://github.com/hneemann/Digital) from GitHub.
 2. Unzip Digital and copy the entire unzipped it to someplace convenient.
 3. You don't actually need to install Digital; you can just run the `Digital.exe` by double clicking on it.
-4. You may be prompted to install Java. Please do so and then try running digital again.
+4. You may be prompted to install Java Runtime.
+    - On a MissionNet computer you can install from the Self Service Client.
+    - On another computer you can follow the link or search it on the web.
 
 ## Half adder, again
 
