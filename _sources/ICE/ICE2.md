@@ -1,6 +1,4 @@
-# ICE 2: Half-Adder
-
-Due Lesson 8
+# ICE 2: VHDL Half-Adder
 
 ```{attention}
 This exercise functions as a lecture on what VHDL is and how this stuff works.
@@ -50,6 +48,8 @@ following:
 
 ## Background
 
+Recall how a Half Adder works from {ref}`half-adder-traits`.
+
 ### VHDL
 
 VHDL, which stands for Very High Speed Integrated Circuits (VHSIC)
@@ -67,51 +67,6 @@ Finally, since you are describing hardware, you should be aware that
 The exception to this is some statements within a
 process. More details on VHDL will be provided later in this in-class
 exercise and throughout the course.
-
-(half-adder-traits)=
-### Half-adder
-
-A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 5.1 (page 238) of your textbook.
-
-```{tip}
-*Digital Design and Computer Architecture* really is a **great** textbook.
-It's worth the time to go read the page on half and full adders.
-```
-
-{numref}`half-adder-schem` shows the schematic symbol.
-
-```{figure} img/ice2_halfadder.png
----
-name: half-adder-schem
----
-Half-adder schematic symbol
-```
-
-$S$ stands for "sum", $C_{out}$ stands for "Carry out". The "circled plus sign" represents XOR.
-
-The logic equations are:
-
-$$
-S = A \oplus B
-$$
-
-$$
-C_{out} = AB
-$$
-
-The cooresponding truth table is shown in {numref}`half-adder-truth`.
-
-```{table} Half-adder truth table
-:name: half-adder-truth
-
-| $A$ | $B$ |   | $C_{out}$ | $S$ |
-|-----|-----|---|-----------|-----|
-| 0   | 0   |   | 0         | 0   |
-| 0   | 1   |   | 0         | 1   |
-| 1   | 0   |   | 0         | 1   |
-| 1   | 1   |   | 1         | 0   |
-```
 
 ### Design flow
 

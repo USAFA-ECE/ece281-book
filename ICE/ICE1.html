@@ -67,7 +67,7 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ICE 2: Half-Adder" href="ICE2.html" />
+    <link rel="next" title="ICE 2: VHDL Half-Adder" href="ICE2.html" />
     <link rel="prev" title="BCE 0: Get started with Git" href="ICE0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,7 +176,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ICE0.html">BCE 0: Get started with Git</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 1: Breadboard Half Adder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE2.html">ICE 2: Half-Adder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE2.html">ICE 2: VHDL Half-Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE3.html">ICE 3: Full Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE5.html">ICE 5: Basic Elevator Controller</a></li>
@@ -393,7 +393,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-half-adder-logic">The Half Adder Logic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-adder">Half-adder</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chips">The Chips</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-the-chips">Connecting the Chips</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breadboards">Breadboards</a></li>
@@ -402,7 +402,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-circuit">Build the circuit</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-supply">Power Supply</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switches-and-resistors">Switches and Resistors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chip-installation">Chip Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chip-installation">Chip Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#power">Power</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ls08">74LS08</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ls86">74LS86</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wire-led">Wire LED</a></li>
 </ul>
 </li>
@@ -422,46 +427,45 @@
 <h1>ICE 1: Breadboard Half Adder<a class="headerlink" href="#ice-1-breadboard-half-adder" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p>
 <ul>
-<li><p><a class="reference internal" href="#objectives" id="id3">Objectives</a></p></li>
-<li><p><a class="reference internal" href="#agenda" id="id4">Agenda</a></p></li>
-<li><p><a class="reference internal" href="#supplies" id="id5">Supplies</a></p></li>
-<li><p><a class="reference internal" href="#collaboration" id="id6">Collaboration</a></p></li>
+<li><p><a class="reference internal" href="#objectives" id="id2">Objectives</a></p></li>
+<li><p><a class="reference internal" href="#agenda" id="id3">Agenda</a></p></li>
+<li><p><a class="reference internal" href="#supplies" id="id4">Supplies</a></p></li>
+<li><p><a class="reference internal" href="#collaboration" id="id5">Collaboration</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#background" id="id7">Background</a></p>
+<li><p><a class="reference internal" href="#background" id="id6">Background</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-half-adder-logic" id="id8">The Half Adder Logic</a></p></li>
-<li><p><a class="reference internal" href="#the-chips" id="id9">The Chips</a></p></li>
-<li><p><a class="reference internal" href="#connecting-the-chips" id="id10">Connecting the Chips</a></p></li>
-<li><p><a class="reference internal" href="#breadboards" id="id11">Breadboards</a></p></li>
+<li><p><a class="reference internal" href="#half-adder" id="id7">Half-adder</a></p></li>
+<li><p><a class="reference internal" href="#the-chips" id="id8">The Chips</a></p></li>
+<li><p><a class="reference internal" href="#connecting-the-chips" id="id9">Connecting the Chips</a></p></li>
+<li><p><a class="reference internal" href="#breadboards" id="id10">Breadboards</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#build-the-circuit" id="id12">Build the circuit</a></p>
+<li><p><a class="reference internal" href="#build-the-circuit" id="id11">Build the circuit</a></p>
 <ul>
-<li><p><a class="reference internal" href="#power-supply" id="id13">Power Supply</a></p></li>
-<li><p><a class="reference internal" href="#switches-and-resistors" id="id14">Switches and Resistors</a></p></li>
-<li><p><a class="reference internal" href="#chip-installation" id="id15">Chip Installation</a></p></li>
-<li><p><a class="reference internal" href="#wire-led" id="id16">Wire LED</a></p></li>
+<li><p><a class="reference internal" href="#power-supply" id="id12">Power Supply</a></p></li>
+<li><p><a class="reference internal" href="#switches-and-resistors" id="id13">Switches and Resistors</a></p></li>
+<li><p><a class="reference internal" href="#chip-installation" id="id14">Chip Installation</a></p></li>
+<li><p><a class="reference internal" href="#wire-led" id="id15">Wire LED</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#exit-criteria" id="id17">Exit Criteria</a></p></li>
+<li><p><a class="reference internal" href="#exit-criteria" id="id16">Exit Criteria</a></p></li>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>Due: Lesson 6</p>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>In this course you have learned how to design basic combinational logic circuits. In this ICE you will implement a basic logic design using transistor-transistor logic (TTL) chips. This will help you prepare for Lab 1.</p>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Implement and test a simple logic design in hardware.</p></li>
 <li><p>Gain experience using hardware.</p></li>
 </ol>
 </section>
 <section id="agenda">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Agenda</a><a class="headerlink" href="#agenda" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Agenda</a><a class="headerlink" href="#agenda" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Build the required circuit.</p></li>
 <li><p>Test your circuit.</p></li>
@@ -469,7 +473,7 @@
 </ol>
 </section>
 <section id="supplies">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>5x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors.</p></li>
 <li><p>1x red LED.</p></li>
@@ -482,52 +486,89 @@
 </ul>
 </section>
 <section id="collaboration">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h3>
 <p>For this lab, <strong>work in teams of two</strong>. You may seek help from any ECE 281 instructor or authorized online resource, but may not utilize any student other than your partner. Documentation is required (you do not need to document work with your partner). We expect all code or design work to be your own.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<section id="the-half-adder-logic">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">The Half Adder Logic</a><a class="headerlink" href="#the-half-adder-logic" title="Link to this heading">#</a></h3>
-<p>You will implement the logic of a half adder using transistor-transistor logic (TTL) chips:</p>
-<p>The half adder takes two inputs, <strong>A</strong> and <strong>B</strong>, and produces two outputs:
-Sum (<strong>S</strong>) — represents the sum of <strong>A</strong> and <strong>B</strong>.
-Carry (<strong>C</strong>) — represents the carry-out when <strong>A</strong> and <strong>B</strong> are both high (logic one).</p>
-<p>The logic equations for the half adder outputs are:</p>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>You will implement the logic of a half adder using transistor-transistor logic (TTL) chips.</p>
+<section id="half-adder">
+<span id="half-adder-traits"></span><h3><a class="toc-backref" href="#id7" role="doc-backlink">Half-adder</a><a class="headerlink" href="#half-adder" title="Link to this heading">#</a></h3>
+<p>The half adder takes two inputs, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, and produces two outputs:
+Sum (<span class="math notranslate nohighlight">\(S\)</span>) and Carry Out (<span class="math notranslate nohighlight">\(C_{out}\)</span>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can read more about half-adders in Section 5.1 (page 238) of your textbook.</p>
+<p><em>Digital Design and Computer Architecture</em> really is a <strong>great</strong> textbook.
+It’s worth the time to go read the page on half and full adders.</p>
+</div>
+<p><a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 1</span></a> shows the schematic symbol.</p>
+<figure class="align-default" id="half-adder-schem">
+<img alt="../_images/ice2_halfadder.png" src="../_images/ice2_halfadder.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Half-adder schematic symbol</span><a class="headerlink" href="#half-adder-schem" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The logic equations are:</p>
 <div class="math notranslate nohighlight">
 \[
 S = A \oplus B
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-C = A \cdot B
+C_{out} = AB
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\oplus\)</span> represents the XOR operation (Sum) and <span class="math notranslate nohighlight">\(\cdot\)</span> represents the AND operation (Carry).</p>
+<p>The cooresponding truth table is shown in <a class="reference internal" href="#half-adder-truth"><span class="std std-numref">Table 1</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="half-adder-truth">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Half-adder truth table</span><a class="headerlink" href="#half-adder-truth" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(A\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(B\)</span></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(C_{out}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(S\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="the-chips">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">The Chips</a><a class="headerlink" href="#the-chips" title="Link to this heading">#</a></h3>
-<p>You will use two TTL chips to build the half adder:</p>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">The Chips</a><a class="headerlink" href="#the-chips" title="Link to this heading">#</a></h3>
+<p>You will use two TTL chips to build the half adder. <strong>Their data sheets are available in Teams.</strong></p>
 <ol class="arabic simple">
-<li><p><strong>74LS08</strong> — A quad, 2-input AND gate, used to produce the Carry output.</p></li>
-<li><p><strong>74LS86</strong> — A quad, 2-input XOR gate, used to produce the Sum output.</p></li>
+<li><p><strong>74LS08</strong> — A quad, 2-input AND gate, used to produce the Carry output, <a class="reference internal" href="#ls08-pin-layout"><span class="std std-numref">Fig. 8</span></a>.</p></li>
+<li><p><strong>74LS86</strong> — A quad, 2-input XOR gate, used to produce the Sum output, <a class="reference internal" href="#ls86-pin-layout"><span class="std std-numref">Fig. 9</span></a>.</p></li>
 </ol>
-<figure class="align-default" id="ls08-pin-layout">
-<img alt="../_images/ice01_image2.png" src="../_images/ice01_image2.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">74LS08 Pin Out</span><a class="headerlink" href="#ls08-pin-layout" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id1">
-<img alt="../_images/ice1_74LS86.png" src="../_images/ice1_74LS86.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">74LS86 Pin Out</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Data sheets for these chips (74LS08.pdf and 74LS86.pdf) are available under <strong>Data Sheets</strong> on the Team. The <code class="docutils literal notranslate"><span class="pre">74LS08-TTL-Layout</span></code> and <code class="docutils literal notranslate"><span class="pre">74LS86-TTL-Layout</span></code> diagrams provide the chip layouts.</p>
 </section>
 <section id="connecting-the-chips">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Connecting the Chips</a><a class="headerlink" href="#connecting-the-chips" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Connecting the Chips</a><a class="headerlink" href="#connecting-the-chips" title="Link to this heading">#</a></h3>
 <p>We will create a half adder circuit using the following process:
 Connect the first AND gate from the 74LS08 to the inputs (A) and (B) to produce the Carry output.</p>
 <p>Connect the first XOR gate from the 74LS86 to the inputs (A) and (B) to produce the Sum output.</p>
@@ -535,7 +576,7 @@ Connect the first AND gate from the 74LS08 to the inputs (A) and (B) to produce 
 <figure class="align-default" id="half-adder-logic">
 <img alt="../_images/ice01_image3.jpg" src="../_images/ice01_image3.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Half adder implementation</span><a class="headerlink" href="#half-adder-logic" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Half adder implementation</span><a class="headerlink" href="#half-adder-logic" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This setup will give you a half adder circuit, where:
@@ -543,38 +584,39 @@ Connect the first AND gate from the 74LS08 to the inputs (A) and (B) to produce 
 <strong>Carry (C)</strong> is high only when both inputs are high.</p>
 </section>
 <section id="breadboards">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">Breadboards</a><a class="headerlink" href="#breadboards" title="Link to this heading">#</a></h3>
-<p>A breadboard is a prototyping device that allows you to easily connect different portions of a circuit together <a class="reference internal" href="#breadboard-connections"><span class="std std-numref">Fig. 4</span></a> depicts how the
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Breadboards</a><a class="headerlink" href="#breadboards" title="Link to this heading">#</a></h3>
+<p>A breadboard is a prototyping device that allows you to easily connect different portions of a circuit together <a class="reference internal" href="#breadboard-connections"><span class="std std-numref">Fig. 3</span></a> depicts how the
 breadboard used in this ICE is connected. Each row (on either side of the center line) is a single node. This means two devices can be connected together by inserting them in the same row. Additionally, each of the columns on the outside of are connected the entire length of the board. These columns are ideal for supplying power and ground to your circuits.</p>
 <figure class="align-default" id="breadboard-connections">
 <img alt="../_images/ice01_image4.jpg" src="../_images/ice01_image4.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Breadboard connections</span><a class="headerlink" href="#breadboard-connections" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Breadboard connections</span><a class="headerlink" href="#breadboard-connections" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="build-the-circuit">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Build the circuit</a><a class="headerlink" href="#build-the-circuit" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Build the circuit</a><a class="headerlink" href="#build-the-circuit" title="Link to this heading">#</a></h2>
 <section id="power-supply">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Power Supply</a><a class="headerlink" href="#power-supply" title="Link to this heading">#</a></h3>
-<p>You will use a USB power supply to power your circuit. Attach the
-power supply to the top of the breadboard so the red vertical lines
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Power Supply</a><a class="headerlink" href="#power-supply" title="Link to this heading">#</a></h3>
+<p>You will use a USB power supply to power your circuit.</p>
+<p>Attach the power supply to the top of the breadboard so the red vertical lines
 align with the 5V and 3.3V pins and the blue lines align with the
-ground pin according to <a class="reference internal" href="#power-supply-placement"><span class="std std-numref">Fig. 5</span></a>. <strong>Double check to make sure your power supply is in the right place.</strong> Insert the USB cable into your
-computer. Press the white button to turn on the power supply.</p>
+ground pin according to <a class="reference internal" href="#power-supply-placement"><span class="std std-numref">Fig. 4</span></a>.</p>
+<p><strong>Double check to make sure your power supply is in the right place.</strong>
+Insert the USB cable into your computer. Press the white button to turn on the power supply.</p>
 <figure class="align-default" id="power-supply-placement">
 <img alt="../_images/ice01_image5.jpg" src="../_images/ice01_image5.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Power supply placement</span><a class="headerlink" href="#power-supply-placement" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Power supply placement</span><a class="headerlink" href="#power-supply-placement" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You will use a digital multi-meter (DMM) to test the power supply.
-Turn the multimeter to the DC voltage setting and place the black lead into the ground rail and the red lead into the 5V rail according to <a class="reference internal" href="#test-power-supply"><span class="std std-numref">Fig. 6</span></a>.</p>
+Turn the multimeter to the DC voltage setting and place the black lead into the ground rail and the red lead into the 5V rail according to <a class="reference internal" href="#test-power-supply"><span class="std std-numref">Fig. 5</span></a>.</p>
 <figure class="align-default" id="test-power-supply">
 <img alt="../_images/ice01_image6.jpg" src="../_images/ice01_image6.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Testing power supply with DMM</span><a class="headerlink" href="#test-power-supply" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Testing power supply with DMM</span><a class="headerlink" href="#test-power-supply" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -583,64 +625,120 @@ turn off your power supply by depressing the white button.</p>
 </div></blockquote>
 </section>
 <section id="switches-and-resistors">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Switches and Resistors</a><a class="headerlink" href="#switches-and-resistors" title="Link to this heading">#</a></h3>
-<p>Next you are going to configure your input switches. This portion of the circuit will allow us to provide a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> to the circuit (0 V or low) when the switch is not active and a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> to the circuit(5 V or high) when the switch is active. The switches and resistors are going to be in a pull down configuration or active high. This means when the switch is <strong>open</strong> there is a direct connection between
-the circuit and ground through a resistor which pulls the value to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p>This provides a logic <code class="docutils literal notranslate"><span class="pre">0</span></code>. However, when the switch is <strong>closed</strong>, the circuit is now connected to the power supply (5 V). This provides a logic <code class="docutils literal notranslate"><span class="pre">1</span></code>. We will use 2x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors and 2-switch component.</p>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Switches and Resistors</a><a class="headerlink" href="#switches-and-resistors" title="Link to this heading">#</a></h3>
+<p>Next you are going to configure your input switches. This portion of the circuit will allow us to provide a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> to the circuit (0 V or low) when the switch is not active and a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> to the circuit(5 V or high) when the switch is active.</p>
+<p>The switches and resistors are going to be in a pull down configuration or active high.
+This means when the switch is <strong>open</strong> there is a direct connection between the circuit and ground through a resistor which pulls the value to <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+However, when the switch is <strong>closed</strong>, the circuit is now connected to the power supply (5 V). This provides a logic <code class="docutils literal notranslate"><span class="pre">1</span></code>. We will use 2x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors and 2-switch component.</p>
 <figure class="align-default" id="pull-down-resistor">
 <img alt="../_images/ice01_image7.jpg" src="../_images/ice01_image7.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Pull-down resistor configuration</span><a class="headerlink" href="#pull-down-resistor" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Pull-down resistor configuration</span><a class="headerlink" href="#pull-down-resistor" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Wire the switches according to the graphic below. Ensure your set up accomodates connections to the chips.</p>
+<p>Wire the switches according to the graphic below. Ensure your set up accommodates connections to the chips.</p>
 <figure class="align-default" id="single-throw-double-pole-switch">
 <img alt="../_images/ice01_image8.png" src="../_images/ice01_image8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Switch wiring configuration</span><a class="headerlink" href="#single-throw-double-pole-switch" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Switch wiring configuration</span><a class="headerlink" href="#single-throw-double-pole-switch" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now you will test the circuit.</p>
-<p>Connect the black lead of your DMM to ground and connect the red lead to one of the switches on the
-“switched” side of the switch (middle node). Select the DC voltage option on your meter and turn on your USB power supply.</p>
-<p>The meter should read about 5 V.
-When active, the switch acts just like a wire, therefore, we should see the same value from the voltage source. The meter should read 0V when the switch is not active.</p>
+<ol class="arabic simple">
+<li><p>Connect the black DMM lead to ground.</p></li>
+<li><p>Connect the red DMM lead to one of the switches on the “switched” side of the switch (middle node).</p></li>
+<li><p>Select the DC voltage option on your meter.</p></li>
+<li><p>Turn on your USB power supply.</p></li>
+<li><p>Make sure the meter reads about 5V.</p></li>
+<li><p>Flip (open) the switch.</p></li>
+<li><p>Make sure the meter reads 0V. This should be pulled hard to 0V, <em>not</em> floating slightly above it!</p></li>
+</ol>
 <blockquote>
 <div><p>Repeat this testing for the other switched value (B). When complete, turn off the power supply.</p>
 </div></blockquote>
 </section>
 <section id="chip-installation">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Chip Installation</a><a class="headerlink" href="#chip-installation" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Chip Installation</a><a class="headerlink" href="#chip-installation" title="Link to this heading">#</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Make sure your power supply is <strong>powered off</strong> while making changes to the circuit!</p>
+</div>
 <p>You will now add the 74LS08 chip, and the 74LS86 chip.</p>
-<p>Place the chip along the center spacing to ensure each lead of the chip is on its own node (and not connected). Note the indentation and orientation of the chip. Wire the +5V of the 74LS08 to the corresponding Vcc pin (pin 14 on the data sheet). Repeat this with the 74LS86. Connect the ground pin (pin 7) of the 74LS08 to the ground rail. Repeat this with the 74LS86.</p>
-<p>The switch outputs will be wired to pins 1 and 2 of the 74LS08.</p>
+<section id="power">
+<h4>Power<a class="headerlink" href="#power" title="Link to this heading">#</a></h4>
+<p>Do this for both chips</p>
+<ol class="arabic simple">
+<li><p>Place the chip along the center spacing to ensure each lead of the chip is on its own node (and not connected).
+<strong>Note the indentation and orientation of the chip, and be careful to push the chip straight into the board and not bend the pins!</strong></p></li>
+<li><p>Look at the datasheets to determine which pin on the chip is Vcc.</p></li>
+<li><p>Wire the Vcc pin to +5V on your bread board.</p></li>
+<li><p>Repeat for the ground pin.</p></li>
+</ol>
+</section>
+<section id="ls08">
+<h4>74LS08<a class="headerlink" href="#ls08" title="Link to this heading">#</a></h4>
+<p>The chip has four AND gates; we will be using AND gate #1, which uses pins 1, 2, and 3.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The half circle at the top of the chip helps you know where pin 1 is!</p>
+</div>
+<figure class="align-default" id="ls08-pin-layout">
+<img alt="../_images/ice01_image2.png" src="../_images/ice01_image2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">74LS08 Pin Out (<strong>AND</strong>)</span><a class="headerlink" href="#ls08-pin-layout" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
-<li><p>Connect the switch 1 output to pin 1 on the 74LS08.</p></li>
-<li><p>Connect the switch 2 output to pin 2 on the 74LS08.</p></li>
+<li><p>Connect the switch 1 (<span class="math notranslate nohighlight">\(A\)</span>) output to pin 1 on the 74LS08.</p></li>
+<li><p>Connect the switch 2 (<span class="math notranslate nohighlight">\(B\)</span>) output to pin 2 on the 74LS08.</p></li>
+<li><p>Connect a wire to pin 3 (<span class="math notranslate nohighlight">\(C_{out}\)</span>) on the 74LS08.</p></li>
 </ul>
-<p>Next, we will connect the 74LS08 AND chip to the 74LS86 XOR chip.</p>
+<p>See <a class="reference internal" href="#chip-wiring"><span class="std std-numref">Fig. 10</span></a> for a visual.</p>
+<p>According to our equation, if both switches are active, the <strong>CARRY</strong> operation will be high.</p>
+<blockquote>
+<div><p>Connect the black lead of the DMM to ground and the red lead to the output of pin of the AND gate (Pin 3).
+Turn on the power and test your circuit by turning both switches on.</p>
+<p>Once that works, turn your power back off.</p>
+</div></blockquote>
+</section>
+<section id="ls86">
+<h4>74LS86<a class="headerlink" href="#ls86" title="Link to this heading">#</a></h4>
+<p>The chip has four XOR gates; we will be using XOR gate #1, which uses pins 1, 2, and 3.</p>
+<figure class="align-default" id="ls86-pin-layout">
+<img alt="../_images/ice1_74LS86.png" src="../_images/ice1_74LS86.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">74LS86 Pin Out (<strong>XOR</strong>)</span><a class="headerlink" href="#ls86-pin-layout" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
-<li><p>Connect pin 1 (A) of the 74LS08 to pin 1 of the 74LS86.</p></li>
-<li><p>Connect pin 2 (B) of the 74LS08 to pin 2 of the 74LS86.</p></li>
+<li><p>Connect the switch 1 (<span class="math notranslate nohighlight">\(A\)</span>) output to pin 1 on the 74LS86.</p></li>
+<li><p>Connect the switch 2 (<span class="math notranslate nohighlight">\(B\)</span>) output to pin 2 on the 74LS86.</p></li>
+<li><p>Connect a wire to pin 3 (<span class="math notranslate nohighlight">\(S\)</span>) on the 74LS08.</p></li>
 </ul>
+<p>See <a class="reference internal" href="#chip-wiring"><span class="std std-numref">Fig. 10</span></a> for a visual.</p>
+<p>According to our equation, if any single switch is active, the <strong>SUM</strong> operation will be high.</p>
+<blockquote>
+<div><p>Connect the black lead of the DMM to ground and the red lead to the output of pin of the XOR gate (Pin 3).
+Turn on the power and test your circuit by turning a single switch on.</p>
+<p>Once that works, turn your power back off.</p>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The meter is likely reading closer to 4.5 V and not 5 V.
+Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+Similarly, anything less than 0.8 V would register as a logic <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</div>
+<p>At this point, your board should look like this:</p>
 <figure class="align-default" id="chip-wiring">
 <img alt="../_images/ice01_image9.png" src="../_images/ice01_image9.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Chip wiring</span><a class="headerlink" href="#chip-wiring" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Chip wiring before adding LEDs.</span><a class="headerlink" href="#chip-wiring" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>According to our equation, if any single switch is active, the <strong>SUM</strong> operation will be high.</p>
-<blockquote>
-<div><p>Connect the black lead of the DMM to ground and the red lead to the output of pin of the XOR gate (Pin 3). Turn on the power and test your circuit by turning a single switch on.</p>
-</div></blockquote>
-<p>According to our equation, if both switches are active, the <strong>CARRY</strong> operation will be high.</p>
-<blockquote>
-<div><p>Connect the black lead of the DMM to ground and the red lead to the output of pin of the AND gate (Pin 3). Turn on the power and test your circuit by turning both switches on.</p>
-</div></blockquote>
-<p>Notice that the meter is reading closer to 4.5 V and not 5 V. Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic <code class="docutils literal notranslate"><span class="pre">1</span></code>. Similarly, anything less than 0.8 V would register as a logic <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</section>
 </section>
 <section id="wire-led">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Wire LED</a><a class="headerlink" href="#wire-led" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Wire LED</a><a class="headerlink" href="#wire-led" title="Link to this heading">#</a></h3>
 <p>The final step is to wire the LED. This LED will indicate if the
 circuit output is a logic <code class="docutils literal notranslate"><span class="pre">1</span></code> (LED is on) or logic <code class="docutils literal notranslate"><span class="pre">0</span></code> (LED is off).</p>
 <div class="admonition warning">
@@ -651,26 +749,22 @@ will wire the LED <strong>in series</strong> with a <span class="math notranslat
 <p>LEDs are directional components. The <em>longer</em> of the LED’s two leads are where current enters, where the shorter end is where current exits. Place the LEDs across two empty nodes, connecting the shorter ends to ground. Ensure the positive ends are on empty nodes.</p>
 <p>Next, connect pin 3 (output pin) of the 74LS08 and 74LS86 to two different empty nodes. Use a 1 kΩ resistor to connect these nodes to the the nodes where the positive ends of the LEDs are connected. <em>You should have a 1 kΩ resistor between the LED and the output pin nodes</em>.</p>
 <blockquote>
-<div><p>Wire up the LED according to <a class="reference internal" href="#led-wire"><span class="std std-numref">Fig. 10</span></a></p>
+<div><p>Wire up the LED according to <a class="reference internal" href="#led-wire"><span class="std std-numref">Fig. 11</span></a></p>
 </div></blockquote>
 <figure class="align-default" id="led-wire">
 <img alt="../_images/ice01_image11.png" src="../_images/ice01_image11.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">LED wiring</span><a class="headerlink" href="#led-wire" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">LED wiring</span><a class="headerlink" href="#led-wire" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>For your final test, simply turn on the power and test your switches.</p>
-<p>If any single the switch is turned <strong>on</strong> the LED connected to the XOR output will light up (<strong>Sum</strong>). If both switches are turned <strong>on</strong>, the LED connected to the AND output will light up (<strong>Carry</strong>). If the switches are <strong>off</strong>, the LEDs should remain off.</p>
-<p>Congratulations! You have successfully completed In Class Exercise (ICE) 1.
-This will be directly applicable to your circuit building in lab 1!</p>
-<blockquote>
-<div><p>Demonstrate your operational circuit to your instructor.</p>
-</div></blockquote>
+<p>For your final test, simply turn on the power and test your switches to ensure they match your half adder logic equations!</p>
 </section>
 </section>
 <section id="exit-criteria">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink">Exit Criteria</a><a class="headerlink" href="#exit-criteria" title="Link to this heading">#</a></h2>
-<p>The instructor will check the circuit accurately implements a half adder function:</p>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Exit Criteria</a><a class="headerlink" href="#exit-criteria" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Demonstrate your operational circuit to your instructor.</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>When all switches are <strong>off</strong>, the LEDs are off.</p></li>
 <li><p>When any one switch (A or B) is turned <strong>on</strong>, the LED connected to the 74LS86 will light up.</p></li>
@@ -723,7 +817,7 @@ This will be directly applicable to your circuit building in lab 1!</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ICE 2: Half-Adder</p>
+        <p class="prev-next-title">ICE 2: VHDL Half-Adder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -752,7 +846,7 @@ This will be directly applicable to your circuit building in lab 1!</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-half-adder-logic">The Half Adder Logic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-adder">Half-adder</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chips">The Chips</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-the-chips">Connecting the Chips</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breadboards">Breadboards</a></li>
@@ -761,7 +855,12 @@ This will be directly applicable to your circuit building in lab 1!</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-circuit">Build the circuit</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-supply">Power Supply</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switches-and-resistors">Switches and Resistors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chip-installation">Chip Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chip-installation">Chip Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#power">Power</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ls08">74LS08</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ls86">74LS86</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wire-led">Wire LED</a></li>
 </ul>
 </li>

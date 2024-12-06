@@ -7,8 +7,6 @@
 
 ## Overview
 
-Due: Lesson 6
-
 In this course you have learned how to design basic combinational logic circuits. In this ICE you will implement a basic logic design using transistor-transistor logic (TTL) chips. This will help you prepare for Lab 1.
 
 ### Objectives
@@ -39,43 +37,59 @@ For this lab, **work in teams of two**. You may seek help from any ECE 281 instr
 
 ## Background
 
-### The Half Adder Logic
+You will implement the logic of a half adder using transistor-transistor logic (TTL) chips.
 
-You will implement the logic of a half adder using transistor-transistor logic (TTL) chips:
+(half-adder-traits)=
+### Half-adder
 
-The half adder takes two inputs, **A** and **B**, and produces two outputs:
-Sum (**S**) — represents the sum of **A** and **B**.
- Carry (**C**) — represents the carry-out when **A** and **B** are both high (logic one).
+The half adder takes two inputs, $A$ and $B$, and produces two outputs:
+Sum ($S$) and Carry Out ($C_{out}$).
 
-The logic equations for the half adder outputs are:
+```{tip}
+You can read more about half-adders in Section 5.1 (page 238) of your textbook.
+
+*Digital Design and Computer Architecture* really is a **great** textbook.
+It's worth the time to go read the page on half and full adders.
+```
+
+{numref}`half-adder-schem` shows the schematic symbol.
+
+```{figure} img/ice2_halfadder.png
+---
+name: half-adder-schem
+---
+Half-adder schematic symbol
+```
+
+The logic equations are:
 
 $$
 S = A \oplus B
 $$
 
 $$
-C = A \cdot B
+C_{out} = AB
 $$
-where $\oplus$ represents the XOR operation (Sum) and $\cdot$ represents the AND operation (Carry).
+
+The cooresponding truth table is shown in {numref}`half-adder-truth`.
+
+```{table} Half-adder truth table
+:name: half-adder-truth
+
+| $A$ | $B$ |   | $C_{out}$ | $S$ |
+|-----|-----|---|-----------|-----|
+| 0   | 0   |   | 0         | 0   |
+| 0   | 1   |   | 0         | 1   |
+| 1   | 0   |   | 0         | 1   |
+| 1   | 1   |   | 1         | 0   |
+```
 
 ### The Chips
 
-You will use two TTL chips to build the half adder:
-1. **74LS08** — A quad, 2-input AND gate, used to produce the Carry output.
-2. **74LS86** — A quad, 2-input XOR gate, used to produce the Sum output.
+You will use two TTL chips to build the half adder. **Their data sheets are available in Teams.**
 
-```{figure} img/ice01_image2.png
----
-name: LS08-Pin-Layout
----
-74LS08 Pin Out
-```
-
-```{figure} img/ice1_74LS86.png
-74LS86 Pin Out
-```
-
-Data sheets for these chips (74LS08.pdf and 74LS86.pdf) are available under **Data Sheets** on the Team. The `74LS08-TTL-Layout` and `74LS86-TTL-Layout` diagrams provide the chip layouts.
+1. **74LS08** — A quad, 2-input AND gate, used to produce the Carry output, {numref}`LS08-Pin-Layout`.
+2. **74LS86** — A quad, 2-input XOR gate, used to produce the Sum output, {numref}`LS86-Pin-Layout`.
 
 ### Connecting the Chips
 
@@ -97,7 +111,6 @@ This setup will give you a half adder circuit, where:
 **Sum (S)** is high when exactly one of the inputs is high.
 **Carry (C)** is high only when both inputs are high.
 
-
 ### Breadboards
 
 A breadboard is a prototyping device that allows you to easily connect different portions of a circuit together {numref}`breadboard-connections` depicts how the
@@ -114,11 +127,14 @@ Breadboard connections
 
 ### Power Supply
 
-You will use a USB power supply to power your circuit. Attach the
-power supply to the top of the breadboard so the red vertical lines
+You will use a USB power supply to power your circuit.
+
+Attach the power supply to the top of the breadboard so the red vertical lines
 align with the 5V and 3.3V pins and the blue lines align with the
-ground pin according to {numref}`power-supply-placement`. **Double check to make sure your power supply is in the right place.** Insert the USB cable into your
-computer. Press the white button to turn on the power supply.
+ground pin according to {numref}`power-supply-placement`.
+
+**Double check to make sure your power supply is in the right place.**
+Insert the USB cable into your computer. Press the white button to turn on the power supply.
 
 ```{figure} img/ice01_image5.jpg
 ---
@@ -142,10 +158,11 @@ turn off your power supply by depressing the white button.
 
 ### Switches and Resistors
 
-Next you are going to configure your input switches. This portion of the circuit will allow us to provide a logic `0` to the circuit (0 V or low) when the switch is not active and a logic `1` to the circuit(5 V or high) when the switch is active. The switches and resistors are going to be in a pull down configuration or active high. This means when the switch is **open** there is a direct connection between
-the circuit and ground through a resistor which pulls the value to `0`.
+Next you are going to configure your input switches. This portion of the circuit will allow us to provide a logic `0` to the circuit (0 V or low) when the switch is not active and a logic `1` to the circuit(5 V or high) when the switch is active.
 
-This provides a logic `0`. However, when the switch is **closed**, the circuit is now connected to the power supply (5 V). This provides a logic `1`. We will use 2x $1 kΩ$ resistors and 2-switch component.
+The switches and resistors are going to be in a pull down configuration or active high.
+This means when the switch is **open** there is a direct connection between the circuit and ground through a resistor which pulls the value to `0`.
+However, when the switch is **closed**, the circuit is now connected to the power supply (5 V). This provides a logic `1`. We will use 2x $1 kΩ$ resistors and 2-switch component.
 
 ```{figure} img/ice01_image7.jpg
 ---
@@ -154,7 +171,7 @@ name: pull-down-resistor
 Pull-down resistor configuration
 ```
 
-Wire the switches according to the graphic below. Ensure your set up accomodates connections to the chips. 
+Wire the switches according to the graphic below. Ensure your set up accommodates connections to the chips.
 
 ```{figure} img/ice01_image8.png
 ---
@@ -165,46 +182,100 @@ Switch wiring configuration
 
 Now you will test the circuit.
 
-Connect the black lead of your DMM to ground and connect the red lead to one of the switches on the
-"switched" side of the switch (middle node). Select the DC voltage option on your meter and turn on your USB power supply.
-
-The meter should read about 5 V.
-When active, the switch acts just like a wire, therefore, we should see the same value from the voltage source. The meter should read 0V when the switch is not active.
+1. Connect the black DMM lead to ground.
+2. Connect the red DMM lead to one of the switches on the "switched" side of the switch (middle node).
+3. Select the DC voltage option on your meter.
+4. Turn on your USB power supply.
+5. Make sure the meter reads about 5V.
+6. Flip (open) the switch.
+7. Make sure the meter reads 0V. This should be pulled hard to 0V, *not* floating slightly above it!
 
 > Repeat this testing for the other switched value (B). When complete, turn off the power supply.
 
 ### Chip Installation
 
+```{danger}
+Make sure your power supply is **powered off** while making changes to the circuit!
+```
+
 You will now add the 74LS08 chip, and the 74LS86 chip.
 
-Place the chip along the center spacing to ensure each lead of the chip is on its own node (and not connected). Note the indentation and orientation of the chip. Wire the +5V of the 74LS08 to the corresponding Vcc pin (pin 14 on the data sheet). Repeat this with the 74LS86. Connect the ground pin (pin 7) of the 74LS08 to the ground rail. Repeat this with the 74LS86.
+#### Power
 
-The switch outputs will be wired to pins 1 and 2 of the 74LS08. 
+Do this for both chips
 
-- Connect the switch 1 output to pin 1 on the 74LS08.
-- Connect the switch 2 output to pin 2 on the 74LS08.
+1. Place the chip along the center spacing to ensure each lead of the chip is on its own node (and not connected).
+    **Note the indentation and orientation of the chip, and be careful to push the chip straight into the board and not bend the pins!**
+2. Look at the datasheets to determine which pin on the chip is Vcc.
+3. Wire the Vcc pin to +5V on your bread board.
+4. Repeat for the ground pin.
 
-Next, we will connect the 74LS08 AND chip to the 74LS86 XOR chip.
+#### 74LS08
 
-- Connect pin 1 (A) of the 74LS08 to pin 1 of the 74LS86.
-- Connect pin 2 (B) of the 74LS08 to pin 2 of the 74LS86.
+The chip has four AND gates; we will be using AND gate #1, which uses pins 1, 2, and 3.
+
+```{hint}
+The half circle at the top of the chip helps you know where pin 1 is!
+```
+
+```{figure} img/ice01_image2.png
+---
+name: LS08-Pin-Layout
+---
+74LS08 Pin Out (**AND**)
+```
+
+- Connect the switch 1 ($A$) output to pin 1 on the 74LS08.
+- Connect the switch 2 ($B$) output to pin 2 on the 74LS08.
+- Connect a wire to pin 3 ($C_{out}$) on the 74LS08.
+
+See {numref}`chip-wiring` for a visual.
+
+According to our equation, if both switches are active, the **CARRY** operation will be high.
+
+> Connect the black lead of the DMM to ground and the red lead to the output of pin of the AND gate (Pin 3).
+> Turn on the power and test your circuit by turning both switches on.
+>
+> Once that works, turn your power back off.
+
+#### 74LS86
+
+The chip has four XOR gates; we will be using XOR gate #1, which uses pins 1, 2, and 3.
+
+```{figure} img/ice1_74LS86.png
+---
+name: LS86-Pin-Layout
+---
+74LS86 Pin Out (**XOR**)
+```
+
+- Connect the switch 1 ($A$) output to pin 1 on the 74LS86.
+- Connect the switch 2 ($B$) output to pin 2 on the 74LS86.
+- Connect a wire to pin 3 ($S$) on the 74LS08.
+
+See {numref}`chip-wiring` for a visual.
+
+According to our equation, if any single switch is active, the **SUM** operation will be high.
+
+> Connect the black lead of the DMM to ground and the red lead to the output of pin of the XOR gate (Pin 3).
+> Turn on the power and test your circuit by turning a single switch on.
+>
+> Once that works, turn your power back off.
+
+```{tip}
+The meter is likely reading closer to 4.5 V and not 5 V.
+Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic `1`.
+Similarly, anything less than 0.8 V would register as a logic `0`.
+```
+
+At this point, your board should look like this:
 
 ```{figure} img/ice01_image9.png
 ---
-name: Chip wiring
+name: chip-wiring
 ---
-Chip wiring
+Chip wiring before adding LEDs.
 ```
-
-According to our equation, if any single switch is active, the **SUM** operation will be high. 
-
-> Connect the black lead of the DMM to ground and the red lead to the output of pin of the XOR gate (Pin 3). Turn on the power and test your circuit by turning a single switch on.
-
-According to our equation, if both switches are active, the **CARRY** operation will be high. 
-
-> Connect the black lead of the DMM to ground and the red lead to the output of pin of the AND gate (Pin 3). Turn on the power and test your circuit by turning both switches on.
-
-Notice that the meter is reading closer to 4.5 V and not 5 V. Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic `1`. Similarly, anything less than 0.8 V would register as a logic `0`.
 
 ### Wire LED
 
@@ -216,9 +287,9 @@ To keep from destroying the LED due to a potential current spike, you
 will wire the LED **in series** with a $1 kΩ$ resistor.
 ```
 
-LEDs are directional components. The *longer* of the LED's two leads are where current enters, where the shorter end is where current exits. Place the LEDs across two empty nodes, connecting the shorter ends to ground. Ensure the positive ends are on empty nodes. 
+LEDs are directional components. The *longer* of the LED's two leads are where current enters, where the shorter end is where current exits. Place the LEDs across two empty nodes, connecting the shorter ends to ground. Ensure the positive ends are on empty nodes.
 
-Next, connect pin 3 (output pin) of the 74LS08 and 74LS86 to two different empty nodes. Use a 1 kΩ resistor to connect these nodes to the the nodes where the positive ends of the LEDs are connected. *You should have a 1 kΩ resistor between the LED and the output pin nodes*. 
+Next, connect pin 3 (output pin) of the 74LS08 and 74LS86 to two different empty nodes. Use a 1 kΩ resistor to connect these nodes to the the nodes where the positive ends of the LEDs are connected. *You should have a 1 kΩ resistor between the LED and the output pin nodes*.
 
 > Wire up the LED according to {numref}`led-wire`
 
@@ -229,18 +300,11 @@ name: led-wire
 LED wiring
 ```
 
-For your final test, simply turn on the power and test your switches.
-
-If any single the switch is turned **on** the LED connected to the XOR output will light up (**Sum**). If both switches are turned **on**, the LED connected to the AND output will light up (**Carry**). If the switches are **off**, the LEDs should remain off.
-
-Congratulations! You have successfully completed In Class Exercise (ICE) 1.
-This will be directly applicable to your circuit building in lab 1!
-
-> Demonstrate your operational circuit to your instructor.
+For your final test, simply turn on the power and test your switches to ensure they match your half adder logic equations!
 
 ## Exit Criteria
 
-The instructor will check the circuit accurately implements a half adder function:
+> Demonstrate your operational circuit to your instructor.
 
 - When all switches are **off**, the LEDs are off.
 - When any one switch (A or B) is turned **on**, the LED connected to the 74LS86 will light up.

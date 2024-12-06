@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ICE 2: Half-Adder &#8212; ECE 281</title>
+    <title>ICE 2: VHDL Half-Adder &#8212; ECE 281</title>
   
   
   
@@ -176,7 +176,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ICE0.html">BCE 0: Get started with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE1.html">ICE 1: Breadboard Half Adder</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 2: Half-Adder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 2: VHDL Half-Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE3.html">ICE 3: Full Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE5.html">ICE 5: Basic Elevator Controller</a></li>
@@ -375,7 +375,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICE 2: Half-Adder</h1>
+    <h1>ICE 2: VHDL Half-Adder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,7 +392,6 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vhdl">VHDL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-adder">Half-adder</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-flow">Design flow</a></li>
 </ul>
 </li>
@@ -449,9 +448,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ice-2-half-adder">
-<h1>ICE 2: Half-Adder<a class="headerlink" href="#ice-2-half-adder" title="Link to this heading">#</a></h1>
-<p>Due Lesson 8</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-2-vhdl-half-adder">
+<h1>ICE 2: VHDL Half-Adder<a class="headerlink" href="#ice-2-vhdl-half-adder" title="Link to this heading">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>This exercise functions as a lecture on what VHDL is and how this stuff works.
@@ -471,43 +469,42 @@ when it comes time to do the labs.</p>
 <li><p><a class="reference internal" href="#background" id="id6">Background</a></p>
 <ul>
 <li><p><a class="reference internal" href="#vhdl" id="id7">VHDL</a></p></li>
-<li><p><a class="reference internal" href="#half-adder" id="id8">Half-adder</a></p></li>
-<li><p><a class="reference internal" href="#design-flow" id="id9">Design flow</a></p></li>
+<li><p><a class="reference internal" href="#design-flow" id="id8">Design flow</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#setup-vivado-project" id="id10">Setup Vivado Project</a></p>
+<li><p><a class="reference internal" href="#setup-vivado-project" id="id9">Setup Vivado Project</a></p>
 <ul>
-<li><p><a class="reference internal" href="#clone-project-with-git" id="id11">Clone project with Git</a></p></li>
-<li><p><a class="reference internal" href="#view-project-in-vivado" id="id12">View project in Vivado</a></p></li>
+<li><p><a class="reference internal" href="#clone-project-with-git" id="id10">Clone project with Git</a></p></li>
+<li><p><a class="reference internal" href="#view-project-in-vivado" id="id11">View project in Vivado</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#edit-your-half-adder-implementation" id="id13">Edit your half-adder implementation</a></p>
+<li><p><a class="reference internal" href="#edit-your-half-adder-implementation" id="id12">Edit your half-adder implementation</a></p>
 <ul>
-<li><p><a class="reference internal" href="#understand-file" id="id14">Understand file</a></p></li>
-<li><p><a class="reference internal" href="#modify-half-adder-entity" id="id15">Modify half-adder entity</a></p></li>
-<li><p><a class="reference internal" href="#modify-the-half-adder-architecture" id="id16">Modify the half-adder architecture</a></p></li>
+<li><p><a class="reference internal" href="#understand-file" id="id13">Understand file</a></p></li>
+<li><p><a class="reference internal" href="#modify-half-adder-entity" id="id14">Modify half-adder entity</a></p></li>
+<li><p><a class="reference internal" href="#modify-the-half-adder-architecture" id="id15">Modify the half-adder architecture</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#test-design" id="id17">Test design</a></p>
+<li><p><a class="reference internal" href="#test-design" id="id16">Test design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#edit-your-half-adder-testbench" id="id18">Edit your half-adder testbench</a></p></li>
-<li><p><a class="reference internal" href="#check-syntax" id="id19">Check syntax</a></p></li>
+<li><p><a class="reference internal" href="#edit-your-half-adder-testbench" id="id17">Edit your half-adder testbench</a></p></li>
+<li><p><a class="reference internal" href="#check-syntax" id="id18">Check syntax</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#test-project" id="id20">Test project</a></p>
+<li><p><a class="reference internal" href="#test-project" id="id19">Test project</a></p>
 <ul>
-<li><p><a class="reference internal" href="#simulate-project" id="id21">Simulate project</a></p></li>
-<li><p><a class="reference internal" href="#rtl-and-technology-schematics" id="id22">RTL and Technology Schematics</a></p></li>
+<li><p><a class="reference internal" href="#simulate-project" id="id20">Simulate project</a></p></li>
+<li><p><a class="reference internal" href="#rtl-and-technology-schematics" id="id21">RTL and Technology Schematics</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#implement-design" id="id23">Implement design</a></p>
+<li><p><a class="reference internal" href="#implement-design" id="id22">Implement design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#edit-the-constraints-file" id="id24">Edit the constraints file</a></p></li>
-<li><p><a class="reference internal" href="#implement-and-generate-bitstream" id="id25">Implement and generate bitstream</a></p></li>
+<li><p><a class="reference internal" href="#edit-the-constraints-file" id="id23">Edit the constraints file</a></p></li>
+<li><p><a class="reference internal" href="#implement-and-generate-bitstream" id="id24">Implement and generate bitstream</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#download-onto-fpga-and-test" id="id26">Download onto FPGA and test</a></p></li>
-<li><p><a class="reference internal" href="#wrapping-up" id="id27">Wrapping up</a></p></li>
+<li><p><a class="reference internal" href="#download-onto-fpga-and-test" id="id25">Download onto FPGA and test</a></p></li>
+<li><p><a class="reference internal" href="#wrapping-up" id="id26">Wrapping up</a></p></li>
 </ul>
 </nav>
 <section id="overview">
@@ -544,6 +541,7 @@ following:</p>
 </section>
 <section id="background">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>Recall how a Half Adder works from <a class="reference internal" href="ICE1.html#half-adder-traits"><span class="std std-ref">Half-adder</span></a>.</p>
 <section id="vhdl">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">VHDL</a><a class="headerlink" href="#vhdl" title="Link to this heading">#</a></h3>
 <p>VHDL, which stands for Very High Speed Integrated Circuits (VHSIC)
@@ -560,74 +558,8 @@ The exception to this is some statements within a
 process. More details on VHDL will be provided later in this in-class
 exercise and throughout the course.</p>
 </section>
-<section id="half-adder">
-<span id="half-adder-traits"></span><h3><a class="toc-backref" href="#id8" role="doc-backlink">Half-adder</a><a class="headerlink" href="#half-adder" title="Link to this heading">#</a></h3>
-<p>A half-adder takes two single-bit inputs and outputs their sum. You can
-read more about half-adders in Section 5.1 (page 238) of your textbook.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><em>Digital Design and Computer Architecture</em> really is a <strong>great</strong> textbook.
-It’s worth the time to go read the page on half and full adders.</p>
-</div>
-<p><a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 11</span></a> shows the schematic symbol.</p>
-<figure class="align-default" id="half-adder-schem">
-<img alt="../_images/ice2_halfadder.png" src="../_images/ice2_halfadder.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Half-adder schematic symbol</span><a class="headerlink" href="#half-adder-schem" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p><span class="math notranslate nohighlight">\(S\)</span> stands for “sum”, <span class="math notranslate nohighlight">\(C_{out}\)</span> stands for “Carry out”. The “circled plus sign” represents XOR.</p>
-<p>The logic equations are:</p>
-<div class="math notranslate nohighlight">
-\[
-S = A \oplus B
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-C_{out} = AB
-\]</div>
-<p>The cooresponding truth table is shown in <a class="reference internal" href="#half-adder-truth"><span class="std std-numref">Table 1</span></a>.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="half-adder-truth">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Half-adder truth table</span><a class="headerlink" href="#half-adder-truth" title="Link to this table">#</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(A\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(B\)</span></p></th>
-<th class="head"><p></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(C_{out}\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(S\)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p></p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>0</p></td>
-<td><p>1</p></td>
-<td><p></p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>0</p></td>
-<td><p></p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>1</p></td>
-<td><p></p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 <section id="design-flow">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Design flow</a><a class="headerlink" href="#design-flow" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Design flow</a><a class="headerlink" href="#design-flow" title="Link to this heading">#</a></h3>
 <p>Hardware development is an exercise in moving between layers of <a class="reference external" href="https://www.pcmag.com/encyclopedia/term/level-of-abstraction">abstraction</a>. This means that we will start with a high level of abstraction - i.e. the problem statement of add two bits - and work toward a lower level of abstraction; in this case, how the circuit is actually implemented in hardware.</p>
 <p>Vivado will help us describe, simulate, test, and implement the design.
 The input to Vivado is VHDL. Ultimately, we will use Vivado to emulate the circuit on an FPGA (Field Programmable Gate Array).
@@ -642,7 +574,7 @@ An FPGA can be programmed to be many circuits.</p>
 </section>
 </section>
 <section id="setup-vivado-project">
-<span id="id1"></span><h2><a class="toc-backref" href="#id10" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Link to this heading">#</a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Link to this heading">#</a></h2>
 <p>You can create a Viavado project from scratch. This involves telling the suite about three types of files:</p>
 <ul class="simple">
 <li><p>Design sources (<code class="docutils literal notranslate"><span class="pre">.vhd</span></code>)</p></li>
@@ -652,7 +584,7 @@ An FPGA can be programmed to be many circuits.</p>
 <p>You can also add files to an existing project. For instructions on how to do this, see <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a></p>
 <p>But <strong>good news</strong> we will be using Git to clone an already created project. 🥳🎉</p>
 <section id="clone-project-with-git">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">Clone project with Git</a><a class="headerlink" href="#clone-project-with-git" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Clone project with Git</a><a class="headerlink" href="#clone-project-with-git" title="Link to this heading">#</a></h3>
 <p>First, open Git Bash and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the folder you want to put your project code into.
 Remember that this <em>should not</em> be synced to One Drive!</p>
 <div class="admonition hint">
@@ -683,7 +615,7 @@ This is an alternative to the <code class="docutils literal notranslate"><span c
 </div></blockquote>
 </section>
 <section id="view-project-in-vivado">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">View project in Vivado</a><a class="headerlink" href="#view-project-in-vivado" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">View project in Vivado</a><a class="headerlink" href="#view-project-in-vivado" title="Link to this heading">#</a></h3>
 <p>Now that our project is open in Vivado, let’s explore it.</p>
 <p>We said earlier that we have</p>
 <ul class="simple">
@@ -707,10 +639,10 @@ You can now see them assigned appropriately under “Sources”</p>
 </section>
 </section>
 <section id="edit-your-half-adder-implementation">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Edit your half-adder implementation</a><a class="headerlink" href="#edit-your-half-adder-implementation" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Edit your half-adder implementation</a><a class="headerlink" href="#edit-your-half-adder-implementation" title="Link to this heading">#</a></h2>
 <p>In Vivado open <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code>.</p>
 <section id="understand-file">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Understand file</a><a class="headerlink" href="#understand-file" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Understand file</a><a class="headerlink" href="#understand-file" title="Link to this heading">#</a></h3>
 <section id="file-header">
 <h4>File header<a class="headerlink" href="#file-header" title="Link to this heading">#</a></h4>
 <p>The first thing you will notice is that the file contains a block of
@@ -777,8 +709,8 @@ languages.</p>
 </section>
 </section>
 <section id="modify-half-adder-entity">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Modify half-adder entity</a><a class="headerlink" href="#modify-half-adder-entity" title="Link to this heading">#</a></h3>
-<p>Remember the half-adder schematic in <a class="reference internal" href="#half-adder-schem"><span class="std std-numref">Fig. 11</span></a>. This is what we are trying to create.</p>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Modify half-adder entity</a><a class="headerlink" href="#modify-half-adder-entity" title="Link to this heading">#</a></h3>
+<p>Remember the half-adder schematic in <a class="reference internal" href="ICE1.html#half-adder-schem"><span class="std std-numref">Fig. 1</span></a>. This is what we are trying to create.</p>
 <p><img alt="half-adder architecture" src="../_images/ice2_halfadder.png" /></p>
 <p>But! This conceptual device has no way for us to interact with it. However, if we go one level of abstraction lower:</p>
 <ul class="simple">
@@ -831,7 +763,7 @@ is more like a bus (multiple digital signals in parallel).</p>
 </div></blockquote>
 </section>
 <section id="modify-the-half-adder-architecture">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Modify the half-adder architecture</a><a class="headerlink" href="#modify-the-half-adder-architecture" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Modify the half-adder architecture</a><a class="headerlink" href="#modify-the-half-adder-architecture" title="Link to this heading">#</a></h3>
 <p>The architecture is the guts of an entity. It is the internal logic that
 makes it <em>do</em> something.</p>
 <p>Recall our logic equations for the half-adder are</p>
@@ -880,7 +812,7 @@ zyBook may be helpful if you are stuck.</p>
 </section>
 </section>
 <section id="test-design">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink">Test design</a><a class="headerlink" href="#test-design" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Test design</a><a class="headerlink" href="#test-design" title="Link to this heading">#</a></h2>
 <p>At this point your testbench VHDL file <code class="docutils literal notranslate"><span class="pre">halfAdder_tb.vhd</span></code> should already
 be added. If not, go back and add it per the directions in <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a>.</p>
 <div class="admonition tip">
@@ -888,7 +820,7 @@ be added. If not, go back and add it per the directions in <a class="reference i
 <p>Generally, your testbench files will have the same name as the component you are testing with them but with a <code class="docutils literal notranslate"><span class="pre">_tb</span></code> at the end.</p>
 </div>
 <section id="edit-your-half-adder-testbench">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Edit your half-adder testbench</a><a class="headerlink" href="#edit-your-half-adder-testbench" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Edit your half-adder testbench</a><a class="headerlink" href="#edit-your-half-adder-testbench" title="Link to this heading">#</a></h3>
 <p>Open your testbench file in a text editor. Note the header has
 <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> as a REQUIRED FILE.</p>
 <p>The entity in this file is the testbench itself, which is empty as shown
@@ -1002,7 +934,7 @@ can make debugging difficult.</p>
 </div></blockquote>
 </section>
 <section id="check-syntax">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">Check syntax</a><a class="headerlink" href="#check-syntax" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Check syntax</a><a class="headerlink" href="#check-syntax" title="Link to this heading">#</a></h3>
 <p>While you edit your code in Vivado, it checks the syntax. If
 everything is good you should see a green box in the upper right-hand
 corner of your editor window. If you hover your mouse over the green box
@@ -1012,10 +944,10 @@ right-hand margin indicate locations of syntax errors.</p>
 </section>
 </section>
 <section id="test-project">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink">Test project</a><a class="headerlink" href="#test-project" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">Test project</a><a class="headerlink" href="#test-project" title="Link to this heading">#</a></h2>
 <p>Testing our project involves simulation and viewing schematics.</p>
 <section id="simulate-project">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Simulate project</a><a class="headerlink" href="#simulate-project" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Simulate project</a><a class="headerlink" href="#simulate-project" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>In the Flow Navigator (the left panel), <strong>right</strong> click on “Run
 Simulation” and select “Simulation Settings”</p></li>
@@ -1062,7 +994,7 @@ Now future runs of your simulation will use the same settings!</p>
 </section>
 </section>
 <section id="rtl-and-technology-schematics">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink">RTL and Technology Schematics</a><a class="headerlink" href="#rtl-and-technology-schematics" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">RTL and Technology Schematics</a><a class="headerlink" href="#rtl-and-technology-schematics" title="Link to this heading">#</a></h3>
 <section id="view-rtl-schematic">
 <h4>View RTL Schematic<a class="headerlink" href="#view-rtl-schematic" title="Link to this heading">#</a></h4>
 <p>A Register Transfer Level (RTL) schematic is a gate-level schematic that
@@ -1109,9 +1041,9 @@ bottom of the “Cell Properties” sub-window.</p>
 </section>
 </section>
 <section id="implement-design">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink">Implement design</a><a class="headerlink" href="#implement-design" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Implement design</a><a class="headerlink" href="#implement-design" title="Link to this heading">#</a></h2>
 <section id="edit-the-constraints-file">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">Edit the constraints file</a><a class="headerlink" href="#edit-the-constraints-file" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Edit the constraints file</a><a class="headerlink" href="#edit-the-constraints-file" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Click on the Project Manager in the Flow Navigator</p></li>
 <li><p>Double click on the Basys3_Master.xdc file in the Sources sub-window
@@ -1151,7 +1083,7 @@ set_property PACKAGE_PIN V17 [get_ports {i_B}]
 <p>Save the constraints file (CTRL+s)</p>
 </section>
 <section id="implement-and-generate-bitstream">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink">Implement and generate bitstream</a><a class="headerlink" href="#implement-and-generate-bitstream" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Implement and generate bitstream</a><a class="headerlink" href="#implement-and-generate-bitstream" title="Link to this heading">#</a></h3>
 <p>In the Flow Navigator, click on <strong>Generate Bitstream</strong></p>
 <ul class="simple">
 <li><p>Click <strong>YES</strong> to run Synthesis and Implementation as required and then <strong>OK</strong> to start the job</p></li>
@@ -1162,7 +1094,7 @@ set_property PACKAGE_PIN V17 [get_ports {i_B}]
 </section>
 </section>
 <section id="download-onto-fpga-and-test">
-<span id="download-onto-fpga"></span><h2><a class="toc-backref" href="#id26" role="doc-backlink">Download onto FPGA and test</a><a class="headerlink" href="#download-onto-fpga-and-test" title="Link to this heading">#</a></h2>
+<span id="download-onto-fpga"></span><h2><a class="toc-backref" href="#id25" role="doc-backlink">Download onto FPGA and test</a><a class="headerlink" href="#download-onto-fpga-and-test" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Plug in your BASYS 3 board and turn it on using the switch on the board next to the USB connector. If you don’t see numbers on the LED displays, consult an instructor.</p></li>
 <li><p>Verify the drivers installed correctly. You may need to <a class="reference external" href="https://support.microsoft.com/en-us/windows/options-to-optimize-gaming-performance-in-windows-11-a255f612-2949-4373-a566-ff6f3f474613#:~:text=turning%20off%20memory%20integrity">turn off Windows Memory Integrity</a>.</p></li>
@@ -1203,7 +1135,7 @@ Verify the Github Action ran successfully.</p>
 </div>
 </section>
 <section id="wrapping-up">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Double check that you have everything <strong>committed</strong> to your git repo.</p></li>
 <li><p>Then <strong>push</strong> your changes to your repo.</p></li>
@@ -1293,7 +1225,6 @@ into Gradescope via GitHub <em>and</em> have demo’d to your instructor.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vhdl">VHDL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-adder">Half-adder</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-flow">Design flow</a></li>
 </ul>
 </li>
