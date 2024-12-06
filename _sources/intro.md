@@ -60,12 +60,18 @@ Unless stated otherwise, assignments are submitted on [Gradescope](https://www.g
 #### [Capt Brian Yarbrough](https://www.usafa.edu/facultyprofile/?smid=54059)
 
 - Course Director
-- [brian.yarbrough@afacademy.af.edu](mailto:brian.yarbrough@afacademy.af.edu)
 - Office: 2F48
+
+#### [Dr. George York](https://www.usafa.edu/facultyprofile/?smid=18247)
+
+- Office: 2F6A
 
 #### [Lt Col James Trimble](https://www.usafa.edu/facultyprofile/?smid=54055)
 
-- [james.trimble@afacademy.af.edu](mailto:james.trimble@afacademy.af.edu)
+- Office: 2E46D
+
+#### [Lt Col Jason Wyche](https://www.usafa.edu/facultyprofile/?smid=80068)
+
 - Office: 2F10
 
 ### Course Goals
@@ -134,7 +140,7 @@ There are three broad categories of assignments:
 The grade weights are as follows:
 
 ```{mermaid}
-pie showdata title Prog Grade Weighting
+pie title Prog Grade Weighting
     "GR 1" : 25
     "HW" : 20
     "ICE" : 15
@@ -144,7 +150,7 @@ pie showdata title Prog Grade Weighting
 ```
 
 ```{mermaid}
-pie showdata title Final Grade Weighting
+pie title Final Grade Weighting
     "GR 1" : 5
     "GR 2" : 10
     "HW" : 10
