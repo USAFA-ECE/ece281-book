@@ -1,9 +1,9 @@
 {
-    "recommendations": [ 
+    "recommendations": [
                             "executablebookproject.myst-highlight",
                             "ms-toolsai.jupyter",
                             "davidanson.vscode-markdownlint",
-                            "streetsidesoftware.code-spell-checker"
+                            "streetsidesoftware.code-spell-checker",
                             "vscode.markdown-language-features",
                             "bierner.markdown-mermaid",
                         ]
