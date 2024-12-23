@@ -21,8 +21,8 @@
 | 13     | ICE3 - Full Adder                        |                          |              | Lab 1              |
 | 14     | RV32I R- and I-Type Instructions         | 6.1-6.2.1, 6.3.2         | HW 14        | ICE3               |
 | 15     | The Mighty ALU!                          | 5.2.4-5.2.5              | Lab 2 Prelab |                    |
-| 16     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
-| 17     | GR #1                                    |                          |              |                    |
+| 16     | GR #1                                    |                          |              |                    |
+| 17     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
 | 18     | Synchronous Circuits                     | 3.1-3.3                  |              | Lab 2              |
 | 19     | Moore and Mealy FSMs                     | 3.4.1, 3.4.3             |              |                    |
 | 20     | FSM Design and Analysis                  | 3.4.2, 3.4.5             | HW 20        |                    |
@@ -36,15 +36,15 @@
 | 28     | ICE6 - Time Division Multiplexing        |                          |              | ICE5               |
 | 29     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
 | 30     | Lab 4 - Moore Elevator Controller        |                          | HW 30        |                    |
-| 31     | Instructor Prerogative Day               |                          |              |                    |
-| 32     | GR #2                                    |                          |              | Lab 4              |
-| 33     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab |                    |
-| 34     | RV32I Memory Map and J-Type Instructions | 6.4.4-6.4.7              |              |                    |
-| 35     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | HW 35        |                    |
-| 36     | Lab 5 Prelab - CPU                       |                          |              | Lab 5 Prelab       |
-| 37     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              | HW 37        |                    |
-| 38     | Lab 5 - CPU                              |                          |              |                    |
-| 39     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
+| 31     | GR #2                                    |                          |              | Lab 4              |
+| 32     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab |                    |
+| 33     | RV32I Memory Map and J-Type Instructions | 6.4.4-6.4.7              |              |                    |
+| 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | HW 35        |                    |
+| 35     | Lab 5 Prelab - CPU                       |                          |              | Lab 5 Prelab       |
+| 36     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              | HW 37        |                    |
+| 37     | Lab 5 - CPU                              |                          |              |                    |
+| 38     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
+| 39     | Instructor Prerogative Day               |                          |              |                    |
 | 40     | Review                                   |                          |              | ICE7, Lab 5 Report |
 
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
