@@ -6,9 +6,9 @@
 
 | Lesson | Topic                                    | Reading                  | Assigned     | Due                |
 |--------|------------------------------------------|--------------------------|--------------|--------------------|
-| 1      | My Computer & The Cloud                  | 1.2                      | HW 1         |                    |
-| 2      | Combinational Logic                      | 1.5                      | HW 2         |                    |
-| 3      | Boolean Equations and Algebra            | 2.1-2.3                  | HW 3         |                    |
+| 1      | Version Control                          | 1.2                      | HW 1         |                    |
+| 2      | Logic Gates                              | 1.5, 2.1                 | HW 2         |                    |
+| 3      | Boolean Equations and Algebra            | 2.2-2.3                  | HW 3         |                    |
 | 4      | ICE1 - Breadboard Half Adder             |                          | HW 4         |                    |
 | 5      | Multilevel Logic & VHDL                  | 2.4-2.6                  | HW 5         | ICE1               |
 | 6      | ICE2 - VHDL Half Adder                   |                          | [HW 6](./HW/HW6.md) |             |
