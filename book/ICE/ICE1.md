@@ -22,8 +22,8 @@ In this course you have learned how to design basic combinational logic circuits
 
 ### Supplies
 
-- 5x $1 kΩ$ resistors.
-- 1x red LED.
+- 4x $1 kΩ$ resistors.
+- 2x red LED.
 - 1x 74LS08 2-Input AND gate logic chip.
 - 1x 74LS86 2-Input XOR gate logic chip.
 - 1x breadboard power supply.
@@ -98,7 +98,7 @@ Connect the first AND gate from the 74LS08 to the inputs \(A\) and \(B\) to prod
 
 Connect the first XOR gate from the 74LS86 to the inputs \(A\) and \(B\) to produce the Sum output.
 
-We will get the following logic:
+We will get the following combinational logic circuit:
 
 ```{figure} img/ice01_image3.jpg
 ---
@@ -130,11 +130,13 @@ Breadboard connections
 You will use a USB power supply to power your circuit.
 
 Attach the power supply to the top of the breadboard so the red vertical lines
-align with the 5V and 3.3V pins and the blue lines align with the
-ground pin according to {numref}`power-supply-placement`.
+align with the positive pins (+5V and +3.3V) and the blue lines align with the
+negative pin (ground, 0V) according to {numref}`power-supply-placement`.
 
-**Double check to make sure your power supply is in the right place.**
-Insert the USB cable into your computer. Press the white button to turn on the power supply.
+```{note}
+The breadboard has numbered rows.
+Make sure your power supply is connected to rows #1-3 or the red and blue rails will be backwards!
+```
 
 ```{figure} img/ice01_image5.jpg
 ---
@@ -143,7 +145,10 @@ name: power-supply-placement
 Power supply placement
 ```
 
-You will use a digital multi-meter (DMM) to test the power supply.
+**Double check to make sure your power supply is in the right place.**
+Insert the USB cable into your computer. Press the white button to turn on the power supply.
+
+You will use a *digital multi-meter* (DMM) to test the power supply.
 Turn the multimeter to the DC voltage setting and place the black lead into the ground rail and the red lead into the 5V rail according to {numref}`test-power-supply`.
 
 ```{figure} img/ice01_image6.jpg
@@ -162,7 +167,7 @@ Next you are going to configure your input switches. This portion of the circuit
 
 The switches and resistors are going to be in a pull down configuration or active high.
 This means when the switch is **open** there is a direct connection between the circuit and ground through a resistor which pulls the value to `0`.
-However, when the switch is **closed**, the circuit is now connected to the power supply (5 V). This provides a logic `1`. We will use 2x $1 kΩ$ resistors and 2-switch component.
+However, when the switch is **closed**, the circuit is now connected to the power supply (5 V). This provides a logic `1`. We will use 2x $1 kΩ$ resistors and 2x switches.
 
 ```{figure} img/ice01_image7.jpg
 ---
@@ -199,6 +204,7 @@ Make sure your power supply is **powered off** while making changes to the circu
 ```
 
 You will now add the 74LS08 chip, and the 74LS86 chip.
+After following these steps, your board should look like {numref}`chip-wiring`.
 
 #### Power
 
