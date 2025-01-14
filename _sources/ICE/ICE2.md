@@ -133,7 +133,7 @@ We said earlier that we have
 - Constraints (`.xdc`)
 - Simulation Sources (`.vhd`)
 
-These were all in the `src/` folder of our cloned repo, but the `build.tcl` told Vivado which was which.
+These were all in the `src/` folder of our cloned repo.
 You can now see them assigned appropriately under "Sources"
 
 ```{figure} img/ice2_vivado_sources.png
