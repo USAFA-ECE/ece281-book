@@ -10,6 +10,12 @@ The intent of this HW is to teach you how to draw and simulate digital logic sch
 4. You may be prompted to install Java Runtime.
     - On a MissionNet computer you can install from the Self Service Client.
     - On another computer you can follow the link or search it on the web.
+  
+```{warning}
+You must download and extract the contents of the zip file then run Digital.exe from the extracted folder.  If you try to run Digital from within the zip file you will get an error.  See the video below for more details.
+```
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lnq8MqRCyyo?si=4m0MghS6auUrKfBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Half adder, again
 
