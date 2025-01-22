@@ -12,12 +12,12 @@
 | 4      | ICE1 - Breadboard Half Adder             |                          | HW 4         |                    |
 | 5      | Multilevel Logic & VHDL                  | 2.4-2.6                  | HW 5         | ICE1               |
 | 6      | ICE2 - VHDL Half Adder                   |                          | [HW 6](./HW/HW6.md) |             |
-| 7      | Numbering Systems, MUX, Decoder          | 1.4, 2.8                 | HW 7         | ICE2               |
+| 7      | Numbering Systems and Arithmetic         | 1.4                      | HW 7         | ICE2               |
 | 8      | K-Maps                                   | 2.7                      | Lab 1 Prelab |                    |
-| 9      | Combinational Timing Analysis            | 2.9                      |              |                    |
+| 9      | Mux, Decoders, Combinational Timing      | 2.8-2.9                  |              |                    |
 | 10     | Lab 1 - 31 Day Month                     |                          |              | Lab 1 Prelab       |
 | 11     | Lab 1 - 31 Day Month                     |                          |              |                    |
-| 12     | Arithmitic in Combinational Logic        | 5.1-5.2.3                | HW 12        |                    |
+| 12     | Arithmetic in Combinational Logic        | 5.1-5.2.3                | HW 12        |                    |
 | 13     | ICE3 - Full Adder                        |                          |              | Lab 1              |
 | 14     | RV32I R- and I-Type Instructions         | 6.1-6.2.1, 6.3.2         | HW 14        | ICE3               |
 | 15     | The Mighty ALU!                          | 5.2.4-5.2.5              | Lab 2 Prelab |                    |
