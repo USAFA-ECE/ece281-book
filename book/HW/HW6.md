@@ -4,7 +4,7 @@ The intent of this HW is to teach you how to draw and simulate digital logic sch
 
 ## Download Digital
 
-1. Download [Digital](https://github.com/hneemann/Digital) from GitHub.
+1. Download [Digital](https://github.com/hneemann/Digital/releases/latest/download/Digital.zip) from GitHub.
 2. Unzip Digital and copy the entire unzipped folder to someplace convenient.
 3. You don't actually need to install Digital; you can just run the `Digital.exe` by double clicking on it.
 4. You may be prompted to install Java Runtime.
@@ -38,6 +38,11 @@ You can now simulate the circuit to see if it works as expected.
 Simulation > Start of Simulation or the play button in the center tool bar.
 
 Then click inputs to see if outputs behave as expected!
+
+If you'd like an intro to building and running a circuit in Digital, please see this video below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i9S4pHJLbWc?si=HZ2APQfsntdGjWEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ## Submission
 
