@@ -61,7 +61,7 @@ The pre-lab will be submitted to Gradescope *prior* to starting the lab.
 1. Go to [https://github.com/USAFA-ECE/ece281-lab1](https://github.com/USAFA-ECE/ece281-lab1)
 2. Click "Use this template" and make a repository under your GitHub account
 3. Use Git Bash to clone the newly-created repository to your local machine
-4. Verify that you *your* copy of the repository *not* the USAFA-ECE one
+4. Verify that you're using *your* copy of the repository *not* the USAFA-ECE one
 
 ```bash
 # Run this from inside your lab 1 repo
