@@ -46,7 +46,8 @@ $$
 ceiling(log_2(12)) = 4
 $$
 
-Eventually we will move to representing that with a vector, but for now let's just give each input bit a letter: $D$, $C$, $B$, $A$, from most to least significant bit.
+Eventually we will move to representing that with a vector, but for now let's just give each input bit a letter:
+$A$, $B$, $C$, $D$, from most to least significant bit.
 
 Our output is $Y$.
 
