@@ -167,10 +167,19 @@ Even though we are being fast here, strive to be as neat as possible.
 See *Digital Design and Computer Architecture* **Figure 2.23** for a great example.
 ```
 
+The circuits should be **four** files saved as either `.png` or `.pdf`.
+
 - The first schematic will use an 8:1 MUX (74151) and inverter(s) (7404).
-- The second schematic will use a 4:16 \"one-cold\" (active low output) decoder (74154), inverter(s), and two-input OR gate(s) (7432). Using 2-input NANDs (7400) is also acceptable.
+    --> name this file `MUX`
+- The second schematic will use a 4:16 "one-cold" (active low output) decoder (74154),
+    inverter(s), and two-input OR gate(s) (7432).
+    --> name this file `Decoder`
 - The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
+    --> name this file `SOP`
 - The fourth schematic will only use NAND gates with either two or four inputs.
+    --> name this file `NAND`
+
+> Place your hand-drawn schematics into `prelab/` and add/commit them with git.
 
 #### Simulated Logic Gates
 
@@ -207,11 +216,16 @@ which bit is the MSB?
 **You will build this IC on a breadboard directly off of this simulation!**
 ```
 
-Commit your changes to your repository.
+### Prelab Deliverables
 
-> - **Push** all your changes to GitHub.
-> - **Verify** that your changes show up in your repository.
-> - **Submit** to Gradescope Prelab 1 assignment
+Your prelab submission will *only* include files in the `prelab/` folder;
+all other files will be ignored by Gradescope!
+
+- **Commit** your changes to your repository.
+- **Push** all your changes to GitHub.
+- **Verify** that your changes show up in your repository.
+- **Submit** to Gradescope Prelab 1 assignment
+- **Verify** that Gradescope autograder is happy
 
 ## Lab: Integrated Circuit
 
