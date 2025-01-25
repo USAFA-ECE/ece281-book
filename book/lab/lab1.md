@@ -183,8 +183,8 @@ But four our purposes, we will pick for you.
 Use [Digital](https://github.com/hneemann/Digital) to simulate the following two circuits.
 We give you templates in `prelab/`
 
-- 8:1 MUX (74151) and inverter(s) (7404) --> `MUX_Logic.dig`
-- Inverters, OR, AND --> `SOP_Logic.dig`
+- 8:1 MUX (74151) and inverter(s) (7404) --> `MUX.dig`
+- Inverters, OR, AND --> `SOP.dig`
 
 After you have working simulations, commit your changes!
 
@@ -193,7 +193,7 @@ After you have working simulations, commit your changes!
 With two working simulations, it's time to decide which circuit we are actually going to build.
 
 In Digital, simulate the a 8:1 MUX (74151) and inverter(s) (7404)
-as an **IC** schematic using the `prelab/MUX_IC.dig` template.
+as an **IC** schematic using the `prelab/MUX_74151.dig` template.
 
 ```{Hint}
 Look at the datasheet!
