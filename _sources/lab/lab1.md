@@ -165,6 +165,8 @@ We are looking to *prototype so we can quickly compare alternatives.*
 
 Even though we are being fast here, strive to be as neat as possible.
 See *Digital Design and Computer Architecture* **Figure 2.23** for a great example.
+
+**DO NOT** draw the inner architecture of the chips! For example, the MUX should just be a trapezoid.
 ```
 
 The circuits should be **four** files saved as either `.png` or `.pdf`.
@@ -174,7 +176,7 @@ The circuits should be **four** files saved as either `.png` or `.pdf`.
 - The second schematic will use a 4:16 "one-cold" (active low output) decoder (74154),
     inverter(s), and two-input OR gate(s) (7432).
     --> name this file `Decoder`
-- The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
+- The third schematic will use only inverter(s), two-input OR gate(s), and two-input AND gate(s) (7408).
     --> name this file `SOP`
 - The fourth schematic will only use NAND gates with either two or four inputs.
     --> name this file `NAND`
@@ -186,7 +188,7 @@ The circuits should be **four** files saved as either `.png` or `.pdf`.
 Now that you have **four** prototypes to compare, we will rule out some solutions
 and continue with two viable options.
 
-Typically, this is an invovled process (often with a decions matrix!)
+Typically, this is an involved process (often with a decision matrix!)
 But four our purposes, we will pick for you.
 
 Use [Digital](https://github.com/hneemann/Digital) to simulate the following two circuits.

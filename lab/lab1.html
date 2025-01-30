@@ -659,6 +659,7 @@ have included every input they need to function</p>
 We are looking to <em>prototype so we can quickly compare alternatives.</em></p>
 <p>Even though we are being fast here, strive to be as neat as possible.
 See <em>Digital Design and Computer Architecture</em> <strong>Figure 2.23</strong> for a great example.</p>
+<p><strong>DO NOT</strong> draw the inner architecture of the chips! For example, the MUX should just be a trapezoid.</p>
 </div>
 <p>The circuits should be <strong>four</strong> files saved as either <code class="docutils literal notranslate"><span class="pre">.png</span></code> or <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>.</p>
 <ul class="simple">
@@ -667,7 +668,7 @@ See <em>Digital Design and Computer Architecture</em> <strong>Figure 2.23</stron
 <li><p>The second schematic will use a 4:16 “one-cold” (active low output) decoder (74154),
 inverter(s), and two-input OR gate(s) (7432).
 –&gt; name this file <code class="docutils literal notranslate"><span class="pre">Decoder</span></code></p></li>
-<li><p>The third schematic will use only inverter(s), two-input OR gate(s), and three-input AND gate(s) (7411).
+<li><p>The third schematic will use only inverter(s), two-input OR gate(s), and two-input AND gate(s) (7408).
 –&gt; name this file <code class="docutils literal notranslate"><span class="pre">SOP</span></code></p></li>
 <li><p>The fourth schematic will only use NAND gates with either two or four inputs.
 –&gt; name this file <code class="docutils literal notranslate"><span class="pre">NAND</span></code></p></li>
@@ -680,7 +681,7 @@ inverter(s), and two-input OR gate(s) (7432).
 <h4>Simulated Logic Gates<a class="headerlink" href="#simulated-logic-gates" title="Link to this heading">#</a></h4>
 <p>Now that you have <strong>four</strong> prototypes to compare, we will rule out some solutions
 and continue with two viable options.</p>
-<p>Typically, this is an invovled process (often with a decions matrix!)
+<p>Typically, this is an involved process (often with a decision matrix!)
 But four our purposes, we will pick for you.</p>
 <p>Use <a class="reference external" href="https://github.com/hneemann/Digital">Digital</a> to simulate the following two circuits.
 We give you templates in <code class="docutils literal notranslate"><span class="pre">prelab/</span></code></p>
