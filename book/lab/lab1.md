@@ -134,12 +134,12 @@ Collecting data == determining what chips we have available.
 
 Our lab has the following [7400 series transistor-transistor logic (TTL) integrated circuits (IC)](https://en.wikipedia.org/wiki/7400-series_integrated_circuits)
 
-- 74151
-- 7404
-- 74154
-- 7432
-- 7400
-- 7411
+- 74151 8:1 MUX
+- 7404 Inverter (NOT)
+- 74159 4:16 One-Hot Decoder
+- 7432 2-input OR
+- 7400 4-input NAND
+- 7411 3-input AND
 
 These data sheets are available in Teams or can be searched online.
 
@@ -153,6 +153,8 @@ We will iterate to hone in on the best solution.
 4. Finally, we will build one design.
 
 #### Hand Drawn Logic Gates
+
+*Do this **before** doing the simulations below.*
 
 Using **logic gate symbols** that correspond to the types of chips you have available
 draw **four** separate schematics that can implement your truth table.
@@ -171,14 +173,13 @@ See *Digital Design and Computer Architecture* **Figure 2.23** for a great examp
 
 The circuits should be **four** files saved as either `.png` or `.pdf`.
 
-- The first schematic will use an 8:1 MUX (74151) and inverter(s) (7404).
+- The first schematic will use an 8:1 MUX and NOT gates.
     --> name this file `MUX`
-- The second schematic will use a 4:16 "one-cold" (active low output) decoder (74154),
-    inverter(s), and two-input OR gate(s) (7432).
+- The second schematic will use a 4:16 "one-hot" decoder and OR gates.
     --> name this file `Decoder`
-- The third schematic will use only inverter(s), two-input OR gate(s), and two-input AND gate(s) (7408).
+- The third schematic will use NOT gates, AND gates, and OR gates.
     --> name this file `SOP`
-- The fourth schematic will only use NAND gates with either two or four inputs.
+- The fourth schematic will use *only* NAND gates.
     --> name this file `NAND`
 
 > Place your hand-drawn schematics into `prelab/` and add/commit them with git.
@@ -194,8 +195,8 @@ But four our purposes, we will pick for you.
 Use [Digital](https://github.com/hneemann/Digital) to simulate the following two circuits.
 We give you templates in `prelab/`
 
-- 8:1 MUX (74151) and inverter(s) (7404) --> `MUX.dig`
-- Inverters, OR, AND --> `SOP.dig`
+- 8:1 MUX and NOT --> `MUX.dig`
+- NOT, AND, OR --> `SOP.dig`
 
 After you have working simulations, commit your changes!
 
@@ -203,7 +204,7 @@ After you have working simulations, commit your changes!
 
 With two working simulations, it's time to decide which circuit we are actually going to build.
 
-In Digital, simulate the a 8:1 MUX (74151) and inverter(s) (7404)
+In Digital, simulate the a 8:1 MUX (74151) and inverter (if using) (7404)
 as an **IC** schematic using the `prelab/MUX_74151.dig` template.
 
 ```{Hint}
