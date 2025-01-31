@@ -453,3 +453,6 @@ Submit the following to Gradescope Lab 1.
 > - **Submit** to Gradescope and verify you get full points from the autograder
 
 #### Lab Report
+
+Follow the template on Teams and upload to Gradescope.
+We only ask for specific sections for each lab!
