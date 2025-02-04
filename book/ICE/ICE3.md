@@ -33,13 +33,6 @@ The objectives of this in-class exercise are for you to:
 - Employ a `top_level.vhd` file
 - Gain more experience using tools (Git, Markdown, Xilinx Vivado)
 
-### End State
-
-Push the following files to your GitHub repository and submit to Gradescope:
-
-1. VHD and XDC files in `src/`
-2. `.bit` file used to program board
-
 ## Background
 
 ### Full Adder
@@ -199,15 +192,15 @@ You need to modify the architecture of your top_basys3 file to reflect this sche
 
 ### Full Adder Component
 
-The full adder component must match the entity declaration in `fullAdder.vhd`.
+The full adder component must match the entity declaration in `full_adder.vhd`.
 
-Declare a fullAdder component between the architecture and begin statements.
+Declare a full_adder component between the architecture and begin statements.
 
 ```vhdl
 architecture top_basys3_arch of top_basys3 is
 
     -- declare the component of your top-level design
-    component fullAdder is
+    component full_adder is
         port (
             i_A     : in std_logic;
             i_B     : in std_logic;
@@ -215,7 +208,7 @@ architecture top_basys3_arch of top_basys3 is
             o_S     : out std_logic;
             o_Cout  : out std_logic
             );
-        end component fullAdder;
+        end component full_adder;
 ```
 
 Just like the test bench pulls in your component to simulate inputs and outputs for it,
@@ -235,19 +228,19 @@ Replace the `?` with the appropriate number and copy this signal declaration int
 
 ```vhdl
     -- declare any signals you will need
-    signal w_A, w_B : STD_LOGIC_VECTOR(3 downto 0); -- for sw inputs to operands
+    signal w_A, w_B, w_Sum : STD_LOGIC_VECTOR(3 downto 0); -- for sw inputs to operands
     signal w_carry  : STD_LOGIC_VECTOR(? downto 0); -- for ripple between adders
 ```
 
 ## top_basys3 Architecture Instantiations
 
-Now that we have made the fullAdder component available to the top_basys3 entity
+Now that we have made the full_adder component available to the top_basys3 entity
 we need to instantiate multiple occurrences of the component and declare the logic to connect them
 to each other, and to inputs/outputs.
 
 Remember, we are trying to build what's in your schematic, which is the 4-bit version of {numref}`ripple-carry-adder`.
 
-Here are the first two instantiations of fullAdder.
+Here are the first two instantiations of full_adder.
 
 Notice that each has a unique name (because of the number at the end) and is connected slightly differently.
 
@@ -255,16 +248,16 @@ Copy this code into `top_basys3.vhd` below the `begin` statement.
 
 ```vhdl
 -- PORT MAPS --------------------
-    fullAdder_0: fullAdder
+    full_adder_0: full_adder
     port map(
         i_A     => w_A(0),
         i_B     => w_B(0),
-        i_Cin   => sw(0),
+        i_Cin   => sw(0),   -- Directly to input here
         o_S     => w_Sum(0),
         o_Cout  => w_carry(0)
     );
 
-    fullAdder_1: fullAdder
+    full_adder_1: full_adder
     port map(
         i_A     => w_A(1),
         i_B     => w_B(1),
@@ -290,7 +283,7 @@ Do this below your port maps.
 
 ## Test design
 
-We already have a completed `halfAdder_tb.vhd` file, which is awesome, because it means
+We already have a completed `full_adder_tb.vhd` file, which is awesome, because it means
 we can test our system at multiple layers!
 
 Your job is to complete the `top_basys3_tb.vhd` file and test the system as a whole.
@@ -298,48 +291,37 @@ Your job is to complete the `top_basys3_tb.vhd` file and test the system as a wh
 ### Edit testbench
 
 Open `top_basys3_tb.vhd`.
-Note the header has `top_basys3.vhd` as a REQUIRED FILE.
+
+Do some quick math... how many possible inputs are there to our 4-bit adder?
+
+More than we want to manually input! 😄
+
+Fill out the remainder of the test bench with a few cases. Strive for decent coverage by:
+
+1. The min and max cases (input all zeros and all ones)
+2. The easy-to-forget cases (such $0 + 0 + C_{in} = 1$)
+3. A few random ones from the middle.
+
 Revisit [ICE2](ICE2.md) for more detailed instructions if you need them.
 
 Declare your top_basys3 "component" in the test bench, create signals to simulate
 the inputs and outputs, and connect them in a port map.
 
-Then create your test cases within the test process. Here is an example of the first line:
-
-```vhdl
-    begin
-
-        w_sw <= o"0"; wait for 10 ns;
-            assert w_led = "00" report "bad 000" severity failure;
-        w_sw <= o"1"; wait for 10 ns;
-            assert w_led = "01" report "bad 001" severity failure;
-        --You must fill in the remaining test cases.
-```
-
-Similar to [Lab 1](../lab/lab1.md) we can set the enitre vector with a single value, but because there are only three bits,
-we need to use octal instead of hex. The leading `o` is how you express an octal number in VHDL.
-
-> How many test cases will you need? Create them all 😄
-
 ### Simulate project
 
-Your half-adder *should* be working already, so focus on the top_basys3_tb.
+Your full adder *should* be working already, so focus on the top_basys3_tb.
+
 Use your waveform to debug if any of the assert statements fail.
 
 ## Implement Design
 
 ### Constraints File
 
-Unlike our pervious exercise, you will not need to replace the highlighted portions.
-We made our entity inputs and outputs reflect the default constraint file naming convention.
+Open `Basys3_Master.xdc`.
 
-```xdc
-## Switches
-set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
-```
+Because we used the appropriate naming conventions in `top_bays3.vhd` you **should not change the names!**
 
-> Uncomment all lines needed for this design (`sw{0}`, `sw{1}`, `sw{2}`, `led{0}`, and `led{1}`.
+Simply uncomment `sw` $0$ to $8$ and all sixteen `led` lines.
 
 ### Test bitstream on FPGA
 
@@ -362,6 +344,8 @@ Make the screenshot appear in your README with the following Markdown syntax:
 ![description of my waveform](imagename.png)
 ```
 
+Now do the same with your sketch of the **top_basys3 entity** that you made earlier (it can be a quick and dirty picture).
+
 Add a `## Documentation` section to the README. This is the only
 one you need for the entire ICE; you don't need one in the file headers.
 
@@ -380,6 +364,6 @@ Add the image and README.md to git and commit.
 - Then [push](https://www.atlassian.com/git/tutorials/syncing/git-push) them to your repo.
 - Make sure all your work appears in GitHub as you expect.
 - Submit the assignment on **Gradescope**.
-- Demo your working board to an instructor.
+- Make sure the autograder in Gradescope passes!
 
 Congratulations, you have completed In Class Exercise 3!
