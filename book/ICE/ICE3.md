@@ -1,4 +1,4 @@
-# ICE 3: Full Adder
+# ICE 3: Ripple-Carry Adder
 
 ```{contents}
 :local:
@@ -6,6 +6,8 @@
 ```
 
 ## Overview
+
+In this ICE we will make a 4-bit ripple-carry adder.
 
 So far in this course you have implemented individual components on your
 FPGA. However, one of the benefits of VHDL is that we can pull multiple
@@ -27,27 +29,26 @@ so this is directly applicable.
 
 The objectives of this in-class exercise are for you to:
 
-- Implement and test a full adder with half-adders using VDHL
+- Implement and test a ripple-carry adder with full adders using VDHL
 - Employ a `top_level.vhd` file
 - Gain more experience using tools (Git, Markdown, Xilinx Vivado)
 
 ### End State
 
-Provide a live demo to your instructor.
+Push the following files to your GitHub repository and submit to Gradescope:
 
-You are not required to turn in ICE3; however,
-**ensure the following files are pushed to your repository**:
-
-1. VHDL files used (top_basys3, half-adder and testbench)
-2. Constraints (`.xdc`)
-3. `.bit` file used to program board
+1. VHD and XDC files in `src/`
+2. `.bit` file used to program board
 
 ## Background
 
-As discussed in [ICE2](ICE2.md), a half-adder takes two single-bit inputs and outputs
-their sum and a carry out; see {numref}`half-adder-summary` below.
+### Full Adder
 
-A full-adder extends the half-adder to include a Carry In bit, $C_{in}$.
+A full adder extends the half-adder to include a Carry In bit, $C_{in}$.
+
+```{tip}
+Adders are discussed on page **238** of *Digital Design and Computer Architecture, RISC-V Ed.*
+```
 
 A truth table, schematic symbol, and logic equations for a full-adder are shown below.
 
@@ -77,26 +78,15 @@ $$
 | 1        | 1   | 1   |   | 1         | 1   |
 ```
 
-### Full-adder from multiple half-adders
+### Ripple-Carry Adder
 
-It turns out that we can create a full-adder by combining two half-adders.
+> The simplest way to build an $N$-bit carry propagate adder is to chain together $N$ full adders.
 
-Recall from {ref}`half-adder-traits` a half-adder is:
-
-```{figure} img/ice3_halfaddersummary.png
+```{figure} img/ice3_ripplecarryadder.png
 ---
-name: half-adder-summary
+name: ripple-carry-adder
 ---
-Half-adder schematic, truth table, and equations.
-```
-
-{numref}`full-adder-from-two` shows how two half-adders can be combined to function as a full-adder.
-
-```{figure} img/ice3_fullfromtwo.png
----
-name: full-adder-from-two
----
-A full-adder from two half-adders
+**DDCA* Figure 5.5 shows a 32-bit ripple carry adder.
 ```
 
 Our goal will be to implement this in VHDL!
@@ -105,17 +95,18 @@ Our goal will be to implement this in VHDL!
 
 ### Setup Vivado
 
-Just like in the previous ICE, we will create a fork of the repository.
+Just like in the previous ICE...
 
 - Navigate to https://github.com/USAFA-ECE/ece281-ice3
-- Fork the repository
-- Clone the repository
+- **Use this template**
+- Clone *your copy* of the repository
 - Open the project in Vivado
 - Modify the headers
 
-> Clone your repository, open it in Vivado, and modify headers.
+Notice that we have include a Full Adder for you. It's very similar to the Half Adder you made for ICE 2!
 
-### Import half adder
+%% This Section should be changed to "Full Adder" next year, after modifying ICE 2
+<!-- ### Import half adder
 
 You created a half adder during [ICE2](ICE2.md). We will reuse that code here.
 
@@ -139,118 +130,162 @@ and commit those changes as well.
 You are not required to do this for the lab.
 ```
 
-> Commit the addition of `halfAdder.vhd` with Git
+> Commit the addition of `halfAdder.vhd` with Git 
+-->
 
-## Top Level Design
+## top_basys3 Entity
 
-Our top level design is the boundary of our system.
+```{important}
+From now on, we will use a top level design file as the boundary of our system.
 
-It allows us to connect internal components and our I/O.
+It allows us to connect internal components and our I/O in a reliable manner.
+```
 
-### top_basys3 entity
+We will name the top-level file `top_basys3.vhd`... because it's the top file for our Basys 3 board!
 
-Unlike the half-adder, the full-adder has three inputs, though it shares
-the same two outputs. This has been given to you.
+Open that file now.
+
+Previously, you edited `Basys3_Master.xdc` to match your entity.
+Going forward, we will leave the `xdc` defaults and *only uncomment* the ports we need.
+You'll find that this will reduce errors and increase reusability.
+
+Our `Basys3_Master.xdc` has the following default for switches:
+
+```tcl
+set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
+```
+
+But instead of doing each bit, we will use a `std_logic_vector`:
 
 ```{hint}
-A std_logic_vector combines multiple std_logic bits into one variable.
+A `std_logic_vector` combines multiple `std_logic` bits into something like an array.
 The different signals within the vector can be referenced by index.
 ```
 
-We will use switches for inputs and LEDs for outputs.
+Our **user** will input the following:
+
+- $C_{in}$ on switch 0
+- $A$ on switches 4-1
+- $B$ on switches 8-5
+
+Our **user** will expect the following outputs:
+
+- $Sum$ on LED 3-0
+- $C_{out} on LED 15
+
+**Sketch this *entity* description (none of the internal workings), then**
+ensure you see the following in your `top_basys3.vhd`:
 
 ```vhdl
 
 entity top_basys3 is
     port(
         -- Switches
-        sw  :   in  std_logic_vector(2 downto 0);
+        sw  :   in  std_logic_vector(8 downto 0);
 
         -- LEDs
-        led :   out std_logic_vector(1 downto 0)
+        led :   out std_logic_vector(15 downto 0)
     );
 end top_basys3;
 ```
 
-### top_basys3 architecture
+## top_basys3 Architecture Declarations
 
-Always with layers of abstraction in mind, let's redraw the schematic
-with the additional details of internal signals and board inputs and outputs.
-This is shown in {numref}`full-adder-entity`.
+You previously made an architecture schematic in Digital for the HW.
+Open that file now for your reference.
 
-```{figure} img/ice3_image5.jpg
----
-name: full-adder-entity
----
-Entity architecture for implementing full adder with two half-adders
-```
+You need to modify the architecture of your top_basys3 file to reflect this schematic.
 
-You need to modify the architecture of your top_basys3 file to reflect
-the schematic in {numref}`full-adder-from-two`.
+### Full Adder Component
 
-#### Declare half-adder component
+The full adder component must match the entity declaration in `fullAdder.vhd`.
 
-The half-adder component must match
-the halfAdder entity declaration in `halfAdder.vhd`
-These declarations go in between the architecture and begin statements.
-Reference [ICE2 testbench](ICE2.md) if you don't remember the syntax.
+Declare a fullAdder component between the architecture and begin statements.
 
 ```vhdl
 architecture top_basys3_arch of top_basys3 is
 
     -- declare the component of your top-level design
-    component halfAdder is
+    component fullAdder is
         port (
-            i_A : in std_logic;
-            i_B : in std_logic;
-            o_S : out std_logic;
-            o_Cout : out std_logic
+            i_A     : in std_logic;
+            i_B     : in std_logic;
+            i_Cin   : in std_logic;
+            o_S     : out std_logic;
+            o_Cout  : out std_logic
             );
-        end component halfAdder;
-
-  -- declare any signals you will need
-
+        end component fullAdder;
 ```
 
 Just like the test bench pulls in your component to simulate inputs and outputs for it,
 a top level design will bring in components and wire them together.
-If you aren't sure what signals you may need to create, the general rule is to create
-a signal for any wire not connected directly to an input or an output.
 
-#### Instantiate half-adder components
+### Signal Declaration
 
-Now that we have made the halfAdder component available to the top_basys3 entity,
-we need to instantiate occurrences of the components and declare the logic to connect them
+Remember, signals are like wires between inputs and components.
+
+We will need the following signals:
+
+- `w_A` and `w_B` to carry the switch `sw` input to the components.
+- `w_Sum` to carry the Sum outputs to the LEDs.
+- A carry signal to carry the ripple *between* adders.
+
+Replace the `?` with the appropriate number and copy this signal declaration into `top_basys3.vhd`
+
+```vhdl
+    -- declare any signals you will need
+    signal w_A, w_B : STD_LOGIC_VECTOR(3 downto 0); -- for sw inputs to operands
+    signal w_carry  : STD_LOGIC_VECTOR(? downto 0); -- for ripple between adders
+```
+
+## top_basys3 Architecture Instantiations
+
+Now that we have made the fullAdder component available to the top_basys3 entity
+we need to instantiate multiple occurrences of the component and declare the logic to connect them
 to each other, and to inputs/outputs.
 
-Remember, we are trying to build what is in {numref}`full-adder-entity`.
+Remember, we are trying to build what's in your schematic, which is the 4-bit version of {numref}`ripple-carry-adder`.
 
-Notice that we have TWO instantiations of halfAdder and we have given them unique names
-(`halfadder1_inst` and `halfAdder2_inst`).
-The `or` gate can be directly declared in "CONCURRENT STATEMENTS"
+Here are the first two instantiations of fullAdder.
+
+Notice that each has a unique name (because of the number at the end) and is connected slightly differently.
+
+Copy this code into `top_basys3.vhd` below the `begin` statement.
 
 ```vhdl
 -- PORT MAPS --------------------
-    halfAdder1_inst: halfAdder
+    fullAdder_0: fullAdder
     port map(
-        i_A     => sw(0),
-        i_B     => sw(1),
-        o_S     => w_S1,
-        o_Cout  => w_Cout1
+        i_A     => w_A(0),
+        i_B     => w_B(0),
+        i_Cin   => sw(0),
+        o_S     => w_Sum(0),
+        o_Cout  => w_carry(0)
     );
 
-    halfAdder2_inst: halfAdder
+    fullAdder_1: fullAdder
     port map(
-        i_A     => -- TODO
-        i_B     =>
-        o_S     =>
-        o_Cout  =>
+        i_A     => w_A(1),
+        i_B     => w_B(1),
+        i_Cin   => w_carry(0),
+        o_S     => w_Sum(1),
+        o_Cout  => w_carry(1)
     );
-    ---------------------------------
+```
 
-    -- CONCURRENT STATEMENTS --------
-    led(1) <= -- TODO
-    ---------------------------------
+Then add the other two full adder instantiations.
+
+### Signal connections
+
+Lastly, we need to connect our signals. Vectors make this easy!
+
+Do this below your port maps.
+
+```vhdl
+    w_A <= sw(4 downto 1);
+    -- TODO: w_B
+    led(3 downto 0) <= w_Sum;
 ```
 
 ## Test design
