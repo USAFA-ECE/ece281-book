@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ICE 3: Full Adder &#8212; ECE 281</title>
+    <title>ICE 3: Ripple-Carry Adder &#8212; ECE 281</title>
   
   
   
@@ -177,7 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ICE0.html">BCE 0: Get started with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE1.html">ICE 1: Breadboard Half Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE2.html">ICE 2: VHDL Half-Adder</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 3: Full Adder</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 3: Ripple-Carry Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE6.html">ICE 6: Time Division Multiplexor</a></li>
@@ -380,7 +380,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICE 3: Full Adder</h1>
+    <h1>ICE 3: Ripple-Carry Adder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,25 +392,25 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-state">End State</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-from-multiple-half-adders">Full-adder from multiple half-adders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder">Full Adder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-carry-adder">Ripple-Carry Adder</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-project">The Project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vivado">Setup Vivado</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-half-adder">Import half adder</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-design">Top Level Design</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-entity">top_basys3 entity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-architecture">top_basys3 architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-half-adder-component">Declare half-adder component</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiate-half-adder-components">Instantiate half-adder components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-entity">top_basys3 Entity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-architecture-declarations">top_basys3 Architecture Declarations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-component">Full Adder Component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-declaration">Signal Declaration</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-architecture-instantiations">top_basys3 Architecture Instantiations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-connections">Signal connections</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-design">Test design</a><ul class="nav section-nav flex-column">
@@ -439,55 +439,61 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ice-3-full-adder">
-<h1>ICE 3: Full Adder<a class="headerlink" href="#ice-3-full-adder" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-3-ripple-carry-adder">
+<h1>ICE 3: Ripple-Carry Adder<a class="headerlink" href="#ice-3-ripple-carry-adder" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p>
 <ul>
-<li><p><a class="reference internal" href="#objectives" id="id3">Objectives</a></p></li>
-<li><p><a class="reference internal" href="#end-state" id="id4">End State</a></p></li>
+<li><p><a class="reference internal" href="#objectives" id="id4">Objectives</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#background" id="id5">Background</a></p>
 <ul>
-<li><p><a class="reference internal" href="#full-adder-from-multiple-half-adders" id="id6">Full-adder from multiple half-adders</a></p></li>
+<li><p><a class="reference internal" href="#full-adder" id="id6">Full Adder</a></p></li>
+<li><p><a class="reference internal" href="#ripple-carry-adder" id="id7">Ripple-Carry Adder</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#the-project" id="id7">The Project</a></p>
+<li><p><a class="reference internal" href="#the-project" id="id8">The Project</a></p>
 <ul>
-<li><p><a class="reference internal" href="#setup-vivado" id="id8">Setup Vivado</a></p></li>
-<li><p><a class="reference internal" href="#import-half-adder" id="id9">Import half adder</a></p></li>
+<li><p><a class="reference internal" href="#setup-vivado" id="id9">Setup Vivado</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#top-level-design" id="id10">Top Level Design</a></p>
+<li><p><a class="reference internal" href="#top-basys3-entity" id="id10">top_basys3 Entity</a></p></li>
+<li><p><a class="reference internal" href="#top-basys3-architecture-declarations" id="id11">top_basys3 Architecture Declarations</a></p>
 <ul>
-<li><p><a class="reference internal" href="#top-basys3-entity" id="id11">top_basys3 entity</a></p></li>
-<li><p><a class="reference internal" href="#top-basys3-architecture" id="id12">top_basys3 architecture</a></p></li>
+<li><p><a class="reference internal" href="#full-adder-component" id="id12">Full Adder Component</a></p></li>
+<li><p><a class="reference internal" href="#signal-declaration" id="id13">Signal Declaration</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#test-design" id="id13">Test design</a></p>
+<li><p><a class="reference internal" href="#top-basys3-architecture-instantiations" id="id14">top_basys3 Architecture Instantiations</a></p>
 <ul>
-<li><p><a class="reference internal" href="#edit-testbench" id="id14">Edit testbench</a></p></li>
-<li><p><a class="reference internal" href="#simulate-project" id="id15">Simulate project</a></p></li>
+<li><p><a class="reference internal" href="#signal-connections" id="id15">Signal connections</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#implement-design" id="id16">Implement Design</a></p>
+<li><p><a class="reference internal" href="#test-design" id="id16">Test design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#constraints-file" id="id17">Constraints File</a></p></li>
-<li><p><a class="reference internal" href="#test-bitstream-on-fpga" id="id18">Test bitstream on FPGA</a></p></li>
+<li><p><a class="reference internal" href="#edit-testbench" id="id17">Edit testbench</a></p></li>
+<li><p><a class="reference internal" href="#simulate-project" id="id18">Simulate project</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#wrapping-up" id="id19">Wrapping up</a></p>
+<li><p><a class="reference internal" href="#implement-design" id="id19">Implement Design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#readme" id="id20">README</a></p></li>
-<li><p><a class="reference internal" href="#other-files" id="id21">Other files</a></p></li>
+<li><p><a class="reference internal" href="#constraints-file" id="id20">Constraints File</a></p></li>
+<li><p><a class="reference internal" href="#test-bitstream-on-fpga" id="id21">Test bitstream on FPGA</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#wrapping-up" id="id22">Wrapping up</a></p>
+<ul>
+<li><p><a class="reference internal" href="#readme" id="id23">README</a></p></li>
+<li><p><a class="reference internal" href="#other-files" id="id24">Other files</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>In this ICE we will make a 4-bit ripple-carry adder.</p>
 <p>So far in this course you have implemented individual components on your
 FPGA. However, one of the benefits of VHDL is that we can pull multiple
 components into a single design.</p>
@@ -501,36 +507,29 @@ before finally connecting them to the IO of the board.</p>
 <p>You will need to use the concept of a Top Level Design in Lab 2,
 so this is directly applicable.</p>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
 <p>The objectives of this in-class exercise are for you to:</p>
 <ul class="simple">
-<li><p>Implement and test a full adder with half-adders using VDHL</p></li>
+<li><p>Implement and test a ripple-carry adder with full adders using VDHL</p></li>
 <li><p>Employ a <code class="docutils literal notranslate"><span class="pre">top_level.vhd</span></code> file</p></li>
 <li><p>Gain more experience using tools (Git, Markdown, Xilinx Vivado)</p></li>
 </ul>
 </section>
-<section id="end-state">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">End State</a><a class="headerlink" href="#end-state" title="Link to this heading">#</a></h3>
-<p>Provide a live demo to your instructor.</p>
-<p>You are not required to turn in ICE3; however,
-<strong>ensure the following files are pushed to your repository</strong>:</p>
-<ol class="arabic simple">
-<li><p>VHDL files used (top_basys3, half-adder and testbench)</p></li>
-<li><p>Constraints (<code class="docutils literal notranslate"><span class="pre">.xdc</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.bit</span></code> file used to program board</p></li>
-</ol>
-</section>
 </section>
 <section id="background">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>As discussed in <a class="reference internal" href="ICE2.html"><span class="std std-doc">ICE2</span></a>, a half-adder takes two single-bit inputs and outputs
-their sum and a carry out; see <a class="reference internal" href="#half-adder-summary"><span class="std std-numref">Fig. 18</span></a> below.</p>
-<p>A full-adder extends the half-adder to include a Carry In bit, <span class="math notranslate nohighlight">\(C_{in}\)</span>.</p>
+<section id="full-adder">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Full Adder</a><a class="headerlink" href="#full-adder" title="Link to this heading">#</a></h3>
+<p>A full adder extends the half-adder to include a Carry In bit, <span class="math notranslate nohighlight">\(C_{in}\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Adders are discussed on page <strong>238</strong> of <em>Digital Design and Computer Architecture, RISC-V Ed.</em></p>
+</div>
 <p>A truth table, schematic symbol, and logic equations for a full-adder are shown below.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <img alt="../_images/ice3_image1.jpg" src="../_images/ice3_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Full-adder schematic</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Full-adder schematic</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -612,232 +611,246 @@ C_{out} = AB + AC_{in} + BC_{in}
 </tbody>
 </table>
 </div>
-<section id="full-adder-from-multiple-half-adders">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Full-adder from multiple half-adders</a><a class="headerlink" href="#full-adder-from-multiple-half-adders" title="Link to this heading">#</a></h3>
-<p>It turns out that we can create a full-adder by combining two half-adders.</p>
-<p>Recall from <a class="reference internal" href="ICE1.html#half-adder-traits"><span class="std std-ref">Half-adder</span></a> a half-adder is:</p>
-<figure class="align-default" id="half-adder-summary">
-<img alt="../_images/ice3_halfaddersummary.png" src="../_images/ice3_halfaddersummary.png" />
+</section>
+<section id="ripple-carry-adder">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Ripple-Carry Adder</a><a class="headerlink" href="#ripple-carry-adder" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The simplest way to build an <span class="math notranslate nohighlight">\(N\)</span>-bit carry propagate adder is to chain together <span class="math notranslate nohighlight">\(N\)</span> full adders.</p>
+</div></blockquote>
+<figure class="align-default" id="id1">
+<img alt="../_images/ice3_ripplecarryadder.png" src="../_images/ice3_ripplecarryadder.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Half-adder schematic, truth table, and equations.</span><a class="headerlink" href="#half-adder-summary" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p><a class="reference internal" href="#full-adder-from-two"><span class="std std-numref">Fig. 19</span></a> shows how two half-adders can be combined to function as a full-adder.</p>
-<figure class="align-default" id="full-adder-from-two">
-<img alt="../_images/ice3_fullfromtwo.png" src="../_images/ice3_fullfromtwo.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">A full-adder from two half-adders</span><a class="headerlink" href="#full-adder-from-two" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">*<em>DDCA</em> Figure 5.5 shows a 32-bit ripple carry adder.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Our goal will be to implement this in VHDL!</p>
 </section>
 </section>
 <section id="the-project">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">The Project</a><a class="headerlink" href="#the-project" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">The Project</a><a class="headerlink" href="#the-project" title="Link to this heading">#</a></h2>
 <section id="setup-vivado">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h3>
-<p>Just like in the previous ICE, we will create a fork of the repository.</p>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h3>
+<p>Just like in the previous ICE…</p>
 <ul class="simple">
 <li><p>Navigate to <a class="github reference external" href="https://github.com/USAFA-ECE/ece281-ice3">USAFA-ECE/ece281-ice3</a></p></li>
-<li><p>Fork the repository</p></li>
-<li><p>Clone the repository</p></li>
+<li><p><strong>Use this template</strong></p></li>
+<li><p>Clone <em>your copy</em> of the repository</p></li>
 <li><p>Open the project in Vivado</p></li>
 <li><p>Modify the headers</p></li>
 </ul>
-<blockquote>
-<div><p>Clone your repository, open it in Vivado, and modify headers.</p>
-</div></blockquote>
-</section>
-<section id="import-half-adder">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Import half adder</a><a class="headerlink" href="#import-half-adder" title="Link to this heading">#</a></h3>
-<p>You created a half adder during <a class="reference internal" href="ICE2.html"><span class="std std-doc">ICE2</span></a>. We will reuse that code here.</p>
-<p>First, copy and past your completed the <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> file into <code class="docutils literal notranslate"><span class="pre">src/hdl/</span></code></p>
-<p>Then, follow the instructions in <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a>
-to add <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> to the project as a source.
-Make sure you see hallfAdder in the sources hierarchy.</p>
-<p>The half-adder test bench has already been added for you.
+<p>Notice that we have include a Full Adder for you. It’s very similar to the Half Adder you made for ICE 2!</p>
+<!-- ### Import half adder
+
+You created a half adder during [ICE2](ICE2.md). We will reuse that code here.
+
+First, copy and past your completed the `halfAdder.vhd` file into `src/hdl/`
+
+Then, follow the instructions in {ref}`manual-add-to-vivado-project`
+to add `halfAdder.vhd` to the project as a source.
+Make sure you see hallfAdder in the sources hierarchy.
+
+The half-adder test bench has already been added for you.
 We recommend you run the simulation just to verify that things
-are working properly.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Adding a file to the project will allow Vivado to see it and use it
-but the file will <strong>NOT</strong> be automatically added if you migrate
-the project to a new computer (such as with Git).</p>
-<p>In order to do this you must <a class="reference internal" href="../appendix/vivado.html#write-tcl-file"><span class="std std-ref">Write a TCL file for use with Git</span></a>
+are working properly.
+
+```{note}
+Adding a file to the project will allow Vivado to see it and use it
+but the file will **NOT** be automatically added if you migrate
+the project to a new computer (such as with Git).
+
+In order to do this you must {ref}`write-tcl-file`
 and commit those changes as well.
-You are not required to do this for the lab.</p>
-</div>
-<blockquote>
-<div><p>Commit the addition of <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code> with Git</p>
-</div></blockquote>
+You are not required to do this for the lab.
+```
+
+> Commit the addition of `halfAdder.vhd` with Git 
+-->
 </section>
 </section>
-<section id="top-level-design">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Top Level Design</a><a class="headerlink" href="#top-level-design" title="Link to this heading">#</a></h2>
-<p>Our top level design is the boundary of our system.</p>
-<p>It allows us to connect internal components and our I/O.</p>
 <section id="top-basys3-entity">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">top_basys3 entity</a><a class="headerlink" href="#top-basys3-entity" title="Link to this heading">#</a></h3>
-<p>Unlike the half-adder, the full-adder has three inputs, though it shares
-the same two outputs. This has been given to you.</p>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">top_basys3 Entity</a><a class="headerlink" href="#top-basys3-entity" title="Link to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>From now on, we will use a top level design file as the boundary of our system.</p>
+<p>It allows us to connect internal components and our I/O in a reliable manner.</p>
+</div>
+<p>We will name the top-level file <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code>… because it’s the top file for our Basys 3 board!</p>
+<p>Open that file now.</p>
+<p>Previously, you edited <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code> to match your entity.
+Going forward, we will leave the <code class="docutils literal notranslate"><span class="pre">xdc</span></code> defaults and <em>only uncomment</em> the ports we need.
+You’ll find that this will reduce errors and increase reusability.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code> has the following default for switches:</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">set_property</span><span class="w"> </span>PACKAGE_PIN<span class="w"> </span>V17<span class="w"> </span><span class="k">[</span><span class="nv">get_ports</span><span class="w"> </span><span class="k">{</span><span class="nv">sw</span><span class="k">[</span><span class="nv">0</span><span class="k">]}]</span>
+<span class="w">    </span><span class="nv">set_property</span><span class="w"> </span>IOSTANDARD<span class="w"> </span>LVCMOS33<span class="w"> </span><span class="k">[</span><span class="nv">get_ports</span><span class="w"> </span><span class="k">{</span><span class="nv">sw</span><span class="k">[</span><span class="nv">0</span><span class="k">]}]</span>
+</pre></div>
+</div>
+<p>But instead of doing each bit, we will use a <code class="docutils literal notranslate"><span class="pre">std_logic_vector</span></code>:</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>A std_logic_vector combines multiple std_logic bits into one variable.
+<p>A <code class="docutils literal notranslate"><span class="pre">std_logic_vector</span></code> combines multiple <code class="docutils literal notranslate"><span class="pre">std_logic</span></code> bits into something like an array.
 The different signals within the vector can be referenced by index.</p>
 </div>
-<p>We will use switches for inputs and LEDs for outputs.</p>
+<p>Our <strong>user</strong> will input the following:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_{in}\)</span> on switch 0</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> on switches 4-1</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> on switches 8-5</p></li>
+</ul>
+<p>Our <strong>user</strong> will expect the following outputs:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Sum\)</span> on LED 3-0</p></li>
+<li><p>$C_{out} on LED 15</p></li>
+</ul>
+<p><strong>Sketch this <em>entity</em> description (none of the internal workings), then</strong>
+ensure you see the following in your <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code>:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">top_basys3</span><span class="w"> </span><span class="k">is</span>
 <span class="w">    </span><span class="k">port</span><span class="p">(</span>
 <span class="w">        </span><span class="c1">-- Switches</span>
-<span class="w">        </span><span class="n">sw</span><span class="w">  </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">sw</span><span class="w">  </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w">  </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">8</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 
 <span class="w">        </span><span class="c1">-- LEDs</span>
-<span class="w">        </span><span class="n">led</span><span class="w"> </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">led</span><span class="w"> </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="k">end</span><span class="w"> </span><span class="nc">top_basys3</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
-<section id="top-basys3-architecture">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">top_basys3 architecture</a><a class="headerlink" href="#top-basys3-architecture" title="Link to this heading">#</a></h3>
-<p>Always with layers of abstraction in mind, let’s redraw the schematic
-with the additional details of internal signals and board inputs and outputs.
-This is shown in <a class="reference internal" href="#full-adder-entity"><span class="std std-numref">Fig. 20</span></a>.</p>
-<figure class="align-default" id="full-adder-entity">
-<img alt="../_images/ice3_image5.jpg" src="../_images/ice3_image5.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Entity architecture for implementing full adder with two half-adders</span><a class="headerlink" href="#full-adder-entity" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>You need to modify the architecture of your top_basys3 file to reflect
-the schematic in <a class="reference internal" href="#full-adder-from-two"><span class="std std-numref">Fig. 19</span></a>.</p>
-<section id="declare-half-adder-component">
-<h4>Declare half-adder component<a class="headerlink" href="#declare-half-adder-component" title="Link to this heading">#</a></h4>
-<p>The half-adder component must match
-the halfAdder entity declaration in <code class="docutils literal notranslate"><span class="pre">halfAdder.vhd</span></code>
-These declarations go in between the architecture and begin statements.
-Reference <a class="reference internal" href="ICE2.html"><span class="std std-doc">ICE2 testbench</span></a> if you don’t remember the syntax.</p>
+<section id="top-basys3-architecture-declarations">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">top_basys3 Architecture Declarations</a><a class="headerlink" href="#top-basys3-architecture-declarations" title="Link to this heading">#</a></h2>
+<p>You previously made an architecture schematic in Digital for the HW.
+Open that file now for your reference.</p>
+<p>You need to modify the architecture of your top_basys3 file to reflect this schematic.</p>
+<section id="full-adder-component">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Full Adder Component</a><a class="headerlink" href="#full-adder-component" title="Link to this heading">#</a></h3>
+<p>The full adder component must match the entity declaration in <code class="docutils literal notranslate"><span class="pre">full_adder.vhd</span></code>.</p>
+<p>Declare a full_adder component between the architecture and begin statements.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">top_basys3_arch</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">top_basys3</span><span class="w"> </span><span class="k">is</span>
 
 <span class="w">    </span><span class="c1">-- declare the component of your top-level design</span>
-<span class="w">    </span><span class="k">component</span><span class="w"> </span><span class="nc">halfAdder</span><span class="w"> </span><span class="k">is</span>
+<span class="w">    </span><span class="k">component</span><span class="w"> </span><span class="nc">full_adder</span><span class="w"> </span><span class="k">is</span>
 <span class="w">        </span><span class="k">port</span><span class="w"> </span><span class="p">(</span>
-<span class="w">            </span><span class="n">i_A</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">i_B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">o_S</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">o_Cout</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span>
+<span class="w">            </span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">i_Cin</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">o_Cout</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span>
 <span class="w">            </span><span class="p">);</span>
-<span class="w">        </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="w"> </span><span class="nc">halfAdder</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">-- declare any signals you will need</span>
+<span class="w">        </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="w"> </span><span class="nc">full_adder</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Just like the test bench pulls in your component to simulate inputs and outputs for it,
-a top level design will bring in components and wire them together.
-If you aren’t sure what signals you may need to create, the general rule is to create
-a signal for any wire not connected directly to an input or an output.</p>
+a top level design will bring in components and wire them together.</p>
 </section>
-<section id="instantiate-half-adder-components">
-<h4>Instantiate half-adder components<a class="headerlink" href="#instantiate-half-adder-components" title="Link to this heading">#</a></h4>
-<p>Now that we have made the halfAdder component available to the top_basys3 entity,
-we need to instantiate occurrences of the components and declare the logic to connect them
-to each other, and to inputs/outputs.</p>
-<p>Remember, we are trying to build what is in <a class="reference internal" href="#full-adder-entity"><span class="std std-numref">Fig. 20</span></a>.</p>
-<p>Notice that we have TWO instantiations of halfAdder and we have given them unique names
-(<code class="docutils literal notranslate"><span class="pre">halfadder1_inst</span></code> and <code class="docutils literal notranslate"><span class="pre">halfAdder2_inst</span></code>).
-The <code class="docutils literal notranslate"><span class="pre">or</span></code> gate can be directly declared in “CONCURRENT STATEMENTS”</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- PORT MAPS --------------------</span>
-<span class="w">    </span><span class="n">halfAdder1_inst</span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span>
-<span class="w">    </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="p">(</span>
-<span class="w">        </span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sw</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
-<span class="w">        </span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sw</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
-<span class="w">        </span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_S1</span><span class="p">,</span>
-<span class="w">        </span><span class="n">o_Cout</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_Cout1</span>
-<span class="w">    </span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">halfAdder2_inst</span><span class="o">:</span><span class="w"> </span><span class="n">halfAdder</span>
-<span class="w">    </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="p">(</span>
-<span class="w">        </span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="c1">-- TODO</span>
-<span class="w">        </span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span>
-<span class="w">        </span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span>
-<span class="w">        </span><span class="n">o_Cout</span><span class="w">  </span><span class="o">=&gt;</span>
-<span class="w">    </span><span class="p">);</span>
-<span class="w">    </span><span class="c1">---------------------------------</span>
-
-<span class="w">    </span><span class="c1">-- CONCURRENT STATEMENTS --------</span>
-<span class="w">    </span><span class="n">led</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="c1">-- TODO</span>
-<span class="w">    </span><span class="c1">---------------------------------</span>
+<section id="signal-declaration">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Signal Declaration</a><a class="headerlink" href="#signal-declaration" title="Link to this heading">#</a></h3>
+<p>Remember, signals are like wires between inputs and components.</p>
+<p>We will need the following signals:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">w_A</span></code> and <code class="docutils literal notranslate"><span class="pre">w_B</span></code> to carry the switch <code class="docutils literal notranslate"><span class="pre">sw</span></code> input to the components.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w_Sum</span></code> to carry the Sum outputs to the LEDs.</p></li>
+<li><p>A carry signal to carry the ripple <em>between</em> adders.</p></li>
+</ul>
+<p>Replace the <code class="docutils literal notranslate"><span class="pre">?</span></code> with the appropriate number and copy this signal declaration into <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code></p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="c1">-- declare any signals you will need</span>
+<span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">w_A</span><span class="p">,</span><span class="w"> </span><span class="n">w_B</span><span class="p">,</span><span class="w"> </span><span class="n">w_Sum</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">-- for sw inputs to operands</span>
+<span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">w_carry</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="kt">STD_LOGIC_VECTOR</span><span class="p">(</span><span class="o">?</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">-- for ripple between adders</span>
 </pre></div>
 </div>
 </section>
+</section>
+<section id="top-basys3-architecture-instantiations">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">top_basys3 Architecture Instantiations</a><a class="headerlink" href="#top-basys3-architecture-instantiations" title="Link to this heading">#</a></h2>
+<p>Now that we have made the full_adder component available to the top_basys3 entity
+we need to instantiate multiple occurrences of the component and declare the logic to connect them
+to each other, and to inputs/outputs.</p>
+<p>Remember, we are trying to build what’s in your schematic, which is the 4-bit version of <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 18</span></a>.</p>
+<p>Here are the first two instantiations of full_adder.</p>
+<p>Notice that each has a unique name (because of the number at the end) and is connected slightly differently.</p>
+<p>Copy this code into <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> below the <code class="docutils literal notranslate"><span class="pre">begin</span></code> statement.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- PORT MAPS --------------------</span>
+<span class="w">    </span><span class="n">full_adder_0</span><span class="o">:</span><span class="w"> </span><span class="n">full_adder</span>
+<span class="w">    </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="p">(</span>
+<span class="w">        </span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_A</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w">        </span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_B</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w">        </span><span class="n">i_Cin</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sw</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w">   </span><span class="c1">-- Directly to input here</span>
+<span class="w">        </span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_Sum</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w">        </span><span class="n">o_Cout</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_carry</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">full_adder_1</span><span class="o">:</span><span class="w"> </span><span class="n">full_adder</span>
+<span class="w">    </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="p">(</span>
+<span class="w">        </span><span class="n">i_A</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_A</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="w">        </span><span class="n">i_B</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_B</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="w">        </span><span class="n">i_Cin</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_carry</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="w">        </span><span class="n">o_S</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_Sum</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="w">        </span><span class="n">o_Cout</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w_carry</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Then add the other two full adder instantiations.</p>
+<section id="signal-connections">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Signal connections</a><a class="headerlink" href="#signal-connections" title="Link to this heading">#</a></h3>
+<p>Lastly, we need to connect our signals. Vectors make this easy!</p>
+<p>Do this below your port maps.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">w_A</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">sw</span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">-- TODO: w_B</span>
+<span class="w">    </span><span class="n">led</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">w_Sum</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="test-design">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Test design</a><a class="headerlink" href="#test-design" title="Link to this heading">#</a></h2>
-<p>We already have a completed <code class="docutils literal notranslate"><span class="pre">halfAdder_tb.vhd</span></code> file, which is awesome, because it means
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Test design</a><a class="headerlink" href="#test-design" title="Link to this heading">#</a></h2>
+<p>We already have a completed <code class="docutils literal notranslate"><span class="pre">full_adder_tb.vhd</span></code> file, which is awesome, because it means
 we can test our system at multiple layers!</p>
 <p>Your job is to complete the <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code> file and test the system as a whole.</p>
 <section id="edit-testbench">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Edit testbench</a><a class="headerlink" href="#edit-testbench" title="Link to this heading">#</a></h3>
-<p>Open <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code>.
-Note the header has <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> as a REQUIRED FILE.
-Revisit <a class="reference internal" href="ICE2.html"><span class="std std-doc">ICE2</span></a> for more detailed instructions if you need them.</p>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Edit testbench</a><a class="headerlink" href="#edit-testbench" title="Link to this heading">#</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code>.</p>
+<p>Do some quick math… how many possible inputs are there to our 4-bit adder?</p>
+<p>More than we want to manually input! 😄</p>
+<p>Fill out the remainder of the test bench with a few cases. Strive for decent coverage by:</p>
+<ol class="arabic simple">
+<li><p>The min and max cases (input all zeros and all ones)</p></li>
+<li><p>The easy-to-forget cases (such <span class="math notranslate nohighlight">\(0 + 0 + C_{in} = 1\)</span>)</p></li>
+<li><p>A few random ones from the middle.</p></li>
+</ol>
+<p>Revisit <a class="reference internal" href="ICE2.html"><span class="std std-doc">ICE2</span></a> for more detailed instructions if you need them.</p>
 <p>Declare your top_basys3 “component” in the test bench, create signals to simulate
 the inputs and outputs, and connect them in a port map.</p>
-<p>Then create your test cases within the test process. Here is an example of the first line:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="k">begin</span>
-
-<span class="w">        </span><span class="n">w_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mo">o&quot;0&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;00&quot;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad 000&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
-<span class="w">        </span><span class="n">w_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mo">o&quot;1&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
-<span class="w">            </span><span class="k">assert</span><span class="w"> </span><span class="n">w_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;01&quot;</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="s">&quot;bad 001&quot;</span><span class="w"> </span><span class="k">severity</span><span class="w"> </span><span class="n">failure</span><span class="p">;</span>
-<span class="w">        </span><span class="c1">--You must fill in the remaining test cases.</span>
-</pre></div>
-</div>
-<p>Similar to <a class="reference internal" href="../lab/lab1.html"><span class="std std-doc">Lab 1</span></a> we can set the enitre vector with a single value, but because there are only three bits,
-we need to use octal instead of hex. The leading <code class="docutils literal notranslate"><span class="pre">o</span></code> is how you express an octal number in VHDL.</p>
-<blockquote>
-<div><p>How many test cases will you need? Create them all 😄</p>
-</div></blockquote>
 </section>
 <section id="simulate-project">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Simulate project</a><a class="headerlink" href="#simulate-project" title="Link to this heading">#</a></h3>
-<p>Your half-adder <em>should</em> be working already, so focus on the top_basys3_tb.
-Use your waveform to debug if any of the assert statements fail.</p>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Simulate project</a><a class="headerlink" href="#simulate-project" title="Link to this heading">#</a></h3>
+<p>Your full adder <em>should</em> be working already, so focus on the top_basys3_tb.</p>
+<p>Use your waveform to debug if any of the assert statements fail.</p>
 </section>
 </section>
 <section id="implement-design">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink">Implement Design</a><a class="headerlink" href="#implement-design" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">Implement Design</a><a class="headerlink" href="#implement-design" title="Link to this heading">#</a></h2>
 <section id="constraints-file">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Link to this heading">#</a></h3>
-<p>Unlike our pervious exercise, you will not need to replace the highlighted portions.
-We made our entity inputs and outputs reflect the default constraint file naming convention.</p>
-<div class="highlight-xdc notranslate"><div class="highlight"><pre><span></span>## Switches
-set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
-</pre></div>
-</div>
-<blockquote>
-<div><p>Uncomment all lines needed for this design (<code class="docutils literal notranslate"><span class="pre">sw{0}</span></code>, <code class="docutils literal notranslate"><span class="pre">sw{1}</span></code>, <code class="docutils literal notranslate"><span class="pre">sw{2}</span></code>, <code class="docutils literal notranslate"><span class="pre">led{0}</span></code>, and <code class="docutils literal notranslate"><span class="pre">led{1}</span></code>.</p>
-</div></blockquote>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Link to this heading">#</a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code>.</p>
+<p>Because we used the appropriate naming conventions in <code class="docutils literal notranslate"><span class="pre">top_bays3.vhd</span></code> you <strong>should not change the names!</strong></p>
+<p>Simply uncomment <code class="docutils literal notranslate"><span class="pre">sw</span></code> <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(8\)</span> and all sixteen <code class="docutils literal notranslate"><span class="pre">led</span></code> lines.</p>
 </section>
 <section id="test-bitstream-on-fpga">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Link to this heading">#</a></h3>
 <p>Synthesize, implement, generate.</p>
 <p>Squirt the bitstream to the board, and test!</p>
 </section>
 </section>
 <section id="wrapping-up">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Wrapping up</a><a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h2>
 <p>See <a class="reference internal" href="../appendix/github.html"><span class="std std-doc">GitHub real fast</span></a> if you need some tips.</p>
 <section id="readme">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink">README</a><a class="headerlink" href="#readme" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">README</a><a class="headerlink" href="#readme" title="Link to this heading">#</a></h3>
 <p>Take a screenshot of your waveform, save it to an the top level
 of your directory (or you can use an <code class="docutils literal notranslate"><span class="pre">img/</span></code> folder).</p>
 <p>Make the screenshot appear in your README with the following Markdown syntax:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">description of my waveform</span>](<span class="na">imagename.png</span>)
 </pre></div>
 </div>
+<p>Now do the same with your sketch of the <strong>top_basys3 entity</strong> that you made earlier (it can be a quick and dirty picture).</p>
 <p>Add a <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Documentation</span></code> section to the README. This is the only
 one you need for the entire ICE; you don’t need one in the file headers.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Documentation</span>
@@ -848,14 +861,14 @@ My statement here.
 <p>Add the image and <a class="reference external" href="http://README.md">README.md</a> to git and commit.</p>
 </section>
 <section id="other-files">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Other files</a><a class="headerlink" href="#other-files" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Other files</a><a class="headerlink" href="#other-files" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
 <li><p>Double check that you have the image, your <a class="reference external" href="http://README.md">README.md</a> and all <code class="docutils literal notranslate"><span class="pre">.vhd</span></code> and <code class="docutils literal notranslate"><span class="pre">.bit</span></code> files <strong>committed</strong> to your git repo.</p></li>
 <li><p>Then <a class="reference external" href="https://www.atlassian.com/git/tutorials/syncing/git-push">push</a> them to your repo.</p></li>
 <li><p>Make sure all your work appears in GitHub as you expect.</p></li>
 <li><p>Submit the assignment on <strong>Gradescope</strong>.</p></li>
-<li><p>Demo your working board to an instructor.</p></li>
+<li><p>Make sure the autograder in Gradescope passes!</p></li>
 </ul>
 <p>Congratulations, you have completed In Class Exercise 3!</p>
 </section>
@@ -929,25 +942,25 @@ My statement here.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-state">End State</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-from-multiple-half-adders">Full-adder from multiple half-adders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder">Full Adder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-carry-adder">Ripple-Carry Adder</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-project">The Project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-vivado">Setup Vivado</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-half-adder">Import half adder</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-design">Top Level Design</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-entity">top_basys3 entity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-architecture">top_basys3 architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-half-adder-component">Declare half-adder component</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiate-half-adder-components">Instantiate half-adder components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-entity">top_basys3 Entity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-architecture-declarations">top_basys3 Architecture Declarations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-adder-component">Full Adder Component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-declaration">Signal Declaration</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3-architecture-instantiations">top_basys3 Architecture Instantiations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-connections">Signal connections</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-design">Test design</a><ul class="nav section-nav flex-column">
