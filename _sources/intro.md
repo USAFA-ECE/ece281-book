@@ -17,7 +17,7 @@
 | 9      | Mux, Decoders, Combinational Timing      | 2.8-2.9                  |              |                    |
 | 10     | Lab 1 - 31 Day Month                     |                          |              | Lab 1 Prelab       |
 | 11     | Lab 1 - 31 Day Month                     |                          |              |                    |
-| 12     | Arithmetic in Combinational Logic        | 5.1-5.2.3                | {ref}`ripple-adder-hw` |          |
+| 12     | Arithmetic in Combinational Logic        | 5.1-5.2.3, 5.2.6-5.2.8   | {ref}`ripple-adder-hw` |          |
 | 13     | ICE3 - Ripple Adder                      |                          |              | Lab 1              |
 | 14     | RV32I R- and I-Type Instructions         | 6.1-6.2.1, 6.3.2         | HW 14        | ICE3               |
 | 15     | The Mighty ALU!                          | 5.2.4-5.2.5              | Lab 2 Prelab |                    |
