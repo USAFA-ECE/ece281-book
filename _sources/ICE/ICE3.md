@@ -282,6 +282,12 @@ set_property PACKAGE_PIN V17 [get_ports {sw[0]}]
 
 ### Entity
 
+```{tip}
+You **actually**, really, *really* need to sketch this before coding it!
+
+Also, this is what the Instructor TB in Gradescope checks.
+```
+
 Our **user** will input the following on switches (`sw`):
 
 - $C_{in}$ on switch 0
@@ -291,10 +297,10 @@ Our **user** will input the following on switches (`sw`):
 Our **user** will expect the following outputs on LEDs (`led`):
 
 - $Sum$ on LED 3-0
-- $C_{out} on LED 15
+- $C_{out}$ on LED 15
 
-**Sketch this *entity* description (none of the internal workings), then**
-ensure you see the following in your `top_basys3.vhd`:
+**Sketch this *entity* and how `sw` and `led` connect to `ripple_adder`.**
+Then, and only then, ensure you see the following in your `top_basys3.vhd`:
 
 ```vhdl
 
