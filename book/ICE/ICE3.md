@@ -187,7 +187,7 @@ We will need the following signals:
 
 - A carry signal to carry the ripple *between* adders.
 
-Replace the `?` with the appropriate number (look at your Digital schematic!!) and copy this signal declaration into `top_basys3.vhd`
+Replace the `?` with the appropriate number (look at your Digital schematic!!) and copy this signal declaration into `ripple_adder.vhd`
 
 ```vhdl
     signal w_carry  : STD_LOGIC_VECTOR(? downto 0); -- for ripple between adders
