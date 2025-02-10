@@ -698,15 +698,19 @@ You are not required to do this for the lab.
 <h4>Full Adder Component<a class="headerlink" href="#full-adder-component" title="Link to this heading">#</a></h4>
 <p>Declare a <strong>full_adder</strong> component declaration to <code class="docutils literal notranslate"><span class="pre">ripple_adder.vhd</span></code> between the architecture and begin statements.</p>
 <p>The full adder component must match the entity declaration in <code class="docutils literal notranslate"><span class="pre">full_adder.vhd</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>These port names match the names from <a class="reference internal" href="../HW/HW12.html"><span class="std std-doc">HW 12’s Digital!</span></a></p>
+</div>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">Behavioral</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">ripple_adder</span><span class="w"> </span><span class="k">is</span>
 
 <span class="w">    </span><span class="k">component</span><span class="w"> </span><span class="nc">full_adder</span><span class="w"> </span><span class="k">is</span>
 <span class="w">        </span><span class="k">port</span><span class="w"> </span><span class="p">(</span>
-<span class="w">            </span><span class="n">i_A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">i_B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">i_Cin</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">o_S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
-<span class="w">            </span><span class="n">o_Cout</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span>
+<span class="w">            </span><span class="n">A</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">B</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Cin</span><span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">S</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Cout</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span>
 <span class="w">            </span><span class="p">);</span>
 <span class="w">        </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="w"> </span><span class="nc">full_adder</span><span class="p">;</span>
 </pre></div>

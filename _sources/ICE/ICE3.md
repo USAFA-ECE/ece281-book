@@ -163,16 +163,20 @@ Declare a **full_adder** component declaration to `ripple_adder.vhd` between the
 
 The full adder component must match the entity declaration in `full_adder.vhd`.
 
+```{hint}
+These port names match the names from [HW 12's Digital!](../HW/HW12.md)
+```
+
 ```vhdl
 architecture Behavioral of ripple_adder is
 
     component full_adder is
         port (
-            i_A     : in std_logic;
-            i_B     : in std_logic;
-            i_Cin   : in std_logic;
-            o_S     : out std_logic;
-            o_Cout  : out std_logic
+            A     : in std_logic;
+            B     : in std_logic;
+            Cin   : in std_logic;
+            S     : out std_logic;
+            Cout  : out std_logic
             );
         end component full_adder;
 ```
