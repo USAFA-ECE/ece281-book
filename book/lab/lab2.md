@@ -105,6 +105,7 @@ It is time to implement them in hardware with VHDL!
 ### Setup Vivado Project
 
 We will be creating our own Vivado project, instead of giving you a pre-made one.
+See [**Lab2 Vivado Buttonology.pptx**](https://usafa0.sharepoint.com/:p:/s/ECE281/EZ2NKQAyMX1BqbxHMI5yHiUBekrNlr77IPglt3RUFfbe2w?e=0QYZ4Q) in Class Materials for screenshots!
 
 1. Go to the [Lab 2 GitHub Repo](https://github.com/USAFA-ECE/ece281-lab2)
 2. Click the green "Use this template" button -> create a new repository.
@@ -155,16 +156,20 @@ and comparing it to **Basys3_Master.xdc** we can see that:
 ![Basys3 Basic I/O](https://digilent.com/reference/_media/basys3-_basic_io_block_diagram.png)
 
 - The pin `W7` is connected to cathode `CA`, which we have called `sA`.
-- .xdc shows `PACKAGE_PIN W7 [get_ports {seg[0]}]`, so **`sA` is the LSB**
+- `Basys3_Master.xdc` shows `PACKAGE_PIN W7 [get_ports {seg[0]}]`, so **`sA` is the LSB**
 
 Meanwhile,
 
 - The pin `U7` is connected to cathode `CG`, which we have called `sG`.
-- .xdc shows `PACKAGE_PIN U7 [get_ports {seg[6]}]`, so **`sG` is the MSB**
+- `Basys3_Master.xdc` shows `PACKAGE_PIN U7 [get_ports {seg[6]}]`, so **`sG` is the MSB**
 
 Unfortunately, **this is the opposite of our prelab truth table 😭**
 
 It's up to you to decide how to fix this *inside* sevenseg_decoder!
+
+```{tip}
+The answer to this needs to go in your lab report.
+```
 
 ##### Behavioral vs. Structural modeling
 
@@ -199,7 +204,7 @@ How might you adapt this for your seven-segment decoder?
 
 > Once you do this, commit your file with git.
 
-### Test sevenSegDecoder
+### Test sevenseg_decoder
 
 Follow steps similar to above to create a new file, except select **Add or create simulation sources**.
 Name your test bench file `sevenseg_decoder_tb.vhd` with the entity **sevenseg_decoder_tb**.
@@ -224,145 +229,56 @@ flowchart LR
 The **user** will:
 
 - Input a 4-bit number on switches 3-0.
-- Expect that value to be output only on display 0 when button C is pressed; otherwise all displays are off.
+- Expect that value to be output *only* on display 0 when button C is pressed; otherwise all displays are off.
 
-We have opted to use switches for our input and the seven segment display as our output.
-A button press will activate the display.
+### Design
 
-In order to make this happen we need to use a top level design to wire our inputs and outputs
-as well as some internal logic.
-We will make the seven segment display an internal component - like we did with the half-adder in ICE3 -
-since it is more complex and should be tested independently.
+**Before writing code** draw the entity diagram for **top_basys3**.
 
-The repository you cloned and built has a top-level file already defined.
-The schematic is shown in {numref}`7SD-top-level-schem`.
+- Ensure it has all the inputs and outputs you need.
+- `sw` should just be four bits (and then only uncomment 0-3 in the constraints file).
+- Include your **sevenseg_decoder** entity and all connections to internal signals and gates.
+- DO NOT draw the inner architecture of sevenseg_decoder.
+- You will need this for the lab report.
 
-```{warning}
-This diagram is mislabeled. Do not invert the vector between `o_S` and `seg`.
-Just like your truth table, `s_G` should be the MSB.
-New picture will be posed soon.
+```{tip}
+You entity I/O names should exactly match the port names already in the `Basys3_Master.xdc` constraints file.
 ```
 
-```{figure} img/lab2_image19.png
----
-name: 7SD-top-level-schem
----
-Top-level schematic
-```
+### Implementation
 
-You need to connect your 7SD component to four physical switches (sw)
-and the seven cathodes (seg) of a seven-segment display (7SD).
-Also wire a push button (btnC) to activate the 7SD by sending a **low signal** to the anode.
-Since the button itself is active-high, an inverter is required.
+Now connect everything in VHDL like you show in your diagram.
 
-The entity is provided for you, but you must complete the architecture.
+#### Using btnC
 
-```{note}
-The entity interface has been designed so that the port names match exactly
-what the constraints file (`Basys3_Master.xdc`) is already using.
-```
-
-#### A note on <= vs. =>
-
-When connecting an input to a wire, the input must be on the right side.
-
-In the below statement, `btnC` is the input and `w_7SD_EN_n` is
-the wire connecting the button to the 7SD active-low enable pin:
+The output `an` is four bits but `btnC` is only one bit.
+The easiest way to connect these is with a signal.
+We will append `_n` to the signal name to remind ourselves it is active LOW.
 
 ```vhdl
 w_7SD_EN_n  <= not btnC;
-```
 
-In this case, `<=` is an **assignment statement** and connects the button to a wire.
-
-To connect the other end of the wire and enable the (anode) pin, you have to
-use an `=>` because the `=>` is used for **case statements**, **array assignments**,
-and component **port mapping**.
-
-```vhdl
-an  <= (0 => w_7SD_EN_n, others => '1');
-```
-
-In the above statement, the signal an is an *output*, so it must be on the left side.
-We declared `an` earlier as a 4-bit vector. The right side is using the `()` aggregate operator
-to concatenate bus signals; in this case, the LSB is assigned to `w_SD_EN_n`.
-The keyword "others" refers to any bus signals not otherwise explicitly listed,
-so it sets the other three bits to `1`.
-
-Another way to describe the above connections is as follows:
-
-```vhdl
-an(0)    <= w_7SD_EN_n;
+an(0)   <= w_7SD_EN_n;
 an(1)   <= '1';
 an(2)   <= '1';
 an(3)   <= '1';
 ```
 
-> Follow the comments in `top_basys3.vhd` to complete the architecture.
+Alternatively, you could do this with some VHDL magic and the `()` aggregate operator:
 
-### Complete top level
-
-The top level VHDL file is what connects your component to the Basys3
-development board. {numref}`7SD-top-level-schem` is shown again below.
-
-```{warning}
-This diagram is mislabeled. Do not invert the vector between `o_S` and `seg`.
-Just like your truth table, `s_G` should be the MSB.
-New picture will be posed soon.
+```vhdl
+an  <= (0 => w_7SD_EN_n, others => '1');
 ```
 
-![top_basys3](img/lab2_image19.png)
+### Implement in hardware
 
-As can be seen in the figure, you need to connect your 7SD
-component to four physical switches (`sw`) and the seven cathodes (`seg`) of
-a seven-segment display (7SD).
+Uncomment the relative lines in your constraints file.
 
-You also need to wire a push button (`btnC`) so that it can be used to activate the 7SD by sending a **low signal** to the anode. As discussed in the Background {numref}`7SD-anodes` the anode determines which of the displays are on, while the cathodes allow you to turn on each individual segment.
-
-Since the button itself is active-high, an inverter is required. The
-other 7SDs (display 3, 2, and 1) are disabled by connecting them to
-power.
-
-```{note}
-The entity interface has been designed so that the port names match exactly what the constraints file (Basys3_Master.xdc) is already using.
-
-You simply need to uncomment the lines in Basys3_Master.xdc that you need to use.
-```
-
-> Use the provided top_basys3.vhd file to complete the top level architecture.
-
-After you finish, your source hierarchy should look something like this:
-
-![binaryHexDisp Source Hierarchy](img/lab2_source_hierarchy.png)
-
-#### Implement in hardware
-
-Synthesize and implement your design.
-
-> Look at the RTL schematic:
-> In RTL Analysis in the Flow> Navigator on the left side of the window.
-
-- Is this what you expect? Did Vivado implement the circuit like you thought it would?
-- Double click on the sevenSegDecoder component. Did Vivado implement
-    the circuit like you thought it would?
-
-Generate the bitstream (.bit) file and download it to your FPGA.
-Verify the hardware functions as expected; **demo to your instructor**.
+Synthesize and implement your design. Then generate a bitstream and squirt it to your board.
 
 > Commit the bitstream to your repo
 
 ## Deliverables
-
-Below are the deliverables and point distributions for the Lab 2:
-
-| Deliverable           | Points |
-|-----------------------|--------|
-| Prelab                | 15     |
-| Hardware Demo         | 30     |
-| Written Report        | 30     |
-| Passing Gradescope    | 25     |
-
-**Documentation statements** will be submitted on Gradescope.
 
 ### Prelab
 
@@ -374,16 +290,27 @@ Submit on Gradescope.
 - You have to hold the center push button down for a 7SD to show your output. (10 pts)
 - The correct hex digit is shown based on the switch positions for all input possibilities. (20 pts)
 
-Demo can be performed live with an instructor (preferred) OR submitted via Teams
+Demo can be performed live with an instructor (preferred) OR submitted via Teams video.
 
 ### Written Report
 
+Seek to answer the fundamental question
+**"How do you understand the cathode and anode structure, use a decoder, and map your design  to hardware?"**
+
+Include the following sections:
+
+- Abstract
+- Introduction (background of how display works)
+- Design methodology
+- Discussion (lessons learned, how many hours spent, documentation statement for entire lab)
+
 Rubric and template on Teams. Submit on Gradescope.
 
-### Git and GitHub Actions
+### Code on Gradescope via GitHub
 
-- sevenSegDecoder.vhd, sevenSegDecoder_tb.vhd, and top_basys3.vhd included in `src/hdl/`
+- `sevenseg_decoder.vhd` and `sevenseg_decoder_tb.vhd` included in `src/`
 - Extraneous comments are removed and code is formatted in a sane manner
-- Basys3_Master.xdc file included in `src/hdl/`
-- Bitstream (.bit) file used for hardware demo in repo (in default location)
+- Screenshot of testbench waveform shows all 16 input combinations
+- `Basys3_Master.xdc` appropriately uncommented
+- Bitstream (`.bit`) file used for hardware demo in repo (in default location)
 - Commit messages are useful in tracing the development of the project
