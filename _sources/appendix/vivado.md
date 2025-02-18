@@ -10,12 +10,17 @@
 
 - In "Quick Start" click **Create Project >**
 - In wizard, click **Next**
-- Name your project and pick a location. Only create a subdirectory if you don't already have one for the project
-- RTL Project. **Check** Do not specify sources at this time
-- Click "Boards" tab at the top
-- Search for **Basys3** (or whatever board you are using)
+- Name your project and pick a location.
+    - If you cloned a repository first, pick that folder!
+    - **Uncheck** "Create Project subdirectory" if you already selected a folder
+- RTL Project, do not check either box
+- Add Sources, click **Add Files** and pick your source VHDL files.
+- **Uncheck** Copy sources into project, then click Next.
+- Add Constraints, Add Files, select your `.xdc` file, then Next.
+- Default Part, click **Boards** tab at the top
+- Search for **Basys3** (or whatever board you are using) and select it (will highlight blue)
 - Next and Finish.
-- Add source, sim, and constraint files using steps in {ref}`manual-add-to-vivado-project`
+- If needed, add simulation files using steps in {ref}`manual-add-to-vivado-project`
 
 (manual-add-to-vivado-project)=
 ## Manually add files to Vivado Project
