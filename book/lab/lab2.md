@@ -94,16 +94,13 @@ Hexadecimal digits on a seven-segment display
 
 ## Pre-lab
 
-First, complete the truth table for converting binary inputs to a hex output on the display.
-
-Excel template is available on Teams!
-
-Second, use this truth table to generate logic equations for each output.
+1. **Thoroughly** read *Digital Design and Computer Architecture* **Example 2.10**, page 77-81.
+2. Read Basys3 Reference [Basic I/O](https://digilent.com/reference/basys3/refmanual#basic_io) and [Seven Segment Display](https://digilent.com/reference/basys3/refmanual#seven_segment_display).
+3. Complete the Gradescope Assignment (add rows to truth table and answer hardware questions).
 
 ## Lab
 
-Now that you have Boolean equations established for each of your seven
-segment outputs, it is time to implement them in hardware with VHDL!
+It is time to implement them in hardware with VHDL!
 
 ### Setup Vivado Project
 
