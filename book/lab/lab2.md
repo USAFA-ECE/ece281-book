@@ -104,18 +104,111 @@ It is time to implement them in hardware with VHDL!
 
 ### Setup Vivado Project
 
-Due to issues with the automated build process in ICE3, we recommend manually creating a
-Vivado project and then adding the source files manually.
+We will be creating our own Vivado project, instead of giving you a pre-made one.
 
 1. Go to the [Lab 2 GitHub Repo](https://github.com/USAFA-ECE/ece281-lab2)
 2. Click the green "Use this template" button -> create a new repository.
 3. Once your new repo is created, clone it into where you want it.
 4. Open Vivado
-5. Follow instructions in {ref}`create-new-vivado-project`. Suggested project name is **binaryHexDisp**
-6. Follow instructions in {ref}`manual-add-to-vivado-project` to add everything in `src/hdl/` to your project
-7. Ensure your source hierarchy looks like you expect.
+5. Follow instructions in {ref}`create-new-vivado-project`. Name your project **binaryHexDisp**
+6. Ensure your source hierarchy looks like you expect.
 
 > Edit the file headers as necessary. Then commit your changes with git.
+
+### Seven Segment Display Decoder
+
+For better modularity, we will implement our seven segment display decoder as its own component.
+
+#### File Creation
+
+We have not given you a file, so you need to create one in Vivado. See [**Lab2 Vivado Buttonology.pptx**](https://usafa0.sharepoint.com/:p:/s/ECE281/EZ2NKQAyMX1BqbxHMI5yHiUBekrNlr77IPglt3RUFfbe2w?e=0QYZ4Q) in Class Materials for screenshots!
+
+1. In the **Sources** tab click the blue **+** symbol.
+2. Add or create design sources
+3. **+** and Create file
+4. Create file
+    - File type: VHDL
+    - File Name: sevenseg_decoder
+    - File location: your project src/ folder (NOT default "local to project")
+5. You should then see the file, click Finish.
+6. Define a module:
+    - Entity name: `sevenseg_decoder`
+    - `i_Hex`, in, Bus, MSB: 3, LSB: 0
+    - `o_Seg`, out, Bus, MSB: 6, LSB: 0
+7. You should then see **sevenseg_decoder** added to Design Sources
+
+> Commit this newly created file to git!
+
+#### Architecture
+
+Our truth table had $S_a$ to $S_g$. How does this map to hardware? Fundamentally, **we want to adhere to the constraints file.**
+This is because we will ultimately want to do this:
+
+```vhdl
+-- Excerpt from expected sevenseg_decoder port map inside top_basys3
+o_Seg => seg,
+```
+
+Returning to [Basys3 I/O](https://digilent.com/reference/basys3/refmanual#basic_io)
+and comparing it to **Basys3_Master.xdc** we can see that:
+
+![Basys3 Basic I/O](https://digilent.com/reference/_media/basys3-_basic_io_block_diagram.png)
+
+- The pin `W7` is connected to cathode `CA`, which we have called `sA`.
+- .xdc shows `PACKAGE_PIN W7 [get_ports {seg[0]}]`, so **`sA` is the LSB**
+
+Meanwhile,
+
+- The pin `U7` is connected to cathode `CG`, which we have called `sG`.
+- .xdc shows `PACKAGE_PIN U7 [get_ports {seg[6]}]`, so **`sG` is the MSB**
+
+Unfortunately, **this is the opposite of our prelab truth table 😭**
+
+It's up to you to decide how to fix this *inside* sevenseg_decoder!
+
+##### Behavioral vs. Structural modeling
+
+There are two basic philosophies for modeling digital architectures:
+
+- **structural** describes *how* the module would be composed as a hierarchy of simpler modules.
+- **behavioral** describes *what* the logic does in terms of inputs and outputs.
+
+We used *structural* for the adders earlier in this course.
+We could use it here as well, giving each segment a Boolean equation:
+
+$$
+Sa = (D3')(D2')(D1')(D0) + (D3)(D2')(D1)(D0) + (D2)(D1')(D0') + (D3)(D2)(D1')
+$$
+
+But you'd then have to do this for each of your segments!
+
+For this component, you are probably better off with a *behavioral* approach.
+As a reminder, here is the behavioral code for a one-hot decoder.
+
+```vhdl
+-- Behavioral model for one-hot decoder
+with i_sel select
+o_D <=  "0001" when "00",
+        "0010" when "01",
+        "0100" when "10",
+        "1000" when "11",
+        "0000" when others;
+```
+
+How might you adapt this for your seven-segment decoder?
+
+> Once you do this, commit your file with git.
+
+### Test sevenSegDecoder
+
+Follow steps similar to above to create a new file, except select **Add or create simulation sources**.
+Name your test bench file `sevenseg_decoder_tb.vhd` with the entity **sevenseg_decoder_tb**.
+
+Refer to previous assignments for how to make a test bench. Remember to bring in your sevenseg_decoder component!
+
+Create a test plan to verify your decoder behaves as expected. Don't forget that you can use hex to assign values to signals.
+
+> Once you are happy with your test, add a screenshot of your waveform to your folder and commit it and your other files with git.
 
 ### Top-level file
 
@@ -127,6 +220,11 @@ flowchart LR
     hex --> button{Display active?}
     button --> out[Display hex output]
 ```
+
+The **user** will:
+
+- Input a 4-bit number on switches 3-0.
+- Expect that value to be output only on display 0 when button C is pressed; otherwise all displays are off.
 
 We have opted to use switches for our input and the seven segment display as our output.
 A button press will activate the display.
@@ -201,173 +299,6 @@ an(3)   <= '1';
 ```
 
 > Follow the comments in `top_basys3.vhd` to complete the architecture.
-
-### Seven Segment Display Decoder
-
-For better modularity, we will implement our seven segment display decoder as its own component.
-
-We have provided a template file in Teams under **Files > Handouts and Resources > Templates**.
-
-1. Save a copy of ECE_template.vhd as a file named **sevenSegDecoder.vhd** into your Lab2 `src/hdl/` folder.
-2. Save a copy of ECE_template_tb.vhd as a file named **sevenSegDecoder_tb.vhd** into your Lab2 `src/hdl/` folder.
-3. Add your sources to Vivado. Remember to leave "Copy sources into project" **unchecked**. See {ref}`manual-add-to-vivado-project`
-
-Edit the file headers as needed.
-
-1. Find and replace all instances of "ECE_template" with `sevenSegDecoder`
-2. Within Vivado, open one of your VHDL files and then type `CTRL+SHIFT+R` or click on Edit→Replace in Files
-3. Fill in the find and replace text boxes as required. Make sure to check all of the sources you want to change:
-
-![Find ECE_template and replace with sevenSegDecoder](img/lab2_image4.jpg)
-
-In the message area (bottom of Vivado screen) click "Replace All"
-
-![Replace All](img/lab2_image6.jpg)
-
-### 7SD Entity
-
-How do we determine which should be out most signifigatn bit (MSB): $Sa$ or $Sg$?
-Fundamentally, **we want to adhere to the constraints file.**
-Referencing [Basys3 I/O](https://digilent.com/reference/basys3/refmanual#basic_io) *(this is a great page to know about!!!)*
-and comparing it to **Basys3_Master.xdc** we can see that:
-
-- The pin `W7` is connected to cathode `CA`, which we have called `sA`.
-- .xdc shows `PACKAGE_PIN W7 [get_ports {seg[0]}]`, so **`sA` is the LSB**
-- The pin `U7` is connected to cathode `CG`, which we have called `sG`.
-- .xdc shows `PACKAGE_PIN U7 [get_ports {seg[6]}]`, so **`sG` is the MSB**
-- This already corresponds with how our Prelab truth table is organized!
-
-> Create your interface (ports) for your sevenSegDecoder according to {numref}`7sd-entity-arch`
-
-```{warning}
-This diagram is mislabeled. c_Sa should be 0 and c_sG should be 6. New picture will be posed soon.
-```
-
-```{figure} img/lab2_image9.jpg
----
-name: 7sd-entity-arch
----
-sevenSegDecoder entity and architecture
-```
-
-The interface for the sevenSegDecoder entity is shown in blue and the architecture in purple.
-The input, `i_D`, is a bus of four wires.
-The output, `o_S`, is a bus of seven wires.
-
-This can be created in VHDL by using a **std_logic_vector** signal type.
-For instance, `i_D` could be created in the **port** statement with the following:
-
-```vhdl
-i_D : in std_logic_vector(3 downto 0)
-```
-
-Remember, the `i_` follows the naming convention provided in the header
-that indicates the signal is an input. The statement above `3 downto 0`
-indicates that BIT3 is the MSB and BIT0 is the LSB. You could easily
-reverse this by swapping the locations of the two numbers.
-
-To access each wire from the bus you created simply refer to the bit
-number in parentheses. For instance, `i_D(3)` refers to the MSB of the
-input, D.
-
-### 7SD Architecture
-
-After you have created your component interface, you need to describe
-the architecture. {numref}`7sd-entity-arch` shows that the output of
-the combinational logic produces a signal for each 7SD segment (`c_Sa` ...
-`c_Sg`). These combinational signals (denoted by the `c_` at the
-beginning) are wired to each bit of the output segment bus (`o_S`). The
-bit numbers are labeled in the diagram. For instance, `BIT0` of `o_S` is
-wired to `c_Sa`.
-
-- For clarity, declare intermediate combinatorial signals (e.g., `c_Sa`) that break out output `S` and set them to a default value of `1` (off). This should be done *before* **begin**.
-- There are no PORT MAPS or PROCESSES needed for this module, so you can delete those sections.
-- In the CONCURRENT STATEMENTS section, map the output `S` to the signals you created above. For instance:
-
-```vhdl
-o_S(0) <= c_Sa;
-```
-
-#### Behavioral vs. Structural modeling
-
-There are two basic philosophies for modeling digital architectures:
-
-- **structural** describes *how* the module would be composed as a hierarchy of simpler modules.
-- **behavioral** describes *what* the logic does in terms of inputs and outputs.
-
-We will be using behavioral modeling in this lab.
-
-For instance, you could derive the simplified Boolean expression:
-
-$$
-Sa = (D3')(D2')(D1')(D0) + (D3)(D2')(D1)(D0) + (D2)(D1')(D0') + (D3)(D2)(D1')
-$$
-
-This could then be implemented *behaviorally* with the following VHDL
-code:
-
-![behavioral equation](img/lab2_image15.jpg)
-
-Notice that the logic for the intermediate signal `c_Sa` is described in
-terms of AND, NOT, and OR gates. Also notice that the statement spans
-multiple lines and is ended by a semicolon. It is helpful to break
-statements like this into multiple lines so that they are easier to
-read. Each implicant from the simplified Boolean expression has its own
-line and is surrounded by parentheses (use SPACE to make it more
-readable).
-
-There are many ways to describe a behavioral model, however. Contrast
-the above behavioral model with the following one:
-
-![behavioral truth table](img/lab2_image16.jpg)
-
-The behavioral model describes the logic just like the truth table. In
-this case, it essentially creates a lookup table (LUT) where the '1's
-are identified, and everything else is '0'. Note, how using a
-**std_logic_vector** for `i_D` allows us to compare the input to a 4-bit
-hex value(denoted by the 'x') instead of comparing all of the individual
-bits. This is one of the advantages of using that signal type.
-
-> Now that you have an understanding of how to implement behavioral models
-> in VHDL, implement all seven of your outputs for sevenSegDecoder.
-
-- Use behavioral modeling with AND, NOT, and OR gates for at least two of them.
-- Use behavioral modeling with a LUT for at least two of them.
-- Which model method do you think is easier to use for implementing your outputs?
-- Implement the remaining outputs with your preferred choice.
-
-### Test sevenSegDecoder
-
-If you skipped the part above about bringing in the **ECE_template_tb.vhd**,
-do it now.
-
-1. Copy in the port information for your sevenSegDecoder component.
-2. Declare a bus (std_logic_vector) or series of signals for the switch inputs.
-3. Declare a signal vector to connect to the segment outputs (e.g., `w_seg`) from your component
-4. Port map your component instance to the wires you creates for the
-    switches and the 7SD segments.
-
-```{tip}
-The keyword **OPEN** can be used if you prefer to not wire a port to
-something (e.g., you will read or manipulate the ports directly in
-your simulation)
-```
-
-5. Create your test plan process. Remember, you can use hex values with
-    busses, such as `sw <= x"F"`.
-6. Add enough assert statements to cover the truth table.
-7. Fix any syntax errors, and run the simulation.
-
-If **sevenSegDecoder_tb** is not set as the top of your simulation hierarchy,
-right click on it and choose "Set as top."
-
-> Make sure the simulation results match your Prelab truth table, and
-> then **take a waveform screenshot for your report**.
-
-```{hint}
-You may need to reverse the order to make your sim match the truth table:
-(right click-\> Reverse Bit Order).
-```
 
 ### Complete top level
 
