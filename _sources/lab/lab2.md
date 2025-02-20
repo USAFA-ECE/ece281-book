@@ -135,7 +135,7 @@ We have not given you a file, so you need to create one in Vivado. See [**Lab2 V
 6. Define a module:
     - Entity name: `sevenseg_decoder`
     - `i_Hex`, in, Bus, MSB: 3, LSB: 0
-    - `o_Seg`, out, Bus, MSB: 6, LSB: 0
+    - `o_seg_n`, out, Bus, MSB: 6, LSB: 0
 7. You should then see **sevenseg_decoder** added to Design Sources
 
 > Commit this newly created file to git!
@@ -147,7 +147,11 @@ This is because we will ultimately want to do this:
 
 ```vhdl
 -- Excerpt from expected sevenseg_decoder port map inside top_basys3
-o_Seg => seg,
+o_seg_n => seg,
+```
+
+```{note}
+We are using `o_seg_n` because the `_n` reminds us it's active LOW!
 ```
 
 Returning to [Basys3 I/O](https://digilent.com/reference/basys3/refmanual#basic_io)
