@@ -107,7 +107,7 @@ It is time to implement them in hardware with VHDL!
 We will be creating our own Vivado project, instead of giving you a pre-made one.
 See [**Lab2 Vivado Buttonology.pptx**](https://usafa0.sharepoint.com/:p:/s/ECE281/EZ2NKQAyMX1BqbxHMI5yHiUBekrNlr77IPglt3RUFfbe2w?e=0QYZ4Q) in Class Materials for screenshots!
 
-1. Go to the [Lab 2 GitHub Repo](https://github.com/USAFA-ECE/ece281-lab2)
+1. Go to https://github.com/USAFA-ECE/ece281-lab2
 2. Click the green "Use this template" button -> create a new repository.
 3. Once your new repo is created, clone it into where you want it.
 4. Open Vivado
