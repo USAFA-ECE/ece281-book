@@ -38,13 +38,10 @@ Binary-to-hex displayed on seven-segment display
 
 ### Collaboration
 
-Your instructor will inform you if you can work in pairs or not. For all assignments in this course, unless
-otherwise noted on the assignment, you may work with anyone. We expect
-all graded work, to include code, lab notebooks, and written reports, to
-be in your own work. Copying another person's work, with or without
-documentation, will result in NO academic credit. Furthermore, copying
-without attribution is dishonorable and will be dealt with as an honor
-code violation.
+- Prelab is individual submission on Gradescope
+- Lab Code is individual submission on Gradescope (you will need to reuse your VHDL in future labs!)
+- Lab Report is optional **pairs** submission; add your partner to submission on Gradescope.
+    Work with a different person than who you worked with for Lab 1.
 
 ## Background
 
@@ -209,6 +206,11 @@ How might you adapt this for your seven-segment decoder?
 > Once you do this, commit your file with git.
 
 ### Test sevenseg_decoder
+
+```{hint}
+Test bench entities do not have any input or output ports!
+So when you create the file leave that part blank.
+```
 
 Follow steps similar to above to create a new file, except select **Add or create simulation sources**.
 Name your test bench file `sevenseg_decoder_tb.vhd` with the entity **sevenseg_decoder_tb**.

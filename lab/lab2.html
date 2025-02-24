@@ -524,13 +524,12 @@ output the correct hex digit, <a class="reference internal" href="#hex-of-switch
 </section>
 <section id="collaboration">
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h3>
-<p>Your instructor will inform you if you can work in pairs or not. For all assignments in this course, unless
-otherwise noted on the assignment, you may work with anyone. We expect
-all graded work, to include code, lab notebooks, and written reports, to
-be in your own work. Copying another person’s work, with or without
-documentation, will result in NO academic credit. Furthermore, copying
-without attribution is dishonorable and will be dealt with as an honor
-code violation.</p>
+<ul class="simple">
+<li><p>Prelab is individual submission on Gradescope</p></li>
+<li><p>Lab Code is individual submission on Gradescope (you will need to reuse your VHDL in future labs!)</p></li>
+<li><p>Lab Report is optional <strong>pairs</strong> submission; add your partner to submission on Gradescope.
+Work with a different person than who you worked with for Lab 1.</p></li>
+</ul>
 </section>
 </section>
 <section id="background">
@@ -693,6 +692,11 @@ As a reminder, here is the behavioral code for a one-hot decoder.</p>
 </section>
 <section id="test-sevenseg-decoder">
 <h3><a class="toc-backref" href="#id10" role="doc-backlink">Test sevenseg_decoder</a><a class="headerlink" href="#test-sevenseg-decoder" title="Link to this heading">#</a></h3>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Test bench entities do not have any input or output ports!
+So when you create the file leave that part blank.</p>
+</div>
 <p>Follow steps similar to above to create a new file, except select <strong>Add or create simulation sources</strong>.
 Name your test bench file <code class="docutils literal notranslate"><span class="pre">sevenseg_decoder_tb.vhd</span></code> with the entity <strong>sevenseg_decoder_tb</strong>.</p>
 <p>Refer to previous assignments for how to make a test bench. Remember to bring in your sevenseg_decoder component!</p>
