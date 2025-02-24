@@ -23,9 +23,9 @@
 | 15     | The Mighty ALU!                          | 5.2.4-5.2.5              | Lab 2 Prelab |                    |
 | 16     | GR #1                                    |                          |              |                    |
 | 17     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
-| 18     | Synchronous Circuits                     | 3.1-3.3                  |              | Lab 2              |
+| 18     | Synchronous Circuits                     | 3.1-3.3                  |              |                    |
 | 19     | Moore and Mealy FSMs                     | 3.4.1, 3.4.3             |              |                    |
-| 20     | FSM Design and Analysis                  | 3.4.2, 3.4.5             | HW 20        |                    |
+| 20     | FSM Design and Analysis                  | 3.4.2, 3.4.5             | HW 20        | Lab 2              |
 | 21     | RV32I Registers                          | 6.2.2, 6.4.1-6.4.2       | HW 21        |                    |
 | 22     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
 | 23     | Memory: RAM & ROM                        | 5.4-5.5                  |              | ICE4               |
