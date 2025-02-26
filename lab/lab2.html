@@ -431,13 +431,15 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-sevenseg-decoder">Test sevenseg_decoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-file">Top-level file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-btnc">Using btnC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3">top_basys3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-btnc">Using btnC</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-in-hardware">Implement in hardware</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-in-hardware">Implement in hardware</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
@@ -477,18 +479,15 @@ document.write(`
 <li><p><a class="reference internal" href="#setup-vivado-project" id="id8">Setup Vivado Project</a></p></li>
 <li><p><a class="reference internal" href="#seven-segment-display-decoder" id="id9">Seven Segment Display Decoder</a></p></li>
 <li><p><a class="reference internal" href="#test-sevenseg-decoder" id="id10">Test sevenseg_decoder</a></p></li>
-<li><p><a class="reference internal" href="#top-level-file" id="id11">Top-level file</a></p></li>
-<li><p><a class="reference internal" href="#design" id="id12">Design</a></p></li>
-<li><p><a class="reference internal" href="#implementation" id="id13">Implementation</a></p></li>
-<li><p><a class="reference internal" href="#implement-in-hardware" id="id14">Implement in hardware</a></p></li>
+<li><p><a class="reference internal" href="#top-basys3" id="id11">top_basys3</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#deliverables" id="id15">Deliverables</a></p>
+<li><p><a class="reference internal" href="#deliverables" id="id12">Deliverables</a></p>
 <ul>
-<li><p><a class="reference internal" href="#prelab" id="id16">Prelab</a></p></li>
-<li><p><a class="reference internal" href="#hardware-demo" id="id17">Hardware demo</a></p></li>
-<li><p><a class="reference internal" href="#written-report" id="id18">Written Report</a></p></li>
-<li><p><a class="reference internal" href="#code-on-gradescope-via-github" id="id19">Code on Gradescope via GitHub</a></p></li>
+<li><p><a class="reference internal" href="#prelab" id="id13">Prelab</a></p></li>
+<li><p><a class="reference internal" href="#hardware-demo" id="id14">Hardware demo</a></p></li>
+<li><p><a class="reference internal" href="#written-report" id="id15">Written Report</a></p></li>
+<li><p><a class="reference internal" href="#code-on-gradescope-via-github" id="id16">Code on Gradescope via GitHub</a></p></li>
 </ul>
 </li>
 </ul>
@@ -705,8 +704,8 @@ Name your test bench file <code class="docutils literal notranslate"><span class
 <div><p>Once you are happy with your test, add a screenshot of your waveform to your folder and commit it and your other files with git.</p>
 </div></blockquote>
 </section>
-<section id="top-level-file">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">Top-level file</a><a class="headerlink" href="#top-level-file" title="Link to this heading">#</a></h3>
+<section id="top-basys3">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Link to this heading">#</a></h3>
 <p>The functionality we are looking for is this:</p>
 <pre  class="mermaid">
         flowchart LR
@@ -718,9 +717,8 @@ Name your test bench file <code class="docutils literal notranslate"><span class
 <li><p>Input a 4-bit number on switches 3-0.</p></li>
 <li><p>Expect that value to be output <em>only</em> on display 0 when button C is pressed; otherwise all displays are off.</p></li>
 </ul>
-</section>
 <section id="design">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">Design</a><a class="headerlink" href="#design" title="Link to this heading">#</a></h3>
+<h4>Design<a class="headerlink" href="#design" title="Link to this heading">#</a></h4>
 <p><strong>Before writing code</strong> draw the entity diagram for <strong>top_basys3</strong>.</p>
 <ul class="simple">
 <li><p>Ensure it has all the inputs and outputs you need.</p></li>
@@ -735,10 +733,10 @@ Name your test bench file <code class="docutils literal notranslate"><span class
 </div>
 </section>
 <section id="implementation">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Implementation</a><a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<h4>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h4>
 <p>Now connect everything in VHDL like you show in your diagram.</p>
 <section id="using-btnc">
-<h4>Using btnC<a class="headerlink" href="#using-btnc" title="Link to this heading">#</a></h4>
+<h5>Using btnC<a class="headerlink" href="#using-btnc" title="Link to this heading">#</a></h5>
 <p>The output <code class="docutils literal notranslate"><span class="pre">an</span></code> is four bits but <code class="docutils literal notranslate"><span class="pre">btnC</span></code> is only one bit.
 The easiest way to connect these is with a signal.
 We will append <code class="docutils literal notranslate"><span class="pre">_n</span></code> to the signal name to remind ourselves it is active LOW.</p>
@@ -755,25 +753,27 @@ We will append <code class="docutils literal notranslate"><span class="pre">_n</
 </pre></div>
 </div>
 </section>
-</section>
 <section id="implement-in-hardware">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Implement in hardware</a><a class="headerlink" href="#implement-in-hardware" title="Link to this heading">#</a></h3>
-<p>Uncomment the relative lines in your constraints file.</p>
+<h5>Implement in hardware<a class="headerlink" href="#implement-in-hardware" title="Link to this heading">#</a></h5>
+<p>Uncomment the relative lines in your constraints file.
+Remember to only uncomment <code class="docutils literal notranslate"><span class="pre">sw(0)</span></code> - <code class="docutils literal notranslate"><span class="pre">sw(3)</span></code>, not all 16 switches.</p>
 <p>Synthesize and implement your design. Then generate a bitstream and squirt it to your board.</p>
 <blockquote>
 <div><p>Commit the bitstream to your repo</p>
 </div></blockquote>
 </section>
 </section>
+</section>
+</section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
 <section id="prelab">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Link to this heading">#</a></h3>
 <p>See instructions at the top of this lab.
 Submit on Gradescope.</p>
 </section>
 <section id="hardware-demo">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Hardware demo</a><a class="headerlink" href="#hardware-demo" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Hardware demo</a><a class="headerlink" href="#hardware-demo" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You have to hold the center push button down for a 7SD to show your output. (10 pts)</p></li>
 <li><p>The correct hex digit is shown based on the switch positions for all input possibilities. (20 pts)</p></li>
@@ -781,7 +781,7 @@ Submit on Gradescope.</p>
 <p>Demo can be performed live with an instructor (preferred) OR submitted via Teams video.</p>
 </section>
 <section id="written-report">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Written Report</a><a class="headerlink" href="#written-report" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Written Report</a><a class="headerlink" href="#written-report" title="Link to this heading">#</a></h3>
 <p>Seek to answer the fundamental question
 <strong>“How do you understand the cathode and anode structure, use a decoder, and map your design  to hardware?”</strong></p>
 <p>Include the following sections:</p>
@@ -794,7 +794,7 @@ Submit on Gradescope.</p>
 <p>Rubric and template on Teams. Submit on Gradescope.</p>
 </section>
 <section id="code-on-gradescope-via-github">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">Code on Gradescope via GitHub</a><a class="headerlink" href="#code-on-gradescope-via-github" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Code on Gradescope via GitHub</a><a class="headerlink" href="#code-on-gradescope-via-github" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sevenseg_decoder.vhd</span></code> and <code class="docutils literal notranslate"><span class="pre">sevenseg_decoder_tb.vhd</span></code> included in <code class="docutils literal notranslate"><span class="pre">src/</span></code></p></li>
 <li><p>Extraneous comments are removed and code is formatted in a sane manner</p></li>
@@ -890,13 +890,15 @@ Submit on Gradescope.</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-sevenseg-decoder">Test sevenseg_decoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-file">Top-level file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-btnc">Using btnC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-basys3">top_basys3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#using-btnc">Using btnC</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-in-hardware">Implement in hardware</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-in-hardware">Implement in hardware</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">

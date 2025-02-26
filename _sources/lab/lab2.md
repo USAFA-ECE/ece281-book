@@ -221,7 +221,7 @@ Create a test plan to verify your decoder behaves as expected. Don't forget that
 
 > Once you are happy with your test, add a screenshot of your waveform to your folder and commit it and your other files with git.
 
-### Top-level file
+### top_basys3
 
 The functionality we are looking for is this:
 
@@ -237,7 +237,7 @@ The **user** will:
 - Input a 4-bit number on switches 3-0.
 - Expect that value to be output *only* on display 0 when button C is pressed; otherwise all displays are off.
 
-### Design
+#### Design
 
 **Before writing code** draw the entity diagram for **top_basys3**.
 
@@ -251,11 +251,11 @@ The **user** will:
 You entity I/O names should exactly match the port names already in the `Basys3_Master.xdc` constraints file.
 ```
 
-### Implementation
+#### Implementation
 
 Now connect everything in VHDL like you show in your diagram.
 
-#### Using btnC
+##### Using btnC
 
 The output `an` is four bits but `btnC` is only one bit.
 The easiest way to connect these is with a signal.
@@ -276,9 +276,10 @@ Alternatively, you could do this with some VHDL magic and the `()` aggregate ope
 an  <= (0 => w_7SD_EN_n, others => '1');
 ```
 
-### Implement in hardware
+##### Implement in hardware
 
 Uncomment the relative lines in your constraints file.
+Remember to only uncomment `sw(0)` - `sw(3)`, not all 16 switches.
 
 Synthesize and implement your design. Then generate a bitstream and squirt it to your board.
 
