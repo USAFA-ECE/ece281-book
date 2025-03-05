@@ -317,7 +317,7 @@ Rubric and template on Teams. Submit on Gradescope.
 
 - `sevenseg_decoder.vhd` and `sevenseg_decoder_tb.vhd` included in `src/`
 - Extraneous comments are removed and code is formatted in a sane manner
-- Screenshot of testbench waveform shows all 16 input combinations
+- Screenshot of testbench waveform
 - `Basys3_Master.xdc` appropriately uncommented
 - Bitstream (`.bit`) file used for hardware demo in repo (in default location)
 - Commit messages are useful in tracing the development of the project
