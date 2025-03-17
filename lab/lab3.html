@@ -428,14 +428,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-in-hardware">Implement in Hardware</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-demo">Hardware Demo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">GitHub Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report">Report</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#front-matter">Front Matter</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation Results</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-design">Architecture Design</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report">Report</a></li>
 </ul>
 </li>
 </ul>
@@ -477,7 +471,7 @@ document.write(`
 <li><p><a class="reference internal" href="#deliverables" id="id12">Deliverables</a></p>
 <ul>
 <li><p><a class="reference internal" href="#hardware-demo" id="id13">Hardware Demo</a></p></li>
-<li><p><a class="reference internal" href="#github-actions" id="id14">GitHub Actions</a></p></li>
+<li><p><a class="reference internal" href="#code" id="id14">Code</a></p></li>
 <li><p><a class="reference internal" href="#report" id="id15">Report</a></p></li>
 </ul>
 </li>
@@ -786,125 +780,24 @@ This must happen <strong>after</strong> showing your waveform.</p>
 </section>
 <section id="deliverables">
 <h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<p>Below are the deliverables and point distributions for the Lab 3:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
-<th class="head"><p>Points</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Prelab</p></td>
-<td><p>20</p></td>
-</tr>
-<tr class="row-odd"><td><p>Hardware Demo</p></td>
-<td><p>25</p></td>
-</tr>
-<tr class="row-even"><td><p>Passing GitHub Action</p></td>
-<td><p>25</p></td>
-</tr>
-<tr class="row-odd"><td><p>Written Report</p></td>
-<td><p>30</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Documentation statements</strong> will be in the README for any help on the Lab itself.</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Documentation</span>
-Your statement here.
-</pre></div>
-</div>
-<p>Otherwise, the statement will be submitted on Gradescope
-(for the prelab and report).</p>
 <section id="hardware-demo">
 <h3><a class="toc-backref" href="#id13" role="doc-backlink">Hardware Demo</a><a class="headerlink" href="#hardware-demo" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Show your instructor your waveform <em>before</em> demoing the hardware.</p></li>
-<li><p>Using left and right switches generates correct LED patterns with <strong>[changes occurring at a rate of 4 Hz</strong></p></li>
+<li><p>Using left and right switches generates correct LED patterns with <strong>changes occurring at a rate of 4 Hz</strong></p></li>
 <li><p>Holding the clock reset freezes the light patterns</p></li>
-<li><p>Pressing the FSM reset <em>immediately</em> (i.e. asynchronously) resets the light patterns</p></li>
+<li><p>Pressing the FSM reset resets the light patterns</p></li>
 <li><p>Demo can be performed live with an instructor OR via a video link</p></li>
 <li><p>You must show good test cases for full credit!</p></li>
 </ul>
 </section>
-<section id="github-actions">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">GitHub Actions</a><a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>All <code class="docutils literal notranslate"><span class="pre">.vhd</span></code>, <code class="docutils literal notranslate"><span class="pre">.xdc</span></code>, <code class="docutils literal notranslate"><span class="pre">.xpr</span></code>, and <code class="docutils literal notranslate"><span class="pre">.bit</span></code> files committed to repository</p></li>
-<li><p>Headers are modified appropriately</p></li>
-<li><p><em>Multiple</em> commits with <em>good</em> messages</p></li>
-<li><p><strong>Remove extraneous code and comments</strong></p></li>
-<li><p>Your comments explain what you are doing and why</p></li>
-<li><p>Student testbench passes for <code class="docutils literal notranslate"><span class="pre">thunderbird_fsm_tb.vhd</span></code></p></li>
-<li><p>Instructor testbench passes for <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code></p></li>
-<li><p>README includes <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Documentation</span></code> statement</p></li>
-<li><p>README includes a <code class="docutils literal notranslate"><span class="pre">.png</span></code> Waveform</p></li>
-</ul>
+<section id="code">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Code</a><a class="headerlink" href="#code" title="Link to this heading">#</a></h3>
+<p>Submit your code via Gradescope. The autograder should pass!</p>
 </section>
 <section id="report">
 <h3><a class="toc-backref" href="#id15" role="doc-backlink">Report</a><a class="headerlink" href="#report" title="Link to this heading">#</a></h3>
-<p>The report will be submitted on Gradescope. Subsections are described below.
-The report should be kept to three pages, including diagrams.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This report should be written in a professional, technical style.
-This means, among other things:</p>
-<ul class="simple">
-<li><p>~~Active voice should be used~~ Use <strong>active voice</strong>, in most cases. Occasionally passive voice is more appropriate,
-but it should be a deliberate choice.</p></li>
-<li><p>The use of <strong>we</strong> is appropriate.</p></li>
-<li><p>Write sentences that make information understandable; such sentences are beautiful.</p></li>
-</ul>
-<p>Know your audience: the instructors have a strong background in the lab.
-We would rather see you showcase your ability to communicate your hard-earned knowledge
-than be bored with broad summaries.
-<strong>The true art is to 1) provide <em>context</em> and 2) follow it with <em>consequence</em>.</strong></p>
-</div>
-<section id="front-matter">
-<h4>Front Matter<a class="headerlink" href="#front-matter" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Title, Authors, page numbers, ect.</p></li>
-<li><p>Documentation Statement for the Report only.</p></li>
-<li><p>A two or three sentence summary of the <strong>key takeaway</strong> from this lab.
-Don’t drone on, make it a punchy answer to “So what? Who cares?”</p></li>
-</ul>
-</section>
-<section id="simulation-results">
-<h4>Simulation Results<a class="headerlink" href="#simulation-results" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Discuss your <strong>overall approach</strong> to testing.</p></li>
-<li><p>Include your waveform.</p></li>
-<li><p>Discuss <strong>how simulation aided in testing</strong> and iterating.</p></li>
-<li><p>Show that you actually used the simulation to assist before moving to hardware.</p></li>
-</ul>
-<p>The waveform should:</p>
-<ul class="simple">
-<li><p>Begin with a reset test to start the FSM in a known state</p></li>
-<li><p>Clearly show well thought out test cases with correct results</p></li>
-<li><p>Include all required signals, (i_clk, i_reset, i_left, i_right,
-o_lights_L, o_lights_R, and your current and next state bits).</p></li>
-<li><p>Light output busses expanded to easily see progression of lights</p></li>
-<li><p>Ensure the simulation results waveforms have visible values for inputs and outputs.</p></li>
-</ul>
-</section>
-<section id="architecture-design">
-<h4>Architecture Design<a class="headerlink" href="#architecture-design" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Discuss your <strong>overall approach</strong> to architecture design and schematic construction.</p></li>
-<li><p>Did you implement one-hot encoding or binary encoding? <strong>Evaluate</strong> your choice.</p></li>
-<li><p>Include your neat (not hand-drawn) schematic.</p></li>
-<li><p>Include the RTL schematic.</p></li>
-<li><p>Discuss any differences between the two schematics.</p></li>
-</ul>
-</section>
-<section id="conclusion">
-<h4>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Your main takeaway!</p></li>
-<li><p>What approaches will you continue or change when it comes Lab 4?</p></li>
-<li><p>Feedback for the instructors on the lab.</p></li>
-</ul>
-</section>
+<p>The report template is in Teams. and will also be submitted to Gradescope.</p>
 </section>
 </section>
 </section>
@@ -999,14 +892,8 @@ o_lights_L, o_lights_R, and your current and next state bits).</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-in-hardware">Implement in Hardware</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-demo">Hardware Demo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">GitHub Actions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report">Report</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#front-matter">Front Matter</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation Results</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-design">Architecture Design</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#report">Report</a></li>
 </ul>
 </li>
 </ul>
