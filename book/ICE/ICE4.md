@@ -426,14 +426,8 @@ pressing the left button should pause the whole system.
 
 ## Deliverables
 
-> Double check that you have everything **committed** to your git repo.
-> Push the files.
-
-| Deliverable           | Points |
-|-----------------------|--------|
-| Hardware Demo         | 50     |
-| Code pushed to GitHub | 50     |
-
-There is no Gradescope requirement for this ICE.
+- Double check that you have everything **committed** to your git repo.
+- Push the files.
+- Complete the (quick!) Gradescope assignment
 
 Congratulations, you have completed In Class Exercise 4!

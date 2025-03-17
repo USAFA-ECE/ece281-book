@@ -326,99 +326,19 @@ Then
 
 ## Deliverables
 
-Below are the deliverables and point distributions for the Lab 3:
-
-| Deliverable           | Points |
-|-----------------------|--------|
-| Prelab                | 20     |
-| Hardware Demo         | 25     |
-| Passing GitHub Action | 25     |
-| Written Report        | 30     |
-
-**Documentation statements** will be in the README for any help on the Lab itself.
-
-```markdown
-
-## Documentation
-Your statement here.
-```
-
-Otherwise, the statement will be submitted on Gradescope
-(for the prelab and report).
-
 ### Hardware Demo
 
 - Show your instructor your waveform *before* demoing the hardware.
-- Using left and right switches generates correct LED patterns with **[changes occurring at a rate of 4 Hz**
+- Using left and right switches generates correct LED patterns with **changes occurring at a rate of 4 Hz**
 - Holding the clock reset freezes the light patterns
-- Pressing the FSM reset *immediately* (i.e. asynchronously) resets the light patterns
+- Pressing the FSM reset resets the light patterns
 - Demo can be performed live with an instructor OR via a video link
 - You must show good test cases for full credit!
 
-### GitHub Actions
+### Code
 
-- All `.vhd`, `.xdc`, `.xpr`, and `.bit` files committed to repository
-- Headers are modified appropriately
-- *Multiple* commits with *good* messages
-- **Remove extraneous code and comments**
-- Your comments explain what you are doing and why
-- Student testbench passes for `thunderbird_fsm_tb.vhd`
-- Instructor testbench passes for `top_basys3_tb.vhd`
-- README includes `## Documentation` statement
-- README includes a `.png` Waveform
+Submit your code via Gradescope. The autograder should pass!
 
 ### Report
 
-The report will be submitted on Gradescope. Subsections are described below.
-The report should be kept to three pages, including diagrams.
-
-```{important}
-This report should be written in a professional, technical style.
-This means, among other things:
-- ~~Active voice should be used~~ Use **active voice**, in most cases. Occasionally passive voice is more appropriate,
-    but it should be a deliberate choice.
-- The use of **we** is appropriate.
-- Write sentences that make information understandable; such sentences are beautiful.
-
-Know your audience: the instructors have a strong background in the lab.
-We would rather see you showcase your ability to communicate your hard-earned knowledge
-than be bored with broad summaries.
-**The true art is to 1) provide *context* and 2) follow it with *consequence*.**
-```
-
-#### Front Matter
-
-- Title, Authors, page numbers, ect.
-- Documentation Statement for the Report only.
-- A two or three sentence summary of the **key takeaway** from this lab.
-    Don't drone on, make it a punchy answer to "So what? Who cares?"
-
-#### Simulation Results
-
-- Discuss your **overall approach** to testing.
-- Include your waveform.
-- Discuss **how simulation aided in testing** and iterating.
-- Show that you actually used the simulation to assist before moving to hardware.
-
-The waveform should:
-
-- Begin with a reset test to start the FSM in a known state
-- Clearly show well thought out test cases with correct results
-- Include all required signals, (i_clk, i_reset, i_left, i_right,
-    o_lights_L, o_lights_R, and your current and next state bits).
-- Light output busses expanded to easily see progression of lights
-- Ensure the simulation results waveforms have visible values for inputs and outputs.
-
-#### Architecture Design
-
-- Discuss your **overall approach** to architecture design and schematic construction.
-- Did you implement one-hot encoding or binary encoding? **Evaluate** your choice.
-- Include your neat (not hand-drawn) schematic.
-- Include the RTL schematic.
-- Discuss any differences between the two schematics.
-
-#### Conclusion
-
-- Your main takeaway!
-- What approaches will you continue or change when it comes Lab 4?
-- Feedback for the instructors on the lab.
+The report template is in Teams. and will also be submitted to Gradescope.
