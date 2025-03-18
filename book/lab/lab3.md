@@ -74,7 +74,7 @@ Due on Gradescope midnight **T23**.
 
 ### Project functionality description
 
-- On RESET, the FSM should immediately enter a state with all lights off.
+- On RESET, the FSM should synchronously enter a state with all lights off.
 - When you press LEFT, you should see LA, then LA and LB, then LA, LB, and
 LC, then finally all lights off again.
 - This pattern should occur even if you release LEFT during the sequence.
