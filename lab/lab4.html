@@ -402,25 +402,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorized-resources">Authorized Resources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-flow">Lab Flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-elevator-controller">Advanced Elevator Controller</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">Lab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functionality">Basic Functionality</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-files">Add files</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-top-level">Complete top level</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deliver">Deliver</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-functionality">Advanced Functionality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-elevator-controller">Multi-Elevator Controller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
@@ -439,51 +424,45 @@ document.write(`
 <h1>Lab 4 - Moore Elevator Controller<a class="headerlink" href="#lab-4-moore-elevator-controller" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p>
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#basic-elevator-controller" id="id3">Basic Elevator Controller</a></p></li>
+<li><p><a class="reference internal" href="#multi-elevator-controller" id="id4">Multi-Elevator Controller</a></p>
 <ul>
-<li><p><a class="reference internal" href="#authorized-resources" id="id4">Authorized Resources</a></p></li>
-<li><p><a class="reference internal" href="#lab-flow" id="id5">Lab Flow</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id5">Simulation</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#prelab" id="id6">Prelab</a></p></li>
-<li><p><a class="reference internal" href="#lab" id="id7">Lab</a></p>
-<ul>
-<li><p><a class="reference internal" href="#basic-functionality" id="id8">Basic Functionality</a></p></li>
-<li><p><a class="reference internal" href="#advanced-functionality" id="id9">Advanced Functionality</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#deliverables" id="id10">Deliverables</a></p></li>
+<li><p><a class="reference internal" href="#deliverables" id="id6">Deliverables</a></p></li>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>This lab is all about <strong>designing complex systems!</strong>
-You will do this by integrating sequential and combinatorial building blocks
-to design, test, and debug the <strong>Basic Elevator Controller</strong> from ICE5
-before expanding functionality to an Advanced Elevator Controller.</p>
-<p>In order to accomplish this, you will need to integrate modules from previous
-in class exercises and labs. <strong>Start now and make steady progress!</strong></p>
-<section id="authorized-resources">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Authorized Resources</a><a class="headerlink" href="#authorized-resources" title="Link to this heading">#</a></h3>
-<p>For this lab, you may work in <strong>teams of two</strong> (including the prelab).
-If you worked in a team for Lab 3,
-you <strong>must</strong> work with a <em>different partner</em> for this lab.</p>
-<p>You may seek help from any cadet or instructor,
-not limited to this course, and reference any publication in its
-completion. Online resources are acceptable. However, no resources
-containing solutions to the course homework, labs, exams, quizzes, or in
-class/out of class exercises are allowed.</p>
-<p>Your work (and your code) must <strong>always</strong> be your own.
-Normal documentation of all resources utilized is required.</p>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This lab is all about <strong>designing complex systems!</strong></p>
+<p>To do this you will need to pull together building blocks from several previous labs and ICEs!</p>
+<p>Per usual, you must submit your own copy of VHDL but the lab report is done with a partner.</p>
+<p>The <strong>prelab</strong> is on Gradescope.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>There is no GitHub template for this lab. Instead, you must make a new GitHub repository.</p>
+<p>We recommend you create a new repository on <a class="reference external" href="http://github.com">github.com</a> (including “Add a README file”) and clone that repo.</p>
+<p>In Git Bash you can make a new directory with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>src/
+</pre></div>
+</div>
+<p>Then copy in necessary source files.
+Also copy in a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> from a previous lab or your repo will get super cluttered.</p>
+<p>Finally, <a class="reference external" href="https://usafa-ece.github.io/ece281-book/appendix/vivado.html#create-a-new-vivado-project">create a new Vivado project</a>
+in that folder, add your source files, and select the Basys3 board!</p>
+<p>It’s important to get this part correct or lots of things won’t work!</p>
+</div>
+<blockquote>
+<div><p>Git commit and push.</p>
+</div></blockquote>
 </section>
-<section id="lab-flow">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Lab Flow</a><a class="headerlink" href="#lab-flow" title="Link to this heading">#</a></h3>
-<p>This lab <em>iterates</em> to first implement a Basic Elevator Controller,
-and then expand that to an Advanced Elevator Controller.</p>
 <section id="basic-elevator-controller">
-<h4>Basic Elevator Controller<a class="headerlink" href="#basic-elevator-controller" title="Link to this heading">#</a></h4>
-<p>The <strong>initial phase</strong> of the lab only implements <a class="reference external" href="https://usafa-ece.github.io/ece281-book/ICE/ICE5.html">ICE5</a>
-Basic Elevator Controller, shown in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 38</span></a></p>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Basic Elevator Controller</a><a class="headerlink" href="#basic-elevator-controller" title="Link to this heading">#</a></h2>
+<p>The first iteration of this lab is simply implementing
+<a class="reference external" href="https://usafa-ece.github.io/ece281-book/ICE/ICE5.html">ICE5</a>
+Basic Elevator Controller, as shown in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 38</span></a></p>
 <figure class="align-default" id="id1">
 <img alt="../_images/lab4_basic_controller.png" src="../_images/lab4_basic_controller.png" />
 <figcaption>
@@ -491,7 +470,7 @@ Basic Elevator Controller, shown in <a class="reference internal" href="#id1"><s
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>The elevator’s current floor is shown on the second seven-segment display</p></li>
+<li><p>The elevator’s current floor is shown on seven-segment display 2 (2nd from right)</p></li>
 <li><p>The elevator takes 0.5 seconds to move between floors</p></li>
 <li><p>The display updates according to the output</p></li>
 <li><p>The elevator must not teleport… no skipping floors</p></li>
@@ -501,124 +480,49 @@ Basic Elevator Controller, shown in <a class="reference internal" href="#id1"><s
 <li><p>LED 15 must be tied to the clock signal that drives the FSM.</p></li>
 <li><p>You <em>may</em> use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.</p></li>
 </ul>
-<p>This is the functionality who’s schematic you must design in the prelab.</p>
+<blockquote>
+<div><p>Demo this to a classmate <em>prior</em> to starting on Multi-Elevator Controller.</p>
+<p>Git commit and push.</p>
+</div></blockquote>
 </section>
-<section id="advanced-elevator-controller">
-<h4>Advanced Elevator Controller<a class="headerlink" href="#advanced-elevator-controller" title="Link to this heading">#</a></h4>
-<p>The <strong>final phase</strong> of the lab expands the basic functionality, see below.</p>
-<p>This functionality should not be “hooked-up” in the Prelab.
-However, the top level entity will reflect this advanced functionality from the start.</p>
-</section>
-</section>
-</section>
-<section id="prelab">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Link to this heading">#</a></h2>
-<p>Create a Top Level Schematic showing your architecture
-and <strong>submit one submission per team on Gradescope.</strong></p>
-<p>This schematic must <em>only cover the Basic Elevator Controller functionality</em>.
-You will be expected to update the schematic prior to implementing the
-Advanced Elevator Controller.</p>
-<p>This schematic should consist of the <strong>top_basys3</strong> entity, its I/O,
-the various modules inside it, and the connecting signals and logic.</p>
-<p>The top-level entity in <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> will be:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Lab 4</span>
-<span class="k">entity</span><span class="w"> </span><span class="nc">top_basys3</span><span class="w"> </span><span class="k">is</span>
-<span class="w">    </span><span class="k">port</span><span class="p">(</span>
-<span class="w">        </span><span class="c1">-- inputs</span>
-<span class="w">        </span><span class="n">clk</span><span class="w">     </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- native 100MHz FPGA clock</span>
-<span class="w">        </span><span class="n">sw</span><span class="w">      </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="n">btnU</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- master_reset</span>
-<span class="w">        </span><span class="n">btnL</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- clk_reset</span>
-<span class="w">        </span><span class="n">btnR</span><span class="w">    </span><span class="o">:</span><span class="w">   </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"> </span><span class="c1">-- fsm_reset</span>
-
-<span class="w">        </span><span class="c1">-- outputs</span>
-<span class="w">        </span><span class="n">led</span><span class="w"> </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">15</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="c1">-- 7-segment display segments (active-low cathodes)</span>
-<span class="w">        </span><span class="n">seg</span><span class="w"> </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="c1">-- 7-segment display active-low enables (anodes)</span>
-<span class="w">        </span><span class="n">an</span><span class="w">  </span><span class="o">:</span><span class="w">   </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">    </span><span class="p">);</span>
-<span class="k">end</span><span class="w"> </span><span class="nc">top_basys3</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>The entity contains ports you will not use for the Basic Elevator functionality,
-but leave them in the schematic because you will need them for the Advanced Elevator.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Changing interfaces incurs massive engineering costs. This is because
-<strong>interfaces are the promises you make to external systems.</strong></p>
-<p>Even though we want to iterate (rather than “hit a home run”), we save
-a lot of time by making our I/O large enough for advanced functionality from
-the start. Imagine if you had to change the size of a std_logic_vector each
-time you wanted to tweak something.</p>
-<p>But there is a cost! First, this requires additional hardware that may never be used.
-Second, you may waste effort solving problems that don’t actually need to be solved
-because by the time you get to it the project requirements may have changed or
-the implementation strategy may have changed.</p>
-<p>Long story short, these sorts of decisions are hard and why Engineers get 💰</p>
-</div>
-<p>You need to include a clock divider module, and the remaining modules you
-need will come from your previous in-class exercises and labs
-(MooreElevatorController and sevenSegDecoder).</p>
+<section id="multi-elevator-controller">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Multi-Elevator Controller</a><a class="headerlink" href="#multi-elevator-controller" title="Link to this heading">#</a></h2>
+<p>Expand the basic functionality above.</p>
+<ol class="arabic simple">
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">elevator_fsm</span></code> to move between floors 1 to 9</p></li>
+<li><p>Change  this elevator to use <code class="docutils literal notranslate"><span class="pre">sw(14)</span></code> = <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> and <code class="docutils literal notranslate"><span class="pre">sw(15)</span></code> = <code class="docutils literal notranslate"><span class="pre">i_up_down</span></code></p></li>
+<li><p>Add a second elevator that is shown on display 0 (rightmost)</p>
 <ul class="simple">
-<li><p>Do not hand draw the schematic; rather, use a tool such as
-<a class="reference external" href="https://excalidraw.com/">Excalidraw</a>, <a class="reference external" href="https://app.diagrams.net/">draw.io</a>, or PowerPoint.</p></li>
-<li><p>The components inside your top level should remain black boxes.
-The expectation is you will update this schematic at the end of this lab to reflect your final design.</p></li>
-<li><p>Label <strong>all</strong> wires not connected to the top-level entity ports.
-These will be additional signals you will create in your VHDL code.</p></li>
-<li><p>Only turn on seven-segment display 2 (display 0 is the far right).
-Force the others OFF by disabling their anodes. Reference earlier
-activities regarding how to turn on/off displays.</p></li>
-<li><p>LED 15 must be tied to the clock signal that drives the FSM.</p></li>
-<li><p>You <em>may</em> use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.</p></li>
-<li><p>Just like in the last lab, the clock divider uses <em>generics</em> so that
-you can redefine characteristics at instantiation. For instance, you
-can redefine the number of times the clock divider divides a clock
-for each instance of the module. Be sure to specify the value for
-your clock divider to obtain 2 Hz. For an idea on how to accomplish
-this, look at the generic mapping of the clock divider in ICE4 and Lab 3.</p></li>
-<li><p>All component names should match the labels given to them
-(ex: elevator_controller should be labeled elevator_controller)</p></li>
-<li><p>All components should have their internal ports labeled so it is clear what a signal is being connected to.</p></li>
+<li><p>The second elevator FSM is reset with <code class="docutils literal notranslate"><span class="pre">btnD</span></code> or the Master Reset</p></li>
+<li><p>The second elevator <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> is <code class="docutils literal notranslate"><span class="pre">sw(0)</span></code></p></li>
+<li><p>The second elevator <code class="docutils literal notranslate"><span class="pre">i_up_down</span></code> is <code class="docutils literal notranslate"><span class="pre">sw(1)</span></code></p></li>
 </ul>
-</section>
-<section id="lab">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Lab</a><a class="headerlink" href="#lab" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Fork and clone <a class="reference external" href="https://github.com/USAFA-ECE/ece281-lab4">Lab 4</a>.</p></li>
-<li><p>Open the project by double clicking <code class="docutils literal notranslate"><span class="pre">elevator_fsm.xpr</span></code>.</p></li>
-</ul>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Much of this code can be extracted from previous projects.
-Rather than open another Vivado project (and the confusion that comes with it),
-we suggest you <strong>view your previous project’s GitHub repository in your web browser</strong>.</p>
+<p>You can use the <a class="reference external" href="https://portal.cs.umbc.edu/help/VHDL/attribute.html">predefined attributes</a>
+of enumerated types to make this easier.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T'VAL(X)</span></code>    is the value of discrete type T at integer position X.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T'SUCC(X)</span></code>   is the value of discrete type T that is the successor of X.</p></li>
+</ul>
+<p>So, for example, your basic elevator controller could have been implemented with:</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Use enumerated type predefined attributes</span>
+<span class="n">f_Q_next</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">s_floor2</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">i_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">else</span>
+<span class="w">            </span><span class="n">f_Q</span><span class="w">      </span><span class="k">when</span><span class="w"> </span><span class="n">i_stop</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">else</span>
+<span class="w">            </span><span class="n">sm_floor</span><span class="na">&#39;succ</span><span class="p">(</span><span class="n">f_Q</span><span class="p">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i_up_down</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">f_Q</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">s_floor4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="c1">-- go up if haven&#39;t hit top</span>
+<span class="w">            </span><span class="n">sm_floor</span><span class="na">&#39;pred</span><span class="p">(</span><span class="n">f_Q</span><span class="p">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i_up_down</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">f_Q</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">s_floor1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="c1">-- go down if haven&#39;t hit bottom</span>
+<span class="w">            </span><span class="n">f_Q</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Bottom out or top out means stay on that floor</span>
+</pre></div>
 </div>
-<section id="basic-functionality">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Basic Functionality</a><a class="headerlink" href="#basic-functionality" title="Link to this heading">#</a></h3>
-<p>First, directly implement the pre-lab scematic.</p>
-<section id="add-files">
-<h4>Add files<a class="headerlink" href="#add-files" title="Link to this heading">#</a></h4>
-<p>You will need to add VHDL files from your previous labs and ICEs to the project.
-Reference <a class="reference internal" href="../appendix/vivado.html#manual-add-to-vivado-project"><span class="std std-ref">Manually add files to Vivado Project</span></a></p>
-<p>You need to add any design sources that you plan to bring in as a module.
-You do not need to bring in the testbench for these modules, since
-we have tested them in previous labs. However, you can if you’d like.</p>
-</section>
-<section id="complete-top-level">
-<h4>Complete top level<a class="headerlink" href="#complete-top-level" title="Link to this heading">#</a></h4>
-<p>Using your Prelab drawing, complete the top-level module. Remember this basically involves:</p>
-<ol class="arabic simple">
-<li><p>Copying in component definitions</p></li>
-<li><p>Creating additional signal wires</p></li>
-<li><p>Instantiating your component instances and connecting all wires</p></li>
-</ol>
-<p>For the clock divider, what value for k_DIV do you need to produce a 2 Hz clock?</p>
-</section>
+</div>
 <section id="simulation">
-<h4>Simulation<a class="headerlink" href="#simulation" title="Link to this heading">#</a></h4>
-<p><em>A brief discussion on testing philosophy.</em></p>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Link to this heading">#</a></h3>
+<p>This section will be required for your lab report.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<h4 class="rubric" id="a-brief-discussion-on-testing-philosophy">A brief discussion on testing philosophy.</h4>
 <p>The type of testing you choose results in a tradeoff of <strong>complexity</strong> vs.
 how much <strong>confidence</strong> your test gives you that your design works.</p>
 <p>Each component within your top_level already has been simulated and tested.
@@ -629,147 +533,29 @@ quick to write and run. But unit tests don’t give you any information on how c
 will or won’t work together.</p>
 <p><strong>Integration testing</strong> tests if multiple units work together;
 for example, does the clock_divider indeed provide a slow clock to the FSM?
-While this type of testing is <em>awesome</em> for software design,
-it’s difficult to do in hardware design.
-Rather than use a VHDL simulation, we have done our integration testing
-in previous ICEs and Labs by actually squirting to hardware.
-This is more complex and takes more time than unit tests do, but in turn
-we get greater confidence that the system works.</p>
-<p>For Lab 4, the only thing that isn’t already tested is if the entire thing works!
-This type of testing is <strong>end-to-end</strong> testing. If the test passes then we know
-the entire system works. Unfortunately, end-to-end tests are also very complex to design and maintain.
-Because of this <strong>you do not need to write a simulation test bench for this lab.</strong></p>
+Often this is the sweet spot of complexity vs. confidence, but not always.</p>
+<p>Finally, <strong>end-to-end</strong> testing tests if everything works together.
+Unfortunately, end-to-end tests are also very complex to design and maintain.</p>
 <p>As engineers, part of our job is to determine what is the appropriate level of confidence
-and justify designing tests to meet that level. For this particular application,
-the cost of simulating an end-to-end test is too high, so we will debug on hardware (yikes!).</p>
-</section>
-<section id="deliver">
-<h4>Deliver<a class="headerlink" href="#deliver" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Don’t forget to uncomment lines in you XDC file.</p></li>
-<li><p>Generate bitstream and program device!</p></li>
-<li><p>Show it to your instructor</p></li>
-<li><p>Commit to git and <strong>tag</strong> (see below)</p></li>
-</ul>
-<blockquote>
-<div><p>Demonstrate your basic functionality to your instructor.</p>
-</div></blockquote>
-<p>After you have demonstrated basic functionality, you want to make sure you
-save that result in case you ever need to go back to it. To do this we will
-use <a class="reference external" href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag">git tag</a>.</p>
-<p>The normal flow:</p>
-<ol class="arabic simple">
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see the current state</p></li>
-<li><p>Add all hardware files with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">src/hdl/*.vhd</span></code></p></li>
-<li><p>Add your constraints file with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">src/hdl/*.xdc</span></code></p></li>
-<li><p>Add you <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file.</p></li>
-<li><p>Add any other files you need to commit (like your bitstream)</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again to make sure you are good.</p></li>
-<li><p>Commit and push!</p></li>
-<li><p>Make sure your github action looks good</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Because we did not make a testbench to run, the GitHub Action simply runs
-<a class="reference external" href="https://ghdl.github.io/ghdl/using/Synthesis.html#synthesis">GHDL Synthesis</a></p>
-<p>This is an experimental feature.</p>
+and justify designing tests to meet that level.</p>
 </div>
-<p>Now for the annotated tag. The <code class="docutils literal notranslate"><span class="pre">-a</span></code> tells git to expect a message.
-The message can be whatever you’d like, but please be sure to tag as <code class="docutils literal notranslate"><span class="pre">basicFunc</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>basicFunc<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Four floor controller&quot;</span>
-</pre></div>
-</div>
-<p>Now push the tag to GitHub</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--follow-tags
-</pre></div>
-</div>
-<p>You should now see the tag in your repository.</p>
-<figure class="align-default" id="id2">
-<img alt="../_images/lab4_git_tag.png" src="../_images/lab4_git_tag.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 39 </span><span class="caption-text">A tag saved in a GitHub repository</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>You can go back to this saved point at any time!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>basicFunc
-</pre></div>
-</div>
-<p>The point of a tag is that you cannot edit the branch.
-If for some reason you need to… use Google.</p>
-<blockquote>
-<div><p>Push your tagged basic functionality to GitHub.</p>
-</div></blockquote>
-</section>
-</section>
-<section id="advanced-functionality">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Advanced Functionality</a><a class="headerlink" href="#advanced-functionality" title="Link to this heading">#</a></h3>
-<p><em>After</em> demonstrating your basic functionality <em>and after</em> pushing your <code class="docutils literal notranslate"><span class="pre">basicFunc</span></code> tag to GitHub,
-it is time to implement advanced functionality!</p>
-<ul class="simple">
-<li><p>The elevator will travel from floor 1 to floor 16</p></li>
-<li><p>Use the two left-most digits of the display to show the floor in decimal</p></li>
-<li><p>All other functions will stay the same as in Basic Elevator Controller.</p></li>
-</ul>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Revisit ICE6 for using TDM to drive a seven segment display.</p>
-<p>Reference <a class="reference external" href="https://digilent.com/reference/basys3/refmanual#seven_segment_display">Basys3 Seven Segment Display</a></p>
-</div>
-<p><strong>Before</strong> you start to code, update your schematic. This schematic will be submitted in the Lab 4 Report.</p>
-<blockquote>
-<div><p>(Optional but recommended) Show your schematic to your instructor</p>
-</div></blockquote>
-<p><strong>After</strong> you have finished your schematic, make it work!</p>
-<blockquote>
-<div><p>Implement advanced functionality and demonstrate to instructor.</p>
-</div></blockquote>
-<p>Commit &amp; push your changes.</p>
-<blockquote>
-<div><p>Push changes for advanced functionality to GitHub.</p>
-</div></blockquote>
+<p>Each component in this lab already has a test bench (unit test) written for it - although <strong>elevator_fsm</strong> has evolved.
+You are welcome to copy these test benches into your project or to leave them out.</p>
+<p>What you need to make is a simulation that gives you reasonable confidence in your system as a whole.</p>
+<p>Create a file named <code class="docutils literal notranslate"><span class="pre">src/top_basys3_tb.vhd</span></code> and add it as a simulation source.
+Instantiate a <strong>top_basys3</strong> component and test <em>some</em> of the system’s behavior.
+However, <strong>do not</strong> feel the need to write <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements, unless you want to.
+A manual analysis is acceptable. If you do write assert statements, make sure you use the master reset to line up your timing.</p>
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<p>Below are the deliverables and point distributions for the Lab 3:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
-<th class="head"><p>Points</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Prelab</p></td>
-<td><p>20</p></td>
-</tr>
-<tr class="row-odd"><td><p>Basic Controller Demo</p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="row-even"><td><p>Advanced Demo</p></td>
-<td><p>30</p></td>
-</tr>
-<tr class="row-odd"><td><p>Passing GitHub Action</p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="row-even"><td><p>Written Report</p></td>
-<td><p>30</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The <strong>2 page max</strong> report will be very similar to Lab 3 Report requirements, with the following changes:</p>
-<p>Things to Exclude:</p>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<p><em>After</em> you have a wave form you are happy with, check your constraints file and generate a bit stream.</p>
 <ul class="simple">
-<li><p>Do not include RTL schematics or discussion</p></li>
-<li><p>There is no need to include a waveform</p></li>
-</ul>
-<p>Things to Add:</p>
-<ul class="simple">
-<li><p>Share your thoughts on modularity and abstraction</p></li>
-<li><p>Discuss how your schematic changed (and what stayed the same) between Basic and Advanced Controllers</p></li>
-<li><p>Discuss how you used TDM to get the Seven Segment Display functioning</p></li>
-<li><p>How did you handle binary to decimal conversion for two displays?</p></li>
-<li><p>What is the problem with the MASTER RESET?</p></li>
+<li><p><strong>Demo</strong> full functionality to instructor</p></li>
+<li><p>Git commit and push</p></li>
+<li><p><strong>Submit code</strong> to Gradescope</p></li>
+<li><p>Write lab report (template in teams)</p></li>
 </ul>
 </section>
 </section>
@@ -838,25 +624,10 @@ it is time to implement advanced functionality!</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorized-resources">Authorized Resources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-flow">Lab Flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-elevator-controller">Advanced Elevator Controller</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">Lab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functionality">Basic Functionality</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-files">Add files</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-top-level">Complete top level</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deliver">Deliver</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-functionality">Advanced Functionality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-elevator-controller">Multi-Elevator Controller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
