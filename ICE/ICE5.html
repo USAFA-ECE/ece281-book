@@ -404,7 +404,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-state">End State</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-specification">System Specification</a></li>
@@ -434,19 +433,18 @@ document.write(`
 <li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p>
 <ul>
 <li><p><a class="reference internal" href="#objectives" id="id2">Objectives</a></p></li>
-<li><p><a class="reference internal" href="#end-state" id="id3">End State</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#system-specification" id="id4">System Specification</a></p></li>
-<li><p><a class="reference internal" href="#setup-vivado" id="id5">Setup Vivado</a></p></li>
-<li><p><a class="reference internal" href="#elevator-controller-fsm-vhd" id="id6">elevator_controller_fsm.vhd</a></p>
+<li><p><a class="reference internal" href="#system-specification" id="id3">System Specification</a></p></li>
+<li><p><a class="reference internal" href="#setup-vivado" id="id4">Setup Vivado</a></p></li>
+<li><p><a class="reference internal" href="#elevator-controller-fsm-vhd" id="id5">elevator_controller_fsm.vhd</a></p>
 <ul>
-<li><p><a class="reference internal" href="#state-register-process" id="id7">State register process</a></p></li>
-<li><p><a class="reference internal" href="#enumerated-types" id="id8">Enumerated types</a></p></li>
+<li><p><a class="reference internal" href="#state-register-process" id="id6">State register process</a></p></li>
+<li><p><a class="reference internal" href="#enumerated-types" id="id7">Enumerated types</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#elevator-controller-fsm-tb-vhd" id="id9">elevator_controller_fsm_tb.vhd</a></p></li>
-<li><p><a class="reference internal" href="#deliverables" id="id10">Deliverables</a></p></li>
+<li><p><a class="reference internal" href="#elevator-controller-fsm-tb-vhd" id="id8">elevator_controller_fsm_tb.vhd</a></p></li>
+<li><p><a class="reference internal" href="#deliverables" id="id9">Deliverables</a></p></li>
 </ul>
 </nav>
 <section id="overview">
@@ -462,19 +460,9 @@ You will only simulate your design; you will not implement it in hardware during
 <li><p>Write a testbench for a synchronous system to fully simulate the state machine’s operation.</p></li>
 </ul>
 </section>
-<section id="end-state">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">End State</a><a class="headerlink" href="#end-state" title="Link to this heading">#</a></h3>
-<p>Provide a demo of your waveform to your instructor.</p>
-<p>You are not required to turn in ICE5; however,
-<strong>ensure the following files are pushed to your repository</strong>:</p>
-<ol class="arabic simple">
-<li><p>VHDL files</p></li>
-<li><p>Waveform and waveform configuration files</p></li>
-</ol>
-</section>
 </section>
 <section id="system-specification">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">System Specification</a><a class="headerlink" href="#system-specification" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">System Specification</a><a class="headerlink" href="#system-specification" title="Link to this heading">#</a></h2>
 <p>Your elevator controller will traverse four floors (numbered 1 to 4).</p>
 <ul class="simple">
 <li><p>Two external <strong>inputs</strong>, <code class="docutils literal notranslate"><span class="pre">i_up_down</span></code> and <code class="docutils literal notranslate"><span class="pre">i_stop</span></code>.</p></li>
@@ -511,7 +499,7 @@ goes to ‘1’.</p></li>
 </figure>
 </section>
 <section id="setup-vivado">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Fork and clone <a class="reference external" href="https://github.com/USAFA-ECE/ece281-ice5">ICE 5</a></p></li>
 <li><p>Open the folder</p></li>
@@ -522,10 +510,10 @@ goes to ‘1’.</p></li>
 </div></blockquote>
 </section>
 <section id="elevator-controller-fsm-vhd">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">elevator_controller_fsm.vhd</a><a class="headerlink" href="#elevator-controller-fsm-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">elevator_controller_fsm.vhd</a><a class="headerlink" href="#elevator-controller-fsm-vhd" title="Link to this heading">#</a></h2>
 <p>The entity description has been completed for you.</p>
 <section id="state-register-process">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">State register process</a><a class="headerlink" href="#state-register-process" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">State register process</a><a class="headerlink" href="#state-register-process" title="Link to this heading">#</a></h3>
 <p>Recall that <code class="docutils literal notranslate"><span class="pre">i_reset</span></code> should be synchronous! Reference Lesson 22 Note Taker.
 The reset state is <strong>Floor 2</strong>.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> effectively functions as an <em>enable</em>, we can handle it
@@ -536,7 +524,7 @@ Otherwise, we stay at our current state (floor).</p>
 <p>This allows us to greatly simplify our next state and output logic! See below.</p>
 </section>
 <section id="enumerated-types">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Enumerated types</a><a class="headerlink" href="#enumerated-types" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Enumerated types</a><a class="headerlink" href="#enumerated-types" title="Link to this heading">#</a></h3>
 <p>This template has already been loaded with <strong>enumerated types</strong> for your states.</p>
 <p>Enumerated types allow you to define your next state and output logic in terms of the state name instead of bits! This means you don’t have to create the equations
 for a chosen encoding type. Vivado gets to take care of that for you.</p>
@@ -589,7 +577,7 @@ This will save you <em>lots</em> of lines in the concurrent statements.</p>
 </section>
 </section>
 <section id="elevator-controller-fsm-tb-vhd">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">elevator_controller_fsm_tb.vhd</a><a class="headerlink" href="#elevator-controller-fsm-tb-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">elevator_controller_fsm_tb.vhd</a><a class="headerlink" href="#elevator-controller-fsm-tb-vhd" title="Link to this heading">#</a></h2>
 <p>We provide a component declarations, port maps, and simulated clock.
 All you need to do is complete the <code class="docutils literal notranslate"><span class="pre">test_process</span></code>.</p>
 <p>Make sure you hit:</p>
@@ -604,33 +592,15 @@ All you need to do is complete the <code class="docutils literal notranslate"><s
 <ol class="arabic simple">
 <li><p>Add the <code class="docutils literal notranslate"><span class="pre">f_Q</span></code> and <code class="docutils literal notranslate"><span class="pre">f_Q_next</span></code> signals to your waveform.</p></li>
 <li><p>Save the <code class="docutils literal notranslate"><span class="pre">.wcfg</span></code></p></li>
-<li><p>Add a screenshot to your README</p></li>
+<li><p>Add a screenshot to your repository</p></li>
 </ol>
-<blockquote>
-<div><p>Show the waveform to your instructor.</p>
-</div></blockquote>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<p>Double check that you have all VHD files and your Waveform pushed to GitHub.
-The GitHub Action should run your testbench and pass.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
-<th class="head"><p>Points</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Waveform Demo</p></td>
-<td><p>50</p></td>
-</tr>
-<tr class="row-odd"><td><p>Passing GitHub Action</p></td>
-<td><p>50</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Congratulations, you have completed In Class Exercise 5!</p>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Git commit and push</p></li>
+<li><p>Upload a screenshot of your waveform to Gradescope.</p></li>
+</ol>
 </section>
 </section>
 
@@ -700,7 +670,6 @@ The GitHub Action should run your testbench and pass.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-state">End State</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-specification">System Specification</a></li>

@@ -17,16 +17,6 @@ You will only simulate your design; you will not implement it in hardware during
 - Use VHDL to build a provided state diagram.
 - Write a testbench for a synchronous system to fully simulate the state machine's operation.
 
-### End State
-
-Provide a demo of your waveform to your instructor.
-
-You are not required to turn in ICE5; however,
-**ensure the following files are pushed to your repository**:
-
-1. VHDL files
-2. Waveform and waveform configuration files
-
 ## System Specification
 
 Your elevator controller will traverse four floors (numbered 1 to 4).
@@ -168,18 +158,9 @@ Make sure you hit:
 
 1. Add the `f_Q` and `f_Q_next` signals to your waveform.
 2. Save the `.wcfg`
-3. Add a screenshot to your README
-
-> Show the waveform to your instructor.
+3. Add a screenshot to your repository
 
 ## Deliverables
 
-Double check that you have all VHD files and your Waveform pushed to GitHub.
-The GitHub Action should run your testbench and pass.
-
-| Deliverable           | Points |
-|-----------------------|--------|
-| Waveform Demo         | 50     |
-| Passing GitHub Action | 50     |
-
-Congratulations, you have completed In Class Exercise 5!
+1. Git commit and push
+2. Upload a screenshot of your waveform to Gradescope.
