@@ -225,7 +225,7 @@ You do not need to change any signal colors, but expand your lights output busse
 so that the progression of lights can be easily seen.
 
 > Have an instructor verify your waveform.
-> Add a screenshot of the waveform to your README and save a copy for your Report.
+> Add a screenshot of the waveform to your repository.
 
 Markdown syntax for including an image in README.md
 
@@ -297,11 +297,7 @@ understand the appropriate value you need.
 ([Excalidraw](https://excalidraw.com/), [draw.io](https://app.diagrams.net/), PowerPoint, ect.
 -- **do not hand draw it**) showing your top-level entity and its internal architecture.
 
-**Include this drawing in your Report**. Once you have completed your top-level VHDL design,
-include a copy of its **RTL schematic in your Report**.
-Note any discrepancies from your original drawing.
-
-> Complete your top level diagram, architecture, and RTL schematic.
+> Complete your top level diagram.
 
 ## Implement in Hardware
 
