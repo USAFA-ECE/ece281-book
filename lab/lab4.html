@@ -403,7 +403,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-elevator-controller">Single-Elevator Controller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-elevator-controller">Multi-Elevator Controller</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
 </ul>
@@ -424,49 +424,35 @@ document.write(`
 <h1>Lab 4 - Moore Elevator Controller<a class="headerlink" href="#lab-4-moore-elevator-controller" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
-<li><p><a class="reference internal" href="#basic-elevator-controller" id="id3">Basic Elevator Controller</a></p></li>
-<li><p><a class="reference internal" href="#multi-elevator-controller" id="id4">Multi-Elevator Controller</a></p>
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#single-elevator-controller" id="id2">Single-Elevator Controller</a></p></li>
+<li><p><a class="reference internal" href="#multi-elevator-controller" id="id3">Multi-Elevator Controller</a></p>
 <ul>
-<li><p><a class="reference internal" href="#simulation" id="id5">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id4">Simulation</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#deliverables" id="id6">Deliverables</a></p></li>
+<li><p><a class="reference internal" href="#deliverables" id="id5">Deliverables</a></p></li>
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>This lab is all about <strong>designing complex systems!</strong></p>
 <p>To do this you will need to pull together building blocks from several previous labs and ICEs!</p>
 <p>Per usual, you must submit your own copy of VHDL but the lab report is done with a partner.</p>
-<p>The <strong>prelab</strong> is on Gradescope.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>There is no GitHub template for this lab. Instead, you must make a new GitHub repository.</p>
-<p>We recommend you create a new repository on <a class="reference external" href="http://github.com">github.com</a> (including “Add a README file”) and clone that repo.</p>
-<p>In Git Bash you can make a new directory with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>src/
-</pre></div>
-</div>
-<p>Then copy in necessary source files.
-Also copy in a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> from a previous lab or your repo will get super cluttered.</p>
-<p>Finally, <a class="reference external" href="https://usafa-ece.github.io/ece281-book/appendix/vivado.html#create-a-new-vivado-project">create a new Vivado project</a>
-in that folder, add your source files, and select the Basys3 board!</p>
-<p>It’s important to get this part correct or lots of things won’t work!</p>
-</div>
-<blockquote>
-<div><p>Git commit and push.</p>
-</div></blockquote>
+<p>The <strong>prelab</strong> is on Gradescope; it will require you to make a copy and clone
+<a class="github reference external" href="https://github.com/usafa-ece/ece281-lab4">usafa-ece/ece281-lab4</a></p>
+<p>For the <strong>lab</strong> you should <em>only</em> need to edit <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code>.
+All other VHDL and your constraints file should be ready-to-go from the template.</p>
 </section>
-<section id="basic-elevator-controller">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Basic Elevator Controller</a><a class="headerlink" href="#basic-elevator-controller" title="Link to this heading">#</a></h2>
+<section id="single-elevator-controller">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Single-Elevator Controller</a><a class="headerlink" href="#single-elevator-controller" title="Link to this heading">#</a></h2>
 <p>The first iteration of this lab is simply implementing
 <a class="reference external" href="https://usafa-ece.github.io/ece281-book/ICE/ICE5.html">ICE5</a>
-Basic Elevator Controller, as shown in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 38</span></a></p>
-<figure class="align-default" id="id1">
+Basic Elevator Controller, as shown in <a class="reference internal" href="#basic-elevator-controller"><span class="std std-numref">Fig. 38</span></a></p>
+<figure class="align-default" id="basic-elevator-controller">
 <img alt="../_images/lab4_basic_controller.png" src="../_images/lab4_basic_controller.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Basic Elevator Controller user interface</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Single-Elevator Controller user interface</span><a class="headerlink" href="#basic-elevator-controller" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -480,46 +466,34 @@ Basic Elevator Controller, as shown in <a class="reference internal" href="#id1"
 <li><p>LED 15 must be tied to the clock signal that drives the FSM.</p></li>
 <li><p>You <em>may</em> use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.</p></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You should checkout how the template implements the elevator FSM.
+It uses a fancy VHDL thing that is handy when scaling to a large number of sequential states!</p>
+</div>
 <blockquote>
 <div><p>Demo this to a classmate <em>prior</em> to starting on Multi-Elevator Controller.</p>
 <p>Git commit and push.</p>
 </div></blockquote>
 </section>
 <section id="multi-elevator-controller">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Multi-Elevator Controller</a><a class="headerlink" href="#multi-elevator-controller" title="Link to this heading">#</a></h2>
-<p>Expand the basic functionality above.</p>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Multi-Elevator Controller</a><a class="headerlink" href="#multi-elevator-controller" title="Link to this heading">#</a></h2>
+<p>Expand the basic functionality above.
+<strong>Before</strong> you start editing the VHDL you <strong>must update</strong> your prelab <strong>diagram!!!</strong>
+We highly recommend that you check this diagram with an instructor (or at least a classmate).</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>If you don’t update your diagram <strong>first</strong>, you are probably going to waste <em>Alot of time</em>.</p>
+<p><img alt="Alot of Time" src="https://i0.kym-cdn.com/photos/images/newsfeed/000/177/953/alot_of_times.jpg?1316886476" /></p>
+</div>
 <ol class="arabic simple">
-<li><p>Change <code class="docutils literal notranslate"><span class="pre">elevator_fsm</span></code> to move between floors 1 to 9</p></li>
-<li><p>Change  this elevator to use <code class="docutils literal notranslate"><span class="pre">sw(14)</span></code> = <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> and <code class="docutils literal notranslate"><span class="pre">sw(15)</span></code> = <code class="docutils literal notranslate"><span class="pre">i_up_down</span></code></p></li>
-<li><p>Add a second elevator that is shown on display 0 (rightmost)</p>
-<ul class="simple">
-<li><p>The second elevator FSM is reset with <code class="docutils literal notranslate"><span class="pre">btnD</span></code> or the Master Reset</p></li>
-<li><p>The second elevator <code class="docutils literal notranslate"><span class="pre">i_stop</span></code> is <code class="docutils literal notranslate"><span class="pre">sw(0)</span></code></p></li>
-<li><p>The second elevator <code class="docutils literal notranslate"><span class="pre">i_up_down</span></code> is <code class="docutils literal notranslate"><span class="pre">sw(1)</span></code></p></li>
-</ul>
-</li>
+<li><p>Add a second elevator FSM</p></li>
+<li><p>Connect this second elevator to use <code class="docutils literal notranslate"><span class="pre">sw(15)</span></code> for Up/Down and <code class="docutils literal notranslate"><span class="pre">sw(14)</span></code> for Stop.</p></li>
+<li><p>Connect it to the same reset signal as the first FSM.</p></li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can use the <a class="reference external" href="https://portal.cs.umbc.edu/help/VHDL/attribute.html">predefined attributes</a>
-of enumerated types to make this easier.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T'VAL(X)</span></code>    is the value of discrete type T at integer position X.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">T'SUCC(X)</span></code>   is the value of discrete type T that is the successor of X.</p></li>
-</ul>
-<p>So, for example, your basic elevator controller could have been implemented with:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Use enumerated type predefined attributes</span>
-<span class="n">f_Q_next</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">s_floor2</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">i_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">else</span>
-<span class="w">            </span><span class="n">f_Q</span><span class="w">      </span><span class="k">when</span><span class="w"> </span><span class="n">i_stop</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">else</span>
-<span class="w">            </span><span class="n">sm_floor</span><span class="na">&#39;succ</span><span class="p">(</span><span class="n">f_Q</span><span class="p">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i_up_down</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">f_Q</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">s_floor4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="c1">-- go up if haven&#39;t hit top</span>
-<span class="w">            </span><span class="n">sm_floor</span><span class="na">&#39;pred</span><span class="p">(</span><span class="n">f_Q</span><span class="p">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i_up_down</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">f_Q</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">s_floor1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="c1">-- go down if haven&#39;t hit bottom</span>
-<span class="w">            </span><span class="n">f_Q</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Bottom out or top out means stay on that floor</span>
-</pre></div>
-</div>
-</div>
 <section id="simulation">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Link to this heading">#</a></h3>
-<p>This section will be required for your lab report.</p>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Link to this heading">#</a></h3>
+<p>Simulation is not required for this Lab, and you can jump directly to hardware implementation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <h4 class="rubric" id="a-brief-discussion-on-testing-philosophy">A brief discussion on testing philosophy.</h4>
@@ -539,20 +513,13 @@ Unfortunately, end-to-end tests are also very complex to design and maintain.</p
 <p>As engineers, part of our job is to determine what is the appropriate level of confidence
 and justify designing tests to meet that level.</p>
 </div>
-<p>Each component in this lab already has a test bench (unit test) written for it - although <strong>elevator_fsm</strong> has evolved.
-You are welcome to copy these test benches into your project or to leave them out.</p>
-<p>What you need to make is a simulation that gives you reasonable confidence in your system as a whole.</p>
-<p>Create a file named <code class="docutils literal notranslate"><span class="pre">src/top_basys3_tb.vhd</span></code> and add it as a simulation source.
-Instantiate a <strong>top_basys3</strong> component and test <em>some</em> of the system’s behavior.
-However, <strong>do not</strong> feel the need to write <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements, unless you want to.
-A manual analysis is acceptable. If you do write assert statements, make sure you use the master reset to line up your timing.</p>
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<p><em>After</em> you have a wave form you are happy with, check your constraints file and generate a bit stream.</p>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Demo</strong> full functionality to instructor</p></li>
+<li><p><strong>Demo</strong> multi-elevator functionality by uploading a video to
+Teams &gt; ECE281 &gt; General &gt; Files &gt; Demos &gt; Lab 4 &gt; section. Name your video <code class="docutils literal notranslate"><span class="pre">lastname1_lastname2_demo.mp4</span></code></p></li>
 <li><p>Git commit and push</p></li>
 <li><p><strong>Submit code</strong> to Gradescope</p></li>
 <li><p>Write lab report (template in teams)</p></li>
@@ -625,7 +592,7 @@ A manual analysis is acceptable. If you do write assert statements, make sure yo
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-elevator-controller">Basic Elevator Controller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-elevator-controller">Single-Elevator Controller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-elevator-controller">Multi-Elevator Controller</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
 </ul>
