@@ -13,31 +13,13 @@ To do this you will need to pull together building blocks from several previous 
 
 Per usual, you must submit your own copy of VHDL but the lab report is done with a partner.
 
-The **prelab** is on Gradescope.
+The **prelab** is on Gradescope; it will require you to make a copy and clone
+https://github.com/usafa-ece/ece281-lab4
 
-```{important}
-There is no GitHub template for this lab. Instead, you must make a new GitHub repository.
+For the **lab** you should *only* need to edit `top_basys3.vhd`.
+All other VHDL and your constraints file should be ready-to-go from the template.
 
-We recommend you create a new repository on github.com (including "Add a README file") and clone that repo.
-
-In Git Bash you can make a new directory with
-
-~~~bash
-mkdir src/
-~~~
-
-Then copy in necessary source files.
-Also copy in a `.gitignore` from a previous lab or your repo will get super cluttered.
-
-Finally, [create a new Vivado project](https://usafa-ece.github.io/ece281-book/appendix/vivado.html#create-a-new-vivado-project)
-in that folder, add your source files, and select the Basys3 board!
-
-It's important to get this part correct or lots of things won't work!
-```
-
-> Git commit and push.
-
-## Basic Elevator Controller
+## Single-Elevator Controller
 
 The first iteration of this lab is simply implementing
 [ICE5](https://usafa-ece.github.io/ece281-book/ICE/ICE5.html)
@@ -47,7 +29,7 @@ Basic Elevator Controller, as shown in {numref}`basic-elevator-controller`
 ---
 name: basic-elevator-controller
 ---
-Basic Elevator Controller user interface
+Single-Elevator Controller user interface
 ```
 
 - The elevator’s current floor is shown on seven-segment display 2 (2nd from right)
@@ -60,6 +42,11 @@ Basic Elevator Controller user interface
 - LED 15 must be tied to the clock signal that drives the FSM.
 - You *may* use the other LEDs for debugging. For example, outputting the current floor in binary. Otherwise they should be grounded.
 
+```{tip}
+You should checkout how the template implements the elevator FSM.
+It uses a fancy VHDL thing that is handy when scaling to a large number of sequential states!
+```
+
 > Demo this to a classmate *prior* to starting on Multi-Elevator Controller.
 >
 > Git commit and push.
@@ -67,36 +54,22 @@ Basic Elevator Controller user interface
 ## Multi-Elevator Controller
 
 Expand the basic functionality above.
+**Before** you start editing the VHDL you **must update** your prelab **diagram!!!**
+We highly recommend that you check this diagram with an instructor (or at least a classmate).
 
-1. Change `elevator_fsm` to move between floors 1 to 9
-2. Change  this elevator to use `sw(14)` = `i_stop` and `sw(15)` = `i_up_down`
-3. Add a second elevator that is shown on display 0 (rightmost)
-    - The second elevator FSM is reset with `btnD` or the Master Reset
-    - The second elevator `i_stop` is `sw(0)`
-    - The second elevator `i_up_down` is `sw(1)`
+```{danger}
+If you don't update your diagram **first**, you are probably going to waste *Alot of time*.
 
-```{tip}
-You can use the [predefined attributes](https://portal.cs.umbc.edu/help/VHDL/attribute.html)
-of enumerated types to make this easier.
-
-- `T'VAL(X)`    is the value of discrete type T at integer position X.
-- `T'SUCC(X)`   is the value of discrete type T that is the successor of X.
-
-So, for example, your basic elevator controller could have been implemented with:
-
-~~~vhdl
--- Use enumerated type predefined attributes
-f_Q_next <= s_floor2 when i_reset = '1' else
-            f_Q      when i_stop  = '1' else
-            sm_floor'succ(f_Q) when ( i_up_down = '1' and f_Q /= s_floor4 ) else -- go up if haven't hit top
-            sm_floor'pred(f_Q) when ( i_up_down = '0' and f_Q /= s_floor1 ) else -- go down if haven't hit bottom
-            f_Q; -- Bottom out or top out means stay on that floor
-~~~
+![Alot of Time](https://i0.kym-cdn.com/photos/images/newsfeed/000/177/953/alot_of_times.jpg?1316886476)
 ```
+
+1. Add a second elevator FSM
+2. Connect this second elevator to use `sw(15)` for Up/Down and `sw(14)` for Stop.
+3. Connect it to the same reset signal as the first FSM.
 
 ### Simulation
 
-This section will be required for your lab report.
+Simulation is not required for this Lab, and you can jump directly to hardware implementation.
 
 ```{note}
 #### A brief discussion on testing philosophy.
@@ -122,21 +95,10 @@ As engineers, part of our job is to determine what is the appropriate level of c
 and justify designing tests to meet that level.
 ```
 
-Each component in this lab already has a test bench (unit test) written for it - although **elevator_fsm** has evolved.
-You are welcome to copy these test benches into your project or to leave them out.
-
-What you need to make is a simulation that gives you reasonable confidence in your system as a whole.
-
-Create a file named `src/top_basys3_tb.vhd` and add it as a simulation source.
-Instantiate a **top_basys3** component and test *some* of the system's behavior.
-However, **do not** feel the need to write `assert` statements, unless you want to.
-A manual analysis is acceptable. If you do write assert statements, make sure you use the master reset to line up your timing.
-
 ## Deliverables
 
-*After* you have a wave form you are happy with, check your constraints file and generate a bit stream.
-
-- **Demo** full functionality to instructor
+- **Demo** multi-elevator functionality by uploading a video to
+    Teams > ECE281 > General > Files > Demos > Lab 4 > section. Name your video `lastname1_lastname2_demo.mp4`
 - Git commit and push
 - **Submit code** to Gradescope
 - Write lab report (template in teams)
