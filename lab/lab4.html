@@ -456,7 +456,8 @@ Basic Elevator Controller, as shown in <a class="reference internal" href="#basi
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>The elevator’s current floor is shown on seven-segment display 2 (2nd from right)</p></li>
+<li><p>The elevator’s current floor is shown on seven-segment display 0 (rightmost… doesn’t match picture above)</p></li>
+<li><p>Disable unused displays</p></li>
 <li><p>The elevator takes 0.5 seconds to move between floors</p></li>
 <li><p>The display updates according to the output</p></li>
 <li><p>The elevator must not teleport… no skipping floors</p></li>
@@ -490,6 +491,8 @@ We highly recommend that you check this diagram with an instructor (or at least 
 <li><p>Add a second elevator FSM</p></li>
 <li><p>Connect this second elevator to use <code class="docutils literal notranslate"><span class="pre">sw(15)</span></code> for Up/Down and <code class="docutils literal notranslate"><span class="pre">sw(14)</span></code> for Stop.</p></li>
 <li><p>Connect it to the same reset signal as the first FSM.</p></li>
+<li><p>Display the floor on display 2 (second from left).</p></li>
+<li><p>Set unused displays (3 and 1) to <code class="docutils literal notranslate"><span class="pre">F</span></code> (for “floor”)</p></li>
 </ol>
 <section id="simulation">
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Link to this heading">#</a></h3>
