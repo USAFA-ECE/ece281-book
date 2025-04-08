@@ -32,7 +32,8 @@ name: basic-elevator-controller
 Single-Elevator Controller user interface
 ```
 
-- The elevator’s current floor is shown on seven-segment display 2 (2nd from right)
+- The elevator’s current floor is shown on seven-segment display 0 (rightmost... doesn't match picture above)
+- Disable unused displays
 - The elevator takes 0.5 seconds to move between floors
 - The display updates according to the output
 - The elevator must not teleport... no skipping floors
@@ -66,6 +67,8 @@ If you don't update your diagram **first**, you are probably going to waste *Alo
 1. Add a second elevator FSM
 2. Connect this second elevator to use `sw(15)` for Up/Down and `sw(14)` for Stop.
 3. Connect it to the same reset signal as the first FSM.
+4. Display the floor on display 2 (second from left).
+5. Set unused displays (3 and 1) to `F` (for "floor")
 
 ### Simulation
 
