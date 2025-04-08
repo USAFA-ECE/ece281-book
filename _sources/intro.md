@@ -44,8 +44,8 @@
 | 36     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              | HW 37        |                    |
 | 37     | Lab 5 - CPU                              |                          |              |                    |
 | 38     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
-| 39     | Instructor Prerogative Day               |                          |              |                    |
-| 40     | Review                                   |                          |              | ICE7, Lab 5 Report |
+| 39     | Instructor Prerogative Day               |                          |              |  Lab 5 Report      |
+| 40     | Review                                   |                          |              | ICE7               |
 
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
 
@@ -233,6 +233,23 @@ The following policies are outlined in USAFA FOI 537-3:
 
 - **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.
 - **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.
+
+### Final Exam Validation
+
+$$
+V = GRLB
+$$
+
+where
+
+- $V$ = validates the final exam
+- $G$ = grade is >= 75%
+- $R$ = has at least two Exemplary reports
+- $L$ = passed all lab code assignments
+- $B$ = returns their Basys3 board
+
+The Course Director will send **official** notification to everyone who validates the final NLT COB on T40.
+Unless you receive that email, you must take the final exam
 
 ## Course Website Table of Contents
 
