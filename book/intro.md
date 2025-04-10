@@ -36,8 +36,8 @@
 | 28     | ICE6 - Time Division Multiplexing        |                          |              | ICE5               |
 | 29     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
 | 30     | Lab 4 - Moore Elevator Controller        |                          | HW 30        |                    |
-| 31     | GR #2                                    |                          |              | Lab 4              |
-| 32     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab |                    |
+| 31     | GR #2                                    |                          |              |                    |
+| 32     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab | Lab 4              |
 | 33     | RV32I Memory Map and J-Type Instructions | 6.4.4-6.4.7              |              |                    |
 | 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | HW 35        |                    |
 | 35     | Lab 5 Prelab - CPU                       |                          |              | Lab 5 Prelab       |
@@ -184,7 +184,7 @@ All pas/fail assignments are submitted on Gradescope. Most of these assignments 
 sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
 engage with the material and help you build context for how it all fits together.
 
-To be considered a "pass" you must earn 75% of the available points for the assignment.
+To be considered a "pass" you must earn **60%** of the available points for the assignment.
 
 - **Homeworks (HW)** are designed both as a preview and review of content.
     There are *no deadline extensions* on HW (including SCA), with the exception of medical or family emergency.
@@ -243,7 +243,7 @@ $$
 where
 
 - $V$ = validates the final exam
-- $G$ = grade is >= 75%
+- $G$ = grade is >= 97%
 - $R$ = has at least two Exemplary reports
 - $L$ = passed all lab code assignments
 - $B$ = returns their Basys3 board
