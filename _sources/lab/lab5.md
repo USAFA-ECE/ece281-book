@@ -12,6 +12,20 @@ You will develop a basic CPU on the Basys3 board!
 Your CPU will use a three-bit OPCODE and two eight-bit operands entered with switches.
 It will cycle by pressing the center button, and show results on the seven-segment display.
 
+### Template Repository
+
+https://github.com/USAFA-ECE/ece281-lab5
+
+**Only** edit the following files:
+
+- `top_basys3.vhd`
+- `ALU.vhd`
+- `controller_fsm.vhd`
+
+```{tip}
+The template contains an **ALU_tb** that you can simulate your ALU against!
+```
+
 ### Authorized Resources
 
 Work in **teams of two** (including the prelab),
