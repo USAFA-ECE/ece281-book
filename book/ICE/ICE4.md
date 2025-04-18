@@ -403,7 +403,7 @@ In order to use the clock we also need to employ the
 This specifies the period of the waveform in nanoseconds; in our case, for a 100MHz clock we need a 10ns period.
 In part, this helps define propagation delays for static analysis.
 
-```xdc
+```tcl
 ## Clock signal
 set_property PACKAGE_PIN W5 [get_ports clk]
     set_property IOSTANDARD LVCMOS33 [get_ports clk]
