@@ -16,8 +16,12 @@ Per usual, you must submit your own copy of VHDL but the lab report is done with
 The **prelab** is on Gradescope; it will require you to make a copy and clone
 https://github.com/usafa-ece/ece281-lab4
 
-For the **lab** you should *only* need to edit `top_basys3.vhd`.
-All other VHDL and your constraints file should be ready-to-go from the template.
+```{important}
+*Only* need to edit `top_basys3.vhd`.
+All other VHDL files and your constraints file are ready-to-go; do not edit them.
+
+This is to emphasize modularity (and competing internal requirements 😉)
+```
 
 ## Single-Elevator Controller
 
