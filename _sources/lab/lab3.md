@@ -43,7 +43,7 @@ The 1965 Ford Thunderbird has three lights on each side that operate in
 sequence to indicate the direction of a turn. [Video](https://www.youtube.com/watch?v=Qwzxn9ZPW-M).
 
 {numref}`tailights` shows the tail
-lights and {numref}`tailight-flash` shows the flashing sequence for
+lights and {numref}`tailight_flash` shows the flashing sequence for
 (a) left turns and (b) right turns.
 
 ```{figure} img/lab3_tailights.png
@@ -55,7 +55,7 @@ Thunderbird taillights
 
 ```{figure} img/lab3_tailightsflash.png
 ---
-name: tailights-flash
+name: tailight_flash
 ---
 Flashing sequence for taillights. The lights shaded light
 blue are illuminated.
@@ -306,7 +306,7 @@ In order to use the clock we also need to employ the
 This specifies the period of the waveform in nanoseconds; in our case, for a 100MHz clock we need a 10ns period.
 In part, this helps define propagation delays for static analysis.
 
-```xdc
+```tcl
 ## Clock signal
 set_property PACKAGE_PIN W5 [get_ports clk]
     set_property IOSTANDARD LVCMOS33 [get_ports clk]

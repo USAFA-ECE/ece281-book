@@ -866,10 +866,10 @@ green to green.</p>
 <a class="reference external" href="https://docs.xilinx.com/r/2021.2-English/ug835-vivado-tcl-commands/create_clock">create_clock</a> function.
 This specifies the period of the waveform in nanoseconds; in our case, for a 100MHz clock we need a 10ns period.
 In part, this helps define propagation delays for static analysis.</p>
-<div class="highlight-xdc notranslate"><div class="highlight"><pre><span></span>## Clock signal
-set_property PACKAGE_PIN W5 [get_ports clk]
-    set_property IOSTANDARD LVCMOS33 [get_ports clk]
-    create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c">## Clock signal</span>
+<span class="nv">set_property</span><span class="w"> </span>PACKAGE_PIN<span class="w"> </span>W5<span class="w"> </span><span class="k">[</span><span class="nv">get_ports</span><span class="w"> </span>clk<span class="k">]</span>
+<span class="w">    </span><span class="nv">set_property</span><span class="w"> </span>IOSTANDARD<span class="w"> </span>LVCMOS33<span class="w"> </span><span class="k">[</span><span class="nv">get_ports</span><span class="w"> </span>clk<span class="k">]</span>
+<span class="w">    </span><span class="nv">create_clock</span><span class="w"> </span><span class="o">-</span>add<span class="w"> </span><span class="o">-</span>name<span class="w"> </span>sys_clk_pin<span class="w"> </span><span class="o">-</span>period<span class="w"> </span><span class="mf">10.00</span><span class="w"> </span><span class="o">-</span>waveform<span class="w"> </span><span class="k">{</span><span class="nv">0</span><span class="w"> </span><span class="mi">5</span><span class="k">}</span><span class="w"> </span><span class="k">[</span><span class="nv">get_ports</span><span class="w"> </span>clk<span class="k">]</span>
 </pre></div>
 </div>
 <p>The other pins are as normal.</p>

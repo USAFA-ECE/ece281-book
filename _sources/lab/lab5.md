@@ -42,11 +42,13 @@ This CPU only has two registers and the result of any operation is displayed
 - `led(3:0)` - the state of the FSM (as one hot)
 - `led(15:12)` - $NZCV$ ALU flags
 
-```{figure} img/lab5_top_level.png
+```{figure} img/lab5-top_basys3.excalidraw.svg
 ---
 name: lab5-top-level
 ---
-Partially complete Lab 5 top level - signals need to be labeled.
+Partially complete Lab 5 top level. Made with [Excalidraw](https://excalidraw.com/#json=IVv1cUOKE_gaUh9OLeXCj,M21pQ4sn4Fk6NO4FFR_fWQ)
+
+Blue boxes are implemented directly in **top_basys3**; Black boxes are components; Red items are TODO; Signals should be labeled.
 ```
 
 ### Usage
