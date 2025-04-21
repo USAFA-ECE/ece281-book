@@ -61,7 +61,8 @@ This CPU only has two registers and the result of any operation is displayed
 ---
 name: lab5-top-level
 ---
-Partially complete Lab 5 top level. Made with [Excalidraw](https://excalidraw.com/#json=B_vPO6P4H5nZxbc330lK3,E0rCX_P9ICYFPfeRwUj7_w)
+Partially complete Lab 5 top level.
+*Made with [Excalidraw](https://excalidraw.com/); you can open this `.svg` file in Excalidraw to make edits, if you'd like.*
 
 Blue boxes are implemented directly in **top_basys3**; Black boxes are components; Red items are TODO; Signals should be labeled.
 ```
@@ -71,12 +72,13 @@ Blue boxes are implemented directly in **top_basys3**; Black boxes are component
 The CPU takes 8-bit two's complement operands on `sw(7:0)` and a 3-bit operand on `sw(2:0)`.
 All values are displayed in decimal on the seven-segment display - including a minus sign for negative values.
 
-**btnC** steps through the following states:
+**btnC** steps through the following **four** states:
 
-1. Store the 1st operand in a register and display it.
-2. Store the 2nd operand in a register and display it.
-3. Display the result of the operation on the two operands.
-4. Clear the seven-segment display
+1. Starts with a clear display (also the **reset** state)
+2. Store the 1st operand in a register and display it.
+3. Store the 2nd operand in a register and display it.
+4. Display the result of the operation on the two operands.
+5. Return to the initial state.
 
 ## Deliverables
 
