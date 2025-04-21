@@ -37,15 +37,15 @@
 | 29     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
 | 30     | Lab 4 - Moore Elevator Controller        |                          | HW 30        |                    |
 | 31     | GR #2                                    |                          |              |                    |
-| 32     | RV32I Architecture                       | 6.3.7-6.3.8,  6.5, 6.6.1 | Lab 5 Prelab | Lab 4              |
-| 33     | RV32I Memory Map and J-Type Instructions | 6.4.4-6.4.7              |              |                    |
-| 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | HW 35        |                    |
-| 35     | Lab 5 Prelab - CPU                       |                          |              | Lab 5 Prelab       |
-| 36     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              | HW 37        |                    |
-| 37     | Lab 5 - CPU                              |                          |              |                    |
-| 38     | ICE7 - RV32I                             |                          |              | Lab 5 Demo         |
-| 39     | Instructor Prerogative Day               |                          |              |  Lab 5 Report      |
-| 40     | Review                                   |                          |              | ICE7               |
+| 32     | RV32I Memory Map                         | 6.3.7-6.3.8,  6.5, 6.6.1 |              | Lab 4              |
+| 33     | RV32I Function Calls                     | 6.4.4-6.4.7              |              |                    |
+| 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | Lab 5 Prelab |                    |
+| 35     | Lab 5 Prelab - CPU                       |                          |              |                    |
+| 36     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              |              | Lab 5 Prelab       |
+| 37     | Lab 5 - CPU                              |                          | HW 37        |                    |
+| 38     | Lab 5 - CPU                              |                          |              | Lab 5 Demo         |
+| 39     | ICE7 - RV32I                             |                          |              | ICE7               |
+| 40     | Review                                   |                          |              |                    |
 
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
 
