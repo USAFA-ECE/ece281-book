@@ -492,7 +492,8 @@ This CPU only has two registers and the result of any operation is displayed
 <li><p>Implement the ALU shown in <em>Digital Design and Computer Architecture, RISC-V Ed.</em>, <strong>Figure 5.17</strong>.</p></li>
 <li><p><strong>btnU</strong> should serve as the master reset for all components with a synchronous reset;</p></li>
 <li><p><strong>btnL</strong> should be the asynchronous reset for the clock divider.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">led(3:0)</span></code> - the state of the FSM (as one hot)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">o_cycle</span></code> (the FSM output) is one-hot!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">led(3:0)</span></code> - the state of the FSM (as one-hot)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">led(15:12)</span></code> - <span class="math notranslate nohighlight">\(NZCV\)</span> ALU flags</p></li>
 </ul>
 <figure class="align-default" id="lab5-top-level">
