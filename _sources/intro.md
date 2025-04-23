@@ -42,8 +42,8 @@
 | 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | Lab 5 Prelab |                    |
 | 35     | Lab 5 Prelab - CPU                       |                          |              |                    |
 | 36     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              |              | Lab 5 Prelab       |
-| 37     | Lab 5 - CPU                              |                          | HW 37        |                    |
-| 38     | Lab 5 - CPU                              |                          |              | Lab 5 Demo         |
+| 37     | Lab 5 - CPU                              |                          |              |                    |
+| 38     | Lab 5 - CPU                              |                          | HW 38        | Lab 5 Demo         |
 | 39     | ICE7 - RV32I                             |                          |              | ICE7               |
 | 40     | Review                                   |                          |              |                    |
 
