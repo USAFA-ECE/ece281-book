@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BCE 0: Get started with Git &#8212; ECE 281</title>
+    <title>ICE 7: RISC-V Coding &#8212; ECE 281</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ICE/ICE0';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ICE/ICE7';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ICE 1: Breadboard Half Adder" href="ICE1.html" />
-    <link rel="prev" title="ECE 281: Digital Design and Computer Architecture" href="../intro.html" />
+    <link rel="next" title="Lab 1 - ThirtyOneDayMonth" href="../lab/lab1.html" />
+    <link rel="prev" title="ICE 6: Time Division Multiplexor" href="ICE6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,14 +183,14 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">BCE 0: Get started with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE0.html">BCE 0: Get started with Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE1.html">ICE 1: Breadboard Half Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE2.html">ICE 2: VHDL Half-Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE3.html">ICE 3: Ripple-Carry Adder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE7.html">ICE 7: RISC-V Coding</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 7: RISC-V Coding</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
@@ -279,7 +279,7 @@
       
       
       
-      <li><a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2FICE/ICE0.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/usafa-ece/ece281-book/issues/new?title=Issue%20on%20page%20%2FICE/ICE7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +309,7 @@
       
       
       
-      <li><a href="../_sources/ICE/ICE0.md" target="_blank"
+      <li><a href="../_sources/ICE/ICE7.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,9 +380,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -393,29 +391,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BCE 0: Get started with Git</h1>
+    <h1>ICE 7: RISC-V Coding</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-github-account">Create GitHub account</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional">Optional</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-git">Install Git</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-git">Configure git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-an-ide-optional">Install an IDE (optional)</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -425,106 +405,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bce-0-get-started-with-git">
-<h1>BCE 0: Get started with Git<a class="headerlink" href="#bce-0-get-started-with-git" title="Link to this heading">#</a></h1>
-<p>This is a “Before Class Exercise.” You can wait to complete it with one of the labs or In Class Exercises, but doing this early will save you time later.</p>
-<nav class="contents local" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
-<li><p><a class="reference internal" href="#create-github-account" id="id2">Create GitHub account</a></p>
-<ul>
-<li><p><a class="reference internal" href="#optional" id="id3">Optional</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#git" id="id4">Git</a></p>
-<ul>
-<li><p><a class="reference internal" href="#install-git" id="id5">Install Git</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#configure-git" id="id6">Configure git</a></p></li>
-<li><p><a class="reference internal" href="#install-an-ide-optional" id="id7">Install an IDE (optional)</a></p></li>
-</ul>
-</nav>
-<p>Using proper version control techniques is an expectation for this course, and you should expect yourself to use it for <em>all</em> of your courses that involve writing code.</p>
-<p>Also see <a class="reference internal" href="../appendix/github.html"><span class="std std-doc">GitHub real fast</span></a> in the appendix.</p>
-<section id="overview">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>This exercise will get you ready to use Git for version control of your projects. It will prepare you to use GitHub to remotely store your code.</p>
-<p>GitHub is the most popular site for hosting open source code. It also allows for hosting private code. The fact that we are using it is <em>not</em> an endorsement by USAFA or USG.</p>
-<p>Note that there are other options. For example:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://about.gitlab.com/">GitLab</a> has fantastic integrated DevOps and project management. It is often the best choice for self-hosted options.</p></li>
-<li><p><a class="reference external" href="https://bitbucket.org/">Bitbucket</a> integrates well with the rest of the Atlassian suite.</p></li>
-</ul>
-<p>Git is software that allows for distributed version control between multiple collaborators.</p>
-</section>
-<section id="create-github-account">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Create GitHub account</a><a class="headerlink" href="#create-github-account" title="Link to this heading">#</a></h2>
-<p>Use a <strong>personal email</strong> to create account on <a class="reference external" href="https://github.com/">GitHub</a>. The account name should be professional, can include part or all of your real name, but can also be a screen name. Keep in mind it will be public and GitHub functions as sort of a social media for developers.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-7-risc-v-coding">
+<h1>ICE 7: RISC-V Coding<a class="headerlink" href="#ice-7-risc-v-coding" title="Link to this heading">#</a></h1>
+<p>Time to get your hands dirty with RISC-V Assembly Programming!</p>
 <ol class="arabic simple">
-<li><p>Check the box “Keep my email address private” and copy the generated <code class="docutils literal notranslate"><span class="pre">&#64;users.noreply.github.com</span></code> email for later use.</p></li>
-<li><p>Check the box “Block command line pushes that expose my email.”</p></li>
+<li><p>Clone <a class="github reference external" href="https://github.com/USAFA-ECE/ece281-ice7">USAFA-ECE/ece281-ice7</a>.
+You don’t have to make your own copy because there is no submission for this ICE.</p></li>
+<li><p>Open it in <strong>VS Code</strong> and install the recommended extensions</p></li>
+<li><p>Complete the missing assembly, based on the comments</p></li>
+<li><p>Go to <strong>Run</strong> &gt; <strong>Start Debugging</strong></p></li>
+<li><p>Open the LED panel if it didn’t automatically</p></li>
+<li><p>View the registers</p></li>
+<li><p>View the memory</p></li>
+<li><p>Step through the program, watch the registers change and the LEDs illuminate.</p></li>
+<li><p>Smile!</p></li>
 </ol>
-<section id="optional">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Optional</a><a class="headerlink" href="#optional" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://github.com/settings/emails">email settings</a> and <em>add and verify</em> your <strong>USAFA email</strong>.</p></li>
-<li><p><a class="reference external" href="https://education.github.com/benefits">Get student benefits</a> for your account.</p></li>
-</ul>
-</section>
-</section>
-<section id="git">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Git</a><a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
-<p>Git is software that allows for distributed version control between multiple collaborators. It was created to manage development of the Linux kernel, but is now the most widely-used version control system in the world.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are going to use software to do anything useful for the Air Force or Space Force, you need to know how to use Git.</p>
-</div>
-<p><a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-flow">Git Flow</a> with large teams can be a little overwhelming at first, but for this course you need to understand that:</p>
-<p><img alt="" src="https://champlintechnologiesllc.com/wp-content/uploads/2017/07/git-basic_600x492.jpg" /></p>
-<ol class="arabic simple">
-<li><p>You have a git repository that your code lives in.</p></li>
-<li><p>You make local changes to your code.</p></li>
-<li><p>You <em>stage</em> those changes to be committed.</p></li>
-<li><p>You <em>commit</em> those changes.</p></li>
-<li><p>You <em>push</em> those changes to the remote repository (in our case, <a class="reference external" href="http://GitHub.com">GitHub.com</a>).</p></li>
-<li><p>Others can view those changes on the remote repository.</p></li>
-<li><p>Directly pushing works fine if you are the only collaborator, but as soon as there is a second person contributing to the same code, you must use <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">branches</a> to avoid conflicts.</p></li>
-</ol>
-<section id="install-git">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Install Git</a><a class="headerlink" href="#install-git" title="Link to this heading">#</a></h3>
-<p>If you haven’t already for CS 210 or some other class, install <a class="reference external" href="https://gitforwindows.org/">Git Bash for Windows</a>.</p>
-<p>Default options usually work pretty well, but:</p>
-<ul class="simple">
-<li><p>Select Components: use defaults, but make sure “Add a Git Bash Profile to Windows Terminal” is checked</p></li>
-<li><p>Choosing the default editor: Use Vim if you like computers and cyber, use Nano otherwise.</p></li>
-<li><p>Initial branch names: the tide is going to use “main” instead of “master”, but up to you.</p></li>
-<li><p>Git from the command line and also from 3rd-party software</p></li>
-<li><p>Use external OpenSSH, since it comes with PowerShell</p></li>
-<li><p>Use native Windows Secure Channel library</p></li>
-<li><p>Checkout Windows-style, commit Unix-style line endings</p></li>
-<li><p>Git Crededntial Manager</p></li>
-</ul>
-</section>
-</section>
-<section id="configure-git">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Configure git</a><a class="headerlink" href="#configure-git" title="Link to this heading">#</a></h2>
-<p>Open up Git Bash. It basically pretends to be a stripped-down Linux.</p>
-<p>We have to tell our local git environment who we are. Use your GitHub username and the noreply email you found when you setup GitHub</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="p">&lt;</span><span class="n">github</span> <span class="n">user</span> <span class="n">name</span><span class="p">&gt;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="s2">&quot;&lt;github noreply email&gt;@users.noreply.github.com&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="install-an-ide-optional">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Install an IDE (optional)</a><a class="headerlink" href="#install-an-ide-optional" title="Link to this heading">#</a></h2>
-<p>An integrated development environment (IDE) is software for building applications that combines common developer tools into a single graphical user interface (GUI).</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://notepad-plus-plus.org/">Notepad++</a> is simple and allows for opening a wide variety of file types.</p></li>
-<li><p><a class="reference external" href="https://apps.microsoft.com/store/detail/visual-studio-code/XP9KHM4BK9FZ7Q">VS Code</a> is an incredible IDE and can be installed from the microsoft store or <a class="reference external" href="https://code.visualstudio.com/Download">downloaded</a>.</p></li>
-</ul>
-<p>You can pick either one, or both.</p>
-</section>
+<p><img alt="RISC-V Logo" src="https://riscv.org/wp-content/uploads/2023/07/RISC-V_Horizontal_Color.svg" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -558,20 +454,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="ICE6.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ECE 281: Digital Design and Computer Architecture</p>
+        <p class="prev-next-title">ICE 6: Time Division Multiplexor</p>
       </div>
     </a>
     <a class="right-next"
-       href="ICE1.html"
+       href="../lab/lab1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ICE 1: Breadboard Half Adder</p>
+        <p class="prev-next-title">Lab 1 - ThirtyOneDayMonth</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -581,31 +477,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-github-account">Create GitHub account</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional">Optional</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-git">Install Git</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-git">Configure git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-an-ide-optional">Install an IDE (optional)</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
