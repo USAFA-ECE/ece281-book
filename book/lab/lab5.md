@@ -51,6 +51,14 @@ This CPU only has two registers and the result of any operation is displayed
 ## Implementation Details
 
 - Implement the ALU shown in *Digital Design and Computer Architecture, RISC-V Ed.*, **Figure 5.17**.
+
+| ALU Control | Description |
+|---|---|
+| 000 | Add |
+| 001 | Subtract |
+| 010 | And |
+| 011 | Or |
+
 - **btnU** should serve as the master reset for all components with a synchronous reset;
 - **btnL** should be the asynchronous reset for the clock divider.
 - `o_cycle` (the FSM output) is one-hot!
