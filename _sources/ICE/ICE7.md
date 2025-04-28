@@ -1,4 +1,4 @@
-# ICE 7: RISC-V Coding
+# ICE 7: RISC-V LED Demo
 
 Time to get your hands dirty with RISC-V Assembly Programming!
 

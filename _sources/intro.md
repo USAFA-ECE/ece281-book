@@ -198,28 +198,32 @@ For example, if you complete 6/7 ICEs, you will earn $6/7=85\%$ for ICEs.
 
 ### Lab Reports
 
-Each lab has a report, submitted on Gradescope, that will be assessed using [The EMRN Rubric](https://rtalbert.org/emrn/)
+Each lab has a report (except Lab 5), submitted on Gradescope, that will be assessed using [The EMRN Rubric](https://rtalbert.org/emrn/)
 
 ![EMRN Rubric](https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png)
 
-For lab reports #2, #3, and #4, you may resubmit once per report for re-evaluation,
+For lab reports #1, #2, and #3, you may resubmit once per report for re-evaluation,
 provided you earned an **M** or **R** on your original submission.
 To prevent grading backlogs, the resubmission must take place **within ten days** of the lab report being returned.
 
-Points for lab reports are awarded categorically, based on the minimum requirements for a given tier.
-This scheme is designed to encourage revision and reward consistency.
+**The total lab report score starts at 100:**
 
-|     Score    |     # of E reports    |     # of M reports    |     # of R or N reports    |
-|--------------|-----------------------|-----------------------|----------------------------|
-|       100    |                  2    |                  3    |                       0    |
-|        90    |                  1    |                  4    |                       0    |
-|        80    |                  0    |                  5    |                       0    |
-|        70    |                  0    |                  4    |                       1    |
-|        50    |                  0    |                  3    |                       2    |
+- Deduct 0% for each E
+- Dduct 5% for each M
+- Deduct 15% for each R
+- Deduct 25% for each N
+- Deduct 30% for each missing submissoin
+- Add up to 2% for Lab 4 report
 
-**Example:** A cadet earns an M on her first report.
-She then earns an R on her second report and resubmits, earning an E.
-Her next 3 reports earn an M. Her ultimate grade for Lab Reports will be 90%
+**Example:**
+
+- A cadet earns an M on her first report.
+- She then earns an R on her second report and resubmits, earning an E.
+- She earns an M on her third report
+- She earned a 100% on her fourth report
+
+Her original grade was $100-(5+15+5)+2=87$.
+But, after the Lab 2 Revisions, the ultimate grade is $100-(5+0+5)+2=92$.
 
 ### Exams
 
@@ -244,7 +248,7 @@ where
 
 - $V$ = validates the final exam
 - $G$ = grade is >= 97%
-- $R$ = has at least two Exemplary reports
+- $R$ = has at least one Exemplary reports
 - $L$ = passed all lab code assignments
 - $B$ = returns their Basys3 board
 

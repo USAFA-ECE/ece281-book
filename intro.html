@@ -201,7 +201,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE7.html">ICE 7: RISC-V Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE7.html">ICE 7: RISC-V LED Demo</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
@@ -872,53 +872,29 @@ For example, if you complete 6/7 ICEs, you will earn <span class="math notransla
 </section>
 <section id="lab-reports">
 <h3>Lab Reports<a class="headerlink" href="#lab-reports" title="Link to this heading">#</a></h3>
-<p>Each lab has a report, submitted on Gradescope, that will be assessed using <a class="reference external" href="https://rtalbert.org/emrn/">The EMRN Rubric</a></p>
+<p>Each lab has a report (except Lab 5), submitted on Gradescope, that will be assessed using <a class="reference external" href="https://rtalbert.org/emrn/">The EMRN Rubric</a></p>
 <p><img alt="EMRN Rubric" src="https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png" /></p>
-<p>For lab reports #2, #3, and #4, you may resubmit once per report for re-evaluation,
+<p>For lab reports #1, #2, and #3, you may resubmit once per report for re-evaluation,
 provided you earned an <strong>M</strong> or <strong>R</strong> on your original submission.
 To prevent grading backlogs, the resubmission must take place <strong>within ten days</strong> of the lab report being returned.</p>
-<p>Points for lab reports are awarded categorically, based on the minimum requirements for a given tier.
-This scheme is designed to encourage revision and reward consistency.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Score</p></th>
-<th class="head"><p># of E reports</p></th>
-<th class="head"><p># of M reports</p></th>
-<th class="head"><p># of R or N reports</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>100</p></td>
-<td><p>2</p></td>
-<td><p>3</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>90</p></td>
-<td><p>1</p></td>
-<td><p>4</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>80</p></td>
-<td><p>0</p></td>
-<td><p>5</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>70</p></td>
-<td><p>0</p></td>
-<td><p>4</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>50</p></td>
-<td><p>0</p></td>
-<td><p>3</p></td>
-<td><p>2</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Example:</strong> A cadet earns an M on her first report.
-She then earns an R on her second report and resubmits, earning an E.
-Her next 3 reports earn an M. Her ultimate grade for Lab Reports will be 90%</p>
+<p><strong>The total lab report score starts at 100:</strong></p>
+<ul class="simple">
+<li><p>Deduct 0% for each E</p></li>
+<li><p>Dduct 5% for each M</p></li>
+<li><p>Deduct 15% for each R</p></li>
+<li><p>Deduct 25% for each N</p></li>
+<li><p>Deduct 30% for each missing submissoin</p></li>
+<li><p>Add up to 2% for Lab 4 report</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>A cadet earns an M on her first report.</p></li>
+<li><p>She then earns an R on her second report and resubmits, earning an E.</p></li>
+<li><p>She earns an M on her third report</p></li>
+<li><p>She earned a 100% on her fourth report</p></li>
+</ul>
+<p>Her original grade was <span class="math notranslate nohighlight">\(100-(5+15+5)+2=87\)</span>.
+But, after the Lab 2 Revisions, the ultimate grade is <span class="math notranslate nohighlight">\(100-(5+0+5)+2=92\)</span>.</p>
 </section>
 <section id="exams">
 <h3>Exams<a class="headerlink" href="#exams" title="Link to this heading">#</a></h3>
@@ -944,7 +920,7 @@ V = GRLB
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(V\)</span> = validates the final exam</p></li>
 <li><p><span class="math notranslate nohighlight">\(G\)</span> = grade is &gt;= 97%</p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> = has at least two Exemplary reports</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> = has at least one Exemplary reports</p></li>
 <li><p><span class="math notranslate nohighlight">\(L\)</span> = passed all lab code assignments</p></li>
 <li><p><span class="math notranslate nohighlight">\(B\)</span> = returns their Basys3 board</p></li>
 </ul>
@@ -967,7 +943,7 @@ for error corrections!</p>
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ICE/ICE7.html">ICE 7: RISC-V Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ICE/ICE7.html">ICE 7: RISC-V LED Demo</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
