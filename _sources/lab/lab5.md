@@ -12,6 +12,12 @@ You will develop a basic CPU on the Basys3 board!
 Your CPU will use a three-bit OPCODE and two eight-bit operands entered with switches.
 It will cycle by pressing the center button, and show results on the seven-segment display.
 
+### Demo
+
+Here is a quick demo showing how your basic CPU should function.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iANrLxhIU1Q?si=e83gbCnH4-JZdm3P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Template Repository
 
 https://github.com/USAFA-ECE/ece281-lab5
