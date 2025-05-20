@@ -83,3 +83,21 @@ You have to rebuild every time you make changes in order to preview them.
 Note that `_build/` is in the `.gitignore` file because the actions build what is actually deployed.
 
 Once satisfied, push to `main` and github actions will auto-deploy!
+
+## Exporting to PDF
+
+**Note:** [Build a PDF](https://jupyterbook.org/en/stable/advanced/pdf.html) is in active development
+and may have bugs or breaking changes. Consult docs.
+
+Install dependencies:
+
+```bash
+pip install playwright
+playwright install --with-deps chromium
+```
+
+Build:
+
+```bash
+jupyter-book build book/ --builder pdfhtml
+```
