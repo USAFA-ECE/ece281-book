@@ -151,14 +151,14 @@ pie title Prog Grade Weighting
 
 ```{mermaid}
 pie title Final Grade Weighting
-    "GR 1" : 5
-    "GR 2" : 10
+    "GR 1" : 15
+    "GR 2" : 15
     "HW" : 10
     "ICE" : 10
     "Prelab" : 10
     "Lab Code"  : 10
     "Lab Reports" : 20
-    "Final": 25
+    "Final": 10
 ```
 
 Grade breakdown follows the standard scale.
