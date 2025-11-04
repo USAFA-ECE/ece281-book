@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Lab 1 - ThirtyOneDayMonth &#8212; ECE 281</title>
   
@@ -28,40 +29,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/print.css?v=74670715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab1';</script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lab 2 - Seven Segment Display Decoder" href="lab2.html" />
@@ -162,18 +167,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -239,9 +233,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -382,9 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -462,7 +456,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lab-1-thirtyonedaymonth">
-<h1>Lab 1 - ThirtyOneDayMonth<a class="headerlink" href="#lab-1-thirtyonedaymonth" title="Link to this heading">#</a></h1>
+<h1>Lab 1 - ThirtyOneDayMonth<a class="headerlink" href="#lab-1-thirtyonedaymonth" title="Permalink to this heading">#</a></h1>
 <p>Due: Lesson 11</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
@@ -496,7 +490,7 @@ document.write(`
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>In this lab you will design a circuit that takes a month as a 4-bit
 binary input (e.g., January is equivalent to <code class="docutils literal notranslate"><span class="pre">0001</span></code> and December is
 equivalent to <code class="docutils literal notranslate"><span class="pre">1100</span></code>). For each month that has 31 days, you should turn on
@@ -507,20 +501,20 @@ and then <em>implement</em> one design in hardware.</p>
 <p>This circuit will <strong>first</strong> be implemented in hardware using integrated
 circuits and <strong>then</strong> implemented in hardware using VHDL.</p>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Design and implement a circuit in hardware using integrated circuits.</p></li>
 <li><p>Design and implement a circuit in hardware using VHDL.</p></li>
 </ol>
 </section>
 <section id="supplies">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Basys3 board</p></li>
 </ul>
 </section>
 <section id="collaboration">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Each student must submit his or her own work to Gradescope.</p></li>
 <li><p>You should collaborate during the pre-lab to figure out how to do the schematics.</p></li>
@@ -531,7 +525,7 @@ circuits and <strong>then</strong> implemented in hardware using VHDL.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>In order to represent 12 months in unsigned binary, we know we need four bits:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -547,7 +541,7 @@ ceiling(log_2(12)) = 4
 </ul>
 </section>
 <section id="pre-lab">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Permalink to this heading">#</a></h2>
 <p>The pre-lab will be submitted to Gradescope <em>prior</em> to starting the lab.</p>
 <ol class="arabic simple">
 <li><p>Go to <a class="github reference external" href="https://github.com/USAFA-ECE/ece281-lab1">USAFA-ECE/ece281-lab1</a></p></li>
@@ -566,7 +560,7 @@ git<span class="w"> </span>remote<span class="w"> </span>-v
 <p>Your instructor will not be able to see any other folders in Gradescope.</p>
 </div>
 <section id="boolean-equations">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Boolean Equations</a><a class="headerlink" href="#boolean-equations" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Boolean Equations</a><a class="headerlink" href="#boolean-equations" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These instructions leave off file extensions.
@@ -574,7 +568,7 @@ You can use whatever you want, as long as Gradescope supports it,
 but <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> or <code class="docutils literal notranslate"><span class="pre">.png</span></code> is probably the best choice.</p>
 </div>
 <section id="truth-table">
-<h4>Truth Table<a class="headerlink" href="#truth-table" title="Link to this heading">#</a></h4>
+<h4>Truth Table<a class="headerlink" href="#truth-table" title="Permalink to this heading">#</a></h4>
 <p>Create a truth table that represents the conditions described above.
 Use <a class="reference external" href="https://www.tablesgenerator.com/markdown_tables">https://www.tablesgenerator.com/markdown_tables</a></p>
 <p>It should have the following columns</p>
@@ -624,7 +618,7 @@ while D is the least-significant bit (LSB).</p>
 <p>Insert this truth table under the Truth Table heading in <code class="docutils literal notranslate"><span class="pre">prelab/README.md</span></code></p>
 </section>
 <section id="k-map">
-<h4>K-Map<a class="headerlink" href="#k-map" title="Link to this heading">#</a></h4>
+<h4>K-Map<a class="headerlink" href="#k-map" title="Permalink to this heading">#</a></h4>
 <p>Use a K-map to find the simplified equation for <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <ul class="simple">
 <li><p>Add your k-map to the repository at <code class="docutils literal notranslate"><span class="pre">prelab/kmap</span></code> (with an appropriate file extension).
@@ -634,12 +628,12 @@ Then <strong>commit</strong> your k-map.</p></li>
 </section>
 </section>
 <section id="draw-schematics">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Draw schematics</a><a class="headerlink" href="#draw-schematics" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Draw schematics</a><a class="headerlink" href="#draw-schematics" title="Permalink to this heading">#</a></h3>
 <p>So far with the <strong>engineering method</strong> we’ve defined the problem.
 The next steps are to “collect data,” “create viable solutions,”
 and “analyze solutions and select the best solution.”</p>
 <section id="available-chips">
-<h4>Available chips<a class="headerlink" href="#available-chips" title="Link to this heading">#</a></h4>
+<h4>Available chips<a class="headerlink" href="#available-chips" title="Permalink to this heading">#</a></h4>
 <p>Collecting data == determining what chips we have available.</p>
 <p>Our lab has the following <a class="reference external" href="https://en.wikipedia.org/wiki/7400-series_integrated_circuits">7400 series transistor-transistor logic (TTL) integrated circuits (IC)</a></p>
 <ul class="simple">
@@ -653,7 +647,7 @@ and “analyze solutions and select the best solution.”</p>
 <p>These data sheets are available in Teams or can be searched online.</p>
 </section>
 <section id="create-viable-solutions">
-<h4>Create viable solutions<a class="headerlink" href="#create-viable-solutions" title="Link to this heading">#</a></h4>
+<h4>Create viable solutions<a class="headerlink" href="#create-viable-solutions" title="Permalink to this heading">#</a></h4>
 <p>We will iterate to hone in on the best solution.</p>
 <ol class="arabic simple">
 <li><p>First we will draw designs with logic gates</p></li>
@@ -663,7 +657,7 @@ and “analyze solutions and select the best solution.”</p>
 </ol>
 </section>
 <section id="hand-drawn-logic-gates">
-<h4>Hand Drawn Logic Gates<a class="headerlink" href="#hand-drawn-logic-gates" title="Link to this heading">#</a></h4>
+<h4>Hand Drawn Logic Gates<a class="headerlink" href="#hand-drawn-logic-gates" title="Permalink to this heading">#</a></h4>
 <p><em>Do this <strong>before</strong> doing the simulations below.</em></p>
 <p>Using <strong>logic gate symbols</strong> that correspond to the types of chips you have available
 draw <strong>four</strong> separate schematics that can implement your truth table.
@@ -693,7 +687,7 @@ See <em>Digital Design and Computer Architecture</em> <strong>Figure 2.23</stron
 </div></blockquote>
 </section>
 <section id="simulated-logic-gates">
-<h4>Simulated Logic Gates<a class="headerlink" href="#simulated-logic-gates" title="Link to this heading">#</a></h4>
+<h4>Simulated Logic Gates<a class="headerlink" href="#simulated-logic-gates" title="Permalink to this heading">#</a></h4>
 <p>Now that you have <strong>four</strong> prototypes to compare, we will rule out some solutions
 and continue with two viable options.</p>
 <p>Typically, this is an involved process (often with a decision matrix!)
@@ -707,7 +701,7 @@ We give you templates in <code class="docutils literal notranslate"><span class=
 <p>After you have working simulations, commit your changes!</p>
 </section>
 <section id="ic-schematics">
-<h4>IC Schematics<a class="headerlink" href="#ic-schematics" title="Link to this heading">#</a></h4>
+<h4>IC Schematics<a class="headerlink" href="#ic-schematics" title="Permalink to this heading">#</a></h4>
 <p>With two working simulations, it’s time to decide which circuit we are actually going to build.</p>
 <p>In Digital, simulate the a 8:1 MUX (74151) and inverter (if using) (7404)
 as an <strong>IC</strong> schematic using the <code class="docutils literal notranslate"><span class="pre">prelab/MUX_74151.dig</span></code> template.</p>
@@ -723,7 +717,7 @@ which bit is the MSB?</p>
 </section>
 </section>
 <section id="prelab-deliverables">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Prelab Deliverables</a><a class="headerlink" href="#prelab-deliverables" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Prelab Deliverables</a><a class="headerlink" href="#prelab-deliverables" title="Permalink to this heading">#</a></h3>
 <p>Your prelab submission will <em>only</em> include files in the <code class="docutils literal notranslate"><span class="pre">prelab/</span></code> folder;
 all other files will be ignored by Gradescope!</p>
 <ul class="simple">
@@ -736,7 +730,7 @@ all other files will be ignored by Gradescope!</p>
 </section>
 </section>
 <section id="lab-integrated-circuit">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Lab: Integrated Circuit</a><a class="headerlink" href="#lab-integrated-circuit" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Lab: Integrated Circuit</a><a class="headerlink" href="#lab-integrated-circuit" title="Permalink to this heading">#</a></h2>
 <p>Using your Digital simulation of the first schematic (3.a 8:1 MUX (74151) and
 inverter(s) (7404)) you will implement Thirty-One Day Month functionality
 in hardware using integrated circuits.</p>
@@ -750,7 +744,7 @@ in hardware using integrated circuits.</p>
 <p>Do not connect unused <strong>outputs</strong> to Ground; this will cause a short and let out the magic smoke!</p>
 <p>Power down your circuit before making any adjustments or changes!</p>
 </div>
-<p>Reference <a class="reference internal" href="../ICE/ICE1.html"><span class="std std-doc">ICE 1: Breadboard Half Adder</span></a> if you need a refresher on how the breadboard functions
+<p>Reference <a class="reference internal" href="../ICE/ICE1.html"><span class="doc std std-doc">ICE 1: Breadboard Half Adder</span></a> if you need a refresher on how the breadboard functions
 and how to place your power converter. You can also reference the
 breadboard handout in the Datasheets Library to determine how the
 breadboard is connected.</p>
@@ -763,10 +757,10 @@ breadboard is connected.</p>
 </div></blockquote>
 </section>
 <section id="lab-fpga">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Lab: FPGA</a><a class="headerlink" href="#lab-fpga" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Lab: FPGA</a><a class="headerlink" href="#lab-fpga" title="Permalink to this heading">#</a></h2>
 <p>Now we will construct the same circuit in VHDL.</p>
 <section id="setup-vivado-project">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Permalink to this heading">#</a></h3>
 <p>Open the <code class="docutils literal notranslate"><span class="pre">.xpr</span></code> file with Vivado.</p>
 <p>You should see the following files:</p>
 <ul class="simple">
@@ -784,12 +778,12 @@ it gives you confidence that the Gradescope autograder will be happy.</p>
 </div>
 </section>
 <section id="entity">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Permalink to this heading">#</a></h3>
 <p>Create your interface (ports) for the <code class="docutils literal notranslate"><span class="pre">thirtyOneDayMonth</span></code> according to <a class="reference internal" href="#thirtyone-day-month"><span class="std std-numref">Fig. 30</span></a>.</p>
 <figure class="align-default" id="thirtyone-day-month">
 <img alt="../_images/lab1_image1.jpg" src="../_images/lab1_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">thirtyOneDayMonth entity with interfaces shown in blue and architecture in purple.</span><a class="headerlink" href="#thirtyone-day-month" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">thirtyOneDayMonth entity with interfaces shown in blue and architecture in purple.</span><a class="headerlink" href="#thirtyone-day-month" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Think of this as the actual chip we used in the integrated circuit.
@@ -799,7 +793,7 @@ do the desired combinational logic.</p>
 <p>The ports can be created in VHDL using the <code class="docutils literal notranslate"><span class="pre">std_logic</span></code> signal type.
 Remember, <code class="docutils literal notranslate"><span class="pre">std_logic</span></code> is like a single digital logic wire.</p>
 <section id="input-interface">
-<h4>Input interface<a class="headerlink" href="#input-interface" title="Link to this heading">#</a></h4>
+<h4>Input interface<a class="headerlink" href="#input-interface" title="Permalink to this heading">#</a></h4>
 <p>You found the logic equation during the pre-lab.
 Let’s map the input <span class="math notranslate nohighlight">\(A\)</span> from that equation to <code class="docutils literal notranslate"><span class="pre">i_A</span></code> in our entity.</p>
 <p>Recall that the <code class="docutils literal notranslate"><span class="pre">i_</span></code> prefix matches the naming convention for inputs described in the header.</p>
@@ -811,7 +805,7 @@ Let’s map the input <span class="math notranslate nohighlight">\(A\)</span> fr
 </div></blockquote>
 </section>
 <section id="output-interface">
-<h4>Output interface<a class="headerlink" href="#output-interface" title="Link to this heading">#</a></h4>
+<h4>Output interface<a class="headerlink" href="#output-interface" title="Permalink to this heading">#</a></h4>
 <p>Our pre-lab output <span class="math notranslate nohighlight">\(Y\)</span> was a single bit; likewise, the output, <code class="docutils literal notranslate"><span class="pre">o_Y</span></code>
 is a single wire, so will still be of the <code class="docutils literal notranslate"><span class="pre">std_logic</span></code> type.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">o_Y</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span>
@@ -826,7 +820,7 @@ architecture.</p>
 </section>
 </section>
 <section id="architecture">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h3>
 <p>Now that we have our entity interfaces, it’s time to describe the internal behavior of our circuit.</p>
 <p>Create the logic to implement the internals of the thirtyOneDayMonth
 entity. The logic is <em>described</em> using VHDL, but the Basys3 board will
@@ -865,7 +859,7 @@ To assign a value to the LSB of the vector you would do the following:</p>
 <p>Finally, implement your prelab design using behavioral modeling as discussed in class.</p>
 </section>
 <section id="testbench-and-simulation">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Testbench and Simulation</a><a class="headerlink" href="#testbench-and-simulation" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Testbench and Simulation</a><a class="headerlink" href="#testbench-and-simulation" title="Permalink to this heading">#</a></h3>
 <p>The testbench will be used to simulate your entity prior to implementing
 it on the Basys3 board. As you will learn, implementation takes a very
 long time and simulating your solution will save you a lot of headache.</p>
@@ -901,7 +895,7 @@ following:</p>
 <div><p>Complete the test process</p>
 </div></blockquote>
 <section id="run-the-simulation">
-<h4>Run the simulation<a class="headerlink" href="#run-the-simulation" title="Link to this heading">#</a></h4>
+<h4>Run the simulation<a class="headerlink" href="#run-the-simulation" title="Permalink to this heading">#</a></h4>
 <p>After the testbench is written, under SIMULATION click <strong>Run Simulation</strong>.</p>
 <p>When the waveform appears, maximize the window. Then, edit the names of the <code class="docutils literal notranslate"><span class="pre">i_sw</span></code> bits as <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, and <span class="math notranslate nohighlight">\(D\)</span>, to help match the results to your truth table.</p>
 <p>Click the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> to expand the vector. Then right click on <code class="docutils literal notranslate"><span class="pre">[3]</span></code> and select rename.
@@ -910,7 +904,7 @@ You can then change it to <code class="docutils literal notranslate"><span class
 </section>
 </section>
 <section id="constraints-file">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Permalink to this heading">#</a></h3>
 <p>Open your Basys3Master_Lab1.xdc file.</p>
 <p>The .xdc file maps the signals in your entity to the
 physical pins on the board. This time the constraints file is complete and you will not need to make changes to it.</p>
@@ -921,7 +915,7 @@ LED on the far right.</p>
 <p>In the future, you will have to ensure the mapping is done correctly.</p>
 </section>
 <section id="implement">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Implement</a><a class="headerlink" href="#implement" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Implement</a><a class="headerlink" href="#implement" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Generate the bitstream (.bit) file and download it to your FPGA.</p></li>
 <li><p>Verify that your design functions correctly.</p></li>
@@ -929,7 +923,7 @@ LED on the far right.</p>
 </ol>
 </section>
 <section id="deliverables">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h3>
 <p>Submit the following to Gradescope Lab 1.</p>
 <blockquote>
 <div><ul class="simple">
@@ -939,7 +933,7 @@ LED on the far right.</p>
 </ul>
 </div></blockquote>
 <section id="lab-report">
-<h4>Lab Report<a class="headerlink" href="#lab-report" title="Link to this heading">#</a></h4>
+<h4>Lab Report<a class="headerlink" href="#lab-report" title="Permalink to this heading">#</a></h4>
 <p>Follow the template on Teams and upload to Gradescope.
 We only ask for specific sections for each lab!</p>
 </section>

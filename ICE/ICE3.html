@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>ICE 3: Ripple-Carry Adder &#8212; ECE 281</title>
   
@@ -28,40 +29,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/print.css?v=74670715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ICE/ICE3';</script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ICE 4: Stoplight" href="ICE4.html" />
@@ -162,18 +167,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -239,9 +233,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -382,9 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -457,7 +451,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ice-3-ripple-carry-adder">
-<h1>ICE 3: Ripple-Carry Adder<a class="headerlink" href="#ice-3-ripple-carry-adder" title="Link to this heading">#</a></h1>
+<h1>ICE 3: Ripple-Carry Adder<a class="headerlink" href="#ice-3-ripple-carry-adder" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#hw-12" id="id3">HW 12</a></p></li>
@@ -506,7 +500,7 @@ document.write(`
 </ul>
 </nav>
 <section id="hw-12">
-<span id="ripple-adder-hw"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">HW 12</a><a class="headerlink" href="#hw-12" title="Link to this heading">#</a></h2>
+<span id="ripple-adder-hw"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">HW 12</a><a class="headerlink" href="#hw-12" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read <strong>Overview</strong> and <strong>Background</strong> sections below.</p></li>
 <li><p>Copy and clone <em>your</em> copy of <a class="github reference external" href="https://github.com/USAFA-ECE/ece281-ice3">USAFA-ECE/ece281-ice3</a></p></li>
@@ -535,7 +529,7 @@ git<span class="w"> </span>remote<span class="w"> </span>-v
 </ul>
 </section>
 <section id="overview">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>In this ICE we will make a 4-bit ripple-carry adder.</p>
 <p>So far in this course you have implemented individual components on your
 FPGA. However, one of the benefits of VHDL is that we can pull multiple
@@ -550,7 +544,7 @@ before finally connecting them to the IO of the board.</p>
 <p>You will need to use the concept of a Top Level Design in Lab 2,
 so this is directly applicable.</p>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
 <p>The objectives of this in-class exercise are for you to:</p>
 <ul class="simple">
 <li><p>Implement and test a ripple-carry adder with full adders using VDHL</p></li>
@@ -560,9 +554,9 @@ so this is directly applicable.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <section id="full-adder">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Full Adder</a><a class="headerlink" href="#full-adder" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Full Adder</a><a class="headerlink" href="#full-adder" title="Permalink to this heading">#</a></h3>
 <p>A full adder extends the half-adder to include a Carry In bit, <span class="math notranslate nohighlight">\(C_{in}\)</span>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -572,7 +566,7 @@ so this is directly applicable.</p>
 <figure class="align-default" id="id2">
 <img alt="../_images/ice3_image1.jpg" src="../_images/ice3_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Full-adder schematic, from fig 5.3 in <em>DDCA</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Full-adder schematic, from fig 5.3 in <em>DDCA</em></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="math notranslate nohighlight">
@@ -584,7 +578,7 @@ S = A \oplus B \oplus C_{in}
 C_{out} = AB + AC_{in} + BC_{in}
 \]</div>
 <div class="pst-scrollable-table-container"><table class="table" id="full-adder-truth">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Full-adder truth table</span><a class="headerlink" href="#full-adder-truth" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Full-adder truth table</span><a class="headerlink" href="#full-adder-truth" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(C_{in}\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(A\)</span></p></th>
@@ -656,23 +650,23 @@ C_{out} = AB + AC_{in} + BC_{in}
 </div>
 </section>
 <section id="ripple-carry-adder">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Ripple-Carry Adder</a><a class="headerlink" href="#ripple-carry-adder" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Ripple-Carry Adder</a><a class="headerlink" href="#ripple-carry-adder" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>The simplest way to build an <span class="math notranslate nohighlight">\(N\)</span>-bit carry propagate adder is to chain together <span class="math notranslate nohighlight">\(N\)</span> full adders.</p>
 </div></blockquote>
 <figure class="align-default" id="id1">
 <img alt="../_images/ice3_ripplecarryadder.png" src="../_images/ice3_ripplecarryadder.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">*<em>DDCA</em> Figure 5.5 shows a 32-bit ripple carry adder.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">*<em>DDCA</em> Figure 5.5 shows a 32-bit ripple carry adder.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Our goal will be to implement this in VHDL!</p>
 </section>
 </section>
 <section id="the-project">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">The Project</a><a class="headerlink" href="#the-project" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">The Project</a><a class="headerlink" href="#the-project" title="Permalink to this heading">#</a></h2>
 <section id="setup-vivado">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Permalink to this heading">#</a></h3>
 <p>You’ve already cloned the repository, so you should be able to simply open the <code class="docutils literal notranslate"><span class="pre">.xpr</span></code>!</p>
 <p>Notice that we have include a Full Adder for you. It’s very similar to the Half Adder you made for ICE 2!</p>
 <!-- ### Import half adder
@@ -704,18 +698,18 @@ You are not required to do this for the lab.
 </section>
 </section>
 <section id="ripple-carry-adder-vhdl">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Ripple-Carry Adder VHDL</a><a class="headerlink" href="#ripple-carry-adder-vhdl" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Ripple-Carry Adder VHDL</a><a class="headerlink" href="#ripple-carry-adder-vhdl" title="Permalink to this heading">#</a></h2>
 <p>First, open <code class="docutils literal notranslate"><span class="pre">RippleCarryAdder.dig</span></code> from your Homework.</p>
 <p>Then, in Vivado, open <code class="docutils literal notranslate"><span class="pre">ripple_adder.vhd</span></code> and verify that the entity matches what you’d expect based on your Digital simulation.</p>
 <section id="declarations">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">Declarations</a><a class="headerlink" href="#declarations" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Declarations</a><a class="headerlink" href="#declarations" title="Permalink to this heading">#</a></h3>
 <section id="full-adder-component">
-<h4>Full Adder Component<a class="headerlink" href="#full-adder-component" title="Link to this heading">#</a></h4>
+<h4>Full Adder Component<a class="headerlink" href="#full-adder-component" title="Permalink to this heading">#</a></h4>
 <p>Declare a <strong>full_adder</strong> component declaration to <code class="docutils literal notranslate"><span class="pre">ripple_adder.vhd</span></code> between the architecture and begin statements.</p>
 <p>The full adder component must match the entity declaration in <code class="docutils literal notranslate"><span class="pre">full_adder.vhd</span></code>.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>These port names match the names from <a class="reference internal" href="#../HW/HW12.md"><span class="xref myst">HW 12’s Digital!</span></a></p>
+<p>These port names match the names from <span class="xref myst">HW 12’s Digital!</span></p>
 </div>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">architecture</span><span class="w"> </span><span class="nc">Behavioral</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">ripple_adder</span><span class="w"> </span><span class="k">is</span>
 
@@ -733,7 +727,7 @@ You are not required to do this for the lab.
 <p>This is like saying “go find the entity that matches this description and get it ready to use!”</p>
 </section>
 <section id="signal-declaration">
-<h4>Signal Declaration<a class="headerlink" href="#signal-declaration" title="Link to this heading">#</a></h4>
+<h4>Signal Declaration<a class="headerlink" href="#signal-declaration" title="Permalink to this heading">#</a></h4>
 <p>Remember, signals are like wires between inputs and components.</p>
 <p>We will need the following signals:</p>
 <ul class="simple">
@@ -746,7 +740,7 @@ You are not required to do this for the lab.
 </section>
 </section>
 <section id="instantiations">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Instantiations</a><a class="headerlink" href="#instantiations" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Instantiations</a><a class="headerlink" href="#instantiations" title="Permalink to this heading">#</a></h3>
 <p>Now that we have made the <strong>full_adder</strong> component available to use within <strong>ripple_adder</strong>
 we need to instantiate multiple occurrences of the component and declare the logic to connect them
 to each other and to inputs/outputs.</p>
@@ -778,7 +772,7 @@ Notice that each has a unique name (because of the number at the end) and is con
 <p>Then add the other two full adder instantiations.</p>
 </section>
 <section id="ripple-carry-test">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Ripple-Carry Test</a><a class="headerlink" href="#ripple-carry-test" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Ripple-Carry Test</a><a class="headerlink" href="#ripple-carry-test" title="Permalink to this heading">#</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">ripple_adder_tb.vhd</span></code>.
 The component has already been declared and instantiated for you.</p>
 <p>Do some quick math… how many possible inputs are there to our 4-bit adder?
@@ -800,7 +794,7 @@ More than we want to manually input! 😄</p>
 </section>
 </section>
 <section id="top-basys3">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Permalink to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>From now on, we will use a top level design file as the boundary of our system.</p>
@@ -818,7 +812,7 @@ which we can use as a <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <section id="entity">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Permalink to this heading">#</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You <strong>actually</strong>, really, <em>really</em> need to sketch this before coding it!</p>
@@ -850,7 +844,7 @@ Then, and only then, ensure you see the following in your <code class="docutils 
 </div>
 </section>
 <section id="architecture">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Declare a <strong>ripple_adder</strong> component.</p></li>
 <li><p>Instantiate the <em>ripple_adder</em>* component.</p></li>
@@ -858,7 +852,7 @@ Then, and only then, ensure you see the following in your <code class="docutils 
 </ol>
 </section>
 <section id="test">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
 <p>You <em>could</em> make a <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code> and test it, but we’ve already tested
 the full_adder and we wouldn’t gain much more information.</p>
 <p>Let’s just move onto deploying to the board!</p>
@@ -870,24 +864,24 @@ This is called <em>integration testing</em>, as opposed to the <em>unit testing<
 </section>
 </section>
 <section id="implement-design">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink">Implement Design</a><a class="headerlink" href="#implement-design" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">Implement Design</a><a class="headerlink" href="#implement-design" title="Permalink to this heading">#</a></h2>
 <section id="constraints-file">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Permalink to this heading">#</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code>.</p>
 <p>Because we used the appropriate naming conventions in <code class="docutils literal notranslate"><span class="pre">top_bays3.vhd</span></code> you <strong>should not change the names!</strong></p>
 <p>Simply uncomment all the <code class="docutils literal notranslate"><span class="pre">sw</span></code> and <code class="docutils literal notranslate"><span class="pre">led</span></code> lines.</p>
 </section>
 <section id="test-bitstream-on-fpga">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Permalink to this heading">#</a></h3>
 <p>Synthesize, implement, generate.</p>
 <p>Squirt the bitstream to the board, and be amazed!</p>
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
-<p>See <a class="reference internal" href="../appendix/github.html"><span class="std std-doc">GitHub real fast</span></a> if you need some tips.</p>
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
+<p>See <a class="reference internal" href="../appendix/github.html"><span class="doc std std-doc">GitHub real fast</span></a> if you need some tips.</p>
 <section id="readme">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">README</a><a class="headerlink" href="#readme" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">README</a><a class="headerlink" href="#readme" title="Permalink to this heading">#</a></h3>
 <p>Take a screenshot of your <strong>ripple_adder</strong> waveform, save it to the root of your directory.</p>
 <p>Make the screenshot appear in your README with the following Markdown syntax:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">description of my waveform</span>](<span class="na">imagename.png</span>)
@@ -904,7 +898,7 @@ My statement here.
 <p>Add the image and <a class="reference external" href="http://README.md">README.md</a> to git and commit.</p>
 </section>
 <section id="other-files">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">Other files</a><a class="headerlink" href="#other-files" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Other files</a><a class="headerlink" href="#other-files" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
 <li><p>Double check that you have the image, your <a class="reference external" href="http://README.md">README.md</a> and all <code class="docutils literal notranslate"><span class="pre">.vhd</span></code> and <code class="docutils literal notranslate"><span class="pre">.bit</span></code> files <strong>committed</strong> to your git repo.</p></li>

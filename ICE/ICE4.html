@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>ICE 4: Stoplight &#8212; ECE 281</title>
   
@@ -28,40 +29,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/print.css?v=74670715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ICE/ICE4';</script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ICE 5: Basic Elevator Controller" href="ICE5.html" />
@@ -162,18 +167,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -239,9 +233,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -382,9 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -451,7 +445,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ice-4-stoplight">
-<h1>ICE 4: Stoplight<a class="headerlink" href="#ice-4-stoplight" title="Link to this heading">#</a></h1>
+<h1>ICE 4: Stoplight<a class="headerlink" href="#ice-4-stoplight" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p>
@@ -488,14 +482,14 @@ document.write(`
 </ul>
 </nav>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>So far in this course you have implemented combinational logic on your FPGA.
 The ability to implement <strong>synchronous</strong> logic enables us to make
 <em>finite state machines</em> and greatly expands your ability to implement
 useful designs.</p>
 <p>In order to accomplish this, we will expand our use of processes.</p>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Design the Stoplight FSM in VHDL</p></li>
 <li><p>Test the Stoplight FSM in VHDL</p></li>
@@ -503,7 +497,7 @@ useful designs.</p>
 </ul>
 </section>
 <section id="end-state">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">End State</a><a class="headerlink" href="#end-state" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">End State</a><a class="headerlink" href="#end-state" title="Permalink to this heading">#</a></h3>
 <p>Provide a demo to your instructor.</p>
 <p>You are not required to turn in ICE4; however,
 <strong>ensure the following files are pushed to your repository</strong>:</p>
@@ -515,7 +509,7 @@ useful designs.</p>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>We will design the stoplight to match the description given in <strong>Homework 3</strong>.</p>
 <ul class="simple">
 <li><p>Light turns green when car is present.</p></li>
@@ -527,12 +521,12 @@ be implement with a Moore FSM as seen is <a class="reference internal" href="#st
 <figure class="align-default" id="stoplight-fsm">
 <img alt="../_images/ice4_image1.jpg" src="../_images/ice4_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Stoplight state transition diagram</span><a class="headerlink" href="#stoplight-fsm" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Stoplight state transition diagram</span><a class="headerlink" href="#stoplight-fsm" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="setup-vivado">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Fork and clone <a class="reference external" href="https://github.com/USAFA-ECE/ece281-ice4">ICE 4</a></p></li>
 <li><p>Open the folder</p></li>
@@ -550,9 +544,9 @@ and automated run of your stoplight_fsm testbench!</p>
 </div></blockquote>
 </section>
 <section id="stoplight-fsm-vhd">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">stoplight_fsm.vhd</a><a class="headerlink" href="#stoplight-fsm-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">stoplight_fsm.vhd</a><a class="headerlink" href="#stoplight-fsm-vhd" title="Permalink to this heading">#</a></h2>
 <section id="entity">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Permalink to this heading">#</a></h3>
 <p>The stoplight entity is given in <code class="docutils literal notranslate"><span class="pre">stoplight_fsm.vhd</span></code> as:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">stoplight_fsm</span><span class="w"> </span><span class="k">is</span>
 <span class="w">    </span><span class="k">port</span><span class="p">(</span>
@@ -577,7 +571,7 @@ and automated run of your stoplight_fsm testbench!</p>
 </div></blockquote>
 </section>
 <section id="architecture">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h3>
 <p><strong>Every finite state machine is going to have the same structure, as shown in <a class="reference internal" href="#fsm-block-d"><span class="std std-numref">Fig. 20</span></a></strong></p>
 <ol class="arabic simple">
 <li><p>“Combinational” or “Next State” Logic</p></li>
@@ -587,7 +581,7 @@ and automated run of your stoplight_fsm testbench!</p>
 <figure class="align-default" id="fsm-block-d">
 <img alt="../_images/ice4_image3.png" src="../_images/ice4_image3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Finite state machine structure</span><a class="headerlink" href="#fsm-block-d" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Finite state machine structure</span><a class="headerlink" href="#fsm-block-d" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You need to modify the architecture of your stoplight file to reflect
@@ -599,11 +593,11 @@ the design shown in <a class="reference internal" href="#stoplight-fsm-arch"><sp
 <figure class="align-default" id="stoplight-fsm-arch">
 <img alt="../_images/ice4_image4.png" src="../_images/ice4_image4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Entity and architecture for implementing stoplight</span><a class="headerlink" href="#stoplight-fsm-arch" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Entity and architecture for implementing stoplight</span><a class="headerlink" href="#stoplight-fsm-arch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="state-register">
-<h4>State Register<a class="headerlink" href="#state-register" title="Link to this heading">#</a></h4>
+<h4>State Register<a class="headerlink" href="#state-register" title="Permalink to this heading">#</a></h4>
 <p>First, we’ll implement Section 2: The State Register.</p>
 <p>The state register for our stoplight is comprised of two flip flops.
 Each flip flop has a <span class="math notranslate nohighlight">\(Q\)</span> (current state) and a <span class="math notranslate nohighlight">\(Q_{next}\)</span> (next state).
@@ -630,7 +624,7 @@ your initial signal declaration.</p>
 <div><p>Create and initialize two 2-bit vectors: <code class="docutils literal notranslate"><span class="pre">f_Q</span></code> and <code class="docutils literal notranslate"><span class="pre">f_Q_next</span></code>.</p>
 </div></blockquote>
 <section id="a-process-in-vhdl">
-<h5>A “process” in VHDL<a class="headerlink" href="#a-process-in-vhdl" title="Link to this heading">#</a></h5>
+<h5>A “process” in VHDL<a class="headerlink" href="#a-process-in-vhdl" title="Permalink to this heading">#</a></h5>
 <p>Once the signals have been created, we can use them in our state
 register. The basis for a register in VHDL is a process. Declaring a
 process allows us to create a sub section of our hardware that is
@@ -677,7 +671,7 @@ in our test bench!</p>
 </section>
 </section>
 <section id="next-state-logic">
-<h4>Next State Logic<a class="headerlink" href="#next-state-logic" title="Link to this heading">#</a></h4>
+<h4>Next State Logic<a class="headerlink" href="#next-state-logic" title="Permalink to this heading">#</a></h4>
 <p>Now that we have our register in place we can complete Section 1: Next State Logic.</p>
 <p>We simply need to implement the <code class="docutils literal notranslate"><span class="pre">Q(0)</span></code> and <code class="docutils literal notranslate"><span class="pre">Q(1)</span></code> equations we developed in HW 3.</p>
 <div class="math notranslate nohighlight">
@@ -693,7 +687,7 @@ Q_{next}(1) = \overline{Q(1)} * Q(0) * \overline{C}
 </div></blockquote>
 </section>
 <section id="output-logic">
-<h4>Output Logic<a class="headerlink" href="#output-logic" title="Link to this heading">#</a></h4>
+<h4>Output Logic<a class="headerlink" href="#output-logic" title="Permalink to this heading">#</a></h4>
 <p>Our final step in creating our stoplight component is Section 3: Output Logic.</p>
 <p>We simply take the equations from HW3 and implement them.</p>
 <div class="math notranslate nohighlight">
@@ -719,7 +713,7 @@ R = \overline{Q(1)} * \overline{Q(0)} + Q(1) * Q(0)
 </section>
 </section>
 <section id="stoplight-fsm-tb-vhd">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">stoplight_fsm_tb.vhd</a><a class="headerlink" href="#stoplight-fsm-tb-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">stoplight_fsm_tb.vhd</a><a class="headerlink" href="#stoplight-fsm-tb-vhd" title="Permalink to this heading">#</a></h2>
 <p>First, <strong>set <code class="docutils literal notranslate"><span class="pre">stoplight_fsm_tb.vhd</span></code> as top</strong> in simulation sources.
 The testbench is already complete, so you do not need to add or change anything.
 BUT! It and has two new aspects we’ll discuss.</p>
@@ -758,7 +752,7 @@ next rising edge before checking the for a value.</p>
 <div><p>Look through the <code class="docutils literal notranslate"><span class="pre">sim_proc</span></code> to see what the test bench is going to do.</p>
 </div></blockquote>
 <section id="simulation">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="#stoplight-waveform"><span class="std std-numref">Fig. 22</span></a> shows what your simulation should look like.
 Note the additional signals we have not seen in past simulations. Not only
 can we check that the outputs are happening as expected, but we can
@@ -782,7 +776,7 @@ your process is incorrect.</p>
 <figure class="align-default" id="stoplight-waveform">
 <img alt="../_images/ice4_image16.png" src="../_images/ice4_image16.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Stoplight FSM test bench waveform</span><a class="headerlink" href="#stoplight-waveform" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Stoplight FSM test bench waveform</span><a class="headerlink" href="#stoplight-waveform" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -791,14 +785,14 @@ your process is incorrect.</p>
 </section>
 </section>
 <section id="top-basys3-vhd">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">top_basys3.vhd</a><a class="headerlink" href="#top-basys3-vhd" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">top_basys3.vhd</a><a class="headerlink" href="#top-basys3-vhd" title="Permalink to this heading">#</a></h2>
 <p>Now that we have the stoplight FSM up and running, we need to create the
 top_basys3 design to connect it to the board’s hardware. We will do this
 with the provided top_basys3.vhd file as well is the schematic seen in <a class="reference internal" href="#stoplight-top-basys"><span class="std std-numref">Fig. 23</span></a>.</p>
 <figure class="align-default" id="stoplight-top-basys">
 <img alt="../_images/ice4_image17.png" src="../_images/ice4_image17.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">top_basys3 design for stoplight ICE</span><a class="headerlink" href="#stoplight-top-basys" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">top_basys3 design for stoplight ICE</span><a class="headerlink" href="#stoplight-top-basys" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In order to fully implement this design, we have to introduce a new
@@ -826,7 +820,7 @@ is received.</p>
 <p>A test bench has also been provided for the clock_divider. If you decide to run it,
 set the clock_divider_tb file as top and simulate.</p>
 <section id="complete-the-file">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Complete the file</a><a class="headerlink" href="#complete-the-file" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Complete the file</a><a class="headerlink" href="#complete-the-file" title="Permalink to this heading">#</a></h3>
 <p>Much of the top_basys3.vhd file has been done for you, however, you need
 to declare the stoplight component and instantiated it. You also need to
 fill out the port map for the clk divider already declared and instantiated.</p>
@@ -836,9 +830,9 @@ fill out the port map for the clk divider already declared and instantiated.</p>
 </section>
 </section>
 <section id="hardware-test">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Hardware test</a><a class="headerlink" href="#hardware-test" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Hardware test</a><a class="headerlink" href="#hardware-test" title="Permalink to this heading">#</a></h2>
 <section id="connect-stoplight">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Connect stoplight</a><a class="headerlink" href="#connect-stoplight" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Connect stoplight</a><a class="headerlink" href="#connect-stoplight" title="Permalink to this heading">#</a></h3>
 <p>Before we can test whether or not the stoplight works, we need to first
 connect the stoplight to the FPGA.</p>
 <p>We will be using the <strong>Pmod</strong> connection on the side of the Basys3.
@@ -848,7 +842,7 @@ red, yellow, green, empty, ground.</p>
 <figure class="align-default" id="pmod-stoplight">
 <img alt="../_images/ice4_image18.png" src="../_images/ice4_image18.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Pmod from above and from the side with connection labels</span><a class="headerlink" href="#pmod-stoplight" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Pmod from above and from the side with connection labels</span><a class="headerlink" href="#pmod-stoplight" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Luckily, the wires of the stoplight are color-coded! As you can see in
@@ -857,12 +851,12 @@ green to green.</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/ice4_image6.jpg" src="../_images/ice4_image6.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Picture of stoplight model we will be using</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Picture of stoplight model we will be using</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="test">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
 <p>In order to use the clock we also need to employ the
 <a class="reference external" href="https://docs.xilinx.com/r/2021.2-English/ug835-vivado-tcl-commands/create_clock">create_clock</a> function.
 This specifies the period of the waveform in nanoseconds; in our case, for a 100MHz clock we need a 10ns period.
@@ -889,7 +883,7 @@ pressing the left button should pause the whole system.</p>
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Double check that you have everything <strong>committed</strong> to your git repo.</p></li>
 <li><p>Push the files.</p></li>

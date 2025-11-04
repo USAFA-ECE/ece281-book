@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>ECE 281: Digital Design and Computer Architecture &#8212; ECE 281</title>
   
@@ -28,36 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/print.css?v=74670715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
@@ -69,7 +74,7 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.es
 window.addEventListener("load", () => mermaid.run());
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
-    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="BCE 0: Get started with Git" href="ICE/ICE0.html" />
@@ -171,18 +176,7 @@ window.addEventListener("load", () => mermaid.run());
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -248,9 +242,9 @@ window.addEventListener("load", () => mermaid.run());
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -391,9 +385,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -460,10 +454,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ece-281-digital-design-and-computer-architecture">
-<h1>ECE 281: Digital Design and Computer Architecture<a class="headerlink" href="#ece-281-digital-design-and-computer-architecture" title="Link to this heading">#</a></h1>
+<h1>ECE 281: Digital Design and Computer Architecture<a class="headerlink" href="#ece-281-digital-design-and-computer-architecture" title="Permalink to this heading">#</a></h1>
 <p>2025 Spring Syllabus</p>
 <section id="schedule">
-<h2>Schedule<a class="headerlink" href="#schedule" title="Link to this heading">#</a></h2>
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Lesson</p></th>
@@ -507,7 +501,7 @@ document.write(`
 <tr class="row-odd"><td><p>6</p></td>
 <td><p>ICE2 - VHDL Half Adder</p></td>
 <td><p></p></td>
-<td><p><a class="reference internal" href="HW/HW6.html"><span class="std std-doc">HW 6</span></a></p></td>
+<td><p><a class="reference internal" href="HW/HW6.html"><span class="doc std std-doc">HW 6</span></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
@@ -728,41 +722,41 @@ document.write(`
 </ul>
 </section>
 <section id="course-information">
-<h2>Course Information<a class="headerlink" href="#course-information" title="Link to this heading">#</a></h2>
+<h2>Course Information<a class="headerlink" href="#course-information" title="Permalink to this heading">#</a></h2>
 <section id="instructors">
-<h3>Instructors<a class="headerlink" href="#instructors" title="Link to this heading">#</a></h3>
+<h3>Instructors<a class="headerlink" href="#instructors" title="Permalink to this heading">#</a></h3>
 <section id="capt-brian-yarbrough">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54059">Capt Brian Yarbrough</a><a class="headerlink" href="#capt-brian-yarbrough" title="Link to this heading">#</a></h4>
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54059">Capt Brian Yarbrough</a><a class="headerlink" href="#capt-brian-yarbrough" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Course Director</p></li>
 <li><p>Office: 2F48</p></li>
 </ul>
 </section>
 <section id="dr-george-york">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=18247">Dr. George York</a><a class="headerlink" href="#dr-george-york" title="Link to this heading">#</a></h4>
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=18247">Dr. George York</a><a class="headerlink" href="#dr-george-york" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Office: 2F6A</p></li>
 </ul>
 </section>
 <section id="lt-col-james-trimble">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54055">Lt Col James Trimble</a><a class="headerlink" href="#lt-col-james-trimble" title="Link to this heading">#</a></h4>
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54055">Lt Col James Trimble</a><a class="headerlink" href="#lt-col-james-trimble" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Office: 2E46D</p></li>
 </ul>
 </section>
 <section id="lt-col-jason-wyche">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=80068">Lt Col Jason Wyche</a><a class="headerlink" href="#lt-col-jason-wyche" title="Link to this heading">#</a></h4>
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=80068">Lt Col Jason Wyche</a><a class="headerlink" href="#lt-col-jason-wyche" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Office: 2F10</p></li>
 </ul>
 </section>
 </section>
 <section id="course-goals">
-<h3>Course Goals<a class="headerlink" href="#course-goals" title="Link to this heading">#</a></h3>
+<h3>Course Goals<a class="headerlink" href="#course-goals" title="Permalink to this heading">#</a></h3>
 <p>The goal of this course is for all cadets enrolled in the course to develop the ability to understand and design combinational and sequential circuits and construct, test, and debug these circuits using schematic diagrams and hardware description languages.  Cadets shall demonstrate an understanding of basic computer architecture and how a computer executes simple programs.</p>
 </section>
 <section id="course-objectives">
-<h3>Course Objectives<a class="headerlink" href="#course-objectives" title="Link to this heading">#</a></h3>
+<h3>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading">#</a></h3>
 <p>Cadets shall be able to:</p>
 <ul class="simple">
 <li><p>Demonstrate ability to design, analyze, and implement combinational and sequential circuits using schematic diagrams.</p></li>
@@ -773,7 +767,7 @@ document.write(`
 </ul>
 </section>
 <section id="course-texts">
-<h3>Course Texts<a class="headerlink" href="#course-texts" title="Link to this heading">#</a></h3>
+<h3>Course Texts<a class="headerlink" href="#course-texts" title="Permalink to this heading">#</a></h3>
 <p><em>Digital Design and Computer Architecture: <strong>RISC-V Edition</strong></em> by Sarah L. Harris and David Harris.</p>
 <p>You <strong>must</strong> purchase an electronic or physical copy of this book. It will be one of the best textbooks of your career,
 and you will continue to reference it in other courses.
@@ -785,22 +779,22 @@ and you will continue to reference it in other courses.
 <p>Readings should be completed <em>prior</em> to class.</p>
 </section>
 <section id="policies">
-<h3>Policies<a class="headerlink" href="#policies" title="Link to this heading">#</a></h3>
+<h3>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h3>
 <p>All course policies are in accordance with and subject to USAFA policies.</p>
 <section id="collaboration">
-<h4>Collaboration<a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h4>
+<h4>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this heading">#</a></h4>
 <p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p>
 </section>
 <section id="extra-instruction-ei">
-<h4>Extra Instruction (EI)<a class="headerlink" href="#extra-instruction-ei" title="Link to this heading">#</a></h4>
+<h4>Extra Instruction (EI)<a class="headerlink" href="#extra-instruction-ei" title="Permalink to this heading">#</a></h4>
 <p>Schedule EI with an instructor if you are having difficulty with the course material.  You must have read the assignment and attempted the homework before requesting EI.  You are responsible for material if you miss class. After you’ve read the assignment, attempted the homework, and checked with your classmates, you may then schedule EI if you have difficulty with the material. EI is not a remedial lecture.</p>
 </section>
 <section id="missing-class">
-<h4>Missing Class<a class="headerlink" href="#missing-class" title="Link to this heading">#</a></h4>
+<h4>Missing Class<a class="headerlink" href="#missing-class" title="Permalink to this heading">#</a></h4>
 <p>You must notify your instructor <strong>via email</strong> of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.</p>
 </section>
 <section id="late-assignments">
-<h4>Late Assignments<a class="headerlink" href="#late-assignments" title="Link to this heading">#</a></h4>
+<h4>Late Assignments<a class="headerlink" href="#late-assignments" title="Permalink to this heading">#</a></h4>
 <p>With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
 deadline extensions are liberally granted by instructor discretion,
 <em>provided that you coordinate <strong>prior</strong> to the day on which the assignment is due.</em>
@@ -810,7 +804,7 @@ These extensions will be reflected ni Gradescope individually for you on that pa
 </section>
 </section>
 <section id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h2>
 <p>This course uses an alternative grading format.
 The intent is that your grades will be fairer, more accurate, and more meaningful.
 This grading format should also improve your learning and retention of concepts taught throughout the semester.</p>
@@ -854,7 +848,7 @@ This grading format should also improve your learning and retention of concepts 
     style B fill:#FF4500,color:#000000
     style A fill:#FF0000,color:#000000
     </pre><section id="pass-fail-assignments">
-<h3>Pass/Fail Assignments<a class="headerlink" href="#pass-fail-assignments" title="Link to this heading">#</a></h3>
+<h3>Pass/Fail Assignments<a class="headerlink" href="#pass-fail-assignments" title="Permalink to this heading">#</a></h3>
 <p>All pas/fail assignments are submitted on Gradescope. Most of these assignments are auto-graded,
 sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
 engage with the material and help you build context for how it all fits together.</p>
@@ -871,7 +865,7 @@ They are designed to be completed during the 53-minute class period, but can be 
 For example, if you complete 6/7 ICEs, you will earn <span class="math notranslate nohighlight">\(6/7=85\%\)</span> for ICEs.</p>
 </section>
 <section id="lab-reports">
-<h3>Lab Reports<a class="headerlink" href="#lab-reports" title="Link to this heading">#</a></h3>
+<h3>Lab Reports<a class="headerlink" href="#lab-reports" title="Permalink to this heading">#</a></h3>
 <p>Each lab has a report (except Lab 5), submitted on Gradescope, that will be assessed using <a class="reference external" href="https://rtalbert.org/emrn/">The EMRN Rubric</a></p>
 <p><img alt="EMRN Rubric" src="https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png" /></p>
 <p>For lab reports #1, #2, and #3, you may resubmit once per report for re-evaluation,
@@ -897,12 +891,12 @@ To prevent grading backlogs, the resubmission must take place <strong>within ten
 But, after the Lab 2 Revisions, the ultimate grade is <span class="math notranslate nohighlight">\(100-(5+0+5)+2=92\)</span>.</p>
 </section>
 <section id="exams">
-<h3>Exams<a class="headerlink" href="#exams" title="Link to this heading">#</a></h3>
+<h3>Exams<a class="headerlink" href="#exams" title="Permalink to this heading">#</a></h3>
 <p>Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
 Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
 <strong>Not all testable concepts will necessarily be covered in lectures.</strong></p>
 <section id="missed-exams">
-<h4>Missed Exams<a class="headerlink" href="#missed-exams" title="Link to this heading">#</a></h4>
+<h4>Missed Exams<a class="headerlink" href="#missed-exams" title="Permalink to this heading">#</a></h4>
 <p>The following policies are outlined in USAFA FOI 537-3:</p>
 <ul class="simple">
 <li><p><strong>Scheduled Absence:</strong> If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.</p></li>
@@ -911,7 +905,7 @@ Testable material includes any concepts from the labs, lectures, exercises, home
 </section>
 </section>
 <section id="final-exam-validation">
-<h3>Final Exam Validation<a class="headerlink" href="#final-exam-validation" title="Link to this heading">#</a></h3>
+<h3>Final Exam Validation<a class="headerlink" href="#final-exam-validation" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 V = GRLB
@@ -929,7 +923,7 @@ Unless you receive that email, you must take the final exam</p>
 </section>
 </section>
 <section id="course-website-table-of-contents">
-<h2>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Link to this heading">#</a></h2>
+<h2>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Permalink to this heading">#</a></h2>
 <p>Course website: <a class="reference external" href="https://usafa-ece.github.io/ece281-book">https://usafa-ece.github.io/ece281-book</a>.</p>
 <p>Students are encouraged to submit pull requests to <a class="reference external" href="https://github.com/usafa-ece/ece281-book">the github repository</a>
 for error corrections!</p>

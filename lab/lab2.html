@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Lab 2 - Seven Segment Display Decoder &#8212; ECE 281</title>
   
@@ -28,36 +29,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/print.css?v=74670715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
@@ -69,7 +74,7 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.es
 window.addEventListener("load", () => mermaid.run());
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lab/lab2';</script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lab 3 - Thunderbird Turn Signal" href="lab3.html" />
@@ -170,18 +175,7 @@ window.addEventListener("load", () => mermaid.run());
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -247,9 +241,9 @@ window.addEventListener("load", () => mermaid.run());
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -390,9 +384,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -462,7 +456,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lab-2-seven-segment-display-decoder">
-<h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Link to this heading">#</a></h1>
+<h1>Lab 2 - Seven Segment Display Decoder<a class="headerlink" href="#lab-2-seven-segment-display-decoder" title="Permalink to this heading">#</a></h1>
 <p>Due: Lesson 17</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
@@ -495,7 +489,7 @@ document.write(`
 </nav>
 <p><a class="reference external" href="https://github.com/USAFA-ECE/ece281-lab2">Lab 2 GitHub Repo</a></p>
 <section id="overview">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>In this lab you will implement the
 <a class="reference external" href="https://en.wikipedia.org/wiki/Seven-segment_display">seven-segment display</a> decoder
 in VHDL to display a hexadecimal digit. The hex digit will come from a
@@ -506,24 +500,24 @@ output the correct hex digit, <a class="reference internal" href="#hex-of-switch
 <figure class="align-default" id="hex-of-switch">
 <img alt="../_images/lab2_image1.jpg" src="../_images/lab2_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="objectives">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Develop a hardware-based binary to hex converter</p></li>
 <li><p>Display switch value on seven-segment display</p></li>
 </ol>
 </section>
 <section id="supplies">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Basys3 board</p></li>
 </ul>
 </section>
 <section id="collaboration">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Prelab is individual submission on Gradescope</p></li>
 <li><p>Lab Code is individual submission on Gradescope (you will need to reuse your VHDL in future labs!)</p></li>
@@ -533,7 +527,7 @@ Work with a different person than who you worked with for Lab 1.</p></li>
 </section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>When creating simple embedded digital designs, a seven-segment display
 is a common way to display numbers or simple letters to the end-user. In
 this lab, you will design a seven-segment display decoder. This decoder
@@ -544,7 +538,7 @@ each “segment” of the display is <strong>on</strong> (<code class="docutils 
 <figure class="align-default" id="seg-label">
 <img alt="../_images/lab2_image2.png" src="../_images/lab2_image2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>On our Basys3 board an anode determines which of the displays are on,
@@ -553,7 +547,7 @@ while cathodes allow you to turn on each individual segment,
 <figure class="align-default" id="sd-anodes">
 <img alt="../_images/lab2_image18.jpg" src="../_images/lab2_image18.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Said differently, you disable an entire display by connecting it to power, aka <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
@@ -566,12 +560,12 @@ while segment <code class="docutils literal notranslate"><span class="pre">g</sp
 <figure class="align-default" id="sd-digits">
 <img alt="../_images/lab2_image3.png" src="../_images/lab2_image3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="pre-lab">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Pre-lab</a><a class="headerlink" href="#pre-lab" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Thoroughly</strong> read <em>Digital Design and Computer Architecture</em> <strong>Example 2.10</strong>, page 77-81.</p></li>
 <li><p>Read Basys3 Reference <a class="reference external" href="https://digilent.com/reference/basys3/refmanual#basic_io">Basic I/O</a> and <a class="reference external" href="https://digilent.com/reference/basys3/refmanual#seven_segment_display">Seven Segment Display</a>.</p></li>
@@ -579,10 +573,10 @@ while segment <code class="docutils literal notranslate"><span class="pre">g</sp
 </ol>
 </section>
 <section id="lab">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Lab</a><a class="headerlink" href="#lab" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Lab</a><a class="headerlink" href="#lab" title="Permalink to this heading">#</a></h2>
 <p>It is time to implement them in hardware with VHDL!</p>
 <section id="setup-vivado-project">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Setup Vivado Project</a><a class="headerlink" href="#setup-vivado-project" title="Permalink to this heading">#</a></h3>
 <p>We will be creating our own Vivado project, instead of giving you a pre-made one.
 See <a class="reference external" href="https://usafa0.sharepoint.com/:p:/s/ECE281/EZ2NKQAyMX1BqbxHMI5yHiUBekrNlr77IPglt3RUFfbe2w?e=0QYZ4Q"><strong>Lab2 Vivado Buttonology.pptx</strong></a> in Class Materials for screenshots!</p>
 <ol class="arabic simple">
@@ -598,10 +592,10 @@ See <a class="reference external" href="https://usafa0.sharepoint.com/:p:/s/ECE2
 </div></blockquote>
 </section>
 <section id="seven-segment-display-decoder">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Seven Segment Display Decoder</a><a class="headerlink" href="#seven-segment-display-decoder" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Seven Segment Display Decoder</a><a class="headerlink" href="#seven-segment-display-decoder" title="Permalink to this heading">#</a></h3>
 <p>For better modularity, we will implement our seven segment display decoder as its own component.</p>
 <section id="file-creation">
-<h4>File Creation<a class="headerlink" href="#file-creation" title="Link to this heading">#</a></h4>
+<h4>File Creation<a class="headerlink" href="#file-creation" title="Permalink to this heading">#</a></h4>
 <p>We have not given you a file, so you need to create one in Vivado. See <a class="reference external" href="https://usafa0.sharepoint.com/:p:/s/ECE281/EZ2NKQAyMX1BqbxHMI5yHiUBekrNlr77IPglt3RUFfbe2w?e=0QYZ4Q"><strong>Lab2 Vivado Buttonology.pptx</strong></a> in Class Materials for screenshots!</p>
 <ol class="arabic simple">
 <li><p>In the <strong>Sources</strong> tab click the blue <strong>+</strong> symbol.</p></li>
@@ -629,7 +623,7 @@ See <a class="reference external" href="https://usafa0.sharepoint.com/:p:/s/ECE2
 </div></blockquote>
 </section>
 <section id="architecture">
-<h4>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h4>
+<h4>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h4>
 <p>Our truth table had <span class="math notranslate nohighlight">\(S_a\)</span> to <span class="math notranslate nohighlight">\(S_g\)</span>. How does this map to hardware? Fundamentally, <strong>we want to adhere to the constraints file.</strong>
 This is because we will ultimately want to do this:</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Excerpt from expected sevenseg_decoder port map inside top_basys3</span>
@@ -659,7 +653,7 @@ and comparing it to <strong>Basys3_Master.xdc</strong> we can see that:</p>
 <p>The answer to this needs to go in your lab report.</p>
 </div>
 <section id="behavioral-vs-structural-modeling">
-<h5>Behavioral vs. Structural modeling<a class="headerlink" href="#behavioral-vs-structural-modeling" title="Link to this heading">#</a></h5>
+<h5>Behavioral vs. Structural modeling<a class="headerlink" href="#behavioral-vs-structural-modeling" title="Permalink to this heading">#</a></h5>
 <p>There are two basic philosophies for modeling digital architectures:</p>
 <ul class="simple">
 <li><p><strong>structural</strong> describes <em>how</em> the module would be composed as a hierarchy of simpler modules.</p></li>
@@ -691,7 +685,7 @@ As a reminder, here is the behavioral code for a one-hot decoder.</p>
 </section>
 </section>
 <section id="test-sevenseg-decoder">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Test sevenseg_decoder</a><a class="headerlink" href="#test-sevenseg-decoder" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Test sevenseg_decoder</a><a class="headerlink" href="#test-sevenseg-decoder" title="Permalink to this heading">#</a></h3>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Test bench entities do not have any input or output ports!
@@ -706,7 +700,7 @@ Name your test bench file <code class="docutils literal notranslate"><span class
 </div></blockquote>
 </section>
 <section id="top-basys3">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Permalink to this heading">#</a></h3>
 <p>The functionality we are looking for is this:</p>
 <pre  class="mermaid">
         flowchart LR
@@ -719,7 +713,7 @@ Name your test bench file <code class="docutils literal notranslate"><span class
 <li><p>Expect that value to be output <em>only</em> on display 0 when button C is pressed; otherwise all displays are off.</p></li>
 </ul>
 <section id="design">
-<h4>Design<a class="headerlink" href="#design" title="Link to this heading">#</a></h4>
+<h4>Design<a class="headerlink" href="#design" title="Permalink to this heading">#</a></h4>
 <p><strong>Before writing code</strong> draw the entity diagram for <strong>top_basys3</strong>.</p>
 <ul class="simple">
 <li><p>Ensure it has all the inputs and outputs you need.</p></li>
@@ -734,10 +728,10 @@ Name your test bench file <code class="docutils literal notranslate"><span class
 </div>
 </section>
 <section id="implementation">
-<h4>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h4>
+<h4>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h4>
 <p>Now connect everything in VHDL like you show in your diagram.</p>
 <section id="using-btnc">
-<h5>Using btnC<a class="headerlink" href="#using-btnc" title="Link to this heading">#</a></h5>
+<h5>Using btnC<a class="headerlink" href="#using-btnc" title="Permalink to this heading">#</a></h5>
 <p>The output <code class="docutils literal notranslate"><span class="pre">an</span></code> is four bits but <code class="docutils literal notranslate"><span class="pre">btnC</span></code> is only one bit.
 The easiest way to connect these is with a signal.
 We will append <code class="docutils literal notranslate"><span class="pre">_n</span></code> to the signal name to remind ourselves it is active LOW.</p>
@@ -755,7 +749,7 @@ We will append <code class="docutils literal notranslate"><span class="pre">_n</
 </div>
 </section>
 <section id="implement-in-hardware">
-<h5>Implement in hardware<a class="headerlink" href="#implement-in-hardware" title="Link to this heading">#</a></h5>
+<h5>Implement in hardware<a class="headerlink" href="#implement-in-hardware" title="Permalink to this heading">#</a></h5>
 <p>Uncomment the relative lines in your constraints file.
 Remember to only uncomment <code class="docutils literal notranslate"><span class="pre">sw(0)</span></code> - <code class="docutils literal notranslate"><span class="pre">sw(3)</span></code>, not all 16 switches.</p>
 <p>Synthesize and implement your design. Then generate a bitstream and squirt it to your board.</p>
@@ -767,14 +761,14 @@ Remember to only uncomment <code class="docutils literal notranslate"><span clas
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
 <section id="prelab">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Permalink to this heading">#</a></h3>
 <p>See instructions at the top of this lab.
 Submit on Gradescope.</p>
 </section>
 <section id="hardware-demo">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Hardware demo</a><a class="headerlink" href="#hardware-demo" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Hardware demo</a><a class="headerlink" href="#hardware-demo" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You have to hold the center push button down for a 7SD to show your output. (10 pts)</p></li>
 <li><p>The correct hex digit is shown based on the switch positions for all input possibilities. (20 pts)</p></li>
@@ -782,7 +776,7 @@ Submit on Gradescope.</p>
 <p>Demo can be performed live with an instructor (preferred) OR submitted via Teams video.</p>
 </section>
 <section id="written-report">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Written Report</a><a class="headerlink" href="#written-report" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Written Report</a><a class="headerlink" href="#written-report" title="Permalink to this heading">#</a></h3>
 <p>Seek to answer the fundamental question
 <strong>“How do you understand the cathode and anode structure, use a decoder, and map your design  to hardware?”</strong></p>
 <p>Include the following sections:</p>
@@ -795,7 +789,7 @@ Submit on Gradescope.</p>
 <p>Rubric and template on Teams. Submit on Gradescope.</p>
 </section>
 <section id="code-on-gradescope-via-github">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Code on Gradescope via GitHub</a><a class="headerlink" href="#code-on-gradescope-via-github" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Code on Gradescope via GitHub</a><a class="headerlink" href="#code-on-gradescope-via-github" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sevenseg_decoder.vhd</span></code> and <code class="docutils literal notranslate"><span class="pre">sevenseg_decoder_tb.vhd</span></code> included in <code class="docutils literal notranslate"><span class="pre">src/</span></code></p></li>
 <li><p>Extraneous comments are removed and code is formatted in a sane manner</p></li>
