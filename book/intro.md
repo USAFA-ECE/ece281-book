@@ -50,29 +50,24 @@
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
 
 - Homework (HW) are always due at 0800 before the next lesson.
-    - Extensions on HW are *only* granted in the case of medical or family emergency.
-- All other assignments are due at 1159 on the T-day of that lesson.
+- All other assignments are due at the date/time shown in [Gradescope](https://www.gradescope.com/).
 
 ## Course Information
 
 ### Instructors
 
-#### [Capt Brian Yarbrough](https://www.usafa.edu/facultyprofile/?smid=54059)
+#### [Lt Col Jason Wyche](https://www.usafa.edu/facultyprofile/?smid=80068)
 
 - Course Director
-- Office: 2F48
+- Office: 2F10
 
-#### [Dr. George York](https://www.usafa.edu/facultyprofile/?smid=18247)
+#### [Dr. George York](https://www.usafa.edu/facultyprofile/?smid=91372)
 
 - Office: 2F6A
 
-#### [Lt Col James Trimble](https://www.usafa.edu/facultyprofile/?smid=54055)
+#### [Capt Donnelle January](https://www.usafa.edu/facultyprofile/?smid=91469)
 
-- Office: 2E46D
-
-#### [Lt Col Jason Wyche](https://www.usafa.edu/facultyprofile/?smid=80068)
-
-- Office: 2F10
+- Office: 2E46B
 
 ### Course Goals
 
@@ -107,7 +102,7 @@ All course policies are in accordance with and subject to USAFA policies.
 
 #### Collaboration
 
-For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
+For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
 
 #### Extra Instruction (EI)
 
@@ -119,11 +114,10 @@ Schedule EI with an instructor if you are having difficulty with the course mate
 
 #### Late Assignments
 
-With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
-deadline extensions are liberally granted by instructor discretion,
-*provided that you coordinate **prior** to the day on which the assignment is due.*
+Due date/time extensions for assignments will be granted at instructor discretion,
+*provided you coordinate the extension **prior** to the day on which the assignment is due.*
 It is your responsibility to plan ahead and communicate clearly.
-These extensions will be reflected ni Gradescope individually for you on that particular assignment.
+These extensions will be reflected in [Gradescope](https://www.gradescope.com/) individually for you on that particular assignment.
 
 ## Grading
 
@@ -187,13 +181,12 @@ engage with the material and help you build context for how it all fits together
 To be considered a "pass" you must earn **60%** of the available points for the assignment.
 
 - **Homeworks (HW)** are designed both as a preview and review of content.
-    There are *no deadline extensions* on HW (including SCA), with the exception of medical or family emergency.
 - **In-Class Exercises (ICE)** require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
-    They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.
+    They are designed to be completed during the 53-minute class period, but can be finished after class if more time is needed.
 - **Pre-Labs** are designed to help you complete the lab exercise, so must be submitted *before* the lab starts.
 - **Labs** include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.
 
-Your ultimate grade for a category will simply be the average of passed vs. total assignments for that category.
+Your grade for a category will be the average of passed vs. total assignments for that category.
 For example, if you complete 6/7 ICEs, you will earn $6/7=85\%$ for ICEs.
 
 ### Lab Reports
@@ -227,16 +220,18 @@ But, after the Lab 2 Revisions, the ultimate grade is $100-(5+0+5)+2=92$.
 
 ### Exams
 
-Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
+Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet will be provided - *also available in Teams*.
 Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
 **Not all testable concepts will necessarily be covered in lectures.**
 
 #### Missed Exams
 
-The following policies are outlined in USAFA FOI 537-3:
-
-- **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.
-- **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.
+- **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam. The default make-up date/time will be the first DF Time period following the original exam date.
+- **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup. The default make-up date/time will be the first DF Time period following the original exam date.
+- **Unexcused Absence (or Late):** As per *USAFA FOI 36-173, Academic Practices and Procedures*:
+  - Cadets missing an examination due to an unexcused absence will receive a mandatory academic penalty of 25%.
+  - Cadets arriving more than 15 minutes late (1 hour for final exams) are considered absent and will be scheduled to take the GR/Final Exam during the designated make-up date/time. They will receive a 25% academic penalty.
+  - Cadets arriving less than 15 minutes late (1 hour for final exams) will immediately begin the exam and finish with the rest of the class. No academic penalty will be incurred.
 
 ### Final Exam Validation
 
