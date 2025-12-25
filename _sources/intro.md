@@ -1,6 +1,6 @@
 # ECE 281: Digital Design and Computer Architecture
 
-2025 Spring Syllabus
+2026 Spring Syllabus
 
 ## Schedule
 
@@ -50,29 +50,24 @@
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
 
 - Homework (HW) are always due at 0800 before the next lesson.
-    - Extensions on HW are *only* granted in the case of medical or family emergency.
-- All other assignments are due at 1159 on the T-day of that lesson.
+- All other assignments are due at the date/time shown in [Gradescope](https://www.gradescope.com/).
 
 ## Course Information
 
 ### Instructors
 
-#### [Capt Brian Yarbrough](https://www.usafa.edu/facultyprofile/?smid=54059)
+#### [Lt Col Jason Wyche](https://www.usafa.edu/facultyprofile/?smid=80068)
 
 - Course Director
-- Office: 2F48
+- Office: 2F10
 
-#### [Dr. George York](https://www.usafa.edu/facultyprofile/?smid=18247)
+#### [Dr. George York](https://www.usafa.edu/facultyprofile/?smid=91372)
 
 - Office: 2F6A
 
-#### [Lt Col James Trimble](https://www.usafa.edu/facultyprofile/?smid=54055)
+#### [Capt Donnelle January](https://www.usafa.edu/facultyprofile/?smid=91469)
 
-- Office: 2E46D
-
-#### [Lt Col Jason Wyche](https://www.usafa.edu/facultyprofile/?smid=80068)
-
-- Office: 2F10
+- Office: 2E46B
 
 ### Course Goals
 
@@ -105,9 +100,10 @@ Readings should be completed *prior* to class.
 
 All course policies are in accordance with and subject to USAFA policies.
 
-#### Collaboration
+#### Collaboration & AI Policy
 
-For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
+- For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.
+- AI usage is limited to Level 3. Level 3 is defined as “Use of GenAI as a feedback tool on student-generated work. Cadets create their own work independently, then may use GenAI as a tool to get feedback about their draft, such as suggestions for improvement, clarification, alignment with the assignment instructions, or editing tips. Cadets are expected to make their own revisions based on this feedback; the submitted work should not include GenAI-generated text. This use of GenAI should be clearly communicated in their documentation statements.” This means you must write your own code but can ask an AI model for clarification, conceptual questions, and debugging help. You should not have the AI model write the solution for you and should put language in your prompt that asks the AI to not write the code for you. You must provide your instructor with a transcript of your conversation
 
 #### Extra Instruction (EI)
 
@@ -115,31 +111,23 @@ Schedule EI with an instructor if you are having difficulty with the course mate
 
 #### Missing Class
 
- You must notify your instructor **via email** of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.
+ You must notify your instructor **via email** of any class absence as early as possible. The email should contain the following:  
 
-#### Late Assignments
+- **SCA**
+  - SCA number
+  - Descriptive reason for the absence
+  - Include date and lesson number  
+  - Check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.
+- **Bed Rest**
+  - Cc Squadron Commander on email
 
-With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
-deadline extensions are liberally granted by instructor discretion,
-*provided that you coordinate **prior** to the day on which the assignment is due.*
-It is your responsibility to plan ahead and communicate clearly.
-These extensions will be reflected ni Gradescope individually for you on that particular assignment.
+Whether excused or unexcused, you are still responsible for keeping up with all assignments.
 
 ## Grading
 
-This course uses an alternative grading format.
-The intent is that your grades will be fairer, more accurate, and more meaningful.
-This grading format should also improve your learning and retention of concepts taught throughout the semester.
+### Grade Weighting
 
-There are three broad categories of assignments:
-
-- Pass/fail
-- Lab reports
-- Exams
-
-The grade weights are as follows:
-
-```{mermaid}
+```mermaid
 pie title Prog Grade Weighting
     "GR 1" : 25
     "HW" : 20
@@ -149,7 +137,7 @@ pie title Prog Grade Weighting
     "Lab Reports" : 20
 ```
 
-```{mermaid}
+```mermaid
 pie title Final Grade Weighting
     "GR 1" : 15
     "GR 2" : 15
@@ -161,106 +149,66 @@ pie title Final Grade Weighting
     "Final": 10
 ```
 
-Grade breakdown follows the standard scale.
+Electrical and Computer Engineering courses are contract graded using the following 100 point scale.
 
-```{mermaid}
-flowchart LR
-    J["A\n100%"] --> I["A-\n93%"] --> H["B+\n90%"] --> G["B\n87%"] --> F["B-\n83%"] --> E["C+\n79%"] --> D["C\n77%"] --> C["C-\n73%"] --> B["D\n70%"] --> A["F\n≤60%"]
-    style J fill:#006400,color:#000000
-    style I fill:#006400,color:#000000
-    style H fill:#90EE90,color:#000000
-    style G fill:#90EE90,color:#000000
-    style F fill:#90EE90,color:#000000
-    style E fill:#FFA500,color:#000000
-    style D fill:#FFA500,color:#000000
-    style C fill:#FFA500,color:#000000
-    style B fill:#FF4500,color:#000000
-    style A fill:#FF0000,color:#000000
-```
+|     Grade       |     Grade      |     Grade       |     Grade     |  
+|:---------------:|:--------------:|:---------------:|:-------------:|
+| 93 <= A <= 100  | 87 <= B+ < 90  | 77 <= C+ < 80   | 60 <= D < 70  |  
+| 90 <= A- < 93   | 83 <= B < 87   | 73 <= C < 77    | 0 <= F < 60   |  
+|                 | 80 <= B- < 83  | 70 <= C- < 73   |               |
 
-### Pass/Fail Assignments
+You must complete all minimum functionalities on labs and in-class exercises in order to complete the course. Even if an assignment is so late that no credit will be received, the assignment must be completed to the satisfaction of the instructor to prevent a grade of “Incomplete.”
 
-All pas/fail assignments are submitted on Gradescope. Most of these assignments are auto-graded,
-sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
-engage with the material and help you build context for how it all fits together.
+### Graded Assignments
 
-To be considered a "pass" you must earn **60%** of the available points for the assignment.
+**Homeworks** are designed both as a preview and review of content.
 
-- **Homeworks (HW)** are designed both as a preview and review of content.
-    There are *no deadline extensions* on HW (including SCA), with the exception of medical or family emergency.
-- **In-Class Exercises (ICE)** require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
-    They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.
-- **Pre-Labs** are designed to help you complete the lab exercise, so must be submitted *before* the lab starts.
-- **Labs** include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.
+**In-Class Exercises (ICE)** require you to develop a technical solution in VHDL, RISC-V, or on a breadboard. They are designed to be completed during the 53-minute class period, but can be finished after class if more time is needed.
 
-Your ultimate grade for a category will simply be the average of passed vs. total assignments for that category.
-For example, if you complete 6/7 ICEs, you will earn $6/7=85\%$ for ICEs.
+**Pre-Labs** are designed to help you complete the lab exercise, so must be submitted *before* the lab starts.
 
-### Lab Reports
+**Labs** include the code and demonstration for a lab exercise. The lab report is submitted/graded separately, see below.
 
-Each lab has a report (except Lab 5), submitted on Gradescope, that will be assessed using [The EMRN Rubric](https://rtalbert.org/emrn/)
+**Lab Reports** must follow the format outlined in the ECE 281 [project report template](https://usafa0.sharepoint.com/:w:/r/sites/ECE281/Class%20Materials/ECE382_Project%20Report%20Template.docx?d=wfdbfc40c053e495a8b48dba315fe17ef&csf=1&web=1&e=CkZ0bH)
 
-![EMRN Rubric](https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png)
+#### Late Assignments
 
-For lab reports #1, #2, and #3, you may resubmit once per report for re-evaluation,
-provided you earned an **M** or **R** on your original submission.
-To prevent grading backlogs, the resubmission must take place **within ten days** of the lab report being returned.
-
-**The total lab report score starts at 100:**
-
-- Deduct 0% for each E
-- Dduct 5% for each M
-- Deduct 15% for each R
-- Deduct 25% for each N
-- Deduct 30% for each missing submissoin
-- Add up to 2% for Lab 4 report
-
-**Example:**
-
-- A cadet earns an M on her first report.
-- She then earns an R on her second report and resubmits, earning an E.
-- She earns an M on her third report
-- She earned a 100% on her fourth report
-
-Her original grade was $100-(5+15+5)+2=87$.
-But, after the Lab 2 Revisions, the ultimate grade is $100-(5+0+5)+2=92$.
+Due date/time extensions for assignments will be granted at instructor discretion,
+*provided you coordinate the extension **prior** to the day on which the assignment is due.*
+It is your responsibility to plan ahead and communicate clearly.
+These extensions will be reflected in [Gradescope](https://www.gradescope.com/) individually for you on that particular assignment.
 
 ### Exams
 
-Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
+Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet will be provided - *also available in Teams*.
 Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
 **Not all testable concepts will necessarily be covered in lectures.**
 
 #### Missed Exams
 
-The following policies are outlined in USAFA FOI 537-3:
-
-- **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.
-- **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.
+- **Scheduled Absence:** If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam. The default make-up date/time will be the first DF Time period following the original exam date.
+- **Unscheduled Absence:** If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup. The default make-up date/time will be the first DF Time period following the original exam date.
+- **Unexcused Absence (or Late):** As per *USAFA FOI 36-173, Academic Practices and Procedures*:
+  - Cadets missing an examination due to an unexcused absence will receive a mandatory academic penalty of 25%.
+  - Cadets arriving more than 15 minutes late (1 hour for final exams) are considered absent and will be scheduled to take the GR/Final Exam during the designated make-up date/time. They will receive a 25% academic penalty.
+  - Cadets arriving less than 15 minutes late (1 hour for final exams) will immediately begin the exam and finish with the rest of the class. No academic penalty will be incurred.
 
 ### Final Exam Validation
 
-$$
-V = GRLB
-$$
+The DFEC Department Head may exempt the top 5% of cadets in the course from the final exam. Candidates for validation of the final exam must:
 
-where
+- have at least a 90% average for the course
+- have at least a 90% weighted average on all exams
+- have completed minimum functionalities on all labs and in-class exercises
 
-- $V$ = validates the final exam
-- $G$ = grade is >= 97%
-- $R$ = has at least one Exemplary reports
-- $L$ = passed all lab code assignments
-- $B$ = returns their Basys3 board
-
-The Course Director will send **official** notification to everyone who validates the final NLT COB on T40.
-Unless you receive that email, you must take the final exam
+The Course Director will send **official** notification to everyone who validates the final NLT COB on T40. If you do not receive notification from the Course Director, you must take the final exam.
 
 ## Course Website Table of Contents
 
 Course website: [https://usafa-ece.github.io/ece281-book](https://usafa-ece.github.io/ece281-book).
 
 Students are encouraged to submit pull requests to [the github repository](https://github.com/usafa-ece/ece281-book)
-for error corrections!
+for error corrections! **IP points will be awarded for pull requests fixing errors/issues/typos/etc.**
 
 ```{tableofcontents}
 ```

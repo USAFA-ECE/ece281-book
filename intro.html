@@ -63,16 +63,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
-    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-    <script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
-window.addEventListener("load", () => mermaid.run());
-</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -411,27 +401,28 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-information">Course Information</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors">Instructors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capt-brian-yarbrough">Capt Brian Yarbrough</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dr-george-york">Dr. George York</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lt-col-james-trimble">Lt Col James Trimble</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lt-col-jason-wyche">Lt Col Jason Wyche</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dr-george-york">Dr. George York</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capt-donnelle-january">Capt Donnelle January</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-texts">Course Texts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration">Collaboration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-ai-policy">Collaboration &amp; AI Policy</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-instruction-ei">Extra Instruction (EI)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-class">Missing Class</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-assignments">Late Assignments</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-fail-assignments">Pass/Fail Assignments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-reports">Lab Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grade-weighting">Grade Weighting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graded-assignments">Graded Assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-assignments">Late Assignments</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exams">Exams</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missed-exams">Missed Exams</a></li>
 </ul>
@@ -455,7 +446,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ece-281-digital-design-and-computer-architecture">
 <h1>ECE 281: Digital Design and Computer Architecture<a class="headerlink" href="#ece-281-digital-design-and-computer-architecture" title="Permalink to this heading">#</a></h1>
-<p>2025 Spring Syllabus</p>
+<p>2026 Spring Syllabus</p>
 <section id="schedule">
 <h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -713,41 +704,31 @@ document.write(`
 </div>
 <p>Unless stated otherwise, assignments are submitted on <a class="reference external" href="https://www.gradescope.com/">Gradescope</a>.</p>
 <ul class="simple">
-<li><p>Homework (HW) are always due at 0800 before the next lesson.</p>
-<ul>
-<li><p>Extensions on HW are <em>only</em> granted in the case of medical or family emergency.</p></li>
-</ul>
-</li>
-<li><p>All other assignments are due at 1159 on the T-day of that lesson.</p></li>
+<li><p>Homework (HW) are always due at 0800 before the next lesson.</p></li>
+<li><p>All other assignments are due at the date/time shown in <a class="reference external" href="https://www.gradescope.com/">Gradescope</a>.</p></li>
 </ul>
 </section>
 <section id="course-information">
 <h2>Course Information<a class="headerlink" href="#course-information" title="Permalink to this heading">#</a></h2>
 <section id="instructors">
 <h3>Instructors<a class="headerlink" href="#instructors" title="Permalink to this heading">#</a></h3>
-<section id="capt-brian-yarbrough">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54059">Capt Brian Yarbrough</a><a class="headerlink" href="#capt-brian-yarbrough" title="Permalink to this heading">#</a></h4>
+<section id="lt-col-jason-wyche">
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=80068">Lt Col Jason Wyche</a><a class="headerlink" href="#lt-col-jason-wyche" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Course Director</p></li>
-<li><p>Office: 2F48</p></li>
+<li><p>Office: 2F10</p></li>
 </ul>
 </section>
 <section id="dr-george-york">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=18247">Dr. George York</a><a class="headerlink" href="#dr-george-york" title="Permalink to this heading">#</a></h4>
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=91372">Dr. George York</a><a class="headerlink" href="#dr-george-york" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Office: 2F6A</p></li>
 </ul>
 </section>
-<section id="lt-col-james-trimble">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=54055">Lt Col James Trimble</a><a class="headerlink" href="#lt-col-james-trimble" title="Permalink to this heading">#</a></h4>
+<section id="capt-donnelle-january">
+<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=91469">Capt Donnelle January</a><a class="headerlink" href="#capt-donnelle-january" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Office: 2E46D</p></li>
-</ul>
-</section>
-<section id="lt-col-jason-wyche">
-<h4><a class="reference external" href="https://www.usafa.edu/facultyprofile/?smid=80068">Lt Col Jason Wyche</a><a class="headerlink" href="#lt-col-jason-wyche" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Office: 2F10</p></li>
+<li><p>Office: 2E46B</p></li>
 </ul>
 </section>
 </section>
@@ -781,9 +762,12 @@ and you will continue to reference it in other courses.
 <section id="policies">
 <h3>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h3>
 <p>All course policies are in accordance with and subject to USAFA policies.</p>
-<section id="collaboration">
-<h4>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this heading">#</a></h4>
-<p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p>
+<section id="collaboration-ai-policy">
+<h4>Collaboration &amp; AI Policy<a class="headerlink" href="#collaboration-ai-policy" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone. We expect all graded work, to include code, lab notebooks, and written reports, to be your own work. Copying another person’s work, with or without documentation, will result in NO academic credit.  Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p></li>
+<li><p>AI usage is limited to Level 3. Level 3 is defined as “Use of GenAI as a feedback tool on student-generated work. Cadets create their own work independently, then may use GenAI as a tool to get feedback about their draft, such as suggestions for improvement, clarification, alignment with the assignment instructions, or editing tips. Cadets are expected to make their own revisions based on this feedback; the submitted work should not include GenAI-generated text. This use of GenAI should be clearly communicated in their documentation statements.” This means you must write your own code but can ask an AI model for clarification, conceptual questions, and debugging help. You should not have the AI model write the solution for you and should put language in your prompt that asks the AI to not write the code for you. You must provide your instructor with a transcript of your conversation</p></li>
+</ul>
 </section>
 <section id="extra-instruction-ei">
 <h4>Extra Instruction (EI)<a class="headerlink" href="#extra-instruction-ei" title="Permalink to this heading">#</a></h4>
@@ -791,40 +775,40 @@ and you will continue to reference it in other courses.
 </section>
 <section id="missing-class">
 <h4>Missing Class<a class="headerlink" href="#missing-class" title="Permalink to this heading">#</a></h4>
-<p>You must notify your instructor <strong>via email</strong> of any class absence as early as possible.  You must provide a descriptive reason and SCA number, and you should describe what you will miss and how you would like to accomplish the missed work.  Be sure to check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.</p>
-</section>
-<section id="late-assignments">
-<h4>Late Assignments<a class="headerlink" href="#late-assignments" title="Permalink to this heading">#</a></h4>
-<p>With the exception of homeworks (which may only be submitted late in the case of family or medical emergency),
-deadline extensions are liberally granted by instructor discretion,
-<em>provided that you coordinate <strong>prior</strong> to the day on which the assignment is due.</em>
-It is your responsibility to plan ahead and communicate clearly.
-These extensions will be reflected ni Gradescope individually for you on that particular assignment.</p>
+<p>You must notify your instructor <strong>via email</strong> of any class absence as early as possible. The email should contain the following:</p>
+<ul class="simple">
+<li><p><strong>SCA</strong></p>
+<ul>
+<li><p>SCA number</p></li>
+<li><p>Descriptive reason for the absence</p></li>
+<li><p>Include date and lesson number</p></li>
+<li><p>Check your SCA to see if instructor “notification” or “permission” is required, and whether you are allowed to miss graded events.</p></li>
+</ul>
+</li>
+<li><p><strong>Bed Rest</strong></p>
+<ul>
+<li><p>Cc Squadron Commander on email</p></li>
+</ul>
+</li>
+</ul>
+<p>Whether excused or unexcused, you are still responsible for keeping up with all assignments.</p>
 </section>
 </section>
 </section>
 <section id="grading">
 <h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h2>
-<p>This course uses an alternative grading format.
-The intent is that your grades will be fairer, more accurate, and more meaningful.
-This grading format should also improve your learning and retention of concepts taught throughout the semester.</p>
-<p>There are three broad categories of assignments:</p>
-<ul class="simple">
-<li><p>Pass/fail</p></li>
-<li><p>Lab reports</p></li>
-<li><p>Exams</p></li>
-</ul>
-<p>The grade weights are as follows:</p>
-<pre  class="mermaid">
-        pie title Prog Grade Weighting
+<section id="grade-weighting">
+<h3>Grade Weighting<a class="headerlink" href="#grade-weighting" title="Permalink to this heading">#</a></h3>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>pie title Prog Grade Weighting
     &quot;GR 1&quot; : 25
     &quot;HW&quot; : 20
     &quot;ICE&quot; : 15
     &quot;Prelab&quot; : 10
     &quot;Lab Code&quot;  : 10
     &quot;Lab Reports&quot; : 20
-    </pre><pre  class="mermaid">
-        pie title Final Grade Weighting
+</pre></div>
+</div>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>pie title Final Grade Weighting
     &quot;GR 1&quot; : 15
     &quot;GR 2&quot; : 15
     &quot;HW&quot; : 10
@@ -833,100 +817,89 @@ This grading format should also improve your learning and retention of concepts 
     &quot;Lab Code&quot;  : 10
     &quot;Lab Reports&quot; : 20
     &quot;Final&quot;: 10
-    </pre><p>Grade breakdown follows the standard scale.</p>
-<pre  class="mermaid">
-        flowchart LR
-    J[&quot;A\n100%&quot;] --&gt; I[&quot;A-\n93%&quot;] --&gt; H[&quot;B+\n90%&quot;] --&gt; G[&quot;B\n87%&quot;] --&gt; F[&quot;B-\n83%&quot;] --&gt; E[&quot;C+\n79%&quot;] --&gt; D[&quot;C\n77%&quot;] --&gt; C[&quot;C-\n73%&quot;] --&gt; B[&quot;D\n70%&quot;] --&gt; A[&quot;F\n≤60%&quot;]
-    style J fill:#006400,color:#000000
-    style I fill:#006400,color:#000000
-    style H fill:#90EE90,color:#000000
-    style G fill:#90EE90,color:#000000
-    style F fill:#90EE90,color:#000000
-    style E fill:#FFA500,color:#000000
-    style D fill:#FFA500,color:#000000
-    style C fill:#FFA500,color:#000000
-    style B fill:#FF4500,color:#000000
-    style A fill:#FF0000,color:#000000
-    </pre><section id="pass-fail-assignments">
-<h3>Pass/Fail Assignments<a class="headerlink" href="#pass-fail-assignments" title="Permalink to this heading">#</a></h3>
-<p>All pas/fail assignments are submitted on Gradescope. Most of these assignments are auto-graded,
-sometimes with immediate feedback and allowed resubmissions. The intent of these assignments is to help you
-engage with the material and help you build context for how it all fits together.</p>
-<p>To be considered a “pass” you must earn <strong>60%</strong> of the available points for the assignment.</p>
-<ul class="simple">
-<li><p><strong>Homeworks (HW)</strong> are designed both as a preview and review of content.
-There are <em>no deadline extensions</em> on HW (including SCA), with the exception of medical or family emergency.</p></li>
-<li><p><strong>In-Class Exercises (ICE)</strong> require you to develop a technical solution in VHDL, RISC-V, or on a breadboard.
-They are designed to be completed during the 53-minute class period, but can be finished afterwords if need be.</p></li>
-<li><p><strong>Pre-Labs</strong> are designed to help you complete the lab exercise, so must be submitted <em>before</em> the lab starts.</p></li>
-<li><p><strong>Labs</strong> include the code and demonstration for a lab exercise. The lab report is submitted separately, see below.</p></li>
-</ul>
-<p>Your ultimate grade for a category will simply be the average of passed vs. total assignments for that category.
-For example, if you complete 6/7 ICEs, you will earn <span class="math notranslate nohighlight">\(6/7=85\%\)</span> for ICEs.</p>
+</pre></div>
+</div>
+<p>Electrical and Computer Engineering courses are contract graded using the following 100 point scale.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Grade</p></th>
+<th class="head text-center"><p>Grade</p></th>
+<th class="head text-center"><p>Grade</p></th>
+<th class="head text-center"><p>Grade</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>93 &lt;= A &lt;= 100</p></td>
+<td class="text-center"><p>87 &lt;= B+ &lt; 90</p></td>
+<td class="text-center"><p>77 &lt;= C+ &lt; 80</p></td>
+<td class="text-center"><p>60 &lt;= D &lt; 70</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>90 &lt;= A- &lt; 93</p></td>
+<td class="text-center"><p>83 &lt;= B &lt; 87</p></td>
+<td class="text-center"><p>73 &lt;= C &lt; 77</p></td>
+<td class="text-center"><p>0 &lt;= F &lt; 60</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>80 &lt;= B- &lt; 83</p></td>
+<td class="text-center"><p>70 &lt;= C- &lt; 73</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You must complete all minimum functionalities on labs and in-class exercises in order to complete the course. Even if an assignment is so late that no credit will be received, the assignment must be completed to the satisfaction of the instructor to prevent a grade of “Incomplete.”</p>
 </section>
-<section id="lab-reports">
-<h3>Lab Reports<a class="headerlink" href="#lab-reports" title="Permalink to this heading">#</a></h3>
-<p>Each lab has a report (except Lab 5), submitted on Gradescope, that will be assessed using <a class="reference external" href="https://rtalbert.org/emrn/">The EMRN Rubric</a></p>
-<p><img alt="EMRN Rubric" src="https://rtalbert.org/content/images/2022/04/EMRN-rubric-2020.png" /></p>
-<p>For lab reports #1, #2, and #3, you may resubmit once per report for re-evaluation,
-provided you earned an <strong>M</strong> or <strong>R</strong> on your original submission.
-To prevent grading backlogs, the resubmission must take place <strong>within ten days</strong> of the lab report being returned.</p>
-<p><strong>The total lab report score starts at 100:</strong></p>
-<ul class="simple">
-<li><p>Deduct 0% for each E</p></li>
-<li><p>Dduct 5% for each M</p></li>
-<li><p>Deduct 15% for each R</p></li>
-<li><p>Deduct 25% for each N</p></li>
-<li><p>Deduct 30% for each missing submissoin</p></li>
-<li><p>Add up to 2% for Lab 4 report</p></li>
-</ul>
-<p><strong>Example:</strong></p>
-<ul class="simple">
-<li><p>A cadet earns an M on her first report.</p></li>
-<li><p>She then earns an R on her second report and resubmits, earning an E.</p></li>
-<li><p>She earns an M on her third report</p></li>
-<li><p>She earned a 100% on her fourth report</p></li>
-</ul>
-<p>Her original grade was <span class="math notranslate nohighlight">\(100-(5+15+5)+2=87\)</span>.
-But, after the Lab 2 Revisions, the ultimate grade is <span class="math notranslate nohighlight">\(100-(5+0+5)+2=92\)</span>.</p>
+<section id="graded-assignments">
+<h3>Graded Assignments<a class="headerlink" href="#graded-assignments" title="Permalink to this heading">#</a></h3>
+<p><strong>Homeworks</strong> are designed both as a preview and review of content.</p>
+<p><strong>In-Class Exercises (ICE)</strong> require you to develop a technical solution in VHDL, RISC-V, or on a breadboard. They are designed to be completed during the 53-minute class period, but can be finished after class if more time is needed.</p>
+<p><strong>Pre-Labs</strong> are designed to help you complete the lab exercise, so must be submitted <em>before</em> the lab starts.</p>
+<p><strong>Labs</strong> include the code and demonstration for a lab exercise. The lab report is submitted/graded separately, see below.</p>
+<p><strong>Lab Reports</strong> must follow the format outlined in the ECE 281 <a class="reference external" href="https://usafa0.sharepoint.com/:w:/r/sites/ECE281/Class%20Materials/ECE382_Project%20Report%20Template.docx?d=wfdbfc40c053e495a8b48dba315fe17ef&amp;csf=1&amp;web=1&amp;e=CkZ0bH">project report template</a></p>
+<section id="late-assignments">
+<h4>Late Assignments<a class="headerlink" href="#late-assignments" title="Permalink to this heading">#</a></h4>
+<p>Due date/time extensions for assignments will be granted at instructor discretion,
+<em>provided you coordinate the extension <strong>prior</strong> to the day on which the assignment is due.</em>
+It is your responsibility to plan ahead and communicate clearly.
+These extensions will be reflected in <a class="reference external" href="https://www.gradescope.com/">Gradescope</a> individually for you on that particular assignment.</p>
+</section>
 </section>
 <section id="exams">
 <h3>Exams<a class="headerlink" href="#exams" title="Permalink to this heading">#</a></h3>
-<p>Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet - also available in Teams - will be provided.
+<p>Graded Reviews and Final Exam are closed textbook, closed notes. A reference sheet will be provided - <em>also available in Teams</em>.
 Testable material includes any concepts from the labs, lectures, exercises, homework, and assigned readings.
 <strong>Not all testable concepts will necessarily be covered in lectures.</strong></p>
 <section id="missed-exams">
 <h4>Missed Exams<a class="headerlink" href="#missed-exams" title="Permalink to this heading">#</a></h4>
-<p>The following policies are outlined in USAFA FOI 537-3:</p>
 <ul class="simple">
-<li><p><strong>Scheduled Absence:</strong> If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam.</p></li>
-<li><p><strong>Unscheduled Absence:</strong> If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup.  Exceptions can only be granted by the Department Head.</p></li>
+<li><p><strong>Scheduled Absence:</strong> If you know that you will be unable to take the GR during the scheduled GR period, you are required to inform your instructor as soon as possible before the GR and to schedule a make-up exam. The default make-up date/time will be the first DF Time period following the original exam date.</p></li>
+<li><p><strong>Unscheduled Absence:</strong> If you miss the GR for reasons beyond your control (e.g. hospitalization, emergency leave, delayed field trip return, etc.), you must contact the course director within two working days to schedule a makeup. The default make-up date/time will be the first DF Time period following the original exam date.</p></li>
+<li><p><strong>Unexcused Absence (or Late):</strong> As per <em>USAFA FOI 36-173, Academic Practices and Procedures</em>:</p>
+<ul>
+<li><p>Cadets missing an examination due to an unexcused absence will receive a mandatory academic penalty of 25%.</p></li>
+<li><p>Cadets arriving more than 15 minutes late (1 hour for final exams) are considered absent and will be scheduled to take the GR/Final Exam during the designated make-up date/time. They will receive a 25% academic penalty.</p></li>
+<li><p>Cadets arriving less than 15 minutes late (1 hour for final exams) will immediately begin the exam and finish with the rest of the class. No academic penalty will be incurred.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
 <section id="final-exam-validation">
 <h3>Final Exam Validation<a class="headerlink" href="#final-exam-validation" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-V = GRLB
-\]</div>
-<p>where</p>
+<p>The DFEC Department Head may exempt the top 5% of cadets in the course from the final exam. Candidates for validation of the final exam must:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(V\)</span> = validates the final exam</p></li>
-<li><p><span class="math notranslate nohighlight">\(G\)</span> = grade is &gt;= 97%</p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> = has at least one Exemplary reports</p></li>
-<li><p><span class="math notranslate nohighlight">\(L\)</span> = passed all lab code assignments</p></li>
-<li><p><span class="math notranslate nohighlight">\(B\)</span> = returns their Basys3 board</p></li>
+<li><p>have at least a 90% average for the course</p></li>
+<li><p>have at least a 90% weighted average on all exams</p></li>
+<li><p>have completed minimum functionalities on all labs and in-class exercises</p></li>
 </ul>
-<p>The Course Director will send <strong>official</strong> notification to everyone who validates the final NLT COB on T40.
-Unless you receive that email, you must take the final exam</p>
+<p>The Course Director will send <strong>official</strong> notification to everyone who validates the final NLT COB on T40. If you do not receive notification from the Course Director, you must take the final exam.</p>
 </section>
 </section>
 <section id="course-website-table-of-contents">
 <h2>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Permalink to this heading">#</a></h2>
 <p>Course website: <a class="reference external" href="https://usafa-ece.github.io/ece281-book">https://usafa-ece.github.io/ece281-book</a>.</p>
 <p>Students are encouraged to submit pull requests to <a class="reference external" href="https://github.com/usafa-ece/ece281-book">the github repository</a>
-for error corrections!</p>
+for error corrections! <strong>IP points will be awarded for pull requests fixing errors/issues/typos/etc.</strong></p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In Class Exercise</span></p>
 <ul>
@@ -1030,27 +1003,28 @@ the Air Force, or the U.S. Government.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-information">Course Information</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors">Instructors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capt-brian-yarbrough">Capt Brian Yarbrough</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dr-george-york">Dr. George York</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lt-col-james-trimble">Lt Col James Trimble</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lt-col-jason-wyche">Lt Col Jason Wyche</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dr-george-york">Dr. George York</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capt-donnelle-january">Capt Donnelle January</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-goals">Course Goals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-objectives">Course Objectives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-texts">Course Texts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration">Collaboration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-ai-policy">Collaboration &amp; AI Policy</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-instruction-ei">Extra Instruction (EI)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-class">Missing Class</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-assignments">Late Assignments</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-fail-assignments">Pass/Fail Assignments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-reports">Lab Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grade-weighting">Grade Weighting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graded-assignments">Graded Assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#late-assignments">Late Assignments</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exams">Exams</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missed-exams">Missed Exams</a></li>
 </ul>
