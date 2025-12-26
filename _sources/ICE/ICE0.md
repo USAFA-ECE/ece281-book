@@ -26,7 +26,7 @@ Git is software that allows for distributed version control between multiple col
 
 ## Create GitHub account
 
-Use a **personal email** to create account on [GitHub](https://github.com/). The account name should be professional, can include part or all of your real name, but can also be a screen name. Keep in mind it will be public and GitHub functions as sort of a social media for developers.
+Use a **personal email** to create account on [GitHub](https://github.com/). The account name should be professional, can include part or all of your real name, but can also be a screen name. Keep in mind it will be public and GitHub functions as sort of a social media for developers. If you already have a GitHub account, you can use that account.
 
 1. Check the box "Keep my email address private" and copy the generated `@users.noreply.github.com` email for later use.
 2. Check the box "Block command line pushes that expose my email."
