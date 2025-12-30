@@ -23,18 +23,18 @@
 | 15     | GR #1                                    |                          |              |                    |
 | 16     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
 | 17     | Synchronous Circuits                     | 3.1-3.3                  |              |                    |
-| 18     | Finite State Machine Intro               | 3.4.1-3.4.3              |              |                    |
+| 18     | Finite State Machine Intro               | 3.4.1-3.4.3              | HW 18        |                    |
 | 19     | FSM Reverse Engineering                  | 3.4.4-3.4.6              | HW 19        | Lab 2              |
 | 20     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
 | 21     | Memory Arrays                            | 5.4-5.5                  |              | ICE4               |
 | 22     | Lab 3 - T-bird Turn Signal               |                          |              | Lab 3 Prelab       |
-| 23     | Lab 3 - T-bird Turn Signal               |                          | HW 23        |                    |
+| 23     | Lab 3 - T-bird Turn Signal               |                          |              |                    |
 | 24     | ICE5 - Basic Elevator Controller         |                          | Lab 4 Prelab | Lab 3              |
 | 25     | ICE6 - Time Division Multiplexing        |                          |              | ICE5               |
 | 26     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
 | 27     | Lab 4 - Moore Elevator Controller        |                          | HW 27        |                    |
 | 28     | GR #2                                    |                          |              |                    |
-| 29     | RV32I Introduction                       | 6.1-6.2                  | HW 29        | Lab 4              |
+| 29     | RV32I Introduction                       | 6.1-6.2                  |              | Lab 4              |
 | 30     | RV32I R- and I-Type Instructions         | 6.4.1-6.4.2              | HW 30        |                    |
 | 31     | RV32I U-, S-, B-Type Instructions        | 6.3.3, 6.4.3-6.4.5       |              |                    |
 | 32     | RV32I Function Calls                     | 6.3.7-6.3.8              |              |                    |
