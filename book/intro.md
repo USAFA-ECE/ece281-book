@@ -6,11 +6,11 @@
 
 | Lesson | Topic                                    | Reading                  | Assigned     | Due                |
 |--------|------------------------------------------|--------------------------|--------------|--------------------|
-| 1      | Version Control                          | 1.2                      | HW 1 (BCE0)  |                    |
-| 2      | Logic Gates                              | 1.5, 2.1                 | HW 2         |                    |
-| 3      | Boolean Equations and Algebra            | 2.2-2.3                  | HW 3         |                    |
+| 1      | Version Control                          |                          | HW 1         |                    |
+| 2      | Logic Gates and Combinational Circuits   | 1.2, 1.5, 2.1            | HW 2         |                    |
+| 3      | Boolean Equations and Algebra            | 2.2-2.3, ICE1            | HW 3         |                    |
 | 4      | ICE1 - Breadboard Half Adder             |                          | HW 4         |                    |
-| 5      | Multilevel Logic & VHDL                  | 2.4-2.6                  | HW 5         | ICE1               |
+| 5      | Multilevel Logic & VHDL                  | 2.4-2.6, ICE2, [VHDLoverview](https://usafa0.sharepoint.com/sites/ECE281/Class%20Materials/Reference/VHDLoverview.pdf?CT=1767475877405&OR=ItemsView&wdOrigin=TEAMSFILE.FILEBROWSER.DOCUMENTLIBRARY)            | HW 5         | ICE1               |
 | 6      | ICE2 - VHDL Half Adder                   |                          | [HW 6](./HW/HW6.md) |             |
 | 7      | Numbering Systems and Arithmetic         | 1.4                      | HW 7         | ICE2               |
 | 8      | K-Maps                                   | 2.7                      | Lab 1 Prelab |                    |
@@ -47,10 +47,7 @@
 | 39     | ICE7 - RV32I                             |                          |              |                    |
 | 40     | Review                                   |                          |              | ICE7, Lab 5 Demo   |
 
-Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/).
-
-- Homework (HW) are always due at 0800 before the next lesson.
-- All other assignments are due at the date/time shown in [Gradescope](https://www.gradescope.com/).
+Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/). Check Gradescope for the due date/time.
 
 ## Course Information
 
