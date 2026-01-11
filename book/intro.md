@@ -14,7 +14,7 @@
 | 6      | ICE2 - VHDL Half Adder                   |                          | [HW 6](./HW/HW6.md) |             |
 | 7      | Numbering Systems and Arithmetic         | 1.4                      | HW 7         | ICE2               |
 | 8      | K-Maps                                   | 2.7                      | Lab 1 Prelab |                    |
-| 9      | Mux, Decoders, Combinational Timing      | 2.8-2.9                  |              |                    |
+| 9      | Mux, Decoders, Combinational Timing      | 2.8-2.9                  | HW 9         |                    |
 | 10     | Lab 1 - 31 Day Month                     |                          |              | Lab 1 Prelab       |
 | 11     | Lab 1 - 31 Day Month                     |                          |              |                    |
 | 12     | Arithmetic in Combinational Logic        | 5.1-5.2.3, 5.2.6-5.2.7   | {ref}`ripple-adder-hw` |          |
