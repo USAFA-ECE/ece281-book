@@ -31,10 +31,6 @@ In this course you have learned how to design basic combinational logic circuits
 - 2x single pole double throw switches.
 - Jumper wires.
 
-### Collaboration
-
-For this lab, **work in teams of two**. You may seek help from any ECE 281 instructor or authorized online resource, but may not utilize any student other than your partner. Documentation is required (you do not need to document work with your partner). We expect all code or design work to be your own.
-
 ## Background
 
 You will implement the logic of a half adder using transistor-transistor logic (TTL) chips.
