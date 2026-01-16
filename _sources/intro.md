@@ -13,24 +13,24 @@
 | 5      | Multilevel Logic & VHDL                  | 2.4-2.6, ICE2, [VHDLoverview](https://usafa0.sharepoint.com/sites/ECE281/Class%20Materials/Reference/VHDLoverview.pdf?CT=1767475877405&OR=ItemsView&wdOrigin=TEAMSFILE.FILEBROWSER.DOCUMENTLIBRARY)            | HW 5         | ICE1               |
 | 6      | ICE2 - VHDL Half Adder                   |                          | [HW 6](./HW/HW6.md) |             |
 | 7      | Numbering Systems and Arithmetic         | 1.4                      | HW 7         | ICE2               |
-| 8      | K-Maps                                   | 2.7                      | Lab 1 Prelab |                    |
+| 8      | K-Maps                                   | 2.7, Lab 1               | Lab 1 Prelab |                    |
 | 9      | Mux, Decoders, Combinational Timing      | 2.8-2.9                  | HW 9         |                    |
 | 10     | Lab 1 - 31 Day Month                     |                          |              | Lab 1 Prelab       |
 | 11     | Lab 1 - 31 Day Month                     |                          |              |                    |
-| 12     | Arithmetic in Combinational Logic        | 5.1-5.2.3, 5.2.6-5.2.7   | {ref}`ripple-adder-hw` |          |
+| 12     | Arithmetic in Combinational Logic        | 5.1-5.2.3, 5.2.6-5.2.7, ICE3   | {ref}`ripple-adder-hw` |          |
 | 13     | ICE3 - Ripple Adder                      |                          |              | Lab 1              |
-| 14     | The Mighty ALU!                          | 5.2.4-5.2.5              | Lab 2 Prelab | ICE3               |
+| 14     | The Mighty ALU!                          | 5.2.4-5.2.5, Lab 2       | Lab 2 Prelab | ICE3               |
 | 15     | GR #1                                    |                          |              |                    |
 | 16     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
 | 17     | Synchronous Circuits                     | 3.1-3.3                  |              |                    |
 | 18     | Finite State Machine Intro               | 3.4.1-3.4.3              | HW 18        |                    |
-| 19     | FSM Reverse Engineering                  | 3.4.4-3.4.6              | HW 19        | Lab 2              |
+| 19     | FSM Reverse Engineering                  | 3.4.4-3.4.6, ICE4        | HW 19        | Lab 2              |
 | 20     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
-| 21     | Memory Arrays                            | 5.4-5.5                  |              | ICE4               |
+| 21     | Memory Arrays                            | 5.4-5.5, Lab 3           |              | ICE4               |
 | 22     | Lab 3 - T-bird Turn Signal               |                          |              | Lab 3 Prelab       |
-| 23     | Lab 3 - T-bird Turn Signal               |                          |              |                    |
-| 24     | ICE5 - Basic Elevator Controller         |                          | Lab 4 Prelab | Lab 3              |
-| 25     | ICE6 - Time Division Multiplexing        |                          |              | ICE5               |
+| 23     | Lab 3 - T-bird Turn Signal               | ICE5                     |              |                    |
+| 24     | ICE5 - Basic Elevator Controller         | ICE6                     | Lab 4 Prelab | Lab 3              |
+| 25     | ICE6 - Time Division Multiplexing        | Lab 4                    |              | ICE5               |
 | 26     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
 | 27     | Lab 4 - Moore Elevator Controller        |                          | HW 27        |                    |
 | 28     | GR #2                                    |                          |              |                    |
@@ -40,10 +40,10 @@
 | 32     | RV32I Function Calls                     | 6.3.7-6.3.8              |              |                    |
 | 33     | RV32I Memory Map                         | 6.5, 6.6.1               |              |                    |
 | 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | Lab 5 Prelab |                    |
-| 35     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5              |              |                    |
+| 35     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5, Lab 5       |              |                    |
 | 36     | Lab 5 Prelab - CPU                       |                          |              |                    |
 | 37     | Lab 5 - CPU                              |                          |              | Lab 5 Prelab       |
-| 38     | Lab 5 - CPU                              |                          | HW 38        |                    |
+| 38     | Lab 5 - CPU                              | ICE7                     | HW 38        |                    |
 | 39     | ICE7 - RV32I                             |                          |              |                    |
 | 40     | Review                                   |                          |              | ICE7, Lab 5 Demo   |
 
