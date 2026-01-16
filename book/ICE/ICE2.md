@@ -34,7 +34,7 @@ The objectives of this in-class exercise are for you to:
 ### End state
 
 You will provide a live demo to your instructor or provide proof of
-functionality to receive credit (Due Lesson 8). You must also turn in
+functionality to receive credit. You must also turn in
 the files you used through Git + Gradescope.
 
 Your instructor will be able to view
@@ -76,6 +76,8 @@ Vivado will help us describe, simulate, test, and implement the design.
 The input to Vivado is VHDL. Ultimately, we will use Vivado to emulate the circuit on an FPGA (Field Programmable Gate Array).
 An FPGA can be programmed to be many circuits.
 
+The general design flow you will follow is:
+
 1. Setup project
 2. Create design
 3. Test design
@@ -85,7 +87,7 @@ An FPGA can be programmed to be many circuits.
 (setup-vivado-project)=
 ## Setup Vivado Project
 
-You can create a Viavado project from scratch. This involves telling the suite about three types of files:
+You can create a Vivado project from scratch. This involves telling the suite about three types of files:
 
 - Design sources (`.vhd`)
 - Constraints (`.xdc`)
@@ -233,8 +235,8 @@ Remember the half-adder schematic in {numref}`half-adder-schem`. This is what we
 
 But! This conceptual device has no way for us to interact with it. However, if we go one level of abstraction lower:
 
-- We will map switches to inputs
-- We will map LEDs to outputs
+- We will map switches from our FPGA board to inputs
+- We will map LEDs from our FPGA board to outputs
 
 Now we can redraw our schematic as a block diagram:
 
@@ -250,7 +252,7 @@ In VHDL this is called an **entity**.
 An **entity** in VHDL is a declaration of a hardware module's input and
 outputs. In other words, it describes the interface of a "black box".
 
-The code comes with a partially completed entity description.
+The code provided in the GitHub repository comes with a partially completed entity description. For this in-class exercise, you will need to complete the "TODO" sections of the code.
 
 ```vhdl
 -- entity name should match filename
@@ -286,11 +288,11 @@ The inputs and output ports are signals described by the pattern
 will use. They produce logical signals of `1` or `0`, where the vector
 is more like a bus (multiple digital signals in parallel).
 
-> Add an output for the Carry named `o_Cout`, as directed by the TODO
+> Add an output for the Carry named `o_Cout`, as directed by the TODO section
 
 ### Modify the half-adder architecture
 
-The architecture is the guts of an entity. It is the internal logic that
+The architecture is the internal workings of an entity. It is the digital logic that
 makes it *do* something.
 
 Recall our logic equations for the half-adder are
@@ -336,9 +338,6 @@ architecture's *behavior* can be described with only two lines of code.
 The first assignment statement is provided.
 
 > Add the second statement required to implement `o_Cout`.
-
-Participation activity 7.2.5 in your
-zyBook may be helpful if you are stuck.
 
 > Save the file.
 
