@@ -268,7 +268,7 @@ end halfAdder;
 ```
 
 ```{warning}
-We just mad a big jump in terms of abstraction.
+We just made a big jump in terms of abstraction.
 If you don't understand why the funny pants looking thing
 *is* the `halfAdder` entity, talk it over with a classmate now.
 ```
