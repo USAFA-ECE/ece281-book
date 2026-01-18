@@ -487,7 +487,7 @@ document.write(`
 The ability to implement <strong>synchronous</strong> logic enables us to make
 <em>finite state machines</em> and greatly expands your ability to implement
 useful designs.</p>
-<p>In order to accomplish this, we will expand our use of processes.</p>
+<p>In order to accomplish this, we will expand our use of processes in VHDL.</p>
 <section id="objectives">
 <h3><a class="toc-backref" href="#id3" role="doc-backlink">Objectives</a><a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -499,8 +499,7 @@ useful designs.</p>
 <section id="end-state">
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">End State</a><a class="headerlink" href="#end-state" title="Permalink to this heading">#</a></h3>
 <p>Provide a demo to your instructor.</p>
-<p>You are not required to turn in ICE4; however,
-<strong>ensure the following files are pushed to your repository</strong>:</p>
+<p>Ensure the following files are pushed to your repository:</p>
 <ol class="arabic simple">
 <li><p>VHDL files</p></li>
 <li><p>Constraints (<code class="docutils literal notranslate"><span class="pre">.xdc</span></code>)</p></li>
@@ -510,7 +509,7 @@ useful designs.</p>
 </section>
 <section id="background">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
-<p>We will design the stoplight to match the description given in <strong>Homework 3</strong>.</p>
+<p>You will design the stoplight to match the description given in  the ICE 4 homework assignment.</p>
 <ul class="simple">
 <li><p>Light turns green when car is present.</p></li>
 <li><p>Light stays green while cars are present.</p></li>
@@ -602,7 +601,7 @@ the design shown in <a class="reference internal" href="#stoplight-fsm-arch"><sp
 <p>The state register for our stoplight is comprised of two flip flops.
 Each flip flop has a <span class="math notranslate nohighlight">\(Q\)</span> (current state) and a <span class="math notranslate nohighlight">\(Q_{next}\)</span> (next state).
 In order to represent three states, we need two bits,
-so both <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(_{next}\)</span> must be represented with 2-bit vectors.</p>
+so both <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(Q_{next}\)</span> must be represented with 2-bit vectors.</p>
 <p>According to our VHDL naming conventions, we will prefix these signals with <code class="docutils literal notranslate"><span class="pre">f_</span></code>
 to indicate the signal is used for sequential logic.</p>
 <div class="admonition warning">
@@ -673,7 +672,7 @@ in our test bench!</p>
 <section id="next-state-logic">
 <h4>Next State Logic<a class="headerlink" href="#next-state-logic" title="Permalink to this heading">#</a></h4>
 <p>Now that we have our register in place we can complete Section 1: Next State Logic.</p>
-<p>We simply need to implement the <code class="docutils literal notranslate"><span class="pre">Q(0)</span></code> and <code class="docutils literal notranslate"><span class="pre">Q(1)</span></code> equations we developed in HW 3.</p>
+<p>We simply need to implement the <code class="docutils literal notranslate"><span class="pre">Q_next(0)</span></code> and <code class="docutils literal notranslate"><span class="pre">Q_next(1)</span></code> equations we developed in the ICE 4 homework assignment.</p>
 <div class="math notranslate nohighlight">
 \[
 Q_{next}(0) = \overline{Q(1)} * C
@@ -689,7 +688,7 @@ Q_{next}(1) = \overline{Q(1)} * Q(0) * \overline{C}
 <section id="output-logic">
 <h4>Output Logic<a class="headerlink" href="#output-logic" title="Permalink to this heading">#</a></h4>
 <p>Our final step in creating our stoplight component is Section 3: Output Logic.</p>
-<p>We simply take the equations from HW3 and implement them.</p>
+<p>We simply take the equations from the ICE 4 homework assignment and implement them.</p>
 <div class="math notranslate nohighlight">
 \[
 G = \overline{Q(1)} * Q(0)
