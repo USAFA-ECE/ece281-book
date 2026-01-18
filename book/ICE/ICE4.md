@@ -12,7 +12,7 @@ The ability to implement **synchronous** logic enables us to make
 *finite state machines* and greatly expands your ability to implement
 useful designs.
 
-In order to accomplish this, we will expand our use of processes.
+In order to accomplish this, we will expand our use of processes in VHDL.
 
 ### Objectives
 
@@ -24,8 +24,7 @@ In order to accomplish this, we will expand our use of processes.
 
 Provide a demo to your instructor.
 
-You are not required to turn in ICE4; however,
-**ensure the following files are pushed to your repository**:
+Ensure the following files are pushed to your repository:
 
 1. VHDL files
 2. Constraints (`.xdc`)
@@ -33,7 +32,7 @@ You are not required to turn in ICE4; however,
 
 ## Background
 
-We will design the stoplight to match the description given in **Homework 3**.
+You will design the stoplight to match the description given in  the ICE 4 homework assignment.
 
 - Light turns green when car is present.
 - Light stays green while cars are present.
@@ -126,7 +125,7 @@ First, we'll implement Section 2: The State Register.
 The state register for our stoplight is comprised of two flip flops.
 Each flip flop has a $Q$ (current state) and a $Q_{next}$ (next state).
 In order to represent three states, we need two bits,
-so both $Q$ and $_{next}$ must be represented with 2-bit vectors.
+so both $Q$ and $Q_{next}$ must be represented with 2-bit vectors.
 
 According to our VHDL naming conventions, we will prefix these signals with `f_`
 to indicate the signal is used for sequential logic.
@@ -202,7 +201,7 @@ Else If rising edge
 
 Now that we have our register in place we can complete Section 1: Next State Logic.
 
-We simply need to implement the `Q(0)` and `Q(1)` equations we developed in HW 3.
+We simply need to implement the `Q_next(0)` and `Q_next(1)` equations we developed in the ICE 4 homework assignment.
 
 $$
 Q_{next}(0) = \overline{Q(1)} * C
@@ -218,7 +217,7 @@ $$
 
 Our final step in creating our stoplight component is Section 3: Output Logic.
 
-We simply take the equations from HW3 and implement them.
+We simply take the equations from the ICE 4 homework assignment and implement them.
 
 $$
 G = \overline{Q(1)} * Q(0)
