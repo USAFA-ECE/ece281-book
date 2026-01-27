@@ -190,7 +190,7 @@ Now that you have **four** prototypes to compare, we will rule out some solution
 and continue with two viable options.
 
 Typically, this is an involved process (often with a decision matrix!)
-But four our purposes, we will pick for you.
+But for our purposes, we will pick for you.
 
 Use [Digital](https://github.com/hneemann/Digital) to simulate the following two circuits.
 We give you templates in `prelab/`
