@@ -438,10 +438,13 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-file">Constraints File</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement">Implement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-report">Lab Report</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-demo">Hardware Demo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#written-report">Written Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-on-gradescope-via-github">Code on Gradescope via GitHub</a></li>
 </ul>
 </li>
 </ul>
@@ -484,7 +487,14 @@ document.write(`
 <li><p><a class="reference internal" href="#testbench-and-simulation" id="id15">Testbench and Simulation</a></p></li>
 <li><p><a class="reference internal" href="#constraints-file" id="id16">Constraints File</a></p></li>
 <li><p><a class="reference internal" href="#implement" id="id17">Implement</a></p></li>
-<li><p><a class="reference internal" href="#deliverables" id="id18">Deliverables</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#deliverables" id="id18">Deliverables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#prelab" id="id19">Prelab</a></p></li>
+<li><p><a class="reference internal" href="#hardware-demo" id="id20">Hardware Demo</a></p></li>
+<li><p><a class="reference internal" href="#written-report" id="id21">Written Report</a></p></li>
+<li><p><a class="reference internal" href="#code-on-gradescope-via-github" id="id22">Code on Gradescope via GitHub</a></p></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +520,16 @@ circuits and <strong>then</strong> implemented in hardware using VHDL.</p>
 <section id="supplies">
 <h3><a class="toc-backref" href="#id3" role="doc-backlink">Supplies</a><a class="headerlink" href="#supplies" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Basys3 board</p></li>
+<li><p>5x <span class="math notranslate nohighlight">\(1 kΩ\)</span> resistors</p></li>
+<li><p>1x red LED</p></li>
+<li><p>1x 74x151 8:1 MUX IC</p></li>
+<li><p>1x 74x04 INVERTER (NOT) IC</p></li>
+<li><p>1x breadboard power supply</p></li>
+<li><p>1x breadboard</p></li>
+<li><p>4x single pole double throw switches</p></li>
+<li><p>Jumper wires</p></li>
+<li><p>Digilent Basys3 Artix-7 FPGA Development Board</p></li>
+<li><p>Design Software: Xilinx Vivado 2024.2</p></li>
 </ul>
 </section>
 <section id="collaboration">
@@ -731,7 +750,7 @@ all other files will be ignored by Gradescope!</p>
 </section>
 <section id="lab-integrated-circuit">
 <h2><a class="toc-backref" href="#id10" role="doc-backlink">Lab: Integrated Circuit</a><a class="headerlink" href="#lab-integrated-circuit" title="Permalink to this heading">#</a></h2>
-<p>Using your Digital simulation of the first schematic (3.a 8:1 MUX (74151) and
+<p>Using your Digital simulation of the first schematic (8:1 MUX (74151) and
 inverter(s) (7404)) you will implement Thirty-One Day Month functionality
 in hardware using integrated circuits.</p>
 <div class="admonition tip">
@@ -908,7 +927,7 @@ You can then change it to <code class="docutils literal notranslate"><span class
 <p>Open your Basys3Master_Lab1.xdc file.</p>
 <p>The .xdc file maps the signals in your entity to the
 physical pins on the board. This time the constraints file is complete and you will not need to make changes to it.</p>
-<p>As an example, <code class="docutils literal notranslate"><span class="pre">i_A</span></code> is mapped to pin <strong>V17</strong> which is the 4th switch from the right.
+<p>As an example, <code class="docutils literal notranslate"><span class="pre">i_A</span></code> is mapped to pin <strong>W17</strong> which is the 4th switch from the right.
 The other inputs are mapped similarly.</p>
 <p>The output, <code class="docutils literal notranslate"><span class="pre">o_Y</span></code> is mapped to pin <strong>U16</strong> which corresponds to the
 LED on the far right.</p>
@@ -919,24 +938,40 @@ LED on the far right.</p>
 <ol class="arabic simple">
 <li><p>Generate the bitstream (.bit) file and download it to your FPGA.</p></li>
 <li><p>Verify that your design functions correctly.</p></li>
-<li><p>Demo your working board to your instructor.</p></li>
 </ol>
 </section>
+</section>
 <section id="deliverables">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h3>
-<p>Submit the following to Gradescope Lab 1.</p>
-<blockquote>
-<div><ul class="simple">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
+<section id="prelab">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Prelab</a><a class="headerlink" href="#prelab" title="Permalink to this heading">#</a></h3>
+<p>See instructions at the top of this lab.
+Submit on Gradescope.</p>
+</section>
+<section id="hardware-demo">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Hardware Demo</a><a class="headerlink" href="#hardware-demo" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Demo your working integrated circuit to your instructor.</p></li>
+<li><p>Demo your working Basys3 board to your instructor.</p></li>
+</ul>
+<p>Demo can be performed live with an instructor (preferred) OR submitted via Teams video.</p>
+</section>
+<section id="written-report">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Written Report</a><a class="headerlink" href="#written-report" title="Permalink to this heading">#</a></h3>
+<p>You are not required to write an entire lab report. Only include the following sections:</p>
+<ul class="simple">
+<li><p>Title Section</p></li>
+<li><p>Abstract</p></li>
+</ul>
+<p>Follow the template and rubric on Teams. Upload the required lab report sections to Gradescope as a single .pdf file.</p>
+</section>
+<section id="code-on-gradescope-via-github">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Code on Gradescope via GitHub</a><a class="headerlink" href="#code-on-gradescope-via-github" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
 <li><p><strong>Commit</strong> all images, <code class="docutils literal notranslate"><span class="pre">.vhd</span></code>, <code class="docutils literal notranslate"><span class="pre">.bit</span></code>, and <code class="docutils literal notranslate"><span class="pre">.xdc</span></code> files to your repo</p></li>
 <li><p><strong>Push</strong> your changes to GitHub</p></li>
 <li><p><strong>Submit</strong> to Gradescope and verify you get full points from the autograder</p></li>
 </ul>
-</div></blockquote>
-<section id="lab-report">
-<h4>Lab Report<a class="headerlink" href="#lab-report" title="Permalink to this heading">#</a></h4>
-<p>Follow the template on Teams and upload to Gradescope.
-We only ask for specific sections for each lab!</p>
-</section>
 </section>
 </section>
 </section>
@@ -1044,10 +1079,13 @@ We only ask for specific sections for each lab!</p>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-file">Constraints File</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement">Implement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-report">Lab Report</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab">Prelab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-demo">Hardware Demo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#written-report">Written Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-on-gradescope-via-github">Code on Gradescope via GitHub</a></li>
 </ul>
 </li>
 </ul>

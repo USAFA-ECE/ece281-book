@@ -28,7 +28,16 @@ circuits and **then** implemented in hardware using VHDL.
 
 ### Supplies
 
-- Basys3 board
+- 5x $1 kΩ$ resistors
+- 1x red LED
+- 1x 74x151 8:1 MUX IC
+- 1x 74x04 INVERTER (NOT) IC
+- 1x breadboard power supply
+- 1x breadboard
+- 4x single pole double throw switches
+- Jumper wires
+- Digilent Basys3 Artix-7 FPGA Development Board
+- Design Software: Xilinx Vivado 2024.2
 
 ### Collaboration
 
@@ -232,7 +241,7 @@ all other files will be ignored by Gradescope!
 
 ## Lab: Integrated Circuit
 
-Using your Digital simulation of the first schematic (3.a 8:1 MUX (74151) and
+Using your Digital simulation of the first schematic (8:1 MUX (74151) and
 inverter(s) (7404)) you will implement Thirty-One Day Month functionality
 in hardware using integrated circuits.
 
@@ -431,7 +440,7 @@ Open your Basys3Master_Lab1.xdc file.
 The .xdc file maps the signals in your entity to the
 physical pins on the board. This time the constraints file is complete and you will not need to make changes to it.
 
-As an example, `i_A` is mapped to pin **V17** which is the 4th switch from the right.
+As an example, `i_A` is mapped to pin **W17** which is the 4th switch from the right.
 The other inputs are mapped similarly.
 
 The output, `o_Y` is mapped to pin **U16** which corresponds to the
@@ -443,17 +452,31 @@ In the future, you will have to ensure the mapping is done correctly.
 
 1. Generate the bitstream (.bit) file and download it to your FPGA.
 2. Verify that your design functions correctly.
-3. Demo your working board to your instructor.
 
-### Deliverables
+## Deliverables
 
-Submit the following to Gradescope Lab 1.
+### Prelab
 
-> - **Commit** all images, `.vhd`, `.bit`, and `.xdc` files to your repo
-> - **Push** your changes to GitHub
-> - **Submit** to Gradescope and verify you get full points from the autograder
+See instructions at the top of this lab.
+Submit on Gradescope.
 
-#### Lab Report
+### Hardware Demo
 
-Follow the template on Teams and upload to Gradescope.
-We only ask for specific sections for each lab!
+- Demo your working integrated circuit to your instructor. 
+- Demo your working Basys3 board to your instructor.
+
+Demo can be performed live with an instructor (preferred) OR submitted via Teams video.
+
+### Written Report
+You are not required to write an entire lab report. Only include the following sections:
+
+- Title Section
+- Abstract
+
+Follow the template and rubric on Teams. Upload the required lab report sections to Gradescope as a single .pdf file. 
+
+### Code on Gradescope via GitHub
+
+- **Commit** all images, `.vhd`, `.bit`, and `.xdc` files to your repo
+- **Push** your changes to GitHub
+- **Submit** to Gradescope and verify you get full points from the autograder
