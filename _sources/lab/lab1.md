@@ -202,10 +202,14 @@ Typically, this is an involved process (often with a decision matrix!)
 But for our purposes, we will pick for you.
 
 Use [Digital](https://github.com/hneemann/Digital) to simulate the following two circuits.
-We give you templates in `prelab/`
+We give you templates in `prelab/`. 
 
 - 8:1 MUX and NOT --> `MUX.dig`
 - NOT, AND, OR --> `SOP.dig`
+
+```{important}
+**DO NOT** delete any of the components in the provided templates. Even if you don't use the component, leave it in the file. The autograder is checking for these components and running a simulation assuming all these components (to include inputs) are within the .dig file. You will fail the autograder test if you delete them.
+```
 
 After you have working simulations, commit your changes!
 

@@ -26,7 +26,7 @@
 | 18     | Finite State Machine Intro               | 3.4.1-3.4.3              | HW 18        |                    |
 | 19     | FSM Practice                             | 3.4.4-3.4.6, ICE4        | HW 19        | Lab 2              |
 | 20     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
-| 21     | Memory Arrays                            | 5.4-5.5, Lab 3           |              | ICE4               |
+| 21     | Memory Arrays                            | 5.4-5.5, Lab 3           | HW 21        | ICE4               |
 | 22     | Lab 3 - T-bird Turn Signal               |                          |              | Lab 3 Prelab       |
 | 23     | Lab 3 - T-bird Turn Signal               | ICE5                     |              |                    |
 | 24     | ICE5 - Basic Elevator Controller         | ICE6                     | Lab 4 Prelab | Lab 3              |
@@ -35,7 +35,7 @@
 | 27     | Lab 4 - Moore Elevator Controller        |                          | HW 27        |                    |
 | 28     | GR #2                                    |                          |              |                    |
 | 29     | RV32I Introduction                       | 6.1-6.2                  |              | Lab 4              |
-| 30     | RV32I R- and I-Type Instructions         | 6.4.1-6.4.2              | HW 30        |                    |
+| 30     | RV32I Registers, R-, I-Type Instructions | 6.4.1-6.4.2              | HW 30        |                    |
 | 31     | RV32I U-, S-, B-Type Instructions        | 6.3.3, 6.4.3-6.4.5       |              |                    |
 | 32     | RV32I Function Calls                     | 6.3.7-6.3.8              |              |                    |
 | 33     | RV32I Memory Map                         | 6.5, 6.6.1               |              |                    |
