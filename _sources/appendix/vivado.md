@@ -18,7 +18,7 @@
 - **Uncheck** Copy sources into project, then click Next.
 - Add Constraints, Add Files, select your `.xdc` file, then Next.
 - Default Part, click **Boards** tab at the top
-- Search for **Basys3** (or whatever board you are using) and select it (will highlight blue)
+- Search for **Basys3** (or whatever board you are using) and select it (will highlight blue). *If the Basys3 board does not show up, click the **Refresh** button in the bottom left corner.*
 - Next and Finish.
 - If needed, add simulation files using steps in {ref}`manual-add-to-vivado-project`
 

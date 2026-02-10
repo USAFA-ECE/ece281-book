@@ -1,13 +1,9 @@
 # Lab 2 - Seven Segment Display Decoder
 
-Due: Lesson 17
-
 ```{contents}
 :local:
 :depth: 2
 ```
-
-[Lab 2 GitHub Repo](https://github.com/USAFA-ECE/ece281-lab2)
 
 ## Overview
 
@@ -34,14 +30,16 @@ Binary-to-hex displayed on seven-segment display
 
 ### Supplies
 
-- Basys3 board
+- Digilent Basys3 Artix-7 FPGA Development Board
+- Design Software: Xilinx Vivado 2024.2
 
 ### Collaboration
 
-- Prelab is individual submission on Gradescope
-- Lab Code is individual submission on Gradescope (you will need to reuse your VHDL in future labs!)
-- Lab Report is optional **pairs** submission; add your partner to submission on Gradescope.
-    Work with a different person than who you worked with for Lab 1.
+All components of this lab are individual effort, although you can always discuss general concepts with other students.
+
+```{note}
+Do not show other students your working code. If helping another student, you can look at their code to help them troubleshoot it, but refer them to example code in the textbook, lecture slides, etc. to help them resolve the coding issue.
+```
 
 ## Background
 
@@ -72,8 +70,6 @@ name: 7SD-anodes
 Basys3 7SD cathodes and anodes.
 ```
 
-Said differently, you disable an entire display by connecting it to power, aka `1`.
-
 Placing a `0` on a segment will cause it to light up, while a `1` will keep the segment dark.
 This is called "active low."
 For example, to display the number "0", a logic `0` must be placed on segments `a`-`f`,
@@ -97,7 +93,7 @@ Hexadecimal digits on a seven-segment display
 
 ## Lab
 
-It is time to implement them in hardware with VHDL!
+It is time to implement the seven segment display decoder in hardware with VHDL!
 
 ### Setup Vivado Project
 
@@ -116,6 +112,10 @@ See [**Lab2 Vivado Buttonology.pptx**](https://usafa0.sharepoint.com/:p:/s/ECE28
 ### Seven Segment Display Decoder
 
 For better modularity, we will implement our seven segment display decoder as its own component.
+
+```{note}
+You will need to reuse your seven segment display decoder in future labs!
+```
 
 #### File Creation
 
@@ -245,10 +245,9 @@ The **user** will:
 - `sw` should just be four bits (and then only uncomment 0-3 in the constraints file).
 - Include your **sevenseg_decoder** entity and all connections to internal signals and gates.
 - DO NOT draw the inner architecture of sevenseg_decoder.
-- You will need this for the lab report.
 
 ```{tip}
-You entity I/O names should exactly match the port names already in the `Basys3_Master.xdc` constraints file.
+Your entity I/O names should exactly match the port names already in the `Basys3_Master.xdc` constraints file.
 ```
 
 #### Implementation
@@ -294,24 +293,24 @@ Submit on Gradescope.
 
 ### Hardware demo
 
-- You have to hold the center push button down for a 7SD to show your output. (10 pts)
-- The correct hex digit is shown based on the switch positions for all input possibilities. (20 pts)
+- You have to hold the center push button down for a 7SD to show your output.
+- The correct hex digit is shown based on the switch positions for all input possibilities.
 
 Demo can be performed live with an instructor (preferred) OR submitted via Teams video.
 
 ### Written Report
 
-Seek to answer the fundamental question
-**"How do you understand the cathode and anode structure, use a decoder, and map your design  to hardware?"**
+You are not required write an entire lb report. Only complete the following sections:
 
-Include the following sections:
+- Title Section
+- Introduction
+- Methodology (VHDL Implementation section only)
 
-- Abstract
-- Introduction (background of how display works)
-- Design methodology
-- Discussion (lessons learned, how many hours spent, documentation statement for entire lab)
+In the introduction section, be sure to include how the seven segment display operates at a **high level**. There should be some discussion of the role of the common anode and the individuals cathodes.
 
-Rubric and template on Teams. Submit on Gradescope.
+In the VHDL Implementation section, be sure to discuss how your VHDL code addresses the difference in msb/lsb orientation in your prelab truth table compared to the physical connection to the cathodes on the Basys3 board.
+
+Include images and figures as needed to help explain the concepts/code to your reader. **If you include a figure, you need to discuss that figure.**
 
 ### Code on Gradescope via GitHub
 
