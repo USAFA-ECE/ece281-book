@@ -130,7 +130,7 @@ First, copy and past your completed the `halfAdder.vhd` file into `src/hdl/`
 
 Then, follow the instructions in {ref}`manual-add-to-vivado-project`
 to add `halfAdder.vhd` to the project as a source.
-Make sure you see hallfAdder in the sources hierarchy.
+Make sure you see halfAdder in the sources hierarchy.
 
 The half-adder test bench has already been added for you.
 We recommend you run the simulation just to verify that things
@@ -307,7 +307,7 @@ Then, and only then, ensure you see the following in your `top_basys3.vhd`:
 entity top_basys3 is
     port(
         -- Switches
-        sw  :   in  std_logic_vector(8 downto 0);
+        sw  :   in  std_logic_vector(15 downto 0);
 
         -- LEDs
         led :   out std_logic_vector(15 downto 0)
@@ -318,7 +318,7 @@ end top_basys3;
 ### Architecture
 
 1. Declare a **ripple_adder** component.
-2. Instantiate the *ripple_adder** component.
+2. Instantiate the *ripple_adder* component.
 3. Connect the switches and LEDs appropriately.
 
 ### Test
