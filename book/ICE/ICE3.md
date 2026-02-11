@@ -339,7 +339,7 @@ This is called *integration testing*, as opposed to the *unit testing* that we a
 
 Open `Basys3_Master.xdc`.
 
-Because we used the appropriate naming conventions in `top_bays3.vhd` you **should not change the names!**
+Because we used the appropriate naming conventions in `top_basys3.vhd` you **should not change the names!**
 
 Simply uncomment all the `sw` and `led` lines.
 
@@ -386,3 +386,4 @@ Add the image and README.md to git and commit.
 - Make sure the autograder in Gradescope passes!
 
 Congratulations, you have completed In Class Exercise 3!
+
