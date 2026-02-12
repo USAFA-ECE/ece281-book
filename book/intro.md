@@ -21,11 +21,11 @@
 | 13     | ICE3 - Ripple Adder                      |                          |              | Lab 1              |
 | 14     | The Mighty ALU!                          | 5.2.4-5.2.5, Lab 2       | Lab 2 Prelab | ICE3               |
 | 15     | GR #1                                    |                          |              |                    |
-| 16     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
-| 17     | Synchronous Circuits                     | 3.1-3.3                  | HW 17        |                    |
+| 16     | Synchronous Circuits                     | 3.1-3.3                  | HW 16        |                    |
+| 17     | Lab 2 - 7 Segment Display                |                          |              | Lab 2 Prelab       |
 | 18     | Finite State Machine Intro               | 3.4.1-3.4.3              | HW 18        |                    |
-| 19     | FSM Practice                             | 3.4.4-3.4.6, ICE4        | HW 19        | Lab 2              |
-| 20     | ICE4 - Stoplight                         |                          | Lab 3 Prelab |                    |
+| 19     | FSM Practice                             | 3.4.4-3.4.6, ICE4        | HW 19        |                    |
+| 20     | ICE4 - Stoplight                         |                          | Lab 3 Prelab | Lab 2               |
 | 21     | Memory Arrays                            | 5.4-5.5, Lab 3           | HW 21        | ICE4               |
 | 22     | Lab 3 - T-bird Turn Signal               |                          |              | Lab 3 Prelab       |
 | 23     | Lab 3 - T-bird Turn Signal               | ICE5                     |              |                    |
