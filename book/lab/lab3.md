@@ -16,6 +16,12 @@ This lab is modeled after a lab provided with instructor notes for
 *Digital Design and Computer Architecture*, David Money Harris &
 Sarah L. Harris, 2nd Edition.
 
+### Demo
+
+Here is a quick demo showing how your finite state machine for the taillights should function.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k6_WvCbD_6Y?si=7MKPEI_YMaPNURkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Authorized Resources
 
 For this lab, you may work in **teams of two** (including the prelab).
