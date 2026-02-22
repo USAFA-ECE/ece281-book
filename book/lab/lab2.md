@@ -32,7 +32,7 @@ Binary-to-hex displayed on seven-segment display
 
 Here is a quick demo showing how your seven-segment display decoder should function.
 
-<iframe width="560" height="315" src="https://youtu.be/Ywqi-6kV1Vw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ywqi-6kV1Vw?si=YwkIlDAX3-JMKtQ7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Supplies
 
