@@ -46,6 +46,12 @@ following:
 2. Constraints (.xdc) file in a **code** folder
 3. .bit file used to program board
 
+### Demo
+
+Here is a quick demo showing how your half adder should function.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UrFr8y4xW4g?si=5bsMugWTqA4iibON" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Background
 
 Recall how a Half Adder works from {ref}`half-adder-traits`.
