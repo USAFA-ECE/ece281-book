@@ -402,6 +402,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hw-12">HW 12</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
@@ -458,43 +459,44 @@ document.write(`
 <li><p><a class="reference internal" href="#overview" id="id4">Overview</a></p>
 <ul>
 <li><p><a class="reference internal" href="#objectives" id="id5">Objectives</a></p></li>
+<li><p><a class="reference internal" href="#demo" id="id6">Demo</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#background" id="id6">Background</a></p>
+<li><p><a class="reference internal" href="#background" id="id7">Background</a></p>
 <ul>
-<li><p><a class="reference internal" href="#full-adder" id="id7">Full Adder</a></p></li>
-<li><p><a class="reference internal" href="#ripple-carry-adder" id="id8">Ripple-Carry Adder</a></p></li>
+<li><p><a class="reference internal" href="#full-adder" id="id8">Full Adder</a></p></li>
+<li><p><a class="reference internal" href="#ripple-carry-adder" id="id9">Ripple-Carry Adder</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#the-project" id="id9">The Project</a></p>
+<li><p><a class="reference internal" href="#the-project" id="id10">The Project</a></p>
 <ul>
-<li><p><a class="reference internal" href="#setup-vivado" id="id10">Setup Vivado</a></p></li>
+<li><p><a class="reference internal" href="#setup-vivado" id="id11">Setup Vivado</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#ripple-carry-adder-vhdl" id="id11">Ripple-Carry Adder VHDL</a></p>
+<li><p><a class="reference internal" href="#ripple-carry-adder-vhdl" id="id12">Ripple-Carry Adder VHDL</a></p>
 <ul>
-<li><p><a class="reference internal" href="#declarations" id="id12">Declarations</a></p></li>
-<li><p><a class="reference internal" href="#instantiations" id="id13">Instantiations</a></p></li>
-<li><p><a class="reference internal" href="#ripple-carry-test" id="id14">Ripple-Carry Test</a></p></li>
+<li><p><a class="reference internal" href="#declarations" id="id13">Declarations</a></p></li>
+<li><p><a class="reference internal" href="#instantiations" id="id14">Instantiations</a></p></li>
+<li><p><a class="reference internal" href="#ripple-carry-test" id="id15">Ripple-Carry Test</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#top-basys3" id="id15">top_basys3</a></p>
+<li><p><a class="reference internal" href="#top-basys3" id="id16">top_basys3</a></p>
 <ul>
-<li><p><a class="reference internal" href="#entity" id="id16">Entity</a></p></li>
-<li><p><a class="reference internal" href="#architecture" id="id17">Architecture</a></p></li>
-<li><p><a class="reference internal" href="#test" id="id18">Test</a></p></li>
+<li><p><a class="reference internal" href="#entity" id="id17">Entity</a></p></li>
+<li><p><a class="reference internal" href="#architecture" id="id18">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#test" id="id19">Test</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#implement-design" id="id19">Implement Design</a></p>
+<li><p><a class="reference internal" href="#implement-design" id="id20">Implement Design</a></p>
 <ul>
-<li><p><a class="reference internal" href="#constraints-file" id="id20">Constraints File</a></p></li>
-<li><p><a class="reference internal" href="#test-bitstream-on-fpga" id="id21">Test bitstream on FPGA</a></p></li>
+<li><p><a class="reference internal" href="#constraints-file" id="id21">Constraints File</a></p></li>
+<li><p><a class="reference internal" href="#test-bitstream-on-fpga" id="id22">Test bitstream on FPGA</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#deliverables" id="id22">Deliverables</a></p>
+<li><p><a class="reference internal" href="#deliverables" id="id23">Deliverables</a></p>
 <ul>
-<li><p><a class="reference internal" href="#readme" id="id23">README</a></p></li>
-<li><p><a class="reference internal" href="#other-files" id="id24">Other files</a></p></li>
+<li><p><a class="reference internal" href="#readme" id="id24">README</a></p></li>
+<li><p><a class="reference internal" href="#other-files" id="id25">Other files</a></p></li>
 </ul>
 </li>
 </ul>
@@ -552,11 +554,16 @@ so this is directly applicable.</p>
 <li><p>Gain more experience using tools (Git, Markdown, Xilinx Vivado)</p></li>
 </ul>
 </section>
+<section id="demo">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Demo</a><a class="headerlink" href="#demo" title="Permalink to this heading">#</a></h3>
+<p>Here is a quick demo showing how your 4-bit ripple carry adder should function.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9nIiupdpLh8?si=R_-2WFQBpL0f_H60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
 </section>
 <section id="background">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <section id="full-adder">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Full Adder</a><a class="headerlink" href="#full-adder" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Full Adder</a><a class="headerlink" href="#full-adder" title="Permalink to this heading">#</a></h3>
 <p>A full adder extends the half-adder to include a Carry In bit, <span class="math notranslate nohighlight">\(C_{in}\)</span>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -650,7 +657,7 @@ C_{out} = AB + AC_{in} + BC_{in}
 </div>
 </section>
 <section id="ripple-carry-adder">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Ripple-Carry Adder</a><a class="headerlink" href="#ripple-carry-adder" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Ripple-Carry Adder</a><a class="headerlink" href="#ripple-carry-adder" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>The simplest way to build an <span class="math notranslate nohighlight">\(N\)</span>-bit carry propagate adder is to chain together <span class="math notranslate nohighlight">\(N\)</span> full adders.</p>
 </div></blockquote>
@@ -664,9 +671,9 @@ C_{out} = AB + AC_{in} + BC_{in}
 </section>
 </section>
 <section id="the-project">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">The Project</a><a class="headerlink" href="#the-project" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">The Project</a><a class="headerlink" href="#the-project" title="Permalink to this heading">#</a></h2>
 <section id="setup-vivado">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Setup Vivado</a><a class="headerlink" href="#setup-vivado" title="Permalink to this heading">#</a></h3>
 <p>You’ve already cloned the repository, so you should be able to simply open the <code class="docutils literal notranslate"><span class="pre">.xpr</span></code>!</p>
 <p>Notice that we have include a Full Adder for you. It’s very similar to the Half Adder you made for ICE 2!</p>
 <!-- ### Import half adder
@@ -698,11 +705,11 @@ You are not required to do this for the lab.
 </section>
 </section>
 <section id="ripple-carry-adder-vhdl">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Ripple-Carry Adder VHDL</a><a class="headerlink" href="#ripple-carry-adder-vhdl" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Ripple-Carry Adder VHDL</a><a class="headerlink" href="#ripple-carry-adder-vhdl" title="Permalink to this heading">#</a></h2>
 <p>First, open <code class="docutils literal notranslate"><span class="pre">RippleCarryAdder.dig</span></code> from your Homework.</p>
 <p>Then, in Vivado, open <code class="docutils literal notranslate"><span class="pre">ripple_adder.vhd</span></code> and verify that the entity matches what you’d expect based on your Digital simulation.</p>
 <section id="declarations">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">Declarations</a><a class="headerlink" href="#declarations" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Declarations</a><a class="headerlink" href="#declarations" title="Permalink to this heading">#</a></h3>
 <section id="full-adder-component">
 <h4>Full Adder Component<a class="headerlink" href="#full-adder-component" title="Permalink to this heading">#</a></h4>
 <p>Declare a <strong>full_adder</strong> component declaration to <code class="docutils literal notranslate"><span class="pre">ripple_adder.vhd</span></code> between the architecture and begin statements.</p>
@@ -740,7 +747,7 @@ You are not required to do this for the lab.
 </section>
 </section>
 <section id="instantiations">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Instantiations</a><a class="headerlink" href="#instantiations" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Instantiations</a><a class="headerlink" href="#instantiations" title="Permalink to this heading">#</a></h3>
 <p>Now that we have made the <strong>full_adder</strong> component available to use within <strong>ripple_adder</strong>
 we need to instantiate multiple occurrences of the component and declare the logic to connect them
 to each other and to inputs/outputs.</p>
@@ -772,7 +779,7 @@ Notice that each has a unique name (because of the number at the end) and is con
 <p>Then add the other two full adder instantiations.</p>
 </section>
 <section id="ripple-carry-test">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Ripple-Carry Test</a><a class="headerlink" href="#ripple-carry-test" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Ripple-Carry Test</a><a class="headerlink" href="#ripple-carry-test" title="Permalink to this heading">#</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">ripple_adder_tb.vhd</span></code>.
 The component has already been declared and instantiated for you.</p>
 <p>Do some quick math… how many possible inputs are there to our 4-bit adder?
@@ -794,7 +801,7 @@ More than we want to manually input! 😄</p>
 </section>
 </section>
 <section id="top-basys3">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">top_basys3</a><a class="headerlink" href="#top-basys3" title="Permalink to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>From now on, we will use a top level design file as the boundary of our system.</p>
@@ -812,7 +819,7 @@ which we can use as a <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <section id="entity">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Entity</a><a class="headerlink" href="#entity" title="Permalink to this heading">#</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You <strong>actually</strong>, really, <em>really</em> need to sketch this before coding it!</p>
@@ -844,7 +851,7 @@ Then, and only then, ensure you see the following in your <code class="docutils 
 </div>
 </section>
 <section id="architecture">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Declare a <strong>ripple_adder</strong> component.</p></li>
 <li><p>Instantiate the <em>ripple_adder</em> component.</p></li>
@@ -852,7 +859,7 @@ Then, and only then, ensure you see the following in your <code class="docutils 
 </ol>
 </section>
 <section id="test">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Test</a><a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
 <p>You <em>could</em> make a <code class="docutils literal notranslate"><span class="pre">top_basys3_tb.vhd</span></code> and test it, but we’ve already tested
 the full_adder and we wouldn’t gain much more information.</p>
 <p>Let’s just move onto deploying to the board!</p>
@@ -864,24 +871,24 @@ This is called <em>integration testing</em>, as opposed to the <em>unit testing<
 </section>
 </section>
 <section id="implement-design">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink">Implement Design</a><a class="headerlink" href="#implement-design" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Implement Design</a><a class="headerlink" href="#implement-design" title="Permalink to this heading">#</a></h2>
 <section id="constraints-file">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Constraints File</a><a class="headerlink" href="#constraints-file" title="Permalink to this heading">#</a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">Basys3_Master.xdc</span></code>.</p>
 <p>Because we used the appropriate naming conventions in <code class="docutils literal notranslate"><span class="pre">top_basys3.vhd</span></code> you <strong>should not change the names!</strong></p>
 <p>Simply uncomment all the <code class="docutils literal notranslate"><span class="pre">sw</span></code> and <code class="docutils literal notranslate"><span class="pre">led</span></code> lines.</p>
 </section>
 <section id="test-bitstream-on-fpga">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Test bitstream on FPGA</a><a class="headerlink" href="#test-bitstream-on-fpga" title="Permalink to this heading">#</a></h3>
 <p>Synthesize, implement, generate.</p>
 <p>Squirt the bitstream to the board, and be amazed!</p>
 </section>
 </section>
 <section id="deliverables">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">Deliverables</a><a class="headerlink" href="#deliverables" title="Permalink to this heading">#</a></h2>
 <p>See <a class="reference internal" href="../appendix/github.html"><span class="doc std std-doc">GitHub real fast</span></a> if you need some tips.</p>
 <section id="readme">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">README</a><a class="headerlink" href="#readme" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">README</a><a class="headerlink" href="#readme" title="Permalink to this heading">#</a></h3>
 <p>Take a screenshot of your <strong>ripple_adder</strong> waveform, save it to the root of your directory.</p>
 <p>Make the screenshot appear in your README with the following Markdown syntax:</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">description of my waveform</span>](<span class="na">imagename.png</span>)
@@ -898,7 +905,7 @@ My statement here.
 <p>Add the image and <a class="reference external" href="http://README.md">README.md</a> to git and commit.</p>
 </section>
 <section id="other-files">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">Other files</a><a class="headerlink" href="#other-files" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Other files</a><a class="headerlink" href="#other-files" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
 <li><p>Double check that you have the image, your <a class="reference external" href="http://README.md">README.md</a> and all <code class="docutils literal notranslate"><span class="pre">.vhd</span></code> and <code class="docutils literal notranslate"><span class="pre">.bit</span></code> files <strong>committed</strong> to your git repo.</p></li>
@@ -979,6 +986,7 @@ My statement here.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hw-12">HW 12</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
