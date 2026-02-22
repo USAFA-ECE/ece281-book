@@ -28,6 +28,12 @@ Binary-to-hex displayed on seven-segment display
 1. Develop a hardware-based binary to hex converter
 2. Display switch value on seven-segment display
 
+### Demo
+
+Here is a quick demo showing how your seven-segment display decoder should function.
+
+<iframe width="560" height="315" src="https://youtu.be/Ywqi-6kV1Vw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Supplies
 
 - Digilent Basys3 Artix-7 FPGA Development Board
