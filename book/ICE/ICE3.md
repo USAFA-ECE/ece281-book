@@ -62,6 +62,12 @@ The objectives of this in-class exercise are for you to:
 - Employ a `top_level.vhd` file
 - Gain more experience using tools (Git, Markdown, Xilinx Vivado)
 
+### Demo
+
+Here is a quick demo showing how your 4-bit ripple carry adder should function.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9nIiupdpLh8?si=R_-2WFQBpL0f_H60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Background
 
 ### Full Adder
