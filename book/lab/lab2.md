@@ -306,7 +306,7 @@ Demo can be performed live with an instructor (preferred) OR submitted via Teams
 
 ### Written Report
 
-You are not required write an entire lb report. Only complete the following sections:
+You are not required write an entire lab report. Only complete the following sections:
 
 - Title Section
 - Introduction
