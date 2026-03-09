@@ -339,6 +339,18 @@ Then
 
 Submit your code via Gradescope. The autograder should pass!
 
-### Report
+### Written Report
 
-The report template is in Teams. and will also be submitted to Gradescope.
+You are not required write an entire lab report. Only complete the following sections:
+
+- Title Section
+- Abstract
+- Methodology (Design Discussion section only)
+
+In the Design Discussion section, be sure to include:
+
+- functional description of the system
+- block diagram(s) showing major components and signal flow (*hint*: a state transition diagram would work well here)
+- description of inputs, outputs, and internal signals
+
+**NOTE: When you include an image, figure, block diagram, equation, etc., you need to discuss them in the text of your report.**
