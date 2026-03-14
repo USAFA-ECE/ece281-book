@@ -345,9 +345,9 @@ You are not required write an entire lab report. Only complete the following sec
 
 - Title Section
 - Abstract
-- Methodology (Design Discussion section only)
+- Methodology (Design Description section only)
 
-In the Design Discussion section, be sure to include:
+In the Design Description section, be sure to include:
 
 - functional description of the system
 - block diagram(s) showing major components and signal flow (*hint*: a state transition diagram would work well here)
