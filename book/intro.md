@@ -32,7 +32,7 @@
 | 24     | ICE5 - Basic Elevator Controller         | ICE6                     | Lab 4 Prelab | Lab 3              |
 | 25     | ICE6 - Time Division Multiplexing        | Lab 4                    |              | ICE5               |
 | 26     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
-| 27     | Lab 4 - Moore Elevator Controller        |                          | HW 27        |                    |
+| 27     | Lab 4 - Moore Elevator Controller        |                          |              |                    |
 | 28     | GR #2                                    |                          |              |                    |
 | 29     | RV32I Introduction                       | 6.1-6.2                  |              | Lab 4              |
 | 30     | RV32I Registers, R-, I-Type Instructions | 6.4.1-6.4.2              | HW 30        |                    |
