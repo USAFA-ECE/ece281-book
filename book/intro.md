@@ -34,8 +34,8 @@
 | 26     | Lab 4 - Moore Elevator Controller        |                          |              | ICE6, Lab 4 Prelab |
 | 27     | Lab 4 - Moore Elevator Controller        |                          |              |                    |
 | 28     | GR #2                                    |                          |              |                    |
-| 29     | RV32I Introduction                       | 6.1-6.2                  |              | Lab 4              |
-| 30     | RV32I Registers, R-, I-Type Instructions | 6.4.1-6.4.2              | HW 30        |                    |
+| 29     | RV32I Introduction                       | 6.1-6.2, 6.3.8           |              | Lab 4              |
+| 30     | RV32I Machine Language (R-, I-Type) and Microarchitecture Preview | 6.4-6.4.2, 6.4.7       | HW 30        |                    |
 | 31     | RV32I U-, S-, B-Type Instructions        | 6.3.3, 6.4.3-6.4.5       |              |                    |
 | 32     | RV32I Function Calls                     | 6.3.7-6.3.8              |              |                    |
 | 33     | RV32I Memory Map                         | 6.5, 6.6.1               |              |                    |
