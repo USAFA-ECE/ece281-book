@@ -37,7 +37,7 @@
 | 29     | RV32I Introduction                       | 6.1-6.2, 6.3.8           |              | Lab 4              |
 | 30     | RV32I Machine Language (R-, I-Type) and Microarchitecture Preview | 6.4-6.4.2, 6.4.7       | HW 30        |                    |
 | 31     | RV32I Memory and Code Compiling          | 6.4.8, 6.5-6.6.2         |              |                    |
-| 32     | RV32I U-, S-, B-Type Instructions        | 6.3.3, 6.4.3-6.4.5       |              |                    |
+| 32     | RV32I Branches, Arrays, and U-, S-, B-Type Instructions | 6.3.3-6.3.5, 6.4.3-6.4.5 |              |                    |
 | 33     | RV32I Function Calls                     | 6.3.7-6.3.8              |              |                    |
 | 34     | RV32I Single-Cycle Microarchitecture 1   | 7.1, 7.3-7.3.2           | Lab 5 Prelab |                    |
 | 35     | RV32I Single-Cycle Microarchitecture 2   | 7.3.3-7.3.5, Lab 5       |              |                    |
