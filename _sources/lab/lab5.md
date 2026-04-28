@@ -18,6 +18,14 @@ Here is a quick demo showing how your basic CPU should function.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iANrLxhIU1Q?si=e83gbCnH4-JZdm3P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+### Collaboration
+
+All components of this lab are individual effort, although you can always discuss general concepts with other students.
+
+```{note}
+Do not show other students your working code. If helping another student, you can look at their code to help them troubleshoot it, but refer them to example code in the textbook, lecture slides, etc. to help them resolve the coding issue.
+```
+
 ### Template Repository
 
 https://github.com/USAFA-ECE/ece281-lab5
@@ -31,14 +39,6 @@ https://github.com/USAFA-ECE/ece281-lab5
 ```{tip}
 The template contains an **ALU_tb** that you can simulate your ALU against!
 ```
-
-### Authorized Resources
-
-Work in **teams of two** (including the prelab),
-but you **must** work with a *different partner* for this lab than previous labs.
-
-Your work (and your team's code) must **always** be your own.
-Normal documentation of all resources utilized is required.
 
 ### Background
 
@@ -65,6 +65,7 @@ This CPU only has two registers and the result of any operation is displayed
 | 010 | And |
 | 011 | Or |
 
+- You will need to add your `sevenseg_decoder.vhd` file to this project. Don't modify the architecture of this component to account for the minus sign output from the `o_sign` port of the `twos_comp` component. This will be verified via the Gradescope autograder.
 - **btnU** should serve as the master reset for all components with a synchronous reset;
 - **btnL** should be the asynchronous reset for the clock divider.
 - `o_cycle` (the FSM output) is one-hot!
@@ -96,8 +97,32 @@ All values are displayed in decimal on the seven-segment display - including a m
 
 ## Deliverables
 
-Each deliverable is **one submission per team.**
+### Prelab
 
-1. **Prelab** on Gradescope.
-2. **Demo** to a classmate and certify the demo in spreadsheet: **ECE281 Team Files > Demos > Lab 5 Demo Tracker**.
-3. **Lab code** pushed to GitHub and submitted to Gradescope.
+See Gradescope
+
+### Hardware Demo
+
+Your demo should verify the following system requirements:
+
+- Start with a clear display
+- Store the 1st operand in a register and display the value on the seven segment display
+- Store the 2nd operand in a register and display the value on the seven segment display
+- Display the result of an ALU operation of the 2 operands (only need to show 1 operation...autograder will check the functionality of your ALU against all possible ALU operations)
+- Return to initial state
+- Reset to initial state after a load register state
+- LEDs (3:0) display the current cycle of your FSM
+- LEDs (15:12) display for proper ALU flag for your operation
+
+Demo can be performed live with an instructor OR submitted via Teams video. Document demo completion in Gradescope.
+
+### Written Report
+
+You are required to write an **ENTIRE LAB REPORT** for this project. Include all sections outlined in the lab report template/instructions posted to Teams.
+
+### Code on Gradescope via GitHub
+
+- Ensure all `.vhd` files are located in `src/`
+- The Gradescope autograder will check that all component files are included and run a testbench on your `ALU.vhd` and `sevenseg_decoder.vhd` files. Ensure you don't change their file names or any of the names of their input/output ports.
+
+
