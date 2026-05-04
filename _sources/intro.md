@@ -45,7 +45,7 @@
 | 37     | Lab 5 - CPU                              |                          |              | Lab 5 Prelab       |
 | 38     | Lab 5 - CPU                              | ICE7                     |              |                    |
 | 39     | ICE7 - RV32I                             |                          |              |                    |
-| 40     | Review                                   |                          |              | ICE7, Lab 5 Demo   |
+| 40     | Review                                   |                          |              | ICE7, Lab 5        |
 
 Unless stated otherwise, assignments are submitted on [Gradescope](https://www.gradescope.com/). Check Gradescope for the due date/time.
 

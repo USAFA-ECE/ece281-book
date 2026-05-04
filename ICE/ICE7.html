@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ICE 7: RISC-V LED Demo &#8212; ECE 281</title>
+    <title>ICE 7: RISC-V LED &#8212; ECE 281</title>
   
   
   
@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 7: RISC-V LED Demo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ICE 7: RISC-V LED</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
@@ -385,7 +385,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICE 7: RISC-V LED Demo</h1>
+    <h1>ICE 7: RISC-V LED</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,8 +399,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ice-7-risc-v-led-demo">
-<h1>ICE 7: RISC-V LED Demo<a class="headerlink" href="#ice-7-risc-v-led-demo" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice-7-risc-v-led">
+<h1>ICE 7: RISC-V LED<a class="headerlink" href="#ice-7-risc-v-led" title="Permalink to this heading">#</a></h1>
 <p>Time to get your hands dirty with RISC-V Assembly Programming!</p>
 <ol class="arabic simple">
 <li><p>Clone <a class="github reference external" href="https://github.com/USAFA-ECE/ece281-ice7">USAFA-ECE/ece281-ice7</a>.
@@ -408,10 +408,18 @@ You don’t have to make your own copy because there is no submission for this I
 <li><p>Open it in <strong>VS Code</strong> and install the recommended extensions</p></li>
 <li><p>Complete the missing assembly, based on the comments</p></li>
 <li><p>Go to <strong>Run</strong> &gt; <strong>Start Debugging</strong></p></li>
-<li><p>Open the LED panel if it didn’t automatically</p></li>
+<li><p>Open the LED panel if it didn’t automatically. To open the LED panel, press <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">shift</span> <span class="pre">+</span> <span class="pre">p</span></code>, then type <code class="docutils literal notranslate"><span class="pre">Venus:</span> <span class="pre">Open</span> <span class="pre">LED</span> <span class="pre">Matrix</span></code> in the search box, then press <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p></li>
 <li><p>View the registers</p></li>
 <li><p>View the memory</p></li>
-<li><p>Step through the program, watch the registers change and the LEDs illuminate.</p></li>
+<li><p>Step through the program, watch the registers change and the LEDs illuminate. Your fully illuminated LED matrix should look like:</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<img alt="ICE/img/ICE_7_CompletedLEDMatrix.png" src="ICE/img/ICE_7_CompletedLEDMatrix.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">RISC-V logo displayed on the RISC-V Venus Simulator 10x10 LED matrix</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="9">
 <li><p>Smile!</p></li>
 </ol>
 <p><img alt="RISC-V Logo" src="https://riscv.org/wp-content/uploads/2023/07/RISC-V_Horizontal_Color.svg" /></p>

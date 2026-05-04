@@ -622,7 +622,7 @@ window.runMermaid = runMermaid;</script>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE4.html">ICE 4: Stoplight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE5.html">ICE 5: Basic Elevator Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ICE/ICE6.html">ICE 6: Time Division Multiplexor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE7.html">ICE 7: RISC-V LED Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ICE/ICE7.html">ICE 7: RISC-V LED</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
@@ -924,11 +924,11 @@ in VHDL to display a hexadecimal digit. The hex digit will come from a
 hardware-based binary to hex converter, which you will develop.</p>
 <p>A four-bit value will be input using switches.
 Upon pressing the center button, a seven-segment display will
-output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 31</span></a></p>
+output the correct hex digit, <a class="reference internal" href="#hex-of-switch"><span class="std std-numref">Fig. 32</span></a></p>
 <figure class="align-default" id="hex-of-switch">
 <img alt="../_images/lab2_image1.jpg" src="../_images/lab2_image1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Binary-to-hex displayed on seven-segment display</span><a class="headerlink" href="#hex-of-switch" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="objectives">
@@ -966,21 +966,21 @@ is a common way to display numbers or simple letters to the end-user. In
 this lab, you will design a seven-segment display decoder. This decoder
 takes a 4-bit binary input, and produces 7 bits that indicate whether
 each “segment” of the display is <strong>on</strong> (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or <strong>off</strong> (<code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
-<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 32</span></a>) and one decimal point
+<p>There are seven “segments” (labeled a – g, see <a class="reference internal" href="#seg-label"><span class="std std-numref">Fig. 33</span></a>) and one decimal point
 (we will ignore the d.p. in this lab) in a seven-segment display.</p>
 <figure class="align-default" id="seg-label">
 <img alt="../_images/lab2_image2.png" src="../_images/lab2_image2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Labeled segments in display</span><a class="headerlink" href="#seg-label" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>On our Basys3 board an anode determines which of the displays are on,
 while cathodes allow you to turn on each individual segment,
-<a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 33</span></a></p>
+<a class="reference internal" href="#sd-anodes"><span class="std std-numref">Fig. 34</span></a></p>
 <figure class="align-default" id="sd-anodes">
 <img alt="../_images/lab2_image18.jpg" src="../_images/lab2_image18.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Basys3 7SD cathodes and anodes.</span><a class="headerlink" href="#sd-anodes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Placing a <code class="docutils literal notranslate"><span class="pre">0</span></code> on a segment will cause it to light up, while a <code class="docutils literal notranslate"><span class="pre">1</span></code> will keep the segment dark.
@@ -988,11 +988,11 @@ This is called “active low.”
 For example, to display the number “0”, a logic <code class="docutils literal notranslate"><span class="pre">0</span></code> must be placed on segments <code class="docutils literal notranslate"><span class="pre">a</span></code>-<code class="docutils literal notranslate"><span class="pre">f</span></code>,
 while segment <code class="docutils literal notranslate"><span class="pre">g</span></code> will be a logic <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>In this way, you can display every hexadecimal digit:
-“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 34</span></a></p>
+“0” - “F” as shown in <a class="reference internal" href="#sd-digits"><span class="std std-numref">Fig. 35</span></a></p>
 <figure class="align-default" id="sd-digits">
 <img alt="../_images/lab2_image3.png" src="../_images/lab2_image3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Hexadecimal digits on a seven-segment display</span><a class="headerlink" href="#sd-digits" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
