@@ -12,7 +12,7 @@ Time to get your hands dirty with RISC-V Assembly Programming!
 7. View the memory
 8. Step through the program, watch the registers change and the LEDs illuminate. Your fully illuminated LED matrix should look like:
 
-```{figure} img/ICE_7_Completed LED Matrix.png
+```{figure} img/ICE_7_Completed_LED_Matrix.png
 RISC-V logo displayed on the RISC-V Venus Simulator 10x10 LED matrix
 ```
 
