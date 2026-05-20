@@ -188,13 +188,7 @@ Testable material includes any concepts from the labs, lectures, exercises, home
 
 ### Final Exam Validation
 
-The DFEC Department Head may exempt the top 5% of cadets in the course from the final exam. Candidates for validation of the final exam must:
-
-- have at least a 90% average for the course
-- have at least a 90% weighted average on all exams
-- have completed minimum functionalities on all labs and in-class exercises
-
-The Course Director will send **official** notification to everyone who validates the final NLT COB on T40. If you do not receive notification from the Course Director, you must take the final exam.
+This course does not offer final exam validation. All students will be required to take the final exam.
 
 ## Course Website Table of Contents
 
