@@ -29,11 +29,11 @@ The first iteration of this lab is simply implementing
 [ICE5](https://usafa-ece.github.io/ece281-book/ICE/ICE5.html)
 Basic Elevator Controller, as shown in {numref}`basic-elevator-controller`
 
-```{figure} img/lab4_basic_controller.png
+```{figure} img/lab4_single_elevator_controller_UI.png
 ---
-name: basic-elevator-controller
+name: single-elevator-controller-UI
 ---
-Single-Elevator Controller user interface
+Single-Elevator Controller User Interface
 ```
 
 - The elevator’s current floor is shown on seven-segment display 0 (rightmost... doesn't match picture above)
