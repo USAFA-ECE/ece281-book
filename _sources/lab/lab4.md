@@ -25,9 +25,8 @@ This is to emphasize modularity (and competing internal requirements 😉)
 
 ## Single-Elevator Controller
 
-The first iteration of this lab is simply implementing
-[ICE5](https://usafa-ece.github.io/ece281-book/ICE/ICE5.html)
-Basic Elevator Controller, as shown in {numref}`basic-elevator-controller`
+The first iteration of this lab is implementing the Basic Elevator Controller ([ICE5](https://usafa-ece.github.io/ece281-book/ICE/ICE5.html))
+ on the Basys3 board with the user interface seen in {numref}`single-elevator-controller-UI`
 
 ```{figure} img/lab4_single_elevator_controller_UI.png
 ---
