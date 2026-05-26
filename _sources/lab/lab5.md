@@ -77,7 +77,7 @@ This CPU only has two registers and the result of any operation is displayed
 name: lab5-top-level
 ---
 Partially complete Lab 5 top level.
-*Made with [Excalidraw](https://excalidraw.com/); you can open this `.svg` file in Excalidraw to make edits, if you'd like.*
+*Made with [Excalidraw](https://excalidraw.com/); you can open the [.svg file](img/lab5-top_basys3.excalidraw.svg) for this block diagram in Excalidraw to make edits, if you'd like.*
 
 Blue boxes are implemented directly in **top_basys3**; Black boxes are components; Red items are TODO; Signals should be labeled.
 ```
