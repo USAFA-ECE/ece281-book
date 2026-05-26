@@ -108,9 +108,10 @@ Your demo should verify the following system requirements:
 - Start with a clear display
 - Store the 1st operand in a register and display the value on the seven segment display
 - Store the 2nd operand in a register and display the value on the seven segment display
-- Display the result of an ALU operation of the 2 operands (only need to show 1 operation...autograder will check the functionality of your ALU against all possible ALU operations)
+- Display the result of an ALU operation of the 2 operands
 - Return to initial state after ALU operation (using btnC)
 - Reset to initial state after a load register state (using reset button)
+- Demo neagative sign functionality (i.e. complete an operaton that results in a negative answer)
 - LEDs (3:0) display the current cycle of your FSM
 - LEDs (15:12) display for proper ALU flag for your operation
 
