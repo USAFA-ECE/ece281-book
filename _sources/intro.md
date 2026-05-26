@@ -166,10 +166,15 @@ You must complete all minimum functionalities on labs and in-class exercises in 
 
 #### Late Assignments
 
-Due date/time extensions for assignments will be granted at instructor discretion,
-*provided you coordinate the extension **prior** to the day on which the assignment is due.*
-It is your responsibility to plan ahead and communicate clearly.
-These extensions will be reflected in [Gradescope](https://www.gradescope.com/) individually for you on that particular assignment.
+- 10% of available points will be deducted for each calendar day the graded assignment is late. A calendar day is considered anywhere from one second to 24 hours after the due date, or any additional days thereafter.
+
+- All assignments have a hard deadline of **5 calendar days** past the original due date. Late submissions will not be accepted after the hard deadline.
+
+- Late assignments will not be accepted after the solution to the assignment has been published.
+
+- Late assignments will not be accepted after T40. **ALL WORK MUST BE SUBMITTED BY 2359 ON T40**
+
+- Your instructor may waive all or part of the late penalty for extenuating circumstances, *provided you coordinate with your instructor **prior** to the day the assignment is due (if possible).* It is your responsibility to plan ahead and communicate clearly.
 
 ### Exams
 
