@@ -22,22 +22,12 @@ Here is a quick demo showing how your finite state machine for the taillights sh
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/k6_WvCbD_6Y?si=7MKPEI_YMaPNURkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Authorized Resources
+### Collaboration
 
-For this lab, you may work in **teams of two** (including the prelab).
-You may seek help from any cadet or instructor,
-not limited to this course, and reference any publication in its
-completion. Online resources are acceptable. However, no resources
-containing solutions to the course homework, labs, exams, quizzes, or in
-class/out of class exercises are allowed.
+All components of this lab are individual effort, although you can always discuss general concepts with other students.
 
-Your work (and your code) must **always** be your own.
-Normal documentation of all resources utilized is required.
-
-```{important}
-**ALL MEMBERS** of the group will submit **YOUR OWN** code.
-This does not mean you can't collaborate, but make sure you have done the
-code yourself to learn the material.
+```{note}
+Do not show other students your working code. If helping another student, you can look at their code to help them troubleshoot it, but refer them to example code in the textbook, lecture slides, etc. to help them resolve the coding issue.
 ```
 
 ## Background
