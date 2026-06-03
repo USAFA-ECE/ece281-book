@@ -752,30 +752,37 @@ next rising edge before checking the for a value.</p>
 </div></blockquote>
 <section id="simulation">
 <h3><a class="toc-backref" href="#id11" role="doc-backlink">Simulation</a><a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h3>
-<p><a class="reference internal" href="#stoplight-waveform"><span class="std std-numref">Fig. 22</span></a> shows what your simulation should look like.
-Note the additional signals we have not seen in past simulations. Not only
-can we check that the outputs are happening as expected, but we can
-verify that the state <span class="math notranslate nohighlight">\(Q\)</span> and next state <span class="math notranslate nohighlight">\(Q_{next}\)</span> are behaving as they should.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>By default the waveform will only show the signals in your test bench itself.
-To add a signal from any component click “Window” and then “Scope.”
-Then select a subcomponent to view its internal signals. From there,
-select a signal by highlighting where you declare it (double click will do this).
-Right click on the highlighted signal and select “Add to Wave Window.”</p>
-<p>You will then need to run the simulation again. When you do this you will be prompted to save
-the configuration. Click YES and add it to your project.</p>
+<p><a class="reference internal" href="#stoplight-waveform"><span class="std std-numref">Fig. 22</span></a> shows what your simulation should look like.</p>
+<p><strong>Understanding Waveform Signals &amp; Default Behavior</strong>
+By default, the Vivado simulation waveform will only display the top-level signals that are explicitly declared in your test bench itself. Any signals internal to your instantiated subcomponents or lower-level modules are hidden to keep the workspace uncluttered.</p>
+<p>However, viewing these internal signals is an incredibly useful tool when debugging your Finite State Machine (FSM) designs. By adding internal signals to your waveform, you can verify that both the current state and next state are behaving as expected, allowing you to isolate errors:</p>
+<ul class="simple">
+<li><p>If the state transitions correctly but the output is wrong, the issue likely resides in your output logic equations.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">f_Q_next</span></code> calculates correctly but <code class="docutils literal notranslate"><span class="pre">f_Q</span></code> does not update, you may be resetting accidentally, or your clock process is incorrect.</p></li>
+</ul>
+<p><strong>How to Add Internal Signals</strong>
+To add a signal from any internal component to your waveform, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Click on <strong>“Window”</strong> in the top menu and select <strong>“Scope”</strong>.</p></li>
+<li><p>In the Scope window, select the subcomponent to view its internal signals.</p></li>
+<li><p>In the Objects window, highlight the specific signal you want to view (double-clicking the declaration will also highlight it).</p></li>
+<li><p>Right-click on the highlighted signal and select <strong>“Add to Wave Window”</strong>.</p></li>
+<li><p><strong>Run the simulation again</strong> (re-launch or click run) to populate the new signals with data.</p></li>
+<li><p>You will be prompted to save the waveform configuration. Click <strong>YES</strong> and add it to your project so you do not have to repeat this process.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>REQUIRED FOR SUBMISSION:</strong></p>
+<ul class="simple">
+<li><p>You must manually add the internal state signals <code class="docutils literal notranslate"><span class="pre">f_Q</span></code> and <code class="docutils literal notranslate"><span class="pre">f_Q_next</span></code> to your waveform before capturing your image. Submissions that do not show these signals in the waveform will be considered incomplete.</p></li>
+<li><p>You must run your simulation for 140ns. Simulations that are run for less than 140ns will not show the results for all functionality the test bench is verifying. Submissions ran for less than 140ns will be considered incomplete.</p></li>
+<li><p>Ensure your waveform is legible. Missing/truncated signal names/values or compressed waveforms will result in lost points.</p></li>
+</ul>
 </div>
-<p>The ability to add signals in sub components will be a useful
-tool when you are debugging your FSM designs. It can help you figure out
-where your error is. For this design, if the state is correct but the
-output is not then the issues is in your output equations. If <code class="docutils literal notranslate"><span class="pre">f_Q_next</span></code>
-is correct but <code class="docutils literal notranslate"><span class="pre">f_Q</span></code> is not then maybe you are resetting on accident or
-your process is incorrect.</p>
 <figure class="align-default" id="stoplight-waveform">
 <img alt="../_images/ice4_image16.png" src="../_images/ice4_image16.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Stoplight FSM test bench waveform</span><a class="headerlink" href="#stoplight-waveform" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Stoplight FSM Test Bench Waveform</span><a class="headerlink" href="#stoplight-waveform" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>

@@ -287,33 +287,39 @@ w_C <= '0'; wait for k_clk_period;
 ### Simulation
 
 {numref}`stoplight-waveform` shows what your simulation should look like.
-Note the additional signals we have not seen in past simulations. Not only
-can we check that the outputs are happening as expected, but we can
-verify that the state $Q$ and next state $Q_{next}$ are behaving as they should.
 
-```{hint}
-By default the waveform will only show the signals in your test bench itself.
-To add a signal from any component click "Window" and then "Scope."
-Then select a subcomponent to view its internal signals. From there,
-select a signal by highlighting where you declare it (double click will do this).
-Right click on the highlighted signal and select "Add to Wave Window."
+**Understanding Waveform Signals & Default Behavior**
+By default, the Vivado simulation waveform will only display the top-level signals that are explicitly declared in your test bench itself. Any signals internal to your instantiated subcomponents or lower-level modules are hidden to keep the workspace uncluttered. 
 
-You will then need to run the simulation again. When you do this you will be prompted to save
-the configuration. Click YES and add it to your project.
+However, viewing these internal signals is an incredibly useful tool when debugging your Finite State Machine (FSM) designs. By adding internal signals to your waveform, you can verify that both the current state and next state are behaving as expected, allowing you to isolate errors:
+
+- If the state transitions correctly but the output is wrong, the issue likely resides in your output logic equations.
+
+- If `f_Q_next` calculates correctly but `f_Q` does not update, you may be resetting accidentally, or your clock process is incorrect.
+
+**How to Add Internal Signals**
+To add a signal from any internal component to your waveform, follow these steps:
+
+1. Click on **"Window"** in the top menu and select **"Scope"**.
+2. In the Scope window, select the subcomponent to view its internal signals.
+3. In the Objects window, highlight the specific signal you want to view (double-clicking the declaration will also highlight it).
+4. Right-click on the highlighted signal and select **"Add to Wave Window"**.
+5. **Run the simulation again** (re-launch or click run) to populate the new signals with data. 
+6. You will be prompted to save the waveform configuration. Click **YES** and add it to your project so you do not have to repeat this process.
+
+```{important}
+**REQUIRED FOR SUBMISSION:** 
+
+- You must manually add the internal state signals `f_Q` and `f_Q_next` to your waveform before capturing your image. Submissions that do not show these signals in the waveform will be considered incomplete.
+- You must run your simulation for 140ns. Simulations that are run for less than 140ns will not show the results for all functionality the test bench is verifying. Submissions ran for less than 140ns will be considered incomplete.
+- Ensure your waveform is legible. Missing/truncated signal names/values or compressed waveforms will result in lost points. 
 ```
-
-The ability to add signals in sub components will be a useful
-tool when you are debugging your FSM designs. It can help you figure out
-where your error is. For this design, if the state is correct but the
-output is not then the issues is in your output equations. If `f_Q_next`
-is correct but `f_Q` is not then maybe you are resetting on accident or
-your process is incorrect.
 
 ```{figure} img/ice4_image16.png
 ---
 name: stoplight-waveform
 ---
-Stoplight FSM test bench waveform
+Stoplight FSM Test Bench Waveform
 ```
 
 > Take a screenshot of your waveform and commit it to your repo.
