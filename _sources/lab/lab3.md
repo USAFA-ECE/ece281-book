@@ -82,7 +82,7 @@ You will use a **Moore FSM** to implement the above functionality.
 
 Complete the following tasks to prepare yourself for the lab.
 
-1. Create a state transition diagram vusing the
+1. Create a state transition diagram using the
 `Lab3_StateTransitionDiagram_Template.pptx` found in Teams.
 2. Complete the **binary** encoding, state transition, and output tables
 using the `Lab3_Tables_Template.xlsx` found in Teams.

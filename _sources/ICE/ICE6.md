@@ -167,10 +167,10 @@ w_D3 <= ...
 ...
 ```
 
-- `i_D3` gets "1100"
-- `i_D2` gets "1001"
-- `i_D1` gets "0110"
-- `i_D0` gets "0011"
+- `i_D3` gets "1000"
+- `i_D2` gets "0100"
+- `i_D1` gets "0010"
+- `i_D0` gets "0001"
 
 Finally, set your simulation to run for only 160 ns and run it.
 You should get a waveform that looks like {numref}`tdm_waveform`.
