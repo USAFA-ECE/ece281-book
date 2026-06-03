@@ -11,8 +11,6 @@ This lab is all about **designing complex systems!**
 
 To do this you will need to pull together building blocks from several previous labs and ICEs!
 
-Per usual, you must submit your own copy of VHDL but the lab report is done with a partner.
-
 The **prelab** is on Gradescope; it will require you to make a copy and clone
 https://github.com/usafa-ece/ece281-lab4
 
@@ -107,4 +105,4 @@ and justify designing tests to meet that level.
     Teams > ECE281 > General > Files > Demos > Lab 4 > section. Name your video `lastname1_lastname2_demo.mp4`
 - Git commit and push
 - **Submit code** to Gradescope
-- Write lab report (template in teams)
+- Write lab report (template in Teams)
