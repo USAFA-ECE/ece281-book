@@ -22,14 +22,15 @@ In this course you have learned how to design basic combinational logic circuits
 
 ### Supplies
 
-- 4x $1 kΩ$ resistors.
-- 2x red LED.
-- 1x 74LS08 2-Input AND gate logic chip.
-- 1x 74LS86 2-Input XOR gate logic chip.
-- 1x breadboard power supply.
-- 1x breadboard.
-- 2x single pole double throw switches.
-- Jumper wires.
+- 2x $1 kΩ$ resistors
+- 2x $330 Ω$ resistors
+- 2x red LEDs
+- 1x 74HC08 2-Input AND gate logic chip
+- 1x 74HC86 2-Input XOR gate logic chip
+- 1x breadboard power supply
+- 1x breadboard
+- 2x single pole double throw switches
+- Jumper wires
 
 ## Background
 
@@ -84,15 +85,15 @@ The cooresponding truth table is shown in {numref}`half-adder-truth`.
 
 You will use two TTL chips to build the half adder. **Their data sheets are available in Teams.**
 
-1. **74LS08** — A quad, 2-input AND gate, used to produce the Carry output, {numref}`LS08-Pin-Layout`.
-2. **74LS86** — A quad, 2-input XOR gate, used to produce the Sum output, {numref}`LS86-Pin-Layout`.
+1. **74HC08** — A quad, 2-input AND gate, used to produce the Carry output, {numref}`HC08-Pin-Layout`.
+2. **74HC86** — A quad, 2-input XOR gate, used to produce the Sum output, {numref}`HC86-Pin-Layout`.
 
 ### Connecting the Chips
 
 We will create a half adder circuit using the following process:
-Connect the first AND gate from the 74LS08 to the inputs \(A\) and \(B\) to produce the Carry output.
+Connect the first AND gate from the 74HC08 to the inputs \(A\) and \(B\) to produce the Carry output.
 
-Connect the first XOR gate from the 74LS86 to the inputs \(A\) and \(B\) to produce the Sum output.
+Connect the first XOR gate from the 74HC86 to the inputs \(A\) and \(B\) to produce the Sum output.
 
 We will get the following combinational logic circuit:
 
@@ -174,7 +175,7 @@ Pull-down resistor configuration
 
 Wire the switches according to the graphic below. Ensure your set up accommodates connections to the chips.
 
-```{figure} img/ice01_image8.png
+```{figure} img/ice01_switch_wiring.png
 ---
 name: Single throw double pole switch
 ---
@@ -199,7 +200,7 @@ Now you will test the circuit.
 Make sure your power supply is **powered off** while making changes to the circuit!
 ```
 
-You will now add the 74LS08 chip, and the 74LS86 chip.
+You will now add the 74HC08 chip, and the 74HC86 chip.
 After following these steps, your board should look like {numref}`chip-wiring`.
 
 #### Power
@@ -212,7 +213,7 @@ Do this for both chips
 3. Wire the Vcc pin to +5V on your bread board.
 4. Repeat for the ground pin.
 
-#### 74LS08
+#### 74HC08
 
 The chip has four AND gates; we will be using AND gate #1, which uses pins 1, 2, and 3.
 
@@ -222,14 +223,14 @@ The half circle at the top of the chip helps you know where pin 1 is!
 
 ```{figure} img/ice01_image2.png
 ---
-name: LS08-Pin-Layout
+name: HC08-Pin-Layout
 ---
-74LS08 Pin Out (**AND**)
+74HC08 Pin Out (**AND**)
 ```
 
-- Connect the switch 1 ($A$) output to pin 1 on the 74LS08.
-- Connect the switch 2 ($B$) output to pin 2 on the 74LS08.
-- Connect a wire to pin 3 ($C_{out}$) on the 74LS08.
+- Connect the switch 1 ($A$) output to pin 1 on the 74HC08.
+- Connect the switch 2 ($B$) output to pin 2 on the 74HC08.
+- Connect a wire to pin 3 ($C_{out}$) on the 74HC08.
 
 See {numref}`chip-wiring` for a visual.
 
@@ -240,20 +241,20 @@ According to our equation, if both switches are active, the **CARRY** operation 
 >
 > Once that works, turn your power back off.
 
-#### 74LS86
+#### 74HC86
 
 The chip has four XOR gates; we will be using XOR gate #1, which uses pins 1, 2, and 3.
 
 ```{figure} img/ice1_74LS86.png
 ---
-name: LS86-Pin-Layout
+name: HC86-Pin-Layout
 ---
-74LS86 Pin Out (**XOR**)
+74HC86 Pin Out (**XOR**)
 ```
 
-- Connect the switch 1 ($A$) output to pin 1 on the 74LS86.
-- Connect the switch 2 ($B$) output to pin 2 on the 74LS86.
-- Connect a wire to pin 3 ($S$) on the 74LS08.
+- Connect the switch 1 ($A$) output to pin 1 on the 74HC86.
+- Connect the switch 2 ($B$) output to pin 2 on the 74HC86.
+- Connect a wire to pin 3 ($S$) on the 74HC08.
 
 See {numref}`chip-wiring` for a visual.
 
@@ -266,13 +267,13 @@ According to our equation, if any single switch is active, the **SUM** operation
 
 ```{tip}
 The meter is likely reading closer to 4.5 V and not 5 V.
-Fortunately, in both the 74LS08 and 74LS86, anything above 2 V is considered high, or logic `1`.
+Fortunately, in both the 74HC08 and 74HC86, anything above 2 V is considered high, or logic `1`.
 Similarly, anything less than 0.8 V would register as a logic `0`.
 ```
 
 At this point, your board should look like this:
 
-```{figure} img/ice01_image9.png
+```{figure} img/ice01_chip_wiring_noLED.png
 ---
 name: chip-wiring
 ---
@@ -286,16 +287,17 @@ circuit output is a logic `1` (LED is on) or logic `0` (LED is off).
 
 ```{warning}
 To keep from destroying the LED due to a potential current spike, you
-will wire the LED **in series** with a $1 kΩ$ resistor.
+will wire the LED **in series** with a $330 Ω$ resistor.
 ```
 
-LEDs are directional components. The *longer* of the LED's two leads are where current enters, where the shorter end is where current exits. Place the LEDs across two empty nodes, connecting the shorter ends to ground. Ensure the positive ends are on empty nodes.
-
-Next, connect pin 3 (output pin) of the 74LS08 and 74LS86 to two different empty nodes. Use a 1 kΩ resistor to connect these nodes to the the nodes where the positive ends of the LEDs are connected. *You should have a 1 kΩ resistor between the LED and the output pin nodes*.
+LEDs are directional components. The *longer* of the LED's two leads is where current enters (i.e. positive lead), and the *shorter* end is where current exits (i.e. negative lead). 
+- Place the LEDs across two empty nodes.
+- Connect pin 3Y (output pin) of the 74HC08 and 74HC86 to the node with the *longer* LED lead
+- Connect one end of the $330 Ω$ resistor to the node with the *shorter* LED lead, and connect the other end of the resistor to ground.
 
 > Wire up the LED according to {numref}`led-wire`
 
-```{figure} img/ice01_image11.png
+```{figure} img/ice01_chip_wiring_withLED.png
 ---
 name: led-wire
 ---
@@ -309,5 +311,5 @@ For your final test, simply turn on the power and test your switches to ensure t
 > Demonstrate your operational circuit to your instructor.
 
 - When all switches are **off**, the LEDs are off.
-- When any one switch (A or B) is turned **on**, the LED connected to the 74LS86 will light up.
-- When both switches (A and B) are turned **on**, the LED connected to the 74LS08 will light up.
+- When any one switch (A or B) is turned **on**, the LED connected to the 74HC86 will light up, and the LED connected to the 74HC08 will remain off.
+- When both switches (A and B) are turned **on**, the LED connected to the 74HC08 will light up, and the LED connected to the 74HC86 will remain off.

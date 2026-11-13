@@ -910,7 +910,7 @@ would then assign a <code class="docutils literal notranslate"><span class="pre"
 simulating real hardware, we will have to create delays between each
 change in input. We can test an input and delay for 10 ns using the
 following:</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">w_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">x&quot;0&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="n">w_sw</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">x"0"</span><span class="p">;</span><span class="w"> </span><span class="k">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">ns</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>This is the first test case of our 4-bit input truth table. To finish the test process, you need to create the additional <span class="math notranslate nohighlight">\(2^4 - 1\)</span> lines.</p>

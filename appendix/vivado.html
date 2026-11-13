@@ -550,10 +550,10 @@ to see what changed. Both options below show additions in green and deletions in
 <h5>What to actually change<a class="headerlink" href="#what-to-actually-change" title="Permalink to this heading">#</a></h5>
 <p>In the comments, change the absolute path to a relative path.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># CHANGE</span>
-<span class="c">#    &quot;C:/Users/User.Name/vivado/bcy/ece281-lab1/src/hdl/thirtyOneDayMonth.vhd&quot;</span>
+<span class="c">#    "C:/Users/User.Name/vivado/bcy/ece281-lab1/src/hdl/thirtyOneDayMonth.vhd"</span>
 
 <span class="c"># TO</span>
-<span class="c">#    &quot;/src/hdl/thirtyOneDayMonth.vhd&quot;</span>
+<span class="c">#    "/src/hdl/thirtyOneDayMonth.vhd"</span>
 </pre></div>
 </div>
 <p>Update the relative path to project files.
@@ -588,14 +588,14 @@ is probably ok as is.</p>
 <span class="k">echo</span> Building Vivado projeect from TCL file
 <span class="k">echo</span> ----------------------------------------
 
-<span class="k">set</span> <span class="nv">VivadoPath</span><span class="p">=</span><span class="s2">&quot;C:\Xilinx\Vivado\2018.2\bin\vivado.bat&quot;</span>
+<span class="k">set</span> <span class="nv">VivadoPath</span><span class="p">=</span><span class="s2">"C:\Xilinx\Vivado\2018.2\bin\vivado.bat"</span>
 <span class="p">:</span><span class="c1">: chcek if vivado path is valid</span>
 <span class="k">if</span> <span class="k">not</span> <span class="k">exist</span> <span class="nv">%VivadoPath%</span> <span class="p">(</span>
     <span class="k">echo</span> Vivado path is not valid
     <span class="k">exit</span> /b 1
 <span class="p">)</span>
 
-<span class="k">set</span> <span class="nv">TCL</span><span class="p">=</span><span class="s2">&quot;build.tcl&quot;</span>
+<span class="k">set</span> <span class="nv">TCL</span><span class="p">=</span><span class="s2">"build.tcl"</span>
 <span class="p">:</span><span class="c1">: check if TCL file is valid</span>
 <span class="k">if</span> <span class="k">not</span> <span class="k">exist</span> <span class="nv">%TCL%</span> <span class="p">(</span>
     <span class="k">echo</span> TCL file is not valid
